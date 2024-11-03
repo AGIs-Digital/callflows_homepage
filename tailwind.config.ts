@@ -59,6 +59,9 @@ const config: Config = {
       fontFamily: {
         sans: ['Satoshi', 'sans-serif'],
       },
+      letterSpacing: {
+        tighter: '-0.04em',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
