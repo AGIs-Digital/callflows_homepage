@@ -30,16 +30,37 @@ jobs:
         run: |
           echo "NEXT_PUBLIC_API_URL=${{ secrets.STAGING_API_URL }}" >> .env
           echo "NEXT_PUBLIC_ENVIRONMENT=staging" >> .env
+          echo "DB_HOST=${{ secrets.STAGING_DB_HOST }}" >> .env
+          echo "DB_USER=${{ secrets.STAGING_DB_USER }}" >> .env
+          echo "DB_PASS=${{ secrets.STAGING_DB_PASS }}" >> .env
+          echo "DB_NAME=${{ secrets.STAGING_DB_NAME }}" >> .env
 
-      - name: 🚧 Backup remote directory
+      - name: 🚧 Aktiviere Wartungsmodus
+        uses: appleboy/ssh-action@v1.0.3
+        continue-on-error: true
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd staging.callflows.de
+            touch .maintenance
+
+      - name: 🗄️ Backup und DB Reset
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            cd /var/www/staging
-            tar -czf backup-$(date +%Y%m%d_%H%M%S).tar.gz ./out
+            cd staging.callflows.de
+            timestamp=$(date +%Y%m%d_%H%M%S)
+            mkdir -p backups
+            tar -czf backups/backup-${timestamp}.tar.gz ./out
+            
+            # Datenbank zurücksetzen und Seed-User erstellen
+            mysql -h ${{ secrets.STAGING_DB_HOST }} -u ${{ secrets.STAGING_DB_USER }} -p${{ secrets.STAGING_DB_PASS }} ${{ secrets.STAGING_DB_NAME }} < db/reset.sql
+            mysql -h ${{ secrets.STAGING_DB_HOST }} -u ${{ secrets.STAGING_DB_USER }} -p${{ secrets.STAGING_DB_PASS }} ${{ secrets.STAGING_DB_NAME }} -e "INSERT INTO users (username, password, role) VALUES ('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');"
 
       - name: 🏗️ Build
         run: npm run build
@@ -51,9 +72,20 @@ jobs:
           username: ${{ secrets.STAGING_FTP_USERNAME }}
           password: ${{ secrets.STAGING_FTP_PASSWORD }}
           local-dir: ./out/
-          server-dir: /staging/
+          server-dir: /staging.callflows.de/
           dangerous-clean-slate: true
 
       - name: 🧹 Clear CDN Cache
         run: |
           curl -X POST "${{ secrets.STAGING_CACHE_CLEAR_URL }}"
+
+      - name: 🟢 Deaktiviere Wartungsmodus
+        if: always()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd staging.callflows.de
+            rm -f .maintenance

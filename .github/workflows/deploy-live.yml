@@ -29,16 +29,33 @@ jobs:
         run: |
           echo "NEXT_PUBLIC_API_URL=${{ secrets.PRODUCTION_API_URL }}" >> .env
           echo "NEXT_PUBLIC_ENVIRONMENT=production" >> .env
+          echo "DB_HOST=${{ secrets.PRODUCTION_DB_HOST }}" >> .env
+          echo "DB_USER=${{ secrets.PRODUCTION_DB_USER }}" >> .env
+          echo "DB_PASS=${{ secrets.PRODUCTION_DB_PASS }}" >> .env
+          echo "DB_NAME=${{ secrets.PRODUCTION_DB_NAME }}" >> .env
 
-      - name: 🚧 Backup remote directory
+      - name: 🚧 Aktiviere Wartungsmodus
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            cd /var/www/production
-            tar -czf backup-$(date +%Y%m%d_%H%M%S).tar.gz ./out
+            cd callflows.de
+            touch .maintenance
+
+      - name: 🗄️ Backup erstellen
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd callflows.de
+            timestamp=$(date +%Y%m%d_%H%M%S)
+            mkdir -p backups
+            tar -czf backups/backup-${timestamp}.tar.gz ./out
+            mysqldump -h ${{ secrets.PRODUCTION_DB_HOST }} -u ${{ secrets.PRODUCTION_DB_USER }} -p${{ secrets.PRODUCTION_DB_PASS }} ${{ secrets.PRODUCTION_DB_NAME }} > backups/db-backup-${timestamp}.sql
 
       - name: 🏗️ Build
         run: npm run build
@@ -50,9 +67,31 @@ jobs:
           username: ${{ secrets.PRODUCTION_FTP_USERNAME }}
           password: ${{ secrets.PRODUCTION_FTP_PASSWORD }}
           local-dir: ./out/
-          server-dir: /production/
+          server-dir: /callflows.de/
           dangerous-clean-slate: true
+
+      - name: 🔄 Datenbank-Migration
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd callflows.de
+            # Nur Struktur-Updates durchführen, keine Daten überschreiben
+            mysql -h ${{ secrets.PRODUCTION_DB_HOST }} -u ${{ secrets.PRODUCTION_DB_USER }} -p${{ secrets.PRODUCTION_DB_PASS }} ${{ secrets.PRODUCTION_DB_NAME }} < db/migrations/latest.sql
 
       - name: 🧹 Clear CDN Cache
         run: |
           curl -X POST "${{ secrets.PRODUCTION_CACHE_CLEAR_URL }}"
+
+      - name: 🟢 Deaktiviere Wartungsmodus
+        if: always()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd callflows.de
+            rm -f .maintenance
