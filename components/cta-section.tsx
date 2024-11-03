@@ -17,14 +17,7 @@ export function CTASection() {
           <button className="bg-accent hover:bg-accent/90 text-gray-900 px-8 py-4 rounded-lg font-medium">
             Jetzt starten
           </button>
-          <Dialog>
-            <DialogTrigger asChild>
-              <button className="bg-white hover:bg-white/90 text-gray-900 px-8 py-4 rounded-lg font-medium">
-                Kontakt aufnehmen
-              </button>
-            </DialogTrigger>
-            <ContactDialog />
-          </Dialog>
+          <ContactDialog />
         </div>
       </div>
     </section>

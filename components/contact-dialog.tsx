@@ -7,8 +7,8 @@ export function ContactDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="text-base font-medium text-foreground hover:text-foreground/80">
-          Kontakt
+      <button className="bg-white hover:bg-white/90 text-gray-900 px-8 py-4 rounded-lg font-medium">
+          Kontakt aufnehmen
         </button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px]">

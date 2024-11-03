@@ -12,7 +12,7 @@ export function SiteHeader() {
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo.svg"
+            src="/callflows_brand_no_claim.png"
             alt="Callflows Logo"
             width={150}
             height={30}
