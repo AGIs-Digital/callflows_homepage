@@ -78,14 +78,14 @@ jobs:
             rm -rf * .env
 
       - name: 📤 Deploy to Staging
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.STAGING_FTP_SERVER }}
           username: ${{ secrets.STAGING_FTP_USERNAME }}
           password: ${{ secrets.STAGING_FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: /staging.callflows.de/
-          dangerous-clean-slate: true
+          local_path: './out/*'
+          remote_path: '/staging.callflows.de/'
+          sftpArgs: '-o StrictHostKeyChecking=no'
 
       - name: 🧹 Clean npm cache
         run: |

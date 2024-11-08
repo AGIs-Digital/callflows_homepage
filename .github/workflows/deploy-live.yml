@@ -22,11 +22,6 @@ jobs:
           node-version: '20.x'
           cache: 'npm'
 
-      - name: 🧹 Clean npm cache
-        run: |
-          rm -rf node_modules
-          rm -f package-lock.json
-
       - name: 📦 Install dependencies
         run: |
           npm install --no-fund
@@ -34,7 +29,6 @@ jobs:
 
       - name: 🔧 Create .env file
         run: |
-          echo "NEXT_PUBLIC_API_URL=${{ secrets.PRODUCTION_API_URL }}" >> .env
           echo "NEXT_PUBLIC_ENVIRONMENT=production" >> .env
           echo "DB_HOST=${{ secrets.PRODUCTION_DB_HOST }}" >> .env
           echo "DB_USER=${{ secrets.PRODUCTION_DB_USER }}" >> .env
@@ -43,54 +37,59 @@ jobs:
 
       - name: 🚧 Aktiviere Wartungsmodus
         uses: appleboy/ssh-action@v1.0.3
+        continue-on-error: true
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
           script: |
             cd callflows.de
             touch .maintenance
 
-      - name: 🗄️ Backup erstellen
+      - name: 🗄️ Backup
         uses: appleboy/ssh-action@v1.0.3
+        continue-on-error: true
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
           script: |
             cd callflows.de
             timestamp=$(date +%Y%m%d_%H%M%S)
             mkdir -p backups
             tar -czf backups/backup-${timestamp}.tar.gz ./out
-            mysqldump -h ${{ secrets.PRODUCTION_DB_HOST }} -u ${{ secrets.PRODUCTION_DB_USER }} -p${{ secrets.PRODUCTION_DB_PASS }} ${{ secrets.PRODUCTION_DB_NAME }} > backups/db-backup-${timestamp}.sql
+            mysqldump -h ${{ secrets.PRODUCTION_DB_HOST }} -u ${{ secrets.PRODUCTION_DB_USER }} -p${{ secrets.PRODUCTION_DB_PASS }} ${{ secrets.PRODUCTION_DB_NAME }} > backups/db-backup-${timestamp}.sql || true
 
       - name: 🏗️ Build
         run: npm run build
 
-      - name: 📤 Deploy to Production
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.PRODUCTION_FTP_SERVER }}
-          username: ${{ secrets.PRODUCTION_FTP_USERNAME }}
-          password: ${{ secrets.PRODUCTION_FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: /callflows.de/
-          dangerous-clean-slate: true
-
-      - name: 🔄 Datenbank-Migration
+      - name: 🧹 Empty remote directory
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
           script: |
-            cd callflows.de
-            # Nur Struktur-Updates durchführen, keine Daten überschreiben
-            mysql -h ${{ secrets.PRODUCTION_DB_HOST }} -u ${{ secrets.PRODUCTION_DB_USER }} -p${{ secrets.PRODUCTION_DB_PASS }} ${{ secrets.PRODUCTION_DB_NAME }} < db/migrations/latest.sql
+            cd callflows.de/
+            rm -rf * .env
 
-      - name: 🧹 Clear CDN Cache
+      - name: 📤 Deploy to Production
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.PRODUCTION_FTP_SERVER }}
+          username: ${{ secrets.PRODUCTION_FTP_USERNAME }}
+          password: ${{ secrets.PRODUCTION_FTP_PASSWORD }}
+          local_path: './out/*'
+          remote_path: '/callflows.de/'
+          sftpArgs: '-o StrictHostKeyChecking=no'
+
+      - name: 🧹 Clean npm cache
         run: |
-          curl -X POST "${{ secrets.PRODUCTION_CACHE_CLEAR_URL }}"
+          rm -rf node_modules
+          rm -f package-lock.json
 
       - name: 🟢 Deaktiviere Wartungsmodus
         if: always()
