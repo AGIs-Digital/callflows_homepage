@@ -84,7 +84,7 @@ jobs:
           username: ${{ secrets.STAGING_FTP_USERNAME }}
           password: ${{ secrets.STAGING_FTP_PASSWORD }}
           local_path: './out/*'
-          remote_path: '/staging.callflows.de/'
+          remote_path: 'staging.callflows.de/'
           sftpArgs: '-o StrictHostKeyChecking=no'
           sftp_only: true
           port: 22
