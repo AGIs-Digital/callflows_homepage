@@ -64,14 +64,10 @@ jobs:
             timestamp=$(date +%Y%m%d_%H%M%S)
             mkdir -p backups
             
-            # Nur Backup erstellen wenn ./out existiert
             if [ -d "./out" ]; then
               tar -czf backups/backup-${timestamp}.tar.gz ./out
             fi
-            
-            # Datenbank zurücksetzen
-            mysql -h ${{ secrets.STAGING_DB_HOST }} -u ${{ secrets.STAGING_DB_USER }} -p${{ secrets.STAGING_DB_PASS }} ${{ secrets.STAGING_DB_NAME }} < db/reset.sql || echo "Fehler beim Ausführen von reset.sql"
-            
+
             # Admin-User erstellen
             mysql -h ${{ secrets.STAGING_DB_HOST }} -u ${{ secrets.STAGING_DB_USER }} -p${{ secrets.STAGING_DB_PASS }} ${{ secrets.STAGING_DB_NAME }} -e "INSERT IGNORE INTO users (username, password, role) VALUES ('admin', '\$2y\$10\$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');"
 
