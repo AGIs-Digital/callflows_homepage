@@ -10,14 +10,19 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent } from "@/components/ui/card";
 
+interface FormData {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+}
+
 const formSchema = z.object({
   name: z.string().min(2, "Name muss mindestens 2 Zeichen lang sein"),
-  email: z.string().email("Bitte geben Sie eine gültige E-Mail-Adresse ein"),
+  email: z.string().email("Ungültige E-Mail-Adresse"),
   phone: z.string().optional(),
-  message: z.string().min(10, "Nachricht muss mindestens 10 Zeichen lang sein"),
+  message: z.string().min(10, "Nachricht muss mindestens 10 Zeichen lang sein")
 });
-
-type FormData = z.infer<typeof formSchema>;
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,8 +67,7 @@ export function ContactForm() {
         <Input
           id="name"
           {...register("name")}
-          className="w-full"
-          error={errors.name?.message}
+          className={`w-full ${errors.name ? 'border-red-500' : ''}`}
         />
         {errors.name && (
           <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>
@@ -78,8 +82,7 @@ export function ContactForm() {
           id="email"
           type="email"
           {...register("email")}
-          className="w-full"
-          error={errors.email?.message}
+          className={`w-full ${errors.email ? 'border-red-500' : ''}`}
         />
         {errors.email && (
           <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>
@@ -105,8 +108,7 @@ export function ContactForm() {
         <Textarea
           id="message"
           {...register("message")}
-          className="w-full min-h-[150px]"
-          error={errors.message?.message}
+          className={`w-full min-h-[150px] ${errors.message ? 'border-red-500' : ''}`}
         />
         {errors.message && (
           <p className="text-sm text-red-500 mt-1">{errors.message.message}</p>

@@ -23,11 +23,6 @@ jobs:
           node-version: '20.x'
           cache: 'npm'
 
-      - name: 🧹 Clean npm cache
-        run: |
-          rm -rf node_modules
-          rm -f package-lock.json
-
       - name: 📦 Install dependencies
         run: |
           npm install --no-fund
@@ -35,7 +30,6 @@ jobs:
 
       - name: 🔧 Create .env file
         run: |
-          echo "NEXT_PUBLIC_API_URL=${{ secrets.STAGING_API_URL }}" >> .env
           echo "NEXT_PUBLIC_ENVIRONMENT=staging" >> .env
           echo "DB_HOST=${{ secrets.STAGING_DB_HOST }}" >> .env
           echo "DB_USER=${{ secrets.STAGING_DB_USER }}" >> .env
@@ -49,30 +43,39 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
           script: |
             cd staging.callflows.de
             touch .maintenance
 
-      - name: 🗄️ Backup und DB Reset
+      - name: 🗄️ Backup
+        uses: appleboy/ssh-action@v1.0.3
+        continue-on-error: true
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            cd staging.callflows.de
+            timestamp=$(date +%Y%m%d_%H%M%S)
+            mkdir -p backups
+            tar -czf backups/backup-${timestamp}.tar.gz ./out
+            mysqldump -h ${{ secrets.STAGING_DB_HOST }} -u ${{ secrets.STAGING_DB_USER }} -p${{ secrets.STAGING_DB_PASS }} ${{ secrets.STAGING_DB_NAME }} > backups/db-backup-${timestamp}.sql || true
+
+      - name: 🏗️ Build
+        run: npm run build
+
+      - name: 🧹 Empty remote directory
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
           script: |
-            cd staging.callflows.de
-            timestamp=$(date +%Y%m%d_%H%M%S)
-            mkdir -p backups
-            
-            if [ -d "./out" ]; then
-              tar -czf backups/backup-${timestamp}.tar.gz ./out
-            fi
-
-            # Admin-User erstellen
-            mysql -h ${{ secrets.STAGING_DB_HOST }} -u ${{ secrets.STAGING_DB_USER }} -p${{ secrets.STAGING_DB_PASS }} ${{ secrets.STAGING_DB_NAME }} -e "INSERT IGNORE INTO users (username, password, role) VALUES ('admin', '\$2y\$10\$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');"
-
-      - name: 🏗️ Build
-        run: npm run build
+            cd staging.callflows.de/
+            rm -rf * .env
 
       - name: 📤 Deploy to Staging
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -84,9 +87,10 @@ jobs:
           server-dir: /staging.callflows.de/
           dangerous-clean-slate: true
 
-      - name: 🧹 Clear CDN Cache
+      - name: 🧹 Clean npm cache
         run: |
-          curl -X POST "${{ secrets.STAGING_CACHE_CLEAR_URL }}"
+          rm -rf node_modules
+          rm -f package-lock.json
 
       - name: 🟢 Deaktiviere Wartungsmodus
         if: always()
