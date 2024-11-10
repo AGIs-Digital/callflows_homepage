@@ -1,5 +1,6 @@
 const FtpDeploy = require('ftp-deploy');
 const ftpDeploy = new FtpDeploy();
+const { deleteSync } = require('del');
 
 const config = {
   user: process.env.FTP_USERNAME,
