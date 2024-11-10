@@ -78,16 +78,13 @@ jobs:
             rm -rf * .env
 
       - name: 📤 Deploy to Staging
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server: ${{ secrets.STAGING_FTP_SERVER }}
-          username: ${{ secrets.STAGING_FTP_USERNAME }}
-          password: ${{ secrets.STAGING_FTP_PASSWORD }}
-          local_path: './out/*'
-          remote_path: 'staging.callflows.de/'
-          sftpArgs: '-o StrictHostKeyChecking=no'
-          sftp_only: true
-          port: 22
+        env:
+          SERVER: ${{ secrets.STAGING_FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.STAGING_FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.STAGING_FTP_PASSWORD }}
+        run: |
+          npm install ftp-deploy
+          node scripts/deploy.js
 
       - name: 🧹 Clean npm cache
         run: |
