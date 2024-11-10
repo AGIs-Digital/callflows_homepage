@@ -53,3 +53,34 @@
     4. **Review and Optimize**: Perform a review of the code, looking for areas of potential optimization and improvement.
     5. **Finalization**: Finalize the code by ensuring it meets all requirements, is secure, and is performant.
     
+    ### TypeScript Best Practices
+    - Always define explicit types for all variables, parameters, and return values
+    - Use interface or type for complex data structures
+    - Implement proper type definitions for form data using Zod schemas
+    - Define strict typing for component props
+    - Use TypeScript's strict mode and avoid any type
+
+    ### Form Handling
+    - Always define form schemas with Zod including proper error messages
+    - Use proper typing for react-hook-form implementations
+    - Define explicit types for form data structures
+    - Implement proper form validation with TypeScript support
+
+    ### Component Architecture
+    - Define proper prop types for all components
+    - Use proper type definitions for hooks and their return values
+    - Implement proper error boundary typing
+    - Use proper event handler typing
+
+    ### Error Handling
+    - Define custom error types for different error scenarios
+    - Implement proper error handling with TypeScript support
+    - Use discriminated unions for error states
+    - Implement proper type guards for error checking
+
+    ### API Integration
+    - Define proper types for API responses
+    - Implement proper error handling for API calls
+    - Use proper typing for async functions
+    - Define proper request and response types
+    

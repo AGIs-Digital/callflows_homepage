@@ -29,11 +29,17 @@ jobs:
 
       - name: 🔧 Create .env file
         run: |
+          echo "NEXT_PUBLIC_APP_URL=${{ secrets.PRODUCTION_APP_URL }}" >> .env
           echo "NEXT_PUBLIC_ENVIRONMENT=production" >> .env
           echo "DB_HOST=${{ secrets.PRODUCTION_DB_HOST }}" >> .env
           echo "DB_USER=${{ secrets.PRODUCTION_DB_USER }}" >> .env
           echo "DB_PASS=${{ secrets.PRODUCTION_DB_PASS }}" >> .env
           echo "DB_NAME=${{ secrets.PRODUCTION_DB_NAME }}" >> .env
+          echo "JWT_SECRET=${{ secrets.PRODUCTION_JWT_SECRET }}" >> .env
+          echo "SMTP_HOST=${{ secrets.SMTP_HOST }}" >> .env
+          echo "SMTP_PORT=${{ secrets.SMTP_PORT }}" >> .env
+          echo "SMTP_USER=${{ secrets.SMTP_USER }}" >> .env
+          echo "SMTP_PASS=${{ secrets.SMTP_PASS }}" >> .env
 
       - name: 🚧 Aktiviere Wartungsmodus
         uses: appleboy/ssh-action@v1.0.3

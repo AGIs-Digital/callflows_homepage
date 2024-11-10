@@ -11,7 +11,7 @@ export function SiteFooter() {
           <div>
             <Link href="/" className="inline-block">
               <Image
-                src="/callflows_brand_no_claim.png"
+                src="/images/callflows_brand_no_claim.png"
                 alt="Callflows Logo"
                 width={150}
                 height={30}
