@@ -79,7 +79,7 @@ jobs:
 
       - name: 📤 Deploy to Staging
         env:
-          SERVER: ${{ secrets.STAGING_FTP_SERVER }}
+          FTP_SERVER: ${{ secrets.STAGING_FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.STAGING_FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.STAGING_FTP_PASSWORD }}
         run: |

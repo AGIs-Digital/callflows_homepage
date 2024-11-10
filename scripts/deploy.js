@@ -1,6 +1,5 @@
 const FtpDeploy = require('ftp-deploy');
 const ftpDeploy = new FtpDeploy();
-const { deleteSync } = require('del');
 
 const config = {
   user: process.env.FTP_USERNAME,
@@ -24,19 +23,13 @@ const config = {
 };
 
 console.log('🚀 Starte Deployment...');
-
-ftpDeploy.on('uploading', function(data) {
-  console.log(`📦 Upload: ${data.filename} (${data.transferredFileCount}/${data.totalFilesCount})`);
-});
-
-ftpDeploy.on('uploaded', function(data) {
-  console.log(`✅ Fertig: ${data.filename}`);
-});
-
-ftpDeploy.on('upload-error', function(data) {
-  console.error(`❌ Fehler beim Upload von ${data.filename}: ${data.err}`);
-});
+console.log('Server:', process.env.FTP_SERVER);
+console.log('Username:', process.env.FTP_USERNAME);
+console.log('Using SFTP:', config.sftp);
 
 ftpDeploy.deploy(config)
   .then(() => console.log('✨ Deployment erfolgreich abgeschlossen'))
-  .catch(err => console.error('🚨 Deployment fehlgeschlagen:', err));
+  .catch(err => {
+    console.error('🚨 Deployment fehlgeschlagen:', err);
+    process.exit(1);
+  });

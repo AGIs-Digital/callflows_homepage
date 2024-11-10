@@ -78,7 +78,7 @@ jobs:
 
       - name: 📤 Deploy to Production
         env:
-          SERVER: ${{ secrets.PRODUCTION_FTP_SERVER }}
+          FTP_SERVER: ${{ secrets.PRODUCTION_FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.PRODUCTION_FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.PRODUCTION_FTP_PASSWORD }}
         run: |
