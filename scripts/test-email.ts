@@ -1,6 +1,7 @@
-const nodemailer = require('nodemailer');
-const dotenv = require('dotenv');
-const path = require('path');
+import dotenv from 'dotenv';
+import path from 'path';
+import nodemailer from 'nodemailer';
+import { emailTemplate } from '../lib/email';
 
 // Lade .env.local aus dem Root-Verzeichnis
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
@@ -39,11 +40,20 @@ async function testEmail() {
       from: '"Callflows" <noreply@callflows.de>',
       to: "timo.goltz@gmail.com",
       subject: "Callflows Test E-Mail",
-      html: `
-        <h1>Test E-Mail von Callflows</h1>
-        <p>Wenn Sie diese E-Mail sehen, funktioniert das E-Mail-System korrekt.</p>
-        <p>Zeitstempel: ${new Date().toLocaleString()}</p>
-      `
+      html: emailTemplate(`
+        <div class="header">
+          <h1>Test E-Mail von Callflows</h1>
+        </div>
+        <div class="content">
+          <p>Wenn Sie diese E-Mail sehen, funktioniert das E-Mail-System korrekt.</p>
+          <p>Zeitstempel: ${new Date().toLocaleString()}</p>
+          <center>
+            <a href="${process.env.NEXT_PUBLIC_APP_URL}" class="button">
+              Zur Website
+            </a>
+          </center>
+        </div>
+      `)
     });
 
     console.log("✅ E-Mail erfolgreich gesendet!");
