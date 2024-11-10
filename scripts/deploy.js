@@ -29,13 +29,8 @@ console.log('Using SFTP:', config.sftp);
 let failedUploads = [];
 
 // Event-Listener für Upload-Fortschritt
-ftpDeploy.on('uploading', function(data) {
-  console.log('📤 Lade hoch:', data.filename);
-  console.log(`   ${data.transferredFileCount}/${data.totalFilesCount} Dateien`);
-});
-
 ftpDeploy.on('uploaded', function(data) {
-  console.log('✅ Hochgeladen:', data.filename);
+  console.log('✅ Hochgeladen:', data.filename + ' (' + data.transferredFileCount + ' / ' + data.totalFilesCount + ' Dateien)');
 });
 
 ftpDeploy.on('upload-error', function(data) {
