@@ -15,7 +15,6 @@ const config = {
     'node_modules/**',
     'tests/**',
     '*.map',
-    '.env*',
     '.next/**'
   ],
   sftp: true,
