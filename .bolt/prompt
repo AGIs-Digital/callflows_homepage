@@ -4,7 +4,7 @@ When using client-side hooks (useState and useEffect) in a component that's bein
 
 Do not write code that will trigger this error: "Warning: Extra attributes from the server: %s%s""class,style"
 
-By default, this template supports JSX syntax with Tailwind CSS classes, the shadcn/ui library, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
+By default, this template supports JSX syntax with Tailwind CSS classes, the shadcn/ui library, the magic/ui library, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
 
 Use icons from lucide-react for logos.
 
