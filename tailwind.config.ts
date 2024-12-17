@@ -62,6 +62,38 @@ const config: Config = {
       letterSpacing: {
         tighter: '-0.04em',
       },
+      transitionTimingFunction: {
+        'bounce-ease': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' }
+        },
+        pulse: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' }
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' }
+        },
+        slideIn: {
+          '0%': { transform: 'translateX(-10px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' }
+        },
+        scaleIn: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' }
+        }
+      },
+      animation: {
+        float: 'float 3s ease-in-out infinite',
+        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        slideUp: 'slideUp 0.3s ease-out forwards',
+        slideIn: 'slideIn 0.3s ease-out forwards',
+        scaleIn: 'scaleIn 0.3s ease-out forwards'
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

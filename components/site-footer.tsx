@@ -13,14 +13,14 @@ export function SiteFooter() {
               <Image
                 src="/images/callflows_brand_no_claim.png"
                 alt="Callflows Logo"
-                width={150}
+                width={200}
                 height={30}
                 priority
                 className="dark:invert"
               />
             </Link>
             <p className="mt-4 text-muted-foreground text-base">
-              Callflows ist Ihre Lösung für KI-gestützte Outbound-Kommunikation. Einfach. Automatisch. Erfolgreich.
+              Einfach. Automatisch. Erfolgreich.
             </p>
           </div>
           

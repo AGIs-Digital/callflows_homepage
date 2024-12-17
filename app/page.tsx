@@ -11,9 +11,15 @@ export default function Home() {
     <main>
       <SiteHeader />
       <HeroSection />
-      <FeaturesSection />
-      <TestimonialsSection />
-      <PricingSection />
+      <div id="features">
+        <FeaturesSection />
+      </div>
+      <div id="testimonials">
+        <TestimonialsSection />
+      </div>
+      <div id="pricing">
+        <PricingSection />
+      </div>
       <CTASection />
       <SiteFooter />
     </main>

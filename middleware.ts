@@ -15,7 +15,7 @@ export function middleware(request: NextRequest) {
     
     if (isVoiceRoute) {
       // Füge JWT als Query-Parameter hinzu
-      const voiceUrl = new URL("https://voice.callflows.de");
+      const voiceUrl = new URL("https://login.callflows.de");
       voiceUrl.searchParams.set("token", token.value);
       return NextResponse.redirect(voiceUrl);
     }

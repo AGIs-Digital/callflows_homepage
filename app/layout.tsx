@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Callflows - KI-gestützte Outbound Calls',
-  description: 'Automatisieren Sie Ihre Outbound-Kommunikation mit unserem intelligenten Voice Agent.',
+  title: 'Callflows - KI-gestützte Voice Agents',
+  description: 'Automatisieren Sie Ihre Kommunikation mit unserem intelligenten Voice Agents.',
 };
 
 export default function RootLayout({

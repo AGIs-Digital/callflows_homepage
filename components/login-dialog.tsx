@@ -60,7 +60,7 @@ export function LoginDialog() {
         description: "Sie werden weitergeleitet...",
       });
 
-      router.push("https://voice.callflows.de");
+      router.push("https://login.callflows.de");
     } catch (error) {
       toast({
         title: "Fehler",

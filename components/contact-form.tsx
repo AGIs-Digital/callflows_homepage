@@ -40,14 +40,25 @@ export function ContactForm() {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      // Here you would typically send the data to your API
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       toast({
         title: "Nachricht gesendet",
         description: "Wir werden uns in Kürze bei Ihnen melden.",
       });
       reset();
     } catch (error) {
+      console.error('Contact form error:', error);
       toast({
         title: "Fehler",
         description: "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten.",

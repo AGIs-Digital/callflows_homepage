@@ -4,9 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { ModeToggle } from "@/components/mode-toggle";
 import { ContactDialog } from "@/components/contact-dialog";
-import { LoginDialog } from "@/components/login-dialog";
 
 export function SiteHeader() {
+  const handleLoginClick = () => {
+    window.location.href = "https://login.callflows.de/";
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
       <div className="container flex h-20 items-center justify-between">
@@ -22,27 +25,32 @@ export function SiteHeader() {
         </Link>
         
         <nav className="flex items-center space-x-8">
-          <Link 
-            href="/produkte" 
-            className="text-base font-medium text-foreground hover:text-foreground/80"
+          <a 
+            href="#features" 
+            className="nav-link"
           >
-            Produkte
-          </Link>
-          <Link 
-            href="/losungen" 
-            className="text-base font-medium text-foreground hover:text-foreground/80"
+            Features
+          </a>
+          <a 
+            href="#testimonials" 
+            className="nav-link"
           >
-            Lösungen
-          </Link>
-          <Link 
-            href="/preise" 
-            className="text-base font-medium text-foreground hover:text-foreground/80"
+            Referenzen
+          </a>
+          <a 
+            href="#pricing" 
+            className="nav-link"
           >
             Preise
-          </Link>
+          </a>
           <ContactDialog />
           <ModeToggle />
-          <LoginDialog />
+          <button
+            onClick={handleLoginClick}
+            className="shiny-button"
+          >
+            Login
+          </button>
         </nav>
       </div>
     </header>
