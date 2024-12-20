@@ -7,8 +7,7 @@ export const pricingPlans: PricingPlan[] = [
     price: 99,
     yearlyPrice: 89,
     features: [
-      "Basis KI-Voice Agent",
-      "24/7 Verfügbarkeit",
+      "100min/Monat inbegriffen",
       "Automatische Anrufannahme",
       "Standard Reporting",
       "E-Mail Support",
@@ -16,7 +15,7 @@ export const pricingPlans: PricingPlan[] = [
     ],
     highlights: [
       "Perfekt für kleine Teams",
-      "Schneller ROI",
+      "Entlastung Ihrer Mitarbeiter",
       "Schnelle Integration"
     ],
     cta: "Individuelles Angebot",
@@ -24,38 +23,35 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     name: "Outbound Voice Agent",
-    subtitle: "Professional",
-    price: 199,
-    yearlyPrice: 179,
+    subtitle: "Sales",
+    price: 249,
+    yearlyPrice: 229,
     features: [
-      "Erweiterte KI-Funktionen",
+      "100min/Monat inbegriffen",
       "Intelligente Kampagnensteuerung",
-      "A/B Testing",
-      "Erweiterte Analytics",
-      "Prioritäts-Support",
+      "Erweiterte KI-Funktionen",
       "Custom Integrationen",
       "Performance-Tracking"
     ],
     highlights: [
       "Ideal für wachsende Unternehmen",
       "Maximale Flexibilität",
-      "Premium Support"
+      "Mehr Kundentermine"
     ],
     cta: "Individuelles Angebot",
     popular: false
   },
   {
-    name: "Complete Voice Suite",
+    name: "Individuelle Lösung",
     subtitle: "Enterprise",
-    price: 299,
-    yearlyPrice: 269,
+    price: 599,
+    yearlyPrice: 539,
     features: [
       "Vollständig anpassbare Lösung",
       "Inbound & Outbound",
-      "KI-Training auf Ihre Bedürfnisse",
       "Dedizierter Account Manager",
-      "24/7 Premium Support",
-      "SLA-Garantien",
+      "Premium Support",
+      "Voice Agent Teams",
       "Custom Development",
       "On-Premise Option"
     ],

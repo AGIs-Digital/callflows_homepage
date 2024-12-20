@@ -5,7 +5,7 @@ const testimonials = [
     quote: "Mit der Enterprise Suite konnten wir unsere gesamte Kommunikation revolutionieren. Die KI-gestützte Lösung übertraf alle Erwartungen.",
     author: "Dr. Thomas Müller",
     role: "CTO, Innovation Labs GmbH",
-    metric: "85%",
+    metric: "65%",
     metricLabel: "Kosteneinsparung"
   },
   {
