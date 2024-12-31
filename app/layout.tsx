@@ -5,7 +5,6 @@ import { CookieBanner } from '@/components/cookie-banner';
 import { FeedbackButton } from '@/components/feedback/feedback-button';
 import { Analytics } from '@/components/analytics';
 import { ErrorBoundary } from '@/components/error-boundary';
-import { FeedbackProvider } from '@/components/feedback/feedback-provider';
 
 export const metadata: Metadata = {
   title: 'Callflows - KI-gestützte Voice Agents',
@@ -45,12 +44,10 @@ export default function RootLayout({
             enableSystem={false}
             disableTransitionOnChange
           >
-            <FeedbackProvider>
-              <FeedbackButton />
-              <CookieBanner />
-              {children}
-              <Analytics />
-            </FeedbackProvider>
+            <FeedbackButton />
+            <CookieBanner />
+            {children}
+            <Analytics />
           </ThemeProvider>
         </ErrorBoundary>
       </body>
