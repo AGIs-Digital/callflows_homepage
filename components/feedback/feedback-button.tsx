@@ -7,17 +7,15 @@ import { useFeedbackStore } from "@/lib/store/feedback";
 const [, useStore] = useFeedbackStore;
 
 export function FeedbackButton() {
-  const openDialog = useStore((state) => state.openDialog);
-
   return (
-    <Button
-      onClick={openDialog}
-      variant="outline"
-      size="icon"
-      className="fixed bottom-4 right-4 rounded-full h-12 w-12 shadow-lg"
+    <button
+      className="fixed bottom-4 right-4 p-3 bg-primary/80 text-white rounded-full 
+                 shadow-lg backdrop-blur-sm opacity-50 cursor-not-allowed"
+      disabled={true}
+      aria-label="KI-Assistent (coming soon)"
     >
-      <MessageSquare className="h-5 w-5" />
-      <span className="sr-only">Feedback geben</span>
-    </Button>
+      <MessageSquare className="w-6 h-6" />
+      <span className="sr-only">KI-Assistent wird bald verfügbar</span>
+    </button>
   );
 }
