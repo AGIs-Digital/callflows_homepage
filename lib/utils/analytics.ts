@@ -1,3 +1,15 @@
+// Declare global gtag function
+declare global {
+  interface Window {
+    gtag: (
+      command: 'event',
+      eventName: string,
+      eventParameters?: Record<string, any>
+    ) => void;
+    dataLayer: any[];
+  }
+}
+
 export function trackEvent(eventName: string, properties?: Record<string, any>) {
   if (typeof window === 'undefined') return;
 
