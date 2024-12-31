@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: `"Callflows Website" <${process.env.SMTP_USER}>`,
       to: "kontakt@callflows.de",
-      subject: "Neue Kontaktanfrage von der Website",
+      subject: "Neue Kontaktanfrage",
       html: emailTemplate(`
         <div class="header">
           <h1>Neue Kontaktanfrage</h1>
