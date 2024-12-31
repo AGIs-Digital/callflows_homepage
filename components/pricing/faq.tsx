@@ -12,7 +12,7 @@ export function PricingFAQ() {
   return (
     <div className="py-24 border-t">
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold mb-4">
+        <h2 className="text-3xl font-bold mb-4 text-primary dark:text-white">
           Häufig gestellte Fragen
         </h2>
         <p className="text-muted-foreground">

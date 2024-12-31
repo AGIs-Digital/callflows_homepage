@@ -1,6 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { ThemeProvider } from '@/components/theme-provider';
+import { CookieBanner } from '@/components/cookie-banner';
+import { FeedbackButton } from '@/components/feedback/feedback-button';
+import { Analytics } from '@/components/analytics';
+import { ErrorBoundary } from '@/components/error-boundary';
+import { FeedbackProvider } from '@/components/feedback/feedback-provider';
 
 export const metadata: Metadata = {
   title: 'Callflows - KI-gestützte Voice Agents',
@@ -33,14 +38,21 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <ErrorBoundary>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            <FeedbackProvider>
+              <FeedbackButton />
+              <CookieBanner />
+              {children}
+              <Analytics />
+            </FeedbackProvider>
+          </ThemeProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );

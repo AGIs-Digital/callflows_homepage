@@ -78,6 +78,8 @@
     --muted-foreground: 0 0% 45.1%;
     --accent: 43 100% 50%;
     --accent-foreground: 0 0% 9%;
+    --section-light: 189 56% 97%;
+    --section-dark: 214 100% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 214.3 31.8% 91.4%;
@@ -94,6 +96,8 @@
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
+    --section-light: 0 0% 5%;
+    --section-dark: 0 0% 7%;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
@@ -128,12 +132,64 @@
   }
 }
 
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-in {
+  animation: animate-in 0.7s ease-out forwards;
+}
+
+@keyframes animate-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0); }
+}
+
+@keyframes border-beam {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    @apply antialiased;
   }
 }
 
@@ -150,6 +206,8 @@
   .nav-link {
     @apply relative text-base font-medium text-foreground 
            transition-all duration-200 hover:text-primary;
+    @apply focus-visible:outline-none focus-visible:ring-2 
+           focus-visible:ring-primary focus-visible:ring-offset-2;
   }
   
   .nav-link::after {
@@ -164,7 +222,9 @@
   .card-hover {
     @apply transition-all duration-300 ease-out
            hover:translate-y-[-4px] hover:shadow-lg
-           active:translate-y-[-2px];
+           active:translate-y-[-2px]
+           focus-visible:outline-none focus-visible:ring-2 
+           focus-visible:ring-primary focus-visible:ring-offset-2;
   }
   
   .section-animate {
@@ -181,5 +241,58 @@
   
   .scale-animation {
     @apply animate-scaleIn;
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-fadeOut {
+    animation: fadeOut 2s ease-out forwards;
+  }
+  
+  .animate-border-beam {
+    animation: border-beam 3s linear infinite;
+  }
+
+  @keyframes textSpacing {
+    0% { 
+      letter-spacing: -0.1em;
+      opacity: 0;
+      transform: translateX(-1rem);
+    }
+    100% { 
+      letter-spacing: normal;
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-text-spacing {
+    animation: textSpacing 0.5s ease-out forwards;
+  }
+
+  /* Hero Section Responsive Styles */
+  .hero-widget-container {
+    @apply relative lg:static
+           w-full max-w-[400px] mx-auto lg:w-auto
+           h-[500px] md:h-[600px]
+           mt-8 lg:mt-0;
+  }
+
+  .hero-widget-frame {
+    @apply absolute lg:relative
+           right-0 top-1/2 -translate-y-1/2
+           w-full h-full
+           bg-transparent
+           z-20;
+  }
+
+  .hero-widget-iframe {
+    @apply w-full h-full
+           border-none bg-transparent
+           rounded-lg shadow-lg
+           transition-transform duration-300
+           hover:scale-[1.02];
   }
 }

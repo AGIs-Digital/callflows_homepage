@@ -1,5 +1,46 @@
 # Callflows - KI-gestützte Voice Agents
 
+## 📝 Dokumentation
+
+### Architektur
+
+Das Projekt verwendet eine moderne Next.js-Architektur mit folgenden Hauptkomponenten:
+
+- **Frontend**: Next.js 14 mit React Server Components
+- **UI**: Tailwind CSS + Shadcn UI für konsistentes Design
+- **State Management**: React Hooks + Context
+- **API**: REST-API mit Next.js API Routes
+- **Datenbank**: MySQL mit Verbindung über mysql2
+
+### Projektstruktur
+
+```
+├── app/                    # Next.js App Router
+│   ├── api/               # API Routes
+│   ├── (routes)/          # Page Components
+├── components/            # React Components
+│   ├── ui/               # UI Components
+│   ├── legal/            # Legal Components
+├── lib/                  # Utilities
+│   ├── api/             # API Client
+│   ├── types/           # TypeScript Types
+├── public/              # Static Assets
+```
+
+### Sicherheitsfeatures
+
+- Error Boundary für Fehlerbehandlung
+- Zentralisierter API Client
+- Typisierte API Responses
+- Sicheres Error Handling
+
+### Best Practices
+
+- Server Components wo möglich
+- Optimierte Bildverarbeitung
+- Konsistente Fehlerbehandlung
+- Zentrale Typendefinitionen
+
 Eine moderne Next.js-Webanwendung für KI-gestützte Kommunikationslösungen.
 
 ## 🚀 Features

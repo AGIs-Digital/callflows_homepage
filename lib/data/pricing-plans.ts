@@ -3,18 +3,18 @@ import { PricingPlan } from "@/lib/types/pricing";
 export const pricingPlans: PricingPlan[] = [
   {
     name: "Inbound Voice Agent",
-    subtitle: "Starter",
+    subtitle: "Rezeption & Terminbuchung",
     price: 99,
     yearlyPrice: 89,
     features: [
       "100min/Monat inbegriffen",
       "Automatische Anrufannahme",
-      "Standard Reporting",
-      "E-Mail Support",
-      "99.9% Uptime-Garantie"
+      "Für alle eingehenden Anrufe",
+      "Leichte Integration",
+      "Einfache KI-Funktionen"
     ],
     highlights: [
-      "Perfekt für kleine Teams",
+      "Perfekt für kleine Unternehmen",
       "Entlastung Ihrer Mitarbeiter",
       "Schnelle Integration"
     ],
@@ -23,14 +23,14 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     name: "Outbound Voice Agent",
-    subtitle: "Sales",
-    price: 249,
-    yearlyPrice: 229,
+    subtitle: "Sales & Marketing",
+    price: 219,
+    yearlyPrice: 199,
     features: [
       "100min/Monat inbegriffen",
       "Intelligente Kampagnensteuerung",
+      "Für alle ausgehenden Anrufe",
       "Erweiterte KI-Funktionen",
-      "Custom Integrationen",
       "Performance-Tracking"
     ],
     highlights: [
@@ -44,10 +44,10 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: "Individuelle Lösung",
     subtitle: "Enterprise",
-    price: 599,
-    yearlyPrice: 539,
+    price: 299,
+    yearlyPrice: 269,
     features: [
-      "Vollständig anpassbare Lösung",
+      "200min/Monat inbegriffen",
       "Inbound & Outbound",
       "Dedizierter Account Manager",
       "Premium Support",
@@ -58,7 +58,7 @@ export const pricingPlans: PricingPlan[] = [
     highlights: [
       "Unbegrenzte Skalierbarkeit",
       "Höchste Sicherheit",
-      "Enterprise-Support"
+      "Individuelle Lösung"
     ],
     cta: "Individuelles Angebot",
     popular: true

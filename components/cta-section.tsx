@@ -1,9 +1,22 @@
 "use client";
 
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export function CTASection() {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("on", {
+        action: "bookingSuccessful",
+        callback: (e) => {
+          console.log("Booking successful:", e.detail);
+        },
+      });
+    })();
+  }, []);
+
   return (
     <section className="bg-primary py-24">
       <div className="container text-center">
@@ -15,10 +28,15 @@ export function CTASection() {
           Kommunikation. Unser Team steht Ihnen bei allen Fragen zur Seite.
         </p>
         <div className="flex gap-4 justify-center">
-          <Button className="bg-accent text-gray-900 hover:bg-accent/90">
+          <button
+            className="bg-accent text-gray-900 px-8 py-4 rounded-lg font-medium
+                     flex items-center hover:bg-accent/90 transition-colors group"
+            data-cal-link="callflows/25min"
+            data-cal-config='{"layout":"popup"}'
+          >
             Beratungstermin buchen
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </button>
         </div>
         <p className="mt-4 text-sm text-white/80">
           Keine Kreditkarte erforderlich • 14 Tage kostenlos testen • Jederzeit kündbar
