@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 
 const features = [
   {
-    title: "KI Voice Agent Dashboard",
-    description: "Übersichtliches Dashboard für alle Ihre Kampagnen und Analysen",
+    title: "Agent Dashboard",
+    description: "Übersichtliches Dashboard für alle Agents und Analysen",
     image: "/images/dashboard-preview.png",
     hotspots: [
       { x: 20, y: 30, label: "Echtzeit-Statistiken" },
@@ -21,25 +21,25 @@ const features = [
     image: "/images/campaign-preview.png",
     hotspots: [
       { x: 30, y: 40, label: "Kampagnen-Editor" },
-      { x: 80, y: 20, label: "Zielgruppen-Definition" }
+      { x: 70, y: 20, label: "Zielgruppen" }
     ]
   },
   {
     title: "Analytics & Reporting",
-    description: "Detaillierte Einblicke in Ihre Calls",
+    description: "Detaillierte Einblicke in jeden Ihrer Calls",
     image: "/images/call-details.png",
     hotspots: [
-      { x: 25, y: 50, label: "Conversion-Tracking" },
-      { x: 75, y: 30, label: "ROI-Analyse" }
+      { x: 30, y: 50, label: "Transcripts" },
+      { x: 75, y: 30, label: "Conversion-Tracking" }
     ]
   },
   {
     title: "Voice Agent Training",
     description: "Trainieren Sie Ihre KI-Agenten für optimale Ergebnisse",
-    image: "/images/call-history.png",
+    image: "/images/call-infos.png",
     hotspots: [
-      { x: 40, y: 20, label: "Gesprächsvorlagen" },
-      { x: 60, y: 70, label: "KI-Training" }
+      { x: 40, y: 20, label: "Informationen extrahieren" },
+      { x: 60, y: 70, label: "Gesprächsvorlagen" }
     ]
   }
 ];
