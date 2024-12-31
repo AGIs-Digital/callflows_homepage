@@ -9,7 +9,7 @@ export function CalButton() {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();
-      cal.ns["callflows"].on({
+      cal("on", {
         action: "bookingSuccessful",
         callback: (e) => {
           console.log("Booking successful:", e.detail);
