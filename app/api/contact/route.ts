@@ -1,65 +1,64 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { emailTemplate } from "@/lib/email";
+import { contactFormSchema } from "@/components/contact-form";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: true, // Use SSL/TLS
+  port: parseInt(process.env.SMTP_PORT || '587'),
+  secure: process.env.SMTP_SECURE === 'true',
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
 });
 
-export async function POST(req: Request) {
+export async function POST(request: Request) {
   try {
-    const { name, email, phone, message } = await req.json();
+    const data = await request.json();
+    
+    // Validiere die Eingabedaten
+    const validatedData = contactFormSchema.parse(data);
+    
+    const sourceText = validatedData.source 
+      ? `\nQuelle: ${validatedData.source}` 
+      : '';
 
-    // Send email using the template
-    await transporter.sendMail({
-      from: `"Callflows Website" <${process.env.SMTP_USER}>`,
-      to: "kontakt@callflows.de",
-      subject: "Neue Kontaktanfrage",
-      html: emailTemplate(`
-        <div class="header">
-          <h1>Neue Kontaktanfrage</h1>
-        </div>
-        <div class="content">
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>E-Mail:</strong> ${email}</p>
-          ${phone ? `<p><strong>Telefon:</strong> ${phone}</p>` : ''}
-          <p><strong>Nachricht:</strong></p>
-          <p style="white-space: pre-wrap;">${message}</p>
-        </div>
-      `)
-    });
+    const mailOptions = {
+      from: process.env.SMTP_FROM,
+      to: process.env.CONTACT_EMAIL,
+      subject: `Neue Kontaktanfrage von ${validatedData.name}`,
+      text: `
+Name: ${validatedData.name}
+E-Mail: ${validatedData.email}
+Telefon: ${validatedData.phone || 'Nicht angegeben'}
+Nachricht: ${validatedData.message}${sourceText}
+      `,
+      html: `
+<h2>Neue Kontaktanfrage</h2>
+<p><strong>Name:</strong> ${validatedData.name}</p>
+<p><strong>E-Mail:</strong> ${validatedData.email}</p>
+<p><strong>Telefon:</strong> ${validatedData.phone || 'Nicht angegeben'}</p>
+<p><strong>Nachricht:</strong></p>
+<p>${validatedData.message.replace(/\n/g, '<br>')}</p>
+${sourceText ? `<p><strong>Quelle:</strong> ${validatedData.source}</p>` : ''}
+      `,
+    };
 
-    // Send confirmation email to the user
-    await transporter.sendMail({
-      from: `"Callflows" <${process.env.SMTP_USER}>`,
-      to: email,
-      subject: "Ihre Anfrage bei Callflows",
-      html: emailTemplate(`
-        <div class="header">
-          <h1>Vielen Dank für Ihre Anfrage</h1>
-        </div>
-        <div class="content">
-          <p>Sehr geehrte(r) ${name},</p>
-          <p>vielen Dank für Ihre Kontaktanfrage. Wir haben Ihre Nachricht erhalten und werden uns schnellstmöglich bei Ihnen melden.</p>
-          <p>Mit freundlichen Grüßen<br>Ihr Callflows Team</p>
-        </div>
-      `)
-    });
+    await transporter.sendMail(mailOptions);
 
-    return NextResponse.json(
-      { message: "Email sent successfully" },
-      { status: 200 }
-    );
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Email sending error:", error);
+    console.error('Contact form error:', error);
+    
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { error: error.message },
+        { status: 400 }
+      );
+    }
+    
     return NextResponse.json(
-      { error: "Failed to send email" },
+      { error: 'Ein unerwarteter Fehler ist aufgetreten' },
       { status: 500 }
     );
   }
