@@ -71,12 +71,6 @@ jobs:
       - name: 🏗️ Build
         run: npm run build
 
-      - name: 📦 Prepare deployment
-        run: |
-          cp -r .next/* out/
-          cp package.json out/
-          cp next.config.js out/
-
       - name: 🧹 Empty remote directory
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -96,7 +90,6 @@ jobs:
         run: |
           npm install ftp-deploy
           node scripts/deploy.js
-
       - name: 🧹 Clean npm cache
         run: |
           rm -rf node_modules
@@ -112,3 +105,4 @@ jobs:
           script: |
             cd callflows.de/
             rm -f .maintenance
+
