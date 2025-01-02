@@ -6,7 +6,7 @@ const config = {
   password: process.env.FTP_PASSWORD, 
   host: process.env.FTP_SERVER,
   port: 22,
-  localRoot: __dirname + '/../.next',
+  localRoot: __dirname + '/../out',
   remoteRoot: '/',
   include: ['*', '**/*'],
   exclude: [
@@ -14,7 +14,8 @@ const config = {
     '.github/**',
     'node_modules/**',
     'tests/**',
-    '*.map'
+    '*.map',
+    '.next/**'
   ],
   sftp: true,
   forcePasv: true
