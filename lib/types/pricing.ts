@@ -8,7 +8,7 @@ export interface PricingPlan {
   price: number;
   yearlyPrice: number;
   features: string[];
-  highlights?: string[];
+  highlights: string[];
   cta: string;
   popular: boolean;
 }

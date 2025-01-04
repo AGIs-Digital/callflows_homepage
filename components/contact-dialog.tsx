@@ -1,13 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ContactForm } from "@/components/contact-form";
 
 export function ContactDialog() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-      <button className="bg-white hover:bg-white/90 text-gray-900 px-8 py-4 rounded-lg font-medium">
+        <button className="bg-white hover:bg-white/90 text-gray-900 px-8 py-4 rounded-lg font-medium">
           Kontakt aufnehmen
         </button>
       </DialogTrigger>
@@ -17,7 +20,7 @@ export function ContactDialog() {
             Kontaktieren Sie uns
           </DialogTitle>
         </DialogHeader>
-        <ContactForm />
+        <ContactForm isOpen={isOpen} onOpenChange={setIsOpen} />
       </DialogContent>
     </Dialog>
   );

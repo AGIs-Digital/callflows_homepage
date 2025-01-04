@@ -6,9 +6,12 @@ const config = {
   password: process.env.FTP_PASSWORD, 
   host: process.env.FTP_SERVER,
   port: 22,
-  localRoot: __dirname + '/../out',
+  localRoot: __dirname + '/../',
   remoteRoot: '/',
-  include: ['*', '**/*'],
+  include: [
+    '.env',
+    'out/**',
+  ],
   exclude: [
     '.git/**',
     '.github/**',

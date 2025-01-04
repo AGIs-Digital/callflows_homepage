@@ -68,9 +68,9 @@ export function PricingCard({ plan, yearly = false }: PricingCardProps) {
           <DialogHeader>
             <DialogTitle>Individuelles Angebot für {plan.name}</DialogTitle>
           </DialogHeader>
-            <ContactForm isOpen={true} onOpenChange={() => {}} source={plan.type} />
-          </DialogContent>
-        </Dialog>
-      </Card>
+          <ContactForm source={plan.type} isOpen={true} onOpenChange={() => {}} />
+        </DialogContent>
+      </Dialog>
+    </Card>
   );
 } 
