@@ -3,11 +3,12 @@ import { LucideIcon } from "lucide-react";
 
 export interface PricingPlan {
   name: string;
+  type: 'inbound' | 'outbound' | 'enterprise';
   subtitle: string;
   price: number;
   yearlyPrice: number;
   features: string[];
-  highlights: string[];
+  highlights?: string[];
   cta: string;
   popular: boolean;
 }

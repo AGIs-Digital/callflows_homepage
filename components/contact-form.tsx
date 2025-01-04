@@ -3,7 +3,6 @@
 import { useState, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,38 +14,27 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
 
 interface ContactFormProps {
-  isOpen?: boolean;
-  onOpenChange?: (open: boolean) => void;
-  source?: string;
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
+  source?: 'inbound' | 'outbound' | 'enterprise' | 'contact';
 }
-
-export const contactFormSchema = z.object({
-  name: z.string().min(2, "Name muss mindestens 2 Zeichen lang sein"),
-  email: z.string().email("Ungültige E-Mail-Adresse"),
-  phone: z.string().optional(),
-  message: z.string().min(10, "Nachricht muss mindestens 10 Zeichen lang sein"),
-  source: z.string().optional()
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export function ContactForm({ isOpen, onOpenChange, source = "contact" }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const { toast } = useToast();
   
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isValid },
-  } = useForm<ContactFormData>({
+  const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-    mode: "onChange",
     defaultValues: {
-      source
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      source: source || 'contact'
     }
   });
 
@@ -76,7 +64,7 @@ export function ContactForm({ isOpen, onOpenChange, source = "contact" }: Contac
         duration: 5000,
       });
       
-      reset();
+      form.reset();
       if (onOpenChange) {
         setTimeout(() => onOpenChange(false), 2000);
       }
@@ -91,10 +79,10 @@ export function ContactForm({ isOpen, onOpenChange, source = "contact" }: Contac
     } finally {
       setIsSubmitting(false);
     }
-  }, [toast, reset, onOpenChange]);
+  }, [toast, form.reset, onOpenChange]);
 
   const formContent = (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 relative">
+    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 relative">
       {success && (
         <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center rounded-lg">
           <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
@@ -120,11 +108,11 @@ export function ContactForm({ isOpen, onOpenChange, source = "contact" }: Contac
         </label>
         <Input
           id="name"
-          {...register("name")}
-          className={`w-full ${errors.name ? 'border-red-500' : ''}`}
+          {...form.register("name")}
+          className={`w-full ${form.formState.errors.name ? 'border-red-500' : ''}`}
         />
-        {errors.name && (
-          <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>
+        {form.formState.errors.name && (
+          <p className="text-sm text-red-500 mt-1">{form.formState.errors.name.message}</p>
         )}
       </div>
 
@@ -135,11 +123,11 @@ export function ContactForm({ isOpen, onOpenChange, source = "contact" }: Contac
         <Input
           id="email"
           type="email"
-          {...register("email")}
-          className={`w-full ${errors.email ? 'border-red-500' : ''}`}
+          {...form.register("email")}
+          className={`w-full ${form.formState.errors.email ? 'border-red-500' : ''}`}
         />
-        {errors.email && (
-          <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>
+        {form.formState.errors.email && (
+          <p className="text-sm text-red-500 mt-1">{form.formState.errors.email.message}</p>
         )}
       </div>
 
@@ -150,7 +138,7 @@ export function ContactForm({ isOpen, onOpenChange, source = "contact" }: Contac
         <Input
           id="phone"
           type="tel"
-          {...register("phone")}
+          {...form.register("phone")}
           className="w-full"
         />
       </div>
@@ -161,20 +149,20 @@ export function ContactForm({ isOpen, onOpenChange, source = "contact" }: Contac
         </label>
         <Textarea
           id="message"
-          {...register("message")}
-          className={`w-full min-h-[150px] ${errors.message ? 'border-red-500' : ''}`}
+          {...form.register("message")}
+          className={`w-full min-h-[150px] ${form.formState.errors.message ? 'border-red-500' : ''}`}
         />
-        {errors.message && (
-          <p className="text-sm text-red-500 mt-1">{errors.message.message}</p>
+        {form.formState.errors.message && (
+          <p className="text-sm text-red-500 mt-1">{form.formState.errors.message.message}</p>
         )}
       </div>
 
-      <input type="hidden" {...register("source")} />
+      <input type="hidden" {...form.register("source")} />
 
       <Button
         type="submit"
         className="w-full bg-accent hover:bg-accent/90 text-gray-900"
-        disabled={isSubmitting || !isValid}
+        disabled={isSubmitting || !form.formState.isValid}
       >
         {isSubmitting ? <LoadingSpinner /> : "Nachricht senden"}
       </Button>

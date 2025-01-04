@@ -3,6 +3,7 @@ import { PricingPlan } from "@/lib/types/pricing";
 export const pricingPlans: PricingPlan[] = [
   {
     name: "Inbound Voice Agent",
+    type: "inbound",
     subtitle: "Rezeption & Terminbuchung",
     price: 99,
     yearlyPrice: 89,
@@ -23,6 +24,7 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     name: "Outbound Voice Agent",
+    type: "outbound",
     subtitle: "Sales & Marketing",
     price: 219,
     yearlyPrice: 199,
@@ -43,6 +45,7 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     name: "Individuelle Lösung",
+    type: "enterprise",
     subtitle: "Enterprise",
     price: 299,
     yearlyPrice: 269,

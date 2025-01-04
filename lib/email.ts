@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 
-const transporter = nodemailer.createTransport({
+export const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),
   secure: false,
@@ -9,12 +9,11 @@ const transporter = nodemailer.createTransport({
     pass: process.env.SMTP_PASS,
   },
   tls: {
-    ciphers: 'SSLv3'
+    rejectUnauthorized: false
   }
 });
 
 export const emailTemplate = (content: string): string => {
-  // Basis-URL für Assets definieren
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://callflows.de';
   
   return `

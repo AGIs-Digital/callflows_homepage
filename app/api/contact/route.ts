@@ -1,16 +1,19 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
-import { contactFormSchema } from "@/components/contact-form";
+import { contactFormSchema } from "@/lib/validations/contact";
+import { transporter } from "@/lib/email";
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || '587'),
-  secure: process.env.SMTP_SECURE === 'true',
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+const getSubject = (source: string) => {
+  switch (source) {
+    case 'inbound':
+      return 'Anfrage Inbound';
+    case 'outbound':
+      return 'Anfrage Outbound';
+    case 'enterprise':
+      return 'Anfrage Enterprise';
+    default:
+      return 'Neue Kontaktanfrage';
   }
-});
+};
 
 export async function POST(request: Request) {
   if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
@@ -23,7 +26,16 @@ export async function POST(request: Request) {
 
   try {
     const data = await request.json();
-    const validatedData = contactFormSchema.parse(data);
+    const validationResult = contactFormSchema.safeParse(data);
+    
+    if (!validationResult.success) {
+      return NextResponse.json(
+        { error: validationResult.error.errors[0].message },
+        { status: 400 }
+      );
+    }
+
+    const validatedData = validationResult.data;
     
     const sourceText = validatedData.source 
       ? `\nQuelle: ${validatedData.source}` 
@@ -32,7 +44,7 @@ export async function POST(request: Request) {
     const mailOptions = {
       from: process.env.SMTP_FROM,
       to: process.env.CONTACT_EMAIL,
-      subject: `Neue Kontaktanfrage von ${validatedData.name}`,
+      subject: getSubject(validatedData.source || ''),
       text: `
 Name: ${validatedData.name}
 E-Mail: ${validatedData.email}

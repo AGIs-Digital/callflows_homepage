@@ -62,7 +62,6 @@ export function HeroSection() {
                 "border-none bg-transparent",
                 "rounded-lg shadow-lg",
                 "transition-transform duration-300",
-                "hover:scale-[1.02]",
                 "w-full h-full"
               )}
               style={{
