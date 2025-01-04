@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/validations/contact";
-import { transporter } from "@/lib/email";
+import { transporter, emailTemplate } from "@/lib/email";
 
 const getSubject = (source: string) => {
   switch (source) {
@@ -45,35 +45,33 @@ export async function POST(request: Request) {
       from: process.env.SMTP_FROM,
       to: process.env.CONTACT_EMAIL,
       subject: getSubject(validatedData.source || ''),
-      text: `
-Name: ${validatedData.name}
-E-Mail: ${validatedData.email}
-Telefon: ${validatedData.phone || 'Nicht angegeben'}
-Nachricht: ${validatedData.message}${sourceText}
-      `,
-      html: `
-<h2>Neue Kontaktanfrage</h2>
-<p><strong>Name:</strong> ${validatedData.name}</p>
-<p><strong>E-Mail:</strong> ${validatedData.email}</p>
-<p><strong>Telefon:</strong> ${validatedData.phone || 'Nicht angegeben'}</p>
-<p><strong>Nachricht:</strong></p>
-<p>${validatedData.message.replace(/\n/g, '<br>')}</p>
-${sourceText ? `<p><strong>Quelle:</strong> ${validatedData.source}</p>` : ''}
-      `,
+      html: emailTemplate(`
+        <div class="header">
+          <h1>Neue Kontaktanfrage</h1>
+        </div>
+        <div class="content">
+          <p><strong>Name:</strong> ${validatedData.name}</p>
+          <p><strong>E-Mail:</strong> ${validatedData.email}</p>
+          <p><strong>Telefon:</strong> ${validatedData.phone || 'Nicht angegeben'}</p>
+          <p><strong>Nachricht:</strong></p>
+          <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
+          ${sourceText ? `<p><strong>Quelle:</strong> ${validatedData.source}</p>` : ''}
+        </div>
+      `),
     };
 
     try {
       await transporter.sendMail(mailOptions);
       return NextResponse.json({ success: true });
     } catch (emailError) {
-      console.error('SMTP-Fehler:', emailError);
+      console.error('SMTP-Fehler:', JSON.stringify(emailError, null, 2));
       return NextResponse.json(
         { error: 'E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.' },
         { status: 500 }
       );
     }
   } catch (error) {
-    console.error('Formular-Fehler:', error);
+    console.error('Formular-Fehler:', JSON.stringify(error, null, 2));
     
     if (error instanceof Error) {
       return NextResponse.json(

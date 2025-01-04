@@ -3,9 +3,9 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import { PricingCard } from "@/components/pricing/plan-card";
 import { useState } from "react";
 import { pricingPlans } from "@/lib/data/pricing-plans";
-import { PricingPlanCard } from "@/components/pricing/plan-card";
 
 export function PricingTables() {
   const [isYearly, setIsYearly] = useState(false);
@@ -31,7 +31,7 @@ export function PricingTables() {
 
       <div className="grid lg:grid-cols-3 gap-8">
         {pricingPlans.map((plan) => (
-          <PricingPlanCard 
+          <PricingCard 
             key={plan.name} 
             plan={plan} 
             isYearly={isYearly} 

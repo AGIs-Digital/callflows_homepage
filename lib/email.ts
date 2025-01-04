@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 export const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),
-  secure: false,
+  secure: true, // IONOS erfordert SSL/TLS
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
@@ -12,6 +12,7 @@ export const transporter = nodemailer.createTransport({
     rejectUnauthorized: false
   }
 });
+
 
 export const emailTemplate = (content: string): string => {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://callflows.de';
@@ -28,14 +29,13 @@ export const emailTemplate = (content: string): string => {
       font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
       color: #333;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
+      background-color: #ffffff;
     }
     .container {
       max-width: 600px;
       margin: 0 auto;
       padding: 20px;
+      background-color: #ffffff;
     }
     .logo {
       text-align: center;

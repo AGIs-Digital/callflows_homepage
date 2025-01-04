@@ -5,27 +5,28 @@ import { CookieBanner } from '@/components/cookie-banner';
 import { FeedbackButton } from '@/components/feedback/feedback-button';
 import { Analytics } from '@/components/analytics';
 import { ErrorBoundary } from '@/components/error-boundary';
+import { generateMetadata } from '@/lib/seo/metadata';
+import { generateOrganizationSchema } from '@/lib/seo/schema';
+import Script from 'next/script';
 
-export const metadata: Metadata = {
-  title: 'Callflows - KI-gestützte Voice Agents',
-  description: 'Automatisieren Sie Ihre Kommunikation mit unserem intelligenten Voice Agents.',
+export const metadata = {
+  ...generateMetadata({
+  title: 'KI-gestützte Voice Agents',
+  description: 'Automatisieren Sie Ihre Kommunikation mit unseren intelligenten Voice Agents.',
+  path: '/',
+  images: [{
+    url: '/images/callflows_brand_no_claim.png',
+    width: 1200,
+    height: 630,
+    alt: 'Callflows Logo'
+  }]
+  }),
   icons: {
     icon: [
-      {
-        url: '/favicon.ico',
-        sizes: '32x32',
-      },
-      {
-        url: '/icon.png',
-        sizes: '192x192',
-        type: 'image/png',
-      },
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon.png', sizes: '192x192', type: 'image/png' }
     ],
-    apple: {
-      url: '/icon.png',
-      sizes: '192x192',
-      type: 'image/png',
-    },
+    apple: { url: '/icon.png', sizes: '192x192', type: 'image/png' }
   },
 };
 
@@ -36,6 +37,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" suppressHydrationWarning>
+      <head>
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateOrganizationSchema())
+          }}
+        />
+      </head>
       <body>
         <ErrorBoundary>
           <ThemeProvider

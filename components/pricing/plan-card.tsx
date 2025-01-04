@@ -2,29 +2,31 @@
 
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ContactForm } from "@/components/contact-form";
 import { PricingPlan } from "@/lib/types/pricing";
+import { useState } from "react";
 
-interface PricingPlanCardProps {
+interface PricingCardProps {
   plan: PricingPlan;
   isYearly: boolean;
 }
 
-export function PricingPlanCard({ plan, isYearly }: PricingPlanCardProps) {
+export function PricingCard({ plan, isYearly }: PricingCardProps) {
   const price = isYearly ? plan.yearlyPrice : plan.price;
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const savings = (plan.price - plan.yearlyPrice) * 12;
 
   return (
-    <div
-      className={`relative rounded-2xl p-8 ${
-        plan.popular
-          ? "border-2 border-primary shadow-lg"
-          : "border border-border"
-      }`}
-    >
+    <div className={`relative rounded-2xl p-8 ${
+      plan.popular
+        ? "border-2 border-primary shadow-lg"
+        : "border border-border"
+    }`}>
       {plan.popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
           <span className="bg-primary text-white px-3 py-1 rounded-full text-sm">
-            Meist gewählt
+          Meist gewählt
           </span>
         </div>
       )}
@@ -61,13 +63,27 @@ export function PricingPlanCard({ plan, isYearly }: PricingPlanCardProps) {
         ))}
       </div>
 
-      <Button
-        className={`w-full mb-8 ${
-          plan.popular ? "bg-primary" : "bg-accent text-gray-900"
-        } hover:opacity-90 transition-opacity`}
-      >
-        {plan.cta}
-      </Button>
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <Button
+          onClick={() => setIsDialogOpen(true)}
+          className={`w-full mb-8 ${
+            plan.popular ? "bg-primary" : "bg-accent text-gray-900"
+          } hover:opacity-90 transition-opacity`}
+        >
+          {plan.cta}
+        </Button>
+        <DialogContent className="sm:max-w-[500px]">
+          <DialogHeader>
+            <DialogTitle>Individuelles Angebot für {plan.name}</DialogTitle>
+          </DialogHeader>
+          <ContactForm
+            source={plan.type}
+            isOpen={isDialogOpen}
+            onOpenChange={setIsDialogOpen}
+            prefilledMessage={`Ich interessiere mich für das ${plan.name} Paket.`}
+          />
+        </DialogContent>
+      </Dialog>
 
       <div className="space-y-3">
         {plan.features.map((feature) => (

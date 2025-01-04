@@ -20,9 +20,15 @@ interface ContactFormProps {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
   source?: 'inbound' | 'outbound' | 'enterprise' | 'contact';
+  prefilledMessage?: string;
 }
 
-export function ContactForm({ isOpen, onOpenChange, source = "contact" }: ContactFormProps) {
+export function ContactForm({ 
+  isOpen, 
+  onOpenChange, 
+  source = "contact",
+  prefilledMessage = "" 
+}: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const { toast } = useToast();
@@ -33,7 +39,7 @@ export function ContactForm({ isOpen, onOpenChange, source = "contact" }: Contac
       name: '',
       email: '',
       phone: '',
-      message: '',
+      message: prefilledMessage,
       source: source || 'contact'
     }
   });
@@ -43,7 +49,7 @@ export function ContactForm({ isOpen, onOpenChange, source = "contact" }: Contac
     setSuccess(false);
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://callflows.de/api/contact.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,18 +64,18 @@ export function ContactForm({ isOpen, onOpenChange, source = "contact" }: Contac
       }
       
       setSuccess(true);
+      form.reset();
       toast({
         title: "Nachricht gesendet",
         description: "Wir haben Ihre Nachricht erhalten und werden uns zeitnah bei Ihnen melden.",
         duration: 5000,
       });
       
-      form.reset();
       if (onOpenChange) {
         setTimeout(() => onOpenChange(false), 2000);
       }
     } catch (error) {
-      console.error('Contact form error:', error);
+      console.error('Contact form error:', JSON.stringify(error, null, 2));
       toast({
         title: "Fehler beim Senden",
         description: error instanceof Error ? error.message : "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",

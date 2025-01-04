@@ -1,16 +1,21 @@
 const FtpDeploy = require('ftp-deploy');
 const ftpDeploy = new FtpDeploy();
 
+// Bestimme das richtige Deployment-Ziel basierend auf der Umgebung
+const isProduction = process.env.NODE_ENV === 'production';
+const targetFolder = isProduction ? 'callflows.de' : 'staging.callflows.de';
+
 const config = {
   user: process.env.FTP_USERNAME,
-  password: process.env.FTP_PASSWORD, 
+  password: process.env.FTP_PASSWORD,
   host: process.env.FTP_SERVER,
   port: 22,
-  localRoot: __dirname + '/../',
-  remoteRoot: '/',
+  localRoot: __dirname + '/../out',
+  remoteRoot: `/${targetFolder}/`, // Korrekter Zielpfad
   include: [
-    '.env',
-    'out/**',
+    '*',
+    '**/*',
+    '.htaccess'
   ],
   exclude: [
     '.git/**',
@@ -18,22 +23,35 @@ const config = {
     'node_modules/**',
     'tests/**',
     '*.map',
-    '.next/**'
+    '.next/**',
+    'backups/**'
   ],
   sftp: true,
-  forcePasv: true
+  deleteRemote: false,
+  // Keep last 5 backups
+  backupDir: 'backups'
 };
 
+// Create backup of current deployment
+console.log('📦 Creating backup...');
+const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+const backupDir = `${config.remoteRoot}backups`;
+
+ftpDeploy.on('log', function(data) {
+  console.log(data);
+});
+
 console.log('🚀 Starte Deployment...');
+console.log('Umgebung:', process.env.NODE_ENV);
+console.log('Zielordner:', targetFolder);
 console.log('Server:', process.env.FTP_SERVER);
-console.log('Username:', process.env.FTP_USERNAME);
-console.log('Using SFTP:', config.sftp);
+console.log('Lokaler Pfad:', config.localRoot);
+console.log('Remote Pfad:', config.remoteRoot);
 
 let failedUploads = [];
 
-// Event-Listener für Upload-Fortschritt
 ftpDeploy.on('uploaded', function(data) {
-  console.log('✅ Hochgeladen:', data.filename + ' (' + data.transferredFileCount + ' / ' + data.totalFilesCount + ' Dateien)');
+  console.log('✅ Hochgeladen:', data.filename);
 });
 
 ftpDeploy.on('upload-error', function(data) {
@@ -45,11 +63,10 @@ ftpDeploy.deploy(config)
   .then(() => {
     console.log('✨ Deployment abgeschlossen');
     if (failedUploads.length > 0) {
-      console.log('\n⚠️ Folgende Dateien konnten nicht hochgeladen werden:');
+      console.log('\n⚠️ Fehlerhafte Uploads:');
       failedUploads.forEach(file => console.log('   ❌', file));
       process.exit(1);
     }
-    console.log('✅ Alle Dateien erfolgreich hochgeladen');
   })
   .catch(err => {
     console.error('🚨 Deployment fehlgeschlagen:', err);
