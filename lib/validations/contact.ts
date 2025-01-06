@@ -8,4 +8,4 @@ export const contactFormSchema = z.object({
   source: z.enum(["inbound", "outbound", "enterprise", "contact"]).optional()
 });
 
-export type ContactFormData = z.infer<typeof contactFormSchema>; 
+export type ContactFormData = z.infer<typeof contactFormSchema>;

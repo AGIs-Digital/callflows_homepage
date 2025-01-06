@@ -5,13 +5,13 @@ import { transporter, emailTemplate } from "@/lib/email";
 const getSubject = (source: string) => {
   switch (source) {
     case 'inbound':
-      return 'Anfrage Inbound';
+      return 'Kontaktformular: Inbound Paket Anfrage';
     case 'outbound':
-      return 'Anfrage Outbound';
+      return 'Kontaktformular: Outbound Paket Anfrage';
     case 'enterprise':
-      return 'Anfrage Enterprise';
+      return 'Kontaktformular: Enterprise Paket Anfrage';
     default:
-      return 'Neue Kontaktanfrage';
+      return 'Kontaktformular: Allgemeine Anfrage';
   }
 };
 
