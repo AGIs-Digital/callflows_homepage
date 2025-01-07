@@ -48,15 +48,19 @@ export function ContactForm({
     setIsSubmitting(true);
     setSuccess(false);
     
-    const apiUrl = '/api/contact/route';
+// Dynamische API-URL basierend auf der aktuellen Umgebung
+    const apiUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/contact.php`;
+    console.log('Sending form data to:', apiUrl);
 
     try {
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(data),
+        credentials: 'omit'
       });
       
       const responseData = await response.json();

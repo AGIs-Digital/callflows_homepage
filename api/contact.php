@@ -3,14 +3,23 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
-ini_set('error_log', 'contact-form-errors.log');
+ini_set('error_log', dirname(__DIR__) . '/logs/contact-form.log');
 
-header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+// Ensure logs directory exists
+if (!file_exists(dirname(__DIR__) . '/logs')) {
+    mkdir(dirname(__DIR__) . '/logs', 0755, true);
+}
+
+header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
-header('Access-Control-Allow-Credentials: true');
 header('Content-Type: application/json');
 
+// Handle preflight requests
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 error_log('Request received: ' . $_SERVER['REQUEST_METHOD']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

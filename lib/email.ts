@@ -3,13 +3,14 @@ import nodemailer from 'nodemailer';
 export const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),
-  secure: false, // Use STARTTLS instead of SSL/TLS
+  secure: false,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
   tls: {
     ciphers: 'SSLv3',
+    minVersion: 'TLSv1.2',
     rejectUnauthorized: false
   }
 });

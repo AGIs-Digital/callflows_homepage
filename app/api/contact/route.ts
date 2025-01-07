@@ -26,8 +26,10 @@ export async function POST(request: Request) {
 
   try {
     const data = await request.json();
-    console.log('Received form data:', data);
-
+    console.log('Received form data:', JSON.stringify(data, null, 2));
+    console.log('Environment:', process.env.NEXT_PUBLIC_ENVIRONMENT);
+    console.log('App URL:', process.env.NEXT_PUBLIC_APP_URL);
+    
     const validationResult = contactFormSchema.safeParse(data);
     
     if (!validationResult.success) {
