@@ -14,7 +14,7 @@ const config = {
   host: process.env.FTP_SERVER,
   port: 22,
   localRoot: __dirname + '/../out/',
-  remoteRoot: `/${targetFolder}/`,
+  remoteRoot: `/`,
   include: [
     '*',
     '**/*',
@@ -46,11 +46,7 @@ ftpDeploy.on('log', function(data) {
 });
 
 console.log('🚀 Starte Deployment...');
-console.log('Umgebung:', process.env.NODE_ENV);
 console.log('Zielordner:', targetFolder);
-console.log('Server:', process.env.FTP_SERVER);
-console.log('Lokaler Pfad:', config.localRoot);
-console.log('Remote Pfad:', config.remoteRoot);
 
 let failedUploads = [];
 
