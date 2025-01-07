@@ -47,13 +47,10 @@ export function ContactForm({
   const onSubmit = useCallback(async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSuccess(false);
-    console.log('Starting form submission...');
-
-    const apiUrl = `${window.location.origin}/api/contact.php`;
-    console.log('API URL:', apiUrl);
+    
+    const apiUrl = '/api/contact/route';
 
     try {
-      console.log('Sending data:', data);
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {

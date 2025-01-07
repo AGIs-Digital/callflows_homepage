@@ -26,9 +26,12 @@ export async function POST(request: Request) {
 
   try {
     const data = await request.json();
+    console.log('Received form data:', data);
+
     const validationResult = contactFormSchema.safeParse(data);
     
     if (!validationResult.success) {
+      console.error('Validation error:', validationResult.error);
       return NextResponse.json(
         { error: validationResult.error.errors[0].message },
         { status: 400 }
@@ -36,6 +39,7 @@ export async function POST(request: Request) {
     }
 
     const validatedData = validationResult.data;
+    console.log('Sending email with data:', validatedData);
     
     const sourceText = validatedData.source 
       ? `\nQuelle: ${validatedData.source}` 
@@ -62,6 +66,7 @@ export async function POST(request: Request) {
 
     try {
       await transporter.sendMail(mailOptions);
+      console.log('Email sent successfully');
       return NextResponse.json({ success: true });
     } catch (emailError) {
       console.error('SMTP-Fehler:', JSON.stringify(emailError, null, 2));
