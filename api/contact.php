@@ -3,12 +3,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
-ini_set('error_log', dirname(__DIR__) . '/logs/contact-form.log');
 
-// Ensure logs directory exists
-if (!file_exists(dirname(__DIR__) . '/logs')) {
-    mkdir(dirname(__DIR__) . '/logs', 0755, true);
-}
+// Determine environment and set log path accordingly
+$isProduction = strpos($_SERVER['HTTP_HOST'], 'staging') === false;
+$logPath = $isProduction ? '/logs/contact-form.log' : '/logs/staging-contact-form.log';
+ini_set('error_log', __DIR__ . '/..' . $logPath);
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');

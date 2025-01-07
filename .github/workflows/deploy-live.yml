@@ -83,6 +83,8 @@ jobs:
           script: |
             cd callflows.de/
             rm -rf * .env
+            mkdir -p logs
+            chmod 755 logs
 
       - name: 📤 Deploy to Production
         env:
