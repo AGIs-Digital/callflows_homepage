@@ -10,11 +10,6 @@ const config = {
   typescript: {
     ignoreBuildErrors: true
   },
-  experimental: {
-    turbotrace: {
-      logLevel: "error"
-    }
-  },
   swcMinify: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
