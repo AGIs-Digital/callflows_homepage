@@ -1,27 +1,30 @@
 import { NextResponse } from 'next/server';
 import { emailTransporter, emailTemplate } from '@/lib/email-config';
 import { contactFormSchema } from '@/lib/validations/contact';
+import { logger } from '@/lib/logger';
 
 export async function POST(request: Request) {
-  console.log('🔍 Starte Kontaktformular-Verarbeitung');
+  logger.init();
+  logger.log('🔍 Starte Kontaktformular-Verarbeitung');
   
   try {
-    // Log environment
-    console.log('📧 Environment:', {
+    const envInfo = {
       NODE_ENV: process.env.NODE_ENV,
       SMTP_HOST: process.env.SMTP_HOST,
       SMTP_PORT: process.env.SMTP_PORT,
       SMTP_USER: process.env.SMTP_USER,
       SMTP_FROM: process.env.SMTP_FROM,
       CONTACT_EMAIL: process.env.CONTACT_EMAIL
-    });
+    };
+    
+    logger.log('📧 Environment:', envInfo);
 
     const data = await request.json();
-    console.log('📝 Empfangene Daten:', data);
+    logger.log('📝 Empfangene Daten:', data);
     
     const validationResult = contactFormSchema.safeParse(data);
     if (!validationResult.success) {
-      console.error('❌ Validierungsfehler:', validationResult.error);
+      logger.log('❌ Validierungsfehler:', validationResult.error);
       return NextResponse.json(
         { error: 'Ungültige Eingabedaten' },
         { status: 400 }
@@ -29,15 +32,14 @@ export async function POST(request: Request) {
     }
 
     const validatedData = validationResult.data;
-    console.log('✅ Validierte Daten:', validatedData);
+    logger.log('✅ Validierte Daten:', validatedData);
 
-    // Test SMTP connection
     try {
-      console.log('🔄 Teste SMTP-Verbindung...');
+      logger.log('🔄 Teste SMTP-Verbindung...');
       await emailTransporter.verify();
-      console.log('✅ SMTP-Verbindung erfolgreich');
+      logger.log('✅ SMTP-Verbindung erfolgreich');
     } catch (verifyError) {
-      console.error('❌ SMTP-Verbindungsfehler:', verifyError);
+      logger.log('❌ SMTP-Verbindungsfehler:', verifyError);
       throw verifyError;
     }
 
@@ -49,31 +51,20 @@ export async function POST(request: Request) {
       html: emailTemplate(validatedData)
     };
 
-    console.log('📧 Sende E-Mail mit Optionen:', mailOptions);
+    logger.log('📧 Sende E-Mail mit Optionen:', mailOptions);
     
     const info = await emailTransporter.sendMail(mailOptions);
-    console.log('✅ E-Mail erfolgreich gesendet:', {
+    logger.log('✅ E-Mail erfolgreich gesendet:', {
       messageId: info.messageId,
       response: info.response,
       accepted: info.accepted,
       rejected: info.rejected
     });
 
-    return NextResponse.json({ 
-      success: true,
-      messageId: info.messageId 
-    });
+    return NextResponse.json({ success: true });
     
   } catch (error) {
-    console.error('❌ Fehler beim E-Mail-Versand:', error);
-    // Log full error details
-    if (error instanceof Error) {
-      console.error('Error details:', {
-        name: error.name,
-        message: error.message,
-        stack: error.stack,
-      });
-    }
+    logger.log('❌ Fehler beim E-Mail-Versand:', error);
     return NextResponse.json(
       { error: 'Beim Senden ist ein Fehler aufgetreten' },
       { status: 500 }
