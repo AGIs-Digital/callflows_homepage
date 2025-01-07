@@ -1,5 +1,4 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const config = {
   output: 'export',
   distDir: 'out',
   eslint: {
@@ -10,4 +9,4 @@ const nextConfig = {
   assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || '',
 };
 
-module.exports = nextConfig;
+module.exports = config;
