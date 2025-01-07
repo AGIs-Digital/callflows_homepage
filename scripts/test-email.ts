@@ -11,13 +11,14 @@ async function testEmail() {
   const transporter = nodemailer.createTransport({
     host: 'smtp.ionos.de',
     port: 587,
-    secure: true,
+    secure: false,
     auth: {
       user: 'info@callflows.de',
       pass: 'info@callflows.dePW25!'
     },
     tls: {
-      rejectUnauthorized: false
+      rejectUnauthorized: false,
+      minVersion: 'TLSv1.2'
     }
   });
 

@@ -32,7 +32,7 @@ export function SiteFooter() {
           </div>
 
           <p className="text-muted-foreground whitespace-nowrap">
-            © 2024 Callflows. Alle Rechte vorbehalten.
+            © {new Date().getFullYear()} Callflows. Alle Rechte vorbehalten.
           </p>
         </div>
       </div>
