@@ -47,10 +47,13 @@ export function ContactForm({
   const onSubmit = useCallback(async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSuccess(false);
+    console.log('Starting form submission...');
 
     const apiUrl = `${window.location.origin}/api/contact.php`;
+    console.log('API URL:', apiUrl);
 
     try {
+      console.log('Sending data:', data);
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
@@ -60,6 +63,7 @@ export function ContactForm({
       });
       
       const responseData = await response.json();
+      console.log('Response:', responseData);
       
       if (!response.ok) {
         throw new Error(responseData.error || 'Ein Fehler ist aufgetreten');
