@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && cp public/.htaccess out/.htaccess && node --loader ts-node/esm scripts/generate-sitemap.ts",
+    "build": "next build && cp public/.htaccess out/.htaccess",
     "start": "next start",
     "lint": "next lint",
     "deploy:staging": "cross-env NODE_ENV=staging node scripts/deploy.js",
