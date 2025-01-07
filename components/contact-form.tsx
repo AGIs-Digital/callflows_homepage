@@ -45,8 +45,44 @@ export function ContactForm({
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    // Neue Submit-Logik wird hier implementiert
-    console.log('Form data:', data);
+    setIsSubmitting(true);
+    setSuccess(false);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Beim Senden ist ein Fehler aufgetreten');
+      }
+
+      setSuccess(true);
+      form.reset();
+      toast({
+        title: "Nachricht gesendet",
+        description: "Wir haben Ihre Nachricht erhalten und werden uns zeitnah bei Ihnen melden.",
+        duration: 5000,
+      });
+      
+      if (onOpenChange) {
+        setTimeout(() => onOpenChange(false), 2000);
+      }
+    } catch (error) {
+      console.error('Kontaktformular Fehler:', error);
+      toast({
+        title: "Fehler beim Senden",
+        description: error instanceof Error ? error.message : "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formContent = (
