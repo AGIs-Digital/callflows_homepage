@@ -48,8 +48,10 @@ export function ContactForm({
     setIsSubmitting(true);
     setSuccess(false);
 
+    const apiUrl = `${window.location.origin}/api/contact.php`;
+
     try {
-      const response = await fetch('https://callflows.de/api/contact.php', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
