@@ -1,25 +1,31 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 
-const LOG_DIR = path.join(process.cwd(), 'logs', 'contact-form');
+const LOG_DIR = './logs/contact-form';
 const LOG_FILE = path.join(LOG_DIR, 'staging-contact-form.log');
 
 export const logger = {
-  init: () => {
-    if (!fs.existsSync(LOG_DIR)) {
-      fs.mkdirSync(LOG_DIR, { recursive: true });
+  async init() {
+    try {
+      await fs.mkdir(LOG_DIR, { recursive: true });
+      console.log('📁 Log-Verzeichnis erstellt:', LOG_DIR);
+    } catch (error) {
+      console.error('❌ Fehler beim Erstellen des Log-Verzeichnisses:', error);
     }
   },
   
-  log: (message: string, data?: any) => {
+  async log(message: string, data?: any) {
     const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] ${message}${data ? ` ${JSON.stringify(data)}` : ''}\n`;
+    const logMessage = `[${timestamp}] ${message}${data ? ` ${JSON.stringify(data, null, 2)}` : ''}\n`;
+    
+    // Immer in die Konsole loggen
+    console.log(logMessage);
     
     try {
-      fs.appendFileSync(LOG_FILE, logMessage);
-      console.log(logMessage);
+      await fs.appendFile(LOG_FILE, logMessage);
     } catch (error) {
-      console.error('Logging failed:', error);
+      console.error('❌ Fehler beim Schreiben des Logs:', error);
+      console.error('Versuchter Pfad:', LOG_FILE);
     }
   }
 }; 

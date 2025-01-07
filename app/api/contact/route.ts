@@ -4,23 +4,24 @@ import { contactFormSchema } from '@/lib/validations/contact';
 import { logger } from '@/lib/logger';
 
 export async function POST(request: Request) {
-  logger.init();
-  logger.log('🔍 Starte Kontaktformular-Verarbeitung');
+  console.log('🔍 API Route aufgerufen');
   
   try {
-    const envInfo = {
+    await logger.init();
+    console.log('📝 Logger initialisiert');
+    
+    // Debug: Zeige Umgebungsvariablen
+    console.log('🔧 Umgebungsvariablen:', {
+      cwd: process.cwd(),
       NODE_ENV: process.env.NODE_ENV,
       SMTP_HOST: process.env.SMTP_HOST,
       SMTP_PORT: process.env.SMTP_PORT,
-      SMTP_USER: process.env.SMTP_USER,
-      SMTP_FROM: process.env.SMTP_FROM,
+      SMTP_USER: process.env.SMTP_USER?.substring(0, 3) + '***',
       CONTACT_EMAIL: process.env.CONTACT_EMAIL
-    };
-    
-    logger.log('📧 Environment:', envInfo);
+    });
 
     const data = await request.json();
-    logger.log('📝 Empfangene Daten:', data);
+    console.log('📨 Empfangene Daten:', data);
     
     const validationResult = contactFormSchema.safeParse(data);
     if (!validationResult.success) {
