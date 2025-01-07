@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
-import { submitContactForm } from "@/lib/api/contact";
 
 interface ContactFormProps {
   isOpen: boolean;
@@ -45,37 +44,10 @@ export function ContactForm({
     }
   });
 
-  const onSubmit = useCallback(async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    setSuccess(false);
-    console.log('[Contact Form]', 'Environment:', process.env.NEXT_PUBLIC_ENVIRONMENT);
-    
-    try {
-      await submitContactForm(data);
-
-      setSuccess(true);
-      form.reset();
-      toast({
-        title: "Nachricht gesendet",
-        description: "Wir haben Ihre Nachricht erhalten und werden uns zeitnah bei Ihnen melden.",
-        duration: 5000,
-      });
-      
-      if (onOpenChange) {
-        setTimeout(() => onOpenChange(false), 2000);
-      }
-    } catch (error) {
-      console.error('Contact form error:', JSON.stringify(error, null, 2));
-      toast({
-        title: "Fehler beim Senden",
-        description: error instanceof Error ? error.message : "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
-        variant: "destructive",
-        duration: 5000,
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  }, [toast, form.reset, onOpenChange]);
+  const onSubmit = async (data: ContactFormData) => {
+    // Neue Submit-Logik wird hier implementiert
+    console.log('Form data:', data);
+  };
 
   const formContent = (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 relative">
