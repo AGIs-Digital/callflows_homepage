@@ -7,7 +7,7 @@ date_default_timezone_set('Europe/Berlin');
 
 // Determine environment and set log path accordingly
 $isProduction = strpos($_SERVER['HTTP_HOST'], 'staging') === false;
-$logPath = $isProduction ? 'logs/contact-form.log' : 'logs/staging-contact-form.log';
+$logPath = $isProduction ? '/logs/contact-form/contact-form.log' : '/logs/contact-form/staging-contact-form.log';
 ini_set('error_log', __DIR__ . '/..' . $logPath);
 
 function logMessage($type, $message, $data = null) {

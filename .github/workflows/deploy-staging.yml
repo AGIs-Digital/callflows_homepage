@@ -84,8 +84,10 @@ jobs:
           script: |
             cd staging.callflows.de/
             rm -rf * .env
-            mkdir -p logs
-            chmod 755 logs
+            mkdir -p logs/contact-form
+            chmod -R 755 logs
+            touch logs/contact-form/staging-contact-form.log
+            chmod 666 logs/contact-form/staging-contact-form.log
 
       - name: 📤 Deploy to Staging
         env:
