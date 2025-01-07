@@ -5,17 +5,21 @@ const ftpDeploy = new FtpDeploy();
 const isProduction = process.env.NODE_ENV === 'production';
 const targetFolder = isProduction ? 'callflows.de' : 'staging.callflows.de';
 
+// Kopiere .env Datei in den Build-Ordner
+require('fs').copyFileSync('.env', __dirname + '/../out/.env');
+
 const config = {
   user: process.env.FTP_USERNAME,
   password: process.env.FTP_PASSWORD,
   host: process.env.FTP_SERVER,
   port: 22,
   localRoot: __dirname + '/../out/',
-  remoteRoot: '/',
+  remoteRoot: `/`,
   include: [
     '*',
     '**/*',
-    '.htaccess'
+    '.htaccess',
+    '.env'
   ],
   exclude: [
     '.git/**',
@@ -42,11 +46,7 @@ ftpDeploy.on('log', function(data) {
 });
 
 console.log('🚀 Starte Deployment...');
-console.log('Umgebung:', process.env.NODE_ENV);
 console.log('Zielordner:', targetFolder);
-console.log('Server:', process.env.FTP_SERVER);
-console.log('Lokaler Pfad:', config.localRoot);
-console.log('Remote Pfad:', config.remoteRoot);
 
 let failedUploads = [];
 

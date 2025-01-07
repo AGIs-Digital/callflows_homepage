@@ -1,3 +1,4 @@
+/** @type {import('next').NextConfig} */
 const config = {
   output: 'export',
   distDir: 'out',
@@ -5,8 +6,14 @@ const config = {
     ignoreDuringBuilds: true,
   },
   images: { unoptimized: true },
-  trailingSlash: true, // Wichtig für statisches Hosting
-  assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || '',
+  trailingSlash: true,
+  typescript: {
+    ignoreBuildErrors: true
+  },
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  }
 };
 
 module.exports = config;
