@@ -10,8 +10,8 @@ const config = {
   password: process.env.FTP_PASSWORD,
   host: process.env.FTP_SERVER,
   port: 22,
-  localRoot: __dirname + '/../out',
-  remoteRoot: `/${targetFolder}/`, // Korrekter Zielpfad
+  localRoot: __dirname + '/../out/',
+  remoteRoot: '/',
   include: [
     '*',
     '**/*',
@@ -28,8 +28,8 @@ const config = {
   ],
   sftp: true,
   deleteRemote: false,
-  // Keep last 5 backups
-  backupDir: 'backups'
+  backupDir: 'backups',
+  forcePasv: true
 };
 
 // Create backup of current deployment
