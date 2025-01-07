@@ -3,11 +3,22 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
+date_default_timezone_set('Europe/Berlin');
 
 // Determine environment and set log path accordingly
 $isProduction = strpos($_SERVER['HTTP_HOST'], 'staging') === false;
-$logPath = $isProduction ? '/logs/contact-form.log' : '/logs/staging-contact-form.log';
+$logPath = $isProduction ? 'logs/contact-form.log' : 'logs/staging-contact-form.log';
 ini_set('error_log', __DIR__ . '/..' . $logPath);
+
+function logMessage($type, $message, $data = null) {
+    $timestamp = date('Y-m-d H:i:s');
+    $env = strpos($_SERVER['HTTP_HOST'], 'staging') === false ? 'PROD' : 'STAGING';
+    $logEntry = "[$timestamp] [$env] [$type] $message";
+    if ($data) {
+        $logEntry .= " Data: " . json_encode($data);
+    }
+    error_log($logEntry);
+}
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
@@ -19,15 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
-error_log('Request received: ' . $_SERVER['REQUEST_METHOD']);
+
+logMessage('INFO', 'Request received: ' . $_SERVER['REQUEST_METHOD']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
-    error_log('Received data: ' . print_r($data, true));
+    logMessage('INFO', 'Form submission received', $data);
     
     // Validierung
     if (!isset($data['name']) || !isset($data['email']) || !isset($data['message'])) {
-        error_log('Validation failed: Missing required fields');
+        logMessage('ERROR', 'Validation failed: Missing required fields', $data);
         http_response_code(400);
         echo json_encode(['error' => 'Fehlende Pflichtfelder']);
         exit;
@@ -35,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $to = 'kontakt@callflows.de';
     $subject = isset($data['source']) ? 'Anfrage ' . ucfirst($data['source']) : 'Neue Kontaktanfrage';
-    error_log('Preparing to send email to: ' . $to);
+    logMessage('INFO', 'Preparing to send email to: ' . $to);
     
     $message = "Name: " . $data['name'] . "\n";
     $message .= "E-Mail: " . $data['email'] . "\n";
@@ -54,15 +66,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     if (mail($to, $subject, $message, $headers)) {
-        error_log('Email sent successfully');
+        logMessage('SUCCESS', 'Email sent successfully');
         echo json_encode(['success' => true]);
     } else {
-        error_log('Failed to send email: ' . error_get_last()['message']);
+        $error = error_get_last();
+        logMessage('ERROR', 'Failed to send email', $error);
         http_response_code(500);
         echo json_encode(['error' => 'E-Mail konnte nicht gesendet werden']);
     }
 } else {
-    error_log('Invalid request method: ' . $_SERVER['REQUEST_METHOD']);
+    logMessage('ERROR', 'Invalid request method: ' . $_SERVER['REQUEST_METHOD']);
     http_response_code(405);
     echo json_encode(['error' => 'Methode nicht erlaubt']);
 }

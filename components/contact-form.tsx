@@ -15,6 +15,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
+import { submitContactForm } from "@/lib/api/contact";
 
 interface ContactFormProps {
   isOpen: boolean;
@@ -47,29 +48,11 @@ export function ContactForm({
   const onSubmit = useCallback(async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSuccess(false);
+    console.log('[Contact Form]', 'Environment:', process.env.NEXT_PUBLIC_ENVIRONMENT);
     
-// Dynamische API-URL basierend auf der aktuellen Umgebung
-    const apiUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/contact.php`;
-    console.log('Sending form data to:', apiUrl);
-
     try {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(data),
-        credentials: 'omit'
-      });
-      
-      const responseData = await response.json();
-      console.log('Response:', responseData);
-      
-      if (!response.ok) {
-        throw new Error(responseData.error || 'Ein Fehler ist aufgetreten');
-      }
-      
+      await submitContactForm(data);
+
       setSuccess(true);
       form.reset();
       toast({
