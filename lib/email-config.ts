@@ -1,8 +1,8 @@
 import nodemailer from 'nodemailer';
 
 export const emailTransporter = nodemailer.createTransport({
-  host: 'smtp.ionos.de',
-  port: 587,
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT),
   secure: false,
   auth: {
     user: process.env.SMTP_USER,
@@ -11,7 +11,9 @@ export const emailTransporter = nodemailer.createTransport({
   tls: {
     minVersion: 'TLSv1.2',
     rejectUnauthorized: true
-  }
+  },
+  debug: true,
+  logger: true
 });
 
 export const emailTemplate = (data: {
