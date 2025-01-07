@@ -3,12 +3,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/contact-form.log');
 date_default_timezone_set('Europe/Berlin');
-
-// Determine environment and set log path accordingly
-$isProduction = strpos($_SERVER['HTTP_HOST'], 'staging') === false;
-$logPath = $isProduction ? '/logs/contact-form/contact-form.log' : '/logs/contact-form/staging-contact-form.log';
-ini_set('error_log', __DIR__ . '/..' . $logPath);
 
 function logMessage($type, $message, $data = null) {
     $timestamp = date('Y-m-d H:i:s');
@@ -20,10 +16,21 @@ function logMessage($type, $message, $data = null) {
     error_log($logEntry);
 }
 
-header('Access-Control-Allow-Origin: *');
+// Set CORS headers based on environment
+$allowedOrigins = [
+    'https://staging.callflows.de',
+    'https://callflows.de'
+];
+
+$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
+
+if (in_array($origin, $allowedOrigins)) {
+    header('Access-Control-Allow-Origin: ' . $origin);
+}
+
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
 
 // Handle preflight requests
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
