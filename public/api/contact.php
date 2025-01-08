@@ -20,7 +20,7 @@ function logMessage($type, $message, $data = null) {
 $allowedOrigins = [
     'https://staging.callflows.de',
     'https://callflows.de',
-    'http://localhost:3000' // Für lokale Entwicklung
+    'http://localhost:3000'
 ];
 
 $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
     logMessage('INFO', 'Form submission received', $data);
     
-    // Validierung
+    // Validation
     if (!isset($data['name']) || !isset($data['email']) || !isset($data['message'])) {
         logMessage('ERROR', 'Validation failed: Missing required fields', $data);
         http_response_code(400);
@@ -51,28 +51,92 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $to = 'kontakt@callflows.de';
-    $subject = isset($data['source']) ? 'Anfrage ' . ucfirst($data['source']) : 'Neue Kontaktanfrage';
+    // Dynamic subject based on source
+    $subjectMap = [
+        'inbound' => 'Anfrage Inbound',
+        'outbound' => 'Anfrage Outbound',
+        'enterprise' => 'Anfrage Enterprise',
+        'contact' => 'Anfrage Kontakt'
+    ];
     
-    // HTML E-Mail Template
-    $htmlMessage = "
-    <div style='font-family: sans-serif; max-width: 600px; margin: 0 auto;'>
-        <h2 style='color: #00A6C0;'>Neue Kontaktanfrage</h2>
-        <div style='background-color: #f9fafb; padding: 20px; border-radius: 8px;'>
-            <p><strong>Name:</strong> {$data['name']}</p>
-            <p><strong>E-Mail:</strong> {$data['email']}</p>
-            " . (isset($data['phone']) ? "<p><strong>Telefon:</strong> {$data['phone']}</p>" : "") . "
-            <p><strong>Nachricht:</strong></p>
-            <p style='white-space: pre-wrap;'>{$data['message']}</p>
-            " . (isset($data['source']) ? "<p><strong>Quelle:</strong> {$data['source']}</p>" : "") . "
-        </div>
-    </div>";
+    $source = isset($data['source']) ? $data['source'] : 'contact';
+    $subject = $subjectMap[$source] ?? 'Neue Kontaktanfrage';
 
-    // E-Mail Header
+    $to = 'kontakt@callflows.de';
+    
+    // Modern HTML Email Template
+    $htmlMessage = "
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>{$subject}</title>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background-color: #004AAD; padding: 20px; text-align: center; }
+            .header img { max-width: 200px; }
+            .content { background-color: #ffffff; padding: 30px; border-radius: 8px; margin-top: 20px; }
+            .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
+            .field { margin-bottom: 20px; }
+            .field-label { font-weight: bold; color: #004AAD; }
+            .source-tag { 
+                display: inline-block;
+                padding: 5px 10px;
+                background-color: #FFB703;
+                color: #333;
+                border-radius: 4px;
+                font-size: 14px;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <img src='https://callflows.de/images/callflows_brand_no_claim.png' alt='Callflows Logo' style='filter: invert(1);'>
+            </div>
+            <div class='content'>
+                <h2 style='color: #004AAD; margin-bottom: 30px;'>{$subject}</h2>
+                
+                <div class='field'>
+                    <div class='field-label'>Name:</div>
+                    <div>{$data['name']}</div>
+                </div>
+                
+                <div class='field'>
+                    <div class='field-label'>E-Mail:</div>
+                    <div>{$data['email']}</div>
+                </div>
+                
+                " . (isset($data['phone']) ? "
+                <div class='field'>
+                    <div class='field-label'>Telefon:</div>
+                    <div>{$data['phone']}</div>
+                </div>
+                " : "") . "
+                
+                <div class='field'>
+                    <div class='field-label'>Nachricht:</div>
+                    <div style='white-space: pre-wrap;'>{$data['message']}</div>
+                </div>
+                
+                <div class='source-tag'>{$subject}</div>
+            </div>
+            <div class='footer'>
+                <p>Diese E-Mail wurde über das Kontaktformular auf callflows.de gesendet.</p>
+                <p>" . date('d.m.Y H:i:s') . "</p>
+            </div>
+        </div>
+    </body>
+    </html>";
+
+    // Email Headers
     $headers = [
         'MIME-Version: 1.0',
         'Content-Type: text/html; charset=UTF-8',
-        'From: Callflows Kontaktformular <noreply@callflows.de>',
+        'From: Kontaktformular <noreply@callflows.de>',
         'Reply-To: ' . $data['email'],
         'X-Mailer: PHP/' . phpversion()
     ];
@@ -91,4 +155,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     http_response_code(405);
     echo json_encode(['error' => 'Methode nicht erlaubt']);
 }
-?> 
+?>
