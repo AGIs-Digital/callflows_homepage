@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <body>
         <div class='container'>
             <div class='header'>
-                <img src='https://callflows.de/images/callflows_brand_no_claim.png' alt='Callflows Logo' style='filter: invert(1);'>
+                <img src='https://callflows.de/images/callflows_brand_no_claim.png' alt='Callflows Logo' style='max-width: 200px;'>
             </div>
             <div class='content'>
                 <h2 style='color: #004AAD; margin-bottom: 30px;'>{$subject}</h2>
