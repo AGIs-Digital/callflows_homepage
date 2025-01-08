@@ -49,7 +49,7 @@ export function ContactForm({
     setSuccess(false);
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/contact.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

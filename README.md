@@ -10,7 +10,6 @@ Das Projekt verwendet eine moderne Next.js-Architektur mit folgenden Hauptkompon
 - **UI**: Tailwind CSS + Shadcn UI für konsistentes Design
 - **State Management**: React Hooks + Context
 - **API**: REST-API mit Next.js API Routes
-- **Datenbank**: MySQL mit Verbindung über mysql2
 
 ### Projektstruktur
 

@@ -34,3 +34,7 @@ export const ShinyButton = forwardRef<HTMLButtonElement, ShinyButtonProps>(
     );
   }
 );
+
+ShinyButton.displayName = 'ShinyButton';
+
+export default ShinyButton;

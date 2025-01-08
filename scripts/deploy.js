@@ -27,8 +27,16 @@ const config = {
     'node_modules/**',
     'tests/**',
     '*.map',
+    '*.ts',
+    '*.tsx',
     '.next/**',
-    'backups/**'
+    'backups/**',
+    'README.md',
+    'package.json',
+    'package-lock.json',
+    'tsconfig.json',
+    '.env.local',
+    '.env.development'
   ],
   sftp: true,
   deleteRemote: false,

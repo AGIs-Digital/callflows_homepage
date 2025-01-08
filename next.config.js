@@ -1,19 +1,10 @@
 /** @type {import('next').NextConfig} */
-const config = {
+const nextConfig = {
   output: 'export',
-  distDir: 'out',
-  eslint: {
-    ignoreDuringBuilds: true,
+  images: {
+    domains: ['staging.callflows.de', 'callflows.de'],
+    unoptimized: true,
   },
-  images: { unoptimized: true },
-  trailingSlash: true,
-  typescript: {
-    ignoreBuildErrors: true
-  },
-  swcMinify: true,
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  }
-};
+}
 
-module.exports = config;
+module.exports = nextConfig

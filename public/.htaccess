@@ -4,12 +4,19 @@ RewriteEngine On
 # Basis-URL setzen
 RewriteBase /
 
-# Wenn es sich nicht um eine existierende Datei handelt
+# Erlaube direkte Zugriffe auf statische Dateien
+RewriteCond %{REQUEST_URI} \.(js|css|svg|jpg|jpeg|png|gif|ico|woff2)$ [OR]
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteRule ^ - [L]
+
+# Alle anderen Anfragen an _next/static durchlassen
+RewriteCond %{REQUEST_URI} ^/_next/static/
+RewriteRule ^ - [L]
+
+# Alle anderen Anfragen an index.html weiterleiten
 RewriteCond %{REQUEST_FILENAME} !-f
-# Und wenn es sich nicht um ein existierendes Verzeichnis handelt
 RewriteCond %{REQUEST_FILENAME} !-d
-# Dann leite alle Anfragen an index.html weiter
-RewriteRule ^(.*)$ index.html [QSA,L]
+RewriteRule ^(.*)$ /index.html [QSA,L]
 
 # Aktiviere GZIP-Komprimierung
 <IfModule mod_deflate.c>

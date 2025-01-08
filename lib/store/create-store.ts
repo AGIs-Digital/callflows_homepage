@@ -34,10 +34,7 @@ export function createStore<T>(createState: (set: (partial: Partial<T>) => void)
       state = createState(store.current.set);
     }
 
-    return createElement(StoreContext.Provider, {
-      value: store.current,
-      children
-    });
+    return createElement(StoreContext.Provider, null, children);
   }
 
   function useStore<S>(selector: (state: T) => S): S {
