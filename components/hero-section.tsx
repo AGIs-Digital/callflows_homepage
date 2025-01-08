@@ -33,10 +33,16 @@ export function HeroSection() {
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
             Automatisieren Sie Ihre Kommunikation mit unseren intelligenten Lösungen.
           </p>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
+            Spezialisiert auf die Abwicklung ein- und ausgehender Anrufe für den deutschsprachigen Raum.
+          </p>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
+            callflows hilft Ihnen Zeit zu sparen und gleichzeitig die Qualität Ihrer Kundenkommunikation zu verbessern.
+          </p>
           <div className="flex gap-4 pt-4">
             <button className="bg-accent text-gray-900 px-6 md:px-8 py-3 rounded-lg font-medium 
                              flex items-center hover:bg-accent/90 transition-colors">
-              Demo
+              Ihr neuer Voice Agent
               <span className="ml-2">→</span>
             </button>
           </div>

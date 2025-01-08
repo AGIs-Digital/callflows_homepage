@@ -19,8 +19,6 @@ export function PricingSection() {
         </div>
         
         <PricingTables />
-        <PricingFeatures />
-        <PricingFAQ />
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const features = [
   {
     title: "Agent Dashboard",
-    description: "Übersichtliches Dashboard für alle Agents und Analysen",
+    description: "Sehen Sie Ihre Agents und Agent-Teams in einem Übersichtliches Dashboard zur Analyse Ihrer calls",
     image: "/images/dashboard-preview.png",
     hotspots: [
       { x: 20, y: 30, label: "Echtzeit-Statistiken" },
@@ -17,7 +17,7 @@ const features = [
   },
   {
     title: "Kampagnen-Management",
-    description: "Erstellen und verwalten Sie Ihre Outbound-Kampagnen",
+    description: "Erstellen und verwalten Sie Ihre Outbound-Kampagnen mit Zeitplanung und Zielgruppen",
     image: "/images/campaign-preview.png",
     hotspots: [
       { x: 30, y: 40, label: "Kampagnen-Editor" },
@@ -26,7 +26,7 @@ const features = [
   },
   {
     title: "Analytics & Reporting",
-    description: "Detaillierte Einblicke in jeden Ihrer Calls",
+    description: "Optionale Transcripts und Recordings für detaillierte Einblicke Ihrer calls für stetige Verbesserungen",
     image: "/images/call-details.png",
     hotspots: [
       { x: 30, y: 50, label: "Transcripts" },
@@ -34,8 +34,8 @@ const features = [
     ]
   },
   {
-    title: "Voice Agent Training",
-    description: "Trainieren Sie Ihre KI-Agenten für optimale Ergebnisse",
+    title: "Informationen extrahieren",
+    description: "Extrahiert gezielte Informationen aus Ihren calls und verwendet diese für automatisierte Aufgaben",
     image: "/images/call-infos.png",
     hotspots: [
       { x: 40, y: 20, label: "Informationen extrahieren" },

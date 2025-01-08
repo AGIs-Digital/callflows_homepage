@@ -64,6 +64,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $to = 'kontakt@callflows.de';
     
+    // Logo als Base64 einbetten
+    $logoPath = __DIR__ . '/../../images/callflows_brand_no_claim.png';
+    $logoType = pathinfo($logoPath, PATHINFO_EXTENSION);
+    $logoData = file_get_contents($logoPath);
+    $logoBase64 = base64_encode($logoData);
+    $logoSrc = "data:image/{$logoType};base64,{$logoBase64}";
+
     // Modern HTML Email Template
     $htmlMessage = "
     <!DOCTYPE html>
@@ -95,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <body>
         <div class='container'>
             <div class='header'>
-                <img src='https://callflows.de/images/callflows_brand_no_claim.png' alt='Callflows Logo' style='max-width: 200px;'>
+                <img src='{$logoSrc}' alt='Callflows Logo' style='max-width: 200px;'>
             </div>
             <div class='content'>
                 <h2 style='color: #004AAD; margin-bottom: 30px;'>{$subject}</h2>
@@ -119,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 <div class='field'>
                     <div class='field-label'>Nachricht:</div>
-                    <div style='white-space: pre-wrap;'>{$data['message']}</div>
+                    <div style='white-space: pre-line; line-height: 1.5;'>{$data['message']}</div>
                 </div>
                 
                 <div class='source-tag'>{$subject}</div>

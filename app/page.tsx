@@ -8,6 +8,9 @@ import { TestimonialsSection } from "@/components/testimonials-section";
 import { PricingSection } from "@/components/pricing-section";
 import { CTASection } from "@/components/cta-section";
 import { SiteFooter } from "@/components/site-footer";
+import { PricingFeaturesSection } from "@/components/sections/pricing-features-section";
+import { PricingFAQSection } from "@/components/sections/pricing-faq-section";
+import { AboutSection } from "@/components/sections/about-section";
 
 export default function Home() {
   return (
@@ -31,6 +34,13 @@ export default function Home() {
       </div>
       <div id="pricing">
         <PricingSection />
+        <PricingFeaturesSection />
+      </div>
+      <div id="faq">
+        <PricingFAQSection />
+      </div>
+      <div id="about">
+        <AboutSection />
       </div>
       <CTASection />
       <SiteFooter />
