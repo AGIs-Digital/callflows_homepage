@@ -6,33 +6,72 @@ import { Play, Pause, Maximize2 } from "lucide-react";
 interface Video {
   title: string;
   description: string;
-  src: string;
+  sources: {
+    src: string;
+    quality: string;
+    label: string;
+  }[];
   poster: string;
-  transcript: string;
+  transcriptUrl: string;
 }
 
 const videos: Video[] = [
   {
     title: "Outbound-Kampagne mit KI Voice Agent",
     description: "Sehen Sie live, wie unser KI Voice Agent Termine vereinbart",
-    src: "/videos/outbound-demo.mp4",
-    poster: "/images/outbound-poster.jpg",
-    transcript: "Transkript des Outbound-Demo-Videos..."
+    sources: [
+      {
+        src: "/videos/outbound-agent-480p.mp4",
+        quality: "480",
+        label: "480p"
+      },
+      {
+        src: "/videos/outbound-agent-720p.mp4",
+        quality: "720",
+        label: "720p"
+      },
+      {
+        src: "/videos/outbound-agent-1080p.mp4",
+        quality: "1080",
+        label: "1080p"
+      }
+    ],
+    poster: "/images/outbound-poster.png",
+    transcriptUrl: "/videos/transcript-outbound-agent.srt"
   },
   {
     title: "Inbound-Support mit KI Voice Agent",
     description: "Erleben Sie unseren KI Voice Agent im Kundenservice",
-    src: "/videos/inbound-demo.mp4",
-    poster: "/images/inbound-poster.jpg",
-    transcript: "Transkript des Inbound-Demo-Videos..."
+    sources: [
+      {
+        src: "/videos/inbound-agent-480p.mp4",
+        quality: "480",
+        label: "480p"
+      },
+      {
+        src: "/videos/inbound-agent-720p.mp4",
+        quality: "720",
+        label: "720p"
+      },
+      {
+        src: "/videos/inbound-agent-1080p.mp4",
+        quality: "1080",
+        label: "1080p"
+      }
+    ],
+    poster: "/images/inbound-poster.png",
+    transcriptUrl: "/videos/transcript-inbound-agent.srt"
   }
 ];
 
 function VideoPlayer({ video }: { video: Video }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [currentQuality, setCurrentQuality] = useState(getInitialQuality());
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const currentSource = video.sources.find(s => s.quality === currentQuality) || video.sources[0];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -89,6 +128,38 @@ function VideoPlayer({ video }: { video: Video }) {
     }
   };
 
+  const handleQualityChange = (quality: string) => {
+    if (videoRef.current) {
+      const currentTime = videoRef.current.currentTime;
+      const wasPlaying = !videoRef.current.paused;
+      setCurrentQuality(quality);
+      
+      videoRef.current.addEventListener('loadeddata', () => {
+        videoRef.current!.currentTime = currentTime;
+        if (wasPlaying) {
+          videoRef.current!.play();
+        }
+      }, { once: true });
+    }
+  };
+
+  // Bestimme die beste Startqualität basierend auf Verbindungsqualität
+  function getInitialQuality() {
+    if (typeof window === 'undefined') return "1080";
+    
+    const connection = (navigator as any).connection;
+    
+    // Nur bei erkennbar schlechter Verbindung die Qualität reduzieren
+    if (connection) {
+      if (connection.effectiveType === 'slow-2g') return "480";
+      if (connection.effectiveType === '2g') return "480";
+      if (connection.effectiveType === '3g') return "720";
+    }
+    
+    // Standard ist beste Qualität (1080p)
+    return "1080";
+  }
+
   return (
     <div ref={containerRef} className="relative rounded-lg overflow-hidden shadow-lg">
       <video
@@ -97,10 +168,10 @@ function VideoPlayer({ video }: { video: Video }) {
         onTimeUpdate={handleTimeUpdate}
         className="w-full aspect-video"
       >
-        <source src={video.src} type="video/mp4" />
+        <source src={currentSource.src} type="video/mp4" />
         <track
           kind="captions"
-          src={`${video.src}.vtt`}
+          src={`${currentSource.src}.vtt`}
           srcLang="de"
           label="Deutsch"
         />
@@ -119,16 +190,36 @@ function VideoPlayer({ video }: { video: Video }) {
         </div>
 
         <div className="flex items-center justify-between">
-          <button
-            onClick={togglePlay}
-            className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-          >
-            {isPlaying ? (
-              <Pause className="w-5 h-5 text-white" />
-            ) : (
-              <Play className="w-5 h-5 text-white" />
-            )}
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={togglePlay}
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            >
+              {isPlaying ? (
+                <Pause className="w-5 h-5 text-white" />
+              ) : (
+                <Play className="w-5 h-5 text-white" />
+              )}
+            </button>
+
+            <div className="relative group">
+              <button className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white text-sm">
+                {currentSource.label}
+              </button>
+              <div className="absolute bottom-full mb-2 left-0 hidden group-hover:block bg-black/90 rounded-lg overflow-hidden">
+                {video.sources.map((source) => (
+                  <button
+                    key={source.quality}
+                    onClick={() => handleQualityChange(source.quality)}
+                    className={`block w-full px-4 py-2 text-sm text-left hover:bg-white/10 text-white
+                      ${currentQuality === source.quality ? 'bg-white/20' : ''}`}
+                  >
+                    {source.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
 
           <button
             onClick={toggleFullscreen}
@@ -139,6 +230,55 @@ function VideoPlayer({ video }: { video: Video }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function TranscriptSection({ url }: { url: string }) {
+  const [transcript, setTranscript] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  const loadTranscript = async () => {
+    try {
+      setIsLoading(true);
+      setIsError(false);
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Failed to load transcript');
+      const text = await response.text();
+      setTranscript(text);
+    } catch (error) {
+      console.error('Error loading transcript:', error);
+      setIsError(true);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <details 
+      className="text-sm text-muted-foreground group"
+      onToggle={(e) => {
+        if ((e.target as HTMLDetailsElement).open && !transcript && !isLoading) {
+          loadTranscript();
+        }
+      }}
+    >
+      <summary className="cursor-pointer hover:text-primary transition-colors font-medium flex items-center gap-2">
+        <span className="group-open:rotate-90 transition-transform">
+          →
+        </span>
+        Transkript anzeigen
+      </summary>
+      <div className="mt-4 pl-6 border-l-2 border-primary/20 prose-sm dark:prose-invert">
+        {isLoading ? (
+          <p>Transkript wird geladen...</p>
+        ) : isError ? (
+          <p className="text-red-500">Fehler beim Laden des Transkripts</p>
+        ) : (
+          <p className="whitespace-pre-line">{transcript}</p>
+        )}
+      </div>
+    </details>
   );
 }
 
@@ -156,14 +296,7 @@ export function UseCaseVideoSection() {
               <VideoPlayer video={video} />
               <h3 className="text-xl font-semibold">{video.title}</h3>
               <p className="text-muted-foreground">{video.description}</p>
-              <details className="text-sm text-muted-foreground">
-                <summary className="cursor-pointer hover:text-primary">
-                  Transkript anzeigen
-                </summary>
-                <p className="mt-2 pl-4 border-l-2 border-primary/20">
-                  {video.transcript}
-                </p>
-              </details>
+              <TranscriptSection url={video.transcriptUrl} />
             </div>
           ))}
         </div>
