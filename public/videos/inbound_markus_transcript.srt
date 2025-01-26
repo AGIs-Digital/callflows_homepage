@@ -1,0 +1,371 @@
+1
+00:00:04,438 --> 00:00:06,478
+Willkommen bei Callflows. Wir hören uns
+
+2
+00:00:06,478 --> 00:00:09,239
+heute gemeinsam unseren Inbound
+
+3
+00:00:09,239 --> 00:00:11,610
+Agent, den Markus, an. Werden ein
+
+4
+00:00:11,610 --> 00:00:14,171
+Gespräch mit Markus führen und Markus
+
+5
+00:00:14,171 --> 00:00:16,611
+wird für uns Daten nach dem Gespräch
+
+6
+00:00:16,611 --> 00:00:18,332
+extrahieren und hier oben in dieses
+
+7
+00:00:18,332 --> 00:00:20,813
+Google Sheet eintragen. Danach wird
+
+8
+00:00:20,813 --> 00:00:22,693
+Markus mit uns einen Termin buchen.
+
+9
+00:00:25,404 --> 00:00:27,805
+Willkommen bei callflows. Sie sprechen
+
+10
+00:00:27,805 --> 00:00:30,086
+mit Markus mit wem spreche ich? Du
+
+11
+00:00:30,086 --> 00:00:31,086
+sprichst mit Timo, Hallo.
+
+12
+00:00:33,617 --> 00:00:36,058
+Hallo Timo, schön mit Ihnen zu sprechen,
+
+13
+00:00:36,378 --> 00:00:37,938
+könnten Sie mir bitte Ihren Nachnamen
+
+14
+00:00:37,938 --> 00:00:40,499
+nennen? Mein Nachname lautet Goltz.
+
+15
+00:00:42,930 --> 00:00:44,930
+Habe ich das richtig verstanden? Ihr
+
+16
+00:00:44,930 --> 00:00:47,611
+Nachname ist Gold, Herr Gold, genau
+
+17
+00:00:47,611 --> 00:00:49,212
+richtig soll ich den buchstabieren.
+
+18
+00:00:52,123 --> 00:00:54,443
+Kein Problem, ich buchstabiere Gold.
+
+19
+00:00:54,963 --> 00:00:57,864
+Stimmt das so?GOLT
+
+20
+00:00:57,864 --> 00:01:00,675
+Z. Ah,
+
+21
+00:01:00,675 --> 00:01:03,476
+danke für die Korrektur. Also Goltz, Herr
+
+22
+00:01:03,476 --> 00:01:05,717
+Goltz, wir zeichnen manche Gespräche auf,
+
+23
+00:01:05,717 --> 00:01:07,197
+um unsere Services zu verbessern,
+
+24
+00:01:07,757 --> 00:01:10,078
+natürlich DSGVO konform ist das in
+
+25
+00:01:10,078 --> 00:01:12,039
+Ordnung für sie? Das ist in Ordnung für
+
+26
+00:01:12,039 --> 00:01:12,199
+mich.
+
+27
+00:01:14,780 --> 00:01:17,220
+Super danke für ihr Einverständnis. Wie
+
+28
+00:01:17,220 --> 00:01:18,541
+kann ich Ihnen heute weiterhelfen?
+
+29
+00:01:20,201 --> 00:01:23,082
+Ich habe eine Frage zu meinem Agenten,
+
+30
+00:01:23,082 --> 00:01:24,523
+da knistert immer die Leitung.
+
+31
+00:01:27,193 --> 00:01:28,554
+Oh, es scheint, als ob die Leitung
+
+32
+00:01:28,554 --> 00:01:31,115
+manchmal Probleme macht. Können Sie mir
+
+33
+00:01:31,115 --> 00:01:33,195
+mehr darüber erzählen? Vielleicht kann
+
+34
+00:01:33,195 --> 00:01:34,156
+ich Ihnen weiterhelfen.
+
+35
+00:01:37,167 --> 00:01:38,567
+Ja, die Verbindung ist halt manchmal
+
+36
+00:01:38,567 --> 00:01:40,568
+einfach schlecht. Vielleicht sollte sich
+
+37
+00:01:40,568 --> 00:01:41,888
+das mal jemand angucken bei ihnen.
+
+38
+00:01:44,219 --> 00:01:46,219
+Das klingt ärgerlich, Herr Goltz. Ich
+
+39
+00:01:46,219 --> 00:01:47,620
+werde das an unser technisches Team
+
+40
+00:01:47,620 --> 00:01:49,300
+weiterleiten, damit sie sich das genauer
+
+41
+00:01:49,300 --> 00:01:51,341
+ansehen können. Möchten Sie vielleicht
+
+42
+00:01:51,341 --> 00:01:52,982
+einen Termin für ein Gespräch mit einem
+
+43
+00:01:52,982 --> 00:01:55,882
+unserer Experten vereinbaren?Ja, das ist
+
+44
+00:01:55,882 --> 00:01:56,683
+eine gute Idee.
+
+45
+00:01:58,933 --> 00:02:01,414
+Perfekt. Welche Tageszeit passt ihnen am
+
+46
+00:02:01,414 --> 00:02:03,615
+besten: Vormittag, Mittag oder Abend?
+
+47
+00:02:05,375 --> 00:02:06,216
+Mittags ist gut.
+
+48
+00:02:10,117 --> 00:02:12,278
+Alles klar für den Mittag hätte ich am
+
+49
+00:02:12,278 --> 00:02:15,198
+Dienstag 28.1. Um 11:15 Uhr
+
+50
+00:02:15,198 --> 00:02:16,719
+ oder am Mittwoch
+
+51
+00:02:17,199 --> 00:02:19,880
+ 29.1. Um 13:30 Uhr einen
+
+52
+00:02:19,880 --> 00:02:22,161
+Termin, welcher passt ihnen besser?
+
+53
+00:02:23,121 --> 00:02:23,601
+Mittwoch.
+
+54
+00:02:27,102 --> 00:02:28,703
+Super, dann buche ich den Termin für
+
+55
+00:02:28,703 --> 00:02:31,103
+Mittwoch 29.1. Um 13:30 Uhr
+
+56
+00:02:31,103 --> 00:02:33,704
+. Einen Moment, bitte,
+
+57
+00:02:34,224 --> 00:02:35,745
+bitte warten Sie einen Moment, während
+
+58
+00:02:35,745 --> 00:02:36,745
+ich ihr treffen Buche.
+
+59
+00:02:39,136 --> 00:02:40,576
+Ihr Termin ist gebucht für Mittwoch
+
+60
+00:02:40,696 --> 00:02:42,457
+, 29.1. Um 13:30 Uhr
+
+61
+00:02:42,457 --> 00:02:45,138
+. Sie erhalten eine Bestätigung per
+
+62
+00:02:45,138 --> 00:02:47,459
+E-Mail gibt es noch etwas, bei dem ich
+
+63
+00:02:47,459 --> 00:02:50,229
+Ihnen helfen kann?Brauchst du
+
+64
+00:02:50,229 --> 00:02:51,150
+meine E-Mail-Adresse?
+
+65
+00:02:53,810 --> 00:02:55,931
+Ich habe Ihre E-Mail-Adresse als timo@call
+
+66
+00:02:55,931 --> 00:02:58,372
+flows.de, ist das korrekt?
+
+67
+00:02:58,812 --> 00:03:00,333
+Das ist noch richtig. Bekomme ich
+
+68
+00:03:00,333 --> 00:03:01,853
+irgendwie einen Tag vorher in Erinnerung
+
+69
+00:03:01,853 --> 00:03:03,614
+von euch dann zum Beispiel meine
+
+70
+00:03:03,614 --> 00:03:04,254
+Telefonnummer.
+
+71
+00:03:06,825 --> 00:03:08,345
+Ich habe ihre Telefonnummer noch nicht.
+
+72
+00:03:09,025 --> 00:03:10,546
+Könnten Sie Sie mir bitte mitteilen,
+
+73
+00:03:10,546 --> 00:03:11,986
+damit wir sicherstellen können, dass
+
+74
+00:03:11,986 --> 00:03:14,787
+alles korrekt ist?Ja klar, meine
+
+75
+00:03:14,787 --> 00:03:15,987
+Telefonnummer lautet
+
+76
+00:03:16,107 --> 00:03:19,228
+ 0123456.
+
+77
+00:03:21,889 --> 00:03:23,730
+Danke also ihre Telefonnummer ist
+
+78
+00:03:23,730 --> 00:03:26,491
+ 0123/456
+
+79
+00:03:26,491 --> 00:03:28,811
+stimmt das so? Genau, das ist richtig.
+
+80
+00:03:31,192 --> 00:03:33,153
+Perfekt, danke. Sie erhalten eine
+
+81
+00:03:33,153 --> 00:03:34,993
+Erinnerung einen Tag vor Ihrem Termin
+
+82
+00:03:35,754 --> 00:03:37,154
+gibt es sonst noch etwas, bei dem ich
+
+83
+00:03:37,154 --> 00:03:40,035
+Ihnen helfen kann?Nein, ich
+
+84
+00:03:40,035 --> 00:03:41,595
+glaub, das war erstmal alles, Dankeschön.
+
+85
+00:03:50,168 --> 00:03:51,168
+Wie wir sehen, wurd das Gespräch
+
+86
+00:03:51,168 --> 00:03:53,609
+aufgenommen. Der Termin ist auch schon
+
+87
+00:03:53,609 --> 00:03:55,330
+gebucht und befindet sich hier im
+
+88
+00:03:55,330 --> 00:03:57,930
+Kalender und im Hintergrund läuft jetzt
+
+89
+00:03:57,930 --> 00:04:00,651
+die Automation ab, um die Daten
+
+90
+00:04:00,651 --> 00:04:03,372
+entsprechend aufzunehmen. Wir
+
+91
+00:04:03,372 --> 00:04:05,813
+haben hier unsere Anrede, den Vornamen,
+
+92
+00:04:05,813 --> 00:04:07,934
+den Nachnamen, das Anliegen aufgenommen,
+
+93
+00:04:07,934 --> 00:04:10,494
+die Telefonnummer und die E-Mailadresse.

@@ -21,46 +21,46 @@ const videos: Video[] = [
     description: "Sehen Sie live, wie unser KI Voice Agent Termine vereinbart",
     sources: [
       {
-        src: "/videos/outbound-agent-480p.mp4",
+        src: "/videos/outbound_nina_480p.mp4",
         quality: "480",
         label: "480p"
       },
       {
-        src: "/videos/outbound-agent-720p.mp4",
+        src: "/videos/outbound_nina_720p.mp4",
         quality: "720",
         label: "720p"
       },
       {
-        src: "/videos/outbound-agent-1080p.mp4",
+        src: "/videos/outbound_nina_1080p.mp4",
         quality: "1080",
         label: "1080p"
       }
     ],
     poster: "/images/outbound-poster.png",
-    transcriptUrl: "/videos/transcript-outbound-agent.srt"
+    transcriptUrl: "/videos/outbound_nina_transcript.srt"
   },
   {
     title: "Inbound-Support mit KI Voice Agent",
     description: "Erleben Sie unseren KI Voice Agent im Kundenservice",
     sources: [
       {
-        src: "/videos/inbound-agent-480p.mp4",
+        src: "/videos/inbound_markus_480p.mp4",
         quality: "480",
         label: "480p"
       },
       {
-        src: "/videos/inbound-agent-720p.mp4",
+        src: "/videos/inbound_markus_720p.mp4",
         quality: "720",
         label: "720p"
       },
       {
-        src: "/videos/inbound-agent-1080p.mp4",
+        src: "/videos/inbound_markus_1080p.mp4",
         quality: "1080",
         label: "1080p"
       }
     ],
     poster: "/images/inbound-poster.png",
-    transcriptUrl: "/videos/transcript-inbound-agent.srt"
+    transcriptUrl: "/videos/inbound_markus_transcript.srt"
   }
 ];
 
