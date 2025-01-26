@@ -5,23 +5,23 @@ import { Bot, Phone, BarChart3, Zap } from "lucide-react";
 const features = [
   {
     icon: Bot,
-    title: "KI Voice Agent",
-    description: "Unsere intelligenten Voice Agents führen natürliche Gespräche und passen sich an Ihre Bedürfnisse an."
+    title: "Automation Services",
+    description: "Wir automatisieren Ihre Kommunikationsprozesse und helfen Ihnen, Ihre Kunden zu bedienen."
   },
   {
     icon: Phone,
-    title: "Automatisierte Anrufe",
+    title: "Scaling Potential",
     description: "Skalieren Sie Ihre In- und Outbound-Kommunikation effizient und kostengünstig."
   },
   {
     icon: BarChart3,
-    title: "Detaillierte Analysen",
+    title: "Kampagnen Management",
     description: "Erhalten Sie tiefe Einblicke in Ihre Kampagnen mit unserem Analytics Dashboard."
   },
   {
     icon: Zap,
     title: "Schnelle Integration",
-    description: "Einfache Integration in Ihre bestehenden Systeme und Workflows."
+    description: "Einfache Integration in Ihre bestehenden Systeme und Workflows. Von Kalenderanbindung, Terminbuchung bishin zur Wiedervorlagen."
   }
 ];
 

@@ -27,17 +27,17 @@ export function HeroSection() {
               className="leading-tight"
             />
           </h1>
-          <h2 className="text-xl sm:text-2xl md:text-4xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-[600px]">
-            KI-gestützte Voice Agents
+          <h2 className="text-l sm:text-2xl md:text-4xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-[600px]">
+            Ihre Kommunikation, Ihre Lösung
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
-            Automatisieren Sie Ihre Kommunikation mit unseren intelligenten Lösungen.
+          Wir automatisieren mit Ihnen Ihre Prozesse. Von Sales über Marketing und Support bis hin zur Terminbuchung.
           </p>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
             Spezialisiert auf die Abwicklung ein- und ausgehender Anrufe für den deutschsprachigen Raum.
           </p>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
-            callflows hilft Ihnen Zeit zu sparen und gleichzeitig die Qualität Ihrer Kundenkommunikation zu verbessern.
+            callflows spart Ihnen Zeit, optimiert Kundenbindung und erhöht Ihren Umsatz.
           </p>
           <div className="flex gap-4 pt-4">
             <button className="bg-accent text-gray-900 px-6 md:px-8 py-3 rounded-lg font-medium 
