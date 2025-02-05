@@ -1,6 +1,4 @@
 "use client";
-
-import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ContactForm } from "@/components/contact-form";
@@ -9,13 +7,29 @@ import { useState } from "react";
 
 interface PricingCardProps {
   plan: PricingPlan;
-  isYearly: boolean;
 }
 
-export function PricingCard({ plan, isYearly }: PricingCardProps) {
-  const price = isYearly ? plan.yearlyPrice : plan.price;
+import { Timer, Info } from "lucide-react";
+import { 
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+const EARLY_BIRD_END_DATE = new Date("2025-06-30");
+const isEarlyBirdActive = () => {
+  const now = new Date();
+  return now < EARLY_BIRD_END_DATE;
+};
+
+export function PricingCard({ plan }: PricingCardProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const savings = (plan.price - plan.yearlyPrice) * 12;
+  const earlyBirdActive = isEarlyBirdActive();
+
+  const displayPrice = earlyBirdActive && plan.earlyBirdPrice 
+    ? plan.earlyBirdPrice 
+    : plan.price;
 
   return (
     <div className={`relative rounded-2xl p-8 ${
@@ -37,18 +51,46 @@ export function PricingCard({ plan, isYearly }: PricingCardProps) {
       </div>
 
       <div className="mb-8">
-        <div className="flex items-baseline mb-2">
-          <span className="text-4xl font-bold">ab {price}€</span>
-          <span className="text-muted-foreground ml-2">/Monat</span>
-        </div>
-        {isYearly && (
-          <p className="text-sm text-green-600 dark:text-green-400">
-            Jährliche Zahlung: {savings}€ Ersparnis möglich
-          </p>
+        {earlyBirdActive && plan.earlyBirdPrice && (
+          <>
+            <div className="flex items-center text-sm text-primary mb-2">
+              <Timer className="w-4 h-4 mr-1" />
+              <span>Limitiertes Angebot für die ersten Kunden</span>
+            </div>
+
+            <div className="flex items-center gap-1 mb-4">
+              <p className="text-sm text-green-600 font-medium">
+                Keine Einrichtungsgebühr
+              </p>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Info className="h-4 w-4 text-muted-foreground" />
+                  </TooltipTrigger>
+                  <TooltipContent className="max-w-xs">
+                    <p>Die einmalige Einrichtungsgebühr umfasst das komplette Onboarding nach Aufwand: Von der Entwicklung des Prototypen bis zum Go-Live.</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
+          </>
         )}
-        <p className="text-sm text-muted-foreground mt-2">
-          Preis basiert auf Ihrem individuellen Bedarf
-        </p>
+
+        <div className="flex items-baseline mb-4">
+          <span className="text-4xl font-bold">
+            {displayPrice.toLocaleString('de-DE')} €
+          </span>
+          <span className="text-muted-foreground ml-2">/Monat</span>
+          {earlyBirdActive && plan.earlyBirdPrice && (
+            <span className="ml-2 line-through text-muted-foreground">
+              {plan.price.toLocaleString('de-DE')} €
+            </span>
+          )}
+        </div>
+
+        <div className="space-y-4">
+          <p className="text-sm text-primary">{plan.minutesIncluded} Freiminuten</p>
+        </div>
       </div>
 
       <div className="space-y-4 mb-8">
@@ -70,29 +112,22 @@ export function PricingCard({ plan, isYearly }: PricingCardProps) {
             plan.popular ? "bg-primary" : "bg-accent text-gray-900"
           } hover:opacity-90 transition-opacity`}
         >
-          {plan.cta}
+          Jetzt beraten lassen
         </Button>
         <DialogContent className="sm:max-w-[500px]">
           <DialogHeader>
-            <DialogTitle>Individuelles Angebot für {plan.name}</DialogTitle>
+            <DialogTitle className="text-2xl font-bold text-primary dark:text-white">
+              Beratung zum {plan.name} Paket
+            </DialogTitle>
           </DialogHeader>
           <ContactForm
             source={plan.type}
             isOpen={isDialogOpen}
             onOpenChange={setIsDialogOpen}
-            prefilledMessage={`Ich interessiere mich für das ${plan.name} Paket.`}
+            prefilledMessage={`Ich interessiere mich für das ${plan.name} Paket und würde gerne mehr darüber erfahren.`}
           />
         </DialogContent>
       </Dialog>
-
-      <div className="space-y-3">
-        {plan.features.map((feature) => (
-          <div key={feature} className="flex items-start gap-3">
-            <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-            <span className="text-muted-foreground text-sm">{feature}</span>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }

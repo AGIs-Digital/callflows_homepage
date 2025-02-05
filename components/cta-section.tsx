@@ -39,7 +39,7 @@ export function CTASection() {
           </button>
         </div>
         <p className="mt-4 text-sm text-white/80">
-          Keine Kreditkarte erforderlich • 14 Tage kostenlos testen • Jederzeit kündbar
+          Keine Kreditkarte erforderlich • Jederzeit monatlich kündbar
         </p>
       </div>
     </section>

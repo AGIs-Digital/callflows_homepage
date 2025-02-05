@@ -4,7 +4,7 @@ export function generateOrganizationSchema(): WithContext<Organization> {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Callflows',
+    name: 'callflows',
     url: 'https://callflows.de',
     logo: 'https://callflows.de/images/callflows_brand_no_claim.png',
     description: 'KI-gestützte Voice Agents für automatisierte Kommunikation',

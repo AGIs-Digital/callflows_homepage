@@ -19,22 +19,30 @@ export class ErrorBoundary extends Component<Props, State> {
     hasError: false
   };
 
-  public static getDerivedStateFromError(_: Error): State {
-    return { hasError: true };
+  public static getDerivedStateFromError(error: Error): State {
+    return { hasError: true, error };
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error("Uncaught error:", error, errorInfo);
+    if (process.env.NODE_ENV === 'production') {
+      // In production, you might want to log to an error tracking service
+      // logErrorToService(error, errorInfo);
+    }
   }
 
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Etwas ist schiefgelaufen</h2>
+        <div className="min-h-screen flex items-center justify-center bg-background">
+          <div className="text-center p-8 rounded-lg border bg-card shadow-lg">
+            <h2 className="text-2xl font-bold mb-4 text-primary">Etwas ist schiefgelaufen</h2>
+            <p className="text-muted-foreground mb-6">
+              Ein unerwarteter Fehler ist aufgetreten. Bitte laden Sie die Seite neu.
+            </p>
             <button
-              className="bg-primary text-white px-4 py-2 rounded"
+              className="bg-primary text-white px-6 py-3 rounded-lg font-medium
+                         hover:bg-primary/90 transition-colors"
               onClick={() => this.setState({ hasError: false })}
             >
               Neu laden

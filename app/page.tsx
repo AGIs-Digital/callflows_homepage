@@ -1,16 +1,16 @@
 import { SiteHeader } from "@/components/site-header";
 import { HeroSection } from "@/components/hero-section";
 import { ProcessSection } from "@/components/sections/process-section";
+import { PricingComparisonSection } from "@/components/sections/pricing-comparison-section";
 import { ProductPreviewSection } from "@/components/sections/product-preview-section";
+import { CoreFeaturesSection } from "@/components/sections/core-features-section";
 import { UseCaseVideoSection } from "@/components/sections/use-case-video-section";
-import { FeaturesSection } from "@/components/features-section";
+import { FeaturesSection } from "@/components/sections/features-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
-import { PricingSection } from "@/components/pricing-section";
-import { CTASection } from "@/components/cta-section";
 import { SiteFooter } from "@/components/site-footer";
-import { PricingFeaturesSection } from "@/components/sections/pricing-features-section";
-import { PricingFAQSection } from "@/components/sections/pricing-faq-section";
 import { AboutSection } from "@/components/sections/about-section";
+import { CTASection } from "@/components/cta-section";
+import { PricingFAQSection } from "@/components/sections/pricing-faq-section";
 
 export default function Home() {
   return (
@@ -20,9 +20,14 @@ export default function Home() {
       <div className="bg-section-light">
         <ProcessSection />
       </div>
+      <div id="about">
+        <AboutSection />
+      </div>
       <div id="features">
         <FeaturesSection />
       </div>
+      <CoreFeaturesSection />
+      <PricingComparisonSection />
       <div className="bg-section-dark">
         <ProductPreviewSection />
       </div>
@@ -32,15 +37,8 @@ export default function Home() {
       <div className="bg-section-light">
         <UseCaseVideoSection />
       </div>
-      <div id="pricing">
-        <PricingSection />
-        <PricingFeaturesSection />
-      </div>
       <div id="faq">
         <PricingFAQSection />
-      </div>
-      <div id="about">
-        <AboutSection />
       </div>
       <CTASection />
       <SiteFooter />

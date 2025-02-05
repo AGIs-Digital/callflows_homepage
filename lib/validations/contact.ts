@@ -5,7 +5,7 @@ export const contactFormSchema = z.object({
   email: z.string().email("Ungültige E-Mail-Adresse"),
   phone: z.string().optional(),
   message: z.string().min(10, "Nachricht muss mindestens 10 Zeichen lang sein"),
-  source: z.enum(["inbound", "outbound", "enterprise", "contact"]).optional()
+  source: z.enum(["starter", "business", "enterprise", "contact"]).optional()
 });
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;

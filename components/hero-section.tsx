@@ -3,41 +3,37 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedText } from "@/components/ui/animated-text";
+import { WavyBackground } from "@/components/ui/wavy-background";
+import { useTheme } from "next-themes";
 
 export function HeroSection() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
+  const { theme } = useTheme();
+  
   return (
-    <section className="relative min-h-[calc(100vh-30rem)] bg-secondary dark:bg-secondary/10 overflow-hidden">
-      <div className="container relative grid lg:grid-cols-[1fr,400px] gap-8 items-center py-16 md:py-24 px-4 md:px-8">
+    <WavyBackground
+      containerClassName="relative min-h-[calc(100vh-30rem)] overflow-visible"
+      colors={["#004aad", "#0f62d5", "#def0f2", "#ffb703"]}
+      backgroundFill="transparent"
+      waveOpacity={1}
+      speed="slow"
+      waveWidth={100}
+    >
+      <div className="container relative grid lg:grid-cols-[1fr,400px] gap-8 items-center py-16 md:py-24 px-4 md:px-8 mb-[300px] lg:mb-0">
         <div className="relative z-10 space-y-6 md:space-y-8 animate-slideIn">
           <h1 className="text-3xl sm:text-4xl md:text-[56px] font-bold leading-tight text-primary dark:text-white">
             <AnimatedText
-              words={["Einfach.", "Automatisch.", "Erfolgreich."]}
+              words={["Intelligent.", "Automatisiert.", "Erfolgreich."]}
               className="leading-tight"
             />
           </h1>
           <h2 className="text-l sm:text-2xl md:text-4xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-[600px]">
-            Ihre Kommunikation, Ihre Lösung
+            KI Voice Agents für den deutschsprachigen Raum
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
-          Wir automatisieren mit Ihnen Ihre Prozesse. Von Sales über Marketing und Support bis hin zur Terminbuchung.
+          Von Sales und Marketing über Support - wir automatisieren Ihre Prozesse zur Kundenkommunikation.
           </p>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
-            Spezialisiert auf die Abwicklung ein- und ausgehender Anrufe für den deutschsprachigen Raum.
-          </p>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
-            callflows spart Ihnen Zeit, optimiert Kundenbindung und erhöht Ihren Umsatz.
+            Mit umfassender Beratung und maßgeschneiderten Lösungen unterstützen wir Sie bei der digitalen Transformation Ihrer Kommunikation.
           </p>
           <div className="flex gap-4 pt-4">
             <button className="bg-accent text-gray-900 px-6 md:px-8 py-3 rounded-lg font-medium 
@@ -58,7 +54,7 @@ export function HeroSection() {
             "relative lg:absolute",
             "lg:right-0 lg:top-1/2 lg:-translate-y-1/2",
             "w-full max-w-[400px] aspect-[2/3]",
-            "z-20"
+            "z-[150]"
           )}>
             <iframe 
               id="audio_iframe"
@@ -72,12 +68,12 @@ export function HeroSection() {
               )}
               style={{
                 pointerEvents: "auto",
-                zIndex: 999
+                zIndex: 150
               }}
             />
           </div>
         </div>
       </div>
-    </section>
+    </WavyBackground>
   );
 }

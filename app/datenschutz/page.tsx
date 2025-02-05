@@ -7,34 +7,115 @@ export default function DatenschutzPage() {
       title="Datenschutzerklärung"
       subtitle="Informationen zum Schutz Ihrer persönlichen Daten"
     >
-      <LegalSection title="1. Datenschutz auf einen Blick">
-            <h3 className="font-medium mb-2">Allgemeine Hinweise</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-            Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, 
-            wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert 
-            werden können.
-            </p>
-            <h3 className="font-medium mb-2">Datenerfassung auf dieser Website</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-            Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem 
-            Impressum dieser Website entnehmen.
-            </p>
+      <LegalSection title="Einleitung">
+        <p className="text-gray-600 dark:text-gray-300">
+          Die Abeln Goltz GbR ("callflows", "wir", "uns" oder "unser") betreibt die Website https://callflows.de (im Folgenden "Dienst" oder "Service"). Diese Datenschutzerklärung informiert Sie über unsere Richtlinien hinsichtlich der Erfassung, Nutzung und Offenlegung personenbezogener Daten, wenn Sie unseren Service nutzen. Wir verarbeiten Ihre Daten ausschließlich im Einklang mit den Bestimmungen der Datenschutz-Grundverordnung (DSGVO) der EU sowie geltenden deutschen Datenschutzgesetzen. Durch die Nutzung des Dienstes stimmen Sie der Erfassung und Nutzung Ihrer Daten gemäß dieser Datenschutzerklärung zu.
+        </p>
       </LegalSection>
 
-      <LegalSection title="2. Hosting und Content Delivery Networks (CDN)">
-            <p className="text-gray-600 dark:text-gray-300">
-            Diese Website wird bei einem externen Dienstleister gehostet (Hoster). Die personenbezogenen Daten, die auf dieser 
-            Website erfasst werden, werden auf den Servern des Hosters gespeichert.
-            </p>
+      <LegalSection title="1. Verantwortlicher für die Datenverarbeitung">
+        <p className="text-gray-600 dark:text-gray-300">
+          Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br /><br />
+          callflows Abeln Goltz GbR<br />
+          Adalbert-Stifter Straße 14<br />
+          30655 Hannover<br />
+          E-Mail: info@callflows.de
+        </p>
       </LegalSection>
 
-      <LegalSection title="3. Allgemeine Hinweise und Pflichtinformationen">
-            <h3 className="font-medium mb-2">Datenschutz</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-            Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre 
-            personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser 
-            Datenschutzerklärung.
-            </p>
+      <LegalSection title="2. Welche Daten erfassen wir?">
+        <p className="text-gray-600 dark:text-gray-300">
+          Wir erfassen und verarbeiten personenbezogene Daten nur im notwendigen Umfang. Dies umfasst:<br /><br />
+          • Direkt vom Kunden bereitgestellte Daten: Name, E-Mail-Adresse, Telefonnummer<br /><br />
+          • Daten aus der Nutzung unseres Dienstes: Gesprächsprotokolle, Transkriptionen (sofern vom Kunden aktiviert)<br /><br />
+          • Daten aus der ersten Kontaktaufnahme: Falls ein potenzieller Kunde Interesse an unseren Diensten hat, kann ein Video-Call zur Besprechung der Anforderungen durchgeführt werden. Dieses Gespräch wird aufgezeichnet und spätestens nach 30 Tagen oder mit Live-Schaltung des Agenten gelöscht. Die Aufzeichnung erfolgt nur mit vorheriger ausdrücklicher Einwilligung des Kunden.<br /><br />
+          • Automatisch erfasste Daten: IP-Adresse, Browserinformationen (für die Website-Optimierung), Cookies
+        </p>
+      </LegalSection>
+
+      <LegalSection title="3. Zweck der Datenverarbeitung">
+        <p className="text-gray-600 dark:text-gray-300">
+          Wir verarbeiten personenbezogene Daten ausschließlich zu folgenden Zwecken:<br /><br />
+          • Erstellung, Bereitstellung und Verbesserung der Voice-Agenten<br />
+          • Kundenkommunikation und Support<br />
+          • Abrechnung und Zahlungsabwicklung (via Stripe)<br />
+          • Sicherstellung und Optimierung der Servicequalität<br />
+          • Einhaltung gesetzlicher Verpflichtungen
+        </p>
+      </LegalSection>
+
+      <LegalSection title="4. Weitergabe an Dritte">
+        <p className="text-gray-600 dark:text-gray-300">
+          Wir geben personenbezogene Daten nicht an unbeteiligte Dritte weiter. Allerdings arbeiten wir mit folgenden Drittanbietern, die für die Erbringung unseres Dienstes erforderlich sind:<br /><br />
+          • Synthflow AI (Plattform für Voice-Agenten, Whitelabel-Lösung)<br />
+          • Stripe (Zahlungsabwicklung)<br />
+          • Hosting-Anbieter (Serverstandort innerhalb der EU)<br /><br />
+          Mit diesen Dienstleistern bestehen entsprechende Auftragsverarbeitungsverträge (AVV), um die Einhaltung der DSGVO zu gewährleisten.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="5. Speicherdauer & Löschung von Daten">
+        <p className="text-gray-600 dark:text-gray-300">
+          • Kundenbezogene Daten werden so lange gespeichert, wie ein aktives Vertragsverhältnis besteht.<br /><br />
+          • Bei einer Kündigung des Abonnements werden alle personenbezogenen Daten gelöscht, sofern keine gesetzliche Aufbewahrungspflicht entgegensteht.<br /><br />
+          • Falls der Kunde einer weiteren Speicherung für zukünftige Angebote zustimmt, können Kontaktdaten weiterhin gespeichert werden.<br /><br />
+          • Aufzeichnungen aus Erstgesprächen werden spätestens nach 30 Tagen gelöscht.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="6. Rechte der Nutzer gemäß DSGVO">
+        <p className="text-gray-600 dark:text-gray-300">
+          Nutzer haben folgende Rechte hinsichtlich ihrer personenbezogenen Daten:<br /><br />
+          • Recht auf Auskunft (Art. 15 DSGVO): Welche Daten speichern wir?<br />
+          • Recht auf Berichtigung (Art. 16 DSGVO): Korrektur unrichtiger Daten<br />
+          • Recht auf Löschung (Art. 17 DSGVO): Daten löschen lassen<br />
+          • Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)<br />
+          • Recht auf Datenübertragbarkeit (Art. 20 DSGVO)<br />
+          • Recht auf Widerspruch gegen bestimmte Verarbeitungen (Art. 21 DSGVO)<br /><br />
+          Anfragen können jederzeit an info@callflows.de gestellt werden.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="7. Cookies & Tracking-Technologien">
+        <p className="text-gray-600 dark:text-gray-300">
+          • Unsere Website verwendet Cookies, um das Nutzungserlebnis zu verbessern.<br /><br />
+          • Beim ersten Besuch der Website erscheint ein Cookie-Banner, das den Nutzer fragt, ob er der Verwendung von Cookies zustimmt oder diese ablehnt.<br /><br />
+          • Es werden keine personenbezogenen Cookies gespeichert oder ausgewertet, es sei denn, der Nutzer gibt seine Einwilligung.<br /><br />
+          • Falls Analysetools (z. B. Google Analytics, Facebook Pixel) verwendet werden, erfolgt dies nur mit Einwilligung.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="8. Datensicherheit">
+        <p className="text-gray-600 dark:text-gray-300">
+          Wir setzen technische und organisatorische Maßnahmen (TOMs) ein, um personenbezogene Daten zu schützen:<br /><br />
+          • SSL-Verschlüsselung für sichere Datenübertragung<br />
+          • Firewall- und Zugriffskontrollen<br />
+          • Passwortschutz und Zwei-Faktor-Authentifizierung (2FA)<br />
+          • Eingeschränkte Zugriffsrechte für Mitarbeiter<br />
+          • Speicherung auf sicheren Servern innerhalb der EU
+        </p>
+      </LegalSection>
+
+      <LegalSection title="9. Internationale Datenübermittlung">
+        <p className="text-gray-600 dark:text-gray-300">
+          • Alle Daten werden ausschließlich innerhalb der EU gespeichert.<br />
+          • Es findet keine Übermittlung in Drittländer (z. B. USA) statt.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="10. Änderungen der Datenschutzerklärung">
+        <p className="text-gray-600 dark:text-gray-300">
+          Wir behalten uns das Recht vor, diese Datenschutzerklärung zu ändern. Nutzer werden mindestens 14 Tage vor Inkrafttreten per E-Mail oder auf unserer Website informiert.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="11. Kontakt für Datenschutzanfragen">
+        <p className="text-gray-600 dark:text-gray-300">
+          Für Datenschutzanfragen oder Ausübung der Nutzerrechte kontaktieren Sie uns unter:<br /><br />
+          callflows Abeln Goltz GbR<br />
+          E-Mail: info@callflows.de<br />
+          Adresse: Adalbert-Stifter Straße 14, 30655 Hannover
+        </p>
       </LegalSection>
     </LegalLayout>
   );

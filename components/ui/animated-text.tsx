@@ -17,7 +17,7 @@ export function AnimatedText({ words, className }: AnimatedTextProps) {
     const timer = setInterval(() => {
       setIsAnimating(true);
       setCurrentWordIndex((prev) => (prev === 1 ? 2 : 1)); // Toggle between 1 and 2
-    }, 4000); // Complete cycle every 4 seconds
+    }, 3500); // Complete cycle every 3,5 seconds
 
     return () => clearInterval(timer);
   }, []);
@@ -26,7 +26,7 @@ export function AnimatedText({ words, className }: AnimatedTextProps) {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.06, delayChildren: 0.04 * i },
+      transition: { staggerChildren: 0.05, delayChildren: 0.05 * i },
     }),
   };
 

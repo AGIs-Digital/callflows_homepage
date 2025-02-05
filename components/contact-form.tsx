@@ -19,7 +19,7 @@ import { contactFormSchema, type ContactFormData } from "@/lib/validations/conta
 interface ContactFormProps {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
-  source?: 'inbound' | 'outbound' | 'enterprise' | 'contact';
+  source?: 'starter' | 'business' | 'enterprise' | 'contact';
   prefilledMessage?: string;
 }
 
@@ -177,6 +177,9 @@ export function ContactForm({
     return (
       <Dialog open={isOpen} onOpenChange={onOpenChange}>
         <DialogContent className="sm:max-w-[500px]">
+          <DialogTitle className="text-2xl font-bold text-primary dark:text-white">
+            Kontaktieren Sie uns
+          </DialogTitle>
           <DialogHeader>
             <DialogTitle>Kontaktieren Sie uns</DialogTitle>
           </DialogHeader>

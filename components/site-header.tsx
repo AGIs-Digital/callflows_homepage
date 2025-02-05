@@ -27,18 +27,21 @@ export function SiteHeader() {
   const navItems = [
     { href: "/#features", label: "Features" },
     { href: "/#testimonials", label: "Referenzen" },
-    { href: "/#pricing", label: "Preise" },
+    { href: "/pricing", label: "Preise" },
   ];
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-200 ${
-      isScrolled ? "bg-background/80 backdrop-blur-sm shadow-sm border-b" : "bg-transparent"
-    }`}>
+    <header 
+      className={`sticky top-0 z-50 w-full transition-all duration-200 ${
+        isScrolled ? "bg-background/80 backdrop-blur-sm shadow-sm border-b" : "bg-transparent"
+      }`}
+      style={{ zIndex: 200 }}
+    >
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
             src="/images/callflows_brand_no_claim.png"
-            alt="Callflows Logo"
+            alt="callflows Logo"
             width={150}
             height={30}
             priority
@@ -72,8 +75,9 @@ export function SiteHeader() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 hover:bg-muted/50 rounded-lg transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMobileMenuOpen ? (
             <X className="h-6 w-6" />
@@ -81,34 +85,47 @@ export function SiteHeader() {
             <Menu className="h-6 w-6" />
           )}
         </button>
+      </div>
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-background border-b md:hidden">
-            <nav className="container py-4 flex flex-col space-y-4">
+      {/* Mobile Navigation */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 top-[80px] bg-background/95 backdrop-blur-sm md:hidden" style={{ zIndex: 200 }}>
+          <nav className="container py-6">
+            <div className="space-y-1">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="nav-link block py-2"
+                  className="flex items-center w-full px-4 py-3 text-lg font-medium hover:bg-muted/50 rounded-lg transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-          <ContactDialog />
-          <ModeToggle />
-          <button
-            onClick={handleLoginClick}
-            className="w-full text-center bg-primary text-white py-2 rounded-lg
-                       hover:bg-primary/90 transition-colors"
-          >
-            Login
-          </button>
-            </nav>
-          </div>
-        )}
-      </div>
+            </div>
+            
+            <div className="mt-6 pt-6 border-t space-y-4">
+              <div className="px-4">
+                <ContactDialog />
+              </div>
+              
+              <div className="flex items-center justify-between px-4">
+                <ModeToggle />
+              </div>
+              
+              <div className="px-4">
+                <button
+                  onClick={handleLoginClick}
+                  className="w-full bg-primary text-white px-6 py-3 rounded-lg
+                           font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Login
+                </button>
+              </div>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

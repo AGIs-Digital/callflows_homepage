@@ -21,7 +21,7 @@ export const pricingFeatures: PricingFeature[] = [
   {
     icon: Phone,
     title: "Multichannel",
-    description: "bis zu 100 Gesprächen gleichzeitig"
+    description: "bis zu 100+ Gesprächen gleichzeitig"
   },
   {
     icon: BarChart3,
@@ -47,8 +47,8 @@ export const pricingFeatures: PricingFeature[] = [
 
 export const pricingFAQs: PricingFAQ[] = [
   {
-    question: "Wie funktioniert das Rückgaberecht?",
-    answer: "Sie können jederzeit kündigen. Wir gewähren Ihnen ein Rückgaberecht von 14 Tagen. Wir bitten Sie, uns zu kontaktieren, falls Sie nicht zufrieden sind."
+    question: "Meine anforderungen haben sich geändert, kann ich den Agenten anpassen lassen?",
+    answer: "Ja, entweder indem neue Agenten in das Team integriert oder bestehende angepasst werden. Für die Konfiguration berechnen wir nur den Zeitaufwand."
   },
   {
     question: "Gibt es versteckte Kosten?",
@@ -60,11 +60,19 @@ export const pricingFAQs: PricingFAQ[] = [
   },
   {
     question: "Wie werden die Anrufe abgerechnet?",
-    answer: "Die Anrufe werden pro Minute abgerechnet. Die Agenten haben 100min/Monat enthalten. Zusätzliche Minuten können bei Bedarf flexibel hinzugebucht werden."
+    answer: "Die Anrufe werden pro Minute abgerechnet. Sollte das Volumen der Pakete überschritten werden, wird jede angefangene Minute pay-as-you-go je 0,99 € /Minute am Ende des Monats in Rechnung gestellt."
   },
   {
     question: "Welche Zahlungsmethoden werden akzeptiert?",
     answer: "Wir akzeptieren alle gängigen Kreditkarten, SEPA-Lastschrift und Überweisung. Für Enterprise-Kunden bieten wir auch individuelle Zahlungskonditionen."
+  },
+  {
+    question: "Was passiert wenn ich nicht alle Minuten aufbrauche?",
+    answer: "Nicht verbrauchte Minuten der Pakete verfallen zum nächsten Abrechnungszeitpunkt. Über Zusatzpakete gekaufte Minuten können nicht verfallen. Sie werden in den nächsten Monat übertragen."
+  },
+  {
+    question: "Was passiert wenn meine Minuten aufgebraucht sind?",
+    answer: "Der Betrieb läuft solange weiter, bis Sie Ihre Agenten deaktivieren. Sind alle Minuten aufgebraucht, wird jede weitere angefangene Minute in Rechnung gestellt."
   },
   {
     question: "Gibt es Rabatte für Non-Profit Organisationen?",

@@ -67,11 +67,16 @@ const videos: Video[] = [
 function VideoPlayer({ video }: { video: Video }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [currentQuality, setCurrentQuality] = useState(getInitialQuality());
+  const [currentQuality, setCurrentQuality] = useState<string>('720');
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const currentSource = video.sources.find(s => s.quality === currentQuality) || video.sources[0];
+
+  useEffect(() => {
+    // Set initial quality after component mounts to avoid hydration mismatch
+    setCurrentQuality(getInitialQuality());
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -146,7 +151,7 @@ function VideoPlayer({ video }: { video: Video }) {
   // Bestimme die beste Startqualität basierend auf Verbindungsqualität
   function getInitialQuality() {
     if (typeof window === 'undefined') return "1080";
-    
+
     const connection = (navigator as any).connection;
     
     // Nur bei erkennbar schlechter Verbindung die Qualität reduzieren
@@ -156,8 +161,8 @@ function VideoPlayer({ video }: { video: Video }) {
       if (connection.effectiveType === '3g') return "720";
     }
     
-    // Standard ist beste Qualität (1080p)
-    return "1080";
+    // Standard ist mittlere Qualität (720p) für bessere Performance
+    return "720";
   }
 
   return (
@@ -284,7 +289,7 @@ function TranscriptSection({ url }: { url: string }) {
 
 export function UseCaseVideoSection() {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-section-light-blue dark:bg-[#F5F0FF]/5">
       <div className="container max-w-7xl">
         <h2 className="text-4xl font-bold text-center mb-16 text-primary dark:text-white">
           Praxis-Einblicke

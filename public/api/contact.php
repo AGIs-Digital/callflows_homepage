@@ -53,8 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Dynamic subject based on source
     $subjectMap = [
-        'inbound' => 'Anfrage Inbound',
-        'outbound' => 'Anfrage Outbound',
+        'starter' => 'Anfrage Starter',
+        'business' => 'Anfrage Business',
         'enterprise' => 'Anfrage Enterprise',
         'contact' => 'Anfrage Kontakt'
     ];

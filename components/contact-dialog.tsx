@@ -10,14 +10,14 @@ export function ContactDialog() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <button className="bg-white hover:bg-white/90 text-gray-900 px-8 py-4 rounded-lg font-medium">
-          Kontakt aufnehmen
+        <button className="nav-link">
+          Kontakt
         </button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-primary dark:text-white">
-            Kontaktieren Sie uns
+            Kontakt aufnehmen
           </DialogTitle>
         </DialogHeader>
         <ContactForm isOpen={isOpen} onOpenChange={setIsOpen} />

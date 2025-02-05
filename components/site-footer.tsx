@@ -11,7 +11,7 @@ export function SiteFooter() {
           <Link href="/" className="inline-block">
             <Image
               src="/images/callflows_brand_no_claim.png"
-              alt="Callflows Logo"
+              alt="callflows Logo"
               width={150}
               height={30}
               priority
@@ -32,7 +32,7 @@ export function SiteFooter() {
           </div>
 
           <p className="text-muted-foreground whitespace-nowrap">
-            © {new Date().getFullYear()} Callflows. Alle Rechte vorbehalten.
+            © {new Date().getFullYear()} callflows. Alle Rechte vorbehalten.
           </p>
         </div>
       </div>

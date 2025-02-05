@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export function AboutSection() {
   return (
-    <section className="py-24 bg-white dark:bg-background">
+    <section className="py-24 bg-section-light-blue dark:bg-[#F5F0FF]/5">
       <div className="container max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Linke Spalte - Text */}
@@ -22,22 +22,15 @@ export function AboutSection() {
               <p className="text-lg text-muted-foreground">
                 Als Pioniere im Bereich der KI-gestützten Sprachkommunikation entwickeln 
                 wir innovative Lösungen, die speziell auf die Bedürfnisse des 
-                deutschsprachigen Marktes zugeschnitten sind.
+                deutschsprachigen Marktes zugeschnitten sind. Unsere Expertise geht dabei 
+                weit über Telefonie hinaus: Wir analysieren, optimieren und automatisieren 
+                Ihre Geschäftsprozesse für maximale Effizienz.
               </p>
               <p className="text-lg text-muted-foreground">
-                Unser Ziel: Unkomplizierter Zugang zu Technologien zu schaffen, um mehr Zeit für Ihre Kernaufgaben zu gewinnen. 
+                Unser Ziel: Unkompliziert Zugang zu Technologien schaffen, um mehr Zeit für  Kernaufgaben zu gewinnen. 
               </p>
             </div>
             
-            <div className="pt-6">
-              <Button 
-                className="group"
-                variant="outline"
-              >
-                Mehr über uns
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </div>
           </div>
 
           {/* Rechte Spalte - Bilder & Stats */}

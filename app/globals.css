@@ -64,7 +64,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 99.4%;  /* #fdfdfd */
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
@@ -91,6 +91,8 @@
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
     --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
     --shadow-lg: 0 8px 16px rgba(0,0,0,0.14);
+    --section-blue: 195 47% 91%;  /* #def0f2 */
+    --section-light-blue: 214 100% 98%;  /* #f5f9ff */
   }
 
   .dark {
@@ -295,4 +297,12 @@
            transition-transform duration-300
            hover:scale-[1.02];
   }
+}
+
+.bg-section-blue {
+  background-color: hsl(var(--section-blue));
+}
+
+.bg-section-light-blue {
+  background-color: hsl(var(--section-light-blue));
 }
