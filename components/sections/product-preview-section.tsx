@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const features = [
   {
     title: "Agent Dashboard",
-    description: "Sehen Sie Ihre Agents und Agent-Teams in einem Übersichtliches Dashboard zur Analyse Ihrer calls",
+    description: "Sehen Sie Ihre Agents und Agent-Teams in einem übersichtlichen Dashboard zur Analyse Ihrer calls",
     image: "/images/dashboard.png",
     hotspots: [
       { x: 20, y: 30, label: "Echtzeit-Statistiken" },
@@ -29,8 +29,8 @@ const features = [
     description: "Optionale Transcripts und Recordings für detaillierte Einblicke Ihrer calls für stetige Verbesserungen",
     image: "/images/calldetails.png",
     hotspots: [
-      { x: 30, y: 50, label: "Transcripts" },
-      { x: 75, y: 30, label: "Conversion-Tracking" }
+      { x: 30, y: 50, label: "Conversion-Tracking" },
+      { x: 75, y: 30, label: "Transcripts" }
     ]
   },
   {

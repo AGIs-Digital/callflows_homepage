@@ -7,6 +7,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { getCalApi } from "@calcom/embed-react";
+import { ArrowRight } from "lucide-react";
 
 export function PricingComparisonSection() {
   return (
@@ -14,17 +16,19 @@ export function PricingComparisonSection() {
       <div className="container max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">
-            Die Revolution der Geschäftskommunikation
+          KI Voice Agents für den deutschsprachigen Raum
           </h2>
           <div className="max-w-3xl mx-auto space-y-4">
             <p className="text-xl text-muted-foreground">
               Die Geschäftskommunikation entwickelt sich stetig weiter: Von klassischen Lösungen 
               zu modernen, KI-gestützten Systemen.
             </p>
-            <p className="text-xl text-muted-foreground">
-              Mit unseren KI Voice Agents bieten wir eine zukunftssichere Alternative, 
-              die nicht nur kostengünstiger ist, sondern auch zuverlässiger und flexibler.
-            </p>
+            <div className="my-8">
+              <p className="text-xl font-bold text-primary dark:text-secondary">
+                Mit unseren KI Voice Agents bieten wir eine zukunftssichere Alternative, 
+                die nicht nur kostengünstiger ist, sondern auch zuverlässiger und flexibler.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -59,7 +63,7 @@ export function PricingComparisonSection() {
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3 text-muted-foreground">
                 <span className="text-red-500 font-bold">×</span>
-                <span>Hohe Personalkosten (2.700 € - 4.000 €/Monat inkl. Nebenkosten)</span>
+                <span>Personalkosten durchschnittlich 3.500 €/Monat + Nebenkosten</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <span className="text-red-500 font-bold">×</span>
@@ -162,35 +166,52 @@ export function PricingComparisonSection() {
         </div>
 
         {/* ROI Benefits */}
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <Coins className="w-6 h-6 text-primary" strokeWidth={1.5} />
+        <div className="flex flex-col items-center mt-24">
+          <h2 className="text-4xl font-bold text-primary dark:text-white mb-12 text-center">
+            Ihre Vorteile durch callflows
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 w-full mb-16">
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Coins className="w-6 h-6 text-primary" strokeWidth={1.5} />
+              </div>
+              <h4 className="text-lg font-semibold mb-2">Kostenersparnis</h4>
+              <p className="text-muted-foreground">
+                Bis zu 50% niedrigere Kosten im Vergleich zu traditionellen Lösungen
+              </p>
             </div>
-            <h4 className="text-lg font-semibold mb-2">Kostenersparnis</h4>
-            <p className="text-muted-foreground">
-              Bis zu 50% niedrigere Kosten im Vergleich zu traditionellen Lösungen
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <Gauge className="w-6 h-6 text-primary" strokeWidth={1.5} />
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Gauge className="w-6 h-6 text-primary" strokeWidth={1.5} />
+              </div>
+              <h4 className="text-lg font-semibold mb-2">Maximale Effizienz</h4>
+              <p className="text-muted-foreground">
+                Keine Ausfallzeiten, keine Pausen - 100% Leistung rund um die Uhr
+              </p>
             </div>
-            <h4 className="text-lg font-semibold mb-2">Maximale Effizienz</h4>
-            <p className="text-muted-foreground">
-              Keine Ausfallzeiten, keine Pausen - 100% Leistung rund um die Uhr
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <Clock className="w-6 h-6 text-primary" strokeWidth={1.5} />
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-6 h-6 text-primary" strokeWidth={1.5} />
+              </div>
+              <h4 className="text-lg font-semibold mb-2">Sofort Einsatzbereit</h4>
+              <p className="text-muted-foreground">
+                Keine Einarbeitungszeit, keine Schulungen - Start innerhalb weniger Tage
+              </p>
             </div>
-            <h4 className="text-lg font-semibold mb-2">Sofort Einsatzbereit</h4>
-            <p className="text-muted-foreground">
-              Keine Einarbeitungszeit, keine Schulungen - Start innerhalb weniger Tage
-            </p>
           </div>
+
+          <button
+            className="bg-accent text-gray-900 px-8 py-4 rounded-lg font-medium
+                     flex items-center hover:bg-accent/90 transition-all duration-200 
+                     shadow-lg hover:shadow-xl group transform hover:-translate-y-0.5"
+            data-cal-link="callflows/25min"
+            data-cal-config='{"layout":"popup"}'
+          >
+            Beratungstermin buchen
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </button>
         </div>
+        
       </div>
     </section>
   );

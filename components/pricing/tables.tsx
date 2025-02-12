@@ -11,7 +11,7 @@ export function PricingTables() {
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold mb-4">Monatliche Pakete mit Freiminuten</h3>
           <p className="text-muted-foreground mb-2">
-            Feste monatliche Kosten mit inkludierten Freiminuten
+            Feste monatliche Kosten mit inkludierten Freiminuten, jederzeit monatlich kündbar
           </p>
           <p className="text-sm text-muted-foreground">Alle Preise zzgl. gesetzlicher MwSt.</p>
         </div>
@@ -96,7 +96,7 @@ export function PricingTables() {
             </p>
             <ul className="space-y-2 text-muted-foreground">
               <li>• Ohne Paket würden Sie 5.000 × 0,99 € = 4.950 € bezahlen.</li>
-              <li>• Mit „Pro"-Paket (5.000 Min für 4.250 €) sparen Sie rund 700 € – das ist ca. 14 % gegenüber dem Standard-Einzelpreis.</li>
+              <li>• Mit „Pro"-Paket (5.000 Min für 4.250 €) sparen Sie rund 700 € – das sind ca. 14 % gegenüber dem Standard-Einzelpreis.</li>
             </ul>
           </div>
 
@@ -111,10 +111,10 @@ export function PricingTables() {
 
           <div className="bg-primary/5 p-6 rounded-lg">
             <p className="font-medium mb-2">
-              Du hast Fragen oder möchtest ein größeres Paket über 20.000 Minuten?
+              Sie haben Fragen oder möchten ein größeres Paket über 20.000 Minuten?
             </p>
             <p className="text-muted-foreground">
-              Kontaktiere uns – wir erstellen dir gerne ein individuelles Angebot.
+              Kontaktieren Sie uns – wir erstellen Ihnen gerne ein individuelles Angebot.
             </p>
           </div>
         </div>

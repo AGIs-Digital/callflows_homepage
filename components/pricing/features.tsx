@@ -15,7 +15,7 @@ const coreFeatures = [
     features: [
       "Eigene Wissensdatenbank für fundierte Antworten",
       "CRM-Integration zur direkten Datenpflege",
-      "Agent-Teams für digitale Abteilungen",
+      "Mehrere KI-Agents arbeiten zusammen und bilden eine digitale Abteilung",
       "Skalierbare Infrastruktur für jede Unternehmensgröße"
     ]
   },
@@ -32,14 +32,11 @@ const coreFeatures = [
 
 export function PricingFeatures() {
   return (
-    <div className="py-14">
+    <div>
       <div className="text-center mb-16">
         <h2 className="text-3xl font-bold mb-4 text-primary dark:text-white">
-          Alle Pläne beinhalten
+          Alle Pakete beinhalten
         </h2>
-        <p className="text-muted-foreground">
-          Profitieren Sie von allen Kernfunktionen in jedem Paket
-        </p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">

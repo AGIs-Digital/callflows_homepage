@@ -6,14 +6,17 @@ import { useCookieConsent } from "@/hooks/use-cookie-consent";
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
-  const { acceptAll, acceptEssential, hasConsent } = useCookieConsent();
+  const { acceptAll, acceptEssential, consent } = useCookieConsent();
 
   useEffect(() => {
-    // Show banner if consent hasn't been given
-    if (!hasConsent) {
-      setIsVisible(true);
-    }
-  }, [hasConsent]);
+    // Zeige Banner nur wenn noch keine Einwilligung vorliegt
+    // Kurze Verzögerung um Flackern beim ersten Laden zu vermeiden
+    const timer = setTimeout(() => {
+      setIsVisible(!consent);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [consent]);
 
   if (!isVisible) return null;
 

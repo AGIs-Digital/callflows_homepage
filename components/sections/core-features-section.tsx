@@ -14,49 +14,19 @@ import {
 
 const features = [
   {
-    icon: Calendar,
-    title: "Realtime-Bookings",
-    description: "Sofortige Terminvereinbarungen und Reservierungen über den Telefonagenten"
+    icon: UserCircle,
+    title: "Individuelle Gesprächsleitfäden",
+    description: "Gestalten Sie die Gesprächsführung ganz nach Ihren Wünschen"
   },
   {
     icon: Database,
-    title: "Eigene Wissensdatenbank",
-    description: "Der KI-Agent nutzt individuelle Firmendaten für fundierte Antworten"
-  },
-  {
-    icon: Phone,
-    title: "Multi-Channel-Handling",
-    description: "Bis zu 100+ gleichzeitige Anrufe ohne Wartezeiten"
-  },
-  {
-    icon: Link2,
-    title: "CRM-Integration",
-    description: "Nahtlose Anbindung an gängige bestehende CRM-Systeme zur direkten Datenpflege"
-  },
-  {
-    icon: Clock,
-    title: "24/7 verfügbar",
-    description: "Jederzeit erreichbar, keine Pausen, keine Wartezeiten"
-  },
-  {
-    icon: Users,
-    title: "Agent-Teams",
-    description: "Mehrere KI-Agents arbeiten zusammen und bilden eine digitale Abteilung"
+    title: "kompetente Einwandbehandlung",
+    description: "Lassen Sie alle Einwände behandeln, nach eigener Anleitung oder dynamisch"
   },
   {
     icon: PhoneForwarded,
     title: "Intelligente Anrufweiterleitung",
-    description: "Übergabe an menschliche Mitarbeiter, wenn nötig"
-  },
-  {
-    icon: UserCircle,
-    title: "Personalisierte Kommunikation",
-    description: "Individuelle Gesprächsführung basierend auf Kundendaten"
-  },
-  {
-    icon: Scale,
-    title: "Skalierbarkeit",
-    description: "Von Startups bis Enterprise: Anpassbar an jede Unternehmensgröße"
+    description: "Übergabe an menschliche Mitarbeiter, wenn erwünscht"
   }
 ];
 

@@ -15,7 +15,6 @@ export const monthlyPlans: PricingPlan[] = [
       "Ideal zum Testen der Möglichkeiten von Callflows",
       "Für Unternehmen, die erste Prozesse automatisieren möchten",
       "Reicht für gelegentliche Anrufe & kleinere Supportanfragen",
-      "Einrichtungsgebühr entfällt für die ersten 10 Kunden"
     ],
     cta: "Jetzt beraten lassen",
     popular: false
@@ -30,8 +29,7 @@ export const monthlyPlans: PricingPlan[] = [
     highlights: [
       "Entlastet einzelne Mitarbeiter & spart Zeit",
       "Optimal für regelmäßige Kundenkommunikation",
-      "Bietet die Unterstützung einer zusätzlichen Halbtagskraft",
-      "Einrichtungsgebühr entfällt für die ersten 10 Kunden"
+      "Bietet Unterstützung wie eine zusätzliche Halbtagskraft",
     ],
     cta: "Jetzt beraten lassen",
     popular: true
@@ -45,9 +43,9 @@ export const monthlyPlans: PricingPlan[] = [
     minutesIncluded: 3000,
     highlights: [
       "Ideal für Unternehmen mit vielen Kunden & Abteilungen",
-      "Unterstützt Vertrieb, Support & interne Prozesse umfassend",
+      "Zum Verbessern von Vertrieb, Support & internen Prozessen",
       "Perfekt für stark vertriebsorientierte Unternehmen mit hoher Anrufquote",
-      "Einrichtungsgebühr entfällt für die ersten 10 Kunden"
+      
     ],
     cta: "Jetzt beraten lassen",
     popular: false
@@ -56,7 +54,7 @@ export const monthlyPlans: PricingPlan[] = [
 
 export const minutePackages: MinutePackage[] = [
   {
-    name: "Starter",
+    name: "Zusatzminuten 1.000",
     minutes: 1000,
     pricePerMinute: 0.90,
     totalPrice: 900,
@@ -64,7 +62,7 @@ export const minutePackages: MinutePackage[] = [
     description: "Entspricht einer Sekretärin halbtags"
   },
   {
-    name: "Pro",
+    name: "Zusatzminuten 5.000",
     minutes: 5000,
     pricePerMinute: 0.85,
     totalPrice: 4250,
@@ -72,7 +70,7 @@ export const minutePackages: MinutePackage[] = [
     description: "Entspricht einem kleinen Vertriebsteam"
   },
   {
-    name: "Premium",
+    name: "Zusatzminuten 10.000",
     minutes: 10000,
     pricePerMinute: 0.82,
     totalPrice: 8200,
@@ -80,7 +78,7 @@ export const minutePackages: MinutePackage[] = [
     description: "Entspricht einem größeren Vertriebsteam"
   },
   {
-    name: "Enterprise",
+    name: "Zusatzminuten 20.000",
     minutes: 20000,
     pricePerMinute: 0.80,
     totalPrice: 16000,

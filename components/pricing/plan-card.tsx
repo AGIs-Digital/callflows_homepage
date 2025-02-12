@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { ContactForm } from "@/components/contact-form";
 import { PricingPlan } from "@/lib/types/pricing";
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 interface PricingCardProps {
   plan: PricingPlan;
@@ -55,7 +56,7 @@ export function PricingCard({ plan }: PricingCardProps) {
           <>
             <div className="flex items-center text-sm text-primary mb-2">
               <Timer className="w-4 h-4 mr-1" />
-              <span>Limitiertes Angebot für die ersten Kunden</span>
+              <span>Zeitlich limitiertes Angebot!</span>
             </div>
 
             <div className="flex items-center gap-1 mb-4">
@@ -105,29 +106,16 @@ export function PricingCard({ plan }: PricingCardProps) {
         ))}
       </div>
 
-      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <Button
-          onClick={() => setIsDialogOpen(true)}
-          className={`w-full mb-8 ${
-            plan.popular ? "bg-primary" : "bg-accent text-gray-900"
-          } hover:opacity-90 transition-opacity`}
-        >
-          Jetzt beraten lassen
-        </Button>
-        <DialogContent className="sm:max-w-[500px]">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-primary dark:text-white">
-              Beratung zum {plan.name} Paket
-            </DialogTitle>
-          </DialogHeader>
-          <ContactForm
-            source={plan.type}
-            isOpen={isDialogOpen}
-            onOpenChange={setIsDialogOpen}
-            prefilledMessage={`Ich interessiere mich für das ${plan.name} Paket und würde gerne mehr darüber erfahren.`}
-          />
-        </DialogContent>
-      </Dialog>
+      <Button
+        data-cal-link="callflows/25min"
+        data-cal-config='{"layout":"popup"}'
+        className={`w-full mb-8 ${
+          plan.popular ? "bg-primary" : "bg-accent text-gray-900"
+        } hover:opacity-90 transition-opacity group`}
+      >
+        {plan.cta}
+        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+      </Button>
     </div>
   );
 }

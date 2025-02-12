@@ -27,7 +27,7 @@ export function HeroSection() {
             />
           </h1>
           <h2 className="text-l sm:text-2xl md:text-4xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-[600px]">
-            KI Voice Agents für den deutschsprachigen Raum
+            Die Revolution der Geschäftskommunikation
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
           Von Sales und Marketing über Support - wir automatisieren Ihre Prozesse zur Kundenkommunikation.
@@ -38,7 +38,7 @@ export function HeroSection() {
           <div className="flex gap-4 pt-4">
             <button className="bg-accent text-gray-900 px-6 md:px-8 py-3 rounded-lg font-medium 
                              flex items-center hover:bg-accent/90 transition-colors">
-              Ihr neuer Voice Agent
+              Nina beantwortet Ihre Fragen
               <span className="ml-2">→</span>
             </button>
           </div>

@@ -47,12 +47,12 @@ export const pricingFeatures: PricingFeature[] = [
 
 export const pricingFAQs: PricingFAQ[] = [
   {
-    question: "Meine anforderungen haben sich geändert, kann ich den Agenten anpassen lassen?",
+    question: "Meine Anforderungen haben sich geändert, kann ich den Agenten anpassen lassen?",
     answer: "Ja, entweder indem neue Agenten in das Team integriert oder bestehende angepasst werden. Für die Konfiguration berechnen wir nur den Zeitaufwand."
   },
   {
     question: "Gibt es versteckte Kosten?",
-    answer: "Nein, unsere Preise sind transparent. Sie zahlen nur für das gewählte Paket und optional für zusätzliche Anrufvolumen oder Funktionen, die Sie explizit buchen."
+    answer: "Nein, unsere Preise sind transparent. Sie zahlen nur für das gewählte Paket und optional für zusätzliche Anrufvolumen oder Funktionen und Anpassungen, die Sie explizit buchen."
   },
   {
     question: "Kann ich das Paket später upgraden?",
@@ -60,7 +60,7 @@ export const pricingFAQs: PricingFAQ[] = [
   },
   {
     question: "Wie werden die Anrufe abgerechnet?",
-    answer: "Die Anrufe werden pro Minute abgerechnet. Sollte das Volumen der Pakete überschritten werden, wird jede angefangene Minute pay-as-you-go je 0,99 € /Minute am Ende des Monats in Rechnung gestellt."
+    answer: "Die Anrufe werden pro Minute sekundengenauabgerechnet. Sollte das Volumen der Pakete überschritten werden, wird jede angefangene Minute pay-as-you-go je 0,99 € /Minute am Ende des Monats in Rechnung gestellt."
   },
   {
     question: "Welche Zahlungsmethoden werden akzeptiert?",
