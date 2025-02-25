@@ -7,7 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-//import { getCalApi } from "@calcom/embed-react";
+import { getCalApi } from "@calcom/embed-react";
 import { ArrowRight } from "lucide-react";
 
 export function PricingComparisonSection() {
