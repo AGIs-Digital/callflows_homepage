@@ -1,49 +1,7 @@
-import { Bot, Phone, BarChart3, Shield, Clock, Calendar } from "lucide-react";
-import { LucideIcon } from "lucide-react";
-
-interface PricingFeature {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-}
-
 interface PricingFAQ {
   question: string;
   answer: string;
 }
-
-export const pricingFeatures: PricingFeature[] = [
-  {
-    icon: Bot,
-    title: "KI Voice Agent",
-    description: "Modernste KI-Technologie für natürliche Gespräche"
-  },
-  {
-    icon: Phone,
-    title: "Multichannel",
-    description: "bis zu 100+ Gesprächen gleichzeitig"
-  },
-  {
-    icon: BarChart3,
-    title: "Analytics",
-    description: "Detaillierte Einblicke und Reporting-Funktionen"
-  },
-  {
-    icon: Shield,
-    title: "Sicherheit",
-    description: "Höchste Standards für Datenschutz und Sicherheit"
-  },
-  {
-    icon: Calendar,
-    title: "Realtime Bookings",
-    description: "Verknüpfung Ihrer Kalender und Echtzeitbuchungen"
-  },
-  {
-    icon: Clock,
-    title: "24/7 Verfügbar",
-    description: "Rund um die Uhr für Ihre Kunden erreichbar"
-  }
-];
 
 export const pricingFAQs: PricingFAQ[] = [
   {

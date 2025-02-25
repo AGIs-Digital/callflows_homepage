@@ -96,7 +96,7 @@ export function PricingTables() {
             </p>
             <ul className="space-y-2 text-muted-foreground">
               <li>• Ohne Paket würden Sie 5.000 × 0,99 € = 4.950 € bezahlen.</li>
-              <li>• Mit „Pro"-Paket (5.000 Min für 4.250 €) sparen Sie rund 700 € – das sind ca. 14 % gegenüber dem Standard-Einzelpreis.</li>
+              <li>• Mit 5.000 Zusatzminuten für 4.250 € sparen Sie rund 700 € – das sind ca. 14 % gegenüber dem Standard-Einzelpreis.</li>
             </ul>
           </div>
 

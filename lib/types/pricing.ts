@@ -28,14 +28,6 @@ export interface PricingFeature {
   description: string;
 }
 
-export interface PricingTestimonial {
-  quote: string;
-  author: string;
-  role: string;
-  metric: string;
-  metricLabel: string;
-}
-
 export interface PricingFAQ {
   question: string;
   answer: string;
