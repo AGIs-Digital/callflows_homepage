@@ -31,13 +31,13 @@ export default function Home() {
       <div className="bg-section-dark">
         <ProductPreviewSection />
       </div>
-      <div id="testimonials">
+{/*       <div id="testimonials">
         <TestimonialsSection />
-      </div>
+      </div> */}
       <div className="bg-section-light">
         <UseCaseVideoSection />
       </div>
-      <div id="faq">
+        <div id="faq">
         <PricingFAQSection />
       </div>
       <CTASection />
