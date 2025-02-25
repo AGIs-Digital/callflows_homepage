@@ -31,7 +31,7 @@ export function CTASection() {
           <button
             className="bg-accent text-gray-900 px-8 py-4 rounded-lg font-medium
                      flex items-center hover:bg-accent/90 transition-colors group"
-            data-cal-link="callflows/25min"
+            data-cal-link="callflows/55min"
             data-cal-config='{"layout":"popup"}'
           >
             Beratungstermin buchen
