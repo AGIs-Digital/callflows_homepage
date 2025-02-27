@@ -30,7 +30,7 @@ export function generateMetadata({
   const url = `${baseUrl}${path}`;
 
   return {
-    title: `${title} | Callflows`,
+    title: `${title} | callflows`,
     description,
     metadataBase: new URL(baseUrl),
     alternates: {
@@ -40,7 +40,7 @@ export function generateMetadata({
       title,
       description,
       url,
-      siteName: 'Callflows',
+      siteName: 'callflows',
       type,
       ...(publishedTime && { publishedTime }),
       ...(modifiedTime && { modifiedTime }),

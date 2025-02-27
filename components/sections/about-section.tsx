@@ -16,7 +16,7 @@ export function AboutSection() {
             </h2>
             <div className="space-y-4">
               <p className="text-lg text-muted-foreground">
-                Callflows wurde 2024 mit der Vision gegründet, die Kommunikation zwischen 
+                callflows wurde 2024 mit der Vision gegründet, die Kommunikation zwischen 
                 Unternehmen und Kunden durch KI-gestützte Lösungen zu revolutionieren.
               </p>
               <p className="text-lg text-muted-foreground">

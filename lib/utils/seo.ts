@@ -11,13 +11,13 @@ export function generateMetadata({ title, description, path }: SEOProps): Metada
   const url = `${baseUrl}${path}`;
 
   return {
-    title: `${title} | Callflows`,
+    title: `${title} | callflows`,
     description,
     openGraph: {
       title,
       description,
       url,
-      siteName: 'Callflows',
+      siteName: 'callflows',
       locale: 'de_DE',
       type: 'website',
     },

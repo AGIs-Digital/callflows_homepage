@@ -51,7 +51,7 @@ export function ProductPreviewSection() {
     <section className="py-24 bg-background">
       <div className="container max-w-7xl">
         <h2 className="text-4xl font-bold text-center mb-16 text-primary dark:text-white">
-          Einblicke in Callflows
+          Einblicke in callflows
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">

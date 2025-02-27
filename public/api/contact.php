@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <body>
         <div class='container'>
             <div class='header'>
-                <img src='{$logoSrc}' alt='Callflows Logo' style='max-width: 200px;'>
+                <img src='{$logoSrc}' alt='callflows Logo' style='max-width: 200px;'>
             </div>
             <div class='content'>
                 <h2 style='color: #004AAD; margin-bottom: 30px;'>{$subject}</h2>

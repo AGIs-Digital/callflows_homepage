@@ -12,7 +12,7 @@ export const monthlyPlans: PricingPlan[] = [
     earlyBirdPrice: 285,
     minutesIncluded: 500,
     highlights: [
-      "Ideal zum Testen der Möglichkeiten von Callflows",
+      "Ideal zum Testen der Möglichkeiten von callflows",
       "Für Unternehmen, die erste Prozesse automatisieren möchten",
       "Reicht für gelegentliche Anrufe & kleinere Supportanfragen",
     ],

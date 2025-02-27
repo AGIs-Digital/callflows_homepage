@@ -177,11 +177,10 @@ export function ContactForm({
     return (
       <Dialog open={isOpen} onOpenChange={onOpenChange}>
         <DialogContent className="sm:max-w-[500px]">
-          <DialogTitle className="text-2xl font-bold text-primary dark:text-white">
-            Kontaktieren Sie uns
-          </DialogTitle>
           <DialogHeader>
-            <DialogTitle>Kontaktieren Sie uns</DialogTitle>
+            <DialogTitle className="text-2xl font-bold text-primary dark:text-white">
+              Kontaktieren Sie uns
+            </DialogTitle>
           </DialogHeader>
           {formContent}
         </DialogContent>

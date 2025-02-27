@@ -80,7 +80,7 @@ export function PricingComparisonSection() {
             </ul>
           </div>
 
-          {/* Callflows */}
+          {/* callflows */}
           <div className="bg-background rounded-xl p-8 border border-primary/50 shadow-lg relative transform hover:scale-105 transition-transform">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-auto">
               <span className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-medium">

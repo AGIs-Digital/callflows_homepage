@@ -20,7 +20,7 @@ Anschluss einen Termin mit uns buchen.
 
 6
 00:00:16,119 --> 00:00:19,040
-Hallo Hallo, hier ist Nina von Callflows
+Hallo Hallo, hier ist Nina von callflows
 
 7
 00:00:19,520 --> 00:00:20,840
@@ -36,7 +36,7 @@ gerade 2 Minuten Zeit? Es geht um ihre
 
 10
 00:00:28,253 --> 00:00:31,133
-Callflows Voice Agents, ja, die
+callflows Voice Agents, ja, die
 
 11
 00:00:31,133 --> 00:00:31,534

@@ -34,7 +34,7 @@ export async function POST(request: Request) {
       to: env.CONTACT_EMAIL,
       from: {
         email: env.SENDGRID_FROM_EMAIL,
-        name: 'Callflows Kontaktformular'
+        name: 'callflows Kontaktformular'
       },
       replyTo: validatedData.email,
       templateId: env.SENDGRID_TEMPLATE_ID,

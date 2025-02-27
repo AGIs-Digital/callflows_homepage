@@ -107,7 +107,7 @@ export function PricingCard({ plan }: PricingCardProps) {
       </div>
 
       <Button
-        data-cal-link="callflows/25min"
+        data-cal-link="callflows/55min"
         data-cal-config='{"layout":"popup"}'
         className={`w-full mb-8 ${
           plan.popular ? "bg-primary" : "bg-accent text-gray-900"

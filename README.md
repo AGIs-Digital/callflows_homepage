@@ -1,4 +1,4 @@
-# Callflows - KI-gestützte Voice Agents
+# callflows - KI-gestützte Voice Agents
 
 ## 📝 Dokumentation
 
