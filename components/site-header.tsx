@@ -25,8 +25,8 @@ export function SiteHeader() {
   };
 
   const navItems = [
-    { href: "/#features", label: "Features" },
-    { href: "/#testimonials", label: "Referenzen" },
+    { href: "/#features", label: "Einsatzbereiche" },
+    { href: "/#core-features", label: "Kernfunktionen" },
     { href: "/pricing", label: "Preise" },
   ];
 

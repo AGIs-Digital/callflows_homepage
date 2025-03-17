@@ -26,18 +26,24 @@ export default function Home() {
       <div id="features">
         <FeaturesSection />
       </div>
-      <CoreFeaturesSection />
-      <PricingComparisonSection />
+      <div id="core-features">
+        <CoreFeaturesSection />
+      </div>
+      <div id="pricecomparison">
+        <PricingComparisonSection />
+      </div>
       <div className="bg-section-dark">
         <ProductPreviewSection />
       </div>
-{/*       <div id="testimonials">
+      {/*
+      <div id="testimonials">
         <TestimonialsSection />
-      </div> */}
+      </div>
       <div className="bg-section-light">
         <UseCaseVideoSection />
       </div>
-        <div id="faq">
+      */}
+      <div id="faq">
         <PricingFAQSection />
       </div>
       <CTASection />

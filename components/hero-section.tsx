@@ -36,16 +36,16 @@ export function HeroSection() {
             Mit umfassender Beratung und maßgeschneiderten Lösungen unterstützen wir Sie bei der digitalen Transformation Ihrer Kommunikation.
           </p>
           <div className="flex gap-4 pt-4">
-            <button className="bg-accent text-gray-900 px-6 md:px-8 py-3 rounded-lg font-medium 
+            {/* <button className="bg-accent text-gray-900 px-6 md:px-8 py-3 rounded-lg font-medium 
                              flex items-center hover:bg-accent/90 transition-colors">
               Nina beantwortet Ihre Fragen
               <span className="ml-2">→</span>
-            </button>
+            </button> */}
           </div>
         </div>
 
         {/* Widget Container */}
-        <div className={cn(
+        {/* <div className={cn(
           "relative lg:static",
           "flex justify-center lg:justify-end w-full",
           "mt-8 lg:mt-0"
@@ -72,7 +72,7 @@ export function HeroSection() {
               }}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </WavyBackground>
   );
