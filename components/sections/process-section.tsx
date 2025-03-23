@@ -21,9 +21,9 @@ const steps = [
     title: "Workshop",
     description: "Konzeption & Setup",
     details: [
-      "Plattform-Setup",
-      "Agent-Training",
-      "System-Konfiguration"
+      "Prozessmodellierung",
+      "Agent-Konfiguration",
+      "Automationen"
     ]
   },
   {

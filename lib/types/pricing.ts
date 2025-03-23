@@ -3,7 +3,7 @@ import { DivideIcon as LucideIcon } from "lucide-react";
 
 export interface PricingPlan {
   name: string;
-  type: 'starter' | 'business' | 'enterprise';
+  type: "starter" | "pro" | "business" | "custom";
   subtitle: string;
   price: number;
   earlyBirdPrice?: number;
@@ -11,6 +11,7 @@ export interface PricingPlan {
   highlights: string[];
   cta: string;
   popular: boolean;
+  isCustom?: boolean;
 }
 
 export interface MinutePackage {
@@ -20,6 +21,7 @@ export interface MinutePackage {
   totalPrice: number;
   savings: string;
   description: string;
+  isCustom?: boolean;
 }
 
 export interface PricingFeature {

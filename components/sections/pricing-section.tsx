@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 
 export function PricingSection() {
   const [isPhase1Active, setIsPhase1Active] = useState(true);
-  const phase1EndDate = "2025-03-30";
-  const phase2EndDate = "2025-06-30";
+  const phase1EndDate = "2025-04-01";
+  const phase2EndDate = "2025-06-01";
 
   useEffect(() => {
     const checkPhase = () => {
@@ -43,7 +43,7 @@ export function PricingSection() {
                 <div className="mt-4">
                   <Countdown 
                     endDate={phase1EndDate}
-                    remainingSpots={5}
+                    remainingSpots={3}
                   />
                 </div>
               </div>

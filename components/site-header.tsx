@@ -21,7 +21,7 @@ export function SiteHeader() {
   }, []);
 
   const handleLoginClick = () => {
-    window.location.href = "https://login.callflows.de/";
+    window.location.href = "https://app.callflows.de/";
   };
 
   const navItems = [

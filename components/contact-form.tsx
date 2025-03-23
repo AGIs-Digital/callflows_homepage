@@ -16,18 +16,24 @@ import {
 } from "@/components/ui/dialog";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
 
-interface ContactFormProps {
-  isOpen: boolean;
-  onOpenChange: (open: boolean) => void;
+export interface ContactFormProps {
+  defaultSubject?: string;
+  onSubmitSuccess: () => void;
+  planType: string;
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
   source?: 'starter' | 'business' | 'enterprise' | 'contact';
   prefilledMessage?: string;
 }
 
 export function ContactForm({ 
-  isOpen, 
-  onOpenChange, 
-  source = "contact",
-  prefilledMessage = "" 
+  defaultSubject, 
+  onSubmitSuccess, 
+  planType,
+  isOpen,
+  onOpenChange,
+  source = 'contact',
+  prefilledMessage = ''
 }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -40,7 +46,7 @@ export function ContactForm({
       email: '',
       phone: '',
       message: prefilledMessage,
-      source: source || 'contact'
+      source: source
     }
   });
 
@@ -69,9 +75,7 @@ export function ContactForm({
         duration: 5000,
       });
       
-      if (onOpenChange) {
-        setTimeout(() => onOpenChange(false), 2000);
-      }
+      onSubmitSuccess();
     } catch (error) {
       console.error('Kontaktformular Fehler:', error);
       toast({
@@ -95,7 +99,6 @@ export function ContactForm({
             <Button
               onClick={() => {
                 setSuccess(false);
-                if (onOpenChange) onOpenChange(false);
               }}
               className="mt-4"
               variant="outline"
@@ -172,21 +175,6 @@ export function ContactForm({
       </Button>
     </form>
   );
-
-  if (isOpen !== undefined) {
-    return (
-      <Dialog open={isOpen} onOpenChange={onOpenChange}>
-        <DialogContent className="sm:max-w-[500px]">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-primary dark:text-white">
-              Kontaktieren Sie uns
-            </DialogTitle>
-          </DialogHeader>
-          {formContent}
-        </DialogContent>
-      </Dialog>
-    );
-  }
 
   return formContent;
 }

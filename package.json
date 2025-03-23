@@ -96,16 +96,8 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0"
   },
-  "resolutions": {
-    "glob": "^10.3.10",
-    "rimraf": "^5.0.5",
-    "@humanwhocodes/config-array": "npm:@eslint/config-array@^1.0.4",
-    "@humanwhocodes/object-schema": "npm:@eslint/object-schema@^1.0.2"
-  },
   "overrides": {
     "glob": "^10.3.10",
-    "rimraf": "^5.0.5",
-    "@humanwhocodes/config-array": "npm:@eslint/config-array@^1.0.4",
-    "@humanwhocodes/object-schema": "npm:@eslint/object-schema@^1.0.2"
+    "rimraf": "^5.0.5"
   }
 }

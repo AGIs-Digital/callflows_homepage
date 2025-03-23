@@ -23,12 +23,6 @@ export function PricingComparisonSection() {
               Die Geschäftskommunikation entwickelt sich stetig weiter: Von klassischen Lösungen 
               zu modernen, KI-gestützten Systemen.
             </p>
-            <div className="my-8">
-              <p className="text-xl font-bold text-primary dark:text-secondary">
-                Mit unseren KI Voice Agents bieten wir eine zukunftssichere Alternative, 
-                die nicht nur kostengünstiger ist, sondern auch zuverlässiger und flexibler.
-              </p>
-            </div>
           </div>
         </div>
 
@@ -43,7 +37,7 @@ export function PricingComparisonSection() {
             </div>
             <div className="mb-6">
               <div className="flex items-center gap-2">
-                <div className="text-2xl font-bold text-primary">ab 0,70 € - 1,00 €</div>
+                <div className="text-2xl font-bold text-primary">ab 0,30 € - 1,20 €</div>
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
@@ -63,7 +57,7 @@ export function PricingComparisonSection() {
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3 text-muted-foreground">
                 <span className="text-red-500 font-bold">×</span>
-                <span>Personalkosten durchschnittlich 3.500 €/Monat + Nebenkosten</span>
+                <span>Ausfälle durch Urlaub & Krankheit</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <span className="text-red-500 font-bold">×</span>
@@ -75,7 +69,7 @@ export function PricingComparisonSection() {
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <span className="text-red-500 font-bold">×</span>
-                <span>Ausfälle durch Urlaub & Krankheit</span>
+                <span>Fluktuation der Mitarbeiter</span>
               </li>
             </ul>
           </div>
@@ -91,11 +85,11 @@ export function PricingComparisonSection() {
               <div className="p-3 rounded-full bg-primary/10">
                 <Bot className="w-6 h-6 text-primary" strokeWidth={1.5} />
               </div>
-              <h3 className="text-2xl font-semibold">callflows KI Voice Agent</h3>
+              <h3 className="text-2xl font-semibold">KI Voice Agent</h3>
             </div>
             <div className="mb-6">
-              <div className="text-2xl font-bold text-primary">maximal 0,99 €</div>
-              <div className="text-sm text-muted-foreground">pro Minute, keine Grundgebühr</div>
+              <div className="text-2xl font-bold text-primary">ab 0,18 € - 0,69 €</div>
+              <div className="text-sm text-muted-foreground">pro Minute, meist zzgl. Grundgebühr</div>
             </div>
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
@@ -104,15 +98,15 @@ export function PricingComparisonSection() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-500 font-bold">✓</span>
-                <span>Keine Grundgebühren oder versteckte Kosten</span>
+                <span>Unbegrenzte parallele Gespräche möglich</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-yellow-700 font-bold">!</span>
+                <span>oft hohe Grundgebühr</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-500 font-bold">✓</span>
                 <span>Gleichbleibend hohe Qualität</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold">✓</span>
-                <span>Unbegrenzte parallele Gespräche möglich</span>
               </li>
             </ul>
           </div>
@@ -127,7 +121,7 @@ export function PricingComparisonSection() {
             </div>
             <div className="mb-6">
               <div className="flex items-center gap-2">
-                <div className="text-2xl font-bold text-primary">ab 1,00 € - 1,50 €</div>
+                <div className="text-2xl font-bold text-primary">ab 0,70 € - 2,00 €</div>
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
@@ -147,19 +141,19 @@ export function PricingComparisonSection() {
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3 text-muted-foreground">
                 <span className="text-red-500 font-bold">×</span>
-                <span>Hohe Grundgebühren (100 € - 300 €/Monat)</span>
+                <span>Nur zu Geschäftszeiten verfügbar</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <span className="text-red-500 font-bold">×</span>
-                <span>Zusätzliche Kosten für Einarbeitung</span>
+                <span>Anrufvolumen schwankend</span>
+              </li>
+              <li className="flex items-start gap-3 text-muted-foreground">
+                <span className="text-red-500 font-bold">×</span>
+                <span>Zusätzlich mtl. Grundgebühren</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <span className="text-red-500 font-bold">×</span>
                 <span>Schwankende Service-Qualität</span>
-              </li>
-              <li className="flex items-start gap-3 text-muted-foreground">
-                <span className="text-red-500 font-bold">×</span>
-                <span>Nur zu Geschäftszeiten verfügbar</span>
               </li>
             </ul>
           </div>
@@ -170,32 +164,37 @@ export function PricingComparisonSection() {
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-12 text-center">
             Ihre Vorteile durch callflows
           </h2>
+          <div className="bg-accent/10 p-6 rounded-lg my-8 text-center">
+            <p className="text-xl font-bold text-primary dark:text-secondary">
+             Reine Minutenabrechnung ohne Grundgebühren oder versteckten und unkalkulierbaren Kosten. Wir konfigurieren für Sie stets die beste Lösung.
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8 w-full mb-16">
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Coins className="w-6 h-6 text-primary" strokeWidth={1.5} />
               </div>
-              <h4 className="text-lg font-semibold mb-2">Kostenersparnis</h4>
+              <h4 className="text-lg font-semibold mb-2">Kostentransparenz</h4>
               <p className="text-muted-foreground">
-                Bis zu 50% niedrigere Kosten im Vergleich zu traditionellen Lösungen
+                Sie können die Kosten für callflow genau berechnen und planen.
               </p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Gauge className="w-6 h-6 text-primary" strokeWidth={1.5} />
               </div>
-              <h4 className="text-lg font-semibold mb-2">Maximale Effizienz</h4>
+              <h4 className="text-lg font-semibold mb-2">Prompt Engineering</h4>
               <p className="text-muted-foreground">
-                Keine Ausfallzeiten, keine Pausen - 100% Leistung rund um die Uhr
+                Wir erstellen und konfigurieren Ihre Agents nach Maß und passen diese kostenlos an neue Modelle an.
               </p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-6 h-6 text-primary" strokeWidth={1.5} />
               </div>
-              <h4 className="text-lg font-semibold mb-2">Sofort Einsatzbereit</h4>
+              <h4 className="text-lg font-semibold mb-2">Schnell einsatzbereit</h4>
               <p className="text-muted-foreground">
-                Keine Einarbeitungszeit, keine Schulungen - Start innerhalb weniger Tage
+                Vom ersten Anruf bis zur ersten Verkaufschance - Start innerhalb 2 Wochen
               </p>
             </div>
           </div>

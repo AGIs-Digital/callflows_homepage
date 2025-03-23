@@ -1,7 +1,7 @@
 import { PricingPlan, MinutePackage } from "@/lib/types/pricing";
 
 const EARLY_BIRD_ACTIVE = true; // Toggle for the promotion
-const EARLY_BIRD_END_DATE = "2025-06-30"; // 3 months from now
+const EARLY_BIRD_END_DATE = "2025-04-01T00:00:00"; // Endet am 01.04.2025 um 00:00 Uhr
 
 export const monthlyPlans: PricingPlan[] = [
   {
@@ -20,14 +20,29 @@ export const monthlyPlans: PricingPlan[] = [
     popular: false
   },
   {
+    name: "Pro",
+    type: "pro",
+    subtitle: "Für wachsende Unternehmen",
+    price: 1799,
+    earlyBirdPrice: 1029,
+    minutesIncluded: 2000,
+    highlights: [
+      "Entlastet einzelne Mitarbeiter & spart Zeit",
+      "Für regelmäßige Kundenkommunikation",
+      "Ideal für kleine Teams mit steigendem Anrufvolumen",
+    ],
+    cta: "Jetzt beraten lassen",
+    popular: false
+  },
+  {
     name: "Business",
     type: "business",
     subtitle: "Für Einzel- & kleine Unternehmen",
-    price: 899,
-    earlyBirdPrice: 570,
-    minutesIncluded: 1000,
+    price: 3999,
+    earlyBirdPrice: 2539,
+    minutesIncluded: 5000,
     highlights: [
-      "Entlastet einzelne Mitarbeiter & spart Zeit",
+      "Entlastet mehrere Mitarbeiter & spart Zeit",
       "Optimal für regelmäßige Kundenkommunikation",
       "Bietet Unterstützung wie eine zusätzliche Halbtagskraft",
     ],
@@ -35,20 +50,21 @@ export const monthlyPlans: PricingPlan[] = [
     popular: true
   },
   {
-    name: "Enterprise",
-    type: "enterprise",
-    subtitle: "Wachsende Unternehmen",
-    price: 2499,
-    earlyBirdPrice: 1710,
-    minutesIncluded: 3000,
+    name: "Individuell",
+    type: "custom",
+    subtitle: "Maßgeschneiderte Lösungen",
+    price: 0, // Preis auf Anfrage
+    earlyBirdPrice: 0,
+    minutesIncluded: 0, // Kontingent auf Anfrage
     highlights: [
-      "Ideal für Unternehmen mit vielen Kunden & Abteilungen",
-      "Zum Verbessern von Vertrieb, Support & internen Prozessen",
-      "Perfekt für stark vertriebsorientierte Unternehmen mit hoher Anrufquote",
-      
+      "Für Unternehmen mit speziellen Anforderungen",
+      "Individuelles Minutenkontingent nach Bedarf",
+      "Persönliche Beratung und maßgeschneiderte Lösung",
+      "Optimale Skalierung für große Unternehmen"
     ],
-    cta: "Jetzt beraten lassen",
-    popular: false
+    cta: "Individuelles Angebot",
+    popular: false,
+    isCustom: true
   }
 ];
 
@@ -78,11 +94,12 @@ export const minutePackages: MinutePackage[] = [
     description: "Entspricht einem größeren Vertriebsteam"
   },
   {
-    name: "Zusatzminuten 20.000",
-    minutes: 20000,
-    pricePerMinute: 0.80,
-    totalPrice: 16000,
-    savings: "ca. 19%",
-    description: "Ideal für Enterprise-Sales-Teams"
+    name: "Individuelles Paket",
+    minutes: 0,
+    pricePerMinute: 0,
+    totalPrice: 0,
+    savings: "Auf Anfrage",
+    description: "Maßgeschneiderte Lösung für Ihr Unternehmen",
+    isCustom: true
   }
 ];
