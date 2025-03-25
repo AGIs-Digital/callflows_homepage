@@ -1,60 +1,71 @@
 import { PricingPlan, MinutePackage } from "@/lib/types/pricing";
 
-const EARLY_BIRD_ACTIVE = true; // Toggle for the promotion
+const EARLY_BIRD_ACTIVE = true; // Toggle für die Promotion
 const EARLY_BIRD_END_DATE = "2025-04-01T00:00:00"; // Endet am 01.04.2025 um 00:00 Uhr
 
 export const monthlyPlans: PricingPlan[] = [
   {
     name: "Starter",
     type: "starter",
-    subtitle: "Perfekt zum Kennenlernen",
+    subtitle: "Für kleine Betriebe",
     price: 499,
-    earlyBirdPrice: 285,
+    earlyBirdPrice: 499,
     minutesIncluded: 500,
     highlights: [
-      "Ideal zum Testen der Möglichkeiten von callflows",
-      "Für Unternehmen, die erste Prozesse automatisieren möchten",
-      "Reicht für gelegentliche Anrufe & kleinere Supportanfragen",
+      "Ideal für geringe Inbound-/Outbound-Kommunikation",
+      "Perfekt für den Einstieg in die KI-Telefonie",
+      "Für kleine Teams geeignet"
     ],
     cta: "Jetzt beraten lassen",
-    popular: false
+    popular: false,
+    discounts: {
+      sixMonths: 0,  // 0% Rabatt bei 6-Monats-Vertrag
+      twelveMonths: 10  // 10% Rabatt bei 12-Monats-Vertrag
+    }
   },
   {
-    name: "Pro",
-    type: "pro",
-    subtitle: "Für wachsende Unternehmen",
-    price: 1799,
-    earlyBirdPrice: 1029,
-    minutesIncluded: 2000,
+    name: "Professional",
+    type: "professional",
+    subtitle: "Für mittelständische Betriebe",
+    price: 2699,
+    earlyBirdPrice: 2699,
+    minutesIncluded: 3000,
     highlights: [
-      "Entlastet einzelne Mitarbeiter & spart Zeit",
-      "Für regelmäßige Kundenkommunikation",
-      "Ideal für kleine Teams mit steigendem Anrufvolumen",
+      "Ideal für moderate Inbound-/Outbound-Kommunikation",
+      "Kann eine Vollzeitkraft im Telefonbereich ersetzen",
+      "Perfekt um Ihr Unternehmen zu unterstützen"
     ],
     cta: "Jetzt beraten lassen",
-    popular: false
+    popular: false,
+    discounts: {
+      sixMonths: 0,  // 0% Rabatt bei 6-Monats-Vertrag
+      twelveMonths: 10  // 10% Rabatt bei 12-Monats-Vertrag
+    }
   },
   {
-    name: "Business",
-    type: "business",
-    subtitle: "Für Einzel- & kleine Unternehmen",
-    price: 3999,
-    earlyBirdPrice: 2539,
-    minutesIncluded: 5000,
+    name: "Corporate",
+    type: "corporate",
+    subtitle: "Für höhere Anrufvolumina",
+    price: 8499,
+    earlyBirdPrice: 8499,
+    minutesIncluded: 10000,
     highlights: [
-      "Entlastet mehrere Mitarbeiter & spart Zeit",
-      "Optimal für regelmäßige Kundenkommunikation",
-      "Bietet Unterstützung wie eine zusätzliche Halbtagskraft",
+      "Für Zeitarbeitsunternehmen, Vertriebsteams, Kundendienst",
+      "Automatisiert eine ganze Abteilung oder einen Standort",
+      "Ideal für Unternehmen mit hohem Telefonaufkommen"
     ],
     cta: "Jetzt beraten lassen",
-    popular: true
+    popular: false,
+    discounts: {
+      sixMonths: 0,  // 0% Rabatt bei 6-Monats-Vertrag
+      twelveMonths: 10  // 10% Rabatt bei 12-Monats-Vertrag
+    }
   },
   {
     name: "Individuell",
     type: "custom",
     subtitle: "Maßgeschneiderte Lösungen",
     price: 0, // Preis auf Anfrage
-    earlyBirdPrice: 0,
     minutesIncluded: 0, // Kontingent auf Anfrage
     highlights: [
       "Für Unternehmen mit speziellen Anforderungen",
@@ -63,7 +74,7 @@ export const monthlyPlans: PricingPlan[] = [
       "Optimale Skalierung für große Unternehmen"
     ],
     cta: "Individuelles Angebot",
-    popular: false,
+    popular: true,
     isCustom: true
   }
 ];

@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs';
 import prettier from 'prettier';
-import { globby } from 'globby';
+import globby from 'globby';
 
 const generate = async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc');

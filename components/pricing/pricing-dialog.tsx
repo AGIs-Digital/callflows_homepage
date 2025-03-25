@@ -8,10 +8,15 @@ import { ContactForm } from "@/components/contact-form";
 interface PricingDialogProps {
   plan: PricingPlan;
   onClose: () => void;
+  selectedTerm: "sixMonths" | "twelveMonths";
+  discountedPrice?: number;
 }
 
-export function PricingDialog({ plan, onClose }: PricingDialogProps) {
+export function PricingDialog({ plan, onClose, selectedTerm = "sixMonths", discountedPrice }: PricingDialogProps) {
   const isCustomPlan = plan.isCustom || plan.price === 0;
+  
+  // Laufzeittext für die Anfrage
+  let termText = selectedTerm === "sixMonths" ? "6-Monats-Vertrag" : "12-Monats-Vertrag";
   
   return (
     <>
@@ -21,11 +26,24 @@ export function PricingDialog({ plan, onClose }: PricingDialogProps) {
         </DialogTitle>
       </DialogHeader>
       
+      {!isCustomPlan && (
+        <div className="mt-4 p-4 bg-muted rounded-md">
+          <p className="font-medium">Ihre Auswahl:</p>
+          <p className="text-sm text-muted-foreground">{plan.name} - {termText}</p>
+          <p className="text-sm text-muted-foreground">{plan.minutesIncluded.toLocaleString('de-DE')} Freiminuten</p>
+          <p className="text-sm font-medium mt-2">
+            {Math.round(discountedPrice || plan.price).toLocaleString('de-DE')} € / Monat
+          </p>
+        </div>
+      )}
+      
       <div className="mt-4">
         <ContactForm 
-          defaultSubject={`Anfrage: ${plan.name} Paket`}
+          defaultSubject={`Anfrage: ${plan.name} Paket (${termText})`}
           onSubmitSuccess={onClose}
           planType={plan.type}
+          selectedTerm={selectedTerm}
+          discountedPrice={discountedPrice}
         />
       </div>
       

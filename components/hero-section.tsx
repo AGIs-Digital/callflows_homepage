@@ -11,14 +11,14 @@ export function HeroSection() {
   
   return (
     <WavyBackground
-      containerClassName="relative min-h-[calc(100vh-30rem)] overflow-visible"
+      containerClassName="relative min-h-[calc(100vh-45rem)] overflow-visible pt-4"
       colors={["#004aad", "#0f62d5", "#def0f2", "#ffb703"]}
       backgroundFill="transparent"
       waveOpacity={1}
       speed="slow"
       waveWidth={100}
     >
-      <div className="container relative grid lg:grid-cols-[1fr,400px] gap-8 items-center py-16 md:py-24 px-4 md:px-8 mb-[300px] lg:mb-0">
+      <div className="container relative grid lg:grid-cols-[1fr,400px] gap-8 items-center py-4 md:py-8 px-4 md:px-8 mb-[300px] lg:mb-0">
         <div className="relative z-10 space-y-6 md:space-y-8 animate-slideIn">
           <h1 className="text-3xl sm:text-4xl md:text-[56px] font-bold leading-tight text-primary dark:text-white">
             <AnimatedText

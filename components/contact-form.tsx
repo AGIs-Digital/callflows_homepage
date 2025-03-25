@@ -8,18 +8,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import { useToast } from "@/hooks/use-toast";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
 
 export interface ContactFormProps {
   defaultSubject?: string;
-  onSubmitSuccess: () => void;
-  planType: string;
+  onSubmitSuccess?: () => void;
+  planType?: string;
+  selectedTerm?: "sixMonths" | "twelveMonths";
+  discountedPrice?: number;
   isOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
   source?: 'starter' | 'business' | 'enterprise' | 'contact';
@@ -27,11 +23,8 @@ export interface ContactFormProps {
 }
 
 export function ContactForm({ 
-  defaultSubject, 
+  defaultSubject = "", 
   onSubmitSuccess, 
-  planType,
-  isOpen,
-  onOpenChange,
   source = 'contact',
   prefilledMessage = ''
 }: ContactFormProps) {
@@ -75,7 +68,9 @@ export function ContactForm({
         duration: 5000,
       });
       
-      onSubmitSuccess();
+      if (onSubmitSuccess) {
+        onSubmitSuccess();
+      }
     } catch (error) {
       console.error('Kontaktformular Fehler:', error);
       toast({
