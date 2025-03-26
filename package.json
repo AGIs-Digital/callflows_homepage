@@ -57,6 +57,7 @@
     "input-otp": "^1.4.2",
     "lru-cache": "^11.0.2",
     "lucide-react": "^0.352.0",
+    "motion": "^12.6.2",
     "next": "^14.2.17",
     "next-themes": "^0.3.0",
     "postcss": "8.4.35",

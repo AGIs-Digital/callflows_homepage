@@ -11,6 +11,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { AboutSection } from "@/components/sections/about-section";
 import { CTASection } from "@/components/cta-section";
 import { PricingFAQSection } from "@/components/sections/pricing-faq-section";
+import { IntegrationChallengesSection } from "@/components/sections/integration-challenges-section";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <div className="bg-section-light">
         <ProcessSection />
       </div>
+      <IntegrationChallengesSection />
       <div id="about">
         <AboutSection />
       </div>

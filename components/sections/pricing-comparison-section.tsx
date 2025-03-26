@@ -1,16 +1,24 @@
 "use client";
 
-import { Building2, Bot, Users, Clock, Coins, Gauge, Info } from "lucide-react";
+import { Building2, Bot, Users, Clock, Coins, Gauge, Info, Wrench } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
 import { ArrowRight } from "lucide-react";
 
 export function PricingComparisonSection() {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("ui", { styles: { branding: { brandColor: "#6366f1" } } });
+    })();
+  }, []);
+
   return (
     <section className="py-24 bg-section-light-blue dark:bg-[#F5F0FF]/5">
       <div className="container max-w-7xl">
@@ -88,8 +96,8 @@ export function PricingComparisonSection() {
               <h3 className="text-2xl font-semibold">KI Voice Agent</h3>
             </div>
             <div className="mb-6">
-              <div className="text-2xl font-bold text-primary">ab 0,18 € - 0,69 €</div>
-              <div className="text-sm text-muted-foreground">pro Minute, meist zzgl. Grundgebühr</div>
+              <div className="text-2xl font-bold text-primary">ab 0,18 € - 0,99 €</div>
+              <div className="text-sm text-muted-foreground">pro Minute, meist zzgl. variabler Gebühren</div>
             </div>
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
@@ -166,7 +174,7 @@ export function PricingComparisonSection() {
           </h2>
           <div className="bg-accent/10 p-6 rounded-lg my-8 text-center">
             <p className="text-xl font-bold text-primary dark:text-secondary">
-             Reine Minutenabrechnung ohne Grundgebühren oder versteckten und unkalkulierbaren Kosten. Wir konfigurieren für Sie stets die beste Lösung.
+             Reine Minutenabrechnung ohne Grundgebühren oder unkalkulierbare Kosten. Wir konfigurieren für Sie stets die beste Lösung.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 w-full mb-16">
@@ -176,7 +184,7 @@ export function PricingComparisonSection() {
               </div>
               <h4 className="text-lg font-semibold mb-2">Kostentransparenz</h4>
               <p className="text-muted-foreground">
-                Sie können die Kosten für callflow genau berechnen und planen.
+                Sie können Ihre Kosten für <strong className="text-primary">callflows</strong> genau planen.
               </p>
             </div>
             <div className="text-center">
@@ -194,10 +202,12 @@ export function PricingComparisonSection() {
               </div>
               <h4 className="text-lg font-semibold mb-2">Schnell einsatzbereit</h4>
               <p className="text-muted-foreground">
-                Vom ersten Anruf bis zur ersten Verkaufschance - Start innerhalb 2 Wochen
+                Vom ersten Anruf bis zur ersten Verkaufschance - Start innerhalb weniger Wochen
               </p>
             </div>
           </div>
+
+          
 
           <button
             className="bg-accent text-gray-900 px-8 py-4 rounded-lg font-medium
