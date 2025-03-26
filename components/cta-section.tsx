@@ -24,7 +24,7 @@ export function CTASection() {
           Bereit für die Zukunft der Kommunikation?
         </h2>
         <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-          Starten Sie noch heute mit callflows und revolutionieren Sie Ihre 
+          Starten Sie noch heute mit <strong className="text-[#FFB703]">callflows</strong> und revolutionieren Sie Ihre 
           Kommunikation. Unser Team steht Ihnen bei allen Fragen zur Seite.
         </p>
         <div className="flex gap-4 justify-center">

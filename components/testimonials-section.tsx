@@ -33,7 +33,7 @@ export function TestimonialsSection() {
             Was unsere Kunden sagen
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Erfahren Sie, wie callflows Unternehmen dabei hilft, ihre Ziele zu erreichen
+            Erfahren Sie, wie <strong className="text-primary">callflows</strong> Unternehmen dabei hilft, ihre Ziele zu erreichen
           </p>
         </div>
         

@@ -1,6 +1,5 @@
 "use client";
 
-import { PricingTables } from "@/components/pricing/tables";
 import { Countdown } from "@/components/ui/countdown";
 import { useEffect, useState } from "react";
 
@@ -26,15 +25,15 @@ export function PricingSection() {
     <section className="bg-white dark:bg-background">
       <div className="container max-w-6xl">
         <div className="text-center">
-          <div className="max-w-2xl mx-auto bg-accent/10 p-6 rounded-lg">
+          <div className="max-w-3xl mx-auto bg-accent/10 p-6 rounded-lg">
             {isPhase1Active ? (
               <div className="mb-8">
                 <p className="text-lg font-semibold text-primary mb-4">
                   🎉 Phase 1 - Early Bird Angebot 🎉
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                  <li>• Dauerhaft reduzierte Monatsgebühr für das Starter-Paket</li>
-                  <li>• Einrichtungsgebühr entfällt</li>
+                  <li>• Dauerhaft reduzierter Minutenpreis für das erste Paket</li>
+                  <li>• Gratis onboaring</li>
                   <li>• Garantierte Preisbindung für das gewählte Paket</li>
                 </ul>
                 <div className="mt-4">
@@ -51,12 +50,11 @@ export function PricingSection() {
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-2 mb-4">
                   <li>• Einrichtungsgebühr entfällt!</li>
-                  <li>• </li>
                 </ul>
                 <div className="mt-4">
                   <Countdown 
                     endDate={phase2EndDate}
-                    remainingSpots={13}
+                    remainingSpots={8}
                   />
                 </div>
               </div>

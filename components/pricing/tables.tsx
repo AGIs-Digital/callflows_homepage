@@ -28,6 +28,19 @@ export function PricingTables() {
       {/* Monthly Plans */}
       <div className="mb-16">
         <div className="text-center mb-10">
+          {/* Neuer Infotext zur Preisstruktur */}
+          <div className="max-w-3xl mx-auto mb-8 bg-muted/50 p-6 rounded-lg">
+            <p className="text-muted-foreground mb-3">
+              Bei <strong className="text-primary"><strong className="text-primary">callflows</strong></strong> zahlen Sie nur für die Telefonzeit des Agenten  - keine versteckten Kosten oder Grundgebühren.
+            </p>
+            <p className="text-muted-foreground mb-3">
+              Sie haben zwei Möglichkeiten: Starten Sie mit unserem Pay-as-you-go Modell für 0,99€ pro Minute (Mindestverbrauch: 500 Minuten) zum Reinschnuppern, oder wählen Sie eines unserer kostengünstigeren Pakete mit Freiminuten für regelmäßige Nutzung.
+            </p>
+            <p className="text-muted-foreground">
+              Alle Pakete bieten volle Flexibilität - Sie zahlen nur für das, was Sie tatsächlich nutzen.
+            </p>
+          </div>
+          
           <h3 className="text-3xl font-bold mb-4">Unsere Monatspakete mit Freiminuten</h3>
           <p className="text-sm text-muted-foreground mb-8">Alle Preise zzgl. gesetzlicher MwSt.</p>
           

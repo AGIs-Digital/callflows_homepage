@@ -12,7 +12,7 @@ export function AboutSection() {
           {/* Linke Spalte - Überschrift, Text und Bild */}
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-primary dark:text-white">
-              Über callflows
+              Über <strong className="text-primary">callflows</strong>
             </h2>
             
             <div className="space-y-4">
@@ -21,7 +21,7 @@ export function AboutSection() {
                 Aber nicht irgendwann – sondern jetzt.
               </p>
               <p className="text-lg text-muted-foreground">
-                callflows hilft Unternehmen dabei, diesen Wandel zu gestalten – nicht blindlings, sondern mit Struktur, Erfahrung und echter Partnerschaft.
+                <strong className="text-primary">callflows</strong> hilft Unternehmen dabei, diesen Wandel zu gestalten – nicht blindlings, sondern mit Struktur, Erfahrung und echter Partnerschaft.
                 Unsere AI Voice Agents übernehmen Gespräche, verstehen Anliegen, buchen Termine, erkennen Chancen – und integrieren sich in bestehende Systeme, als wären sie schon immer da gewesen.
               </p>
               <p className="text-lg text-muted-foreground">
@@ -91,7 +91,7 @@ export function AboutSection() {
               
               <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
                 <p className="text-sm text-muted-foreground font-medium">
-                  callflows ist keine Software – sondern ein Team.
+                  <strong className="text-primary">callflows</strong> ist keine Software – sondern ein Team.
                   Mit Hintergrund in Vertrieb, Marketing & Automatisierung.
                   Mit echtem Interesse an deinem Erfolg.
                 </p>

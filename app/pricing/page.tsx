@@ -13,7 +13,7 @@ export default function PricingPage() {
         <PricingSection />
         <div className="pt-24 pb-16">
         <div className="container">
-          <h1 className="text-3xl text-center sm:text-4xl md:text-5xl font-bold text-primary dark:text-white mb-4 md:mb-6 px-4">Transparente Preisgestaltung</h1>
+          <h1 className="text-3xl text-center sm:text-4xl md:text-4xl font-bold text-primary dark:text-white mb-4 md:mb-6 px-4">Transparente Preisgestaltung</h1>
           <PricingTables />
         </div>
       </div>

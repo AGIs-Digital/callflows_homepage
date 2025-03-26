@@ -162,7 +162,7 @@ export function PricingComparisonSection() {
         {/* ROI Benefits */}
         <div className="flex flex-col items-center mt-24">
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-12 text-center">
-            Ihre Vorteile durch callflows
+            Ihre Vorteile durch <strong className="text-primary">callflows</strong>
           </h2>
           <div className="bg-accent/10 p-6 rounded-lg my-8 text-center">
             <p className="text-xl font-bold text-primary dark:text-secondary">

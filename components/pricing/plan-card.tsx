@@ -110,9 +110,12 @@ export function PricingCard({ plan, selectedTerm }: PricingCardProps) {
         <div className="mb-4">
           <div className="flex items-center">
             <span className="text-2xl font-bold">
-              {Math.round(displayPrice).toLocaleString('de-DE')} €
+              {/* Prüfen, ob der Preis kleiner als 1 ist (pro Minute) */}
+              {displayPrice < 1 
+                ? displayPrice.toFixed(2).replace('.', ',') 
+                : Math.round(displayPrice).toLocaleString('de-DE')} €
             </span>
-            <span className="text-muted-foreground ml-1">/Monat</span>
+            <span className="text-muted-foreground ml-1">/min</span>
           </div>
           {selectedTerm === "twelveMonths" && discountPercentage > 0 && (
             <div className="text-green-600 text-sm mt-1">
