@@ -25,10 +25,7 @@ export function PricingSection() {
   return (
     <section className="bg-white dark:bg-background">
       <div className="container max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary dark:text-white mb-4 md:mb-6 px-4">
-            Transparente Preisgestaltung
-          </h2>
+        <div className="text-center">
           <div className="max-w-2xl mx-auto bg-accent/10 p-6 rounded-lg">
             {isPhase1Active ? (
               <div className="mb-8">
@@ -53,8 +50,8 @@ export function PricingSection() {
                   🚀 Phase 2 - Launch Special 🚀
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                  <li>• Keine einmalige Einrichtungsgebühr</li>
-                  <li>• Reguläre Paketpreise</li>
+                  <li>• Einrichtungsgebühr entfällt!</li>
+                  <li>• </li>
                 </ul>
                 <div className="mt-4">
                   <Countdown 
@@ -66,8 +63,6 @@ export function PricingSection() {
             )}
           </div>
         </div>
-        
-        <PricingTables />
       </div>
     </section>
   );

@@ -15,9 +15,9 @@ export function PricingTables() {
   const getDiscountText = () => {
     switch (selectedTerm) {
       case "sixMonths":
-        return "Keine Rabatte bei 6-Monats-Vertrag";
+        return "Unsere kürzeste Laufzeit";
       case "twelveMonths":
-        return "10% Rabatt auf alle Pakete";
+        return "10% Rabatt auf alle Monatspakete";
       default:
         return "";
     }

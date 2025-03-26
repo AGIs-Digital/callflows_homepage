@@ -27,8 +27,8 @@ export const monthlyPlans: PricingPlan[] = [
     name: "Professional",
     type: "professional",
     subtitle: "Für mittelständische Betriebe",
-    price: 2699,
-    earlyBirdPrice: 2699,
+    price: 2669,
+    earlyBirdPrice: 2669,
     minutesIncluded: 3000,
     highlights: [
       "Ideal für moderate Inbound-/Outbound-Kommunikation",
@@ -46,8 +46,8 @@ export const monthlyPlans: PricingPlan[] = [
     name: "Corporate",
     type: "corporate",
     subtitle: "Für höhere Anrufvolumina",
-    price: 8499,
-    earlyBirdPrice: 8499,
+    price: 7899,
+    earlyBirdPrice: 7899,
     minutesIncluded: 10000,
     highlights: [
       "Für Zeitarbeitsunternehmen, Vertriebsteams, Kundendienst",
