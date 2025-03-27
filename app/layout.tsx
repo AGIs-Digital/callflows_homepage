@@ -4,20 +4,21 @@ import { CookieBanner } from '@/components/cookie-banner';
 import { Analytics } from '@/components/analytics';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { generateMetadata } from '@/lib/seo/metadata';
-import { generateOrganizationSchema } from '@/lib/seo/schema';
+import { generateOrganizationSchema, generateProductSchema, generateFAQSchema } from '@/lib/seo/schema';
 import Script from 'next/script';
 
 export const metadata = {
   ...generateMetadata({
-  title: 'callflows - Kommunikation mit KI',
-  description: 'Wir automatisieren mit Ihnen Ihre Prozesse. Von Sales über Marketing und Support bis hin zur Terminbuchung.',
-  path: '/',
-  images: [{
-    url: '/images/callflows_brand_no_claim.png',
-    width: 1200,
-    height: 630,
-    alt: 'callflows Logo'
-  }]
+    title: 'callflows - KI-gestützte Voice Agents für automatisierte Telefonkommunikation',
+    description: 'Automatisieren Sie Ihre Telefonkommunikation mit KI Voice Agents. Optimieren Sie Kundenservice, Vertrieb und Support mit intelligenten Sprachassistenten.',
+    path: '/',
+    keywords: ['KI Telefonie', 'Telefon KI', 'Voice Agent', 'KI Voice Agent', 'Automatisierte Telefonie'],
+    images: [{
+      url: '/images/callflows_brand_no_claim.png',
+      width: 1200,
+      height: 630,
+      alt: 'callflows Logo'
+    }]
   }),
   icons: {
     icon: [
@@ -33,6 +34,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Generiere alle Schema.org Daten
+  const organizationSchema = generateOrganizationSchema();
+  const productSchema = generateProductSchema();
+  const faqSchema = generateFAQSchema();
+
   return (
     <html lang="de" suppressHydrationWarning>
       <head>
@@ -42,7 +48,23 @@ export default function RootLayout({
           type="application/ld+json"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateOrganizationSchema())
+            __html: JSON.stringify(organizationSchema)
+          }}
+        />
+        <Script
+          id="product-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(productSchema)
+          }}
+        />
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema)
           }}
         />
         <Script
@@ -59,14 +81,17 @@ export default function RootLayout({
             });
           `}
         </Script>
+        <link rel="canonical" href="https://callflows.de" />
+        <link rel="alternate" hrefLang="de" href="https://callflows.de" />
+        <link rel="alternate" hrefLang="x-default" href="https://callflows.de" />
+        <Script src="https://cal.com/embed.js" strategy="lazyOnload" />
       </head>
       <body>
         <ErrorBoundary>
           <ThemeProvider
             attribute="class"
-            defaultTheme="light"
-            enableSystem={false}
-            disableTransitionOnChange
+            defaultTheme="system"
+            enableSystem
           >
             <CookieBanner />
             {children}

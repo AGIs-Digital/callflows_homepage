@@ -14,6 +14,7 @@ interface GenerateMetadataProps {
     height: number;
     alt: string;
   }[];
+  keywords?: string[];
 }
 
 export function generateMetadata({
@@ -25,23 +26,43 @@ export function generateMetadata({
   modifiedTime,
   authors,
   images,
+  keywords = [],
 }: GenerateMetadataProps): Metadata {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://callflows.de';
   const url = `${baseUrl}${path}`;
+  
+  // Standardkeywords für alle Seiten
+  const defaultKeywords = [
+    'KI Telefonie', 
+    'Telefon KI', 
+    'Voice Agent', 
+    'KI Voice Agent', 
+    'Automatisierte Telefonie',
+    'Künstliche Intelligenz Telefon',
+    'KI Kundenservice',
+    'Sprachassistent',
+    'Automatisierte Anrufannahme',
+    'KI Callcenter'
+  ];
+  
+  // Kombiniere Standard- und seitenspezifische Keywords
+  const allKeywords = [...defaultKeywords, ...keywords];
 
   return {
-    title: `${title} | callflows`,
+    title: `${title} | callflows - KI-gestützte Voice Agents`,
     description,
     metadataBase: new URL(baseUrl),
     alternates: {
       canonical: url,
     },
+    keywords: allKeywords.join(', '),
     openGraph: {
       title,
       description,
       url,
-      siteName: 'callflows',
+      siteName: 'callflows - KI-gestützte Voice Agents für automatisierte Kommunikation',
       type,
+      locale: 'de_DE',
       ...(publishedTime && { publishedTime }),
       ...(modifiedTime && { modifiedTime }),
       ...(authors?.length && { authors }),

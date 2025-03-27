@@ -153,7 +153,7 @@ export function ContactForm({
 
       <Button
         type="submit"
-        className="w-full bg-accent hover:bg-accent/90 text-gray-900"
+        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
         disabled={isSubmitting || !form.formState.isValid}
       >
         {isSubmitting ? <LoadingSpinner /> : "Nachricht senden"}

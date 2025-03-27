@@ -12,6 +12,21 @@ const generate = async () => {
   ]);
 
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://callflows.de';
+  
+  // Definiere Prioritäten für verschiedene Seitentypen
+  const getPriority = (path: string) => {
+    if (path === '/index') return '1.0'; // Startseite
+    if (path.includes('/blog/')) return '0.7'; // Blogbeiträge
+    if (path === '/preise' || path === '/kontakt') return '0.9'; // Wichtige Seiten
+    return '0.8'; // Standard
+  };
+  
+  // Definiere Änderungshäufigkeit für verschiedene Seitentypen
+  const getChangefreq = (path: string) => {
+    if (path === '/index') return 'daily'; // Startseite
+    if (path.includes('/blog/')) return 'weekly'; // Blogbeiträge
+    return 'monthly'; // Standard
+  };
 
   const sitemap = `
     <?xml version="1.0" encoding="UTF-8"?>
@@ -23,12 +38,13 @@ const generate = async () => {
             .replace('/page.tsx', '')
             .replace('.tsx', '');
           const route = path === '/index' ? '' : path;
+          
           return `
             <url>
               <loc>${baseUrl}${route}</loc>
               <lastmod>${new Date().toISOString()}</lastmod>
-              <changefreq>weekly</changefreq>
-              <priority>0.8</priority>
+              <changefreq>${getChangefreq(path)}</changefreq>
+              <priority>${getPriority(path)}</priority>
             </url>
           `;
         })

@@ -1,15 +1,15 @@
 import { SiteHeader } from "@/components/site-header";
-import { HeroSection } from "@/components/hero-section";
+import { HeroSection } from "@/components/sections/hero-section";
 import { ProcessSection } from "@/components/sections/process-section";
 import { PricingComparisonSection } from "@/components/sections/pricing-comparison-section";
 import { ProductPreviewSection } from "@/components/sections/product-preview-section";
 import { CoreFeaturesSection } from "@/components/sections/core-features-section";
 import { UseCaseVideoSection } from "@/components/sections/use-case-video-section";
 import { FeaturesSection } from "@/components/sections/features-section";
-import { TestimonialsSection } from "@/components/testimonials-section";
 import { SiteFooter } from "@/components/site-footer";
 import { AboutSection } from "@/components/sections/about-section";
-import { CTASection } from "@/components/cta-section";
+import { CTASection } from "@/components/sections/cta-section";
+import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
 import { PricingFAQSection } from "@/components/sections/pricing-faq-section";
 import { IntegrationChallengesSection } from "@/components/sections/integration-challenges-section";
 
@@ -28,15 +28,13 @@ export default function Home() {
       <div id="pricecomparison">
         <PricingComparisonSection />
       </div>
+      <CTASection />
       <div id="core-features">
         <CoreFeaturesSection />
       </div>
       <div id="features">
         <FeaturesSection />
       </div>
-      <CTASection />
-
-
       <div className="bg-section-dark">
         <ProductPreviewSection />
       </div>
@@ -49,10 +47,10 @@ export default function Home() {
         <UseCaseVideoSection />
       </div>
       */}
-      <div id="faq">
+      {/* <div id="faq">
         <PricingFAQSection />
-      </div>
-
+      </div> */}
+      <CTASectionSecondary />
       <SiteFooter />
     </main>
   );

@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PricingPlan } from "@/lib/types/pricing";
 import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
 import { CheckCircle } from "lucide-react";
+import { CalButton } from "@/components/booking/cal-button";
+import { getCalApi } from "@calcom/embed-react";
 
 interface PricingDialogProps {
   plan: PricingPlan;
@@ -28,6 +30,20 @@ export function PricingDialog({ plan, onClose, selectedTerm = "sixMonths", disco
       onClose();
     }, 3000);
   };
+  
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("on", {
+        action: "bookingSuccessful",
+        callback: (e) => {
+          console.log("Booking successful:", e.detail);
+          // Hier können Sie den Dialog schließen, wenn die Buchung erfolgreich war
+          onClose();
+        },
+      });
+    })();
+  }, [onClose]);
   
   return (
     <>
@@ -77,19 +93,7 @@ export function PricingDialog({ plan, onClose, selectedTerm = "sixMonths", disco
               discountedPrice={discountedPrice}
             />
           </div>
-          
-          <div className="mt-4 text-center text-sm text-muted-foreground">
-            <p>Oder vereinbaren Sie direkt einen Beratungstermin:</p>
-            <Button
-              className="mt-2"
-              variant="outline"
-              data-cal-link="callflows/55min"
-              data-cal-config='{"layout":"popup"}'
-              onClick={onClose}
-            >
-              Termin buchen
-            </Button>
-          </div>
+          <CalButton />
         </>
       )}
     </>

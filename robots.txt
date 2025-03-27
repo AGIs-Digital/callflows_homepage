@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://callflows.de/sitemap.xml
+
+# Optimierungen für Suchmaschinen
+Crawl-delay: 1
+
+# Wichtige Seiten für Suchmaschinen
+Allow: /preise
+Allow: /#about
+Allow: /kontakt
+Allow: /blog 

@@ -29,6 +29,7 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
 </IfModule>
 
 # Browser Caching
@@ -39,8 +40,13 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     ExpiresByType image/gif "access plus 1 year"
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/json "access plus 1 day"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/x-font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
 </IfModule>
 
 # Setze Sicherheitsheader
@@ -49,4 +55,30 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     Header set X-XSS-Protection "1; mode=block"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Cache-Control für statische Assets
+    <FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|webp|svg|js|css|woff|woff2)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    
+    # Cache-Control für HTML und XML Dateien
+    <FilesMatch "\.(html|htm|xml)$">
+        Header set Cache-Control "max-age=86400, public, must-revalidate"
+    </FilesMatch>
 </IfModule>
+
+# Verhindern Sie den Zugriff auf versteckte Dateien
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Optimiere die Leistung durch Komprimierung von Bildern
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_FILENAME} \.(jpg|jpeg|png)$
+    RewriteCond %{REQUEST_FILENAME}\.webp -f
+    RewriteRule ^(.*)\.(jpg|jpeg|png)$ $1\.$2\.webp [T=image/webp,L]
+</IfModule> 
