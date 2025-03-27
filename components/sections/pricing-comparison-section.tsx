@@ -76,8 +76,7 @@ export function PricingComparisonSection() {
       <div className="container max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">
-            Kommunikationslösungen im Vergleich
-          </h2>
+            Im Vergleich:          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Die geschäftliche Telefonkommunikation wird heutzutage meist auf drei Arten abgewickelt.
             <strong className="text-primary"> callflows</strong> bietet eine vierte, innovative Option.

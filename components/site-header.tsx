@@ -89,8 +89,8 @@ export function SiteHeader() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-[80px] bg-background/95 backdrop-blur-sm md:hidden" style={{ zIndex: 200 }}>
-          <nav className="container py-6">
+        <div className="fixed inset-0 top-[80px] bg-background md:hidden" style={{ zIndex: 200 }}>
+          <nav className="container py-6 bg-background border-t">
             <div className="space-y-1">
               {navItems.map((item) => (
                 <a
