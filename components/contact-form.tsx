@@ -26,10 +26,12 @@ export function ContactForm({
   defaultSubject = "", 
   onSubmitSuccess, 
   source = 'contact',
-  prefilledMessage = ''
+  prefilledMessage = '',
+  planType,
+  selectedTerm,
+  discountedPrice
 }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false);
   const { toast } = useToast();
   
   const form = useForm<ContactFormData>({
@@ -45,23 +47,28 @@ export function ContactForm({
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    setSuccess(false);
-
+    
     try {
       const response = await fetch('/api/contact.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          planType,
+          selectedTerm,
+          discountedPrice
+        }),
       });
 
       if (!response.ok) {
-        throw new Error('Beim Senden ist ein Fehler aufgetreten');
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || 'Beim Senden ist ein Fehler aufgetreten');
       }
 
-      setSuccess(true);
       form.reset();
+      
       toast({
         title: "Nachricht gesendet",
         description: "Wir haben Ihre Nachricht erhalten und werden uns zeitnah bei Ihnen melden.",
@@ -73,6 +80,7 @@ export function ContactForm({
       }
     } catch (error) {
       console.error('Kontaktformular Fehler:', error);
+      
       toast({
         title: "Fehler beim Senden",
         description: error instanceof Error ? error.message : "Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
@@ -86,24 +94,6 @@ export function ContactForm({
 
   const formContent = (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 relative">
-      {success && (
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center rounded-lg">
-          <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Vielen Dank!</h3>
-            <p className="text-muted-foreground">Ihre Nachricht wurde erfolgreich gesendet.</p>
-            <Button
-              onClick={() => {
-                setSuccess(false);
-              }}
-              className="mt-4"
-              variant="outline"
-            >
-              Schließen
-            </Button>
-          </div>
-        </div>
-      )}
-
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-2">
           Name *

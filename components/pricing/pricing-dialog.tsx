@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { PricingPlan } from "@/lib/types/pricing";
 import { DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
+import { CheckCircle } from "lucide-react";
 
 interface PricingDialogProps {
   plan: PricingPlan;
@@ -14,9 +16,18 @@ interface PricingDialogProps {
 
 export function PricingDialog({ plan, onClose, selectedTerm = "sixMonths", discountedPrice }: PricingDialogProps) {
   const isCustomPlan = plan.isCustom || plan.price === 0;
+  const [formSubmitted, setFormSubmitted] = useState(false);
   
   // Laufzeittext für die Anfrage
   let termText = selectedTerm === "sixMonths" ? "6-Monats-Vertrag" : "12-Monats-Vertrag";
+  
+  const handleFormSuccess = () => {
+    setFormSubmitted(true);
+    // Nach 3 Sekunden Dialog schließen
+    setTimeout(() => {
+      onClose();
+    }, 3000);
+  };
   
   return (
     <>
@@ -26,39 +37,61 @@ export function PricingDialog({ plan, onClose, selectedTerm = "sixMonths", disco
         </DialogTitle>
       </DialogHeader>
       
-      {!isCustomPlan && (
-        <div className="mt-4 p-4 bg-muted rounded-md">
-          <p className="font-medium">Ihre Auswahl:</p>
-          <p className="text-sm text-muted-foreground">{plan.name} - {termText}</p>
-          <p className="text-sm text-muted-foreground">{plan.minutesIncluded.toLocaleString('de-DE')} Freiminuten</p>
-          <p className="text-sm font-medium mt-2">
-            {Math.round(discountedPrice || plan.price).toLocaleString('de-DE')} € / Monat
+      {formSubmitted ? (
+        <div className="py-8 flex flex-col items-center justify-center text-center">
+          <div className="bg-green-100 dark:bg-green-900/30 rounded-full p-3 mb-4">
+            <CheckCircle className="h-10 w-10 text-green-600 dark:text-green-400" />
+          </div>
+          <h3 className="text-xl font-semibold mb-2">Nachricht erfolgreich gesendet!</h3>
+          <p className="text-muted-foreground mb-4">
+            Vielen Dank für Ihre Anfrage. Wir werden uns zeitnah bei Ihnen melden.
           </p>
+          <Button 
+            variant="outline" 
+            onClick={onClose}
+          >
+            Schließen
+          </Button>
         </div>
+      ) : (
+        <>
+          {!isCustomPlan && (
+            <div className="mt-4 p-4 bg-muted rounded-md">
+              <p className="font-medium">Ihre Auswahl:</p>
+              <p className="text-sm text-muted-foreground">{plan.name} - {termText}</p>
+              <p className="text-sm text-muted-foreground">{plan.minutesIncluded.toLocaleString('de-DE')} Freiminuten</p>
+              <p className="text-sm font-medium mt-2">
+                {plan.price < 1 
+                    ? plan.price.toFixed(2).replace('.', ',') 
+                    : Math.round(plan.price).toLocaleString('de-DE')} € / Monat
+              </p>
+            </div>
+          )}
+          
+          <div className="mt-4">
+            <ContactForm 
+              defaultSubject={`Anfrage: ${plan.name} Paket (${termText})`}
+              onSubmitSuccess={handleFormSuccess}
+              planType={plan.type}
+              selectedTerm={selectedTerm}
+              discountedPrice={discountedPrice}
+            />
+          </div>
+          
+          <div className="mt-4 text-center text-sm text-muted-foreground">
+            <p>Oder vereinbaren Sie direkt einen Beratungstermin:</p>
+            <Button
+              className="mt-2"
+              variant="outline"
+              data-cal-link="callflows/55min"
+              data-cal-config='{"layout":"popup"}'
+              onClick={onClose}
+            >
+              Termin buchen
+            </Button>
+          </div>
+        </>
       )}
-      
-      <div className="mt-4">
-        <ContactForm 
-          defaultSubject={`Anfrage: ${plan.name} Paket (${termText})`}
-          onSubmitSuccess={onClose}
-          planType={plan.type}
-          selectedTerm={selectedTerm}
-          discountedPrice={discountedPrice}
-        />
-      </div>
-      
-      <div className="mt-4 text-center text-sm text-muted-foreground">
-        <p>Oder vereinbaren Sie direkt einen Beratungstermin:</p>
-        <Button
-          className="mt-2"
-          variant="outline"
-          data-cal-link="callflows/55min"
-          data-cal-config='{"layout":"popup"}'
-          onClick={onClose}
-        >
-          Termin buchen
-        </Button>
-      </div>
     </>
   );
 } 
