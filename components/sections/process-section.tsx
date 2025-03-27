@@ -59,7 +59,7 @@ export function ProcessSection() {
             So einfach geht's
           </h2>
           <p className="text-xl text-muted-foreground">
-            Von der ersten Kontaktaufnahme bis zum Go-Live in einer Woche
+            Von der ersten Kontaktaufnahme bis zum Go-Live in 4 Schritten
           </p>
         </div>
 

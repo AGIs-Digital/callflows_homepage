@@ -70,7 +70,7 @@ export function AboutSection() {
                 Was uns besonders macht:
               </h3>
               <p className="text-muted-foreground mb-4">
-                Wir begleiten von Anfang an. Wir hören zu. Wir bauen mit dir gemeinsam eine Lösung, die wirklich zu deinem Unternehmen passt.
+                Wir begleiten von Anfang an. Wir hören zu. Wir bauen mit Ihnen gemeinsam eine Lösung, die wirklich zu Ihrem Unternehmen passt.
               </p>
               
               <ul className="space-y-3 mt-4">
@@ -93,7 +93,7 @@ export function AboutSection() {
                 <p className="text-sm text-muted-foreground font-medium">
                   <strong className="text-primary">callflows</strong> ist keine Software – sondern ein Team.
                   Mit Hintergrund in Vertrieb, Marketing & Automatisierung.
-                  Mit echtem Interesse an deinem Erfolg.
+                  Mit echtem Interesse an Ihrem Erfolg.
                 </p>
               </div>
             </div>

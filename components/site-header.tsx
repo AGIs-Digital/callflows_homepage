@@ -25,8 +25,8 @@ export function SiteHeader() {
   };
 
   const navItems = [
-    { href: "/#features", label: "Einsatzbereiche" },
-    { href: "/#core-features", label: "Kernfunktionen" },
+    { href: "/#pricecomparison", label: "Vergleich" },
+    { href: "/#faq", label: "FAQ" },
     { href: "/pricing", label: "Preise" },
   ];
 

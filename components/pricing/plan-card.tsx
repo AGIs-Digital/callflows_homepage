@@ -69,9 +69,9 @@ export function PricingCard({ plan, selectedTerm }: PricingCardProps) {
 
       {earlyBirdActive && plan.earlyBirdPrice && !isCustomPlan && (
         <>
-          <div className="flex items-center text-sm text-primary mb-2">
-            <Timer className="w-4 h-4 mr-1" />
-            <span>Zeitlich limitiertes Angebot!</span>
+          <div className="flex items-center text-lg text-green-600 mb-2">
+            <Timer className="w-5 h-5 mr-2" />
+            <span className="font-bold">Limitiertes Angebot!</span>
           </div>
 
           <div className="flex items-center gap-1 mb-4">

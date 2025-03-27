@@ -51,10 +51,10 @@ export function FeaturesSection() {
       <div className="container max-w-6xl">
         <div className="text-center mb-16 section-animate">
           <h2 className="text-4xl font-bold mb-4 text-primary dark:text-white">
-            Einsatzbereiche
+            Für welche Einsatzbereiche sind KI Voice Agents geeignet?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Entdecken Sie die vielfältigen Möglichkeiten unserer KI Voice Agents
+            In vielen Bereichen sind Voice Agents der Standard von morgen.
           </p>
         </div>
         

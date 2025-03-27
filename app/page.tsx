@@ -25,18 +25,22 @@ export default function Home() {
       <div id="about">
         <AboutSection />
       </div>
-      <div id="features">
-        <FeaturesSection />
+      <div id="pricecomparison">
+        <PricingComparisonSection />
       </div>
       <div id="core-features">
         <CoreFeaturesSection />
       </div>
-      <div id="pricecomparison">
-        <PricingComparisonSection />
+      <div id="features">
+        <FeaturesSection />
       </div>
+      <CTASection />
+
+
       <div className="bg-section-dark">
         <ProductPreviewSection />
       </div>
+
       {/*
       <div id="testimonials">
         <TestimonialsSection />
@@ -48,7 +52,7 @@ export default function Home() {
       <div id="faq">
         <PricingFAQSection />
       </div>
-      <CTASection />
+
       <SiteFooter />
     </main>
   );
