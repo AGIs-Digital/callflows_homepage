@@ -112,7 +112,7 @@ export function CTASection() {
             className="text-4xl font-bold mb-4"
             variants={itemVariants}
           >
-            Bereit, Ihre Telefonkommunikation zu revolutionieren?
+            Bereit, Ihre Kundenkommunikation zu revolutionieren?
           </motion.h2>
           
           <motion.p 

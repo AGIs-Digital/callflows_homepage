@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     question: "Für welche Unternehmen eignet sich ein KI Voice Agent?",
-    answer: "KI Voice Agents eignen sich für Unternehmen jeder Größe, die ihre Telefonkommunikation effizienter gestalten möchten. Besonders geeignet sind sie für Kundenservice, Vertrieb, Marketing und HR-Prozesse. Ob kleines Unternehmen oder großer Konzern - die Lösung skaliert mit Ihren Anforderungen und kann an verschiedene Branchen angepasst werden."
+    answer: "KI Voice Agents eignen sich für Unternehmen jeder Größe, die ihre Kundenkommunikation effizienter gestalten möchten. Besonders geeignet sind sie für Kundenservice, Vertrieb, Marketing und HR-Prozesse. Ob kleines Unternehmen oder großer Konzern - die Lösung skaliert mit Ihren Anforderungen und kann an verschiedene Branchen angepasst werden."
   },
   {
     question: "Was kostet ein KI Voice Agent?",

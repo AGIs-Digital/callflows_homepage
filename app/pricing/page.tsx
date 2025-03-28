@@ -4,6 +4,7 @@ import { PricingSection } from "@/components/sections/pricing-section";
 import { PricingFeaturesSection } from "@/components/sections/pricing-features-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { PricingTables } from "@/components/pricing/tables";
+import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
 
 export default function PricingPage() {
   return (
@@ -18,7 +19,7 @@ export default function PricingPage() {
         </div>
       </div>
         <PricingFeaturesSection />
-        <CTASection />
+        <CTASectionSecondary />
       </div>
 
       <SiteFooter />

@@ -9,7 +9,7 @@ import { useTheme } from "next-themes";
 export function HeroSection() {
   const { theme } = useTheme();
   const [showWidget, setShowWidget] = useState(false);
-  const [widgetError, setWidgetError] = useState(false);
+  const [widgetError, setWidgetError] = useState(true); // Auf true gesetzt, um Wartungsmodus zu erzwingen
   const iframeRef = useRef<HTMLIFrameElement>(null);
   
   // Widget nach dem Laden der Seite aktivieren
@@ -139,44 +139,16 @@ export function HeroSection() {
           
           {/* Rechte Spalte - KI-Widget */}
           <div className="relative z-20 h-[400px] lg:h-[550px] rounded-xl border border-border/50 bg-card/30 flex items-center justify-center">
-            {showWidget && !widgetError ? (
-              <iframe 
-                id="audio_iframe" 
-                ref={iframeRef}
-                src="https://whitelabel-widget-dev.synthflow.dev/widget/v2/1734458300743x316318366914512640/1734458300564x710091014548361600" 
-                allow="microphone" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 'none', borderRadius: '0.75rem', overflow: 'hidden' }}
-                onError={() => setWidgetError(true)}
-                onLoad={(e) => {
-                  // Prüfe nach dem Laden, ob der Inhalt des iframes eine Fehlermeldung enthält
-                  try {
-                    const iframe = e.currentTarget;
-                    const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
-                    if (iframeDoc && iframeDoc.body.textContent?.includes('Application error')) {
-                      setWidgetError(true);
-                    }
-                  } catch (err) {
-                    // CORS-Fehler ignorieren
-                  }
-                }}
-              />
-            ) : widgetError ? (
-              <div className="text-center p-8 flex flex-col items-center justify-center h-full">
-                <div className="text-6xl mb-4">🚧</div>
-                <h3 className="text-2xl font-bold text-[#FFB703] mb-2">
-                  Im Wartungsmodus
-                </h3>
-                <p className="text-muted-foreground max-w-md">
-                  Unser KI-Assistent verbessert sich gerade und wird in Kürze wieder verfügbar sein. Bitte versuchen Sie es später erneut.
-                </p>
-              </div>
-            ) : (
-              <div className="text-center p-4">
-                <p className="text-muted-foreground">KI-Widget wird geladen...</p>
-              </div>
-            )}
+            {/* Widget-Link entfernt, nur Wartungsmodus wird angezeigt */}
+            <div className="text-center p-8 flex flex-col items-center justify-center h-full">
+              <div className="text-6xl mb-4">🚧</div>
+              <h3 className="text-2xl font-bold text-[#FFB703] mb-2">
+                Im Wartungsmodus
+              </h3>
+              <p className="text-muted-foreground max-w-md">
+                Unser KI-Assistent verbessert sich gerade und wird in Kürze wieder verfügbar sein. Bitte versuchen Sie es später erneut.
+              </p>
+            </div>
           </div>
         </div>
       </div>

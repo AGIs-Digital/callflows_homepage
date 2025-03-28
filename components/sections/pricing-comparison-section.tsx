@@ -78,7 +78,7 @@ export function PricingComparisonSection() {
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">
             Im Vergleich:          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Die geschäftliche Telefonkommunikation wird heutzutage meist auf drei Arten abgewickelt.
+            Die geschäftliche Kundenkommunikation wird heutzutage meist auf drei Arten abgewickelt.
             <strong className="text-primary"> callflows</strong> bietet eine vierte, innovative Option.
           </p>
         </div>

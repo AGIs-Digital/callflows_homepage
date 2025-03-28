@@ -37,7 +37,8 @@ const config = {
     'node_modules/**',
     'README.md',
     'tests/**',
-    'vendor/**'
+    'vendor/**',
+    'public/videos/**',
   ],
   sftp: true
 };
@@ -49,7 +50,7 @@ ftpDeploy.on('uploaded', function (data) {
 });
 
 ftpDeploy.on('upload-error', function (data) {
-  console.log('❌ '.data.err); // data will also include filename, relativePath, and other goodies
+  console.log('❌ ' + data.err);
 });
 
 ftpDeploy.deploy(config, function (err) {

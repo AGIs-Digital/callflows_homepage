@@ -4,7 +4,7 @@ import { generateMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generateMetadata({
   title: "Datenschutzerklärung - Schutz Ihrer Daten",
-  description: "Informationen zum Schutz Ihrer persönlichen Daten bei der Nutzung unserer KI-gestützten Voice Agents und automatisierten Telefonkommunikation.",
+  description: "Informationen zum Schutz Ihrer persönlichen Daten bei der Nutzung unserer KI-gestützten Voice Agents und automatisierten Kundenkommunikation.",
   path: "/datenschutz",
   keywords: [
     "callflows Datenschutz", 

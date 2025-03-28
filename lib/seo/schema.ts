@@ -7,7 +7,7 @@ export function generateOrganizationSchema(): WithContext<Organization> {
     name: 'callflows',
     url: 'https://callflows.de',
     logo: 'https://callflows.de/images/callflows_brand_no_claim.png',
-    description: 'KI-gestützte Voice Agents für automatisierte Telefonkommunikation',
+    description: 'KI-gestützte Voice Agents für automatisierte Kundenkommunikation',
     slogan: 'Kommunikation mit KI - Automatisierte Telefonie mit künstlicher Intelligenz',
     address: {
       '@type': 'PostalAddress',
@@ -36,7 +36,7 @@ export function generateProductSchema(): WithContext<Product> {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'callflows KI Voice Agent',
-    description: 'KI-gestützte Voice Agents für automatisierte Telefonkommunikation. Optimieren Sie Ihren Kundenservice, Vertrieb und Support mit intelligenten Sprachassistenten.',
+    description: 'KI-gestützte Voice Agents für automatisierte Kundenkommunikation. Optimieren Sie Ihren Kundenservice, Vertrieb und Support mit intelligenten Sprachassistenten.',
     brand: {
       '@type': 'Brand',
       name: 'callflows'
@@ -105,7 +105,7 @@ export function generateFAQSchema(): WithContext<FAQPage> {
         name: 'Für welche Unternehmen eignet sich ein KI Voice Agent?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'KI Voice Agents eignen sich für Unternehmen jeder Größe, die ihre Telefonkommunikation effizienter gestalten möchten. Besonders geeignet sind sie für Kundenservice, Vertrieb, Marketing und HR-Prozesse.'
+          text: 'KI Voice Agents eignen sich für Unternehmen jeder Größe, die ihre Kundenkommunikation effizienter gestalten möchten. Besonders geeignet sind sie für Kundenservice, Vertrieb, Marketing und HR-Prozesse.'
         }
       },
       {

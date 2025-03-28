@@ -8,9 +8,9 @@ export const metadata = generateMetadata({
   description: "Erfahren Sie, wie OpenAIs neuestes Sprachmodell GPT-4o die KI-Telefonie auf ein neues Level hebt und welche Chancen sich für Unternehmen ergeben.",
   path: "/blog/gpt4o-ki-telefonie",
   type: "article",
-  publishedTime: "2024-05-18T10:00:00Z",
-  modifiedTime: "2024-05-20T14:30:00Z",
-  authors: ["Tom Abeln"],
+  publishedTime: "2024-11-05T10:00:00Z",
+  modifiedTime: "2024-11-10T14:30:00Z",
+  authors: ["Timo Goltz"],
   keywords: [
     "GPT-4o Telefonie", 
     "OpenAI Voice Agent", 
@@ -19,7 +19,7 @@ export const metadata = generateMetadata({
     "Sprachmodell Telefon"
   ],
   images: [{
-    url: "/images/blog/gpt4o-ki-telefonie.jpg",
+    url: "/images/blog/gpt4o-ki-telefonie.png",
     width: 1200,
     height: 630,
     alt: "GPT-4o revolutioniert KI-Telefonie"
@@ -49,7 +49,7 @@ export default function BlogPostPage() {
           
           <div className="relative aspect-video w-full mb-6 overflow-hidden rounded-lg">
             <Image
-              src="/images/blog/gpt4o-ki-telefonie.jpg"
+              src="/images/blog/gpt4o-ki-telefonie.png"
               alt="GPT-4o revolutioniert KI-Telefonie"
               fill
               className="object-cover"

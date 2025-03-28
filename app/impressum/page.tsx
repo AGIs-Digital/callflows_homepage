@@ -6,7 +6,7 @@ import { generateMetadata } from "@/lib/seo/metadata";
 
 export const metadata = generateMetadata({
   title: "Impressum - Rechtliche Informationen",
-  description: "Rechtliche Informationen und Kontaktdaten der callflows GbR, Anbieter von KI-gestützten Voice Agents für automatisierte Telefonkommunikation.",
+  description: "Rechtliche Informationen und Kontaktdaten der callflows GbR, Anbieter von KI-gestützten Voice Agents für automatisierte Kundenkommunikation.",
   path: "/impressum",
   keywords: [
     "callflows Impressum", 
@@ -25,7 +25,7 @@ export default function ImpressumPage() {
     >
       <div className="max-w-3xl mx-auto">
         <p className="text-lg text-muted-foreground mb-8">
-          Hier finden Sie alle rechtlich relevanten Informationen zu callflows, Ihrem Anbieter für KI-gestützte Voice Agents und automatisierte Telefonkommunikation.
+          Hier finden Sie alle rechtlich relevanten Informationen zu callflows, Ihrem Anbieter für KI-gestützte Voice Agents und automatisierte Kundenkommunikation.
         </p>
         
         <LegalSection title="Angaben gemäß § 5 TMG">

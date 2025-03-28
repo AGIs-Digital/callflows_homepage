@@ -21,7 +21,7 @@ export function SiteFooter() {
               />
             </div>
             <p className="text-sm text-muted-foreground">
-              KI-gestützte Voice Agents für automatisierte Telefonkommunikation. Wir revolutionieren die Art, wie Unternehmen telefonieren.
+              KI-gestützte Voice Agents für automatisierte Kundenkommunikation. Wir revolutionieren die Art, wie Unternehmen telefonieren.
             </p>
             <div className="flex space-x-4">
               <a href="https://twitter.com/callflowsAI" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">

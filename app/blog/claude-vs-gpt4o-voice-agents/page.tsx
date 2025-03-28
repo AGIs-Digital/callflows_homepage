@@ -8,9 +8,9 @@ export const metadata = generateMetadata({
   description: "Ein detaillierter Vergleich der neuesten KI-Modelle von Anthropic und OpenAI für den Einsatz in Voice Agents. Erfahren Sie, welches Modell für Ihre Anforderungen am besten geeignet ist.",
   path: "/blog/claude-vs-gpt4o-voice-agents",
   type: "article",
-  publishedTime: "2024-06-05T10:00:00Z",
-  modifiedTime: "2024-06-07T14:30:00Z",
-  authors: ["Tom Abeln"],
+  publishedTime: "2025-01-29T10:00:00Z",
+  modifiedTime: "2025-02-03T14:30:00Z",
+  authors: ["Timo Goltz"],
   keywords: [
     "Claude 3.5 Sonnet Voice Agent", 
     "GPT-4o Telefonie", 
@@ -19,7 +19,7 @@ export const metadata = generateMetadata({
     "Sprachmodell Telefon"
   ],
   images: [{
-    url: "/images/blog/claude-vs-gpt4o.jpg",
+    url: "/images/blog/claude-vs-gpt4o.png",
     width: 1200,
     height: 630,
     alt: "Claude 3.5 Sonnet vs. GPT-4o Vergleich"
@@ -40,16 +40,16 @@ export default function BlogPostPage() {
       <article>
         <header className="mb-10">
           <div className="flex items-center text-sm text-muted-foreground mb-3">
-            <span>Tom Abeln</span>
+            <span>Markus Weber</span>
             <span className="mx-2">•</span>
-            <time dateTime="2024-06-05">5. Juni 2024</time>
+            <time dateTime="2025-01-29">29. Januar 2025</time>
           </div>
           
           <h1 className="text-4xl font-bold mb-6">Anthropic Claude 3.5 Sonnet vs. GPT-4o: Welches KI-Modell ist besser für Voice Agents?</h1>
           
           <div className="relative aspect-video w-full mb-6 overflow-hidden rounded-lg">
             <Image
-              src="/images/blog/claude-vs-gpt4o.jpg"
+              src="/images/blog/claude-vs-gpt4o.png"
               alt="Claude 3.5 Sonnet vs. GPT-4o Vergleich"
               fill
               className="object-cover"
@@ -174,7 +174,7 @@ export default function BlogPostPage() {
           </p>
           
           <p>
-            Möchten Sie mehr über den Einsatz dieser fortschrittlichen KI-Modelle in Ihrem Unternehmen erfahren? Kontaktieren Sie uns für eine persönliche Beratung und erfahren Sie, wie Sie mit KI Voice Agents Ihre Telefonkommunikation revolutionieren können.
+            Möchten Sie mehr über den Einsatz dieser fortschrittlichen KI-Modelle in Ihrem Unternehmen erfahren? Kontaktieren Sie uns für eine persönliche Beratung und erfahren Sie, wie Sie mit KI Voice Agents Ihre Kundenkommunikation revolutionieren können.
           </p>
         </div>
       </article>

@@ -12,8 +12,8 @@ export default function KontaktPage() {
       <div className="container max-w-4xl py-16 md:py-24">
         <h1 className="text-4xl font-bold mb-8">Kontakt</h1>
         
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          <div className="bg-card rounded-lg p-6 shadow-sm border">
             <h2 className="text-2xl font-semibold mb-4">Kontaktieren Sie uns</h2>
             <p className="text-muted-foreground mb-6">
               Haben Sie Fragen zu unseren KI Voice Agents? Wir helfen Ihnen gerne weiter.
@@ -39,17 +39,19 @@ export default function KontaktPage() {
             </form>
           </div>
           
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Beratungstermin buchen</h2>
-            <p className="text-muted-foreground mb-6">
-              Vereinbaren Sie einen Termin für eine persönliche Beratung zu unseren KI Voice Agents.
-            </p>
+          <div className="bg-card rounded-lg p-6 shadow-sm border flex flex-col justify-between">
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">Beratungstermin buchen</h2>
+              <p className="text-muted-foreground mb-6">
+                Vereinbaren Sie einen Termin für eine persönliche Beratung zu unseren KI Voice Agents.
+              </p>
+              
+              <Link href="https://cal.com/callflows/55min" target="_blank">
+                <Button className="w-full mb-8">Termin buchen</Button>
+              </Link>
+            </div>
             
-            <Link href="https://cal.com/callflows/beratung" target="_blank">
-              <Button className="w-full mb-8">Termin buchen</Button>
-            </Link>
-            
-            <div className="border-t pt-8">
+            <div className="border-t pt-6 mt-auto">
               <h3 className="text-xl font-semibold mb-2">Kontaktdaten</h3>
               <p className="text-muted-foreground">
                 callflows Abeln Goltz GbR<br />

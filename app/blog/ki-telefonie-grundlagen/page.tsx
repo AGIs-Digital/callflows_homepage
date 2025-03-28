@@ -8,8 +8,8 @@ export const metadata = generateMetadata({
   description: "Erfahren Sie, wie KI-gestützte Telefonie funktioniert und welche Vorteile sie für Unternehmen bietet. Ein umfassender Überblick über die Technologie und ihre Anwendungsbereiche.",
   path: "/blog/ki-telefonie-grundlagen",
   type: "article",
-  publishedTime: "2023-11-15T10:00:00Z",
-  modifiedTime: "2023-11-20T14:30:00Z",
+  publishedTime: "2023-01-05T10:00:00Z",
+  modifiedTime: "2023-01-10T14:30:00Z",
   authors: ["Tom Abeln"],
   keywords: [
     "KI Telefonie", 
@@ -19,7 +19,7 @@ export const metadata = generateMetadata({
     "KI Sprachassistent"
   ],
   images: [{
-    url: "/images/blog/ki-telefonie-grundlagen.jpg",
+    url: "/images/blog/ki-telefonie-grundlagen.png",
     width: 1200,
     height: 630,
     alt: "KI-Telefonie Grundlagen"
@@ -60,7 +60,7 @@ export default function BlogPostPage() {
         
         <div className="relative h-[400px] w-full overflow-hidden rounded-xl mb-10">
           <Image
-            src="/images/blog/ki-telefonie-grundlagen.jpg"
+            src="/images/blog/ki-telefonie-grundlagen.png"
             alt="KI-Telefonie Grundlagen"
             fill
             className="object-cover"

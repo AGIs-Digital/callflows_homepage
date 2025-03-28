@@ -8,9 +8,9 @@ export const metadata = generateMetadata({
   description: "Entdecken Sie, wie KI-gestützte Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.",
   path: "/blog/ki-telefonie-gesundheitswesen",
   type: "article",
-  publishedTime: "2024-03-22T10:00:00Z",
-  modifiedTime: "2024-04-05T14:30:00Z",
-  authors: ["Timo Goltz"],
+  publishedTime: "2024-07-20T10:00:00Z",
+  modifiedTime: "2024-07-25T14:30:00Z",
+  authors: ["Tom Abeln"],
   keywords: [
     "KI Telefonie Gesundheitswesen", 
     "Voice Agent Arztpraxis", 
@@ -19,7 +19,7 @@ export const metadata = generateMetadata({
     "Gesundheitssektor Automatisierung"
   ],
   images: [{
-    url: "/images/blog/ki-telefonie-gesundheitswesen.jpg",
+    url: "/images/blog/ki-telefonie-gesundheitswesen.png",
     width: 1200,
     height: 630,
     alt: "KI-Telefonie im Gesundheitswesen"
@@ -49,7 +49,7 @@ export default function BlogPostPage() {
           
           <div className="relative aspect-video w-full mb-6 overflow-hidden rounded-lg">
             <Image
-              src="/images/blog/ki-telefonie-gesundheitswesen.jpg"
+              src="/images/blog/ki-telefonie-gesundheitswesen.png"
               alt="KI-Telefonie im Gesundheitswesen"
               fill
               className="object-cover"

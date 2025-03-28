@@ -8,9 +8,9 @@ export const metadata = generateMetadata({
   description: "Ein umfassender Vergleich zwischen KI Voice Agents und Chatbots. Erfahren Sie die Vor- und Nachteile beider Technologien und welche Lösung für Ihre Geschäftsanforderungen am besten geeignet ist.",
   path: "/blog/voice-agents-vs-chatbots",
   type: "article",
-  publishedTime: "2023-12-05T10:00:00Z",
-  modifiedTime: "2023-12-10T14:30:00Z",
-  authors: ["Timo Goltz"],
+  publishedTime: "2023-03-15T10:00:00Z",
+  modifiedTime: "2023-03-20T14:30:00Z",
+  authors: ["Tom Abeln"],
   keywords: [
     "Voice Agent vs Chatbot", 
     "KI Telefonie Vergleich", 
@@ -19,7 +19,7 @@ export const metadata = generateMetadata({
     "Kommunikationskanäle Vergleich"
   ],
   images: [{
-    url: "/images/blog/voice-agents-vs-chatbots.jpg",
+    url: "/images/blog/voice-agents-vs-chatbots.png",
     width: 1200,
     height: 630,
     alt: "Voice Agents vs. Chatbots Vergleich"
@@ -40,16 +40,16 @@ export default function BlogPostPage() {
       <article>
         <header className="mb-10">
           <div className="flex items-center text-sm text-muted-foreground mb-3">
-            <span>Timo Goltz</span>
+            <span>Sarah Müller</span>
             <span className="mx-2">•</span>
-            <time dateTime="2023-12-05">5. Dezember 2023</time>
+            <time dateTime="2023-03-15">15. März 2023</time>
           </div>
           
           <h1 className="text-4xl font-bold mb-6">Voice Agents vs. Chatbots: Was ist besser für Ihr Unternehmen?</h1>
           
           <div className="relative aspect-video w-full mb-6 overflow-hidden rounded-lg">
             <Image
-              src="/images/blog/voice-agents-vs-chatbots.jpg"
+              src="/images/blog/voice-agents-vs-chatbots.png"
               alt="Voice Agents vs. Chatbots Vergleich"
               fill
               className="object-cover"

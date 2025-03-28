@@ -8,9 +8,9 @@ export const metadata = generateMetadata({
   description: "Erfahren Sie, wie Sie KI-gestützte Telefonie datenschutzkonform einsetzen können. Praktische Tipps zur DSGVO-Konformität bei der Nutzung von Voice Agents.",
   path: "/blog/ki-telefonie-dsgvo",
   type: "article",
-  publishedTime: "2024-04-15T10:00:00Z",
-  modifiedTime: "2024-04-20T14:30:00Z",
-  authors: ["Timo Goltz"],
+  publishedTime: "2023-09-05T10:00:00Z",
+  modifiedTime: "2023-09-10T14:30:00Z",
+  authors: ["Tom Abeln"],
   keywords: [
     "KI Telefonie DSGVO", 
     "Voice Agent Datenschutz", 
@@ -19,7 +19,7 @@ export const metadata = generateMetadata({
     "Telefon KI Compliance"
   ],
   images: [{
-    url: "/images/blog/ki-telefonie-dsgvo.jpg",
+    url: "/images/blog/ki-telefonie-dsgvo.png",
     width: 1200,
     height: 630,
     alt: "KI-Telefonie und DSGVO"
@@ -40,16 +40,16 @@ export default function BlogPostPage() {
       <article>
         <header className="mb-10">
           <div className="flex items-center text-sm text-muted-foreground mb-3">
-            <span>Timo Goltz</span>
+            <span>Tom Abeln</span>
             <span className="mx-2">•</span>
-            <time dateTime="2024-04-15">15. April 2024</time>
+            <time dateTime="2023-09-05">5. September 2023</time>
           </div>
           
           <h1 className="text-4xl font-bold mb-6">KI-Telefonie und DSGVO: So bleiben Sie compliant</h1>
           
           <div className="relative aspect-video w-full mb-6 overflow-hidden rounded-lg">
             <Image
-              src="/images/blog/ki-telefonie-dsgvo.jpg"
+              src="/images/blog/ki-telefonie-dsgvo.png"
               alt="KI-Telefonie und DSGVO"
               fill
               className="object-cover"
