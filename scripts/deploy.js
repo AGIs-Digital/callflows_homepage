@@ -36,7 +36,8 @@ const config = {
     'package-lock.json',
     'tsconfig.json',
     '.env.local',
-    '.env.development'
+    '.env.development',
+    'public/videos/**'
   ],
   sftp: true,
   deleteRemote: false,
