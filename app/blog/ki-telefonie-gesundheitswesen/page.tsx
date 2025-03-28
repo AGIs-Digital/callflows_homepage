@@ -52,7 +52,6 @@ export default function BlogPostPage() {
               src="/images/blog/ki-telefonie-gesundheitswesen.png"
               alt="KI-Telefonie im Gesundheitswesen"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>

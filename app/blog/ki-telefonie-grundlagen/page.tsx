@@ -63,7 +63,6 @@ export default function BlogPostPage() {
             src="/images/blog/ki-telefonie-grundlagen.png"
             alt="KI-Telefonie Grundlagen"
             fill
-            loading="lazy"
             className="object-cover"
           />
         </div>

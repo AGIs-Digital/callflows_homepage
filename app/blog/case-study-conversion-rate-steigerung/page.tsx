@@ -54,7 +54,6 @@ export default function BlogPostPage() {
               src="/images/blog/case-study-conversion-rate-steigerung.png"
               alt="Case Study: Conversion Rate Steigerung durch KI-Telefonie"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -102,7 +101,6 @@ export default function BlogPostPage() {
               src="/images/blog/missed-calls-chart.png"
               alt="Grafik: Verpasste Anrufe vor und nach KI-Implementierung"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -170,7 +168,6 @@ export default function BlogPostPage() {
               src="/images/blog/conversion-rate-chart.png"
               alt="Grafik: Entwicklung der Conversion Rate nach KI-Implementierung"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>

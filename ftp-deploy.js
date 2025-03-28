@@ -38,6 +38,7 @@ const config = {
     'README.md',
     'tests/**',
     'vendor/**',
+    'public/videos/**',
   ],
   sftp: true
 };

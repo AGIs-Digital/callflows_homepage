@@ -54,7 +54,6 @@ export default function BlogPostPage() {
               src="/images/blog/ki-telefonie-implementieren.png"
               alt="KI-Telefonie implementieren"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -177,7 +176,6 @@ export default function BlogPostPage() {
               src="/images/blog/ki-telefonie-anbieterauswahl.png"
               alt="Anbieterauswahl für KI-Telefonie"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>

@@ -54,7 +54,6 @@ export default function BlogPostPage() {
               src="/images/blog/ki-telefonie-branchen.png"
               alt="KI-Telefonie in verschiedenen Branchen"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -97,7 +96,6 @@ export default function BlogPostPage() {
               src="/images/blog/healthcare-voice-agent.png"
               alt="KI-Telefonie im Gesundheitswesen"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>

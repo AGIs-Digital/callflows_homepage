@@ -52,7 +52,6 @@ export default function BlogPostPage() {
               src="/images/blog/claude-vs-gpt4o.png"
               alt="Claude 3.5 Sonnet vs. GPT-4o Vergleich"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>

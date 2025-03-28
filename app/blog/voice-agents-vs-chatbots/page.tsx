@@ -52,7 +52,6 @@ export default function BlogPostPage() {
               src="/images/blog/voice-agents-vs-chatbots.png"
               alt="Voice Agents vs. Chatbots Vergleich"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>

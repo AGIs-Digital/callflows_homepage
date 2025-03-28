@@ -52,7 +52,6 @@ export default function BlogPostPage() {
               src="/images/blog/gpt4o-ki-telefonie.png"
               alt="GPT-4o revolutioniert KI-Telefonie"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>

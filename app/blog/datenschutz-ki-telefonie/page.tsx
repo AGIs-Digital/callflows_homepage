@@ -54,7 +54,6 @@ export default function BlogPostPage() {
               src="/images/blog/datenschutz-ki-telefonie.png"
               alt="Datenschutz in der KI-Telefonie"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>

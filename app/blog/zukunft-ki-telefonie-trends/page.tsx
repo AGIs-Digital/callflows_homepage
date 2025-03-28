@@ -54,7 +54,6 @@ export default function BlogPostPage() {
               src="/images/blog/zukunft-ki-telefonie-trends.png"
               alt="Zukunft der KI-Telefonie"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -85,7 +84,6 @@ export default function BlogPostPage() {
               src="/images/blog/multimodale-ki-telefonie.png"
               alt="Multimodale KI-Telefonie"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -193,7 +191,6 @@ export default function BlogPostPage() {
               src="/images/blog/ki-zu-ki-kommunikation.png"
               alt="KI-zu-KI-Kommunikation"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>

@@ -54,7 +54,6 @@ export default function BlogPostPage() {
               src="/images/blog/ki-telefonie-mitarbeiter-akzeptanz.png"
               alt="KI-Telefonie und Mitarbeiterakzeptanz"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -95,7 +94,6 @@ export default function BlogPostPage() {
               src="/images/blog/mitarbeiter-workshop.png"
               alt="Mitarbeiter-Workshop zur KI-Einführung"
               fill
-              loading="lazy"
               className="object-cover"
             />
           </div>
