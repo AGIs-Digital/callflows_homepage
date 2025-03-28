@@ -76,11 +76,4 @@ export function CalBookingButton({
       <div id="cal-booking-placeholder" style={{ display: 'none' }}></div>
     </>
   );
-}
-
-// Deklaration für TypeScript
-declare global {
-  interface Window {
-    Cal: (command: string, options?: any) => void;
-  }
 } 
