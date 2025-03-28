@@ -10,7 +10,7 @@ export const metadata = generateMetadata({
   type: "article",
   publishedTime: "2024-07-20T10:00:00Z",
   modifiedTime: "2024-07-25T14:30:00Z",
-  authors: ["Tom Abeln"],
+  authors: ["Timo Goltz"],
   keywords: [
     "KI Telefonie Gesundheitswesen", 
     "Voice Agent Arztpraxis", 

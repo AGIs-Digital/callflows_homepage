@@ -1,125 +1,65 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { motion, useAnimation } from "framer-motion";
-import { Calendar, ArrowRight, CheckCircle, Clock } from "lucide-react";
-import Link from "next/link";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { CheckCircle, Clock } from "lucide-react";
+import { CalEmbed } from "@/components/booking/cal-embed";
 
 export function CTASectionSecondary() {
   const [isVisible, setIsVisible] = useState(false);
-  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   
   useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById("cta-section-secondary");
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
-        setIsVisible(isInView);
-      }
-    };
-    
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-    
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  
-  useEffect(() => {
-    if (isVisible) {
-      controls.start("visible");
+    if (isInView) {
+      setIsVisible(true);
     }
-  }, [isVisible, controls]);
+  }, [isInView]);
   
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
       }
     }
   };
   
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
+      opacity: 1,
       y: 0,
-      opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
-  };
-  
-  const calendarVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { duration: 0.5, ease: "easeOut" }
-    }
-  };
-  
-  const pulseVariants = {
-    hidden: { scale: 1, opacity: 0.5 },
-    visible: {
-      scale: [1, 1.2, 1],
-      opacity: [0.5, 0.8, 0.5],
-      transition: { 
-        repeat: Infinity, 
-        duration: 2,
-        ease: "easeInOut"
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
       }
     }
   };
-  
+
   return (
-    <section 
-      id="cta-section-secondary"
-      className="py-24 bg-primary/10 dark:bg-primary/5 relative overflow-hidden"
-    >
-      {/* Hintergrund-Elemente */}
-      <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
-      
-      <div className="container relative z-10">
+    <section className="py-16 md:py-24 bg-section-light-blue dark:bg-[#F5F0FF]/5">
+      <div className="container max-w-6xl" ref={ref}>
         <motion.div
-          className="max-w-4xl mx-auto"
           variants={containerVariants}
           initial="hidden"
-          animate={controls}
+          animate={isVisible ? "visible" : "hidden"}
+          className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 md:p-10"
         >
-          <div className="bg-background rounded-2xl shadow-lg p-8 md:p-12 border border-primary/20">
-            <div className="text-center mb-8">
-              <motion.div 
-                className="inline-block mb-6 p-3 bg-primary/10 rounded-full relative"
-                variants={calendarVariants}
-              >
-                <motion.div
-                  className="absolute inset-0 rounded-full bg-primary/5"
-                  variants={pulseVariants}
-                  animate="visible"
-                  initial="hidden"
-                />
-                <Calendar size={32} className="text-primary" />
-              </motion.div>
-              
-              <motion.h2 
-                className="text-3xl md:text-4xl font-bold mb-4"
-                variants={itemVariants}
-              >
-                Jetzt handeln und Vorsprung sichern!
-              </motion.h2>
-              
-              <motion.p 
-                className="text-lg md:text-xl text-muted-foreground mb-6"
-                variants={itemVariants}
-              >
-                Die KI-Revolution in der Telefonie hat begonnen. Sichern Sie sich jetzt Ihren Wettbewerbsvorteil, bevor Ihre Konkurrenz es tut.
-              </motion.p>
-            </div>
+          <div className="max-w-3xl mx-auto">
+            <motion.div 
+              className="text-center mb-8"
+              variants={itemVariants}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-primary dark:text-white mb-4">
+                Bereit für die Zukunft der Kundenkommunikation?
+              </h2>
+              <p className="text-muted-foreground">
+                Vereinbaren Sie ein unverbindliches Gespräch mit unseren Experten und erfahren Sie, wie callflows Ihr Unternehmen unterstützen kann.
+              </p>
+            </motion.div>
             
             <motion.div 
               className="grid md:grid-cols-2 gap-6 mb-8"
@@ -150,15 +90,14 @@ export function CTASectionSecondary() {
               className="text-center"
               variants={itemVariants}
             >
-              <Link href="https://cal.com/callflows/55min" target="_blank">
-                <Button size="lg" className="gap-2 px-8 py-6 text-lg">
-                  Jetzt Beratungstermin sichern
-                  <ArrowRight size={18} />
-                </Button>
-              </Link>
+              <CalEmbed 
+                buttonText="Beratungstermin sichern" 
+                size="lg" 
+                className="px-4 sm:px-8 py-3 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
+              />
               
               <p className="text-sm text-muted-foreground mt-4">
-                Unverbindliches 30-Minuten Gespräch mit einem unserer Experten
+                Unverbindliches 50-Minuten Gespräch mit unseren Experten
               </p>
             </motion.div>
           </div>

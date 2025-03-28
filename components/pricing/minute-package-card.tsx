@@ -1,23 +1,29 @@
 "use client";
 
-import { MinutePackage } from "@/lib/types/pricing";
-import { Button } from "@/components/ui/button";
-import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
+import { Button } from "@/components/ui/button";
 
 interface MinutePackageCardProps {
-  package: MinutePackage;
+  package: {
+    name: string;
+    description: string;
+    minutes: number;
+    totalPrice: number;
+    pricePerMinute: number;
+    savings: string;
+    isCustom?: boolean;
+  };
 }
 
 export function MinutePackageCard({ package: pkg }: MinutePackageCardProps) {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();
-      cal("on", {
-        action: "bookingSuccessful",
-        callback: (e) => {
-          console.log("Booking successful:", e.detail);
-        },
+      cal("ui", {
+        styles: { branding: { brandColor: "#0f26d5" } },
+        hideEventTypeDetails: false,
+        layout: "month_view"
       });
     })();
   }, []);

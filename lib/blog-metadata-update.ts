@@ -5,10 +5,7 @@ import { glob } from 'glob';
 // Autoren-Liste mit gleichmäßiger Verteilung
 const authors = [
   "Tom Abeln",
-  "Timo Goltz",
-  "Sarah Müller",
-  "Markus Weber",
-  "Julia Schmidt"
+  "Timo Goltz"
 ];
 
 // Startdatum und Enddatum für die Verteilung

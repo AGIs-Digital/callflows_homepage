@@ -10,7 +10,7 @@ export const metadata = generateMetadata({
   type: "article",
   publishedTime: "2024-11-05T10:00:00Z",
   modifiedTime: "2024-11-10T14:30:00Z",
-  authors: ["Timo Goltz"],
+  authors: ["Tom Abeln"],
   keywords: [
     "GPT-4o Telefonie", 
     "OpenAI Voice Agent", 

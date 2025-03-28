@@ -10,7 +10,7 @@ export const metadata = generateMetadata({
   type: "article",
   publishedTime: "2024-06-01T10:00:00Z",
   modifiedTime: "2024-06-05T14:30:00Z",
-  authors: ["Timo Goltz"],
+  authors: ["Tom Abeln"],
   keywords: [
     "KI Telefonie ROI", 
     "Voice Agent Kosten", 

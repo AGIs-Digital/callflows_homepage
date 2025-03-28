@@ -10,7 +10,7 @@ export const metadata = generateMetadata({
   type: "article",
   publishedTime: "2024-01-20T10:00:00Z",
   modifiedTime: "2024-01-25T14:30:00Z",
-  authors: ["Timo Goltz"],
+  authors: ["Tom Abeln"],
   keywords: [
     "KI Kundenservice", 
     "Customer Experience KI", 

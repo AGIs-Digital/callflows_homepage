@@ -65,6 +65,9 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     <FilesMatch "\.(html|htm|xml)$">
         Header set Cache-Control "max-age=86400, public, must-revalidate"
     </FilesMatch>
+    
+    # Entferne unerwünschte Margins
+    Header set Content-Security-Policy "default-src 'self'; style-src 'self' 'unsafe-inline';"
 </IfModule>
 
 # Verhindern Sie den Zugriff auf versteckte Dateien

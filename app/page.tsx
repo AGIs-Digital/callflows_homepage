@@ -4,13 +4,11 @@ import { ProcessSection } from "@/components/sections/process-section";
 import { PricingComparisonSection } from "@/components/sections/pricing-comparison-section";
 import { ProductPreviewSection } from "@/components/sections/product-preview-section";
 import { CoreFeaturesSection } from "@/components/sections/core-features-section";
-import { UseCaseVideoSection } from "@/components/sections/use-case-video-section";
 import { FeaturesSection } from "@/components/sections/features-section";
 import { SiteFooter } from "@/components/site-footer";
 import { AboutSection } from "@/components/sections/about-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
-import { PricingFAQSection } from "@/components/sections/pricing-faq-section";
 import { IntegrationChallengesSection } from "@/components/sections/integration-challenges-section";
 
 export default function Home() {
@@ -38,18 +36,6 @@ export default function Home() {
       <div className="bg-section-dark">
         <ProductPreviewSection />
       </div>
-
-      {/*
-      <div id="testimonials">
-        <TestimonialsSection />
-      </div>
-      <div className="bg-section-light">
-        <UseCaseVideoSection />
-      </div>
-      */}
-      {/* <div id="faq">
-        <PricingFAQSection />
-      </div> */}
       <CTASectionSecondary />
       <SiteFooter />
     </main>

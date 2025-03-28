@@ -1,36 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { motion, useAnimation } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { PhoneCall, ArrowRight, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { CalEmbed } from "@/components/booking/cal-embed";
 
 export function CTASection() {
   const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   const controls = useAnimation();
   
   useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById("cta-section");
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
-        setIsVisible(isInView);
-      }
-    };
-    
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-    
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  
-  useEffect(() => {
-    if (isVisible) {
+    if (isInView) {
+      setIsVisible(true);
       controls.start("visible");
     }
-  }, [isVisible, controls]);
+  }, [isInView, controls]);
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -38,51 +26,35 @@ export function CTASection() {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
+        delayChildren: 0.3,
       }
     }
   };
   
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
+      opacity: 1,
       y: 0,
-      opacity: 1,
-      transition: { duration: 0.5, ease: "easeOut" }
-    }
-  };
-  
-  const phoneVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
-  };
-  
-  const pulseVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: [1, 1.5, 1],
-      opacity: [0.7, 0, 0.7],
-      transition: { 
-        repeat: Infinity, 
-        duration: 2,
-        ease: "easeInOut"
+      transition: {
+        duration: 0.2,
+        ease: "easeOut"
       }
     }
   };
   
   const benefitVariants = {
-    hidden: { x: -20, opacity: 0 },
+    hidden: { opacity: 0, x: -10 },
     visible: {
-      x: 0,
       opacity: 1,
-      transition: { duration: 0.5, ease: "easeOut" }
+      x: 0,
+      transition: {
+        duration: 0.2,
+        ease: "easeOut"
+      }
     }
   };
-  
+
   return (
     <section 
       id="cta-section"
@@ -94,44 +66,27 @@ export function CTASection() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
+          ref={ref}
         >
-          <motion.div 
-            className="inline-block mb-6 p-3 bg-primary/10 rounded-full relative"
-            variants={phoneVariants}
-          >
-            <motion.div
-              className="absolute inset-0 rounded-full bg-primary/5"
-              variants={pulseVariants}
-              animate="visible"
-              initial="hidden"
-            />
-            <PhoneCall size={32} className="text-primary" />
+          <motion.div variants={itemVariants}>
+            <PhoneCall size={48} className="mx-auto text-primary mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Bereit für die nächste Generation der Kundenkommunikation?
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Vereinbaren Sie ein unverbindliches Gespräch mit unseren Experten und erfahren Sie, wie callflows Ihr Unternehmen unterstützen kann.
+            </p>
           </motion.div>
-          
-          <motion.h2 
-            className="text-4xl font-bold mb-4"
-            variants={itemVariants}
-          >
-            Bereit, Ihre Kundenkommunikation zu revolutionieren?
-          </motion.h2>
-          
-          <motion.p 
-            className="text-xl text-muted-foreground mb-8"
-            variants={itemVariants}
-          >
-            Starten Sie noch heute mit KI Voice Agents und erleben Sie den Unterschied.
-          </motion.p>
           
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             variants={itemVariants}
           >
-            <Link href="https://cal.com/callflows/55min" target="_blank">
-                <Button size="lg" className="gap-2 px-8 py-6 text-lg">
-                  Kostenlose Beratung
-                  <ArrowRight size={18} />
-                </Button>
-              </Link>
+            <CalEmbed 
+              buttonText="Kostenlose Beratung" 
+              size="lg" 
+              className="gap-2 px-8 py-6 text-lg"
+            />
             
             <Link href="/pricing">
               <Button size="lg" variant="outline" className="gap-2">

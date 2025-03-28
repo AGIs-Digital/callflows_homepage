@@ -6,8 +6,13 @@ import { ErrorBoundary } from '@/components/error-boundary';
 import { generateMetadata } from '@/lib/seo/metadata';
 import { generateOrganizationSchema, generateProductSchema, generateFAQSchema } from '@/lib/seo/schema';
 import Script from 'next/script';
+import { ScrollToTop } from "@/components/scroll-to-top";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-export const metadata = {
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
   ...generateMetadata({
     title: 'callflows - automatisierte Kundenkommunikation',
     description: 'Optimieren Sie Kundenservice, Vertrieb und Support mit intelligenten Systemen.',
@@ -31,14 +36,9 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
-  // Generiere alle Schema.org Daten
-  const organizationSchema = generateOrganizationSchema();
-  const productSchema = generateProductSchema();
-  const faqSchema = generateFAQSchema();
-
+}>) {
   return (
     <html lang="de" suppressHydrationWarning>
       <head>
@@ -48,23 +48,14 @@ export default function RootLayout({
           type="application/ld+json"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema)
-          }}
-        />
-        <Script
-          id="product-schema"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(productSchema)
-          }}
-        />
-        <Script
-          id="faq-schema"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema)
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                generateOrganizationSchema(),
+                generateProductSchema(),
+                generateFAQSchema()
+              ]
+            })
           }}
         />
         <Script
@@ -86,18 +77,20 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="x-default" href="https://callflows.de" />
         <Script src="https://cal.com/embed.js" strategy="lazyOnload" />
       </head>
-      <body>
-        <ErrorBoundary>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-          >
-            <CookieBanner />
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ErrorBoundary>
             {children}
+            <ScrollToTop />
+            <CookieBanner />
             <Analytics />
-          </ThemeProvider>
-        </ErrorBoundary>
+          </ErrorBoundary>
+        </ThemeProvider>
       </body>
     </html>
   );

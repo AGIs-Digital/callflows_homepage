@@ -40,7 +40,7 @@ export default function BlogPostPage() {
       <article>
         <header className="mb-10">
           <div className="flex items-center text-sm text-muted-foreground mb-3">
-            <span>Sarah Müller</span>
+            <span>Tom Abeln</span>
             <span className="mx-2">•</span>
             <time dateTime="2023-03-15">15. März 2023</time>
           </div>
