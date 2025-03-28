@@ -9,8 +9,8 @@ import Script from 'next/script';
 
 export const metadata = {
   ...generateMetadata({
-    title: 'callflows - KI-gestützte Voice Agents für automatisierte Kundenkommunikation',
-    description: 'Automatisieren Sie Ihre Kundenkommunikation mit KI Voice Agents. Optimieren Sie Kundenservice, Vertrieb und Support mit intelligenten Sprachassistenten.',
+    title: 'callflows - automatisierte Kundenkommunikation',
+    description: 'Optimieren Sie Kundenservice, Vertrieb und Support mit intelligenten Systemen.',
     path: '/',
     keywords: ['KI Telefonie', 'Telefon KI', 'Voice Agent', 'KI Voice Agent', 'Automatisierte Telefonie'],
     images: [{
