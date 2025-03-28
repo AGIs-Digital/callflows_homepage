@@ -54,6 +54,7 @@ export default function BlogPostPage() {
               src="/images/blog/kosten-nutzen-analyse-ki-telefonie.png"
               alt="Kosten-Nutzen-Analyse KI-Telefonie"
               fill
+              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -94,6 +95,7 @@ export default function BlogPostPage() {
               src="/images/blog/ki-telefonie-kostenfaktoren.png"
               alt="Kostenfaktoren der KI-Telefonie"
               fill
+              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -196,6 +198,7 @@ export default function BlogPostPage() {
               src="/images/blog/ki-telefonie-roi-chart.png"
               alt="ROI-Entwicklung über Zeit"
               fill
+              loading="lazy"
               className="object-cover"
             />
           </div>

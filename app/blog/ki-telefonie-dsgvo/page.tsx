@@ -52,6 +52,7 @@ export default function BlogPostPage() {
               src="/images/blog/ki-telefonie-dsgvo.png"
               alt="KI-Telefonie und DSGVO"
               fill
+              loading="lazy"
               className="object-cover"
             />
           </div>

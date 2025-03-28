@@ -54,6 +54,7 @@ export default function BlogPostPage() {
               src="/images/blog/kundenservice-ki-customer-experience.png"
               alt="Kundenservice mit KI und verbesserte Customer Experience"
               fill
+              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -112,6 +113,7 @@ export default function BlogPostPage() {
               src="/images/blog/customer-satisfaction-chart.png"
               alt="Diagramm zur Kundenzufriedenheit mit KI-Kundenservice"
               fill
+              loading="lazy"
               className="object-cover"
             />
           </div>

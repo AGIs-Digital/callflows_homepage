@@ -36,6 +36,7 @@ export function AboutSection() {
                 src="/images/team.jpg"
                 alt="Die callflows Gründer"
                 fill
+                loading="lazy"
                 className="object-cover"
               />
             </div>
