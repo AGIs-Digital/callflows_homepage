@@ -62,6 +62,7 @@ export const WavyBackground = ({
     let w = ctx.canvas.width = window.innerWidth;
     let h = ctx.canvas.height = canvas.clientHeight;
     let nt = 0;
+    let animationId = 0; // Nur einmal deklarieren und initialisieren
     
     const waveColors = colors ?? [
       "#fdfdfd",
@@ -134,7 +135,6 @@ export const WavyBackground = ({
       }
     };
     
-    let animationId: number;
     const render = () => {
       ctx.clearRect(0, 0, w, h);
       
