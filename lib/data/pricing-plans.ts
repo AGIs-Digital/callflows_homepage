@@ -1,15 +1,11 @@
 import { PricingPlan, MinutePackage } from "@/lib/types/pricing";
 
-const EARLY_BIRD_ACTIVE = true; // Toggle für die Promotion
-const EARLY_BIRD_END_DATE = "2025-04-01T00:00:00"; // Endet am 01.04.2025 um 00:00 Uhr
-
 export const monthlyPlans: PricingPlan[] = [
   {
     name: "Starter",
     type: "starter",
     subtitle: "Für kleine Betriebe",
     price: 0.89,
-    earlyBirdPrice: 0.63,
     minutesIncluded: 1000,
     highlights: [
       "Ideal für geringe Inbound-/Outbound-Kommunikation",
@@ -28,7 +24,6 @@ export const monthlyPlans: PricingPlan[] = [
     type: "professional",
     subtitle: "Für mittelständische Betriebe",
     price: 0.79,
-    earlyBirdPrice: 0.63,
     minutesIncluded: 3000,
     highlights: [
       "Ideal für moderate Inbound-/Outbound-Kommunikation",
@@ -47,7 +42,6 @@ export const monthlyPlans: PricingPlan[] = [
     type: "corporate",
     subtitle: "Für höhere Anrufvolumina",
     price: 0.69,
-    earlyBirdPrice: 0.63,
     minutesIncluded: 12000,
     highlights: [
       "Für Zeitarbeitsunternehmen, Vertriebsteams, Kundendienst",

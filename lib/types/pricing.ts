@@ -6,7 +6,6 @@ export interface PricingPlan {
   type: string;
   subtitle: string;
   price: number;
-  earlyBirdPrice?: number;
   minutesIncluded: number;
   highlights: string[];
   cta: string;

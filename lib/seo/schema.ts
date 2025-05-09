@@ -113,7 +113,7 @@ export function generateFAQSchema(): WithContext<FAQPage> {
         name: 'Was kostet ein KI Voice Agent?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Die Kosten für einen KI Voice Agent bei callflows basieren auf einem minutenbasierten Abrechnungsmodell. Die Preise beginnen bei 0,63€ pro Minute im Early-Bird-Angebot und variieren je nach Paket und Minutenvolumen.'
+          text: 'Die Kosten für einen KI Voice Agent bei callflows basieren auf einem minutenbasierten Abrechnungsmodell. Die Preise variieren je nach Paket und Minutenvolumen.'
         }
       },
       {

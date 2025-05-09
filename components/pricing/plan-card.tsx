@@ -35,7 +35,7 @@ export function PricingCard({ plan, selectedTerm }: PricingCardProps) {
   }, []);
 
   // Preis berechnen (Early Bird oder regulär)
-  let basePrice = earlyBirdActive && plan.earlyBirdPrice ? plan.earlyBirdPrice : plan.price;
+  let basePrice = plan.price;
   const isCustomPlan = plan.isCustom || basePrice === 0;
   
   // Rabatt anwenden basierend auf der Laufzeit
@@ -66,31 +66,6 @@ export function PricingCard({ plan, selectedTerm }: PricingCardProps) {
         <h3 className="text-xl font-bold">{plan.name}</h3>
         <p className="text-sm text-muted-foreground">{plan.subtitle}</p>
       </div>
-
-      {earlyBirdActive && plan.earlyBirdPrice && !isCustomPlan && (
-        <>
-          <div className="flex items-center text-lg text-green-600 mb-2">
-            <Timer className="w-5 h-5 mr-2" />
-            <span className="font-bold">Limitiertes Angebot!</span>
-          </div>
-
-          <div className="flex items-center gap-1 mb-4">
-            <p className="text-sm text-green-600 font-medium">
-              Keine Einrichtungsgebühr
-            </p>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Info className="h-4 w-4 text-muted-foreground" />
-                </TooltipTrigger>
-                <TooltipContent className="max-w-xs">
-                  <p>Die einmalige Einrichtungsgebühr umfasst das komplette Onboarding nach Aufwand: Von der Entwicklung des Prototypen bis zum Go-Live.</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-        </>
-      )}
 
       {/* Freiminuten hervorgehoben */}
       <div className="mb-4">
