@@ -1,7 +1,8 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-const LOG_DIR = './logs/contact-form';
+// Absoluten Pfad verwenden
+const LOG_DIR = path.resolve(process.cwd(), 'logs/contact-form');
 const LOG_FILE = path.join(LOG_DIR, 'staging-contact-form.log');
 
 export const logger = {
@@ -26,6 +27,7 @@ export const logger = {
     } catch (error) {
       console.error('❌ Fehler beim Schreiben des Logs:', error);
       console.error('Versuchter Pfad:', LOG_FILE);
+      // Fehler beim Loggen sollte die Anwendung nicht zum Absturz bringen
     }
   }
 }; 

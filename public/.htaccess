@@ -51,9 +51,6 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
 
 # Setze Sicherheitsheader
 <IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-XSS-Protection "1; mode=block"
-    Header set X-Frame-Options "SAMEORIGIN"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     
     # Cache-Control für statische Assets
@@ -65,21 +62,6 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     <FilesMatch "\.(html|htm|xml)$">
         Header set Cache-Control "max-age=86400, public, must-revalidate"
     </FilesMatch>
-    
-    # LÖSCHEN EVENTUELL WENNS NICHT LÄUFT
-    Header set Content-Security-Policy "default-src 'self'; 
-        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cal.com https://*.cal.com; 
-        style-src 'self' 'unsafe-inline'; 
-        img-src 'self' data: https://*.cal.com; 
-        frame-src 'self' https://cal.com https://*.cal.com; 
-        connect-src 'self' https://cal.com https://*.cal.com; 
-        font-src 'self' data:;
-        worker-src 'self' blob:;
-        media-src 'self' blob:;
-        object-src 'none';
-        base-uri 'self';
-        form-action 'self';
-        frame-ancestors 'self';"
     
     # Permissions Policy für Mikrofon und Kamera
     Header set Permissions-Policy "microphone=self, camera=self, geolocation=self"
