@@ -9,129 +9,16 @@ import { useTheme } from "next-themes";
 export function HeroSection() {
   const { theme } = useTheme();
   const [showWidget, setShowWidget] = useState(false);
-  const [widgetError, setWidgetError] = useState(false); // Auf false gesetzt, damit Widget standardmäßig angezeigt wird
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [microphoneAccess, setMicrophoneAccess] = useState<boolean | null>(null);
+  const [widgetError, setWidgetError] = useState(false);
   
   // Widget nach dem Laden der Seite aktivieren
   useEffect(() => {
-    // Kurze Verzögerung, um sicherzustellen, dass die Seite vollständig geladen ist
     const timer = setTimeout(() => {
       setShowWidget(true);
     }, 500);
     
     return () => clearTimeout(timer);
   }, []);
-  
-  // Fehlerbehandlung für das Widget
-  useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      // Prüfen, ob die Nachricht vom Widget kommt
-      if (event.data && typeof event.data === 'string') {
-        try {
-          const data = JSON.parse(event.data);
-          // Prüfen auf Fehlermeldungen vom Widget
-          if (data.type === 'error' || (data.error && data.error.includes('server-side exception'))) {
-            setWidgetError(true);
-          }
-        } catch (e) {
-          // Ignoriere Parsing-Fehler
-        }
-      }
-    };
-
-    // Fehler beim Laden des iframes erkennen
-    const handleIframeError = () => {
-      setWidgetError(true);
-    };
-
-    window.addEventListener('message', handleMessage);
-    
-    // Iframe-Fehler überwachen, falls das Widget nicht geladen werden kann
-    const iframe = iframeRef.current;
-    if (iframe) {
-      iframe.addEventListener('error', handleIframeError);
-    }
-    
-    return () => {
-      window.removeEventListener('message', handleMessage);
-      if (iframe) {
-        iframe.removeEventListener('error', handleIframeError);
-      }
-    };
-  }, [showWidget]);
-
-  // Alternative Methode zur Fehlerprüfung
-  useEffect(() => {
-    if (!showWidget) return;
-
-    const checkForErrorMessage = () => {
-      // Prüfe, ob die Fehlermeldung im DOM vorhanden ist
-      const iframeDocument = iframeRef.current?.contentDocument;
-      if (iframeDocument) {
-        const pageText = iframeDocument.body.textContent || '';
-        if (pageText.includes('Application error') || pageText.includes('Digest: 895244412')) {
-          setWidgetError(true);
-        }
-      }
-    };
-
-    // Überprüfe nach einer kurzen Verzögerung
-    const timer = setTimeout(checkForErrorMessage, 1000);
-    
-    // Wiederhole die Prüfung alle 2 Sekunden
-    const interval = setInterval(checkForErrorMessage, 2000);
-    
-    return () => {
-      clearTimeout(timer);
-      clearInterval(interval);
-    };
-  }, [showWidget]);
-
-  // Direkte Fehlerprüfung durch Überwachung des Widget-Containers
-  useEffect(() => {
-    if (!showWidget) return;
-    
-    // Setze einen Timeout, um nach einer bestimmten Zeit zu prüfen, ob das Widget geladen wurde
-    const errorTimeout = setTimeout(() => {
-      // Wenn das Widget nach 5 Sekunden nicht geladen ist, zeige die Fehlermeldung an
-      const iframe = iframeRef.current;
-      if (iframe) {
-        try {
-          // Versuche auf den Inhalt zuzugreifen - wenn dies fehlschlägt, ist das Widget möglicherweise fehlerhaft
-          const iframeContent = iframe.contentWindow || iframe.contentDocument;
-          if (!iframeContent) {
-            setWidgetError(true);
-          }
-        } catch (e) {
-          // Bei einem Fehler beim Zugriff auf den iframe-Inhalt (z.B. aufgrund von CORS)
-          setWidgetError(true);
-        }
-      }
-    }, 5000);
-    
-    return () => {
-      clearTimeout(errorTimeout);
-    };
-  }, [showWidget]);
-
-  // Mikrofon-Zugriff prüfen
-  useEffect(() => {
-    if (showWidget && !widgetError) {
-      const checkMicrophoneAccess = async () => {
-        try {
-          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-          setMicrophoneAccess(true);
-          // Stream wieder freigeben
-          stream.getTracks().forEach(track => track.stop());
-        } catch (error) {
-          setMicrophoneAccess(false);
-        }
-      };
-      
-      checkMicrophoneAccess();
-    }
-  }, [showWidget, widgetError]);
 
   return (
     <div className="relative min-h-[calc(100vh-80px)]">
@@ -159,24 +46,15 @@ export function HeroSection() {
           {/* Rechte Spalte - KI-Widget */}
           <div className="relative z-20 h-[450px] lg:h-[550px] rounded-xl border border-border/50 bg-card/30 flex items-center justify-center overflow-hidden">
             {showWidget && !widgetError ? (
-              <>
-                {microphoneAccess === false && (
-                  <div className="absolute top-0 left-0 right-0 z-10 bg-yellow-500/90 text-black p-2 text-sm text-center rounded-t-xl">
-                    Bitte erlauben Sie den Zugriff auf Ihr Mikrofon für die volle Funktionalität
-                  </div>
-                )}
-                <iframe 
-                  ref={iframeRef}
-                  id="audio_iframe" 
-                  src="https://widget.synthflow.ai/widget/v2/526c890d-a2a8-471a-88ef-b9ba987ad08b/1747756443431x376634649512029800" 
-                  allow="microphone; camera; autoplay; clipboard-write; encrypted-media" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 'none', borderRadius: '0.75rem' }}
-                  onError={() => setWidgetError(true)}
-                  sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads"
-                />
-              </>
+              <iframe 
+                id="audio_iframe" 
+                src="https://widget.synthflow.ai/widget/v2/526c890d-a2a8-471a-88ef-b9ba987ad08b/1747756443431x376634649512029800" 
+                allow="microphone" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 'none', borderRadius: '0.75rem' }}
+                onError={() => setWidgetError(true)}
+              />
             ) : (
               <div className="text-center p-8 flex flex-col items-center justify-center h-full">
                 <div className="text-6xl mb-4">🚧</div>
