@@ -60,7 +60,7 @@ export function MinutePackageCard({ package: pkg }: MinutePackageCardProps) {
       <Button 
         className="w-full" 
         variant="outline"
-        data-cal-link="callflows/55min"
+        data-cal-link="callflows/50min"
         data-cal-config='{"layout":"popup"}'
       >
         {isCustomPackage ? "Individuelles Angebot" : "Jetzt buchen"}

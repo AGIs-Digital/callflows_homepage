@@ -28,7 +28,7 @@ export function CalEmbed({
   return (
     <Button
       className={`${className}`}
-      data-cal-link="callflows/55min"
+      data-cal-link="callflows/50min"
       data-cal-config='{"layout":"popup"}'
       {...props}
     >

@@ -76,6 +76,7 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="de" href="https://callflows.de" />
         <link rel="alternate" hrefLang="x-default" href="https://callflows.de" />
         <Script src="https://cal.com/embed.js" strategy="lazyOnload" />
+        <meta http-equiv="Permissions-Policy" content="microphone=*, camera=*" />
       </head>
       <body className={inter.className}>
         <ThemeProvider

@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     domains: ['staging.callflows.de', 'callflows.de'],
     unoptimized: true,
-  },
+  }
 }
 
 module.exports = nextConfig

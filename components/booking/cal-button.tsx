@@ -21,7 +21,7 @@ export function CalButton() {
   return (
     <Button
       className="bg-accent text-gray-900 hover:bg-accent/90 group"
-      data-cal-link="callflows/55min"
+      data-cal-link="callflows/50min"
       data-cal-config='{"layout":"popup"}'
     >
       Beratungstermin buchen
