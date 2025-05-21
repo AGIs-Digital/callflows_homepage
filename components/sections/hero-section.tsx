@@ -11,6 +11,7 @@ export function HeroSection() {
   const [showWidget, setShowWidget] = useState(false);
   const [widgetError, setWidgetError] = useState(false); // Auf false gesetzt, damit Widget standardmäßig angezeigt wird
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [microphoneAccess, setMicrophoneAccess] = useState<boolean | null>(null);
   
   // Widget nach dem Laden der Seite aktivieren
   useEffect(() => {
@@ -114,6 +115,24 @@ export function HeroSection() {
     };
   }, [showWidget]);
 
+  // Mikrofon-Zugriff prüfen
+  useEffect(() => {
+    if (showWidget && !widgetError) {
+      const checkMicrophoneAccess = async () => {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          setMicrophoneAccess(true);
+          // Stream wieder freigeben
+          stream.getTracks().forEach(track => track.stop());
+        } catch (error) {
+          setMicrophoneAccess(false);
+        }
+      };
+      
+      checkMicrophoneAccess();
+    }
+  }, [showWidget, widgetError]);
+
   return (
     <div className="relative min-h-[calc(100vh-80px)]">
       <div className="container relative py-8 md:py-12">
@@ -140,16 +159,24 @@ export function HeroSection() {
           {/* Rechte Spalte - KI-Widget */}
           <div className="relative z-20 h-[450px] lg:h-[550px] rounded-xl border border-border/50 bg-card/30 flex items-center justify-center overflow-hidden">
             {showWidget && !widgetError ? (
-              <iframe 
-                ref={iframeRef}
-                id="audio_iframe" 
-                src="https://widget.synthflow.ai/widget/v2/526c890d-a2a8-471a-88ef-b9ba987ad08b/1747756443431x376634649512029800" 
-                allow="microphone" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 'none', borderRadius: '0.75rem' }}
-                onError={() => setWidgetError(true)}
-              />
+              <>
+                {microphoneAccess === false && (
+                  <div className="absolute top-0 left-0 right-0 z-10 bg-yellow-500/90 text-black p-2 text-sm text-center rounded-t-xl">
+                    Bitte erlauben Sie den Zugriff auf Ihr Mikrofon für die volle Funktionalität
+                  </div>
+                )}
+                <iframe 
+                  ref={iframeRef}
+                  id="audio_iframe" 
+                  src="https://widget.synthflow.ai/widget/v2/526c890d-a2a8-471a-88ef-b9ba987ad08b/1747756443431x376634649512029800" 
+                  allow="microphone; camera; autoplay; clipboard-write; encrypted-media" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 'none', borderRadius: '0.75rem' }}
+                  onError={() => setWidgetError(true)}
+                  sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads"
+                />
+              </>
             ) : (
               <div className="text-center p-8 flex flex-col items-center justify-center h-full">
                 <div className="text-6xl mb-4">🚧</div>
