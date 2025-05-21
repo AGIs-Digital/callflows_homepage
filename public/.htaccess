@@ -4,9 +4,11 @@ RewriteEngine On
 # Basis-URL setzen
 RewriteBase /
 
-# Erlaube direkte Zugriffe auf statische Dateien
+# Erlaube direkte Zugriffe auf statische Dateien und wichtige Pfade
 RewriteCond %{REQUEST_URI} \.(js|css|svg|jpg|jpeg|png|gif|ico|woff2)$ [OR]
-RewriteCond %{REQUEST_URI} ^/api/
+RewriteCond %{REQUEST_URI} ^/api/ [OR]
+RewriteCond %{REQUEST_URI} ^/blog/?$ [OR]
+RewriteCond %{REQUEST_URI} ^/blog/.+$
 RewriteRule ^ - [L]
 
 # Alle anderen Anfragen an _next/static durchlassen
