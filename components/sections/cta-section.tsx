@@ -71,7 +71,7 @@ export function CTASection() {
           <motion.div variants={itemVariants}>
             <PhoneCall size={48} className="mx-auto text-primary mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Bereit für die nächste Generation der Kundenkommunikation?
+            Bereit für die Zukunft des Kundenkontakts?  
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Vereinbaren Sie ein unverbindliches Gespräch mit unseren Experten und erfahren Sie, wie callflows Ihr Unternehmen unterstützen kann.
