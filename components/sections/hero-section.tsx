@@ -9,7 +9,7 @@ import { useTheme } from "next-themes";
 export function HeroSection() {
   const { theme } = useTheme();
   const [showWidget, setShowWidget] = useState(false);
-  const [widgetError, setWidgetError] = useState(true); // Auf true gesetzt, um Wartungsmodus zu erzwingen
+  const [widgetError, setWidgetError] = useState(false); // Auf false gesetzt, damit Widget standardmäßig angezeigt wird
   const iframeRef = useRef<HTMLIFrameElement>(null);
   
   // Widget nach dem Laden der Seite aktivieren
@@ -138,17 +138,29 @@ export function HeroSection() {
           </div>
           
           {/* Rechte Spalte - KI-Widget */}
-          <div className="relative z-20 h-[400px] lg:h-[550px] rounded-xl border border-border/50 bg-card/30 flex items-center justify-center">
-            {/* Widget-Link entfernt, nur Wartungsmodus wird angezeigt */}
-            <div className="text-center p-8 flex flex-col items-center justify-center h-full">
-              <div className="text-6xl mb-4">🚧</div>
-              <h3 className="text-2xl font-bold text-[#FFB703] mb-2">
-                Im Wartungsmodus
-              </h3>
-              <p className="text-muted-foreground max-w-md">
-                Unser KI-Assistent verbessert sich gerade und wird in Kürze wieder verfügbar sein. Bitte versuchen Sie es später erneut.
-              </p>
-            </div>
+          <div className="relative z-20 h-[450px] lg:h-[550px] rounded-xl border border-border/50 bg-card/30 flex items-center justify-center overflow-hidden">
+            {showWidget && !widgetError ? (
+              <iframe 
+                ref={iframeRef}
+                id="audio_iframe" 
+                src="https://widget.synthflow.ai/widget/v2/526c890d-a2a8-471a-88ef-b9ba987ad08b/1747756443431x376634649512029800" 
+                allow="microphone" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 'none', borderRadius: '0.75rem' }}
+                onError={() => setWidgetError(true)}
+              />
+            ) : (
+              <div className="text-center p-8 flex flex-col items-center justify-center h-full">
+                <div className="text-6xl mb-4">🚧</div>
+                <h3 className="text-2xl font-bold text-[#FFB703] mb-2">
+                  Im Wartungsmodus
+                </h3>
+                <p className="text-muted-foreground max-w-md">
+                  Unser KI-Assistent verbessert sich gerade und wird in Kürze wieder verfügbar sein. Bitte versuchen Sie es später erneut.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
