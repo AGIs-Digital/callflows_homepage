@@ -3,7 +3,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CalEmbed } from "@/components/booking/cal-embed";
+import { ZohoEmbed } from "@/components/booking/zoho-embed";
 
 export default function KontaktPage() {
   return (
@@ -21,26 +21,18 @@ export default function KontaktPage() {
             
             <form className="space-y-3 md:space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
-                <Input id="name" placeholder="Ihr Name" className="h-9 md:h-10" />
+                <label htmlFor="name" className="block text-sm font-medium mb-1 md:mb-2">Name</label>
+                <Input id="name" placeholder="Ihr Name" className="h-8 md:h-10" />
               </div>
-              
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1">E-Mail</label>
-                <Input id="email" type="email" placeholder="ihre-email@beispiel.de" className="h-9 md:h-10" />
+                <label htmlFor="email" className="block text-sm font-medium mb-1 md:mb-2">E-Mail</label>
+                <Input id="email" type="email" placeholder="ihre.email@beispiel.de" className="h-8 md:h-10" />
               </div>
-              
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1">Nachricht</label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Wie können wir Ihnen helfen?" 
-                  rows={1} 
-                  className="min-h-[60px] md:min-h-[80px]" 
-                />
+                <label htmlFor="message" className="block text-sm font-medium mb-1 md:mb-2">Nachricht</label>
+                <Textarea id="message" placeholder="Ihre Nachricht..." rows={4} />
               </div>
-              
-              <Button type="submit" className="w-full h-9 md:h-10">Nachricht senden</Button>
+              <Button type="submit" className="w-full h-8 md:h-10">Nachricht senden</Button>
             </form>
           </div>
           
@@ -51,7 +43,7 @@ export default function KontaktPage() {
                 Vereinbaren Sie einen Termin für eine persönliche Beratung zu unseren KI Voice Agents.
               </p>
               
-              <CalEmbed 
+              <ZohoEmbed 
                 buttonText="Termin buchen" 
                 className="w-full mb-4 md:mb-8 h-9 md:h-10"
               />

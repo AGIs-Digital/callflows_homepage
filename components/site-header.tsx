@@ -2,33 +2,25 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { CalEmbed } from "@/components/booking/cal-embed";
-import Image from "next/image";
+import { ZohoEmbed } from "@/components/booking/zoho-embed";
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
-  
+
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 0);
     };
-    
-    // Initial-Check durchführen
-    handleScroll();
-    
-    // Event-Listener mit passiver Option für bessere Performance
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    
+
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
   return (
     <header className={cn(
       "fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-200",
@@ -49,7 +41,7 @@ export function SiteHeader() {
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
             <ThemeToggle />
-            <CalEmbed 
+            <ZohoEmbed 
               buttonText="Beratungstermin" 
               className="hidden md:flex"
               variant="outline"

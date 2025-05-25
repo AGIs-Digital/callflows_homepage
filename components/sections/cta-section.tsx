@@ -1,59 +1,46 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
-import { PhoneCall, ArrowRight, CheckCircle } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, PhoneCall } from "lucide-react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "framer-motion";
 import Link from "next/link";
-import { CalEmbed } from "@/components/booking/cal-embed";
+import { ZohoEmbed } from "@/components/booking/zoho-embed";
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 }
+  }
+};
 
 export function CTASection() {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const controls = useAnimation();
-  
+
   useEffect(() => {
     if (isInView) {
       setIsVisible(true);
       controls.start("visible");
     }
   }, [isInView, controls]);
-  
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      }
-    }
-  };
-  
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.2,
-        ease: "easeOut"
-      }
-    }
-  };
-  
-  const benefitVariants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.2,
-        ease: "easeOut"
-      }
-    }
-  };
 
   return (
     <section 
@@ -82,8 +69,9 @@ export function CTASection() {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             variants={itemVariants}
           >
-            <CalEmbed 
-              buttonText="Kostenlose Beratung" 
+            
+            <ZohoEmbed 
+              buttonText="Beratung buchen" 
               size="lg" 
               className="gap-2 px-8 py-6 text-lg"
             />
@@ -97,23 +85,27 @@ export function CTASection() {
           </motion.div>
           
           <motion.div 
-            className="flex flex-col sm:flex-row gap-6 justify-center text-sm text-muted-foreground"
+            className="grid md:grid-cols-3 gap-6 text-left"
             variants={itemVariants}
           >
-            <motion.div className="flex items-center gap-2" variants={benefitVariants}>
-              <CheckCircle size={16} className="text-primary" />
-              <span>Schnelle Implementierung</span>
-            </motion.div>
-            
-            <motion.div className="flex items-center gap-2" variants={benefitVariants}>
-              <CheckCircle size={16} className="text-primary" />
-              <span>Keine Grundgebühr</span>
-            </motion.div>
-            
-            <motion.div className="flex items-center gap-2" variants={benefitVariants}>
-              <CheckCircle size={16} className="text-primary" />
-              <span>Persönliche Betreuung</span>
-            </motion.div>
+            <div className="p-6 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Kostenlose Erstberatung</h3>
+              <p className="text-sm text-muted-foreground">
+                Unverbindliches Gespräch über Ihre Anforderungen und Möglichkeiten
+              </p>
+            </div>
+            <div className="p-6 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Individuelle Demo</h3>
+              <p className="text-sm text-muted-foreground">
+                Live-Demonstration angepasst an Ihre spezifischen Use Cases
+              </p>
+            </div>
+            <div className="p-6 bg-card rounded-lg border">
+              <h3 className="font-semibold mb-2">Maßgeschneidertes Angebot</h3>
+              <p className="text-sm text-muted-foreground">
+                Transparente Preisgestaltung basierend auf Ihren Anforderungen
+              </p>
+            </div>
           </motion.div>
         </motion.div>
       </div>

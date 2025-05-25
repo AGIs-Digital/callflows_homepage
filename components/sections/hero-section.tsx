@@ -8,18 +8,20 @@ import { useTheme } from "next-themes";
 
 export function HeroSection() {
   const { theme } = useTheme();
-  const [showWidget, setShowWidget] = useState(false);
+  const [showWidget, setShowWidget] = useState(true);
   const [widgetError, setWidgetError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   
-  // Widget nach dem Laden der Seite aktivieren
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowWidget(true);
-    }, 500);
-    
-    return () => clearTimeout(timer);
-  }, []);
+  // Widget-Loading-Handler
+  const handleWidgetLoad = () => {
+    setIsLoading(false);
+  };
+
+  const handleWidgetError = () => {
+    setWidgetError(true);
+    setIsLoading(false);
+  };
 
   return (
     <div className="relative min-h-[calc(100vh-80px)]">
@@ -47,16 +49,34 @@ export function HeroSection() {
           {/* Rechte Spalte - KI-Widget */}
           <div className="relative z-20 h-[450px] lg:h-[550px] rounded-xl border border-border/50 bg-card/30 flex items-center justify-center overflow-hidden">
             {showWidget && !widgetError ? (
-              <iframe 
-                ref={iframeRef}
-                id="audio_iframe" 
-                src="https://widget.synthflow.ai/widget/v2/526c890d-a2a8-471a-88ef-b9ba987ad08b/1747756443431x376634649512029800" 
-                allow="microphone; camera; autoplay; clipboard-write; encrypted-media" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 'none', borderRadius: '0.75rem' }}
-                onError={() => setWidgetError(true)}
-              />
+              <>
+                {/* Loading Skeleton - wird angezeigt während das Widget lädt */}
+                {isLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-card/50 backdrop-blur-sm">
+                    <div className="text-center">
+                      <div className="animate-spin-custom rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+                      <p className="text-muted-foreground">KI-Assistent wird geladen...</p>
+                    </div>
+                  </div>
+                )}
+                
+                <iframe 
+                  ref={iframeRef}
+                  id="audio_iframe" 
+                  src="https://widget.synthflow.ai/widget/v2/526c890d-a2a8-471a-88ef-b9ba987ad08b/1747756443431x376634649512029800" 
+                  allow="microphone; camera; autoplay; clipboard-write; encrypted-media" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ 
+                    border: 'none', 
+                    borderRadius: '0.75rem',
+                    opacity: isLoading ? 0 : 1,
+                    transition: 'opacity 0.3s ease-in-out'
+                  }}
+                  onLoad={handleWidgetLoad}
+                  onError={handleWidgetError}
+                />
+              </>
             ) : (
               <div className="text-center p-8 flex flex-col items-center justify-center h-full">
                 <div className="text-6xl mb-4">🚧</div>

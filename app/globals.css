@@ -348,3 +348,53 @@ footer {
     max-height: 80vh !important;
   }
 }
+
+/* Zoho Booking Modal Verbesserungen */
+.zoho-modal-backdrop {
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.zoho-modal-content {
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Smooth Transitions für Dark Mode */
+.zoho-modal-content {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Loading Spinner Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-custom {
+  animation: spin 1s linear infinite;
+}
