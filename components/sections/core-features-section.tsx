@@ -39,7 +39,7 @@ export function CoreFeaturesSection() {
             Kernfunktionen
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Entdecken Sie die leistungsstarken Features unserer KI Voice Agents
+            Entdecken Sie die leistungsstarken Features unserer KI-Voice-Agents
           </p>
         </div>
 

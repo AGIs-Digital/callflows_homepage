@@ -22,7 +22,7 @@ export function AboutSection() {
               </p>
               <p className="text-lg text-muted-foreground">
                 <strong className="text-primary">callflows</strong> hilft Unternehmen dabei, diesen Wandel zu gestalten – nicht blindlings, sondern mit Struktur, Erfahrung und echter Partnerschaft.
-                Unsere AI Voice Agents übernehmen Gespräche, verstehen Anliegen, buchen Termine, erkennen Chancen – und integrieren sich in bestehende Systeme, als wären sie schon immer da gewesen.
+                Unsere KI-Voice-Agents übernehmen Gespräche, verstehen Anliegen, buchen Termine, erkennen Chancen – und integrieren sich in bestehende Systeme, als wären sie schon immer da gewesen.
               </p>
               <p className="text-lg text-muted-foreground">
                 Wir wissen: Diese Technologie ist neu. Sie ist mächtig – aber sie ist kein Selbstläufer.

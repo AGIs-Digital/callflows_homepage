@@ -52,7 +52,7 @@ export function IntegrationChallengesSection() {
   const div7Ref = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-section-light-blue dark:bg-[#F5F0FF]/5">
       <div className="container max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Linke Spalte - Text und Herausforderungen */}

@@ -36,7 +36,7 @@ export function generateMetadata({
     'KI Telefonie', 
     'Telefon KI', 
     'Voice Agent', 
-    'KI Voice Agent', 
+    'KI-Voice-Agents', 
     'Automatisierte Telefonie',
     'Künstliche Intelligenz Telefon',
     'KI Kundenservice',

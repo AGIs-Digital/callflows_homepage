@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import { getCalApi } from "@calcom/embed-react";
 import { Button } from "@/components/ui/button";
+import { BookingButton } from "@/components/booking/booking-button";
 
 interface MinutePackageCardProps {
   package: {
@@ -17,17 +16,6 @@ interface MinutePackageCardProps {
 }
 
 export function MinutePackageCard({ package: pkg }: MinutePackageCardProps) {
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi();
-      cal("ui", {
-        styles: { branding: { brandColor: "#0f26d5" } },
-        hideEventTypeDetails: false,
-        layout: "month_view"
-      });
-    })();
-  }, []);
-
   const isCustomPackage = pkg.isCustom || pkg.minutes === 0;
 
   return (
@@ -57,14 +45,9 @@ export function MinutePackageCard({ package: pkg }: MinutePackageCardProps) {
         </div>
       )}
 
-      <Button 
-        className="w-full" 
-        variant="outline"
-        data-cal-link="callflows/50min"
-        data-cal-config='{"layout":"popup"}'
-      >
-        {isCustomPackage ? "Individuelles Angebot" : "Jetzt buchen"}
-      </Button>
+      <div className="w-full">
+        <BookingButton />
+      </div>
     </div>
   );
 } 

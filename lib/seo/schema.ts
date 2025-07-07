@@ -27,7 +27,7 @@ export function generateOrganizationSchema(): WithContext<Organization> {
       'https://linkedin.com/company/callflows',
       'https://twitter.com/callflows',
     ],
-    keywords: 'KI Telefonie, Telefon KI, Voice Agent, KI Voice Agent, Automatisierte Telefonie, Künstliche Intelligenz Telefon',
+    keywords: 'KI Telefonie, Telefon KI, Voice Agent, KI-Voice-Agents, Automatisierte Telefonie, Künstliche Intelligenz Telefon',
   };
 }
 
@@ -35,7 +35,7 @@ export function generateProductSchema(): WithContext<Product> {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'callflows KI Voice Agent',
+    name: 'callflows KI-Voice-Agents',
     description: 'KI-gestützte Voice Agents für automatisierte Kundenkommunikation. Optimieren Sie Ihren Kundenservice, Vertrieb und Support mit intelligenten Sprachassistenten.',
     brand: {
       '@type': 'Brand',
@@ -75,7 +75,7 @@ export function generateProductSchema(): WithContext<Product> {
       ]
     },
     category: 'Software > Künstliche Intelligenz > Sprachassistenten',
-    keywords: 'KI Telefonie, Telefon KI, Voice Agent, KI Voice Agent, Automatisierte Telefonie'
+    keywords: 'KI Telefonie, Telefon KI, Voice Agent, KI-Voice-Agents, Automatisierte Telefonie'
   };
 }
 
@@ -86,10 +86,10 @@ export function generateFAQSchema(): WithContext<FAQPage> {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Was ist ein KI Voice Agent?',
+        name: 'Was ist ein KI-Voice-Agent?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Ein KI Voice Agent ist ein intelligenter Sprachassistent, der auf künstlicher Intelligenz basiert und in der Lage ist, Telefongespräche zu führen, Kundenanfragen zu beantworten und Prozesse zu automatisieren.'
+          text: 'Ein KI-Voice-Agent ist ein intelligenter Sprachassistent, der auf künstlicher Intelligenz basiert und in der Lage ist, Telefongespräche zu führen, Kundenanfragen zu beantworten und Prozesse zu automatisieren.'
         }
       },
       {
@@ -102,26 +102,26 @@ export function generateFAQSchema(): WithContext<FAQPage> {
       },
       {
         '@type': 'Question',
-        name: 'Für welche Unternehmen eignet sich ein KI Voice Agent?',
+        name: 'Für welche Unternehmen eignet sich ein KI-Voice-Agent?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'KI Voice Agents eignen sich für Unternehmen jeder Größe, die ihre Kundenkommunikation effizienter gestalten möchten. Besonders geeignet sind sie für Kundenservice, Vertrieb, Marketing und HR-Prozesse.'
+          text: 'KI-Voice-Agents eignen sich für Unternehmen jeder Größe, die ihre Kundenkommunikation effizienter gestalten möchten. Besonders geeignet sind sie für Kundenservice, Vertrieb, Marketing und HR-Prozesse.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Was kostet ein KI Voice Agent?',
+        name: 'Was kostet ein KI-Voice-Agent?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Die Kosten für einen KI Voice Agent bei callflows basieren auf einem minutenbasierten Abrechnungsmodell. Die Preise variieren je nach Paket und Minutenvolumen.'
+          text: 'Die Kosten für einen KI-Voice-Agent bei callflows basieren auf einem minutenbasierten Abrechnungsmodell. Die Preise variieren je nach Paket und Minutenvolumen.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Kann ein KI Voice Agent in bestehende Systeme integriert werden?',
+        name: 'Kann ein KI-Voice-Agent in bestehende Systeme integriert werden?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Ja, die KI Voice Agents von callflows können nahtlos in bestehende CRM-Systeme, Kalendersysteme und andere Geschäftsanwendungen integriert werden, um einen reibungslosen Informationsaustausch zu gewährleisten.'
+          text: 'Ja, die KI-Voice-Agents von callflows können nahtlos in bestehende CRM-Systeme, Kalendersysteme und andere Geschäftsanwendungen integriert werden, um einen reibungslosen Informationsaustausch zu gewährleisten.'
         }
       }
     ]

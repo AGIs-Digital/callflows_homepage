@@ -137,7 +137,7 @@ export default function DatenschutzPage() {
           </p>
         </LegalSection>
 
-        <LegalSection title="2. Datenerfassung und -verwendung">
+        <LegalSection title="12. Datenerfassung und -verwendung">
           <p className="text-gray-600 dark:text-gray-300">
             Wir erfassen verschiedene Arten von Informationen für verschiedene Zwecke, um unseren Service bereitzustellen und zu verbessern.
           </p>
@@ -156,12 +156,12 @@ export default function DatenschutzPage() {
           </ul>
         </LegalSection>
         
-        <LegalSection title="3. Datensicherheit bei KI Voice Agents">
+        <LegalSection title="13. Datensicherheit bei KI Voice Agents">
           <p className="text-gray-600 dark:text-gray-300">
             Bei der Nutzung unserer KI Voice Agents werden Gesprächsdaten verarbeitet, um den Service bereitzustellen. Wir legen größten Wert auf die Sicherheit dieser Daten:
           </p>
           <ul className="list-disc pl-6 mt-2 text-gray-600 dark:text-gray-300">
-            <li>Alle Gespräche werden verschlüsselt übertragen und gespeichert</li>
+            <li>Alle Gespräche werden verschlüsselt übertragen und als Transkripte gespeichert</li>
             <li>Gesprächsdaten werden ausschließlich auf Servern innerhalb der EU verarbeitet</li>
             <li>Zugriff auf Gesprächsdaten haben nur autorisierte Mitarbeiter</li>
             <li>Gesprächsdaten werden nur so lange gespeichert, wie es für die Bereitstellung des Services notwendig ist</li>

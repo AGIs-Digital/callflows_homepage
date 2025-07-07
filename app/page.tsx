@@ -2,7 +2,6 @@ import { SiteHeader } from "@/components/site-header";
 import { HeroSection } from "@/components/sections/hero-section";
 import { ProcessSection } from "@/components/sections/process-section";
 import { PricingComparisonSection } from "@/components/sections/pricing-comparison-section";
-import { ProductPreviewSection } from "@/components/sections/product-preview-section";
 import { CoreFeaturesSection } from "@/components/sections/core-features-section";
 import { FeaturesSection } from "@/components/sections/features-section";
 import { SiteFooter } from "@/components/site-footer";
@@ -20,21 +19,18 @@ export default function Home() {
         <ProcessSection />
       </div>
       <IntegrationChallengesSection />
-      <div id="about">
-        <AboutSection />
-      </div>
       <div id="pricecomparison">
         <PricingComparisonSection />
       </div>
       <CTASection />
-      <div id="core-features">
-        <CoreFeaturesSection />
-      </div>
       <div id="features">
         <FeaturesSection />
       </div>
-      <div className="bg-section-dark">
-        <ProductPreviewSection />
+      <div id="core-features">
+        <CoreFeaturesSection />
+      </div>
+      <div id="about">
+        <AboutSection />
       </div>
       <CTASectionSecondary />
       <SiteFooter />

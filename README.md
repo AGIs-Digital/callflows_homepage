@@ -44,7 +44,7 @@ Eine moderne Next.js-Webanwendung für KI-gestützte Kommunikationslösungen.
 
 ## 🚀 Features
 
-- KI Voice Agents für natürliche Gespräche
+- KI-Voice-Agents für natürliche Gespräche
 - Automatisierte In- und Outbound-Kommunikation
 - Detaillierte Analytics und Reporting
 - Responsive Design mit Dark Mode

@@ -93,7 +93,7 @@ export default function BlogPostPage() {
           </p>
 
           <ul>
-            <li><strong>Synthflow:</strong> Europäischer Anbieter mit Spezialisierung auf DSGVO-konforme AI Voice Agents für Kundenservice und Vertrieb.</li>
+            <li><strong>Synthflow:</strong> Europäischer Anbieter mit Spezialisierung auf DSGVO-konforme KI-Voice-Agents für Kundenservice und Vertrieb.</li>
             <li><strong>PolyAI:</strong> Bekannt für natürlich klingende Outbound- und Inbound-Telefonie, stark im englischen Sprachraum.</li>
             <li><strong>Parloa:</strong> Deutscher Anbieter mit Fokus auf Conversational AI für Callcenter, stark in der Telekommunikation und im Handel.</li>
             <li><strong>Twilio Voice Intelligence:</strong> Ideal für Entwickler, die eigene Telefon-Workflows bauen wollen – allerdings mit stärkerem Fokus auf US-Markt.</li>

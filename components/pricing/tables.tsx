@@ -14,7 +14,7 @@ export function PricingTables() {
           <div className="max-w-5xl mx-auto mb-12">
             <div className="bg-muted/50 p-12 rounded-xl border">
               <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-                Bei <strong className="text-primary">callflows</strong> zahlen Sie während der Laufzeit nur für die <strong>tatsächliche Gesprächszeit</strong> Ihres KI Voice Agents – <strong>ohne versteckte Kosten, ohne Grundgebühren</strong>.
+                Bei <strong className="text-primary">callflows</strong> zahlen Sie während der Laufzeit nur für die <strong>tatsächliche Gesprächszeit</strong> Ihrer KI-Voice-Agents – <strong>ohne versteckte Kosten, ohne Grundgebühren</strong>.
               </p>
               
               <div className="bg-card p-10 rounded-lg border mb-12">
@@ -55,7 +55,7 @@ export function PricingTables() {
                     <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-semibold text-lg mb-2">Kontinuierliche Optimierung</p>
-                      <p className="text-muted-foreground">Ihres KI Voice Agents</p>
+                      <p className="text-muted-foreground">Ihrer KI-Voice-Agents</p>
                     </div>
                   </div>
                   
@@ -105,7 +105,7 @@ export function PricingTables() {
 
               <div className="bg-primary/10 p-8 rounded-lg border border-primary/20">
                 <p className="text-center text-muted-foreground font-medium text-lg leading-relaxed">
-                  <strong className="text-primary">So starten Sie risikofrei</strong> – mit voller Kontrolle, transparenter Preisstruktur und einem Voice Agent, der exakt zu Ihrem Unternehmen passt.
+                  <strong className="text-primary">So starten Sie risikofrei</strong> – mit voller Kontrolle, transparenter Preisstruktur und Voice Agents, die perfekt zu Ihrem Unternehmen passen.
                 </p>
               </div>
             </div>

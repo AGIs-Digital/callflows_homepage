@@ -66,7 +66,7 @@ export default function BlogPostPage() {
           
           <h3>1. Intelligente Terminvergabe und -verwaltung</h3>
           <p>
-            Die Terminvergabe ist einer der arbeitsintensivsten Prozesse in Arztpraxen. KI Voice Agents können hier entlasten, indem sie:
+            Die Terminvergabe ist einer der arbeitsintensivsten Prozesse in Arztpraxen. KI-Voice-Agents können hier entlasten, indem sie:
           </p>
           <ul>
             <li>24/7 Termine vergeben und verschieben</li>
@@ -101,7 +101,7 @@ export default function BlogPostPage() {
           
           <h3>Fallstudie 1: Hausarztpraxis in München</h3>
           <p>
-            Eine große Hausarztpraxis in München setzt seit Januar 2024 einen KI Voice Agent für die Terminvergabe ein. Die Ergebnisse nach drei Monaten:
+            Eine große Hausarztpraxis in München setzt seit Januar 2024 einen KI-Voice-Agent für die Terminvergabe ein. Die Ergebnisse nach drei Monaten:
           </p>
           <ul>
             <li>Reduktion der Wartezeit am Telefon um 85%</li>
@@ -116,7 +116,7 @@ export default function BlogPostPage() {
           
           <h3>Fallstudie 2: Kardiologisches Zentrum in Hamburg</h3>
           <p>
-            Ein spezialisiertes Herzzentrum nutzt seit November 2023 einen KI Voice Agent für die Nachsorge von Patienten nach Herzoperationen:
+            Ein spezialisiertes Herzzentrum nutzt seit November 2023 einen KI-Voice-Agent für die Nachsorge von Patienten nach Herzoperationen:
           </p>
           <ul>
             <li>Regelmäßige Anrufe bei über 200 Patienten pro Monat</li>
@@ -126,19 +126,19 @@ export default function BlogPostPage() {
           </ul>
           
           <p>
-            Prof. Dr. Klaus Müller, Chefarzt: "Unser KI Voice Agent hat sich als wertvolles Instrument in der Nachsorge erwiesen. Er erkennt Warnsignale frühzeitig und alarmiert unser Team, wenn Handlungsbedarf besteht. Das rettet im wahrsten Sinne des Wortes Leben."
+            Prof. Dr. Klaus Müller, Chefarzt: "Unser KI-Voice-Agent hat sich als wertvolles Instrument in der Nachsorge erwiesen. Er erkennt Warnsignale frühzeitig und alarmiert unser Team, wenn Handlungsbedarf besteht. Das rettet im wahrsten Sinne des Wortes Leben."
           </p>
           
           <h2>Herausforderungen und Lösungsansätze</h2>
           
           <h3>Datenschutz und Compliance</h3>
           <p>
-            Im Gesundheitswesen gelten besonders strenge Datenschutzanforderungen. Moderne KI Voice Agents wie die von callflows erfüllen alle Anforderungen der DSGVO und des Patientendatenschutzes. Die Daten werden verschlüsselt übertragen und auf Servern in Deutschland gespeichert.
+            Im Gesundheitswesen gelten besonders strenge Datenschutzanforderungen. Moderne KI-Voice-Agents wie die von callflows erfüllen alle Anforderungen der DSGVO und des Patientendatenschutzes. Die Daten werden verschlüsselt übertragen und auf Servern in Deutschland gespeichert.
           </p>
           
           <h3>Akzeptanz bei älteren Patienten</h3>
           <p>
-            Entgegen der Erwartung zeigen Studien, dass gerade ältere Patienten KI Voice Agents gut annehmen. Ein Grund dafür ist die natürliche Sprachinteraktion, die keine technischen Kenntnisse voraussetzt. Wichtig ist eine klare Kommunikation, dass es sich um einen KI-Assistenten handelt.
+            Entgegen der Erwartung zeigen Studien, dass gerade ältere Patienten KI-Voice-Agents gut annehmen. Ein Grund dafür ist die natürliche Sprachinteraktion, die keine technischen Kenntnisse voraussetzt. Wichtig ist eine klare Kommunikation, dass es sich um einen KI-Assistenten handelt.
           </p>
           
           <h2>Zukunftsperspektiven</h2>

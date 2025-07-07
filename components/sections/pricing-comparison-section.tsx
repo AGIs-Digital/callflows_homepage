@@ -76,10 +76,10 @@ export function PricingComparisonSection() {
       <div className="container max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">
-            Im Vergleich:          </h2>
+            Im Vergleich</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Die geschäftliche Kundenkommunikation wird heutzutage meist auf drei Arten abgewickelt.
-            <strong className="text-primary"> callflows</strong> bietet eine vierte, innovative Option.
+            Die geschäftliche Kundenkommunikation wurde meist auf drei Arten abgewickelt.
+            <strong className="text-primary"> callflows</strong> ist eine moderne, innovative Option.
           </p>
         </div>
         
@@ -155,7 +155,7 @@ export function PricingComparisonSection() {
         
         <div className="mt-16 text-center">
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-            Viele Unternehmen wünschen sich mehr Automatisierung, geringere Personalkosten und eine gleichbleibend hohe Servicequalität – rund um die Uhr. Genau hier setzt unser KI Voice Agent an: Als innovative Option, die moderne KI-Technologie nutzt, um Telefonprozesse effizient und kostengünstig abzubilden.
+            Viele Unternehmen wünschen sich mehr Automatisierung, geringere Personalkosten und eine gleichbleibend hohe Servicequalität – rund um die Uhr. Genau hier setzt unser KI-Voice-Agent an: Als innovative Option, die moderne KI-Technologie nutzt, um Telefonprozesse effizient und kostengünstig abzubilden.
           </p>
           
           <div className="inline-flex items-center justify-center gap-2 bg-primary/10 text-primary font-medium px-4 py-2 rounded-full">

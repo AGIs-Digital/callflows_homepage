@@ -2,29 +2,30 @@ import { PricingPlan, MinutePackage } from "@/lib/types/pricing";
 
 export const monthlyPlans: PricingPlan[] = [
   {
-    name: "Starter",
+    name: "Entlastung",
     type: "starter",
-    subtitle: "Perfekt für den Einstieg",
+    subtitle: "Unterstützung im Tagesgeschäft",
     price: 1.09,
     minutesIncluded: 1000,
     highlights: [
-      "Ideal für geringe Inbound-/Outbound-Kommunikation",
-      "Perfekt für den Einstieg in die KI-Telefonie",
-      "Für kleine Teams geeignet"
+      "Schnell spürbare Verbesserungen im Arbeitsalltag",
+      "Häufige Fragen ohne Personaleinsatz beantworten",
+      "Weniger Weiterverbindungen und Wartezeiten"
     ],
     cta: "Jetzt beraten lassen",
     popular: false
   },
   {
-    name: "Professional",
+    name: "Wachstum",
     type: "professional",
-    subtitle: "Für wachsende Unternehmen",
+    subtitle: "Umsatz & Expansion",
     price: 0.99,
     minutesIncluded: 2000,
     highlights: [
-      "Ideal für moderate Inbound-/Outbound-Kommunikation",
-      "Kann eine Vollzeitkraft im Telefonbereich ersetzen",
-      "Perfekt um Ihr Unternehmen zu unterstützen"
+      "Prozesse von der Anfrage bis zum Abschluss optimieren",
+      "Weniger Unterbrechungen in täglichen Arbeitsabläufen",
+      "Wachstum ohne proportionalen Personalaufbau",
+      "Hochwertige Leads für das Vertriebsteam"
     ],
     cta: "Jetzt beraten lassen",
     popular: false
@@ -36,10 +37,11 @@ export const monthlyPlans: PricingPlan[] = [
     price: 0, // Preis auf Anfrage
     minutesIncluded: 0, // Kontingent auf Anfrage
     highlights: [
-      "Für Unternehmen mit speziellen Anforderungen",
-      "Individuelles Minutenkontingent nach Bedarf",
+      "Marktführerschaft durch frühzeitige KI-Adoption",
+      "Neue Kunden auch außerhalb der Geschäftszeiten gewinnen",
       "Persönliche Beratung und maßgeschneiderte Lösung",
-      "Optimale Skalierung für große Unternehmen"
+      "Erkenntnisse aus Gesprächen für Geschäftsentscheidungen",
+      "Mehrsprachige KI für globale Expansion"
     ],
     cta: "Individuelles Angebot",
     popular: true,

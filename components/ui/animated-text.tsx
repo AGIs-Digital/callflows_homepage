@@ -10,23 +10,23 @@ interface AnimatedTextProps {
 }
 
 export function AnimatedText({ words, className }: AnimatedTextProps) {
-  const [currentWordIndex, setCurrentWordIndex] = useState(1); // Start with second word
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setIsAnimating(true);
-      setCurrentWordIndex((prev) => (prev === 1 ? 2 : 1)); // Toggle between 1 and 2
-    }, 3500); // Complete cycle every 3,5 seconds
+      setCurrentWordIndex((prev) => (prev + 1) % words.length); // Durch alle Wörter rotieren
+    }, 3000); // Complete cycle every 2 seconds
 
     return () => clearInterval(timer);
-  }, []);
+  }, [words.length]);
 
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.05, delayChildren: 0.05 * i },
+      transition: { staggerChildren: 0.03, delayChildren: 0.03 * i },
     }),
   };
 
@@ -52,13 +52,8 @@ export function AnimatedText({ words, className }: AnimatedTextProps) {
   };
 
   return (
-    <div className={cn("flex flex-col space-y-2", className)}>
-      {/* Static "Einfach." */}
-      <div className="flex">
-        <span className="text-inherit">{words[0]}</span>
-      </div>
-
-      {/* Animated words */}
+    <div className={cn("inline-block", className)}>
+      {/* Alle Wörter werden animiert */}
       <AnimatePresence mode="wait">
         <motion.div
           key={words[currentWordIndex]}
@@ -66,7 +61,7 @@ export function AnimatedText({ words, className }: AnimatedTextProps) {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          className="flex h-[1.2em]"
+          className="inline-flex h-[1.2em]"
         >
           {words[currentWordIndex].split("").map((char, index) => (
             <motion.span

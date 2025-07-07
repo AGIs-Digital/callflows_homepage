@@ -70,7 +70,7 @@ export default function BlogPostPage() {
         <div className="prose prose-lg dark:prose-invert max-w-none">
           <h2>Was ist KI-Telefonie?</h2>
           <p>
-            KI-Telefonie, auch als KI Voice Agents oder intelligente Sprachassistenten bekannt, kombiniert künstliche Intelligenz mit Telefonie, um natürliche Gespräche zu führen und komplexe Aufgaben zu erledigen. Im Gegensatz zu herkömmlichen IVR-Systemen (Interactive Voice Response) oder einfachen Sprachdialogsystemen können KI Voice Agents tatsächlich verstehen, was der Anrufer sagt, den Kontext erfassen und angemessen reagieren.
+            KI-Telefonie, auch als KI-Voice-Agents oder intelligente Sprachassistenten bekannt, kombiniert künstliche Intelligenz mit Telefonie, um natürliche Gespräche zu führen und komplexe Aufgaben zu erledigen. Im Gegensatz zu herkömmlichen IVR-Systemen (Interactive Voice Response) oder einfachen Sprachdialogsystemen können KI-Voice-Agents tatsächlich verstehen, was der Anrufer sagt, den Kontext erfassen und angemessen reagieren.
           </p>
           
           <p>
@@ -98,7 +98,7 @@ export default function BlogPostPage() {
           </ul>
           
           <p>
-            Moderne KI Voice Agents wie die von callflows nutzen fortschrittliche Large Language Models (LLMs), die ein tiefes Verständnis von Sprache und Kontext ermöglichen. Diese Modelle werden speziell für die Anforderungen des jeweiligen Unternehmens trainiert und können sich an verschiedene Gesprächssituationen anpassen.
+            Moderne KI-Voice-Agents wie die von callflows nutzen fortschrittliche Large Language Models (LLMs), die ein tiefes Verständnis von Sprache und Kontext ermöglichen. Diese Modelle werden speziell für die Anforderungen des jeweiligen Unternehmens trainiert und können sich an verschiedene Gesprächssituationen anpassen.
           </p>
           
           <h2>Einsatzmöglichkeiten in Unternehmen</h2>
@@ -108,22 +108,22 @@ export default function BlogPostPage() {
           
           <h3>Kundenservice</h3>
           <p>
-            Im Kundenservice können KI Voice Agents häufig gestellte Fragen beantworten, Probleme lösen und bei Bedarf an einen menschlichen Mitarbeiter weiterleiten. Sie sind 24/7 verfügbar und können mehrere Anrufe gleichzeitig bearbeiten, was zu kürzeren Wartezeiten und höherer Kundenzufriedenheit führt.
+            Im Kundenservice können KI-Voice-Agents häufig gestellte Fragen beantworten, Probleme lösen und bei Bedarf an einen menschlichen Mitarbeiter weiterleiten. Sie sind 24/7 verfügbar und können mehrere Anrufe gleichzeitig bearbeiten, was zu kürzeren Wartezeiten und höherer Kundenzufriedenheit führt.
           </p>
           
           <h3>Vertrieb und Marketing</h3>
           <p>
-            Im Vertrieb können KI Voice Agents Leads qualifizieren, Produktinformationen bereitstellen und Termine für Vertriebsmitarbeiter vereinbaren. Sie können auch ausgehende Anrufe tätigen, um Kunden über neue Produkte oder Angebote zu informieren.
+            Im Vertrieb können KI-Voice-Agents Leads qualifizieren, Produktinformationen bereitstellen und Termine für Vertriebsmitarbeiter vereinbaren. Sie können auch ausgehende Anrufe tätigen, um Kunden über neue Produkte oder Angebote zu informieren.
           </p>
           
           <h3>Terminvereinbarung</h3>
           <p>
-            KI Voice Agents können komplexe Terminvereinbarungen vornehmen, indem sie auf Kalender zugreifen, Verfügbarkeiten prüfen und Termine bestätigen. Dies ist besonders nützlich für Arztpraxen, Dienstleister und andere Unternehmen, die viele Termine koordinieren müssen.
+            KI-Voice-Agents können komplexe Terminvereinbarungen vornehmen, indem sie auf Kalender zugreifen, Verfügbarkeiten prüfen und Termine bestätigen. Dies ist besonders nützlich für Arztpraxen, Dienstleister und andere Unternehmen, die viele Termine koordinieren müssen.
           </p>
           
           <h3>Umfragen und Feedback</h3>
           <p>
-            Durch ausgehende Anrufe können KI Voice Agents Kundenfeedback sammeln, Umfragen durchführen und wertvolle Einblicke in die Kundenzufriedenheit gewinnen.
+            Durch ausgehende Anrufe können KI-Voice-Agents Kundenfeedback sammeln, Umfragen durchführen und wertvolle Einblicke in die Kundenzufriedenheit gewinnen.
           </p>
           
           <h2>Vorteile der KI-Telefonie</h2>
@@ -139,7 +139,7 @@ export default function BlogPostPage() {
               <strong>24/7-Verfügbarkeit:</strong> Kunden können jederzeit anrufen und erhalten sofort Hilfe.
             </li>
             <li>
-              <strong>Skalierbarkeit:</strong> KI Voice Agents können problemlos mit steigendem Anrufvolumen skalieren.
+              <strong>Skalierbarkeit:</strong> KI-Voice-Agents können problemlos mit steigendem Anrufvolumen skalieren.
             </li>
             <li>
               <strong>Konsistente Qualität:</strong> Jeder Anrufer erhält die gleiche hochwertige Betreuung.
@@ -148,7 +148,7 @@ export default function BlogPostPage() {
               <strong>Datengewinnung:</strong> Jedes Gespräch liefert wertvolle Daten zur Verbesserung des Services.
             </li>
             <li>
-              <strong>Mehrsprachigkeit:</strong> KI Voice Agents können in verschiedenen Sprachen kommunizieren.
+              <strong>Mehrsprachigkeit:</strong> KI-Voice-Agents können in verschiedenen Sprachen kommunizieren.
             </li>
           </ul>
           
@@ -159,12 +159,12 @@ export default function BlogPostPage() {
           
           <h3>Akzeptanz bei Kunden</h3>
           <p>
-            Manche Kunden bevorzugen den Kontakt mit einem menschlichen Mitarbeiter. Eine Lösung ist, den KI Voice Agent so natürlich wie möglich zu gestalten und bei Bedarf eine einfache Weiterleitung an einen Mitarbeiter anzubieten.
+            Manche Kunden bevorzugen den Kontakt mit einem menschlichen Mitarbeiter. Eine Lösung ist, den KI-Voice-Agent so natürlich wie möglich zu gestalten und bei Bedarf eine einfache Weiterleitung an einen Mitarbeiter anzubieten.
           </p>
           
           <h3>Komplexe Anfragen</h3>
           <p>
-            Sehr komplexe oder emotionale Anfragen können für KI Voice Agents eine Herausforderung darstellen. Hier ist es wichtig, klare Eskalationspfade zu definieren und die KI kontinuierlich zu verbessern.
+            Sehr komplexe oder emotionale Anfragen können für KI-Voice-Agents eine Herausforderung darstellen. Hier ist es wichtig, klare Eskalationspfade zu definieren und die KI kontinuierlich zu verbessern.
           </p>
           
           <h3>Integration in bestehende Systeme</h3>

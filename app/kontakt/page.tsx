@@ -16,7 +16,7 @@ export default function KontaktPage() {
           <div className="bg-card rounded-lg p-4 md:p-6 shadow-sm border">
             <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Kontaktieren Sie uns</h2>
             <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6">
-              Haben Sie Fragen zu unseren KI Voice Agents? Wir helfen Ihnen gerne weiter.
+              Haben Sie Fragen zu unseren KI-Voice-Agents? Wir helfen Ihnen gerne weiter.
             </p>
             
             <form className="space-y-3 md:space-y-4">
@@ -40,7 +40,7 @@ export default function KontaktPage() {
             <div>
               <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Beratungstermin buchen</h2>
               <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6">
-                Vereinbaren Sie einen Termin für eine persönliche Beratung zu unseren KI Voice Agents.
+                Vereinbaren Sie einen Termin für eine persönliche Beratung zu unseren KI-Voice-Agents.
               </p>
               
               <ZohoEmbed 

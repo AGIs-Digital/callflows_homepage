@@ -161,7 +161,7 @@ export default function BlogPostPage() {
           
           <h2>Unser Fazit</h2>
           <p>
-            Beide Modelle repräsentieren den aktuellen State-of-the-Art für KI Voice Agents und bieten beeindruckende Fähigkeiten. Die Wahl zwischen GPT-4o und Claude 3.5 Sonnet hängt letztlich von Ihren spezifischen Anforderungen ab:
+            Beide Modelle repräsentieren den aktuellen State-of-the-Art für KI-Voice-Agents und bieten beeindruckende Fähigkeiten. Die Wahl zwischen GPT-4o und Claude 3.5 Sonnet hängt letztlich von Ihren spezifischen Anforderungen ab:
           </p>
           
           <ul>
@@ -174,7 +174,7 @@ export default function BlogPostPage() {
           </p>
           
           <p>
-            Möchten Sie mehr über den Einsatz dieser fortschrittlichen KI-Modelle in Ihrem Unternehmen erfahren? Kontaktieren Sie uns für eine persönliche Beratung und erfahren Sie, wie Sie mit KI Voice Agents Ihre Kundenkommunikation revolutionieren können.
+            Möchten Sie mehr über den Einsatz dieser fortschrittlichen KI-Modelle in Ihrem Unternehmen erfahren? Kontaktieren Sie uns für eine persönliche Beratung und erfahren Sie, wie Sie mit KI-Voice-Agents Ihre Kundenkommunikation revolutionieren können.
           </p>
         </div>
       </article>

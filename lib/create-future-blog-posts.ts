@@ -24,7 +24,7 @@ const futureTopics = [
   {
     slug: "voice-agents-praxis-ki-telefonie-2025",
     title: "Voice Agents im Praxiseinsatz: Was KI-Telefonie 2025 wirklich kann",
-    description: "Was leisten moderne KI-Voice Agents im Alltag? Ein Überblick über aktuelle Use Cases, Technologieanbieter und Praxistipps für erfolgreiche Implementierung.",
+    description: "Was leisten moderne KI-Voice-Agents im Alltag? Ein Überblick über aktuelle Use Cases, Technologieanbieter und Praxistipps für erfolgreiche Implementierung.",
     keywords: ["Voice Agent 2025", "KI Telefonie Einsatz", "AI Kundenservice", "Conversational AI"]
   },
   {

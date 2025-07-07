@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: 'callflows - automatisierte Kundenkommunikation',
     description: 'Optimieren Sie Kundenservice, Vertrieb und Support mit intelligenten Systemen.',
     path: '/',
-    keywords: ['KI Telefonie', 'Telefon KI', 'Voice Agent', 'KI Voice Agent', 'Automatisierte Telefonie'],
+    keywords: ['KI Telefonie', 'Telefon KI', 'Voice Agent', 'KI-Voice-Agents', 'Automatisierte Telefonie'],
     images: [{
       url: '/images/callflows_brand_no_claim.png',
       width: 1200,

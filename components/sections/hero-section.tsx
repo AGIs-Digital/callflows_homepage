@@ -5,6 +5,9 @@ import { cn } from "@/lib/utils";
 import { AnimatedText } from "@/components/ui/animated-text";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Calendar, Phone } from "lucide-react";
+import { ZohoEmbed } from "@/components/booking/zoho-embed";
 
 export function HeroSection() {
   const { theme } = useTheme();
@@ -25,40 +28,70 @@ export function HeroSection() {
 
   return (
     <div className="relative min-h-[calc(100vh-80px)]">
-      <div className="container relative py-8 md:py-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container relative py-12 md:py-16 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Linke Spalte - Text */}
-          <div className="relative z-20 space-y-4 md:space-y-6 animate-slideIn">
-            <h1 className="text-3xl sm:text-4xl md:text-[56px] font-bold leading-tight text-primary dark:text-white">
-              <AnimatedText
-                words={["Intelligent.", "Automatisiert.", "Erfolgreich."]}
-                className="leading-tight"
+          <div className="relative z-20 space-y-8 md:space-y-10 animate-slideIn">
+            {/* Problem-Headline */}
+            <div className="space-y-8 pt-8 md:pt-12">
+              <h1 
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary dark:text-white max-w-4xl"
+                style={{ lineHeight: '1.2' }}
+              >
+                Überlastet mit Standardanrufen oder zu wenig Zeit für wichtige Aufgaben?
+              </h1>
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl">
+                Während Sie im Anruf-Chaos versinken, gehen die wirklich wichtigen Aufgaben unter – Zeit für eine Revolution!
+              </p>
+            </div>
+
+            {/* Lösung mit Animated Text */}
+            <div className="space-y-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-foreground">
+                KI-Telefonie macht es{" "}
+                <AnimatedText
+                  words={["Einfach.", "Automatisch.", "Erfolgreich."]}
+                  className="text-primary inline-block"
+                />
+              </h2>
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-[600px]">
+                Von Sales über Marketing bis Support – automatisieren Sie mit uns Ihre Prozesse zur Kundenkommunikation.
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+              <ZohoEmbed 
+                buttonText="Kostenlose Beratung" 
+                size="lg" 
+                className="bg-[#FFB703] hover:bg-[#FFB703]/90 text-white font-semibold px-8 py-4 text-lg gap-2"
               />
-            </h1>
-            <h2 className="text-l sm:text-2xl md:text-4xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-[600px]">
-              Wir revolutionieren die Kommunikation mit Ihren Kunden.
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
-              Von Sales über Marketing bis Support - automatisieren Sie mit uns Ihre Prozesse zur Kundenkommunikation.
-            </p>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
-              Mit umfassender Beratung und maßgeschneiderten Lösungen unterstützen wir Sie bei der digitalen Transformation Ihrer Kommunikation.
-            </p>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="pt-8 border-t border-border/30">
+              <div className="flex items-center gap-6 text-sm font-medium text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                  <span>Kostenlose Beratung</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                  <span>Risikofrei testen</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                  <span>Maßgeschneidert</span>
+                </div>
+              </div>
+            </div>
           </div>
           
           {/* Rechte Spalte - KI-Widget */}
-          <div className="relative z-20 h-[450px] lg:h-[550px] rounded-xl border border-border/50 bg-card/30 flex items-center justify-center overflow-hidden">
+          <div className="relative z-20 h-[450px] lg:h-[600px] rounded-xl border border-border/50 bg-card/30 flex items-center justify-center overflow-hidden">
             {showWidget && !widgetError ? (
               <>
                 {/* Loading Skeleton - wird angezeigt während das Widget lädt */}
-                {isLoading && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-card/50 backdrop-blur-sm">
-                    <div className="text-center">
-                      <div className="animate-spin-custom rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-                      <p className="text-muted-foreground">KI-Assistent wird geladen...</p>
-                    </div>
-                  </div>
-                )}
                 
                 <iframe 
                   ref={iframeRef}
@@ -80,11 +113,9 @@ export function HeroSection() {
             ) : (
               <div className="text-center p-8 flex flex-col items-center justify-center h-full">
                 <div className="text-6xl mb-4">🚧</div>
-                <h3 className="text-2xl font-bold text-[#FFB703] mb-2">
-                  Im Wartungsmodus
-                </h3>
-                <p className="text-muted-foreground max-w-md">
-                  Unser KI-Assistent verbessert sich gerade und wird in Kürze wieder verfügbar sein. Bitte versuchen Sie es später erneut.
+                <h3 className="text-lg font-semibold mb-2">Widget temporär nicht verfügbar</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Keine Sorge - das passiert manchmal bei Live-Demos
                 </p>
               </div>
             )}

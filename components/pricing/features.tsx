@@ -58,59 +58,6 @@ export function PricingFeatures() {
           </div>
         ))}
       </div>
-
-      {/* Neuer Abschnitt: Individuelle Entwicklung und Dienstleistungen */}
-      <div className="mt-16">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-primary dark:text-white">
-            Individuelle Entwicklung & Dienstleistungen
-          </h2>
-        </div>
-        
-        <div className="bg-background rounded-xl p-8 border shadow-sm">
-          <div className="flex items-center gap-4 mb-8 justify-center">
-            <div className="p-3 rounded-full bg-primary/10">
-              <Wrench className="w-6 h-6 text-primary" strokeWidth={1.5} />
-            </div>
-            <p className="text-lg font-medium">
-              Maßgeschneiderte Voice Agents für Ihre spezifischen Anforderungen
-            </p>
-          </div>
-          
-          <div className="max-w-3xl mx-auto">
-            <p className="text-muted-foreground mb-6 text-center">
-              Für die Entwicklung Ihrer individuellen Voice Agents bieten wir umfassende Dienstleistungen, die nach tatsächlichem Aufwand abgerechnet werden:
-            </p>
-            
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start gap-3">
-                <span className="text-primary font-bold">•</span>
-                <span>Entwicklung vom ersten Prototypen bis zum Go-Live</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-primary font-bold">•</span>
-                <span>Schulungen für Ihr Team zur optimalen Nutzung</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-primary font-bold">•</span>
-                <span>Intensiver Support während der Entwicklungs- und Testphase</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-primary font-bold">•</span>
-                <span>Feinjustierung und Optimierung der Agents</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-primary font-bold">•</span>
-                <span>Spätere Anpassungen oder Entwicklung neuer callflows Agents</span>
-              </li>
-            </ul>
-            
-            <p className="text-center text-muted-foreground">
-              Wir erstellen Ihnen gerne ein individuelles Angebot basierend auf Ihren spezifischen Anforderungen.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

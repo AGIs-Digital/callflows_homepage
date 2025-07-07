@@ -13,7 +13,7 @@ export const metadata = generateMetadata({
   authors: ["Tom Abeln"],
   keywords: [
     "GPT-4o Telefonie", 
-    "OpenAI Voice Agent", 
+    "OpenAI KI-Voice-Agent", 
     "KI-Telefonie Innovation", 
     "Multimodale KI",
     "Sprachmodell Telefon"

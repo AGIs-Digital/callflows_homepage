@@ -2,8 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { PricingPlan } from "@/lib/types/pricing";
-import { useState, useEffect } from "react";
-import { getCalApi } from "@calcom/embed-react";
+import { useState } from "react";
 import { PricingDialog } from "@/components/pricing/pricing-dialog";
 
 interface PricingCardProps {
@@ -12,18 +11,6 @@ interface PricingCardProps {
 
 export function PricingCard({ plan }: PricingCardProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi();
-      cal("on", {
-        action: "bookingSuccessful",
-        callback: (e) => {
-          console.log("Booking successful:", e.detail);
-        },
-      });
-    })();
-  }, []);
 
   const isCustomPlan = plan.isCustom || plan.price === 0;
 
@@ -67,7 +54,7 @@ export function PricingCard({ plan }: PricingCardProps) {
           {plan.highlights.map((highlight, index) => (
             <li key={index} className="flex items-start gap-3">
               <div className="h-2 w-2 rounded-full bg-[#FFB703] flex-shrink-0 mt-3" />
-              <span className="text-base text-muted-foreground leading-relaxed">{highlight}</span>
+              <span className="text-lg text-muted-foreground leading-relaxed">{highlight}</span>
             </li>
           ))}
         </ul>
