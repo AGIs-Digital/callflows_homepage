@@ -53,10 +53,10 @@ export default function KontaktPage() {
               <h3 className="text-lg md:text-xl font-semibold mb-2">Kontaktdaten</h3>
               <p className="text-sm md:text-base text-muted-foreground">
                 callflows Abeln Goltz GbR<br />
-                Adalbert-Stifter Straße 14<br />
-                30655 Hannover<br /><br />
+                Fenskestraße 9A<br />
+                30165 Hannover<br /><br />
                 E-Mail: info@callflows.de<br />
-                Telefon: +49-155-60106486
+                Telefon: +49 511 1665 3388
               </p>
             </div>
           </div>

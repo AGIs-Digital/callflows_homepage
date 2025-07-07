@@ -4,8 +4,8 @@ export const monthlyPlans: PricingPlan[] = [
   {
     name: "Starter",
     type: "starter",
-    subtitle: "Für kleine Betriebe",
-    price: 0.89,
+    subtitle: "Perfekt für den Einstieg",
+    price: 1.09,
     minutesIncluded: 1000,
     highlights: [
       "Ideal für geringe Inbound-/Outbound-Kommunikation",
@@ -13,47 +13,21 @@ export const monthlyPlans: PricingPlan[] = [
       "Für kleine Teams geeignet"
     ],
     cta: "Jetzt beraten lassen",
-    popular: false,
-    discounts: {
-      sixMonths: 0,  // 0% Rabatt bei 6-Monats-Vertrag
-      twelveMonths: 10  // 10% Rabatt bei 12-Monats-Vertrag
-    }
+    popular: false
   },
   {
     name: "Professional",
     type: "professional",
-    subtitle: "Für mittelständische Betriebe",
-    price: 0.79,
-    minutesIncluded: 3000,
+    subtitle: "Für wachsende Unternehmen",
+    price: 0.99,
+    minutesIncluded: 2000,
     highlights: [
       "Ideal für moderate Inbound-/Outbound-Kommunikation",
       "Kann eine Vollzeitkraft im Telefonbereich ersetzen",
       "Perfekt um Ihr Unternehmen zu unterstützen"
     ],
     cta: "Jetzt beraten lassen",
-    popular: false,
-    discounts: {
-      sixMonths: 0,  // 0% Rabatt bei 6-Monats-Vertrag
-      twelveMonths: 10  // 10% Rabatt bei 12-Monats-Vertrag
-    }
-  },
-  {
-    name: "Corporate",
-    type: "corporate",
-    subtitle: "Für höhere Anrufvolumina",
-    price: 0.69,
-    minutesIncluded: 12000,
-    highlights: [
-      "Für Zeitarbeitsunternehmen, Vertriebsteams, Kundendienst",
-      "Automatisiert eine ganze Abteilung oder einen Standort",
-      "Ideal für Unternehmen mit hohem Telefonaufkommen"
-    ],
-    cta: "Jetzt beraten lassen",
-    popular: false,
-    discounts: {
-      sixMonths: 0,  // 0% Rabatt bei 6-Monats-Vertrag
-      twelveMonths: 10  // 10% Rabatt bei 12-Monats-Vertrag
-    }
+    popular: false
   },
   {
     name: "Individuell",

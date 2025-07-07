@@ -10,7 +10,7 @@ export default function AGBPage() {
       <LegalSection title="1. Begriffsdefinitionen">
         <p className="text-gray-600 dark:text-gray-300">
           Im Sinne dieser AGB gelten folgende Definitionen:<br /><br />
-          „Anbieter" bezeichnet die Abeln Goltz GbR, handelnd unter der Marke callflows, mit Sitz in Adalbert-Stifter Straße 14, 30655 Hannover.<br /><br />
+          „Anbieter" bezeichnet die Abeln Goltz GbR, handelnd unter der Marke callflows, mit Sitz in Fenskestraße 9A, 30165 Hannover.<br /><br />
           „Kunde" bezeichnet ausschließlich Unternehmer im Sinne des § 14 BGB, also natürliche oder juristische Personen, die den Dienst zu gewerblichen oder beruflichen Zwecken nutzen. Verbraucher im Sinne des § 13 BGB sind von der Nutzung ausgeschlossen.<br /><br />
           „Dienste" bezeichnet alle durch callflows angebotenen und bereitgestellten Leistungen im Bereich der KI-gestützten Telefonautomation.<br /><br />
           „Vertrag" bezeichnet die Vereinbarung zwischen dem Anbieter und dem Kunden zur Nutzung der Dienste von callflows.<br /><br />
@@ -21,7 +21,7 @@ export default function AGBPage() {
 
       <LegalSection title="2. Geltungsbereich">
         <p className="text-gray-600 dark:text-gray-300">
-          Diese AGB regeln die Nutzung der durch callflows bereitgestellten Dienstleistungen. callflows ist eine Marke der Abeln Goltz GbR, Adalbert-Stifter Straße 14, 30655 Hannover. Sie gelten für alle Verträge zwischen der Abeln Goltz GbR ("Anbieter") und den Nutzern ("Kunden"). Mit der Nutzung der angebotenen Dienstleistungen erkennt der Kunde diese AGB an.
+          Diese AGB regeln die Nutzung der durch callflows bereitgestellten Dienstleistungen. callflows ist eine Marke der Abeln Goltz GbR, Fenskestraße 9A, 30165 Hannover. Sie gelten für alle Verträge zwischen der Abeln Goltz GbR ("Anbieter") und den Nutzern ("Kunden"). Mit der Nutzung der angebotenen Dienstleistungen erkennt der Kunde diese AGB an.
         </p>
       </LegalSection>
 

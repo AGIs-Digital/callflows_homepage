@@ -5,43 +5,13 @@ import { PricingPlan } from "@/lib/types/pricing";
 import { useState, useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
 import { PricingDialog } from "@/components/pricing/pricing-dialog";
-import { Timer, Info } from "lucide-react";
-import { 
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 
 interface PricingCardProps {
   plan: PricingPlan;
-  selectedTerm: "sixMonths" | "twelveMonths";
 }
 
-// Kaufmännische Rundung auf 2 Dezimalstellen
-function roundToTwoDecimals(value: number): number {
-  // Bei den spezifischen Preisen direkt die korrekten Werte zurückgeben
-  if (Math.abs(value - 0.801) < 0.0001) return 0.81;
-  if (Math.abs(value - 0.711) < 0.0001) return 0.72;
-  if (Math.abs(value - 0.621) < 0.0001) return 0.63;
-  
-  // Für andere Werte normale kaufmännische Rundung
-  const valueTimesTwoDecimals = value * 100;
-  
-  // Prüfe, ob die dritte Dezimalstelle genau 5 ist
-  if (Math.abs((valueTimesTwoDecimals % 1) - 0.5) < Number.EPSILON) {
-    // Bei genau 0,5 runde zur nächsten geraden Zahl
-    const flooredValue = Math.floor(valueTimesTwoDecimals);
-    return (flooredValue % 2 === 0 ? flooredValue : flooredValue + 1) / 100;
-  } else {
-    // Sonst normale Rundung
-    return Math.round(valueTimesTwoDecimals) / 100;
-  }
-}
-
-export function PricingCard({ plan, selectedTerm }: PricingCardProps) {
+export function PricingCard({ plan }: PricingCardProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const earlyBirdActive = true; // Später aus Konfiguration laden
   
   useEffect(() => {
     (async function () {
@@ -55,104 +25,68 @@ export function PricingCard({ plan, selectedTerm }: PricingCardProps) {
     })();
   }, []);
 
-  // Preis berechnen (Early Bird oder regulär)
-  let basePrice = plan.price;
-  const isCustomPlan = plan.isCustom || basePrice === 0;
-  
-  // Rabatt anwenden basierend auf der Laufzeit
-  let displayPrice = basePrice;
-  let discountPercentage = 0;
-  
-  if (!isCustomPlan && plan.discounts) {
-    if (selectedTerm === "sixMonths" && plan.discounts.sixMonths) {
-      discountPercentage = plan.discounts.sixMonths;
-    } else if (selectedTerm === "twelveMonths" && plan.discounts.twelveMonths) {
-      discountPercentage = plan.discounts.twelveMonths;
-    }
-    
-    if (discountPercentage > 0) {
-      // Berechne den rabattierten Preis
-      const rawDiscountedPrice = basePrice * (1 - discountPercentage / 100);
-      
-      // Wende die kaufmännische Rundung an
-      displayPrice = roundToTwoDecimals(rawDiscountedPrice);
-      
-      // Debug-Ausgabe
-      console.log(`Originalpreis: ${basePrice}, Rabatt: ${discountPercentage}%, Berechnet: ${rawDiscountedPrice}, Gerundet: ${displayPrice}`);
-    }
-  }
+  const isCustomPlan = plan.isCustom || plan.price === 0;
 
   return (
-    <div className={`bg-card rounded-xl border p-6 shadow-sm h-full flex flex-col relative ${plan.popular ? 'border-primary ring-1 ring-primary' : 'border-border'}`}>
+    <div className={`bg-card rounded-xl border p-8 shadow-sm h-full flex flex-col relative ${plan.popular ? 'border-primary ring-2 ring-primary/20' : 'border-border'}`}>
       {plan.popular && (
         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-          <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
+          <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold">
             Beliebt
           </span>
         </div>
       )}
       
-      <div className="mb-5">
-        <h3 className="text-xl font-bold">{plan.name}</h3>
-        <p className="text-sm text-muted-foreground">{plan.subtitle}</p>
+      {/* Header Section mit Name und Beschreibung */}
+      <div className="text-center mb-8">
+        <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+        <p className="text-base text-muted-foreground">{plan.subtitle}</p>
       </div>
 
-      {/* Freiminuten hervorgehoben */}
-      <div className="mb-4">
-        {isCustomPlan ? (
-          <p className="text-xl font-bold text-primary">Individuelles Minutenkontingent</p>
-        ) : (
-          <p className="text-xl font-bold text-primary">{plan.minutesIncluded.toLocaleString('de-DE')} Freiminuten</p>
-        )}
-      </div>
-
-      {/* Preis mit /Monat direkt dahinter */}
+      {/* Preis Section - Hauptfokus */}
       {isCustomPlan ? (
-        <div className="flex items-baseline mb-4">
-          <span className="text-xl font-bold">Preis auf Anfrage</span>
+        <div className="text-center mb-8">
+          <div className="text-3xl font-bold mb-2">Preis auf Anfrage</div>
+          <p className="text-lg font-semibold text-primary">Individuelles Minutenkontingent</p>
         </div>
       ) : (
-        <div className="mb-4">
-          <div className="flex items-center">
-            <span className="text-2xl font-bold">
-              {/* Prüfen, ob der Preis kleiner als 1 ist (pro Minute) */}
-              {displayPrice < 1 
-                ? displayPrice.toFixed(2).replace('.', ',') 
-                : Math.round(displayPrice).toLocaleString('de-DE')} €
+        <div className="text-center mb-8">
+          <div className="flex items-baseline justify-center mb-2">
+            <span className="text-4xl font-bold">
+              {plan.price.toFixed(2).replace('.', ',')} €
             </span>
-            <span className="text-muted-foreground ml-1">/min</span>
+            <span className="text-xl text-muted-foreground ml-2">/min</span>
           </div>
-          {selectedTerm === "twelveMonths" && discountPercentage > 0 && (
-            <div className="text-green-600 text-sm mt-1">
-              (10% Rabatt)
-            </div>
-          )}
+          <p className="text-lg font-semibold text-primary">{plan.minutesIncluded.toLocaleString('de-DE')} Freiminuten</p>
         </div>
       )}
 
-      <div className="space-y-4 mb-8 flex-grow">
-        <ul className="space-y-2">
+      {/* Features Liste */}
+      <div className="flex-grow mb-8">
+        <ul className="space-y-4">
           {plan.highlights.map((highlight, index) => (
-            <li key={index} className="flex items-start gap-2">
-              <div className="h-2 w-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-              <span className="text-sm text-muted-foreground">{highlight}</span>
+            <li key={index} className="flex items-start gap-3">
+              <div className="h-2 w-2 rounded-full bg-[#FFB703] flex-shrink-0 mt-3" />
+              <span className="text-base text-muted-foreground leading-relaxed">{highlight}</span>
             </li>
           ))}
         </ul>
       </div>
 
+      {/* CTA Button */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogTrigger asChild>
-          <Button className="w-full mt-auto" variant="default">
+          <Button 
+            className="w-full mt-auto bg-[#FFB703] hover:bg-[#FFB703]/90 text-white font-semibold py-3 text-base" 
+            variant="default"
+          >
             {plan.cta}
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-md">
           <PricingDialog 
             plan={plan} 
-            onClose={() => setIsDialogOpen(false)} 
-            selectedTerm={selectedTerm}
-            discountedPrice={displayPrice}
+            onClose={() => setIsDialogOpen(false)}
           />
         </DialogContent>
       </Dialog>

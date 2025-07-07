@@ -36,7 +36,7 @@ export function PricingFeatures() {
   return (
     <div>
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-bold mb-4 text-primary dark:text-white">
+        <h2 className="text-4xl font-bold mb-4 text-primary dark:text-white">
           Alle Pakete beinhalten
         </h2>
       </div>
@@ -62,7 +62,7 @@ export function PricingFeatures() {
       {/* Neuer Abschnitt: Individuelle Entwicklung und Dienstleistungen */}
       <div className="mt-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-primary dark:text-white">
+          <h2 className="text-4xl font-bold mb-4 text-primary dark:text-white">
             Individuelle Entwicklung & Dienstleistungen
           </h2>
         </div>

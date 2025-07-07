@@ -36,8 +36,8 @@ export default function DatenschutzPage() {
           <p className="text-gray-600 dark:text-gray-300">
             Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br /><br />
             callflows Abeln Goltz GbR<br />
-            Adalbert-Stifter Straße 14<br />
-            30655 Hannover<br />
+            Fenskestraße 9A<br />
+            30165 Hannover<br />
             E-Mail: info@callflows.de
           </p>
         </LegalSection>
@@ -133,7 +133,7 @@ export default function DatenschutzPage() {
             Für Datenschutzanfragen oder Ausübung der Nutzerrechte kontaktieren Sie uns unter:<br /><br />
             callflows Abeln Goltz GbR<br />
             E-Mail: info@callflows.de<br />
-            Adresse: Adalbert-Stifter Straße 14, 30655 Hannover
+            Adresse: Fenskestraße 9A, 30165 Hannover
           </p>
         </LegalSection>
 

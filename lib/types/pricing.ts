@@ -11,10 +11,6 @@ export interface PricingPlan {
   cta: string;
   popular: boolean;
   isCustom?: boolean;
-  discounts?: {
-    sixMonths: number;
-    twelveMonths: number;
-  };
 }
 
 export interface MinutePackage {

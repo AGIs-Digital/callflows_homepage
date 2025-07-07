@@ -11,14 +11,14 @@ export function generateOrganizationSchema(): WithContext<Organization> {
     slogan: 'Kommunikation mit KI - Automatisierte Telefonie mit künstlicher Intelligenz',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Adalbert-Stifter-Straße 14',
+      streetAddress: 'Fenskestraße 9A',
       addressLocality: 'Hannover',
-      postalCode: '30655',
+      postalCode: '30165',
       addressCountry: 'DE',
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+49-155-60106486',
+      telephone: '+49 511 1665 3388',
       contactType: 'customer service',
       email: 'info@callflows.de',
       availableLanguage: ['German', 'English'],

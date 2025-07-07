@@ -14,8 +14,6 @@ export interface ContactFormProps {
   defaultSubject?: string;
   onSubmitSuccess?: () => void;
   planType?: string;
-  selectedTerm?: "sixMonths" | "twelveMonths";
-  discountedPrice?: number;
   isOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
   source?: 'starter' | 'business' | 'enterprise' | 'contact';
@@ -27,9 +25,7 @@ export function ContactForm({
   onSubmitSuccess, 
   source = 'contact',
   prefilledMessage = '',
-  planType,
-  selectedTerm,
-  discountedPrice
+  planType
 }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -56,9 +52,7 @@ export function ContactForm({
         },
         body: JSON.stringify({
           ...data,
-          planType,
-          selectedTerm,
-          discountedPrice
+          planType
         }),
       });
 

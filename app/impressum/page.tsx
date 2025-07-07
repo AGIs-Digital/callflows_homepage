@@ -46,8 +46,8 @@ export default function ImpressumPage() {
         <LegalSection title="Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV">
           <p className="text-gray-600 dark:text-gray-300">
             Tom Abeln, Timo Goltz<br />
-            Adalbert-Stifter Straße 14<br />
-            30655 Hannover<br />
+            Fenskestraße 9A<br />
+            30165 Hannover<br />
             Deutschland
           </p>
         </LegalSection>

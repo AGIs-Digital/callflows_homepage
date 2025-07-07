@@ -5,8 +5,8 @@ export function CompanyInfo() {
         <h3 className="font-medium mb-2">Unternehmen</h3>
         <p className="text-gray-600 dark:text-gray-300">
           <strong className="text-primary">callflows</strong> ist eine Marke der Abeln Goltz GbR<br />
-          Adalbert-Stifter Straße 14<br />
-          30655 Hannover<br />
+          Fenskestraße 9A<br />
+          30165 Hannover<br />
           Deutschland
         </p>
       </div>

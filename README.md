@@ -77,7 +77,6 @@ Dieses Projekt ist proprietär. Alle Rechte vorbehalten.
 
 - Website: [callflows.de](https://callflows.de)
 - E-Mail: info@callflows.de
-- Telefon: +49 155 60106486
 
 ## 🌐 Deployment
 

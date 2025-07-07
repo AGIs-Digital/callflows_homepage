@@ -111,7 +111,7 @@ export function SiteFooter() {
         {/* Copyright */}
         <div className="pt-8 border-t border-border">
           <p className="text-sm text-muted-foreground text-center">
-            © {new Date().getFullYear()} <strong className="text-primary">callflows</strong>. Alle Rechte vorbehalten. | Adalbert-Stifter Straße 14, 30655 Hannover | Tel: +49-155-60106486
+            © {new Date().getFullYear()} <strong className="text-primary">callflows</strong>. Alle Rechte vorbehalten. | Fenskestraße 9A, 30165 Hannover | Tel: +49 511 1665 3388
           </p>
         </div>
       </div>

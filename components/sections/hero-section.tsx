@@ -36,10 +36,10 @@ export function HeroSection() {
               />
             </h1>
             <h2 className="text-l sm:text-2xl md:text-4xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-[600px]">
-              Die Revolution der Kommunikation mit Ihren Kunden.
+              Wir revolutionieren die Kommunikation mit Ihren Kunden.
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
-              Von Sales und Marketing über Support - wir automatisieren Ihre Prozesse zur Kundenkommunikation.
+              Von Sales über Marketing bis Support - automatisieren Sie mit uns Ihre Prozesse zur Kundenkommunikation.
             </p>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-full md:max-w-[700px]">
               Mit umfassender Beratung und maßgeschneiderten Lösungen unterstützen wir Sie bei der digitalen Transformation Ihrer Kommunikation.

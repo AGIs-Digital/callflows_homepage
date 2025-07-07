@@ -12,16 +12,11 @@ import { getCalApi } from "@calcom/embed-react";
 interface PricingDialogProps {
   plan: PricingPlan;
   onClose: () => void;
-  selectedTerm: "sixMonths" | "twelveMonths";
-  discountedPrice?: number;
 }
 
-export function PricingDialog({ plan, onClose, selectedTerm = "sixMonths", discountedPrice }: PricingDialogProps) {
+export function PricingDialog({ plan, onClose }: PricingDialogProps) {
   const isCustomPlan = plan.isCustom || plan.price === 0;
   const [formSubmitted, setFormSubmitted] = useState(false);
-  
-  // Laufzeittext für die Anfrage
-  let termText = selectedTerm === "sixMonths" ? "6-Monats-Vertrag" : "12-Monats-Vertrag";
   
   const handleFormSuccess = () => {
     setFormSubmitted(true);
@@ -74,23 +69,19 @@ export function PricingDialog({ plan, onClose, selectedTerm = "sixMonths", disco
           {!isCustomPlan && (
             <div className="mt-4 p-4 bg-muted rounded-md">
               <p className="font-medium">Ihre Auswahl:</p>
-              <p className="text-sm text-muted-foreground">{plan.name} - {termText}</p>
+              <p className="text-sm text-muted-foreground">{plan.name}</p>
               <p className="text-sm text-muted-foreground">{plan.minutesIncluded.toLocaleString('de-DE')} Freiminuten</p>
               <p className="text-sm font-medium mt-2">
-                {plan.price < 1 
-                    ? plan.price.toFixed(2).replace('.', ',') 
-                    : Math.round(plan.price).toLocaleString('de-DE')} € / Monat
+                {plan.price.toFixed(2).replace('.', ',')} € / min
               </p>
             </div>
           )}
           
           <div className="mt-4">
             <ContactForm 
-              defaultSubject={`Anfrage: ${plan.name} Paket (${termText})`}
+              defaultSubject={`Anfrage: ${plan.name} Paket`}
               onSubmitSuccess={handleFormSuccess}
               planType={plan.type}
-              selectedTerm={selectedTerm}
-              discountedPrice={discountedPrice}
             />
           </div>
           <CalButton />

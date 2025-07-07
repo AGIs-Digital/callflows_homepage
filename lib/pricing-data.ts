@@ -1,7 +1,4 @@
-interface PricingFAQ {
-  question: string;
-  answer: string;
-}
+import { PricingFAQ } from "@/lib/types/pricing";
 
 export const pricingFAQs: PricingFAQ[] = [
   {
@@ -18,7 +15,7 @@ export const pricingFAQs: PricingFAQ[] = [
   },
   {
     question: "Wie werden die Anrufe abgerechnet?",
-    answer: "Die Anrufe werden pro Minute sekundengenauabgerechnet. Sollte das Volumen der Pakete überschritten werden, wird jede angefangene Minute pay-as-you-go je 0,99 € /Minute am Ende des Monats in Rechnung gestellt."
+    answer: "Die Anrufe werden pro Minute sekundengenau abgerechnet. Sollte das Volumen der Pakete überschritten werden, wird jede weitere Minute mit dem individuellenMinutenpreis am Ende des Monats in Rechnung gestellt."
   },
   {
     question: "Welche Zahlungsmethoden werden akzeptiert?",
