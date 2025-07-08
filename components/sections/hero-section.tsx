@@ -36,7 +36,7 @@ export function HeroSection() {
             <div className="space-y-8 pt-8 md:pt-12">
               <h1 
                 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary dark:text-white max-w-4xl"
-                style={{ lineHeight: '1.2' }}
+                style={{ lineHeight: '1.1' }}
               >
                 Überlastet mit Standardanrufen oder zu wenig Zeit für wichtige Aufgaben?
               </h1>
@@ -48,7 +48,7 @@ export function HeroSection() {
             {/* Lösung mit Animated Text */}
             <div className="space-y-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-foreground">
-                KI-Telefonie macht es{" "}
+                Mit KI-Telefonie{" "}
                 <AnimatedText
                   words={["Einfach.", "Automatisch.", "Erfolgreich."]}
                   className="text-primary inline-block"

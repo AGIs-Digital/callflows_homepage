@@ -37,20 +37,7 @@ export const WavyBackground = ({
   waveSettings?: WaveSettings[];
   [key: string]: any;
 }) => {
-  const noise = createNoise3D();
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  
-  // Basisgeschwindigkeit basierend auf der speed-Prop
-  const getBaseSpeed = () => {
-    switch (speed) {
-      case "slow":
-        return 0.001;
-      case "fast":
-        return 0.003;
-      default:
-        return 0.001;
-    }
-  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -58,6 +45,21 @@ export const WavyBackground = ({
     
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    
+    // Noise und getBaseSpeed innerhalb useEffect definieren
+    const noise = createNoise3D();
+    
+    // Basisgeschwindigkeit basierend auf der speed-Prop
+    const getBaseSpeed = () => {
+      switch (speed) {
+        case "slow":
+          return 0.001;
+        case "fast":
+          return 0.003;
+        default:
+          return 0.001;
+      }
+    };
     
     let w = ctx.canvas.width = window.innerWidth;
     let h = ctx.canvas.height = canvas.clientHeight;
