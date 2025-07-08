@@ -27,9 +27,9 @@ export function HeroSection() {
   };
 
   return (
-    <div className="relative min-h-[calc(100vh-80px)]">
-      <div className="container relative py-12 md:py-16 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+    <div className="relative min-h-[calc(100vh-80px)] overflow-hidden">
+      <div className="container relative py-4 md:py-6 lg:py-8">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Linke Spalte - Text */}
           <div className="relative z-20 space-y-8 md:space-y-10 animate-slideIn">
             {/* Problem-Headline */}
@@ -60,30 +60,12 @@ export function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center sm:justify-start">
               <ZohoEmbed 
                 buttonText="Kostenlose Beratung" 
                 size="lg" 
                 className="bg-[#FFB703] hover:bg-[#FFB703]/90 text-white font-semibold px-8 py-4 text-lg gap-2"
               />
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="pt-8 border-t border-border/30">
-              <div className="flex items-center gap-6 text-sm font-medium text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                  <span>Kostenlose Beratung</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                  <span>Risikofrei testen</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                  <span>Maßgeschneidert</span>
-                </div>
-              </div>
             </div>
           </div>
           
