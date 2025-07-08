@@ -1,77 +1,70 @@
+"use client";
+
 import { LegalSection } from "@/components/legal/section";
 import { LegalLayout } from "@/components/legal/layout";
 import { ContactInfo } from "./components/contact-info";
 import { CompanyInfo } from "./components/company-info";
-import { generateMetadata } from "@/lib/seo/metadata";
-
-export const metadata = generateMetadata({
-  title: "Impressum - Rechtliche Informationen",
-  description: "Rechtliche Informationen und Kontaktdaten der callflows GbR, Anbieter von KI-gestützten Voice Agents für automatisierte Kundenkommunikation.",
-  path: "/impressum",
-  keywords: [
-    "callflows Impressum", 
-    "callflows Kontakt", 
-    "KI Telefonie Anbieter", 
-    "Voice Agent Unternehmen",
-    "Telefon KI Kontakt"
-  ]
-});
+import { useI18n } from "@/lib/i18n";
 
 export default function ImpressumPage() {
+  const { t } = useI18n();
+  
   return (
     <LegalLayout 
-      title="Impressum"
-      subtitle="Rechtliche Informationen und Kontaktdaten"
+      title={t('legal.impressum.title')}
+      subtitle={t('legal.impressum.subtitle')}
     >
       <div className="max-w-3xl mx-auto">
         <p className="text-lg text-muted-foreground mb-8">
-          Hier finden Sie alle rechtlich relevanten Informationen zu callflows, Ihrem Anbieter für KI-gestützte Voice Agents und automatisierte Kundenkommunikation.
+          {t('legal.impressum.intro')}
         </p>
         
-        <LegalSection title="Angaben gemäß § 5 TMG">
+        <LegalSection title={t('legal.impressum.tmgTitle')}>
           <CompanyInfo />
         </LegalSection>
 
-        <LegalSection title="Kontakt">
+        <LegalSection title={t('legal.impressum.contactTitle')}>
           <ContactInfo />
         </LegalSection>
 
-        <LegalSection title="Umsatzsteuer-Identifikationsnummer">
+        <LegalSection title={t('legal.impressum.vatTitle')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br />
+            {t('legal.impressum.vatText')}<br />
             DE423151940
           </p>
         </LegalSection>
 
-        <LegalSection title="Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV">
+        <LegalSection title={t('legal.impressum.responsibleTitle')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Tom Abeln, Timo Goltz<br />
-            Fenskestraße 9A<br />
-            30165 Hannover<br />
-            Deutschland
+            {t('legal.impressum.responsibleText').split('\\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < t('legal.impressum.responsibleText').split('\\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </LegalSection>
         
-        <LegalSection title="Streitschlichtung">
+        <LegalSection title={t('legal.impressum.disputeTitle')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+            {t('legal.impressum.disputeText1')} 
             <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
               https://ec.europa.eu/consumers/odr/
             </a>
             <br /><br />
-            Unsere E-Mail-Adresse finden Sie oben im Impressum.
+            {t('legal.impressum.disputeText2')}
           </p>
           <p className="text-gray-600 dark:text-gray-300 mt-4">
-            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+            {t('legal.impressum.disputeText3')}
           </p>
         </LegalSection>
         
-        <LegalSection title="Haftung für Inhalte">
+        <LegalSection title={t('legal.impressum.liabilityTitle')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+            {t('legal.impressum.liabilityText1')}
           </p>
           <p className="text-gray-600 dark:text-gray-300 mt-4">
-            Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+            {t('legal.impressum.liabilityText2')}
           </p>
         </LegalSection>
       </div>

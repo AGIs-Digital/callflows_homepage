@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n";
 
 interface MainNavProps {
   className?: string;
@@ -10,6 +11,7 @@ interface MainNavProps {
 
 export function MainNav({ className }: MainNavProps) {
   const pathname = usePathname();
+  const { t } = useI18n();
 
   return (
     <nav className={cn("flex items-center space-x-4 lg:space-x-6", className)}>
@@ -20,7 +22,7 @@ export function MainNav({ className }: MainNavProps) {
           pathname === "/" ? "text-primary" : "text-foreground/60"
         )}
       >
-        Home
+        {t('nav.home')}
       </Link>
       <Link
         href="/pricing"
@@ -29,7 +31,7 @@ export function MainNav({ className }: MainNavProps) {
           pathname === "/pricing" ? "text-primary" : "text-foreground/60"
         )}
       >
-        Preise
+        {t('nav.pricing')}
       </Link>
       <Link
         href="/blog"
@@ -38,7 +40,7 @@ export function MainNav({ className }: MainNavProps) {
           pathname.startsWith("/blog") ? "text-primary" : "text-foreground/60"
         )}
       >
-        Blog
+        {t('nav.blog')}
       </Link>
       <Link
         href="/#about"
@@ -47,7 +49,7 @@ export function MainNav({ className }: MainNavProps) {
           pathname === "/#about" ? "text-primary" : "text-foreground/60"
         )}
       >
-        Über uns
+        {t('nav.about')}
       </Link>
       <Link
         href="/kontakt"
@@ -56,7 +58,7 @@ export function MainNav({ className }: MainNavProps) {
           pathname === "/kontakt" ? "text-primary" : "text-foreground/60"
         )}
       >
-        Kontakt
+        {t('nav.contact')}
       </Link>
     </nav>
   );

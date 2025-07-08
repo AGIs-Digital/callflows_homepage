@@ -3,8 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 export function SiteFooter() {
+  const { t } = useI18n();
+  
   return (
     <footer className="py-12 bg-background border-t">
       <div className="container">
@@ -21,7 +24,7 @@ export function SiteFooter() {
               />
             </div>
             <p className="text-sm text-muted-foreground">
-              KI-gestützte Voice Agents für automatisierte Kundenkommunikation. Wir revolutionieren die Art, wie Unternehmen telefonieren.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <a href="https://twitter.com/callflowsAI" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
@@ -38,16 +41,16 @@ export function SiteFooter() {
           
           {/* Spalte 2: Produkt */}
           <div>
-            <h3 className="font-medium mb-4">Produkt</h3>
+            <h3 className="font-medium mb-4">{t('footer.product')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/pricing" className="text-sm text-muted-foreground hover:text-primary">
-                  Preise
+                  {t('footer.pricing')}
                 </Link>
               </li>
               <li>
                 <Link href="/faq" className="text-sm text-muted-foreground hover:text-primary">
-                  FAQ
+                  {t('footer.faq')}
                 </Link>
               </li>
               <li>
@@ -65,21 +68,21 @@ export function SiteFooter() {
           
           {/* Spalte 3: Unternehmen */}
           <div>
-            <h3 className="font-medium mb-4">Unternehmen</h3>
+            <h3 className="font-medium mb-4">{t('footer.company')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/#about" className="text-sm text-muted-foreground hover:text-primary">
-                  Über uns
+                  {t('footer.about')}
                 </Link>
               </li>
               <li>
                 <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary">
-                  Blog
+                  {t('footer.blog')}
                 </Link>
               </li>
               <li>
                 <Link href="/kontakt" className="text-sm text-muted-foreground hover:text-primary">
-                  Kontakt
+                  {t('footer.contact')}
                 </Link>
               </li>
             </ul>
@@ -87,21 +90,21 @@ export function SiteFooter() {
           
           {/* Spalte 4: Rechtliches */}
           <div>
-            <h3 className="font-medium mb-4">Rechtliches</h3>
+            <h3 className="font-medium mb-4">{t('footer.legal')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/impressum" className="text-sm text-muted-foreground hover:text-primary">
-                  Impressum
+                  {t('footer.imprint')}
                 </Link>
               </li>
               <li>
                 <Link href="/datenschutz" className="text-sm text-muted-foreground hover:text-primary">
-                  Datenschutz
+                  {t('footer.privacy')}
                 </Link>
               </li>
               <li>
                 <Link href="/agb" className="text-sm text-muted-foreground hover:text-primary">
-                  AGB
+                  {t('footer.terms')}
                 </Link>
               </li>
             </ul>
@@ -111,7 +114,7 @@ export function SiteFooter() {
         {/* Copyright */}
         <div className="pt-8 border-t border-border">
           <p className="text-sm text-muted-foreground text-center">
-            © {new Date().getFullYear()} <strong className="text-primary">callflows</strong>. Alle Rechte vorbehalten. | Fenskestraße 9A, 30165 Hannover | Tel: +49 511 1665 3388
+            © {new Date().getFullYear()} <strong className="text-primary">callflows</strong>. {t('footer.copyright')}. | {t('footer.address')} | Tel: +49 511 1665 3388
           </p>
         </div>
       </div>

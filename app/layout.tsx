@@ -1,5 +1,6 @@
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
+import { I18nProvider } from '@/lib/i18n';
 import { CookieBanner } from '@/components/cookie-banner';
 import { Analytics } from '@/components/analytics';
 import { ErrorBoundary } from '@/components/error-boundary';
@@ -75,22 +76,24 @@ export default function RootLayout({
         <link rel="canonical" href="https://callflows.de" />
         <link rel="alternate" hrefLang="de" href="https://callflows.de" />
         <link rel="alternate" hrefLang="x-default" href="https://callflows.de" />
-        <meta http-equiv="Permissions-Policy" content="microphone=*, camera=*" />
+        <meta httpEquiv="Permissions-Policy" content="microphone=*, camera=*" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ErrorBoundary>
-            {children}
-            <ScrollToTop />
-            <CookieBanner />
-            <Analytics />
-          </ErrorBoundary>
-        </ThemeProvider>
+        <I18nProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ErrorBoundary>
+              {children}
+              <ScrollToTop />
+              <CookieBanner />
+              <Analytics />
+            </ErrorBoundary>
+          </ThemeProvider>
+        </I18nProvider>
       </body>
     </html>
   );

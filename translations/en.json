@@ -1,0 +1,452 @@
+{
+  "nav": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact",
+    "consultation": "Book Consultation"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "language": "Language",
+    "menu": "Open menu",
+    "login": "Login"
+  },
+  "home": {
+    "title": "callflows - automated customer communication",
+    "description": "Optimize customer service, sales, and support with intelligent systems.",
+    "hero": {
+      "headline1": "Overwhelmed with standard calls?",
+      "headline2": "Too little time for important tasks?",
+      "description": "While you're drowning in call chaos, the really important tasks get lost – time for a revolution!",
+      "solution": "With AI Telephony",
+      "solutionDescription": "From sales to marketing to support – automate your customer communication processes with us.",
+      "cta": "Free Consultation",
+      "widgetUnavailable": "Widget temporarily unavailable",
+      "widgetUnavailableDescription": "Don't worry - this sometimes happens with live demos"
+    }
+  },
+  "pricing": {
+    "pageTitle": "Transparent Pricing",
+    "intro": "With callflows, you only pay for the actual conversation time of your AI voice agents during runtime – no hidden costs, no basic fees.",
+    "starterTitle": "What You Get to Start",
+    "starterDescription": "There is a one-time setup fee for getting started, the amount of which depends on the individual effort required. This includes:",
+    "onboardingTitle": "Complete Onboarding Process",
+    "onboardingDesc": "for your employees",
+    "callsTitle": "Weekly Coordination Calls",
+    "callsDesc": "throughout the entire development",
+    "monitoringTitle": "Technical Monitoring",
+    "monitoringDesc": "throughout the entire pilot",
+    "optimizationTitle": "Continuous Optimization",
+    "optimizationDesc": "of your AI voice agents",
+    "minutesTitle": "Generous Free Minutes Package",
+    "minutesDesc": "for the complete pilot month",
+    "crmTitle": "Customized CRM System",
+    "crmDesc": "specifically for AI work and management",
+    "pilotDurationTitle": "1 Month Pilot Phase",
+    "pilotDurationDesc": "Setup fee: 50% before prototype, 50% at go-live",
+    "riskFreeTitle": "Risk-Free Testing",
+    "riskFreeDesc": "You decide after the pilot whether you want to continue permanently",
+    "flexibleTitle": "Flexible Runtime",
+    "flexibleDesc": "Monthly payment with 12 months runtime after the pilot",
+    "riskFreeStart": "This is how you start risk-free – with full control, transparent pricing structure, and voice agents that perfectly fit your company.",
+    "monthlyPackages": "Our Monthly Packages",
+    "pricesExclVat": "All prices excluding VAT",
+    "popular": "Popular",
+    "priceOnRequest": "Price on request",
+    "individualMinutes": "Individual minute allowance",
+    "perMinute": "/min",
+    "freeMinutes": "free minutes",
+    "additionalTitle": "Additional Minute Packages as Needed",
+    "additionalDesc": "In addition to your monthly allowance, you can book flexible minute packages at any time.",
+    "flexExpandTitle": "Flexible Expansion",
+    "flexExpandDesc": "Purchase additional minute packages individually according to your needs. We're happy to advise you and recommend suitable packages based on your usage.",
+    "noExpiryTitle": "No Expiring Minutes",
+    "noExpiryDesc": "Purchased minute packages do not expire and serve as a reserve. They are only used when your monthly allowance is exhausted.",
+    "activeMonitoringTitle": "Active Monitoring",
+    "activeMonitoringDesc": "We monitor your usage and proactively recommend suitable packages so you always have the optimal solution for your needs.",
+    "featuresTitle": "All Packages Include",
+    "communicationTitle": "Communication",
+    "communicationItems": [
+      "Real-time bookings – Instant appointment scheduling",
+      "Multi-channel handling – Up to 100+ simultaneous calls",
+      "24/7 available – No waiting times or breaks",
+      "Intelligent call forwarding when needed"
+    ],
+    "technologyTitle": "Technology",
+    "technologyItems": [
+      "Own knowledge database for well-founded answers",
+      "CRM integration for direct data maintenance",
+      "Multiple AI agents work together forming a digital department",
+      "Scalable infrastructure for any company size"
+    ],
+    "personalizationTitle": "Personalization",
+    "personalizationItems": [
+      "Individual conversation management",
+      "Customer-specific customizations",
+      "Industry-specific solutions",
+      "Tailored workflows"
+    ],
+    "entlastungName": "Relief",
+    "entlastungSubtitle": "Support in daily business",
+    "entlastungHighlights": [
+      "Quickly noticeable improvements in daily work",
+      "Answer frequent questions without personnel deployment",
+      "Fewer transfers and waiting times"
+    ],
+    "entlastungCta": "Get consultation now",
+    "wachstumName": "Growth",
+    "wachstumSubtitle": "Revenue & Expansion",
+    "wachstumHighlights": [
+      "Optimize processes from inquiry to completion",
+      "Fewer interruptions in daily workflows",
+      "Growth without proportional personnel expansion",
+      "High-quality leads for the sales team"
+    ],
+    "wachstumCta": "Get consultation now",
+    "individuellName": "Individual",
+    "individuellSubtitle": "Tailored Solutions",
+    "individuellHighlights": [
+      "Market leadership through early AI adoption",
+      "Acquire new customers even outside business hours",
+      "Personal consultation and customized solution",
+      "Insights from conversations for business decisions",
+      "Multilingual AI for global expansion"
+    ],
+    "individuellCta": "Individual offer",
+    "ctaTitle": "Ready for the future of customer communication?",
+    "ctaDescription": "Schedule a non-binding conversation with our experts and learn how callflows can support your business.",
+    "ctaButtonText": "Book free consultation"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Get in touch with us",
+    "pageTitle": "Contact",
+    "formTitle": "Contact Us",
+    "formDescription": "Do you have questions about our AI voice agents? We're happy to help you.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your Name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message...",
+    "sendButton": "Send Message",
+    "appointmentTitle": "Book Consultation",
+    "appointmentDescription": "Schedule an appointment for a personal consultation about our AI voice agents.",
+    "bookingButton": "Book Appointment",
+    "contactDataTitle": "Contact Information",
+    "company": "callflows Abeln Goltz GbR",
+    "address": "Fenskestraße 9A",
+    "city": "30165 Hannover, Germany",
+    "email": "info@callflows.de",
+    "phone": "+49 511 1665 3388"
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "imprint": "Legal Notice",
+    "description": "AI-powered voice agents for automated customer communication. We revolutionize how companies make phone calls.",
+    "product": "Product",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "company": "Company",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "legal": "Legal",
+    "copyright": "All rights reserved",
+    "address": "Fenskestraße 9A, 30165 Hannover, Germany"
+  },
+  "process": {
+    "title": "How It Works",
+    "description": "From first contact to go-live in 4 simple steps",
+    "step1": {
+      "title": "Initial Contact",
+      "description": "Free consultation call"
+    },
+    "step2": {
+      "title": "Workshop",
+      "description": "Concept & setup"
+    },
+    "step3": {
+      "title": "Prototyping",
+      "description": "Testing & optimization"
+    },
+    "step4": {
+      "title": "Support",
+      "description": "Care & support"
+    }
+  },
+  "comparison": {
+    "title": "In Comparison",
+    "description": "Business customer communication has usually been handled in three ways.",
+    "callflowsText": "callflows is a modern, innovative option.",
+    "modernSolution": "Modern AI Solution",
+    "pros": "Advantages",
+    "cons": "Disadvantages",
+    "inhouse": {
+      "title": "In-house Staff",
+      "description": "Own employees handle telephony within the company.",
+      "pros": ["Personal contact", "Direct control", "Deep product knowledge"],
+      "cons": ["High personnel costs", "Limited availability", "Sick/vacation coverage needed", "Scaling problems during peaks"]
+    },
+    "phone": {
+      "title": "Phone System",
+      "description": "Classic phone systems with menu navigation and hold queues.",
+      "pros": ["Low running costs", "24/7 availability", "Simple implementation"],
+      "cons": ["No real interaction", "Frustrating user experience", "No problem solving", "Missed sales opportunities"]
+    },
+    "callcenter": {
+      "title": "External Call Center",
+      "description": "Outsourced telephony to specialized service providers.",
+      "pros": ["Flexibly scalable", "Extended availability", "No personnel responsibility"],
+      "cons": ["High costs per call", "Quality fluctuations", "Less product knowledge", "Complex contract design"]
+    },
+    "callflows": {
+      "title": "callflows",
+      "description": "AI-based voice agents for automated telephony.",
+      "pros": ["Think and act independently", "Natural conversation", "Automation of routine tasks", "Seamless system integration", "Cost-effective and uncomplicated", "24/7 availability", "No prior knowledge required"]
+    },
+    "conclusion": "Many companies want more automation, lower personnel costs, and consistently high service quality – around the clock. This is exactly where our AI voice agent comes in: As an innovative option that uses modern AI technology to efficiently and cost-effectively handle phone processes.",
+    "benefit": "Satisfied customers, improved revenue opportunities"
+  },
+  "about": {
+    "title": "About callflows",
+    "intro1": "We are convinced: AI will change the way companies talk to their customers. But not someday – now.",
+    "intro2": "callflows helps companies shape this change – not blindly, but with structure, experience, and genuine partnership. Our AI voice agents take over conversations, understand concerns, book appointments, recognize opportunities – and integrate into existing systems as if they had always been there.",
+    "intro3": "We know: This technology is new. It is powerful – but it's not self-running. That's why we don't leave our customers alone with just an \"AI tool\".",
+    "mission": "Our Mission:",
+    "missionPoints": [
+      "Make AI tangible.",
+      "Automate customer contact – without losing quality.",
+      "Help companies communicate faster, leaner, and more humanely at the same time."
+    ],
+    "special": "What makes us special:",
+    "specialDescription": "We accompany from the beginning. We listen. We build a solution together with you that really fits your company.",
+    "features": [
+      "Individual process modeling",
+      "Personal prompting & fine-tuning",
+      "Transparent per-minute billing without hidden costs",
+      "Unlimited number of agents",
+      "Regular check-ins for optimization",
+      "Setup, support, and phone number included"
+    ],
+    "teamDescription": "is not software – but a team. With background in sales, marketing & automation. With genuine interest in your success."
+  },
+  "legal": {
+    "impressum": {
+      "title": "Legal Notice",
+      "subtitle": "Legal information and contact details",
+      "intro": "Here you will find all legally relevant information about callflows, your provider for AI-powered voice agents and automated customer communication.",
+      "tmgTitle": "Information according to § 5 TMG",
+      "contactTitle": "Contact",
+      "vatTitle": "VAT Identification Number",
+      "vatText": "VAT identification number according to §27 a of the VAT law:",
+      "responsibleTitle": "Responsible for content according to § 55 Abs. 2 RStV",
+      "responsibleText": "Tom Abeln, Timo Goltz\\nFenskestraße 9A\\n30165 Hannover\\nGermany",
+      "disputeTitle": "Dispute Resolution",
+      "disputeText1": "The European Commission provides a platform for online dispute resolution (ODR):",
+      "disputeText2": "You can find our email address above in the legal notice.",
+      "disputeText3": "We are not willing or obliged to participate in dispute resolution procedures before a consumer arbitration board.",
+      "liabilityTitle": "Liability for Content",
+      "liabilityText1": "As a service provider, we are responsible for our own content on these pages in accordance with § 7 para. 1 TMG under general law. According to §§ 8 to 10 TMG, however, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
+      "liabilityText2": "Obligations to remove or block the use of information according to general laws remain unaffected. However, liability in this regard is only possible from the time of knowledge of a specific infringement. Upon becoming aware of corresponding infringements, we will remove this content immediately."
+    },
+    "datenschutz": {
+      "title": "Privacy Policy",
+      "subtitle": "Information on the protection of your personal data",
+      "intro": "The protection of your personal data has the highest priority for callflows. Here you will learn how we handle your data and what rights you have.",
+      "introduction": {
+        "title": "Introduction",
+        "content": "Abeln Goltz GbR (\"callflows\", \"we\", \"us\" or \"our\") operates the website https://callflows.de (hereinafter \"Service\"). This privacy policy informs you about our policies regarding the collection, use and disclosure of personal data when you use our Service. We process your data exclusively in accordance with the provisions of the EU General Data Protection Regulation (GDPR) as well as applicable German data protection laws. By using the Service, you agree to the collection and use of your data in accordance with this privacy policy."
+      },
+      "responsible": {
+        "title": "1. Responsible for Data Processing",
+        "content": "Responsible within the meaning of the General Data Protection Regulation (GDPR) is:\\n\\ncallflows Abeln Goltz GbR\\nFenskestraße 9A\\n30165 Hannover\\nE-Mail: info@callflows.de"
+      },
+      "dataCollection": {
+        "title": "2. What Data Do We Collect?",
+        "content": "We collect and process personal data only to the necessary extent. This includes:\\n\\n• Data provided directly by the customer: Name, email address, phone number\\n\\n• Data from the use of our service: Call logs, transcriptions (if activated by the customer)\\n\\n• Data from initial contact: If a potential customer shows interest in our services, a video call may be conducted to discuss requirements. This conversation is recorded and deleted at the latest after 30 days or when the agent goes live. Recording only takes place with prior explicit consent from the customer.\\n\\n• Automatically collected data: IP address, browser information (for website optimization), cookies"
+      },
+      "purpose": {
+        "title": "3. Purpose of Data Processing",
+        "content": "We process personal data exclusively for the following purposes:\\n\\n• Creation, provision and improvement of voice agents\\n• Customer communication and support\\n• Billing and payment processing (via Stripe)\\n• Ensuring and optimizing service quality\\n• Compliance with legal obligations"
+      },
+      "thirdParties": {
+        "title": "4. Disclosure to Third Parties",
+        "content": "We do not share personal data with uninvolved third parties. However, we work with the following third-party providers that are necessary for providing our service:\\n\\n• Synthflow AI (platform for voice agents, white-label solution)\\n• Stripe (payment processing)\\n• Hosting provider (server location within the EU)\\n\\nWe have corresponding data processing agreements (DPA) with these service providers to ensure GDPR compliance."
+      },
+      "retention": {
+        "title": "5. Storage Duration & Data Deletion",
+        "content": "• Customer-related data is stored as long as an active contractual relationship exists.\\n\\n• Upon cancellation of the subscription, all personal data will be deleted unless there is a legal retention obligation.\\n\\n• If the customer consents to further storage for future offers, contact data may continue to be stored.\\n\\n• Recordings from initial conversations are deleted at the latest after 30 days."
+      },
+      "rights": {
+        "title": "6. User Rights Under GDPR",
+        "content": "Users have the following rights regarding their personal data:\\n\\n• Right to information (Art. 15 GDPR): What data do we store?\\n• Right to rectification (Art. 16 GDPR): Correction of incorrect data\\n• Right to erasure (Art. 17 GDPR): Have data deleted\\n• Right to restriction of processing (Art. 18 GDPR)\\n• Right to data portability (Art. 20 GDPR)\\n• Right to object to certain processing (Art. 21 GDPR)\\n\\nRequests can be made at any time to info@callflows.de."
+      },
+      "cookies": {
+        "title": "7. Cookies & Tracking Technologies",
+        "content": "• Our website uses cookies to improve the user experience.\\n\\n• When first visiting the website, a cookie banner appears asking the user whether they consent to or decline the use of cookies.\\n\\n• No personal cookies are stored or evaluated unless the user gives consent.\\n\\n• If analysis tools (e.g. Google Analytics, Facebook Pixel) are used, this only happens with consent."
+      },
+      "security": {
+        "title": "8. Data Security",
+        "content": "We implement technical and organizational measures (TOMs) to protect personal data:\\n\\n• SSL encryption for secure data transmission\\n• Firewall and access controls\\n• Password protection and two-factor authentication (2FA)\\n• Restricted access rights for employees\\n• Storage on secure servers within the EU"
+      },
+      "transfer": {
+        "title": "9. International Data Transfer",
+        "content": "• All data is stored exclusively within the EU.\\n• No transfer to third countries (e.g. USA) takes place."
+      },
+      "changes": {
+        "title": "10. Changes to the Privacy Policy",
+        "content": "We reserve the right to change this privacy policy. Users will be informed at least 14 days before it takes effect via email or on our website."
+      },
+      "contact": {
+        "title": "11. Contact for Privacy Inquiries",
+        "content": "For privacy inquiries or exercising user rights, contact us at:\\n\\ncallflows Abeln Goltz GbR\\nE-Mail: info@callflows.de\\nAddress: Fenskestraße 9A, 30165 Hannover"
+      },
+      "dataUsage": {
+        "title": "12. Data Collection and Usage",
+        "content": "We collect various types of information for various purposes to provide and improve our Service.",
+        "personalData": {
+          "title": "2.1 Personal Data",
+          "content": "While using our Service, we may ask you to provide us with certain personal data that can be used to contact or identify you (\"Personal Data\"). Personal data may include, but is not limited to, the following information:",
+          "list": ["Email address", "First and last name", "Phone number", "Company name", "Address", "Cookies and usage data"]
+        }
+      },
+      "aiSecurity": {
+        "title": "13. Data Security for AI Voice Agents",
+        "content": "When using our AI voice agents, conversation data is processed to provide the service. We place the highest value on the security of this data:",
+        "list": ["All conversations are transmitted encrypted and stored as transcripts", "Conversation data is processed exclusively on servers within the EU", "Only authorized employees have access to conversation data", "Conversation data is only stored as long as necessary for providing the service", "Conversation data can be deleted at any time upon request"]
+      }
+    },
+    "agb": {
+      "title": "Terms and Conditions",
+      "subtitle": "Contractual basis of our cooperation",
+      "translationNote": "The complete translation of all Terms and Conditions sections is available.",
+      "noteLabel": "Note:",
+      "section1Title": "1. Term Definitions",
+      "section1Content": "For the purposes of these Terms and Conditions, the following definitions apply:\n\n\"Provider\" refers to Abeln Goltz GbR, operating under the brand callflows, located at Fenskestraße 9A, 30165 Hannover.\n\n\"Customer\" refers exclusively to entrepreneurs within the meaning of § 14 BGB, i.e., natural or legal persons who use the service for commercial or professional purposes. Consumers within the meaning of § 13 BGB are excluded from use.\n\n\"Services\" refers to all services offered and provided by callflows in the field of AI-supported telephone automation.\n\n\"Contract\" refers to the agreement between the Provider and the Customer for the use of callflows services.\n\n\"Third-party providers\" refers to external service providers whose technologies or platforms are integrated into callflows services, in particular Synthflow AI.\n\n\"User content\" refers to all data created, transmitted, or stored by the Customer via callflows services, including call logs and transcriptions.",
+      "section2Title": "2. Scope of Application",
+      "section2Content": "These Terms and Conditions govern the use of services provided by callflows. callflows is a brand of Abeln Goltz GbR, Fenskestraße 9A, 30165 Hannover. They apply to all contracts between Abeln Goltz GbR (\"Provider\") and users (\"Customers\"). By using the offered services, the Customer acknowledges these Terms and Conditions.",
+      "section3Title": "3. Service Description",
+      "section3Content": "callflows offers a cloud-based AI telephone agent solution that supports companies in automating communication processes. The services are based on a white-label integration of a third-party provider. The Customer receives access to various service packages with defined usage quotas. The exact service features are derived from the respective tariff descriptions.",
+      "section4Title": "4. Contract Duration and Termination",
+      "section4Content": "The contract is concluded for an indefinite period and automatically renews for one additional month each time, unless terminated.\n\nThe Customer may cancel the subscription at any time until the day before the next automatic renewal.\n\nTermination can be done in two ways:\n1. Directly via Stripe by deactivating the subscription.\n2. In writing via email to callflows support (info@callflows.de).\n\nAfter termination, access remains until the end of the already paid billing period.\n\nNo refund is provided for unused days within the billing period.\n\ncallflows reserves the right to terminate the contract without notice for good cause, particularly in case of:\n• Violation of these Terms and Conditions, especially through abusive or unlawful use of the services\n• Payment default, unless remedied within 7 days after reminder\n• Manipulation or unauthorized technical changes to the service\n\ncallflows may terminate the contract with 30 days' notice to the end of the month. Termination will be sent via email to the address on file with the Customer.",
+      "section5Title": "5. Prices and Payment Terms",
+      "section5Content": "Current prices and tariff options can be viewed on the Provider's website.\n\nBilling is done monthly in advance through the payment service provider Stripe.\n\nIn case of payment default, the Customer has 7 days after reminder to make the outstanding payment.\n\ncallflows reserves the right to block access to the service and terminate the contract in case of non-payment.\n\nGenerally, no refund is provided for payments already made.\n\nPrice changes will be communicated to the Customer at least 30 days in advance.\n\nIn case of a price change, the Customer has the right to terminate the contract extraordinarily.",
+      "section6Title": "6. Minute Packages & Additional Minute Billing",
+      "section6Content": "Flexible Usage & Billing:\nCustomers have the option to book minute packages in addition to their monthly subscription. These minute packages offer cheaper per-minute prices compared to exact minute billing.\n\nIf the customer does not book a minute package, conversation minutes exceeding the included minute quota are automatically billed at €0.99/minute on an exact-minute basis.\n\nValidity & Usage Order:\nMinute packages are unlimited in time and remain valid until they are completely consumed. The minutes are used in a fixed order: First, the minute quota included in the monthly subscription is consumed, then already booked minute packages are used. If a customer has purchased multiple minute packages, they are consumed in the order of their purchase, with the oldest packages used first.\n\nStacking & Transferability:\nCustomers have the option to buy multiple minute packages simultaneously, stack them, and consume them flexibly in any order. Unused minute packages are automatically transferred to the next month and do not expire as long as the subscription remains active.\n\nCancellation & Expiry of Minutes:\nHowever, upon cancellation of the subscription, all unused minute packages expire with immediate effect. No refund is provided for unused minutes. Minute packages must always be booked manually; automatic top-up is not provided.\n\nPrice Changes & Transparency:\nPrices for minute packages may change. Customers will be informed about price changes at least 30 days in advance via email or through the website. However, changes only apply to newly purchased minute packages – already bought packages retain their original conditions.\n\nAreas of Use:\nMinute packages can be used for all calls, both inbound and outbound. There are no further restrictions apart from the general terms of use of the service.",
+      "section7Title": "7. Billing & Complaints",
+      "section7Content": "Payment processing is handled through Stripe, whereby customers automatically receive an invoice.\n\nShould the received invoice not be suitable, the customer can request a correction via email to info@callflows.de. The Provider will check whether an adjustment is possible.\n\nIf the customer identifies a problem with an invoice, they have 14 days after invoicing to complain about it. After this period expires, the invoice is considered accepted.\n\nComplaints must be submitted exclusively via email to info@callflows.de.",
+      "section8Title": "8. No Right of Withdrawal",
+      "section8Content": "Since our service is exclusively intended for entrepreneurs (§ 14 BGB), there is no statutory right of withdrawal. No voluntary right of withdrawal is granted.",
+      "section9Title": "9. Data Protection Violations & Customer Responsibility",
+      "section9Content": "The Customer commits to comply with all data protection requirements (including GDPR).\n\nShould violations occur, the Customer indemnifies callflows from all third-party claims.\n\ncallflows reserves the right to block access to the service or terminate the contract without notice if the Customer repeatedly or seriously violates data protection requirements.",
+      "section10Title": "10. Terms of Use & Customer Obligations",
+      "section10Content": "a) Permitted and prohibited use\nThe Customer may use callflows services exclusively for legal and lawful purposes.\n\nb) Compliance with data protection requirements (GDPR & notification obligations)\nThe Customer is solely responsible for ensuring compliance with all legal data protection requirements.\n\nc) Account suspension or termination for violations\ncallflows reserves the right to suspend or terminate accounts without prior notice if customers violate these Terms and Conditions.",
+      "section11Title": "11. Liability & Warranty",
+      "section11Content": "callflows assumes no liability for damages arising from faulty or incomplete conversation results.\n\nLiability is limited to the amount the Customer has paid for using the services in the last six (6) months.\n\ncallflows is not liable for delays or service failures caused by circumstances beyond callflows' control. These include in particular:\n\n• Force majeure (e.g., natural disasters, pandemics, strikes, government orders)\n• Technical failures of third-party providers such as Synthflow AI\n• Cyber attacks, power outages, or server problems\n\nIn these cases, there is no claim for damages or contract continuation. Should such an outage last longer than 30 days, both callflows and the Customer have the right to terminate the contract extraordinarily.",
+      "section12Title": "12. Intellectual Property & Privacy",
+      "section12Content": "callflows reserves the right to use user data exclusively for service improvement. Commercial use is excluded. Customers may freely use generated content but bear sole responsibility for its lawful use.",
+      "section13Title": "13. Third Parties & External Services",
+      "section13Content": "callflows is based on the whitelabel technology of Synthflow AI.\n\nShould Synthflow cease operations or experience serious technical problems, callflows reserves the right to extraordinarily terminate all affected contracts. callflows assumes no liability for failures or limitations caused by Synthflow.",
+      "section14Title": "14. Changes to Terms",
+      "section14Content": "callflows reserves the right to modify these terms at any time. Changes will be communicated to customers at least 14 days in advance.",
+      "section15Title": "15. Jurisdiction & Applicable Law",
+      "section15Content": "The law of the Federal Republic of Germany applies. Place of jurisdiction is Hannover."
+    }
+  },
+  "integrationChallenges": {
+    "title": "AI Integration without Complexity",
+    "description": "The current AI landscape presents significant challenges for companies. Many solutions require linking numerous individual components:",
+    "challenge1": {
+      "title": "Technical Complexity",
+      "description": "Various tools for telephony, speech recognition, AI control and data integration"
+    },
+    "challenge2": {
+      "title": "Complex Configuration",
+      "description": "Complicated setup and constant adjustments to changing APIs"
+    },
+    "challenge3": {
+      "title": "High Resource Requirements",
+      "description": "Dedicated full-time staff needed for development, maintenance and optimization"
+    },
+    "solutionTitle": "Our Solution",
+    "solutionDescription": "callflows takes over all the complexity for you. We integrate all necessary components into a turnkey solution – without you needing AI expertise or additional full-time staff."
+  },
+  "cta": {
+    "title": "Ready for the future of customer contact?",
+    "description": "Schedule a non-binding conversation with our experts and learn how callflows can support your business.",
+    "bookingButton": "Book Consultation",
+    "pricingButton": "View Pricing",
+    "benefit1": {
+      "title": "Free Initial Consultation",
+      "description": "Non-binding conversation about your requirements and possibilities"
+    },
+    "benefit2": {
+      "title": "Individual Demo",
+      "description": "Live demonstration adapted to your specific use cases"
+    },
+    "benefit3": {
+      "title": "Tailored Offer",
+      "description": "Transparent pricing based on your requirements"
+    }
+  },
+  "features": {
+    "title": "Use Cases for AI Voice Agents",
+    "subtitle": "In all areas, voice agents are tomorrow's standard.",
+    "feature1": {
+      "title": "Support & Customer Service",
+      "description": "Automated and intelligent call handling for efficient customer service around the clock.",
+      "item1": "First aid for inquiries",
+      "item2": "Appointment bookings & reservations",
+      "item3": "Complaint management"
+    },
+    "feature2": {
+      "title": "Marketing & Lead Generation",
+      "description": "Efficient customer outreach and follow-ups through AI-controlled phone campaigns.",
+      "item1": "Automatic advertising calls",
+      "item2": "Event reminders & follow-up calls",
+      "item3": "Feedback & surveys"
+    },
+    "feature3": {
+      "title": "Sales & Customer Care",
+      "description": "Increase sales numbers through targeted telephone customer interaction.",
+      "item1": "Existing customer care",
+      "item2": "Cross & upselling",
+      "item3": "Follow-up actions"
+    },
+    "feature4": {
+      "title": "Recruiting & HR Processes",
+      "description": "Effective automation and simplification of the application process.",
+      "item1": "Telephone pre-selection",
+      "item2": "Onboarding & document requests",
+      "item3": "Employee surveys & satisfaction analysis"
+    }
+  },
+  "coreFeatures": {
+    "title": "Core Functions",
+    "subtitle": "Discover the powerful features of our AI voice agents",
+    "feature1": {
+      "title": "Individual Conversation Guidelines",
+      "description": "Design the conversation flow exactly according to your wishes"
+    },
+    "feature2": {
+      "title": "Competent Objection Handling",
+      "description": "Have all objections handled, according to your own guidance or dynamically"
+    },
+    "feature3": {
+      "title": "Intelligent Call Forwarding",
+      "description": "Transfer to human employees when desired"
+    }
+  }
+} 

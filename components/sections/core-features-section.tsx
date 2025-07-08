@@ -11,35 +11,38 @@ import {
   UserCircle,
   Scale
 } from "lucide-react";
-
-const features = [
-  {
-    icon: UserCircle,
-    title: "Individuelle Gesprächsleitfäden",
-    description: "Gestalten Sie die Gesprächsführung ganz nach Ihren Wünschen"
-  },
-  {
-    icon: Database,
-    title: "kompetente Einwandbehandlung",
-    description: "Lassen Sie alle Einwände behandeln, nach eigener Anleitung oder dynamisch"
-  },
-  {
-    icon: PhoneForwarded,
-    title: "Intelligente Anrufweiterleitung",
-    description: "Übergabe an menschliche Mitarbeiter, wenn erwünscht"
-  }
-];
+import { useI18n } from "@/lib/i18n";
 
 export function CoreFeaturesSection() {
+  const { t } = useI18n();
+
+  const features = [
+    {
+      icon: UserCircle,
+      title: t('coreFeatures.feature1.title'),
+      description: t('coreFeatures.feature1.description')
+    },
+    {
+      icon: Database,
+      title: t('coreFeatures.feature2.title'),
+      description: t('coreFeatures.feature2.description')
+    },
+    {
+      icon: PhoneForwarded,
+      title: t('coreFeatures.feature3.title'),
+      description: t('coreFeatures.feature3.description')
+    }
+  ];
+
   return (
-    <section className="py-24 bg-section-blue dark:bg-[#DEF0F2]/5">
+    <section className="py-20 bg-gradient-to-b from-background via-primary/10 to-primary/30">
       <div className="container max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-4">
-            Kernfunktionen
+            {t('coreFeatures.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Entdecken Sie die leistungsstarken Features unserer KI-Voice-Agents
+            {t('coreFeatures.subtitle')}
           </p>
         </div>
 

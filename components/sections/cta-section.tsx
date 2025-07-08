@@ -7,6 +7,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "framer-motion";
 import Link from "next/link";
 import { ZohoEmbed } from "@/components/booking/zoho-embed";
+import { useI18n } from "@/lib/i18n";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -30,6 +31,7 @@ const itemVariants = {
 };
 
 export function CTASection() {
+  const { t } = useI18n();
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -45,7 +47,7 @@ export function CTASection() {
   return (
     <section 
       id="cta-section"
-      className="py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-background"
+      className="py-20 bg-gradient-to-b from-background via-accent/5 to-accent/30"
     >
       <div className="container">
         <motion.div
@@ -58,10 +60,10 @@ export function CTASection() {
           <motion.div variants={itemVariants}>
             <PhoneCall size={48} className="mx-auto text-primary mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Bereit für die Zukunft des Kundenkontakts?  
+              {t('cta.title')}
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Vereinbaren Sie ein unverbindliches Gespräch mit unseren Experten und erfahren Sie, wie callflows Ihr Unternehmen unterstützen kann.
+              {t('cta.description')}
             </p>
           </motion.div>
           
@@ -71,14 +73,14 @@ export function CTASection() {
           >
             
             <ZohoEmbed 
-              buttonText="Beratung buchen" 
+              buttonText={t('cta.bookingButton')} 
               size="lg" 
-              className="gap-2 px-8 py-6 text-lg"
+              className="bg-tertiary hover:bg-[#FFB703]/90 text-white font-semibold px-8 py-4 text-lg gap-2"
             />
             
             <Link href="/pricing">
               <Button size="lg" variant="outline" className="gap-2">
-                Preise ansehen
+                {t('cta.pricingButton')}
                 <ArrowRight size={16} />
               </Button>
             </Link>
@@ -89,21 +91,21 @@ export function CTASection() {
             variants={itemVariants}
           >
             <div className="p-6 bg-card rounded-lg border">
-              <h3 className="font-semibold mb-2">Kostenlose Erstberatung</h3>
+              <h3 className="font-semibold mb-2">{t('cta.benefit1.title')}</h3>
               <p className="text-sm text-muted-foreground">
-                Unverbindliches Gespräch über Ihre Anforderungen und Möglichkeiten
+                {t('cta.benefit1.description')}
               </p>
             </div>
             <div className="p-6 bg-card rounded-lg border">
-              <h3 className="font-semibold mb-2">Individuelle Demo</h3>
+              <h3 className="font-semibold mb-2">{t('cta.benefit2.title')}</h3>
               <p className="text-sm text-muted-foreground">
-                Live-Demonstration angepasst an Ihre spezifischen Use Cases
+                {t('cta.benefit2.description')}
               </p>
             </div>
             <div className="p-6 bg-card rounded-lg border">
-              <h3 className="font-semibold mb-2">Maßgeschneidertes Angebot</h3>
+              <h3 className="font-semibold mb-2">{t('cta.benefit3.title')}</h3>
               <p className="text-sm text-muted-foreground">
-                Transparente Preisgestaltung basierend auf Ihren Anforderungen
+                {t('cta.benefit3.description')}
               </p>
             </div>
           </motion.div>

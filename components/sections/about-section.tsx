@@ -3,30 +3,96 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 export function AboutSection() {
+  const { t, locale } = useI18n();
+  
+  const getFeatures = () => {
+    const features = {
+      de: [
+        "Individuelle Prozessmodellierung",
+        "Persönliches Prompting & Finetuning",
+        "Transparente Minutenabrechnung ohne versteckte Kosten",
+        "Unbegrenzte Anzahl an Agents",
+        "Regelmäßige Check-ins zur Optimierung",
+        "Setup, Support und Telefonnummer inklusive"
+      ],
+      en: [
+        "Individual process modeling",
+        "Personal prompting & fine-tuning",
+        "Transparent per-minute billing without hidden costs",
+        "Unlimited number of agents",
+        "Regular check-ins for optimization",
+        "Setup, support, and phone number included"
+      ],
+      fr: [
+        "Modélisation de processus individuelle",
+        "Prompting personnel & ajustement fin",
+        "Facturation transparente à la minute sans coûts cachés",
+        "Nombre illimité d'agents",
+        "Check-ins réguliers pour l'optimisation",
+        "Configuration, support et numéro de téléphone inclus"
+      ],
+      es: [
+        "Modelado de procesos individual",
+        "Prompting personal y ajuste fino",
+        "Facturación transparente por minuto sin costos ocultos",
+        "Número ilimitado de agentes",
+        "Check-ins regulares para optimización",
+        "Configuración, soporte y número de teléfono incluidos"
+      ]
+    };
+    
+    return features[locale] || features.de;
+  };
+
+  const getMissionPoints = () => {
+    const missions = {
+      de: [
+        "KI greifbar machen.",
+        "Kundenkontakt automatisieren – ohne Qualität zu verlieren.",
+        "Unternehmen dabei helfen, schneller, schlanker und gleichzeitig menschlicher zu kommunizieren."
+      ],
+      en: [
+        "Make AI tangible.",
+        "Automate customer contact – without losing quality.",
+        "Help companies communicate faster, leaner, and more humanely at the same time."
+      ],
+      fr: [
+        "Rendre l'IA tangible.",
+        "Automatiser le contact client – sans perdre en qualité.",
+        "Aider les entreprises à communiquer plus rapidement, plus efficacement et plus humainement à la fois."
+      ],
+      es: [
+        "Hacer la IA tangible.",
+        "Automatizar el contacto con el cliente sin perder calidad.",
+        "Ayudar a las empresas a comunicarse más rápido, más eficientemente y más humanamente al mismo tiempo."
+      ]
+    };
+    
+    return missions[locale] || missions.de;
+  };
+  
   return (
-    <section className="py-24 bg-section-light-blue dark:bg-[#F5F0FF]/5">
+    <section className="py-20 bg-gradient-to-b from-primary/30 via-primary/40 to-primary/60">
       <div className="container max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Linke Spalte - Überschrift, Text und Bild */}
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold text-primary dark:text-white">
-              Über <strong className="text-primary">callflows</strong>
+            <h2 className="text-4xl font-bold text-primary mb-2 underline decoration-accent dark:text-white">
+              {t('about.title')}
             </h2>
             
             <div className="space-y-4">
-              <p className="text-lg text-muted-foreground">
-                Wir sind davon überzeugt: KI wird die Art verändern, wie Unternehmen mit ihren Kunden sprechen.
-                Aber nicht irgendwann – sondern jetzt.
+              <p className="text-lg text-black/75 dark:text-muted-foreground">
+                {t('about.intro1')}
               </p>
-              <p className="text-lg text-muted-foreground">
-                <strong className="text-primary">callflows</strong> hilft Unternehmen dabei, diesen Wandel zu gestalten – nicht blindlings, sondern mit Struktur, Erfahrung und echter Partnerschaft.
-                Unsere KI-Voice-Agents übernehmen Gespräche, verstehen Anliegen, buchen Termine, erkennen Chancen – und integrieren sich in bestehende Systeme, als wären sie schon immer da gewesen.
+              <p className="text-lg text-black/75 dark:text-muted-foreground">
+                {t('about.intro2')}
               </p>
-              <p className="text-lg text-muted-foreground">
-                Wir wissen: Diese Technologie ist neu. Sie ist mächtig – aber sie ist kein Selbstläufer.
-                Deshalb lassen wir unsere Kunden nicht mit einem "KI-Tool" allein.
+              <p className="text-lg text-black/75 dark:text-muted-foreground">
+                {t('about.intro3')}
               </p>
             </div>
             
@@ -46,54 +112,39 @@ export function AboutSection() {
             {/* Unsere Mission zuerst */}
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
               <h3 className="text-xl font-semibold text-primary dark:text-white mb-4">
-                Unsere Mission:
+                {t('about.mission')}
               </h3>
               <ul className="space-y-3">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">👉</span>
-                  <span className="text-muted-foreground">KI greifbar machen.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">👉</span>
-                  <span className="text-muted-foreground">Kundenkontakt automatisieren – ohne Qualität zu verlieren.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">👉</span>
-                  <span className="text-muted-foreground">Unternehmen dabei helfen, schneller, schlanker und gleichzeitig menschlicher zu kommunizieren.</span>
-                </li>
+                {getMissionPoints().map((point, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-primary mt-1">👉</span>
+                    <span className="text-black/75 dark:text-muted-foreground">{point}</span>
+                  </li>
+                ))}
               </ul>
             </div>
             
             {/* Was uns besonders macht danach */}
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold text-primary dark:text-white mb-4">
-                Was uns besonders macht:
+              <h3 className="text-2xl font-bold text-primary dark:text-white mb-4">
+                {t('about.special')}
               </h3>
-              <p className="text-muted-foreground mb-4">
-                Wir begleiten von Anfang an. Wir hören zu. Wir bauen mit Ihnen gemeinsam eine Lösung, die wirklich zu Ihrem Unternehmen passt.
+              <p className="text-black/75 dark:text-muted-foreground mb-4">
+                {t('about.specialDescription')}
               </p>
               
               <ul className="space-y-3 mt-4">
-                {[
-                  "Individuelle Prozessmodellierung",
-                  "Persönliches Prompting & Finetuning",
-                  "Transparente Minutenabrechnung ohne versteckte Kosten",
-                  "Unbegrenzte Anzahl an Agents",
-                  "Regelmäßige Check-ins zur Optimierung",
-                  "Setup, Support und Telefonnummer inklusive"
-                ].map((item, index) => (
+                {getFeatures().map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <Check size={18} className="text-primary mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{item}</span>
+                    <span className="text-medium text-black/75 dark:text-muted-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
               
               <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
-                <p className="text-sm text-muted-foreground font-medium">
-                  <strong className="text-primary">callflows</strong> ist keine Software – sondern ein Team.
-                  Mit Hintergrund in Vertrieb, Marketing & Automatisierung.
-                  Mit echtem Interesse an Ihrem Erfolg.
+                <p className="text-xl text-black/75 dark:text-muted-foreground font-medium">
+                <strong className="text-primary">callflows</strong> {t('about.teamDescription')}
                 </p>
               </div>
             </div>

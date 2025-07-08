@@ -1,60 +1,63 @@
 "use client";
 
 import { Headphones, Megaphone, PhoneCall, Users } from "lucide-react";
-
-const features = [
-  {
-    icon: Headphones,
-    title: "Support & Kundenservice",
-    description: "Automatisierte und intelligente Anrufannahme für effizienten Kundenservice rund um die Uhr.",
-    items: [
-      "Erste Hilfe bei Anfragen",
-      "Terminbuchungen & Reservierungen",
-      "Beschwerdemanagement"
-    ]
-  },
-  {
-    icon: Megaphone,
-    title: "Marketing & Leadgenerierung",
-    description: "Effiziente Kundenansprache und Follow-ups durch KI-gesteuerte Telefonkampagnen.",
-    items: [
-      "Automatische Werbeanrufe",
-      "Event-Erinnerungen & Nachfassanrufe",
-      "Feedback- und Umfragen"
-    ]
-  },
-  {
-    icon: PhoneCall,
-    title: "Vertrieb & Kundenbetreuung",
-    description: "Steigerung der Verkaufszahlen durch gezielte telefonische Kundeninteraktion.",
-    items: [
-      "Bestandskundenbetreuung",
-      "Cross- & Upselling",
-      "Nachfassaktionen"
-    ]
-  },
-  {
-    icon: Users,
-    title: "Recruiting & HR-Prozesse",
-    description: "Effektive Automatisierung und Vereinfachung des Bewerbungsprozesses.",
-    items: [
-      "Telefonische Vorauswahl",
-      "Onboarding & Dokumentenanforderungen",
-      "Mitarbeiterumfragen & Zufriedenheitsanalysen"
-    ]
-  }
-];
+import { useI18n } from "@/lib/i18n";
 
 export function FeaturesSection() {
+  const { t } = useI18n();
+
+  const features = [
+    {
+      icon: Headphones,
+      title: t('features.feature1.title'),
+      description: t('features.feature1.description'),
+      items: [
+        t('features.feature1.item1'),
+        t('features.feature1.item2'),
+        t('features.feature1.item3')
+      ]
+    },
+    {
+      icon: Megaphone,
+      title: t('features.feature2.title'),
+      description: t('features.feature2.description'),
+      items: [
+        t('features.feature2.item1'),
+        t('features.feature2.item2'),
+        t('features.feature2.item3')
+      ]
+    },
+    {
+      icon: PhoneCall,
+      title: t('features.feature3.title'),
+      description: t('features.feature3.description'),
+      items: [
+        t('features.feature3.item1'),
+        t('features.feature3.item2'),
+        t('features.feature3.item3')
+      ]
+    },
+    {
+      icon: Users,
+      title: t('features.feature4.title'),
+      description: t('features.feature4.description'),
+      items: [
+        t('features.feature4.item1'),
+        t('features.feature4.item2'),
+        t('features.feature4.item3')
+      ]
+    }
+  ];
+
   return (
-    <section className="py-24 bg-background">
+    <section className="py-20 bg-gradient-to-b from-accent/30 via-accent/10 to-background">
       <div className="container max-w-6xl">
         <div className="text-center mb-16 section-animate">
           <h2 className="text-4xl font-bold mb-4 text-primary dark:text-white">
-            Einsatzbereiche für KI-Voice-Agents
+            {t('features.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            In allen Bereichen sind Voice Agents der Standard von morgen.
+            {t('features.subtitle')}
           </p>
         </div>
         
@@ -79,7 +82,7 @@ export function FeaturesSection() {
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
               <p className="text-muted-foreground mb-4">{feature.description}</p>
               <ul className="space-y-2">
-                {feature.items.map((item, i) => (
+                {feature.items.map((item: string, i: number) => (
                   <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <div className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                     {item}

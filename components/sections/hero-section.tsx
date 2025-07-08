@@ -8,13 +8,29 @@ import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Phone } from "lucide-react";
 import { ZohoEmbed } from "@/components/booking/zoho-embed";
+import { useI18n } from "@/lib/i18n";
 
 export function HeroSection() {
   const { theme } = useTheme();
+  const { t, locale } = useI18n();
   const [showWidget, setShowWidget] = useState(true);
   const [widgetError, setWidgetError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  
+  // Animierte Wörter basierend auf der Sprache
+  const getAnimatedWords = () => {
+    switch (locale) {
+      case 'en':
+        return ["Simple.", "Automatic.", "Successful."];
+      case 'fr':
+        return ["Simple.", "Automatique.", "Efficace."];
+      case 'es':
+        return ["Simple.", "Automático.", "Exitoso."];
+      default:
+        return ["Einfach.", "Automatisch.", "Erfolgreich."];
+    }
+  };
   
   // Widget-Loading-Handler
   const handleWidgetLoad = () => {
@@ -38,33 +54,35 @@ export function HeroSection() {
                 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary dark:text-white max-w-4xl"
                 style={{ lineHeight: '1.1' }}
               >
-                Überlastet mit Standardanrufen oder zu wenig Zeit für wichtige Aufgaben?
+                {t('home.hero.headline1')}
+                <br />
+                {t('home.hero.headline2')}
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl">
-                Während Sie im Anruf-Chaos versinken, gehen die wirklich wichtigen Aufgaben unter – Zeit für eine Revolution!
+                {t('home.hero.description')}
               </p>
             </div>
 
             {/* Lösung mit Animated Text */}
             <div className="space-y-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-foreground">
-                Mit KI-Telefonie{" "}
+                {t('home.hero.solution')}{" "}
                 <AnimatedText
-                  words={["Einfach.", "Automatisch.", "Erfolgreich."]}
+                  words={getAnimatedWords()}
                   className="text-primary inline-block"
                 />
               </h2>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-[600px]">
-                Von Sales über Marketing bis Support – automatisieren Sie mit uns Ihre Prozesse zur Kundenkommunikation.
+                {t('home.hero.solutionDescription')}
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center sm:justify-start">
               <ZohoEmbed 
-                buttonText="Kostenlose Beratung" 
+                buttonText={t('home.hero.cta')}
                 size="lg" 
-                className="bg-[#FFB703] hover:bg-[#FFB703]/90 text-white font-semibold px-8 py-4 text-lg gap-2"
+                className="bg-[#FFB703] hover:bg-tertiary/70 text-white font-semibold px-8 py-4 text-lg gap-2"
               />
             </div>
           </div>
@@ -95,9 +113,9 @@ export function HeroSection() {
             ) : (
               <div className="text-center p-8 flex flex-col items-center justify-center h-full">
                 <div className="text-6xl mb-4">🚧</div>
-                <h3 className="text-lg font-semibold mb-2">Widget temporär nicht verfügbar</h3>
+                <h3 className="text-lg font-semibold mb-2">{t('home.hero.widgetUnavailable')}</h3>
                 <p className="text-muted-foreground text-sm mb-4">
-                  Keine Sorge - das passiert manchmal bei Live-Demos
+                  {t('home.hero.widgetUnavailableDescription')}
                 </p>
               </div>
             )}
@@ -105,9 +123,9 @@ export function HeroSection() {
         </div>
       </div>
       
-      {/* WavyBackground am unteren Rand mit niedrigerem z-index */}
+      {/* WavyBackground am unteren Rand mit höherem z-index */}
       <WavyBackground
-        containerClassName="absolute bottom-0 left-0 right-0 h-32 w-full z-10"
+        containerClassName="absolute bottom-0 left-0 right-0 h-32 w-full"
         colors={["#004aad", "#0f62d5", "#def0f2", "#ffb703"]}
         backgroundFill="transparent"
         waveOpacity={1}

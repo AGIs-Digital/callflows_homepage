@@ -32,6 +32,10 @@ const config: Config = {
           DEFAULT: '#DEF0F2',
           foreground: 'hsl(var(--secondary-foreground))',
         },
+        tertiary: {
+          DEFAULT: '#0F62D5',
+          foreground: 'hsl(var(--tertiary-foreground))',
+        },
         accent: {
           DEFAULT: '#FFB703',
           foreground: 'hsl(var(--accent-foreground))',

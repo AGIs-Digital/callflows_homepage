@@ -7,17 +7,19 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useI18n } from "@/lib/i18n";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useI18n();
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button variant="ghost" size="icon">
           <Menu className="h-6 w-6" />
-          <span className="sr-only">Menü öffnen</span>
+          <span className="sr-only">{t('common.menu')}</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">
@@ -31,7 +33,7 @@ export function MobileNav() {
                 pathname === "/" ? "text-primary" : "text-foreground/60"
               )}
             >
-              Home
+              {t('nav.home')}
             </Link>
             <Link
               href="/pricing"
@@ -41,7 +43,7 @@ export function MobileNav() {
                 pathname === "/pricing" ? "text-primary" : "text-foreground/60"
               )}
             >
-              Preise
+              {t('nav.pricing')}
             </Link>
             <Link
               href="/blog"
@@ -51,7 +53,7 @@ export function MobileNav() {
                 pathname.startsWith("/blog") ? "text-primary" : "text-foreground/60"
               )}
             >
-              Blog
+              {t('nav.blog')}
             </Link>
             <Link
               href="/#about"
@@ -61,7 +63,7 @@ export function MobileNav() {
                 pathname === "/#about" ? "text-primary" : "text-foreground/60"
               )}
             >
-              Über uns
+              {t('nav.about')}
             </Link>
             <Link
               href="/kontakt"
@@ -71,14 +73,14 @@ export function MobileNav() {
                 pathname === "/kontakt" ? "text-primary" : "text-foreground/60"
               )}
             >
-              Kontakt
+              {t('nav.contact')}
             </Link>
             <Link
               href="/login"
               onClick={() => setOpen(false)}
               className="text-lg font-medium text-primary"
             >
-              Login
+              {t('common.login')}
             </Link>
           </nav>
         </div>

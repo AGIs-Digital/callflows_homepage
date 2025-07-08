@@ -5,6 +5,7 @@ import { Puzzle, Layers, Wrench, Lightbulb, FileText, MessageCircle, Database, U
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useI18n } from "@/lib/i18n";
 
 const Circle = React.forwardRef<
   HTMLDivElement,
@@ -14,7 +15,7 @@ const Circle = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border bg-white dark:bg-gray-800 p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] dark:text-primary",
+        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
         className,
       )}
     >
@@ -42,6 +43,7 @@ const OpenAILogo = () => (
 );
 
 export function IntegrationChallengesSection() {
+  const { t } = useI18n();
   const containerRef = useRef<HTMLDivElement>(null);
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
@@ -52,69 +54,66 @@ export function IntegrationChallengesSection() {
   const div7Ref = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-24 bg-section-light-blue dark:bg-[#F5F0FF]/5">
+    <section className="py-20 bg-gradient-to-b from-secondary via-secondary/50 to-secondary/30">
       <div className="container max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Linke Spalte - Text und Herausforderungen */}
           <div className="space-y-8">
-            <h2 className="text-4xl font-bold text-primary dark:text-white">
-              KI-Integration ohne Komplexität
+            <h2 className="text-4xl font-bold text-primary">
+              {t('integrationChallenges.title')}
             </h2>
             
-            <p className="text-lg text-muted-foreground">
-              Die aktuelle KI-Landschaft stellt Unternehmen vor erhebliche Herausforderungen. 
-              Viele Lösungen erfordern die Verknüpfung zahlreicher Einzelkomponenten:
+            <p className="text-lg text-black">
+              {t('integrationChallenges.description')}
             </p>
             
             <div className="space-y-6">
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-red-100 dark:bg-red-900/20">
-                  <Layers className="w-5 h-5 text-red-600 dark:text-red-400" />
+                <div className="p-2 rounded-lg bg-red-100 ">
+                  <Layers className="w-5 h-5 text-red-600 " />
                 </div>
                 <div>
-                  <h3 className="text-base font-medium">Technische Komplexität</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Verschiedene Tools für Telefonie, Spracherkennung, KI-Steuerung und Datenintegration
+                  <h3 className="text-tertiary font-bold">{t('integrationChallenges.challenge1.title')}</h3>
+                  <p className="text-sm text-black">
+                    {t('integrationChallenges.challenge1.description')}
                   </p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-amber-100 dark:bg-amber-900/20">
-                  <Wrench className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                <div className="p-2 rounded-lg bg-amber-100 ">
+                  <Wrench className="w-5 h-5 text-amber-600 " />
                 </div>
                 <div>
-                  <h3 className="text-base font-medium">Aufwändige Konfiguration</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Komplizierte Einrichtung und ständige Anpassungen an sich ändernde APIs
+                  <h3 className="text-tertiary font-bold">{t('integrationChallenges.challenge2.title')}</h3>
+                  <p className="text-sm text-black">
+                    {t('integrationChallenges.challenge2.description')}
                   </p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/20">
-                  <Puzzle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                <div className="p-2 rounded-lg bg-blue-100">
+                  <Puzzle className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-base font-medium">Hoher Ressourcenaufwand</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Dedizierte Vollzeitkräfte für Entwicklung, Wartung und Optimierung nötig
+                  <h3 className="text-tertiary font-bold">{t('integrationChallenges.challenge3.title')}</h3>
+                  <p className="text-sm text-black">
+                    {t('integrationChallenges.challenge3.description')}
                   </p>
                 </div>
               </div>
             </div>
             
-            <div className="border-t border-border pt-6 mt-8">
+            <div className="border-t border-black pt-6 mt-8">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Lightbulb className="w-6 h-6 text-primary" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Unsere Lösung</h3>
-                  <p className="text-muted-foreground">
-                    <strong className="text-primary">callflows</strong> übernimmt die gesamte Komplexität für Sie. 
-                    Wir integrieren alle notwendigen Komponenten zu einer schlüsselfertigen Lösung – 
-                    ohne dass Sie KI-Expertise oder zusätzliche Vollzeitkräfte benötigen.
+                  <h2 className="text-3xl text-accent font-bold mb-2 underline decoration-black">{t('integrationChallenges.solutionTitle')}</h2>
+                  <p className="text-lg text-black">
+                    <strong className="text-primary">callflows</strong> {t('integrationChallenges.solutionDescription').replace('callflows', '')}
                   </p>
                 </div>
               </div>
