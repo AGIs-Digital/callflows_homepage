@@ -15,12 +15,14 @@ export default function PricingPage() {
     <main className="bg-background">
       <SiteHeader />
       <div className="pt-12">
-        <div className="pt-24 pb-16">
-        <div className="container">
-          <h1 className="text-3xl text-center sm:text-4xl md:text-4xl font-bold text-primary dark:text-white mb-4 md:mb-6 px-4">{t('pricing.pageTitle')}</h1>
-          <PricingTables />
+        {/* Hero Section mit Farbverlauf */}
+        <div className="pt-24 pb-16 bg-gradient-to-b from-secondary via-accent/5 to-accent/20">
+          <div className="container">
+            <h1 className="text-3xl text-center sm:text-4xl md:text-4xl font-bold text-primary dark:text-white mb-4 md:mb-6 px-4">{t('pricing.pageTitle')}</h1>
+            <PricingTables />
+          </div>
         </div>
-      </div>
+        
         <PricingFeaturesSection />
         <CTASectionSecondary />
       </div>

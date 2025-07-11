@@ -15,7 +15,7 @@ export function PricingTables() {
         <div className="text-center mb-16">
           {/* Infotext zur Preisstruktur */}
           <div className="max-w-5xl mx-auto mb-12">
-            <div className="bg-muted/50 p-12 rounded-xl border">
+            <div className="bg-card/60 backdrop-blur-sm p-12 rounded-xl border border-border/50 shadow-lg">
               <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
                 {t('pricing.intro')}
               </p>
@@ -81,32 +81,32 @@ export function PricingTables() {
               </div>
 
               <div className="grid md:grid-cols-3 gap-10 mb-12">
-                <div className="bg-card p-8 rounded-lg border text-center">
+                <div className="bg-card/80 backdrop-blur-sm p-8 rounded-lg border border-border/50 shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <Clock className="h-10 w-10 text-primary mx-auto mb-4" />
-                  <h5 className="font-semibold text-lg mb-4">{t('pricing.pilotDurationTitle')}</h5>
+                  <h5 className="font-semibold text-lg mb-4 text-primary">{t('pricing.pilotDurationTitle')}</h5>
                   <p className="text-muted-foreground leading-relaxed">
                     {t('pricing.pilotDurationDesc')}
                   </p>
                 </div>
                 
-                <div className="bg-card p-8 rounded-lg border text-center">
+                <div className="bg-card/80 backdrop-blur-sm p-8 rounded-lg border border-border/50 shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <Shield className="h-10 w-10 text-primary mx-auto mb-4" />
-                  <h5 className="font-semibold text-lg mb-4">{t('pricing.riskFreeTitle')}</h5>
+                  <h5 className="font-semibold text-lg mb-4 text-primary">{t('pricing.riskFreeTitle')}</h5>
                   <p className="text-muted-foreground leading-relaxed">
                     {t('pricing.riskFreeDesc')}
                   </p>
                 </div>
                 
-                <div className="bg-card p-8 rounded-lg border text-center">
+                <div className="bg-card/80 backdrop-blur-sm p-8 rounded-lg border border-border/50 shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <Users className="h-10 w-10 text-primary mx-auto mb-4" />
-                  <h5 className="font-semibold text-lg mb-4">{t('pricing.flexibleTitle')}</h5>
+                  <h5 className="font-semibold text-lg mb-4 text-primary">{t('pricing.flexibleTitle')}</h5>
                   <p className="text-muted-foreground leading-relaxed">
                     {t('pricing.flexibleDesc')}
                   </p>
                 </div>
               </div>
 
-              <div className="bg-primary/10 p-8 rounded-lg border border-primary/20">
+              <div className="bg-primary/15 backdrop-blur-sm p-8 rounded-lg border border-primary/30 shadow-md">
                 <p className="text-center text-muted-foreground font-medium text-lg leading-relaxed">
                   <strong className="text-primary">{t('pricing.riskFreeStart')}</strong>
                 </p>
@@ -129,7 +129,7 @@ export function PricingTables() {
       </div>
 
       {/* Zusätzliche Minutenpakete Erklärung */}
-      <div className="max-w-5xl mx-auto bg-muted p-10 rounded-lg mt-20">
+      <div className="max-w-5xl mx-auto bg-card/60 backdrop-blur-sm p-10 rounded-lg border border-border/50 shadow-lg mt-20">
         <div className="flex items-start gap-6">
           <div className="bg-primary rounded-full p-3 flex-shrink-0">
             <Info className="h-7 w-7 text-primary-foreground" />
@@ -141,22 +141,22 @@ export function PricingTables() {
             </p>
             
             <div className="space-y-6">
-              <div className="bg-card p-8 rounded-md border">
-                <h4 className="font-semibold text-lg mb-3">{t('pricing.flexExpandTitle')}</h4>
+                              <div className="bg-card/80 backdrop-blur-sm p-8 rounded-md border border-border/50 shadow-sm">
+                <h4 className="font-semibold text-lg mb-3 text-primary">{t('pricing.flexExpandTitle')}</h4>
                 <p className="text-muted-foreground leading-relaxed">
                   {t('pricing.flexExpandDesc')}
                 </p>
               </div>
               
-              <div className="bg-card p-8 rounded-md border">
-                <h4 className="font-semibold text-lg mb-3">{t('pricing.noExpiryTitle')}</h4>
+              <div className="bg-card/80 backdrop-blur-sm p-8 rounded-md border border-border/50 shadow-sm">
+                <h4 className="font-semibold text-lg mb-3 text-primary">{t('pricing.noExpiryTitle')}</h4>
                 <p className="text-muted-foreground leading-relaxed">
                   {t('pricing.noExpiryDesc')}
                 </p>
               </div>
               
-              <div className="bg-card p-8 rounded-md border">
-                <h4 className="font-semibold text-lg mb-3">{t('pricing.activeMonitoringTitle')}</h4>
+              <div className="bg-card/80 backdrop-blur-sm p-8 rounded-md border border-border/50 shadow-sm">
+                <h4 className="font-semibold text-lg mb-3 text-primary">{t('pricing.activeMonitoringTitle')}</h4>
                 <p className="text-muted-foreground leading-relaxed">
                   {t('pricing.activeMonitoringDesc')}
                 </p>

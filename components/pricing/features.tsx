@@ -7,16 +7,16 @@ export function PricingFeatures() {
   const { t, tArray } = useI18n();
 
   return (
-    <div className="bg-muted/50 py-20">
+    <div className="py-0">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h3 className="text-4xl font-bold mb-4">{t('pricing.featuresTitle')}</h3>
+          <h3 className="text-4xl font-bold mb-4 text-primary dark:text-white">{t('pricing.featuresTitle')}</h3>
         </div>
         
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
           {/* Communication */}
-          <div className="bg-card p-8 rounded-lg border">
-            <h4 className="text-2xl font-semibold mb-6 text-center">{t('pricing.communicationTitle')}</h4>
+          <div className="bg-card/80 backdrop-blur-sm p-8 rounded-lg border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <h4 className="text-2xl font-semibold mb-6 text-center text-primary">{t('pricing.communicationTitle')}</h4>
             <div className="space-y-4">
               {tArray('pricing.communicationItems').map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -28,8 +28,8 @@ export function PricingFeatures() {
           </div>
 
           {/* Technology */}
-          <div className="bg-card p-8 rounded-lg border">
-            <h4 className="text-2xl font-semibold mb-6 text-center">{t('pricing.technologyTitle')}</h4>
+          <div className="bg-card/80 backdrop-blur-sm p-8 rounded-lg border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <h4 className="text-2xl font-semibold mb-6 text-center text-primary">{t('pricing.technologyTitle')}</h4>
             <div className="space-y-4">
               {tArray('pricing.technologyItems').map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -41,8 +41,8 @@ export function PricingFeatures() {
           </div>
 
           {/* Personalization */}
-          <div className="bg-card p-8 rounded-lg border">
-            <h4 className="text-2xl font-semibold mb-6 text-center">{t('pricing.personalizationTitle')}</h4>
+          <div className="bg-card/80 backdrop-blur-sm p-8 rounded-lg border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <h4 className="text-2xl font-semibold mb-6 text-center text-primary">{t('pricing.personalizationTitle')}</h4>
             <div className="space-y-4">
               {tArray('pricing.personalizationItems').map((item, index) => (
                 <div key={index} className="flex items-start gap-3">

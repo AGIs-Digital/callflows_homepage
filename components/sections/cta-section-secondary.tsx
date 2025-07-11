@@ -7,7 +7,7 @@ export function CTASectionSecondary() {
   const { t } = useI18n();
 
   return (
-    <section className="py-20 bg-primary/5">
+    <section className="py-20 bg-gradient-to-b from-primary/30 via-primary/20 to-background">
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-primary dark:text-white">
