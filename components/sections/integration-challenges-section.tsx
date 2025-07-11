@@ -169,7 +169,7 @@ export function IntegrationChallengesSection() {
                 fromRef={div1Ref}
                 toRef={div6Ref}
                 pathColor="hsl(var(--muted-foreground))"
-                pathOpacity={0.6}
+                pathOpacity={0.3}
                 gradientStartColor="hsl(var(--primary))"
                 gradientStopColor="hsl(var(--accent))"
               />
@@ -178,7 +178,7 @@ export function IntegrationChallengesSection() {
                 fromRef={div2Ref}
                 toRef={div6Ref}
                 pathColor="hsl(var(--muted-foreground))"
-                pathOpacity={0.6}
+                pathOpacity={0.3}
                 gradientStartColor="hsl(var(--primary))"
                 gradientStopColor="hsl(var(--accent))"
               />
@@ -187,7 +187,7 @@ export function IntegrationChallengesSection() {
                 fromRef={div3Ref}
                 toRef={div6Ref}
                 pathColor="hsl(var(--muted-foreground))"
-                pathOpacity={0.6}
+                pathOpacity={0.3}
                 gradientStartColor="hsl(var(--primary))"
                 gradientStopColor="hsl(var(--accent))"
               />
@@ -196,7 +196,7 @@ export function IntegrationChallengesSection() {
                 fromRef={div4Ref}
                 toRef={div6Ref}
                 pathColor="hsl(var(--muted-foreground))"
-                pathOpacity={0.6}
+                pathOpacity={0.3}
                 gradientStartColor="hsl(var(--primary))"
                 gradientStopColor="hsl(var(--accent))"
               />
@@ -205,7 +205,7 @@ export function IntegrationChallengesSection() {
                 fromRef={div5Ref}
                 toRef={div6Ref}
                 pathColor="hsl(var(--muted-foreground))"
-                pathOpacity={0.6}
+                pathOpacity={0.3}
                 gradientStartColor="hsl(var(--primary))"
                 gradientStopColor="hsl(var(--accent))"
               />
@@ -214,7 +214,7 @@ export function IntegrationChallengesSection() {
                 fromRef={div6Ref}
                 toRef={div7Ref}
                 pathColor="hsl(var(--muted-foreground))"
-                pathOpacity={0.6}
+                pathOpacity={0.3}
                 gradientStartColor="hsl(var(--primary))"
                 gradientStopColor="hsl(var(--accent))"
               />

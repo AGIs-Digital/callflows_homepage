@@ -51,7 +51,7 @@ export function PricingCard({ plan }: PricingCardProps) {
   const translatedData = getTranslatedPlanData(plan.name);
 
   return (
-    <Card className={`relative ${plan.popular ? 'border-primary shadow-lg' : ''}`}>
+    <Card className={`relative flex flex-col h-full min-h-[100px] ${plan.popular ? 'border-primary shadow-lg' : ''}`}>
       {plan.popular && (
         <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
           {t('pricing.popular')}
@@ -80,7 +80,7 @@ export function PricingCard({ plan }: PricingCardProps) {
         </div>
       </CardHeader>
       
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-6 flex-1">
         {/* Plan Highlights */}
         {translatedData.highlights.length > 0 && (
           <div className="space-y-3">
@@ -94,7 +94,7 @@ export function PricingCard({ plan }: PricingCardProps) {
         )}
       </CardContent>
       
-      <CardFooter className="pt-0">
+      <CardFooter className="pt-0 mt-auto">
         <BookingButton 
           buttonText={translatedData.cta}
           className="w-full"
