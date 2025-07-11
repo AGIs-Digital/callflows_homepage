@@ -15,7 +15,7 @@ const Circle = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border dark:border-accent/70 bg-white dark:bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] dark:shadow-[0_0_20px_-12px_rgba(255,255,255,0.1)]",
         className,
       )}
     >
@@ -145,13 +145,14 @@ export function IntegrationChallengesSection() {
                   </Circle>
                 </div>
                 <div className="flex flex-col justify-center">
-                  <Circle ref={div6Ref} className="size-16 bg-primary/10">
-                    <div className="rounded-full overflow-hidden w-10 h-10">
+                  <Circle ref={div6Ref} className="size-16 bg-primary/10 dark:bg-primary/20 p-2">
+                    <div className="rounded-full overflow-hidden w-12 h-12">
                       <Image 
                         src="/icon.png" 
                         alt="callflows" 
                         width={96} 
-                        height={96} 
+                        height={96}
+                        className="w-full h-full object-cover"
                       />
                     </div>
                   </Circle>
@@ -167,31 +168,55 @@ export function IntegrationChallengesSection() {
                 containerRef={containerRef}
                 fromRef={div1Ref}
                 toRef={div6Ref}
+                pathColor="hsl(var(--muted-foreground))"
+                pathOpacity={0.6}
+                gradientStartColor="hsl(var(--primary))"
+                gradientStopColor="hsl(var(--accent))"
               />
               <AnimatedBeam
                 containerRef={containerRef}
                 fromRef={div2Ref}
                 toRef={div6Ref}
+                pathColor="hsl(var(--muted-foreground))"
+                pathOpacity={0.6}
+                gradientStartColor="hsl(var(--primary))"
+                gradientStopColor="hsl(var(--accent))"
               />
               <AnimatedBeam
                 containerRef={containerRef}
                 fromRef={div3Ref}
                 toRef={div6Ref}
+                pathColor="hsl(var(--muted-foreground))"
+                pathOpacity={0.6}
+                gradientStartColor="hsl(var(--primary))"
+                gradientStopColor="hsl(var(--accent))"
               />
               <AnimatedBeam
                 containerRef={containerRef}
                 fromRef={div4Ref}
                 toRef={div6Ref}
+                pathColor="hsl(var(--muted-foreground))"
+                pathOpacity={0.6}
+                gradientStartColor="hsl(var(--primary))"
+                gradientStopColor="hsl(var(--accent))"
               />
               <AnimatedBeam
                 containerRef={containerRef}
                 fromRef={div5Ref}
                 toRef={div6Ref}
+                pathColor="hsl(var(--muted-foreground))"
+                pathOpacity={0.6}
+                gradientStartColor="hsl(var(--primary))"
+                gradientStopColor="hsl(var(--accent))"
               />
               <AnimatedBeam
                 containerRef={containerRef}
                 fromRef={div6Ref}
                 toRef={div7Ref}
+                pathColor="hsl(var(--muted-foreground))"
+                pathOpacity={0.6}
+                gradientStartColor="hsl(var(--primary))"
+                gradientStopColor="hsl(var(--accent))"
               />
             </div>
           </div>
