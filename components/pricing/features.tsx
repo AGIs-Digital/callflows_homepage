@@ -1,62 +1,58 @@
 "use client";
 
-import { Wrench } from "lucide-react";
-
-const coreFeatures = [
-  {
-    category: "Kommunikation",
-    features: [
-      "Realtime-Bookings – Sofortige Terminvereinbarungen",
-      "Multi-Channel-Handling – Bis zu 100+ gleichzeitige Anrufe",
-      "24/7 verfügbar – Keine Wartezeiten oder Pausen",
-      "Intelligente Anrufweiterleitung bei Bedarf"
-    ]
-  },
-  {
-    category: "Technologie",
-    features: [
-      "Eigene Wissensdatenbank für fundierte Antworten",
-      "CRM-Integration zur direkten Datenpflege",
-      "Mehrere KI-Agents arbeiten zusammen und bilden eine digitale Abteilung",
-      "Skalierbare Infrastruktur für jede Unternehmensgröße"
-    ]
-  },
-  {
-    category: "Personalisierung",
-    features: [
-      "Individuelle Gesprächsführung",
-      "Kundenspezifische Anpassungen",
-      "Branchen-spezifische Lösungen",
-      "Maßgeschneiderte Workflows"
-    ]
-  }
-];
+import { CheckCircle } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 export function PricingFeatures() {
-  return (
-    <div>
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold mb-4 text-primary dark:text-white">
-          Alle Pakete beinhalten
-        </h2>
-      </div>
+  const { t, tArray } = useI18n();
 
-      <div className="grid md:grid-cols-3 gap-8 mb-24">
-        {coreFeatures.map((category) => (
-          <div key={category.category} className="space-y-6">
-            <h3 className="text-lg font-semibold text-primary border-b pb-2">
-              {category.category}
-            </h3>
-            <ul className="space-y-4">
-              {category.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <div className="h-2 w-2 rounded-full bg-accent flex-shrink-0 mt-2" />
-                  <span className="text-muted-foreground text-sm">{feature}</span>
-                </li>
+  return (
+    <div className="bg-muted/50 py-20">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h3 className="text-4xl font-bold mb-4">{t('pricing.featuresTitle')}</h3>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          {/* Communication */}
+          <div className="bg-card p-8 rounded-lg border">
+            <h4 className="text-2xl font-semibold mb-6 text-center">{t('pricing.communicationTitle')}</h4>
+            <div className="space-y-4">
+              {tArray('pricing.communicationItems').map((item, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-muted-foreground leading-relaxed">{item}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-        ))}
+
+          {/* Technology */}
+          <div className="bg-card p-8 rounded-lg border">
+            <h4 className="text-2xl font-semibold mb-6 text-center">{t('pricing.technologyTitle')}</h4>
+            <div className="space-y-4">
+              {tArray('pricing.technologyItems').map((item, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-muted-foreground leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Personalization */}
+          <div className="bg-card p-8 rounded-lg border">
+            <h4 className="text-2xl font-semibold mb-6 text-center">{t('pricing.personalizationTitle')}</h4>
+            <div className="space-y-4">
+              {tArray('pricing.personalizationItems').map((item, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-muted-foreground leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

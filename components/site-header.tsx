@@ -7,10 +7,13 @@ import { cn } from "@/lib/utils";
 import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageSelector } from "@/components/language-selector";
 import { ZohoEmbed } from "@/components/booking/zoho-embed";
+import { useI18n } from "@/lib/i18n";
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,9 +43,10 @@ export function SiteHeader() {
         <MainNav className="hidden md:flex" />
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
+            <LanguageSelector />
             <ThemeToggle />
             <ZohoEmbed 
-              buttonText="Beratungstermin" 
+              buttonText={t('nav.consultation')}
               className="hidden md:flex"
               variant="outline"
               size="sm"

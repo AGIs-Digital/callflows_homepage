@@ -14,15 +14,19 @@ export default function Home() {
   return (
     <main className="bg-background">
       <SiteHeader />
+
       <HeroSection />
-      <div className="bg-section-light">
-        <ProcessSection />
-      </div>
+
       <IntegrationChallengesSection />
+  
+      <ProcessSection />
+
       <div id="pricecomparison">
         <PricingComparisonSection />
       </div>
+
       <CTASection />
+
       <div id="features">
         <FeaturesSection />
       </div>

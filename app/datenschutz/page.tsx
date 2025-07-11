@@ -1,171 +1,168 @@
+"use client";
+
 import { LegalSection } from "@/components/legal/section";
 import { LegalLayout } from "@/components/legal/layout";
-import { generateMetadata } from "@/lib/seo/metadata";
-
-export const metadata = generateMetadata({
-  title: "Datenschutzerklärung - Schutz Ihrer Daten",
-  description: "Informationen zum Schutz Ihrer persönlichen Daten bei der Nutzung unserer KI-gestützten Voice Agents und automatisierten Kundenkommunikation.",
-  path: "/datenschutz",
-  keywords: [
-    "callflows Datenschutz", 
-    "KI Telefonie Datenschutz", 
-    "Voice Agent Datensicherheit", 
-    "DSGVO KI Sprachassistent",
-    "Datenschutz automatisierte Telefonie"
-  ]
-});
+import { useI18n } from "@/lib/i18n";
 
 export default function DatenschutzPage() {
+  const { t, tArray } = useI18n();
+  
   return (
     <LegalLayout
-      title="Datenschutzerklärung"
-      subtitle="Informationen zum Schutz Ihrer persönlichen Daten"
+      title={t('legal.datenschutz.title')}
+      subtitle={t('legal.datenschutz.subtitle')}
     >
       <div className="max-w-3xl mx-auto">
         <p className="text-lg text-muted-foreground mb-8">
-          Der Schutz Ihrer persönlichen Daten hat für callflows höchste Priorität. Hier erfahren Sie, wie wir mit Ihren Daten umgehen und welche Rechte Sie haben.
+          {t('legal.datenschutz.intro')}
         </p>
         
-        <LegalSection title="Einleitung">
+        <LegalSection title={t('legal.datenschutz.introduction.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Die Abeln Goltz GbR ("callflows", "wir", "uns" oder "unser") betreibt die Website https://callflows.de (im Folgenden "Dienst" oder "Service"). Diese Datenschutzerklärung informiert Sie über unsere Richtlinien hinsichtlich der Erfassung, Nutzung und Offenlegung personenbezogener Daten, wenn Sie unseren Service nutzen. Wir verarbeiten Ihre Daten ausschließlich im Einklang mit den Bestimmungen der Datenschutz-Grundverordnung (DSGVO) der EU sowie geltenden deutschen Datenschutzgesetzen. Durch die Nutzung des Dienstes stimmen Sie der Erfassung und Nutzung Ihrer Daten gemäß dieser Datenschutzerklärung zu.
+            {t('legal.datenschutz.introduction.content')}
           </p>
         </LegalSection>
 
-        <LegalSection title="1. Verantwortlicher für die Datenverarbeitung">
+        <LegalSection title={t('legal.datenschutz.responsible.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br /><br />
-            callflows Abeln Goltz GbR<br />
-            Fenskestraße 9A<br />
-            30165 Hannover<br />
-            E-Mail: info@callflows.de
+            {t('legal.datenschutz.responsible.content').split('\\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < t('legal.datenschutz.responsible.content').split('\\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </LegalSection>
 
-        <LegalSection title="2. Welche Daten erfassen wir?">
+        <LegalSection title={t('legal.datenschutz.dataCollection.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Wir erfassen und verarbeiten personenbezogene Daten nur im notwendigen Umfang. Dies umfasst:<br /><br />
-            • Direkt vom Kunden bereitgestellte Daten: Name, E-Mail-Adresse, Telefonnummer<br /><br />
-            • Daten aus der Nutzung unseres Dienstes: Gesprächsprotokolle, Transkriptionen (sofern vom Kunden aktiviert)<br /><br />
-            • Daten aus der ersten Kontaktaufnahme: Falls ein potenzieller Kunde Interesse an unseren Diensten hat, kann ein Video-Call zur Besprechung der Anforderungen durchgeführt werden. Dieses Gespräch wird aufgezeichnet und spätestens nach 30 Tagen oder mit Live-Schaltung des Agenten gelöscht. Die Aufzeichnung erfolgt nur mit vorheriger ausdrücklicher Einwilligung des Kunden.<br /><br />
-            • Automatisch erfasste Daten: IP-Adresse, Browserinformationen (für die Website-Optimierung), Cookies
+            {t('legal.datenschutz.dataCollection.content').split('\\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < t('legal.datenschutz.dataCollection.content').split('\\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </LegalSection>
 
-        <LegalSection title="3. Zweck der Datenverarbeitung">
+        <LegalSection title={t('legal.datenschutz.purpose.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Wir verarbeiten personenbezogene Daten ausschließlich zu folgenden Zwecken:<br /><br />
-            • Erstellung, Bereitstellung und Verbesserung der Voice-Agenten<br />
-            • Kundenkommunikation und Support<br />
-            • Abrechnung und Zahlungsabwicklung (via Stripe)<br />
-            • Sicherstellung und Optimierung der Servicequalität<br />
-            • Einhaltung gesetzlicher Verpflichtungen
+            {t('legal.datenschutz.purpose.content').split('\\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < t('legal.datenschutz.purpose.content').split('\\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </LegalSection>
 
-        <LegalSection title="4. Weitergabe an Dritte">
+        <LegalSection title={t('legal.datenschutz.thirdParties.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Wir geben personenbezogene Daten nicht an unbeteiligte Dritte weiter. Allerdings arbeiten wir mit folgenden Drittanbietern, die für die Erbringung unseres Dienstes erforderlich sind:<br /><br />
-            • Synthflow AI (Plattform für Voice-Agenten, Whitelabel-Lösung)<br />
-            • Stripe (Zahlungsabwicklung)<br />
-            • Hosting-Anbieter (Serverstandort innerhalb der EU)<br /><br />
-            Mit diesen Dienstleistern bestehen entsprechende Auftragsverarbeitungsverträge (AVV), um die Einhaltung der DSGVO zu gewährleisten.
+            {t('legal.datenschutz.thirdParties.content').split('\\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < t('legal.datenschutz.thirdParties.content').split('\\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </LegalSection>
 
-        <LegalSection title="5. Speicherdauer & Löschung von Daten">
+        <LegalSection title={t('legal.datenschutz.retention.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            • Kundenbezogene Daten werden so lange gespeichert, wie ein aktives Vertragsverhältnis besteht.<br /><br />
-            • Bei einer Kündigung des Abonnements werden alle personenbezogenen Daten gelöscht, sofern keine gesetzliche Aufbewahrungspflicht entgegensteht.<br /><br />
-            • Falls der Kunde einer weiteren Speicherung für zukünftige Angebote zustimmt, können Kontaktdaten weiterhin gespeichert werden.<br /><br />
-            • Aufzeichnungen aus Erstgesprächen werden spätestens nach 30 Tagen gelöscht.
+            {t('legal.datenschutz.retention.content').split('\\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < t('legal.datenschutz.retention.content').split('\\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </LegalSection>
 
-        <LegalSection title="6. Rechte der Nutzer gemäß DSGVO">
+        <LegalSection title={t('legal.datenschutz.rights.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Nutzer haben folgende Rechte hinsichtlich ihrer personenbezogenen Daten:<br /><br />
-            • Recht auf Auskunft (Art. 15 DSGVO): Welche Daten speichern wir?<br />
-            • Recht auf Berichtigung (Art. 16 DSGVO): Korrektur unrichtiger Daten<br />
-            • Recht auf Löschung (Art. 17 DSGVO): Daten löschen lassen<br />
-            • Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)<br />
-            • Recht auf Datenübertragbarkeit (Art. 20 DSGVO)<br />
-            • Recht auf Widerspruch gegen bestimmte Verarbeitungen (Art. 21 DSGVO)<br /><br />
-            Anfragen können jederzeit an info@callflows.de gestellt werden.
+            {t('legal.datenschutz.rights.content').split('\\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < t('legal.datenschutz.rights.content').split('\\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </LegalSection>
 
-        <LegalSection title="7. Cookies & Tracking-Technologien">
+        <LegalSection title={t('legal.datenschutz.cookies.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            • Unsere Website verwendet Cookies, um das Nutzungserlebnis zu verbessern.<br /><br />
-            • Beim ersten Besuch der Website erscheint ein Cookie-Banner, das den Nutzer fragt, ob er der Verwendung von Cookies zustimmt oder diese ablehnt.<br /><br />
-            • Es werden keine personenbezogenen Cookies gespeichert oder ausgewertet, es sei denn, der Nutzer gibt seine Einwilligung.<br /><br />
-            • Falls Analysetools (z. B. Google Analytics, Facebook Pixel) verwendet werden, erfolgt dies nur mit Einwilligung.
+            {t('legal.datenschutz.cookies.content').split('\\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < t('legal.datenschutz.cookies.content').split('\\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </LegalSection>
 
-        <LegalSection title="8. Datensicherheit">
+        <LegalSection title={t('legal.datenschutz.security.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Wir setzen technische und organisatorische Maßnahmen (TOMs) ein, um personenbezogene Daten zu schützen:<br /><br />
-            • SSL-Verschlüsselung für sichere Datenübertragung<br />
-            • Firewall- und Zugriffskontrollen<br />
-            • Passwortschutz und Zwei-Faktor-Authentifizierung (2FA)<br />
-            • Eingeschränkte Zugriffsrechte für Mitarbeiter<br />
-            • Speicherung auf sicheren Servern innerhalb der EU
+            {t('legal.datenschutz.security.content').split('\\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < t('legal.datenschutz.security.content').split('\\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </LegalSection>
 
-        <LegalSection title="9. Internationale Datenübermittlung">
+        <LegalSection title={t('legal.datenschutz.transfer.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            • Alle Daten werden ausschließlich innerhalb der EU gespeichert.<br />
-            • Es findet keine Übermittlung in Drittländer (z. B. USA) statt.
+            {t('legal.datenschutz.transfer.content').split('\\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < t('legal.datenschutz.transfer.content').split('\\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </LegalSection>
 
-        <LegalSection title="10. Änderungen der Datenschutzerklärung">
+        <LegalSection title={t('legal.datenschutz.changes.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Wir behalten uns das Recht vor, diese Datenschutzerklärung zu ändern. Nutzer werden mindestens 14 Tage vor Inkrafttreten per E-Mail oder auf unserer Website informiert.
+            {t('legal.datenschutz.changes.content')}
           </p>
         </LegalSection>
 
-        <LegalSection title="11. Kontakt für Datenschutzanfragen">
+        <LegalSection title={t('legal.datenschutz.contact.title')}>
           <p className="text-gray-600 dark:text-gray-300">
-            Für Datenschutzanfragen oder Ausübung der Nutzerrechte kontaktieren Sie uns unter:<br /><br />
-            callflows Abeln Goltz GbR<br />
-            E-Mail: info@callflows.de<br />
-            Adresse: Fenskestraße 9A, 30165 Hannover
+            {t('legal.datenschutz.contact.content').split('\\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < t('legal.datenschutz.contact.content').split('\\n').length - 1 && <br />}
+              </span>
+            ))}
           </p>
         </LegalSection>
 
-        <LegalSection title="12. Datenerfassung und -verwendung">
-          <p className="text-gray-600 dark:text-gray-300">
-            Wir erfassen verschiedene Arten von Informationen für verschiedene Zwecke, um unseren Service bereitzustellen und zu verbessern.
+        <LegalSection title={t('legal.datenschutz.dataUsage.title')}>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">
+            {t('legal.datenschutz.dataUsage.content')}
           </p>
           
-          <h3 className="text-lg font-medium mt-4 mb-2">2.1 Personenbezogene Daten</h3>
+          <h3 className="text-lg font-medium mt-4 mb-2">{t('legal.datenschutz.dataUsage.personalData.title')}</h3>
           <p className="text-gray-600 dark:text-gray-300">
-            Während der Nutzung unseres Services können wir Sie bitten, uns bestimmte personenbezogene Daten mitzuteilen, die zur Kontaktaufnahme oder Identifizierung verwendet werden können ("Personenbezogene Daten"). Zu den personenbezogenen Daten können unter anderem folgende Informationen gehören:
+            {t('legal.datenschutz.dataUsage.personalData.content')}
           </p>
           <ul className="list-disc pl-6 mt-2 text-gray-600 dark:text-gray-300">
-            <li>E-Mail-Adresse</li>
-            <li>Vor- und Nachname</li>
-            <li>Telefonnummer</li>
-            <li>Firmenname</li>
-            <li>Adresse</li>
-            <li>Cookies und Nutzungsdaten</li>
+            {tArray('legal.datenschutz.dataUsage.personalData.list').map((item: string, index: number) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </LegalSection>
         
-        <LegalSection title="13. Datensicherheit bei KI Voice Agents">
-          <p className="text-gray-600 dark:text-gray-300">
-            Bei der Nutzung unserer KI Voice Agents werden Gesprächsdaten verarbeitet, um den Service bereitzustellen. Wir legen größten Wert auf die Sicherheit dieser Daten:
+        <LegalSection title={t('legal.datenschutz.aiSecurity.title')}>
+          <p className="text-gray-600 dark:text-gray-300 mb-2">
+            {t('legal.datenschutz.aiSecurity.content')}
           </p>
           <ul className="list-disc pl-6 mt-2 text-gray-600 dark:text-gray-300">
-            <li>Alle Gespräche werden verschlüsselt übertragen und als Transkripte gespeichert</li>
-            <li>Gesprächsdaten werden ausschließlich auf Servern innerhalb der EU verarbeitet</li>
-            <li>Zugriff auf Gesprächsdaten haben nur autorisierte Mitarbeiter</li>
-            <li>Gesprächsdaten werden nur so lange gespeichert, wie es für die Bereitstellung des Services notwendig ist</li>
-            <li>Auf Wunsch können Gesprächsdaten jederzeit gelöscht werden</li>
+            {tArray('legal.datenschutz.aiSecurity.list').map((item: string, index: number) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </LegalSection>
       </div>

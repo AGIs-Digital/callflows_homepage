@@ -1,0 +1,452 @@
+{
+  "nav": {
+    "home": "Home",
+    "pricing": "Preise",
+    "blog": "Blog",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "consultation": "Beratung buchen"
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Ein Fehler ist aufgetreten",
+    "close": "Schließen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "submit": "Senden",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "language": "Sprache",
+    "menu": "Menü öffnen",
+    "login": "Anmelden"
+  },
+  "home": {
+    "title": "callflows - automatisierte Kundenkommunikation",
+    "description": "Optimieren Sie Kundenservice, Vertrieb und Support mit intelligenten Systemen.",
+    "hero": {
+      "headline1": "Überlastet mit Standardanrufen?",
+      "headline2": "Zu wenig Zeit für wichtige Aufgaben?",
+      "description": "Während Sie im Anruf-Chaos versinken, gehen die wirklich wichtigen Aufgaben unter – Zeit für eine Revolution!",
+      "solution": "Mit KI-Telefonie",
+      "solutionDescription": "Von Sales über Marketing bis Support – automatisieren Sie mit uns Ihre Prozesse zur Kundenkommunikation.",
+      "cta": "Kostenlose Beratung",
+      "widgetUnavailable": "Widget vorübergehend nicht verfügbar",
+      "widgetUnavailableDescription": "Keine Sorge - das passiert manchmal bei Live-Demos"
+    }
+  },
+  "pricing": {
+    "pageTitle": "Transparente Preisgestaltung",
+    "intro": "Bei callflows zahlen Sie während der Laufzeit nur für die tatsächliche Gesprächszeit Ihrer KI-Voice-Agents – ohne versteckte Kosten, ohne Grundgebühren.",
+    "starterTitle": "Was Sie für den Start bekommen",
+    "starterDescription": "Für den Start fällt eine einmalige Einrichtungsgebühr an, deren Höhe sich nach dem individuellen Aufwand richtet. Darin enthalten ist:",
+    "onboardingTitle": "Kompletter Onboarding-Prozess",
+    "onboardingDesc": "für Ihre Mitarbeiter",
+    "callsTitle": "Wöchentliche Abstimmungs-Calls",
+    "callsDesc": "während der gesamten Entwicklung",
+    "monitoringTitle": "Technisches Monitoring",
+    "monitoringDesc": "während der gesamten Pilotphase",
+    "optimizationTitle": "Kontinuierliche Optimierung",
+    "optimizationDesc": "Ihrer KI-Voice-Agents",
+    "minutesTitle": "Großzügiges Freiminuten-Paket",
+    "minutesDesc": "für den kompletten Pilotmonat",
+    "crmTitle": "Individuell angepasstes CRM-System",
+    "crmDesc": "speziell für KI-Arbeit und -Management",
+    "pilotDurationTitle": "1 Monat Pilotphase",
+    "riskFreeDesc": "Sie entscheiden nach dem Pilot, ob Sie dauerhaft durchstarten möchten",
+    "pilotDurationDesc": "Setup-Gebühr: 50% vor Prototyp, 50% bei Go-Live",
+    "riskFreeTitle": "Risikofreies Testen",
+    "flexibleTitle": "Flexible Laufzeit",
+    "riskFreeStart": "So starten Sie risikofrei – mit voller Kontrolle, transparenter Preisstruktur und Voice Agents, die perfekt zu Ihrem Unternehmen passen.",
+    "flexibleDesc": "Monatliche Zahlung bei 12 Monaten Laufzeit nach dem Pilot",
+    "monthlyPackages": "Unsere Monatspakete",
+    "pricesExclVat": "Alle Preise ohne MwSt.",
+    "popular": "Beliebt",
+    "priceOnRequest": "Preis auf Anfrage",
+    "individualMinutes": "Individuelles Minutenkontingent",
+    "perMinute": "/Min.",
+    "freeMinutes": "Freiminuten",
+    "additionalTitle": "Zusätzliche Minutenpakete nach Bedarf",
+    "additionalDesc": "Neben Ihrem monatlichen Kontingent können Sie jederzeit flexible Minutenpakete hinzubuchen.",
+    "flexExpandTitle": "Flexible Erweiterung",
+    "flexExpandDesc": "Kaufen Sie zusätzliche Minutenpakete individuell nach Ihrem Bedarf. Wir beraten Sie gerne und empfehlen passende Pakete basierend auf Ihrer Nutzung.",
+    "noExpiryTitle": "Keine verfallenden Minuten",
+    "noExpiryDesc": "Gekaufte Minutenpakete verfallen nicht und dienen als Reserve. Sie werden erst angebrochen, wenn Ihr monatliches Kontingent aufgebraucht ist.",
+    "activeMonitoringTitle": "Aktives Monitoring",
+    "activeMonitoringDesc": "Wir überwachen Ihren Verbrauch und empfehlen proaktiv passende Pakete, damit Sie immer die optimale Lösung für Ihre Bedürfnisse haben.",
+    "featuresTitle": "Alle Pakete enthalten",
+    "communicationTitle": "Kommunikation",
+    "communicationItems": [
+      "Echtzeitbuchungen – Sofortige Terminvereinbarung",
+      "Multichannel-Handling – Bis zu 100+ gleichzeitige Anrufe",
+      "24/7 verfügbar – Keine Wartezeiten oder Pausen",
+      "Intelligente Anrufweiterleitung bei Bedarf"
+    ],
+    "technologyTitle": "Technologie",
+    "technologyItems": [
+      "Eigene Wissensdatenbank für fundierte Antworten",
+      "CRM-Integration für direkte Datenpflege",
+      "Mehrere KI-Agents arbeiten zusammen und bilden eine digitale Abteilung",
+      "Skalierbare Infrastruktur für jede Unternehmensgröße"
+    ],
+    "personalizationTitle": "Personalisierung",
+    "personalizationItems": [
+      "Individuelle Gesprächsführung",
+      "Kundenspezifische Anpassungen",
+      "Branchenspezifische Lösungen",
+      "Maßgeschneiderte Workflows"
+    ],
+    "entlastungName": "Entlastung",
+    "entlastungSubtitle": "Unterstützung im Tagesgeschäft",
+    "entlastungHighlights": [
+      "Schnell spürbare Verbesserungen im Arbeitsalltag",
+      "Häufige Fragen ohne Personaleinsatz beantworten",
+      "Weniger Weiterverbindungen und Wartezeiten"
+    ],
+    "entlastungCta": "Jetzt beraten lassen",
+    "wachstumName": "Wachstum",
+    "wachstumSubtitle": "Umsatz & Expansion",
+    "wachstumHighlights": [
+      "Prozesse von Anfrage bis Abschluss optimieren",
+      "Weniger Unterbrechungen im Tagesablauf",
+      "Wachstum ohne proportionale Personalerweiterung",
+      "Hochqualitative Leads für das Vertriebsteam"
+    ],
+    "wachstumCta": "Jetzt beraten lassen",
+    "individuellName": "Individuell",
+    "individuellSubtitle": "Maßgeschneiderte Lösungen",
+    "individuellHighlights": [
+      "Marktführerschaft durch frühe KI-Adoption",
+      "Neue Kunden auch außerhalb der Geschäftszeiten gewinnen",
+      "Persönliche Beratung und maßgeschneiderte Lösung",
+      "Erkenntnisse aus Gesprächen für Geschäftsentscheidungen",
+      "Mehrsprachige KI für globale Expansion"
+    ],
+    "individuellCta": "Individuelles Angebot",
+    "ctaTitle": "Bereit für die Zukunft der Kundenkommunikation?",
+    "ctaDescription": "Vereinbaren Sie ein unverbindliches Gespräch mit unseren Experten und erfahren Sie, wie callflows Ihr Unternehmen unterstützen kann.",
+    "ctaButtonText": "Kostenlose Beratung buchen"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Nehmen Sie Kontakt mit uns auf",
+    "pageTitle": "Kontakt",
+    "formTitle": "Kontaktieren Sie uns",
+    "formDescription": "Haben Sie Fragen zu unseren KI-Voice-Agents? Wir helfen Ihnen gerne weiter.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Ihr Name",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "ihre.email@beispiel.de",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Ihre Nachricht...",
+    "sendButton": "Nachricht senden",
+    "appointmentTitle": "Beratungstermin buchen",
+    "appointmentDescription": "Vereinbaren Sie einen Termin für eine persönliche Beratung zu unseren KI-Voice-Agents.",
+    "bookingButton": "Termin buchen",
+    "contactDataTitle": "Kontaktdaten",
+    "company": "callflows Abeln Goltz GbR",
+    "address": "Fenskestraße 9A",
+    "city": "30165 Hannover, Deutschland",
+    "email": "info@callflows.de",
+    "phone": "+49 511 1665 3388"
+  },
+  "footer": {
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "imprint": "Impressum",
+    "description": "KI-gestützte Voice-Agents für automatisierte Kundenkommunikation. Wir revolutionieren, wie Unternehmen telefonieren.",
+    "product": "Produkt",
+    "pricing": "Preise",
+    "faq": "FAQ",
+    "company": "Unternehmen",
+    "about": "Über uns",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "legal": "Rechtliches",
+    "copyright": "Alle Rechte vorbehalten",
+    "address": "Fenskestraße 9A, 30165 Hannover, Deutschland"
+  },
+  "process": {
+    "title": "So einfach geht's",
+    "description": "Von der ersten Kontaktaufnahme bis zum Go-Live in 4 Schritten",
+    "step1": {
+      "title": "Kontaktaufnahme",
+      "description": "Kostenfreies Erstgespräch"
+    },
+    "step2": {
+      "title": "Workshop",
+      "description": "Konzeption & Setup"
+    },
+    "step3": {
+      "title": "Prototyping",
+      "description": "Test & Optimierung"
+    },
+    "step4": {
+      "title": "Support",
+      "description": "Betreuung & Support"
+    }
+  },
+  "comparison": {
+    "title": "Im Vergleich",
+    "description": "Die geschäftliche Kundenkommunikation wurde meist auf drei Arten abgewickelt.",
+    "callflowsText": "callflows ist eine moderne, innovative Option.",
+    "modernSolution": "Moderne KI Lösung",
+    "pros": "Vorteile",
+    "cons": "Nachteile",
+    "inhouse": {
+      "title": "Inhouse-Mitarbeiter",
+      "description": "Eigene Mitarbeiter übernehmen die Telefonie im Unternehmen.",
+      "pros": ["Persönlicher Kontakt", "Direkte Kontrolle", "Tiefes Produktwissen"],
+      "cons": ["Hohe Personalkosten", "Begrenzte Verfügbarkeit", "Krankheits-/Urlaubsvertretung nötig", "Skalierungsprobleme bei Spitzen"]
+    },
+    "phone": {
+      "title": "Telefonanlage",
+      "description": "Klassische Telefonanlagen mit Menüführung und Warteschleifen.",
+      "pros": ["Geringe laufende Kosten", "24/7 Verfügbarkeit", "Einfache Implementierung"],
+      "cons": ["Keine echte Interaktion", "Frustrierende Benutzererfahrung", "Keine Problemlösung", "Verpasste Verkaufschancen"]
+    },
+    "callcenter": {
+      "title": "Externes Callcenter",
+      "description": "Ausgelagerte Telefonie an spezialisierte Dienstleister.",
+      "pros": ["Flexibel skalierbar", "Erweiterte Verfügbarkeit", "Keine Personalverantwortung"],
+      "cons": ["Hohe Kosten pro Gespräch", "Qualitätsschwankungen", "Geringeres Produktwissen", "Komplexe Vertragsgestaltung"]
+    },
+    "callflows": {
+      "title": "callflows",
+      "description": "KI-basierte Sprachagenten für automatisierte Telefonie.",
+      "pros": ["Eigenständig denken und handeln", "Natürliche Gesprächsführung", "Automation von Routineaufgaben", "Nahtlose Systemintegration", "Kostengünstig und unkompliziert", "24/7 Verfügbarkeit", "Kein Vorwissen notwendig"]
+    },
+    "conclusion": "Viele Unternehmen wünschen sich mehr Automatisierung, geringere Personalkosten und eine gleichbleibend hohe Servicequalität – rund um die Uhr. Genau hier setzt unser KI-Voice-Agent an: Als innovative Option, die moderne KI-Technologie nutzt, um Telefonprozesse effizient und kostengünstig abzubilden.",
+    "benefit": "Zufriedene Kunden, verbesserte Umsatzchancen"
+  },
+  "about": {
+    "title": "Über callflows",
+    "intro1": "Wir sind davon überzeugt: KI wird die Art verändern, wie Unternehmen mit ihren Kunden sprechen. Aber nicht irgendwann – sondern jetzt.",
+    "intro2": "callflows hilft Unternehmen dabei, diesen Wandel zu gestalten – nicht blindlings, sondern mit Struktur, Erfahrung und echter Partnerschaft. Unsere KI-Voice-Agents übernehmen Gespräche, verstehen Anliegen, buchen Termine, erkennen Chancen – und integrieren sich in bestehende Systeme, als wären sie schon immer da gewesen.",
+    "intro3": "Wir wissen: Diese Technologie ist neu. Sie ist mächtig – aber sie ist kein Selbstläufer. Deshalb lassen wir unsere Kunden nicht mit einem \"KI-Tool\" allein.",
+    "mission": "Unsere Mission:",
+    "missionPoints": [
+      "KI greifbar machen.",
+      "Kundenkontakt automatisieren – ohne Qualität zu verlieren.",
+      "Unternehmen dabei helfen, schneller, schlanker und gleichzeitig menschlicher zu kommunizieren."
+    ],
+    "special": "Was uns besonders macht:",
+    "specialDescription": "Wir begleiten von Anfang an. Wir hören zu. Wir bauen mit Ihnen gemeinsam eine Lösung, die wirklich zu Ihrem Unternehmen passt.",
+    "features": [
+      "Individuelle Prozessmodellierung",
+      "Persönliches Prompting & Finetuning",
+      "Transparente Minutenabrechnung ohne versteckte Kosten",
+      "Unbegrenzte Anzahl an Agents",
+      "Regelmäßige Check-ins zur Optimierung",
+      "Setup, Support und Telefonnummer inklusive"
+    ],
+    "teamDescription": "ist keine Software – sondern ein Team. Mit Hintergrund in Vertrieb, Marketing & Automatisierung. Mit echtem Interesse an Ihrem Erfolg."
+  },
+  "legal": {
+    "impressum": {
+      "title": "Impressum",
+      "subtitle": "Rechtliche Informationen und Kontaktdaten",
+      "intro": "Hier finden Sie alle rechtlich relevanten Informationen zu callflows, Ihrem Anbieter für KI-gestützte Voice Agents und automatisierte Kundenkommunikation.",
+      "tmgTitle": "Angaben gemäß § 5 TMG",
+      "contactTitle": "Kontakt",
+      "vatTitle": "Umsatzsteuer-Identifikationsnummer",
+      "vatText": "Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:",
+      "responsibleTitle": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+      "responsibleText": "Tom Abeln, Timo Goltz\nFenskestraße 9A\n30165 Hannover\nDeutschland",
+      "disputeTitle": "Streitschlichtung",
+      "disputeText1": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
+      "disputeText2": "Unsere E-Mail-Adresse finden Sie oben im Impressum.",
+      "disputeText3": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+      "liabilityTitle": "Haftung für Inhalte",
+      "liabilityText1": "Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+      "liabilityText2": "Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen."
+    },
+    "datenschutz": {
+      "title": "Datenschutzerklärung",
+      "subtitle": "Informationen zum Schutz Ihrer persönlichen Daten",
+      "intro": "Der Schutz Ihrer persönlichen Daten hat für callflows höchste Priorität. Hier erfahren Sie, wie wir mit Ihren Daten umgehen und welche Rechte Sie haben.",
+      "introduction": {
+        "title": "Einleitung",
+        "content": "Die Abeln Goltz GbR (\"callflows\", \"wir\", \"uns\" oder \"unser\") betreibt die Website https://callflows.de (im Folgenden \"Dienst\" oder \"Service\"). Diese Datenschutzerklärung informiert Sie über unsere Richtlinien hinsichtlich der Erfassung, Nutzung und Offenlegung personenbezogener Daten, wenn Sie unseren Service nutzen. Wir verarbeiten Ihre Daten ausschließlich im Einklang mit den Bestimmungen der Datenschutz-Grundverordnung (DSGVO) der EU sowie geltenden deutschen Datenschutzgesetzen. Durch die Nutzung des Dienstes stimmen Sie der Erfassung und Nutzung Ihrer Daten gemäß dieser Datenschutzerklärung zu."
+      },
+      "responsible": {
+        "title": "1. Verantwortlicher für die Datenverarbeitung",
+        "content": "Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:\\n\\ncallflows Abeln Goltz GbR\\nFenskestraße 9A\\n30165 Hannover\\nE-Mail: info@callflows.de"
+      },
+      "dataCollection": {
+        "title": "2. Welche Daten erfassen wir?",
+        "content": "Wir erfassen und verarbeiten personenbezogene Daten nur im notwendigen Umfang. Dies umfasst:\\n\\n• Direkt vom Kunden bereitgestellte Daten: Name, E-Mail-Adresse, Telefonnummer\\n\\n• Daten aus der Nutzung unseres Dienstes: Gesprächsprotokolle, Transkriptionen (sofern vom Kunden aktiviert)\\n\\n• Daten aus der ersten Kontaktaufnahme: Falls ein potenzieller Kunde Interesse an unseren Diensten hat, kann ein Video-Call zur Besprechung der Anforderungen durchgeführt werden. Dieses Gespräch wird aufgezeichnet und spätestens nach 30 Tagen oder mit Live-Schaltung des Agenten gelöscht. Die Aufzeichnung erfolgt nur mit vorheriger ausdrücklicher Einwilligung des Kunden.\\n\\n• Automatisch erfasste Daten: IP-Adresse, Browserinformationen (für die Website-Optimierung), Cookies"
+      },
+      "purpose": {
+        "title": "3. Zweck der Datenverarbeitung",
+        "content": "Wir verarbeiten personenbezogene Daten ausschließlich zu folgenden Zwecken:\\n\\n• Erstellung, Bereitstellung und Verbesserung der Voice-Agenten\\n• Kundenkommunikation und Support\\n• Abrechnung und Zahlungsabwicklung (via Stripe)\\n• Sicherstellung und Optimierung der Servicequalität\\n• Einhaltung gesetzlicher Verpflichtungen"
+      },
+      "thirdParties": {
+        "title": "4. Weitergabe an Dritte",
+        "content": "Wir geben personenbezogene Daten nicht an unbeteiligte Dritte weiter. Allerdings arbeiten wir mit folgenden Drittanbietern, die für die Erbringung unseres Dienstes erforderlich sind:\\n\\n• Synthflow AI (Plattform für Voice-Agenten, Whitelabel-Lösung)\\n• Stripe (Zahlungsabwicklung)\\n• Hosting-Anbieter (Serverstandort innerhalb der EU)\\n\\nMit diesen Dienstleistern bestehen entsprechende Auftragsverarbeitungsverträge (AVV), um die Einhaltung der DSGVO zu gewährleisten."
+      },
+      "retention": {
+        "title": "5. Speicherdauer & Löschung von Daten",
+        "content": "• Kundenbezogene Daten werden so lange gespeichert, wie ein aktives Vertragsverhältnis besteht.\\n\\n• Bei einer Kündigung des Abonnements werden alle personenbezogenen Daten gelöscht, sofern keine gesetzliche Aufbewahrungspflicht entgegensteht.\\n\\n• Falls der Kunde einer weiteren Speicherung für zukünftige Angebote zustimmt, können Kontaktdaten weiterhin gespeichert werden.\\n\\n• Aufzeichnungen aus Erstgesprächen werden spätestens nach 30 Tagen gelöscht."
+      },
+      "rights": {
+        "title": "6. Rechte der Nutzer gemäß DSGVO",
+        "content": "Nutzer haben folgende Rechte hinsichtlich ihrer personenbezogenen Daten:\\n\\n• Recht auf Auskunft (Art. 15 DSGVO): Welche Daten speichern wir?\\n• Recht auf Berichtigung (Art. 16 DSGVO): Korrektur unrichtiger Daten\\n• Recht auf Löschung (Art. 17 DSGVO): Daten löschen lassen\\n• Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)\\n• Recht auf Datenübertragbarkeit (Art. 20 DSGVO)\\n• Recht auf Widerspruch gegen bestimmte Verarbeitungen (Art. 21 DSGVO)\\n\\nAnfragen können jederzeit an info@callflows.de gestellt werden."
+      },
+      "cookies": {
+        "title": "7. Cookies & Tracking-Technologien",
+        "content": "• Unsere Website verwendet Cookies, um das Nutzungserlebnis zu verbessern.\\n\\n• Beim ersten Besuch der Website erscheint ein Cookie-Banner, das den Nutzer fragt, ob er der Verwendung von Cookies zustimmt oder diese ablehnt.\\n\\n• Es werden keine personenbezogenen Cookies gespeichert oder ausgewertet, es sei denn, der Nutzer gibt seine Einwilligung.\\n\\n• Falls Analysetools (z. B. Google Analytics, Facebook Pixel) verwendet werden, erfolgt dies nur mit Einwilligung."
+      },
+      "security": {
+        "title": "8. Datensicherheit",
+        "content": "Wir setzen technische und organisatorische Maßnahmen (TOMs) ein, um personenbezogene Daten zu schützen:\\n\\n• SSL-Verschlüsselung für sichere Datenübertragung\\n• Firewall- und Zugriffskontrollen\\n• Passwortschutz und Zwei-Faktor-Authentifizierung (2FA)\\n• Eingeschränkte Zugriffsrechte für Mitarbeiter\\n• Speicherung auf sicheren Servern innerhalb der EU"
+      },
+      "transfer": {
+        "title": "9. Internationale Datenübermittlung",
+        "content": "• Alle Daten werden ausschließlich innerhalb der EU gespeichert.\\n• Es findet keine Übermittlung in Drittländer (z. B. USA) statt."
+      },
+      "changes": {
+        "title": "10. Änderungen der Datenschutzerklärung",
+        "content": "Wir behalten uns das Recht vor, diese Datenschutzerklärung zu ändern. Nutzer werden mindestens 14 Tage vor Inkrafttreten per E-Mail oder auf unserer Website informiert."
+      },
+      "contact": {
+        "title": "11. Kontakt für Datenschutzanfragen",
+        "content": "Für Datenschutzanfragen oder Ausübung der Nutzerrechte kontaktieren Sie uns unter:\\n\\ncallflows Abeln Goltz GbR\\nE-Mail: info@callflows.de\\nAdresse: Fenskestraße 9A, 30165 Hannover"
+      },
+      "dataUsage": {
+        "title": "12. Datenerfassung und -verwendung",
+        "content": "Wir erfassen verschiedene Arten von Informationen für verschiedene Zwecke, um unseren Service bereitzustellen und zu verbessern.",
+        "personalData": {
+          "title": "2.1 Personenbezogene Daten",
+          "content": "Während der Nutzung unseres Services können wir Sie bitten, uns bestimmte personenbezogene Daten mitzuteilen, die zur Kontaktaufnahme oder Identifizierung verwendet werden können (\"Personenbezogene Daten\"). Zu den personenbezogenen Daten können unter anderem folgende Informationen gehören:",
+          "list": ["E-Mail-Adresse", "Vor- und Nachname", "Telefonnummer", "Firmenname", "Adresse", "Cookies und Nutzungsdaten"]
+        }
+      },
+      "aiSecurity": {
+        "title": "13. Datensicherheit bei KI Voice Agents",
+        "content": "Bei der Nutzung unserer KI Voice Agents werden Gesprächsdaten verarbeitet, um den Service bereitzustellen. Wir legen größten Wert auf die Sicherheit dieser Daten:",
+        "list": ["Alle Gespräche werden verschlüsselt übertragen und als Transkripte gespeichert", "Gesprächsdaten werden ausschließlich auf Servern innerhalb der EU verarbeitet", "Zugriff auf Gesprächsdaten haben nur autorisierte Mitarbeiter", "Gesprächsdaten werden nur so lange gespeichert, wie es für die Bereitstellung des Services notwendig ist", "Auf Wunsch können Gesprächsdaten jederzeit gelöscht werden"]
+      }
+    },
+    "agb": {
+      "title": "Allgemeine Geschäftsbedingungen",
+      "subtitle": "Vertragliche Grundlagen unserer Zusammenarbeit",
+      "translationNote": "Die vollständige Übersetzung aller Abschnitte der Allgemeinen Geschäftsbedingungen ist verfügbar.",
+      "noteLabel": "Hinweis:",
+      "section1Title": "1. Begriffsdefinitionen",
+      "section1Content": "Im Sinne dieser AGB gelten folgende Definitionen:\n\n\"Anbieter\" bezeichnet die Abeln Goltz GbR, handelnd unter der Marke callflows, mit Sitz in Fenskestraße 9A, 30165 Hannover.\n\n\"Kunde\" bezeichnet ausschließlich Unternehmer im Sinne des § 14 BGB, also natürliche oder juristische Personen, die den Dienst zu gewerblichen oder beruflichen Zwecken nutzen. Verbraucher im Sinne des § 13 BGB sind von der Nutzung ausgeschlossen.\n\n\"Dienste\" bezeichnet alle durch callflows angebotenen und bereitgestellten Leistungen im Bereich der KI-gestützten Telefonautomation.\n\n\"Vertrag\" bezeichnet die Vereinbarung zwischen dem Anbieter und dem Kunden zur Nutzung der Dienste von callflows.\n\n\"Drittanbieter\" bezeichnet externe Dienstleister, deren Technologien oder Plattformen in die Dienste von callflows integriert sind, insbesondere Synthflow AI.\n\n\"Nutzerinhalte\" bezeichnet alle vom Kunden über die Dienste von callflows erstellten, übermittelten oder gespeicherten Daten, einschließlich Gesprächsprotokolle und Transkriptionen.",
+      "section2Title": "2. Geltungsbereich",
+      "section2Content": "Diese AGB regeln die Nutzung der durch callflows bereitgestellten Dienstleistungen. callflows ist eine Marke der Abeln Goltz GbR, Fenskestraße 9A, 30165 Hannover. Sie gelten für alle Verträge zwischen der Abeln Goltz GbR (\"Anbieter\") und den Nutzern (\"Kunden\"). Mit der Nutzung der angebotenen Dienstleistungen erkennt der Kunde diese AGB an.",
+      "section3Title": "3. Leistungsbeschreibung",
+      "section3Content": "callflows bietet eine cloudbasierte KI-Telefonagentenlösung an, die Unternehmen bei der Automatisierung von Kommunikationsprozessen unterstützt. Die Dienste basieren auf einer Whitelabel-Integration eines Drittanbieters. Der Kunde erhält Zugang zu verschiedenen Servicepaketen mit definierten Nutzungskontingenten. Die genauen Leistungsmerkmale ergeben sich aus den jeweiligen Tarifbeschreibungen.",
+      "section4Title": "4. Vertragslaufzeit und Kündigung",
+      "section4Content": "Der Vertrag wird auf unbestimmte Zeit geschlossen und verlängert sich automatisch um jeweils einen weiteren Monat, sofern keine Kündigung erfolgt.\n\nDer Kunde kann das Abonnement jederzeit bis zum Tag vor der nächsten automatischen Verlängerung kündigen.\n\nDie Kündigung kann auf zwei Arten erfolgen:\n1. Direkt über Stripe durch Deaktivierung des Abonnements.\n2. Schriftlich per E-Mail an den Support von callflows (info@callflows.de).\n\nNach einer Kündigung bleibt der Zugang bis zum Ende des bereits bezahlten Abrechnungszeitraums bestehen.\n\nEs erfolgt keine Erstattung für ungenutzte Tage innerhalb des Abrechnungszeitraums.\n\ncallflows behält sich das Recht vor, den Vertrag aus wichtigem Grund fristlos zu kündigen, insbesondere bei:\n• Verstoß gegen diese AGB, insbesondere durch missbräuchliche oder rechtswidrige Nutzung der Dienste\n• Zahlungsverzug, sofern dieser nicht innerhalb von 7 Tagen nach Mahnung behoben wird\n• Manipulation oder unerlaubte technische Änderungen am Service\n\ncallflows kann den Vertrag mit einer Frist von 30 Tagen zum Monatsende kündigen. Die Kündigung erfolgt per E-Mail an die beim Kunden hinterlegte Adresse.",
+      "section5Title": "5. Preise und Zahlungsmodalitäten",
+      "section5Content": "Die aktuellen Preise und Tarifoptionen sind auf der Website des Anbieters einsehbar.\n\nDie Abrechnung erfolgt monatlich im Voraus über den Zahlungsdienstleister Stripe.\n\nBei Zahlungsverzug hat der Kunde nach Mahnung 7 Tage Zeit, die ausstehende Zahlung nachzuholen.\n\ncallflows behält sich das Recht vor, bei Nichtzahlung den Zugang zum Service zu sperren und den Vertrag zu kündigen.\n\nEs erfolgt grundsätzlich keine Rückerstattung für bereits geleistete Zahlungen.\n\nPreisänderungen werden dem Kunden mindestens 30 Tage im Voraus mitgeteilt.\n\nBei einer Preisänderung hat der Kunde das Recht, den Vertrag außerordentlich zu kündigen.",
+      "section6Title": "6. Minutenpakete & zusätzliche Minutenabrechnung",
+      "section6Content": "Flexible Nutzung & Abrechnung:\nKunden haben die Möglichkeit, zusätzlich zu ihrem Monatsabo Minutenpakete zu buchen. Diese Minutenpakete bieten günstigere Minutenpreise im Vergleich zur minutengenauen Abrechnung.\n\nFalls der Kunde kein Minutenpaket bucht, werden über das inkludierte Minutenkontingent hinausgehende Gesprächsminuten automatisch minutengenau zu 0,99 €/Minute abgerechnet.\n\nGültigkeit & Verbrauchsreihenfolge:\nMinutenpakete sind zeitlich unbefristet und bleiben gültig, bis sie vollständig verbraucht wurden. Dabei werden die Minuten in einer festen Reihenfolge genutzt: Zunächst wird das im Monatsabo enthaltene Minutenkontingent aufgebraucht, anschließend greifen bereits gebuchte Minutenpakete. Falls ein Kunde mehrere Minutenpakete erworben hat, werden diese in der Reihenfolge ihres Kaufs verbraucht, wobei die ältesten Pakete zuerst genutzt werden.\n\nStapelung & Übertragbarkeit:\nKunden haben die Möglichkeit, mehrere Minutenpakete gleichzeitig zu kaufen, diese zu stapeln und flexibel in beliebiger Reihenfolge zu verbrauchen. Nicht genutzte Minutenpakete werden automatisch in den nächsten Monat übertragen und verfallen nicht, solange das Abonnement aktiv bleibt.\n\nKündigung & Verfall von Minuten:\nBei einer Kündigung des Abonnements verfallen jedoch alle nicht genutzten Minutenpakete mit sofortiger Wirkung. Eine Erstattung für ungenutzte Minuten erfolgt nicht. Minutenpakete müssen stets manuell gebucht werden, eine automatische Aufladung ist nicht vorgesehen.\n\nPreisänderungen & Transparenz:\nDie Preise für Minutenpakete können sich ändern. Kunden werden über Preisänderungen mindestens 30 Tage im Voraus per E-Mail oder über die Website informiert. Änderungen gelten jedoch nur für neu erworbene Minutenpakete – bereits gekaufte Pakete behalten ihre ursprünglichen Konditionen.\n\nEinsatzbereiche:\nMinutenpakete können für sämtliche Anrufe, sowohl Inbound als auch Outbound, genutzt werden. Es gibt keine weiteren Einschränkungen, abgesehen von den allgemeinen Nutzungsbedingungen des Services.",
+      "section7Title": "7. Rechnungsstellung & Reklamationen",
+      "section7Content": "Die Zahlungsabwicklung erfolgt über Stripe, wodurch Kunden automatisch eine Rechnung erhalten.\n\nSollte die erhaltene Rechnung nicht passend sein, kann der Kunde eine Korrektur per E-Mail an info@callflows.de anfordern. Der Anbieter wird prüfen, ob eine Anpassung möglich ist.\n\nFalls der Kunde ein Problem mit einer Rechnung identifiziert, hat er 14 Tage nach Rechnungsstellung Zeit, diese zu reklamieren. Nach Ablauf dieser Frist gilt die Rechnung als akzeptiert.\n\nReklamationen sind ausschließlich per E-Mail an info@callflows.de einzureichen.",
+      "section8Title": "8. Kein Widerrufsrecht",
+      "section8Content": "Da unser Dienst ausschließlich für Unternehmer (§ 14 BGB) bestimmt ist, besteht kein gesetzliches Widerrufsrecht.",
+      "section9Title": "9. Datenschutzverstöße & Verantwortung des Kunden",
+      "section9Content": "Der Kunde verpflichtet sich, alle datenschutzrechtlichen Vorgaben (einschließlich DSGVO) einzuhalten.\n\nSollte es zu Verstößen kommen, stellt der Kunde callflows von sämtlichen Ansprüchen Dritter frei.\n\ncallflows behält sich das Recht vor, den Zugang zum Dienst zu sperren oder den Vertrag fristlos zu kündigen, falls der Kunde wiederholt oder schwerwiegend gegen Datenschutzvorgaben verstößt.",
+      "section10Title": "10. Nutzungsbedingungen & Pflichten des Kunden",
+      "section10Content": "a) Erlaubte und verbotene Nutzung\nDer Kunde darf die Dienste von callflows ausschließlich für legale und rechtmäßige Zwecke nutzen.\n\nb) Einhaltung der Datenschutzvorgaben (DSGVO & Hinweispflicht)\nDer Kunde ist selbst verantwortlich, dass er alle gesetzlichen Datenschutzvorgaben einhält.\n\nc) Sperrung oder Kündigung des Accounts bei Verstößen\ncallflows behält sich das Recht vor, Konten ohne Vorankündigung zu sperren oder zu kündigen, wenn Kunden gegen diese AGB verstoßen.",
+      "section11Title": "11. Haftung & Gewährleistung",
+      "section11Content": "callflows übernimmt keine Haftung für Schäden, die durch fehlerhafte oder unvollständige Gesprächsergebnisse entstehen.\n\nDie Haftung ist auf den Betrag begrenzt, den der Kunde für die Nutzung der Dienste in den letzten sechs (6) Monaten gezahlt hat.\n\ncallflows haftet nicht für Verzögerungen oder Leistungsausfälle, die durch Umstände verursacht werden, die außerhalb der Kontrolle von callflows liegen. Dazu gehören insbesondere:\n\n• Höhere Gewalt (z. B. Naturkatastrophen, Pandemien, Streiks, behördliche Anordnungen)\n• Technische Ausfälle von Drittanbietern wie Synthflow AI\n• Cyberangriffe, Stromausfälle oder Serverprobleme\n\nIn diesen Fällen besteht kein Anspruch auf Schadensersatz oder Vertragsfortführung. Sollte ein solcher Ausfall länger als 30 Tage andauern, haben sowohl callflows als auch der Kunde das Recht, den Vertrag außerordentlich zu kündigen.",
+      "section12Title": "12. Geistiges Eigentum & Datenschutz",
+      "section12Content": "callflows behält sich das Recht vor, Nutzerdaten ausschließlich zur Verbesserung des Service zu nutzen. Eine kommerzielle Nutzung ist ausgeschlossen. Kunden dürfen generierte Inhalte frei verwenden, tragen jedoch die alleinige Verantwortung für deren rechtmäßige Nutzung.",
+      "section13Title": "13. Drittanbieter & externe Dienste",
+      "section13Content": "callflows basiert auf der Whitelabel-Technologie von Synthflow AI.\n\nFalls Synthflow den Betrieb einstellt oder es zu schwerwiegenden technischen Problemen kommt, behält sich callflows das Recht zur außerordentlichen Kündigung aller betroffenen Verträge vor. callflows übernimmt keine Haftung für Ausfälle oder Einschränkungen durch Synthflow.",
+      "section14Title": "14. Änderungen der AGB",
+      "section14Content": "callflows behält sich das Recht vor, diese AGB jederzeit anzupassen. Änderungen werden dem Kunden mindestens 14 Tage im Voraus mitgeteilt.",
+      "section15Title": "15. Gerichtsstand & anwendbares Recht",
+      "section15Content": "Es gilt das Recht der Bundesrepublik Deutschland. Gerichtsstand ist Hannover."
+    }
+  },
+  "integrationChallenges": {
+    "title": "KI-Integration ohne Komplexität",
+    "description": "Die aktuelle KI-Landschaft stellt Unternehmen vor erhebliche Herausforderungen. Viele Lösungen erfordern die Verknüpfung zahlreicher Einzelkomponenten:",
+    "challenge1": {
+      "title": "Technische Komplexität",
+      "description": "Verschiedene Tools für Telefonie, Spracherkennung, KI-Steuerung und Datenintegration"
+    },
+    "challenge2": {
+      "title": "Aufwändige Konfiguration",
+      "description": "Komplizierte Einrichtung und ständige Anpassungen an sich ändernde APIs"
+    },
+    "challenge3": {
+      "title": "Hoher Ressourcenaufwand",
+      "description": "Dedizierte Vollzeitkräfte für Entwicklung, Wartung und Optimierung nötig"
+    },
+    "solutionTitle": "Unsere Lösung",
+    "solutionDescription": "callflows übernimmt die gesamte Komplexität für Sie. Wir integrieren alle notwendigen Komponenten zu einer schlüsselfertigen Lösung – ohne dass Sie KI-Expertise oder zusätzliche Vollzeitkräfte benötigen."
+  },
+  "cta": {
+    "title": "Bereit für die Zukunft des Kundenkontakts?",
+    "description": "Vereinbaren Sie ein unverbindliches Gespräch mit unseren Experten und erfahren Sie, wie callflows Ihr Unternehmen unterstützen kann.",
+    "bookingButton": "Beratung buchen",
+    "pricingButton": "Preise ansehen",
+    "benefit1": {
+      "title": "Kostenlose Erstberatung",
+      "description": "Unverbindliches Gespräch über Ihre Anforderungen und Möglichkeiten"
+    },
+    "benefit2": {
+      "title": "Individuelle Demo",
+      "description": "Live-Demonstration angepasst an Ihre spezifischen Use Cases"
+    },
+    "benefit3": {
+      "title": "Maßgeschneidertes Angebot",
+      "description": "Transparente Preisgestaltung basierend auf Ihren Anforderungen"
+    }
+  },
+  "features": {
+    "title": "Einsatzbereiche für KI-Voice-Agents",
+    "subtitle": "In allen Bereichen sind Voice Agents der Standard von morgen.",
+    "feature1": {
+      "title": "Support & Kundenservice",
+      "description": "Automatisierte und intelligente Anrufannahme für effizienten Kundenservice rund um die Uhr.",
+      "item1": "Erste Hilfe bei Anfragen",
+      "item2": "Terminbuchungen & Reservierungen",
+      "item3": "Beschwerdemanagement"
+    },
+    "feature2": {
+      "title": "Marketing & Leadgenerierung",
+      "description": "Effiziente Kundenansprache und Follow-ups durch KI-gesteuerte Telefonkampagnen.",
+      "item1": "Automatische Werbeanrufe",
+      "item2": "Event-Erinnerungen & Nachfassanrufe",
+      "item3": "Feedback- und Umfragen"
+    },
+    "feature3": {
+      "title": "Vertrieb & Kundenbetreuung",
+      "description": "Steigerung der Verkaufszahlen durch gezielte telefonische Kundeninteraktion.",
+      "item1": "Bestandskundenbetreuung",
+      "item2": "Cross- & Upselling",
+      "item3": "Nachfassaktionen"
+    },
+    "feature4": {
+      "title": "Recruiting & HR-Prozesse",
+      "description": "Effektive Automatisierung und Vereinfachung des Bewerbungsprozesses.",
+      "item1": "Telefonische Vorauswahl",
+      "item2": "Onboarding & Dokumentenanforderungen",
+      "item3": "Mitarbeiterumfragen & Zufriedenheitsanalysen"
+    }
+  },
+  "coreFeatures": {
+    "title": "Kernfunktionen",
+    "subtitle": "Entdecken Sie die leistungsstarken Features unserer KI-Voice-Agents",
+    "feature1": {
+      "title": "Individuelle Gesprächsleitfäden",
+      "description": "Gestalten Sie die Gesprächsführung ganz nach Ihren Wünschen"
+    },
+    "feature2": {
+      "title": "kompetente Einwandbehandlung",
+      "description": "Lassen Sie alle Einwände behandeln, nach eigener Anleitung oder dynamisch"
+    },
+    "feature3": {
+      "title": "Intelligente Anrufweiterleitung",
+      "description": "Übergabe an menschliche Mitarbeiter, wenn erwünscht"
+    }
+  }
+} 

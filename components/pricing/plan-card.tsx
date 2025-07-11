@@ -1,82 +1,108 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+
+import { CheckCircle } from "lucide-react";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { BookingButton } from "@/components/booking/booking-button";
 import { PricingPlan } from "@/lib/types/pricing";
-import { useState } from "react";
-import { PricingDialog } from "@/components/pricing/pricing-dialog";
+import { useI18n } from "@/lib/i18n";
 
 interface PricingCardProps {
   plan: PricingPlan;
 }
 
 export function PricingCard({ plan }: PricingCardProps) {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const { t, tArray } = useI18n();
 
-  const isCustomPlan = plan.isCustom || plan.price === 0;
+  // Map plan names to translation keys
+  const getTranslatedPlanData = (planName: string) => {
+    switch (planName) {
+      case 'Entlastung':
+        return {
+          name: t('pricing.entlastungName'),
+          subtitle: t('pricing.entlastungSubtitle'),
+          highlights: tArray('pricing.entlastungHighlights'),
+          cta: t('pricing.entlastungCta')
+        };
+      case 'Wachstum':
+        return {
+          name: t('pricing.wachstumName'),
+          subtitle: t('pricing.wachstumSubtitle'),
+          highlights: tArray('pricing.wachstumHighlights'),
+          cta: t('pricing.wachstumCta')
+        };
+      case 'Individuell':
+        return {
+          name: t('pricing.individuellName'),
+          subtitle: t('pricing.individuellSubtitle'),
+          highlights: tArray('pricing.individuellHighlights'),
+          cta: t('pricing.individuellCta')
+        };
+      default:
+        return {
+          name: plan.name,
+          subtitle: plan.subtitle,
+          highlights: plan.highlights,
+          cta: plan.cta
+        };
+    }
+  };
+
+  const translatedData = getTranslatedPlanData(plan.name);
 
   return (
-    <div className={`bg-card rounded-xl border p-8 shadow-sm h-full flex flex-col relative ${plan.popular ? 'border-primary ring-2 ring-primary/20' : 'border-border'}`}>
+    <Card className={`relative ${plan.popular ? 'border-primary shadow-lg' : ''}`}>
       {plan.popular && (
-        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-          <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold">
-            Beliebt
-          </span>
-        </div>
+        <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
+          {t('pricing.popular')}
+        </Badge>
       )}
       
-      {/* Header Section mit Name und Beschreibung */}
-      <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-        <p className="text-base text-muted-foreground">{plan.subtitle}</p>
-      </div>
-
-      {/* Preis Section - Hauptfokus */}
-      {isCustomPlan ? (
-        <div className="text-center mb-8">
-          <div className="text-3xl font-bold mb-2">Preis auf Anfrage</div>
-          <p className="text-lg font-semibold text-primary">Individuelles Minutenkontingent</p>
+      <CardHeader className="text-center pt-8">
+        <h4 className="text-2xl font-bold">{translatedData.name}</h4>
+        <p className="text-muted-foreground">{translatedData.subtitle}</p>
+        
+        <div className="mt-6">
+          {plan.isCustom ? (
+            <div className="text-2xl font-bold text-primary">
+              {t('pricing.priceOnRequest')}
+            </div>
+          ) : (
+            <div className="text-center">
+              <div className="text-lg font-semibold text-muted-foreground">
+                {plan.minutesIncluded.toLocaleString('de-DE')} {t('pricing.freeMinutes')}
+              </div>
+              <div className="text-3xl font-bold text-primary">
+                {plan.price.toFixed(2).replace('.', ',')}€ {t('pricing.perMinute')}
+              </div>
+            </div>
+          )}
         </div>
-      ) : (
-        <div className="text-center mb-8">
-          <div className="flex items-baseline justify-center mb-2">
-            <span className="text-4xl font-bold">
-              {plan.price.toFixed(2).replace('.', ',')} €
-            </span>
-            <span className="text-xl text-muted-foreground ml-2">/min</span>
+      </CardHeader>
+      
+      <CardContent className="space-y-6">
+        {/* Plan Highlights */}
+        {translatedData.highlights.length > 0 && (
+          <div className="space-y-3">
+            {translatedData.highlights.map((highlight, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-muted-foreground leading-relaxed">{highlight}</p>
+              </div>
+            ))}
           </div>
-          <p className="text-lg font-semibold text-primary">{plan.minutesIncluded.toLocaleString('de-DE')} Freiminuten</p>
-        </div>
-      )}
-
-      {/* Features Liste */}
-      <div className="flex-grow mb-8">
-        <ul className="space-y-4">
-          {plan.highlights.map((highlight, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <div className="h-2 w-2 rounded-full bg-[#FFB703] flex-shrink-0 mt-3" />
-              <span className="text-lg text-muted-foreground leading-relaxed">{highlight}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* CTA Button */}
-      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogTrigger asChild>
-          <Button 
-            className="w-full mt-auto bg-[#FFB703] hover:bg-[#FFB703]/90 text-white font-semibold py-3 text-base" 
-            variant="default"
-          >
-            {plan.cta}
-          </Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-md">
-          <PricingDialog 
-            plan={plan} 
-            onClose={() => setIsDialogOpen(false)}
-          />
-        </DialogContent>
-      </Dialog>
-    </div>
+        )}
+      </CardContent>
+      
+      <CardFooter className="pt-0">
+        <BookingButton 
+          buttonText={translatedData.cta}
+          className="w-full"
+          variant={plan.popular ? "default" : "outline"}
+          size="lg"
+          showArrow={false}
+        />
+      </CardFooter>
+    </Card>
   );
 }

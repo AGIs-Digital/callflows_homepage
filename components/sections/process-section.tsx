@@ -2,64 +2,82 @@
 
 import { Handshake, ProjectorIcon, Headphones, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const steps = [
-  {
-    number: 1,
-    icon: Handshake,
-    title: "Kontaktaufnahme",
-    description: "Kostenfreies Erstgespräch",
-    details: [
-      "Bedarfsanalyse & Use Cases",
-      "Technische Voraussetzungen",
-      "Zieldefinition"
-    ]
-  },
-  {
-    number: 2,
-    icon: ProjectorIcon,
-    title: "Workshop",
-    description: "Konzeption & Setup",
-    details: [
-      "Prozessmodellierung",
-      "Agent-Konfiguration",
-      "Automationen"
-    ]
-  },
-  {
-    number: 3,
-    icon: Sparkles,
-    title: "Prototyping",
-    description: "Test & Optimierung",
-    details: [
-      "Testphase",
-      "Feintuning",
-      "Feature-Integration"
-    ]
-  },
-  {
-    number: 4,
-    icon: Headphones,
-    title: "Support",
-    description: "Betreuung & Support",
-    details: [
-      "Go-Live",
-      "Team-Schulung",
-      "Laufende Betreuung"
-    ]
-  }
-];
+import { useI18n } from "@/lib/i18n";
 
 export function ProcessSection() {
+  const { t, locale } = useI18n();
+  
+  const getStepDetails = (step: string) => {
+    const details = {
+      de: {
+        step1: ["Bedarfsanalyse & Use Cases", "Technische Voraussetzungen", "Zieldefinition"],
+        step2: ["Prozessmodellierung", "Agent-Konfiguration", "Automationen"],
+        step3: ["Testphase", "Feintuning", "Feature-Integration"],
+        step4: ["Go-Live", "Team-Schulung", "Laufende Betreuung"]
+      },
+      en: {
+        step1: ["Needs analysis & use cases", "Technical requirements", "Goal definition"],
+        step2: ["Process modeling", "Agent configuration", "Automations"],
+        step3: ["Testing phase", "Fine-tuning", "Feature integration"],
+        step4: ["Go-live", "Team training", "Ongoing support"]
+      },
+      fr: {
+        step1: ["Analyse des besoins & cas d'usage", "Exigences techniques", "Définition des objectifs"],
+        step2: ["Modélisation des processus", "Configuration d'agent", "Automatisations"],
+        step3: ["Phase de test", "Ajustement fin", "Intégration de fonctionnalités"],
+        step4: ["Mise en service", "Formation équipe", "Suivi continu"]
+      },
+      es: {
+        step1: ["Análisis de necesidades y casos de uso", "Requisitos técnicos", "Definición de objetivos"],
+        step2: ["Modelado de procesos", "Configuración de agente", "Automatizaciones"],
+        step3: ["Fase de prueba", "Ajuste fino", "Integración de características"],
+        step4: ["Puesta en marcha", "Capacitación del equipo", "Soporte continuo"]
+      }
+    };
+    
+    return details[locale]?.[step as keyof typeof details['de']] || details.de[step as keyof typeof details['de']];
+  };
+  
+  const steps = [
+    {
+      number: 1,
+      icon: Handshake,
+      title: t('process.step1.title'),
+      description: t('process.step1.description'),
+      details: getStepDetails('step1')
+    },
+    {
+      number: 2,
+      icon: ProjectorIcon,
+      title: t('process.step2.title'),
+      description: t('process.step2.description'),
+      details: getStepDetails('step2')
+    },
+    {
+      number: 3,
+      icon: Sparkles,
+      title: t('process.step3.title'),
+      description: t('process.step3.description'),
+      details: getStepDetails('step3')
+    },
+    {
+      number: 4,
+      icon: Headphones,
+      title: t('process.step4.title'),
+      description: t('process.step4.description'),
+      details: getStepDetails('step4')
+    }
+  ];
+
   return (
-    <section className="py-24 bg-section-blue dark:bg-[#DEF0F2]/5">
+    <section className="py-20 bg-gradient-to-b from-secondary/30 via-accent/30 to-background">
       <div className="container max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-4">
-            So einfach geht's
+            {t('process.title')}
           </h2>
           <p className="text-xl text-muted-foreground">
-            Von der ersten Kontaktaufnahme bis zum Go-Live in 4 Schritten
+            {t('process.description')}
           </p>
         </div>
 

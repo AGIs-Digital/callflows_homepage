@@ -1,0 +1,452 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "pricing": "Precios",
+    "blog": "Blog",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "consultation": "Reservar Consulta"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "language": "Idioma",
+    "menu": "Abrir menú",
+    "login": "Iniciar sesión"
+  },
+  "home": {
+    "title": "callflows - comunicación automatizada con clientes",
+    "description": "Optimice el servicio al cliente, ventas y soporte con sistemas inteligentes.",
+    "hero": {
+      "headline1": "¿Abrumado con llamadas estándar?",
+      "headline2": "¿Muy poco tiempo para tareas importantes?",
+      "description": "Mientras se ahoga en el caos de las llamadas, las tareas realmente importantes se pierden: ¡es hora de una revolución!",
+      "solution": "Con Telefonía IA",
+      "solutionDescription": "Desde ventas hasta marketing y soporte: automatice sus procesos de comunicación con clientes con nosotros.",
+      "cta": "Consulta Gratuita",
+      "widgetUnavailable": "Widget temporalmente no disponible",
+      "widgetUnavailableDescription": "No se preocupe - esto a veces sucede con las demos en vivo"
+    }
+  },
+  "pricing": {
+    "pageTitle": "Precios Transparentes",
+    "intro": "Con callflows, solo paga por el tiempo real de conversación de sus agentes de voz IA durante el uso – sin costos ocultos, sin tarifas básicas.",
+    "starterTitle": "Lo Que Obtiene Para Empezar",
+    "starterDescription": "Hay una tarifa única de configuración para comenzar, cuyo monto depende del esfuerzo individual requerido. Esto incluye:",
+    "onboardingTitle": "Proceso Completo de Incorporación",
+    "onboardingDesc": "para sus empleados",
+    "callsTitle": "Llamadas de Coordinación Semanales",
+    "callsDesc": "durante todo el desarrollo",
+    "monitoringTitle": "Monitoreo Técnico",
+    "monitoringDesc": "durante todo el piloto",
+    "optimizationTitle": "Optimización Continua",
+    "optimizationDesc": "de sus agentes de voz IA",
+    "minutesTitle": "Generoso Paquete de Minutos Gratis",
+    "minutesDesc": "para todo el mes piloto",
+    "crmTitle": "Sistema CRM Personalizado",
+    "crmDesc": "específicamente para trabajo y gestión de IA",
+    "pilotDurationTitle": "Fase Piloto de 1 Mes",
+    "pilotDurationDesc": "Tarifa de configuración: 50% antes del prototipo, 50% en el lanzamiento",
+    "riskFreeTitle": "Prueba Sin Riesgo",
+    "riskFreeDesc": "Usted decide después del piloto si quiere continuar permanentemente",
+    "flexibleTitle": "Duración Flexible",
+    "flexibleDesc": "Pago mensual con 12 meses de duración después del piloto",
+    "riskFreeStart": "Así es como comienza sin riesgo – con control total, estructura de precios transparente y agentes de voz que se adaptan perfectamente a su empresa.",
+    "monthlyPackages": "Nuestros Paquetes Mensuales",
+    "pricesExclVat": "Todos los precios sin IVA",
+    "popular": "Popular",
+    "priceOnRequest": "Precio bajo consulta",
+    "individualMinutes": "Asignación individual de minutos",
+    "perMinute": "/min",
+    "freeMinutes": "minutos gratis",
+    "additionalTitle": "Paquetes de Minutos Adicionales Según Necesidad",
+    "additionalDesc": "Además de su asignación mensual, puede reservar paquetes flexibles de minutos en cualquier momento.",
+    "flexExpandTitle": "Expansión Flexible",
+    "flexExpandDesc": "Compre paquetes de minutos adicionales individualmente según sus necesidades. Estamos encantados de asesorarle y recomendar paquetes adecuados basados en su uso.",
+    "noExpiryTitle": "Sin Minutos Que Expiren",
+    "noExpiryDesc": "Los paquetes de minutos comprados no expiran y sirven como reserva. Solo se usan cuando su asignación mensual se agota.",
+    "activeMonitoringTitle": "Monitoreo Activo",
+    "activeMonitoringDesc": "Monitoreamos su uso y recomendamos proactivamente paquetes adecuados para que siempre tenga la solución óptima para sus necesidades.",
+    "featuresTitle": "Todos los Paquetes Incluyen",
+    "communicationTitle": "Comunicación",
+    "communicationItems": [
+      "Reservas en tiempo real – Programación instantánea de citas",
+      "Manejo multicanal – Hasta 100+ llamadas simultáneas",
+      "Disponible 24/7 – Sin tiempos de espera o pausas",
+      "Transferencia inteligente de llamadas cuando sea necesario"
+    ],
+    "technologyTitle": "Tecnología",
+    "technologyItems": [
+      "Base de conocimientos propia para respuestas fundamentadas",
+      "Integración CRM para mantenimiento directo de datos",
+      "Múltiples agentes IA trabajan juntos formando un departamento digital",
+      "Infraestructura escalable para cualquier tamaño de empresa"
+    ],
+    "personalizationTitle": "Personalización",
+    "personalizationItems": [
+      "Gestión individual de conversaciones",
+      "Personalizaciones específicas del cliente",
+      "Soluciones específicas de la industria",
+      "Flujos de trabajo a medida"
+    ],
+    "entlastungName": "Alivio",
+    "entlastungSubtitle": "Apoyo en el negocio diario",
+    "entlastungHighlights": [
+      "Mejoras rápidamente perceptibles en el trabajo diario",
+      "Responder preguntas frecuentes sin despliegue de personal",
+      "Menos transferencias y tiempos de espera"
+    ],
+    "entlastungCta": "Obtener consulta ahora",
+    "wachstumName": "Crecimiento",
+    "wachstumSubtitle": "Ingresos y Expansión",
+    "wachstumHighlights": [
+      "Optimizar procesos desde la consulta hasta la finalización",
+      "Menos interrupciones en los flujos de trabajo diarios",
+      "Crecimiento sin expansión proporcional de personal",
+      "Leads de alta calidad para el equipo de ventas"
+    ],
+    "wachstumCta": "Obtener consulta ahora",
+    "individuellName": "Individual",
+    "individuellSubtitle": "Soluciones a Medida",
+    "individuellHighlights": [
+      "Liderazgo de mercado a través de la adopción temprana de IA",
+      "Adquirir nuevos clientes incluso fuera del horario comercial",
+      "Consulta personal y solución personalizada",
+      "Insights de conversaciones para decisiones comerciales",
+      "IA multilingüe para expansión global"
+    ],
+    "individuellCta": "Oferta individual",
+    "ctaTitle": "¿Listo para el futuro de la comunicación con clientes?",
+    "ctaDescription": "Programe una conversación sin compromiso con nuestros expertos y aprenda cómo callflows puede apoyar su negocio.",
+    "ctaButtonText": "Reservar consulta gratuita"
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "Póngase en contacto con nosotros",
+    "pageTitle": "Contacto",
+    "formTitle": "Contáctanos",
+    "formDescription": "¿Tiene preguntas sobre nuestros agentes de voz IA? Estaremos encantados de ayudarle.",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Su nombre",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "su.email@ejemplo.es",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Su mensaje...",
+    "sendButton": "Enviar mensaje",
+    "appointmentTitle": "Reservar consulta",
+    "appointmentDescription": "Programe una cita para una consulta personal sobre nuestros agentes de voz IA.",
+    "bookingButton": "Reservar cita",
+    "contactDataTitle": "Información de contacto",
+    "company": "callflows Abeln Goltz GbR",
+    "address": "Fenskestraße 9A",
+    "city": "30165 Hannover, Alemania",
+    "email": "info@callflows.de",
+    "phone": "+49 511 1665 3388"
+  },
+  "footer": {
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "imprint": "Aviso Legal",
+    "description": "Agentes de voz IA para comunicación automatizada con clientes. Revolucionamos la forma en que las empresas hacen llamadas telefónicas.",
+    "product": "Producto",
+    "pricing": "Precios",
+    "faq": "FAQ",
+    "company": "Empresa",
+    "about": "Acerca de",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "legal": "Legal",
+    "copyright": "Todos los derechos reservados",
+    "address": "Fenskestraße 9A, 30165 Hannover, Alemania"
+  },
+  "process": {
+    "title": "Cómo funciona",
+    "description": "Del primer contacto al lanzamiento en 4 pasos simples",
+    "step1": {
+      "title": "Contacto inicial",
+      "description": "Llamada de consulta gratuita"
+    },
+    "step2": {
+      "title": "Taller",
+      "description": "Concepto y configuración"
+    },
+    "step3": {
+      "title": "Prototipado",
+      "description": "Prueba y optimización"
+    },
+    "step4": {
+      "title": "Soporte",
+      "description": "Atención y soporte"
+    }
+  },
+  "comparison": {
+    "title": "En comparación",
+    "description": "La comunicación empresarial con clientes generalmente se ha manejado de tres maneras.",
+    "callflowsText": "callflows es una opción moderna e innovadora.",
+    "modernSolution": "Solución IA Moderna",
+    "pros": "Ventajas",
+    "cons": "Desventajas",
+    "inhouse": {
+      "title": "Personal interno",
+      "description": "Los propios empleados manejan la telefonía dentro de la empresa.",
+      "pros": ["Contacto personal", "Control directo", "Conocimiento profundo del producto"],
+      "cons": ["Altos costos de personal", "Disponibilidad limitada", "Cobertura por enfermedad/vacaciones necesaria", "Problemas de escalabilidad en picos"]
+    },
+    "phone": {
+      "title": "Sistema telefónico",
+      "description": "Sistemas telefónicos clásicos con navegación de menú y colas de espera.",
+      "pros": ["Bajos costos operativos", "Disponibilidad 24/7", "Implementación simple"],
+      "cons": ["Sin interacción real", "Experiencia de usuario frustrante", "Sin resolución de problemas", "Oportunidades de venta perdidas"]
+    },
+    "callcenter": {
+      "title": "Centro de llamadas externo",
+      "description": "Telefonía subcontratada a proveedores de servicios especializados.",
+      "pros": ["Escalabilidad flexible", "Disponibilidad extendida", "Sin responsabilidad de personal"],
+      "cons": ["Altos costos por llamada", "Fluctuaciones de calidad", "Menor conocimiento del producto", "Diseño contractual complejo"]
+    },
+    "callflows": {
+      "title": "callflows",
+      "description": "Agentes de voz basados en IA para telefonía automatizada.",
+      "pros": ["Pensar y actuar de forma independiente", "Conversación natural", "Automatización de tareas rutinarias", "Integración de sistema sin problemas", "Rentable y sin complicaciones", "Disponibilidad 24/7", "No se requiere conocimiento previo"]
+    },
+    "conclusion": "Muchas empresas desean más automatización, menores costos de personal y una calidad de servicio consistentemente alta, las 24 horas. Aquí es exactamente donde entra nuestro agente de voz IA: como una opción innovadora que utiliza tecnología IA moderna para manejar procesos telefónicos de manera eficiente y rentable.",
+    "benefit": "Clientes satisfechos, oportunidades de ingresos mejoradas"
+  },
+  "about": {
+    "title": "Acerca de callflows",
+    "intro1": "Estamos convencidos: la IA cambiará la forma en que las empresas hablan con sus clientes. Pero no algún día, sino ahora.",
+    "intro2": "callflows ayuda a las empresas a dar forma a este cambio, no a ciegas, sino con estructura, experiencia y verdadera asociación. Nuestros agentes de voz IA se encargan de las conversaciones, entienden las preocupaciones, reservan citas, reconocen oportunidades y se integran en los sistemas existentes como si siempre hubieran estado allí.",
+    "intro3": "Sabemos: esta tecnología es nueva. Es poderosa, pero no funciona por sí sola. Por eso no dejamos a nuestros clientes solos con solo una \"herramienta IA\".",
+    "mission": "Nuestra Misión:",
+    "missionPoints": [
+      "Hacer la IA tangible.",
+      "Automatizar el contacto con el cliente sin perder calidad.",
+      "Ayudar a las empresas a comunicarse más rápido, más eficientemente y más humanamente al mismo tiempo."
+    ],
+    "special": "Lo que nos hace especiales:",
+    "specialDescription": "Acompañamos desde el principio. Escuchamos. Construimos juntos una solución que realmente se adapte a su empresa.",
+    "features": [
+      "Modelado de procesos individual",
+      "Prompting personal y ajuste fino",
+      "Facturación transparente por minuto sin costos ocultos",
+      "Número ilimitado de agentes",
+      "Check-ins regulares para optimización",
+      "Configuración, soporte y número de teléfono incluidos"
+    ],
+    "teamDescription": "no es software, sino un equipo. Con experiencia en ventas, marketing y automatización. Con genuino interés en su éxito."
+  },
+  "legal": {
+    "impressum": {
+      "title": "Aviso Legal",
+      "subtitle": "Información legal y datos de contacto",
+      "intro": "Aquí encontrará toda la información legalmente relevante sobre callflows, su proveedor de agentes de voz IA y comunicación automatizada con clientes.",
+      "tmgTitle": "Información según § 5 TMG",
+      "contactTitle": "Contacto",
+      "vatTitle": "Número de Identificación de IVA",
+      "vatText": "Número de identificación de IVA según §27 a de la ley del IVA:",
+      "responsibleTitle": "Responsable del contenido según § 55 Abs. 2 RStV",
+      "responsibleText": "Tom Abeln, Timo Goltz\\nFenskestraße 9A\\n30165 Hannover\\nAlemania",
+      "disputeTitle": "Resolución de disputas",
+      "disputeText1": "La Comisión Europea proporciona una plataforma para la resolución de disputas en línea (RSD):",
+      "disputeText2": "Puede encontrar nuestra dirección de correo electrónico arriba en el aviso legal.",
+      "disputeText3": "No estamos dispuestos u obligados a participar en procedimientos de resolución de disputas ante una junta de arbitraje de consumidores.",
+      "liabilityTitle": "Responsabilidad por el contenido",
+      "liabilityText1": "Como proveedor de servicios, somos responsables de nuestro propio contenido en estas páginas de acuerdo con § 7 párr. 1 TMG bajo la ley general. Según los §§ 8 a 10 TMG, sin embargo, nosotros como proveedor de servicios no estamos obligados a monitorear información de terceros transmitida o almacenada o investigar circunstancias que indiquen actividad ilegal.",
+      "liabilityText2": "Las obligaciones de eliminar o bloquear el uso de información según las leyes generales permanecen inalteradas. Sin embargo, la responsabilidad a este respecto solo es posible desde el momento del conocimiento de una infracción específica. Al tomar conocimiento de infracciones correspondientes, eliminaremos este contenido inmediatamente."
+    },
+    "datenschutz": {
+      "title": "Política de Privacidad",
+      "subtitle": "Información sobre la protección de sus datos personales",
+      "intro": "La protección de sus datos personales tiene la más alta prioridad para callflows. Aquí aprenderá cómo manejamos sus datos y qué derechos tiene.",
+      "introduction": {
+        "title": "Introducción",
+        "content": "Abeln Goltz GbR (\"callflows\", \"nosotros\", \"nuestro\" o \"nuestros\") opera el sitio web https://callflows.de (en adelante \"Servicio\"). Esta política de privacidad le informa sobre nuestras políticas con respecto a la recopilación, uso y divulgación de datos personales cuando utiliza nuestro Servicio. Procesamos sus datos exclusivamente de acuerdo con las disposiciones del Reglamento General de Protección de Datos (RGPD) de la UE, así como las leyes alemanas aplicables de protección de datos. Al utilizar el Servicio, acepta la recopilación y uso de sus datos de acuerdo con esta política de privacidad."
+      },
+      "responsible": {
+        "title": "1. Responsable del Procesamiento de Datos",
+        "content": "Responsable en el sentido del Reglamento General de Protección de Datos (RGPD) es:\\n\\ncallflows Abeln Goltz GbR\\nFenskestraße 9A\\n30165 Hannover\\nE-Mail: info@callflows.de"
+      },
+      "dataCollection": {
+        "title": "2. ¿Qué Datos Recopilamos?",
+        "content": "Recopilamos y procesamos datos personales solo en la medida necesaria. Esto incluye:\\n\\n• Datos proporcionados directamente por el cliente: Nombre, dirección de correo electrónico, número de teléfono\\n\\n• Datos del uso de nuestro servicio: Registros de llamadas, transcripciones (si son activadas por el cliente)\\n\\n• Datos del contacto inicial: Si un cliente potencial muestra interés en nuestros servicios, se puede realizar una videollamada para discutir los requisitos. Esta conversación se graba y se elimina como máximo después de 30 días o cuando el agente se pone en funcionamiento. La grabación solo tiene lugar con el consentimiento explícito previo del cliente.\\n\\n• Datos recopilados automáticamente: Dirección IP, información del navegador (para optimización del sitio web), cookies"
+      },
+      "purpose": {
+        "title": "3. Propósito del Procesamiento de Datos",
+        "content": "Procesamos datos personales exclusivamente para los siguientes propósitos:\\n\\n• Creación, provisión y mejora de agentes de voz\\n• Comunicación con el cliente y soporte\\n• Facturación y procesamiento de pagos (vía Stripe)\\n• Asegurar y optimizar la calidad del servicio\\n• Cumplimiento de obligaciones legales"
+      },
+      "thirdParties": {
+        "title": "4. Divulgación a Terceros",
+        "content": "No compartimos datos personales con terceros no involucrados. Sin embargo, trabajamos con los siguientes proveedores terceros que son necesarios para proporcionar nuestro servicio:\\n\\n• Synthflow AI (plataforma para agentes de voz, solución de marca blanca)\\n• Stripe (procesamiento de pagos)\\n• Proveedor de hosting (ubicación del servidor dentro de la UE)\\n\\nTenemos acuerdos de procesamiento de datos correspondientes (APD) con estos proveedores de servicios para asegurar el cumplimiento del RGPD."
+      },
+      "retention": {
+        "title": "5. Duración del Almacenamiento y Eliminación de Datos",
+        "content": "• Los datos relacionados con el cliente se almacenan mientras exista una relación contractual activa.\\n\\n• Tras la cancelación de la suscripción, todos los datos personales serán eliminados a menos que exista una obligación legal de retención.\\n\\n• Si el cliente consiente al almacenamiento adicional para ofertas futuras, los datos de contacto pueden continuar siendo almacenados.\\n\\n• Las grabaciones de conversaciones iniciales se eliminan como máximo después de 30 días."
+      },
+      "rights": {
+        "title": "6. Derechos del Usuario Bajo RGPD",
+        "content": "Los usuarios tienen los siguientes derechos con respecto a sus datos personales:\\n\\n• Derecho a la información (Art. 15 RGPD): ¿Qué datos almacenamos?\\n• Derecho de rectificación (Art. 16 RGPD): Corrección de datos incorrectos\\n• Derecho al borrado (Art. 17 RGPD): Hacer que se eliminen los datos\\n• Derecho a la restricción del procesamiento (Art. 18 RGPD)\\n• Derecho a la portabilidad de datos (Art. 20 RGPD)\\n• Derecho a oponerse a cierto procesamiento (Art. 21 RGPD)\\n\\nLas solicitudes pueden hacerse en cualquier momento a info@callflows.de."
+      },
+      "cookies": {
+        "title": "7. Cookies y Tecnologías de Seguimiento",
+        "content": "• Nuestro sitio web usa cookies para mejorar la experiencia del usuario.\\n\\n• Al visitar el sitio web por primera vez, aparece un banner de cookies preguntando al usuario si consiente o rechaza el uso de cookies.\\n\\n• No se almacenan o evalúan cookies personales a menos que el usuario dé su consentimiento.\\n\\n• Si se usan herramientas de análisis (ej. Google Analytics, Facebook Pixel), esto solo sucede con consentimiento."
+      },
+      "security": {
+        "title": "8. Seguridad de Datos",
+        "content": "Implementamos medidas técnicas y organizacionales (MTO) para proteger los datos personales:\\n\\n• Cifrado SSL para transmisión segura de datos\\n• Controles de firewall y acceso\\n• Protección con contraseña y autenticación de dos factores (2FA)\\n• Derechos de acceso restringidos para empleados\\n• Almacenamiento en servidores seguros dentro de la UE"
+      },
+      "transfer": {
+        "title": "9. Transferencia Internacional de Datos",
+        "content": "• Todos los datos se almacenan exclusivamente dentro de la UE.\\n• No tiene lugar transferencia a países terceros (ej. EE.UU.)."
+      },
+      "changes": {
+        "title": "10. Cambios a la Política de Privacidad",
+        "content": "Nos reservamos el derecho de cambiar esta política de privacidad. Los usuarios serán informados al menos 14 días antes de que entre en vigor por correo electrónico o en nuestro sitio web."
+      },
+      "contact": {
+        "title": "11. Contacto para Consultas de Privacidad",
+        "content": "Para consultas de privacidad o ejercer derechos de usuario, contáctenos en:\\n\\ncallflows Abeln Goltz GbR\\nE-Mail: info@callflows.de\\nDirección: Fenskestraße 9A, 30165 Hannover"
+      },
+      "dataUsage": {
+        "title": "12. Recopilación y Uso de Datos",
+        "content": "Recopilamos varios tipos de información para varios propósitos para proporcionar y mejorar nuestro Servicio.",
+        "personalData": {
+          "title": "2.1 Datos Personales",
+          "content": "Al usar nuestro Servicio, podemos pedirle que nos proporcione ciertos datos personales que pueden usarse para contactarlo o identificarlo (\"Datos Personales\"). Los datos personales pueden incluir, pero no se limitan a, la siguiente información:",
+          "list": ["Dirección de correo electrónico", "Nombre y apellido", "Número de teléfono", "Nombre de la empresa", "Dirección", "Cookies y datos de uso"]
+        }
+      },
+      "aiSecurity": {
+        "title": "13. Seguridad de Datos para Agentes de Voz IA",
+        "content": "Al usar nuestros agentes de voz IA, se procesan datos de conversación para proporcionar el servicio. Damos el mayor valor a la seguridad de estos datos:",
+        "list": ["Todas las conversaciones se transmiten cifradas y se almacenan como transcripciones", "Los datos de conversación se procesan exclusivamente en servidores dentro de la UE", "Solo empleados autorizados tienen acceso a los datos de conversación", "Los datos de conversación solo se almacenan el tiempo necesario para proporcionar el servicio", "Los datos de conversación pueden eliminarse en cualquier momento a petición"]
+      }
+    },
+    "agb": {
+      "title": "Términos y Condiciones",
+      "subtitle": "Base contractual de nuestra cooperación",
+      "translationNote": "La traducción completa de todas las secciones de Términos y Condiciones está disponible.",
+      "noteLabel": "Nota:",
+      "section1Title": "1. Definiciones de Términos",
+      "section1Content": "Para efectos de estos Términos y Condiciones, se aplican las siguientes definiciones:\n\n\"Proveedor\" se refiere a Abeln Goltz GbR, operando bajo la marca callflows, ubicada en Fenskestraße 9A, 30165 Hannover.\n\n\"Cliente\" se refiere exclusivamente a empresarios en el sentido del § 14 BGB, es decir, personas físicas o jurídicas que utilizan el servicio con fines comerciales o profesionales. Los consumidores en el sentido del § 13 BGB están excluidos del uso.\n\n\"Servicios\" se refiere a todos los servicios ofrecidos y proporcionados por callflows en el campo de la automatización telefónica asistida por IA.\n\n\"Contrato\" se refiere al acuerdo entre el Proveedor y el Cliente para el uso de los servicios de callflows.\n\n\"Proveedores terceros\" se refiere a proveedores de servicios externos cuyas tecnologías o plataformas están integradas en los servicios de callflows, en particular Synthflow AI.\n\n\"Contenido del usuario\" se refiere a todos los datos creados, transmitidos o almacenados por el Cliente a través de los servicios de callflows, incluidos los registros de llamadas y las transcripciones.",
+      "section2Title": "2. Ámbito de Aplicación",
+      "section2Content": "Estos Términos y Condiciones rigen el uso de los servicios proporcionados por callflows. callflows es una marca de Abeln Goltz GbR, Fenskestraße 9A, 30165 Hannover. Se aplican a todos los contratos entre Abeln Goltz GbR (\"Proveedor\") y los usuarios (\"Clientes\"). Al utilizar los servicios ofrecidos, el Cliente reconoce estos Términos y Condiciones.",
+      "section3Title": "3. Descripción del Servicio",
+      "section3Content": "callflows ofrece una solución de agentes telefónicos IA basada en la nube que ayuda a las empresas a automatizar los procesos de comunicación. Los servicios se basan en una integración de marca blanca de un proveedor tercero. El Cliente recibe acceso a varios paquetes de servicios con cuotas de uso definidas. Las características exactas del servicio se derivan de las descripciones tarifarias respectivas.",
+      "section4Title": "4. Duración del Contrato y Terminación",
+      "section4Content": "El contrato se concluye por tiempo indefinido y se renueva automáticamente por un mes adicional cada vez, a menos que se termine.\n\nEl Cliente puede cancelar la suscripción en cualquier momento hasta el día anterior a la próxima renovación automática.\n\nLa terminación se puede hacer de dos maneras:\n1. Directamente a través de Stripe desactivando la suscripción.\n2. Por escrito vía correo electrónico al soporte de callflows (info@callflows.de).\n\nDespués de la terminación, el acceso permanece hasta el final del período de facturación ya pagado.\n\nNo se proporciona reembolso por días no utilizados dentro del período de facturación.\n\ncallflows se reserva el derecho de terminar el contrato sin previo aviso por causa justificada, particularmente en caso de:\n• Violación de estos Términos y Condiciones, especialmente por uso abusivo o ilegal de los servicios\n• Incumplimiento de pago, a menos que se remedie dentro de 7 días después del recordatorio\n• Manipulación o cambios técnicos no autorizados al servicio\n\ncallflows puede terminar el contrato con 30 días de aviso al final del mes. La terminación se enviará por correo electrónico a la dirección registrada con el Cliente.",
+      "section5Title": "5. Precios y Términos de Pago",
+      "section5Content": "Los precios actuales y opciones tarifarias se pueden ver en el sitio web del Proveedor.\n\nLa facturación se hace mensualmente por adelantado a través del proveedor de servicios de pago Stripe.\n\nEn caso de incumplimiento de pago, el Cliente tiene 7 días después del recordatorio para hacer el pago pendiente.\n\ncallflows se reserva el derecho de bloquear el acceso al servicio y terminar el contrato en caso de no pago.\n\nGeneralmente, no se proporciona reembolso por pagos ya realizados.\n\nLos cambios de precios se comunicarán al Cliente con al menos 30 días de anticipación.\n\nEn caso de un cambio de precio, el Cliente tiene el derecho de terminar el contrato extraordinariamente.",
+      "section6Title": "6. Paquetes de Minutos y Facturación Adicional",
+      "section6Content": "Uso Flexible y Facturación:\nLos clientes tienen la opción de reservar paquetes de minutos además de su suscripción mensual. Estos paquetes de minutos ofrecen precios por minuto más baratos en comparación con la facturación minuto exacto.\n\nSi el cliente no reserva un paquete de minutos, los minutos de conversación que excedan la cuota de minutos incluida se facturan automáticamente a €0.99/minuto sobre una base de minuto exacto.\n\nValidez y Orden de Uso:\nLos paquetes de minutos son ilimitados en tiempo y permanecen válidos hasta que se consumen completamente. Los minutos se usan en un orden fijo: Primero, se consume la cuota de minutos incluida en la suscripción mensual, luego se usan los paquetes de minutos ya reservados. Si un cliente ha comprado múltiples paquetes de minutos, se consumen en el orden de su compra, siendo los paquetes más antiguos utilizados primero.\n\nApilamiento y Transferibilidad:\nLos clientes tienen la opción de comprar múltiples paquetes de minutos simultáneamente, apilarlos y consumirlos flexiblemente en cualquier orden. Los paquetes de minutos no utilizados se transfieren automáticamente al siguiente mes y no expiran mientras la suscripción permanezca activa.\n\nCancelación y Expiración de Minutos:\nSin embargo, al cancelar la suscripción, todos los paquetes de minutos no utilizados expiran con efecto inmediato. No se proporciona reembolso por minutos no utilizados. Los paquetes de minutos siempre deben reservarse manualmente; no se proporciona recarga automática.\n\nCambios de Precios y Transparencia:\nLos precios de los paquetes de minutos pueden cambiar. Los clientes serán informados sobre cambios de precios al menos 30 días de anticipación por correo electrónico o a través del sitio web. Sin embargo, los cambios solo se aplican a paquetes de minutos recién comprados – los paquetes ya comprados mantienen sus condiciones originales.\n\nÁreas de Uso:\nLos paquetes de minutos pueden usarse para todas las llamadas, tanto entrantes como salientes. No hay más restricciones aparte de los términos generales de uso del servicio.",
+      "section7Title": "7. Facturación y Quejas",
+      "section7Content": "El procesamiento de pagos se maneja a través de Stripe, por lo que los clientes reciben automáticamente una factura.\n\nSi la factura recibida no es adecuada, el cliente puede solicitar una corrección por correo electrónico a info@callflows.de. El Proveedor verificará si es posible un ajuste.\n\nSi el cliente identifica un problema con una factura, tiene 14 días después de la facturación para quejarse. Después de que expire este período, la factura se considera aceptada.\n\nLas quejas deben enviarse exclusivamente por correo electrónico a info@callflows.de.",
+      "section8Title": "8. Sin Derecho de Desistimiento",
+      "section8Content": "Dado que nuestro servicio está destinado exclusivamente a empresarios (§ 14 BGB), no existe derecho legal de desistimiento. No se otorga derecho voluntario de desistimiento.",
+      "section9Title": "9. Violaciones de Protección de Datos & Responsabilidad del Cliente",
+      "section9Content": "El Cliente se compromete a cumplir con todos los requisitos de protección de datos (incluyendo RGPD).\n\nEn caso de violaciones, el Cliente exime a callflows de todas las reclamaciones de terceros.\n\ncallflows se reserva el derecho de bloquear el acceso al servicio o terminar el contrato sin previo aviso si el Cliente viola repetida o gravemente los requisitos de protección de datos.",
+      "section10Title": "10. Términos de Uso & Obligaciones del Cliente",
+      "section10Content": "a) Uso permitido y prohibido\nEl Cliente puede usar los servicios de callflows exclusivamente para propósitos legales y lícitos.\n\nb) Cumplimiento de requisitos de protección de datos (RGPD & obligaciones de notificación)\nEl Cliente es el único responsable de asegurar el cumplimiento de todos los requisitos legales de protección de datos.\n\nc) Suspensión o terminación de cuenta por violaciones\ncallflows se reserva el derecho de suspender o terminar cuentas sin previo aviso si los clientes violan estos Términos y Condiciones.",
+      "section11Title": "11. Responsabilidad & Garantía",
+      "section11Content": "callflows no asume responsabilidad por daños que surjan de resultados de conversación defectuosos o incompletos.\n\nLa responsabilidad está limitada al monto que el Cliente ha pagado por usar los servicios en los últimos seis (6) meses.\n\ncallflows no es responsable por retrasos o fallas de servicio causadas por circunstancias fuera del control de callflows. Estas incluyen en particular:\n\n• Fuerza mayor (ej., desastres naturales, pandemias, huelgas, órdenes gubernamentales)\n• Fallas técnicas de proveedores terceros como Synthflow AI\n• Ciberataques, cortes de energía o problemas de servidor\n\nEn estos casos, no hay reclamo por daños o continuación de contrato. Si tal falla dura más de 30 días, tanto callflows como el Cliente tienen el derecho de terminar el contrato extraordinariamente.",
+      "section12Title": "12. Propiedad Intelectual & Privacidad",
+      "section12Content": "callflows se reserva el derecho de usar datos de usuario exclusivamente para mejorar el servicio. El uso comercial está excluido. Los clientes pueden usar libremente el contenido generado pero asumen la responsabilidad total por su uso legal.",
+      "section13Title": "13. Terceros & Servicios Externos",
+      "section13Content": "callflows se basa en la tecnología whitelabel de Synthflow AI.\n\nSi Synthflow cesa operaciones o experimenta problemas técnicos serios, callflows se reserva el derecho de terminar extraordinariamente todos los contratos afectados. callflows no asume responsabilidad por fallas o limitaciones causadas por Synthflow.",
+      "section14Title": "14. Cambios en los Términos",
+      "section14Content": "callflows se reserva el derecho de modificar estos términos en cualquier momento. Los cambios serán comunicados a los clientes al menos 14 días con anticipación.",
+      "section15Title": "15. Jurisdicción & Ley Aplicable",
+      "section15Content": "Se aplica la ley de la República Federal de Alemania. El lugar de jurisdicción es Hannover."
+    }
+  },
+  "integrationChallenges": {
+    "title": "Integración de IA sin Complejidad",
+    "description": "El panorama actual de la IA presenta desafíos significativos para las empresas. Muchas soluciones requieren vincular numerosos componentes individuales:",
+    "challenge1": {
+      "title": "Complejidad Técnica",
+      "description": "Varias herramientas para telefonía, reconocimiento de voz, control de IA e integración de datos"
+    },
+    "challenge2": {
+      "title": "Configuración Compleja",
+      "description": "Configuración complicada y ajustes constantes a APIs cambiantes"
+    },
+    "challenge3": {
+      "title": "Altos Requisitos de Recursos",
+      "description": "Personal dedicado a tiempo completo necesario para desarrollo, mantenimiento y optimización"
+    },
+    "solutionTitle": "Nuestra Solución",
+    "solutionDescription": "callflows se encarga de toda la complejidad por usted. Integramos todos los componentes necesarios en una solución llave en mano – sin que necesite experiencia en IA o personal adicional a tiempo completo."
+  },
+  "cta": {
+    "title": "¿Listo para el futuro del contacto con clientes?",
+    "description": "Programe una conversación sin compromiso con nuestros expertos y aprenda cómo callflows puede apoyar su negocio.",
+    "bookingButton": "Reservar Consulta",
+    "pricingButton": "Ver Precios",
+    "benefit1": {
+      "title": "Consulta Inicial Gratuita",
+      "description": "Conversación sin compromiso sobre sus requisitos y posibilidades"
+    },
+    "benefit2": {
+      "title": "Demo Individual",
+      "description": "Demostración en vivo adaptada a sus casos de uso específicos"
+    },
+    "benefit3": {
+      "title": "Oferta Personalizada",
+      "description": "Precios transparentes basados en sus requisitos"
+    }
+  },
+  "features": {
+    "title": "Casos de Uso para Agentes de Voz IA",
+    "subtitle": "En todas las áreas, los agentes de voz son el estándar del mañana.",
+    "feature1": {
+      "title": "Soporte y Atención al Cliente",
+      "description": "Manejo de llamadas automatizado e inteligente para un servicio al cliente eficiente las 24 horas.",
+      "item1": "Primera ayuda para consultas",
+      "item2": "Reservas de citas y reservaciones",
+      "item3": "Gestión de quejas"
+    },
+    "feature2": {
+      "title": "Marketing y Generación de Leads",
+      "description": "Alcance eficiente de clientes y seguimientos a través de campañas telefónicas controladas por IA.",
+      "item1": "Llamadas publicitarias automáticas",
+      "item2": "Recordatorios de eventos y llamadas de seguimiento",
+      "item3": "Comentarios y encuestas"
+    },
+    "feature3": {
+      "title": "Ventas y Atención al Cliente",
+      "description": "Aumentar las cifras de ventas a través de la interacción telefónica dirigida con clientes.",
+      "item1": "Atención a clientes existentes",
+      "item2": "Venta cruzada y adicional",
+      "item3": "Acciones de seguimiento"
+    },
+    "feature4": {
+      "title": "Procesos de Reclutamiento y RRHH",
+      "description": "Automatización efectiva y simplificación del proceso de solicitud.",
+      "item1": "Preselección telefónica",
+      "item2": "Incorporación y solicitudes de documentos",
+      "item3": "Encuestas de empleados y análisis de satisfacción"
+    }
+  },
+  "coreFeatures": {
+    "title": "Funciones Principales",
+    "subtitle": "Descubra las potentes características de nuestros agentes de voz IA",
+    "feature1": {
+      "title": "Guías de Conversación Individuales",
+      "description": "Diseñe el flujo de conversación exactamente según sus deseos"
+    },
+    "feature2": {
+      "title": "Manejo Competente de Objeciones",
+      "description": "Haga que todas las objeciones sean manejadas, según su propia guía o dinámicamente"
+    },
+    "feature3": {
+      "title": "Transferencia Inteligente de Llamadas",
+      "description": "Transferencia a empleados humanos cuando se desee"
+    }
+  }
+} 
