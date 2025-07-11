@@ -6,6 +6,7 @@ import { PricingFeaturesSection } from "@/components/sections/pricing-features-s
 import { CTASection } from "@/components/sections/cta-section";
 import { PricingTables } from "@/components/pricing/tables";
 import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
+import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
 import { useI18n } from "@/lib/i18n";
 
 export default function PricingPage() {
@@ -18,6 +19,11 @@ export default function PricingPage() {
         {/* Hero Section mit Farbverlauf */}
         <div className="pt-24 pb-16 bg-gradient-to-b from-secondary via-accent/5 to-accent/20">
           <div className="container">
+            <BreadcrumbSEO 
+              items={[
+                { name: "Preise", url: "https://callflows.de/pricing" }
+              ]}
+            />
             <h1 className="text-3xl text-center sm:text-4xl md:text-4xl font-bold text-primary dark:text-white mb-4 md:mb-6 px-4">{t('pricing.pageTitle')}</h1>
             <PricingTables />
           </div>

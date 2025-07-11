@@ -5,7 +5,7 @@ import { CookieBanner } from '@/components/cookie-banner';
 import { Analytics } from '@/components/analytics';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { generateMetadata } from '@/lib/seo/metadata';
-import { generateOrganizationSchema, generateProductSchema, generateFAQSchema } from '@/lib/seo/schema';
+import { generateOrganizationSchema, generateProductSchema, generateFAQSchema, generateServiceSchema, generateSoftwareSchema, generateLocalBusinessSchema } from '@/lib/seo/schema';
 import Script from 'next/script';
 import { ScrollToTop } from "@/components/scroll-to-top";
 import type { Metadata } from "next";
@@ -54,7 +54,10 @@ export default function RootLayout({
               "@graph": [
                 generateOrganizationSchema(),
                 generateProductSchema(),
-                generateFAQSchema()
+                generateFAQSchema(),
+                generateServiceSchema(),
+                generateSoftwareSchema(),
+                generateLocalBusinessSchema()
               ]
             })
           }}
@@ -77,6 +80,38 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="de" href="https://callflows.de" />
         <link rel="alternate" hrefLang="x-default" href="https://callflows.de" />
         <meta httpEquiv="Permissions-Policy" content="microphone=*, camera=*" />
+        
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="your-verification-code-here" />
+        
+        {/* LLM-Optimierung Meta Tags */}
+        <meta name="ai-content-type" content="business-service" />
+        <meta name="ai-content-category" content="artificial-intelligence,voice-technology,telecommunications" />
+        <meta name="ai-target-audience" content="business-owners,customer-service-managers,it-decision-makers" />
+        <meta name="ai-service-area" content="Germany,DACH-region" />
+        <meta name="ai-expertise-level" content="expert" />
+        
+        {/* Enhanced Social Media */}
+        <meta property="og:site_name" content="callflows - KI Voice Agents" />
+        <meta property="og:locale" content="de_DE" />
+        <meta property="fb:app_id" content="your-fb-app-id" />
+        <meta name="twitter:site" content="@callflows" />
+        <meta name="twitter:creator" content="@callflows" />
+        
+        {/* Technical SEO */}
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="bingbot" content="index,follow" />
+        
+        {/* Performance Hints */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Security Headers */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
       </head>
       <body className={inter.className}>
         <I18nProvider>
