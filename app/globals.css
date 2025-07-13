@@ -398,3 +398,35 @@ footer {
 .animate-spin-custom {
   animation: spin 1s linear infinite;
 }
+
+/* Glimmer/Shimmer Effect Animation */
+@keyframes slide {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(0%) skewX(-12deg);
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(100%) skewX(-12deg);
+    opacity: 0;
+  }
+}
+
+/* Continuous shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

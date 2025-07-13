@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useRef } from "react";
-import { Puzzle, Layers, Wrench, Lightbulb, FileText, MessageCircle, Database, User, Phone } from "lucide-react";
+import { Puzzle, Layers, Wrench, Lightbulb, FileText, MessageCircle, Database, User, Phone, X, Check, CheckCircle } from "lucide-react";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Circle = React.forwardRef<
   HTMLDivElement,
@@ -43,7 +44,7 @@ const OpenAILogo = () => (
 );
 
 export function IntegrationChallengesSection() {
-  const { t } = useI18n();
+  const { t, tArray } = useI18n();
   const containerRef = useRef<HTMLDivElement>(null);
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
@@ -54,7 +55,7 @@ export function IntegrationChallengesSection() {
   const div7Ref = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-secondary via-secondary/50 to-secondary/30">
+    <section className="py-20 bg-gradient-to-b from-secondary via-secondary/50 to-accent/20">
       <div className="container max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Linke Spalte - Text und Herausforderungen */}
@@ -219,6 +220,90 @@ export function IntegrationChallengesSection() {
                 gradientStopColor="hsl(var(--accent))"
               />
             </div>
+          </div>
+        </div>
+        
+        {/* Differenzierung / USP */}
+        <div className="container max-w-6xl mt-20">
+          <div className="max-w-4xl mx-auto">
+            {/* Comparison Boxes */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* callflows Box */}
+              <div className="p-6 rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-200/50 hover:border-green-300 cursor-pointer">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-green-200">
+                    <Image 
+                      src="/icon.png" 
+                      alt="callflows" 
+                      width={24} 
+                      height={24}
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <span className="font-semibold text-primary">callflows</span>
+                </div>
+                <div className="space-y-3">
+                  {tArray('integrationChallenges.comparison.callflows').map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="text-sm text-green-800 font-medium">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Andere Anbieter Box */}
+              <div className="p-6 rounded-xl bg-gradient-to-r from-red-50 to-orange-50 border border-red-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">AA</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">{t('integrationChallenges.comparison.othersTitle')}</span>
+                </div>
+                <div className="space-y-3">
+                  {tArray('integrationChallenges.comparison.others').map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <X className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="text-sm text-red-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Key Phrase Box - Pricing Card Design with Glimmer Effect */}
+          <div className="mt-12 max-w-4xl mx-auto">
+            <Card className="border-primary shadow-lg relative overflow-hidden bg-gradient-to-r from-primary/5 via-accent/10 to-primary/5">
+              {/* Animated Glimmer Overlay */}
+              <div className="absolute inset-0 opacity-60">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent w-full h-full animate-pulse"></div>
+              </div>
+              
+              {/* Moving Shine Effect */}
+              <div className="absolute top-0 left-0 w-full h-full">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -skew-x-12 translate-x-[-100%] animate-bounce opacity-75" 
+                     style={{ 
+                       animation: 'slide 4s ease-in-out infinite',
+                       backgroundSize: '200% 100%'
+                     }}>
+                </div>
+              </div>
+              
+              <CardContent className="p-8 text-center relative z-10 bg-white/10 backdrop-blur-sm">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <CheckCircle className="h-8 w-8 text-green-600 animate-pulse filter drop-shadow-lg" />
+                  <h3 className="text-xl font-bold text-primary">{t('integrationChallenges.keyMessage.title')}</h3>
+                </div>
+                <p className="text-lg font-semibold text-muted-foreground">
+                  {t('integrationChallenges.keyMessage.description')}
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>

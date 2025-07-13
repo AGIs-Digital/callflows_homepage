@@ -70,7 +70,7 @@ export function ProcessSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-secondary/30 via-accent/30 to-background">
+    <section className="py-20 bg-gradient-to-b from-primary/30 via-primary/20 to-secondary/10">
       <div className="container max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-4">

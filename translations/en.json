@@ -183,6 +183,24 @@
     "email": "info@callflows.de",
     "phone": "+49 511 1665 3388"
   },
+  "petraUsp": {
+    "badge": "Enterprise Exclusive",
+    "title": "AI + Human Expertise", 
+    "subtitle": "When technology meets 20 years of sales experience",
+    "description": "This exclusive consulting service is currently only available for German-speaking customers.",
+    "benefit1Title": "20+ Years Experience",
+    "benefit1Description": "Proven methods for sustainable sales success",
+    "benefit2Title": "AI Telephony Specialist", 
+    "benefit2Description": "Perfect combination of AI preparation and human closing",
+    "benefit3Title": "Enterprise Exclusive",
+    "benefit3Description": "Individual consulting for maximum ROI",
+    "ctaButton": "Discover Consulting Services",
+    "modalTitle": "Smart Phone Sales – When AI prepares & humans close",
+    "modalIntro": "End frustrating cold calls without effect.",
+    "modalDescription": "This consulting service is currently only available in German for German-speaking customers.",
+    "websiteButton": "Visit Website",
+    "germanOnlyNotice": "This service is currently only available for German-speaking customers."
+  },
   "footer": {
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
@@ -414,7 +432,24 @@
       "description": "Dedicated full-time staff needed for development, maintenance and optimization"
     },
     "solutionTitle": "Our Solution",
-    "solutionDescription": "callflows takes over all the complexity for you. We integrate all necessary components into a turnkey solution – without you needing AI expertise or additional full-time staff."
+    "solutionDescription": "callflows takes over all the complexity for you. We integrate all necessary components into a turnkey solution – without you needing AI expertise or additional full-time staff.",
+    "comparison": {
+      "callflows": [
+        "Complete expertise & setup takeover",
+        "Proactive digital transformation",
+        "Ongoing optimization & development"
+      ],
+      "others": [
+        "Sell pure white-label solutions",
+        "Leave you alone with setup & prompting",
+        "No proactive development"
+      ],
+      "othersTitle": "Other Providers"
+    },
+    "keyMessage": {
+      "title": "Strategic Partner",
+      "description": "You don't just get a solution – but a strategic partner for your AI transformation."
+    }
   },
   "cta": {
     "title": "Ready for the future of customer contact?",

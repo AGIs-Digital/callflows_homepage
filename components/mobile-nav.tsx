@@ -8,11 +8,14 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useI18n } from "@/lib/i18n";
+import { useAuthStore } from "@/lib/auth/auth-store";
+import { BarChart3, Users } from "lucide-react";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const { t } = useI18n();
+  const { isAuthenticated, user, logout } = useAuthStore();
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -75,13 +78,67 @@ export function MobileNav() {
             >
               {t('nav.contact')}
             </Link>
-            <Link
-              href="/login"
-              onClick={() => setOpen(false)}
-              className="text-lg font-medium text-primary"
-            >
-              {t('common.login')}
-            </Link>
+            
+            {/* Dashboard-Links für eingeloggte Benutzer */}
+            {isAuthenticated && user?.role === 'admin' && (
+              <Link
+                href="/seo-dashboard"
+                onClick={() => setOpen(false)}
+                className={cn(
+                  "text-lg font-medium transition-colors hover:text-primary flex items-center gap-2",
+                  pathname === "/seo-dashboard" ? "text-primary" : "text-foreground/60"
+                )}
+              >
+                <BarChart3 className="h-5 w-5" />
+                SEO Dashboard
+              </Link>
+            )}
+            
+            {isAuthenticated && user?.role === 'customer' && (
+              <Link
+                href="/customer-dashboard"
+                onClick={() => setOpen(false)}
+                className={cn(
+                  "text-lg font-medium transition-colors hover:text-primary flex items-center gap-2",
+                  pathname === "/customer-dashboard" ? "text-primary" : "text-foreground/60"
+                )}
+              >
+                <Users className="h-5 w-5" />
+                Dashboard
+              </Link>
+            )}
+            
+            {/* Auth-Bereich */}
+            {isAuthenticated ? (
+              <>
+                <div className="border-t pt-4">
+                  <div className="text-sm text-muted-foreground mb-2">
+                    Angemeldet als:
+                  </div>
+                  <div className="text-base font-medium mb-4">
+                    {user?.name} ({user?.role})
+                  </div>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      logout();
+                      setOpen(false);
+                    }}
+                    className="w-full"
+                  >
+                    Abmelden
+                  </Button>
+                </div>
+              </>
+            ) : (
+              <Link
+                href="/login"
+                onClick={() => setOpen(false)}
+                className="text-lg font-medium text-primary"
+              >
+                {t('common.login')}
+              </Link>
+            )}
           </nav>
         </div>
       </SheetContent>

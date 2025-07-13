@@ -183,6 +183,24 @@
     "email": "info@callflows.de",
     "phone": "+49 511 1665 3388"
   },
+  "petraUsp": {
+    "badge": "Exclusivo Enterprise",
+    "title": "IA + Experiencia Humana",
+    "subtitle": "Cuando la tecnología se encuentra con 20 años de experiencia en ventas",
+    "description": "Este servicio de consultoría exclusivo actualmente solo está disponible para clientes de habla alemana.",
+    "benefit1Title": "20+ Años de Experiencia",
+    "benefit1Description": "Métodos probados para el éxito sostenible en ventas",
+    "benefit2Title": "Especialista en Telefonía IA",
+    "benefit2Description": "Combinación perfecta de preparación IA y cierre humano",
+    "benefit3Title": "Exclusivo Enterprise",
+    "benefit3Description": "Consultoría individual para máximo ROI",
+    "ctaButton": "Descubrir Servicios de Consultoría",
+    "modalTitle": "Ventas Telefónicas Inteligentes – Cuando la IA prepara y los humanos cierran",
+    "modalIntro": "Termina con las llamadas en frío frustrantes sin efecto.",
+    "modalDescription": "Este servicio de consultoría actualmente solo está disponible en alemán para clientes de habla alemana.",
+    "websiteButton": "Visitar Sitio Web",
+    "germanOnlyNotice": "Este servicio actualmente solo está disponible para clientes de habla alemana."
+  },
   "footer": {
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio",
@@ -414,7 +432,24 @@
       "description": "Personal dedicado a tiempo completo necesario para desarrollo, mantenimiento y optimización"
     },
     "solutionTitle": "Nuestra Solución",
-    "solutionDescription": "callflows se encarga de toda la complejidad por usted. Integramos todos los componentes necesarios en una solución llave en mano – sin que necesite experiencia en IA o personal adicional a tiempo completo."
+    "solutionDescription": "callflows se encarga de toda la complejidad por usted. Integramos todos los componentes necesarios en una solución llave en mano – sin que necesite experiencia en IA o personal adicional a tiempo completo.",
+    "comparison": {
+      "callflows": [
+        "Experiencia completa & toma de control de configuración",
+        "Transformación digital proactiva",
+        "Optimización y desarrollo continuos"
+      ],
+      "others": [
+        "Venden soluciones de marca blanca puras",
+        "Le dejan solo con configuración & prompts",
+        "Sin desarrollo proactivo"
+      ],
+      "othersTitle": "Otros Proveedores"
+    },
+    "keyMessage": {
+      "title": "Socio Estratégico",
+      "description": "No solo obtiene una solución – sino un socio estratégico para su transformación de IA."
+    }
   },
   "cta": {
     "title": "¿Listo para el futuro del contacto con clientes?",

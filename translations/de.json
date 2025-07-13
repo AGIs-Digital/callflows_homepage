@@ -22,22 +22,22 @@
     "login": "Anmelden"
   },
   "home": {
-    "title": "callflows - automatisierte Kundenkommunikation",
-    "description": "Optimieren Sie Kundenservice, Vertrieb und Support mit intelligenten Systemen.",
+    "title": "callflows - KI Telefonassistent für automatisierte Telefonie",
+    "description": "Revolutionieren Sie Ihren Kundenservice mit KI-Telefonie. Voice Agents für automatisierte Kundenkommunikation, Vertrieb und Support - 24/7 verfügbar.",
     "hero": {
       "headline1": "Überlastet mit Standardanrufen?",
       "headline2": "Zu wenig Zeit für wichtige Aufgaben?",
-      "description": "Während Sie im Anruf-Chaos versinken, gehen die wirklich wichtigen Aufgaben unter – Zeit für eine Revolution!",
+      "description": "Während Sie im Anruf-Chaos versinken, gehen die wirklich wichtigen Aufgaben unter – Zeit für eine Revolution mit KI Telefonassistenten!",
       "solution": "Mit KI-Telefonie",
-      "solutionDescription": "Von Sales über Marketing bis Support – automatisieren Sie mit uns Ihre Prozesse zur Kundenkommunikation.",
+      "solutionDescription": "Von Sales über Marketing bis Support – automatisieren Sie mit intelligenten Voice Agents Ihre Prozesse zur Kundenkommunikation. Unser KI-Telefonassistent revolutioniert Ihren Kundenservice.",
       "cta": "Kostenlose Beratung",
       "widgetUnavailable": "Widget vorübergehend nicht verfügbar",
       "widgetUnavailableDescription": "Keine Sorge - das passiert manchmal bei Live-Demos"
     }
   },
   "pricing": {
-    "pageTitle": "Transparente Preisgestaltung",
-    "intro": "Bei callflows zahlen Sie während der Laufzeit nur für die tatsächliche Gesprächszeit Ihrer KI-Voice-Agents – ohne versteckte Kosten, ohne Grundgebühren.",
+    "pageTitle": "KI Telefonassistent Preise - Transparente Kosten",
+    "intro": "Bei callflows zahlen Sie während der Laufzeit nur für die tatsächliche Gesprächszeit Ihrer KI-Voice-Agents – ohne versteckte Kosten, ohne Grundgebühren. Unsere KI-Telefonie-Lösungen sind für jede Unternehmensgröße erschwinglich.",
     "starterTitle": "Was Sie für den Start bekommen",
     "starterDescription": "Für den Start fällt eine einmalige Einrichtungsgebühr an, deren Höhe sich nach dem individuellen Aufwand richtet. Darin enthalten ist:",
     "onboardingTitle": "Kompletter Onboarding-Prozess",
@@ -128,9 +128,9 @@
     "ctaButtonText": "Kostenlose Beratung buchen"
   },
   "faq": {
-    "pageTitle": "Häufig gestellte Fragen (FAQ)",
-    "pageSubtitle": "Alles, was Sie über KI-Voice-Agents und Telefon KI wissen müssen",
-    "description": "Hier finden Sie Antworten auf die häufigsten Fragen zu unseren KI-Voice-Agents und automatisierter Telefonie. Falls Ihre Frage nicht beantwortet wird, kontaktieren Sie uns gerne direkt.",
+    "pageTitle": "FAQ - KI Telefonassistent & Voice Agents",
+    "pageSubtitle": "Alles über KI-Telefonie, Voice Agents und automatisierte Kundenkommunikation",
+    "description": "Hier finden Sie Antworten auf die häufigsten Fragen zu KI Telefonassistenten, Voice Agents und automatisierter Telefonie. Erfahren Sie, wie KI im Kundenservice funktioniert und welche Vorteile Conversational AI bietet.",
     "question1": "Was ist ein KI-Voice-Agent?",
     "answer1": "Ein KI-Voice-Agent ist ein intelligenter Sprachassistent, der auf künstlicher Intelligenz basiert und in der Lage ist, Telefongespräche zu führen, Kundenanfragen zu beantworten und Prozesse zu automatisieren. Im Gegensatz zu herkömmlichen Sprachdialogsystemen können KI-Voice-Agents natürliche Gespräche führen, komplexe Anliegen verstehen und eigenständig Lösungen anbieten.",
     "question2": "Wie funktioniert die Telefon KI von callflows?",
@@ -158,7 +158,15 @@
     "question13": "Wie wird die Qualität der Gespräche sichergestellt?",
     "answer13": "Die Qualität wird durch kontinuierliches Machine Learning und regelmäßige Optimierungen gewährleitet. Alle Gespräche werden ausgewertet (natürlich unter Einhaltung des Datenschutzes), um die Performance zu verbessern. Zusätzlich bieten wir detaillierte Analytics und Reporting-Tools, damit Sie die Leistung Ihres KI-Voice-Agents jederzeit überwachen können.",
     "question14": "Gibt es eine Testphase oder Pilotprojekt?",
-    "answer14": "Ja, wir bieten einen Pilotmonat an in dem das System für Sie erstellt wird. Diese Phase dauert 1 Monat. In dieser Zeit können Sie die Funktionen unseres KI-Voice-Agents unverbindlich testen."
+    "answer14": "Ja, wir bieten einen Pilotmonat an in dem das System für Sie erstellt wird. Diese Phase dauert 1 Monat. In dieser Zeit können Sie die Funktionen unseres KI-Voice-Agents unverbindlich testen.",
+    "question15": "Wie funktioniert KI-Telefonie genau?",
+    "answer15": "KI-Telefonie basiert auf modernster Spracherkennungs- und Natural Language Processing-Technologie. Der KI Telefonassistent versteht gesprochene Sprache, analysiert Kontext und Absicht, und generiert natürliche Antworten. Dabei nutzt er Machine Learning, um kontinuierlich dazuzulernen und bessere Gesprächsergebnisse zu erzielen.",
+    "question16": "Welcher KI Voice Agent ist der beste für mein Unternehmen?",
+    "answer16": "Der beste KI Voice Agent hängt von Ihren spezifischen Anforderungen ab. callflows entwickelt maßgeschneiderte Conversational AI-Lösungen, die perfekt auf Ihre Branche, Prozesse und Kundenbedürfnisse abgestimmt sind. Unser Team berät Sie gerne bei der optimalen Konfiguration.",
+    "question17": "Ist KI-Telefonie DSGVO-konform?",
+    "answer17": "Ja, unsere KI-Telefonie-Lösungen sind vollständig DSGVO-konform. Alle Daten werden in Deutschland verarbeitet und gespeichert. Wir implementieren strenge Datenschutzmaßnahmen und stellen sicher, dass alle rechtlichen Anforderungen erfüllt werden. Detaillierte Informationen finden Sie in unserer Datenschutzerklärung.",
+    "question18": "Was kostet ein KI Telefonassistent pro Monat?",
+    "answer18": "Die Kosten für einen KI Telefonassistent variieren je nach Nutzungsumfang und Anforderungen. callflows bietet transparente, minutenbasierte Preise ohne versteckte Kosten. Das Entlastungs-Paket beginnt bei 1.000 Freiminuten, das Wachstums-Paket bei 2.000 Freiminuten. Für individuelle Lösungen erstellen wir gerne ein maßgeschneidertes Angebot."
   },
   "contact": {
     "title": "Kontakt",
@@ -182,6 +190,23 @@
     "city": "30165 Hannover, Deutschland",
     "email": "info@callflows.de",
     "phone": "+49 511 1665 3388"
+  },
+  "petraUsp": {
+    "badge": "Enterprise Exklusiv",
+    "title": "KI + Menschliche Expertise",
+    "subtitle": "Wenn Technologie auf 20 Jahre Vertriebserfahrung trifft",
+    "description": "Exklusiv für unsere Enterprise-Kunden: Professionelle Beratungsleistungen durch eine der führenden Unternehmensberaterinnen für Vertrieb und Mitarbeiterführung in Deutschland.",
+    "benefit1Title": "20+ Jahre Erfahrung",
+    "benefit1Description": "Bewährte Methoden für nachhaltigen Vertriebserfolg",
+    "benefit2Title": "Spezialist für KI-Telefonie",
+    "benefit2Description": "Perfekte Kombination aus KI-Vorarbeit und menschlichem Abschluss",
+    "benefit3Title": "Enterprise Exklusiv",
+    "benefit3Description": "Individuelle Beratung für maximalen ROI",
+    "ctaButton": "Beratungsleistungen entdecken",
+    "modalTitle": "Smarter Telefonvertrieb – Wenn KI vorarbeitet & Menschen abschließen",
+    "modalIntro": "Schluss mit frustrierenden Cold Calls ohne Wirkung.",
+    "modalDescription": "In diesem Seminar zeigen wir, wie moderne Vertriebsteams mithilfe von Telefon-KI gezielt, motiviert und effizient telefonieren – mit echten Chancen statt blinder Kaltakquise.",
+    "websiteButton": "Website besuchen"
   },
   "footer": {
     "privacy": "Datenschutz",
@@ -414,7 +439,24 @@
       "description": "Dedizierte Vollzeitkräfte für Entwicklung, Wartung und Optimierung nötig"
     },
     "solutionTitle": "Unsere Lösung",
-    "solutionDescription": "callflows übernimmt die gesamte Komplexität für Sie. Wir integrieren alle notwendigen Komponenten zu einer schlüsselfertigen Lösung – ohne dass Sie KI-Expertise oder zusätzliche Vollzeitkräfte benötigen."
+    "solutionDescription": "callflows übernimmt die gesamte Komplexität für Sie. Wir integrieren alle notwendigen Komponenten zu einer schlüsselfertigen Lösung – ohne dass Sie KI-Expertise oder zusätzliche Vollzeitkräfte benötigen.",
+    "comparison": {
+      "callflows": [
+        "Komplette Expertise & Setup-Übernahme",
+        "Proaktive digitale Transformation",
+        "Laufende Optimierung & Weiterentwicklung"
+      ],
+      "others": [
+        "Verkaufen reine Whitelabel-Lösungen",
+        "Lassen Sie allein mit Setup & Prompting",
+        "Keine proaktive Weiterentwicklung"
+      ],
+      "othersTitle": "Andere Anbieter"
+    },
+    "keyMessage": {
+      "title": "Strategischer Partner",
+      "description": "Sie erhalten nicht nur eine Lösung – sondern einen strategischen Partner für Ihre KI-Transformation."
+    }
   },
   "cta": {
     "title": "Bereit für die Zukunft des Kundenkontakts?",

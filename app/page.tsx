@@ -9,6 +9,7 @@ import { AboutSection } from "@/components/sections/about-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
 import { IntegrationChallengesSection } from "@/components/sections/integration-challenges-section";
+import { PetraUSPSection } from "@/components/sections/petra-usp-section";
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
       <HeroSection />
 
       <IntegrationChallengesSection />
+      
+      <PetraUSPSection />
   
       <ProcessSection />
 

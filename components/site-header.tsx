@@ -10,10 +10,14 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageSelector } from "@/components/language-selector";
 import { ZohoEmbed } from "@/components/booking/zoho-embed";
 import { useI18n } from "@/lib/i18n";
+import { useAuthStore } from "@/lib/auth/auth-store";
+import { Button } from "@/components/ui/button";
+import { LogOut, User, BarChart3 } from "lucide-react";
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useI18n();
+  const { isAuthenticated, user, logout } = useAuthStore();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +55,66 @@ export function SiteHeader() {
               variant="outline"
               size="sm"
             />
+            
+            {/* Auth Button */}
+            {isAuthenticated ? (
+              <div className="flex items-center space-x-2">
+                <span className="text-sm text-muted-foreground hidden sm:inline">
+                  {user?.name} ({user?.role})
+                </span>
+                
+                {/* Dashboard Button für Admins */}
+                {user?.role === 'admin' && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    asChild
+                    className="hidden md:flex"
+                  >
+                    <Link href="/seo-dashboard">
+                      <BarChart3 className="h-4 w-4 mr-2" />
+                      Dashboard
+                    </Link>
+                  </Button>
+                )}
+                
+                {/* Dashboard Button für Kunden */}
+                {user?.role === 'customer' && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    asChild
+                    className="hidden md:flex"
+                  >
+                    <Link href="/customer-dashboard">
+                      <User className="h-4 w-4 mr-2" />
+                      Dashboard
+                    </Link>
+                  </Button>
+                )}
+                
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={logout}
+                  className="hidden md:flex"
+                >
+                  <LogOut className="h-4 w-4" />
+                </Button>
+              </div>
+            ) : (
+              <Button
+                variant="outline"
+                size="sm"
+                asChild
+                className="hidden md:flex"
+              >
+                <Link href="/login">
+                  <User className="h-4 w-4 mr-2" />
+                  Anmelden
+                </Link>
+              </Button>
+            )}
           </nav>
         </div>
         <MobileNav />

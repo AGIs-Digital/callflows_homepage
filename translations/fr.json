@@ -183,6 +183,24 @@
     "email": "info@callflows.de",
     "phone": "+49 511 1665 3388"
   },
+  "petraUsp": {
+    "badge": "Exclusif Enterprise",
+    "title": "IA + Expertise Humaine",
+    "subtitle": "Quand la technologie rencontre 20 ans d'expérience en vente",
+    "description": "Ce service de conseil exclusif n'est actuellement disponible que pour les clients germanophones.",
+    "benefit1Title": "20+ Années d'Expérience",
+    "benefit1Description": "Méthodes éprouvées pour un succès commercial durable",
+    "benefit2Title": "Spécialiste de la Téléphonie IA",
+    "benefit2Description": "Combinaison parfaite de préparation IA et de conclusion humaine",
+    "benefit3Title": "Exclusif Enterprise",
+    "benefit3Description": "Conseil individuel pour un ROI maximal",
+    "ctaButton": "Découvrir les Services de Conseil",
+    "modalTitle": "Vente Téléphonique Intelligente – Quand l'IA prépare & les humains concluent",
+    "modalIntro": "Fini les appels à froid frustrants sans effet.",
+    "modalDescription": "Ce service de conseil n'est actuellement disponible qu'en allemand pour les clients germanophones.",
+    "websiteButton": "Visiter le Site Web",
+    "germanOnlyNotice": "Ce service n'est actuellement disponible que pour les clients germanophones."
+  },
   "footer": {
     "privacy": "Politique de Confidentialité",
     "terms": "Conditions d'Utilisation",
@@ -414,7 +432,24 @@
       "description": "Personnel dédié à temps plein nécessaire pour le développement, la maintenance et l'optimisation"
     },
     "solutionTitle": "Notre Solution",
-    "solutionDescription": "callflows prend en charge toute la complexité pour vous. Nous intégrons tous les composants nécessaires en une solution clé en main – sans que vous ayez besoin d'expertise en IA ou de personnel supplémentaire à temps plein."
+    "solutionDescription": "callflows prend en charge toute la complexité pour vous. Nous intégrons tous les composants nécessaires en une solution clé en main – sans que vous ayez besoin d'expertise en IA ou de personnel supplémentaire à temps plein.",
+    "comparison": {
+      "callflows": [
+        "Expertise complète & prise en charge de l'installation",
+        "Transformation digitale proactive",
+        "Optimisation et développement continus"
+      ],
+      "others": [
+        "Vendent des solutions en marque blanche pures",
+        "Vous laissent seul avec l'installation & les prompts",
+        "Aucun développement proactif"
+      ],
+      "othersTitle": "Autres Fournisseurs"
+    },
+    "keyMessage": {
+      "title": "Partenaire Stratégique",
+      "description": "Vous n'obtenez pas seulement une solution – mais un partenaire stratégique pour votre transformation IA."
+    }
   },
   "cta": {
     "title": "Prêt pour l'avenir du contact client ?",
