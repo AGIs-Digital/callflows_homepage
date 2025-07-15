@@ -31,7 +31,7 @@ export const monthlyPlans: PricingPlan[] = [
     popular: false
   },
   {
-    name: "Individuell",
+    name: "Enterprise",
     type: "custom",
     subtitle: "Maßgeschneiderte Lösungen",
     price: 0, // Preis auf Anfrage
@@ -41,7 +41,7 @@ export const monthlyPlans: PricingPlan[] = [
       "Neue Kunden auch außerhalb der Geschäftszeiten gewinnen",
       "Persönliche Beratung und maßgeschneiderte Lösung",
       "Erkenntnisse aus Gesprächen für Geschäftsentscheidungen",
-      "Mehrsprachige KI für globale Expansion"
+      "Unternehmensberatung KI-Transformation"
     ],
     cta: "Individuelles Angebot",
     popular: true,

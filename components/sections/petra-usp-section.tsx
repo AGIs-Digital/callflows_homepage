@@ -40,7 +40,7 @@ export function PetraUSPSection() {
                 {isGerman ? (
                   <>
                     Wenn Technologie auf{" "}
-                    <span className="text-primary underline decoration-wavy decoration-primary/50">
+                    <span className="text-primary decoration-primary/50">
                       20 Jahre Vertriebserfahrung
                     </span>{" "}
                     trifft

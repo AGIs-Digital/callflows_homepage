@@ -31,7 +31,7 @@ export function PricingCard({ plan }: PricingCardProps) {
           highlights: tArray('pricing.wachstumHighlights'),
           cta: t('pricing.wachstumCta')
         };
-      case 'Individuell':
+      case 'Enterprise':
         return {
           name: t('pricing.individuellName'),
           subtitle: t('pricing.individuellSubtitle'),
@@ -49,6 +49,17 @@ export function PricingCard({ plan }: PricingCardProps) {
   };
 
   const translatedData = getTranslatedPlanData(plan.name);
+
+  // Funktion um USP-Highlights zu erkennen und zu stylen
+  const isUSPHighlight = (highlight: string) => {
+    const uspKeywords = [
+      'Unternehmensberatung KI-Transformation',
+      'Corporate Consulting AI Transformation', 
+      'Conseil en Transformation IA d\'Entreprise',
+      'Consultoría Empresarial Transformación IA'
+    ];
+    return uspKeywords.some(keyword => highlight.includes(keyword));
+  };
 
   return (
     <Card className={`relative flex flex-col h-full min-h-[100px] ${plan.popular ? 'border-primary shadow-lg' : ''}`}>
@@ -73,7 +84,7 @@ export function PricingCard({ plan }: PricingCardProps) {
                 {plan.minutesIncluded.toLocaleString('de-DE')} {t('pricing.freeMinutes')}
               </div>
               <div className="text-3xl font-bold text-primary">
-                {plan.price.toFixed(2).replace('.', ',')}€ {t('pricing.perMinute')}
+                {plan.price.toFixed(2).replace('.', ',')} € {t('pricing.perMinute')}
               </div>
             </div>
           )}
@@ -87,7 +98,9 @@ export function PricingCard({ plan }: PricingCardProps) {
             {translatedData.highlights.map((highlight, index) => (
               <div key={index} className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-muted-foreground leading-relaxed">{highlight}</p>
+                <p className={`text-sm leading-relaxed ${isUSPHighlight(highlight) ? 'text-primary font-bold' : 'text-muted-foreground'}`}>
+                  {highlight}
+                </p>
               </div>
             ))}
           </div>
