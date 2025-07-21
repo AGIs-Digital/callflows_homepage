@@ -91,27 +91,30 @@ export function generateProductSchema(): WithContext<Product> {
       offers: [
         {
           '@type': 'Offer',
-          name: 'Starter',
-          price: '0.89',
+          name: 'Entlastung',
+          description: 'Unterstützung im Tagesgeschäft mit 1.000 Freiminuten',
+          price: '1.09',
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock',
-          url: 'https://callflows.de/preise'
+          url: 'https://callflows.de/pricing'
         },
         {
           '@type': 'Offer',
-          name: 'Professional',
-          price: '0.79',
+          name: 'Wachstum',
+          description: 'Umsatz & Expansion mit 2.000 Freiminuten',
+          price: '0.99',
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock',
-          url: 'https://callflows.de/preise'
+          url: 'https://callflows.de/pricing'
         },
         {
           '@type': 'Offer',
-          name: 'Corporate',
-          price: '0.69',
+          name: 'Enterprise',
+          description: 'Maßgeschneiderte Lösungen für Unternehmen',
+          price: 'Auf Anfrage',
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock',
-          url: 'https://callflows.de/preise'
+          url: 'https://callflows.de/pricing'
         }
       ]
     },
@@ -214,11 +217,11 @@ export function generateServiceSchema(): WithContext<Service> {
         },
         {
           '@type': 'Offer',
-          name: 'Individuell',
+          name: 'Enterprise',
           description: 'Maßgeschneiderte Lösungen für Unternehmen',
           priceSpecification: {
             '@type': 'PriceSpecification',
-            price: 'auf Anfrage',
+            price: 'Auf Anfrage',
             priceCurrency: 'EUR'
           }
         }
