@@ -7,12 +7,18 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ZohoEmbed } from "@/components/booking/zoho-embed";
 import { useI18n } from "@/lib/i18n";
+import Head from "next/head";
 
 export default function KontaktPage() {
   const { t } = useI18n();
   
   return (
-    <main className="bg-background">
+    <>
+      <Head>
+        <title>Kontakt - Beratung zu KI-Telefonie und Voice Agents | callflows</title>
+        <meta name="description" content="Kontaktieren Sie callflows für eine kostenlose Beratung zu KI-Telefonie und Voice Agents. Wir helfen Ihnen bei der Automatisierung Ihrer Kundenkommunikation. Jetzt Termin vereinbaren!" />
+      </Head>
+      <main className="bg-background">
       <SiteHeader />
       <div className="container max-w-4xl py-10 md:py-16">
         <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">{t('contact.pageTitle')}</h1>
@@ -69,5 +75,6 @@ export default function KontaktPage() {
       </div>
       <SiteFooter />
     </main>
+    </>
   );
 } 

@@ -8,12 +8,18 @@ import { PricingTables } from "@/components/pricing/tables";
 import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
 import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
 import { useI18n } from "@/lib/i18n";
+import Head from "next/head";
 
 export default function PricingPage() {
   const { t } = useI18n();
   
   return (
-    <main className="bg-background">
+    <>
+      <Head>
+        <title>Preise für KI-Telefonie und Voice Agents | callflows</title>
+        <meta name="description" content="Transparente Preise für KI-gestützte Voice Agents. Minutenbasierte Abrechnung ohne versteckte Kosten, flexible Pakete und 1 Monat kostenlose Pilotphase. Jetzt Kosten berechnen!" />
+      </Head>
+      <main className="bg-background">
       <SiteHeader />
       <div className="pt-12">
         {/* Hero Section mit Farbverlauf */}
@@ -34,6 +40,7 @@ export default function PricingPage() {
       </div>
 
       <SiteFooter />
-    </main>
+      </main>
+    </>
   );
 }

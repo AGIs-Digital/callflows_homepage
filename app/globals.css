@@ -430,3 +430,26 @@ footer {
     background-position: 200% 0;
   }
 }
+
+/* SEO-optimierte Styles für entfernte Inline-Styles */
+.iframe-widget {
+  border: none;
+  border-radius: 0.75rem;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.iframe-widget.loading {
+  opacity: 0;
+}
+
+.iframe-widget.loaded {
+  opacity: 1;
+}
+
+.hero-title-spacing {
+  line-height: 1.1;
+}
+
+.cookie-banner-z {
+  z-index: 200;
+}

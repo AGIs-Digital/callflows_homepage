@@ -101,6 +101,7 @@ export function AboutSection() {
               <Image
                 src="/images/team.jpg"
                 alt="Die callflows Gründer"
+                title="Das Team von callflows - Experten für KI-Telefonie und Voice Agent Entwicklung"
                 fill
                 className="object-cover"
               />

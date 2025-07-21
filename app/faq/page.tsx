@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { generateFAQSchema } from "@/lib/seo/schema";
 import { useI18n } from "@/lib/i18n";
 import Script from "next/script";
+import Head from "next/head";
 
 // Metadata wird jetzt dynamisch über i18n generiert
 
@@ -22,6 +23,10 @@ export default function FAQPage() {
   
   return (
     <>
+      <Head>
+        <title>FAQ - Häufige Fragen zu KI-Telefonie und Voice Agents | callflows</title>
+        <meta name="description" content="Antworten auf häufige Fragen zu KI-Telefonie, Voice Agents und automatisierter Kundenkommunikation. Alles über Kosten, Integration, Datenschutz und technische Anforderungen." />
+      </Head>
       <Script
         id="faq-schema"
         type="application/ld+json"

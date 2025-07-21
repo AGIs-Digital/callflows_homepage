@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -25,15 +25,10 @@ export function SEODashboard() {
   const [loading, setLoading] = useState(true);
   const [lastRefresh, setLastRefresh] = useState<Date>(new Date());
 
-  const seoMonitor = new SEOMonitor();
-
-  useEffect(() => {
-    loadSEOData();
-  }, []);
-
-  const loadSEOData = async () => {
+  const loadSEOData = useCallback(async () => {
     setLoading(true);
     try {
+      const seoMonitor = new SEOMonitor();
       const data = await seoMonitor.generateSEOReport();
       setMetrics(data);
       setLastRefresh(new Date());
@@ -42,7 +37,11 @@ export function SEODashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    loadSEOData();
+  }, [loadSEOData]);
 
   const getTrendIcon = (trend: KeywordData['trend']) => {
     switch (trend) {
@@ -102,7 +101,7 @@ export function SEODashboard() {
     );
   }
 
-  const alerts = seoMonitor.checkKeywordAlerts(metrics.keywords);
+  const alerts = new SEOMonitor().checkKeywordAlerts(metrics.keywords);
   const topKeywords = metrics.keywords
     .filter(k => k.position !== null)
     .sort((a, b) => (a.position || 999) - (b.position || 999))

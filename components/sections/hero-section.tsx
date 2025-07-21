@@ -51,8 +51,7 @@ export function HeroSection() {
             {/* Problem-Headline */}
             <div className="space-y-8 pt-8 md:pt-12">
               <h1 
-                className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary dark:text-white max-w-4xl"
-                style={{ lineHeight: '1.1' }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
               >
                 {t('home.hero.headline1')}
                 <br />
@@ -96,16 +95,12 @@ export function HeroSection() {
                 <iframe 
                   ref={iframeRef}
                   id="audio_iframe" 
+                  title="KI Voice Agent Demo - Testen Sie unseren intelligenten Telefonassistenten"
                   src="https://widget.synthflow.ai/widget/v2/526c890d-a2a8-471a-88ef-b9ba987ad08b/1747756443431x376634649512029800" 
                   allow="microphone; camera; autoplay; clipboard-write; encrypted-media" 
                   width="100%" 
                   height="100%" 
-                  style={{ 
-                    border: 'none', 
-                    borderRadius: '0.75rem',
-                    opacity: isLoading ? 0 : 1,
-                    transition: 'opacity 0.3s ease-in-out'
-                  }}
+                  className={`iframe-widget ${isLoading ? 'loading' : 'loaded'}`}
                   onLoad={handleWidgetLoad}
                   onError={handleWidgetError}
                 />

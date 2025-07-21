@@ -5,7 +5,7 @@ import { getPublishedBlogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog | callflows",
-  description: "Aktuelle Artikel und Insights zu KI-Telefonie, Voice Agents und Kundenservice-Automatisierung"
+  description: "Entdecken Sie Expertenwissen zu KI-Telefonie, Voice Agents und automatisierter Kundenkommunikation. Aktuelle Insights, Praxistipps und Trends zur Zukunft der intelligenten Telefonie von callflows."
 };
 
 export default async function BlogPage() {

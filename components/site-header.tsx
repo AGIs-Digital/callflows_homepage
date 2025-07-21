@@ -34,10 +34,11 @@ export function SiteHeader() {
       isScrolled ? "shadow-sm" : ""
     )}>
       <div className="container flex h-16 items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
+        <Link href="/" className="mr-6 flex items-center space-x-2" title="Zur callflows Startseite - KI-Telefonie & Voice Agents">
           <Image
             src="/images/callflows_brand_no_claim.png"
             alt="callflows Logo"
+            title="callflows - KI-gestützte Voice Agents für automatisierte Telefonie"
             width={150}
             height={40}
             className="dark:invert"

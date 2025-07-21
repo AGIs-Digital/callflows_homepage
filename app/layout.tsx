@@ -15,8 +15,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   ...generateMetadata({
-    title: 'callflows - automatisierte Kundenkommunikation',
-    description: 'Optimieren Sie Kundenservice, Vertrieb und Support mit intelligenten Systemen.',
+    title: 'KI-Telefonie & Voice Agents für Unternehmen',
+    description: 'Revolutionieren Sie Ihren Kundenservice mit intelligenten KI-Voice-Agents. Automatisierte Telefonie für bessere Kundenkommunikation, höhere Effizienz und 24/7 Verfügbarkeit. Jetzt risikofrei testen!',
     path: '/',
     keywords: ['KI Telefonie', 'Telefon KI', 'Voice Agent', 'KI-Voice-Agents', 'Automatisierte Telefonie'],
     images: [{
@@ -63,26 +63,16 @@ export default function RootLayout({
           }}
         />
         <Script
-          id="error-handler"
-          strategy="beforeInteractive"
-        >
-          {`
-            window.onerror = function(msg, url, lineNo, columnNo, error) {
-              console.error('Global error:', { msg, url, lineNo, columnNo, error });
-              return false;
-            };
-            window.addEventListener('unhandledrejection', function(event) {
-              console.error('Unhandled promise rejection:', event.reason);
-            });
-          `}
-        </Script>
+          src="/js/error-handler.js"
+          strategy="afterInteractive"
+        />
         <link rel="canonical" href="https://callflows.de" />
         <link rel="alternate" hrefLang="de" href="https://callflows.de" />
         <link rel="alternate" hrefLang="x-default" href="https://callflows.de" />
         <meta httpEquiv="Permissions-Policy" content="microphone=*, camera=*" />
         
         {/* Google Search Console Verification */}
-        <meta name="google-site-verification" content="your-verification-code-here" />
+        <meta name="google-site-verification" content="UDDljDLsAFICe-wuwzZjqO6w5Cx-re0sR0Ahm0Iu1Qs" />
         
         {/* LLM-Optimierung Meta Tags */}
         <meta name="ai-content-type" content="business-service" />
@@ -102,6 +92,8 @@ export default function RootLayout({
         <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
         <meta name="googlebot" content="index,follow" />
         <meta name="bingbot" content="index,follow" />
+        <meta name="lighthouse-ci" content="index,follow" />
+        <meta name="pagespeed" content="nolimit" />
         
         {/* Performance Hints */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />

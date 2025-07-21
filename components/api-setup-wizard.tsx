@@ -48,10 +48,8 @@ GOOGLE_SEARCH_CONSOLE_API_KEY=${config.searchConsoleKey || 'your-search-console-
 GOOGLE_ANALYTICS_API_KEY=${config.analyticsKey || 'your-analytics-api-key'}
 GA4_PROPERTY_ID=${config.ga4PropertyId || 'your-ga4-property-id'}
 
-# Bestehende SendGrid Konfiguration (optional)
-# SENDGRID_API_KEY=your-sendgrid-key
-# SENDGRID_FROM_EMAIL=your-email@callflows.de
-# CONTACT_EMAIL=contact@callflows.de`;
+# Kontakt E-Mail  
+CONTACT_EMAIL=contact@callflows.de`;
 
     navigator.clipboard.writeText(envContent);
     alert('Environment-Template in Zwischenablage kopiert!');
