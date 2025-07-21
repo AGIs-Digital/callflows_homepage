@@ -84,10 +84,10 @@ export function generateProductSchema(): WithContext<Product> {
     },
     offers: {
       '@type': 'AggregateOffer',
-      lowPrice: '0.63',
-      highPrice: '0.99',
+      lowPrice: '0.99',
+      highPrice: '1.09',
       priceCurrency: 'EUR',
-      offerCount: 4,
+      offerCount: 3,
       offers: [
         {
           '@type': 'Offer',

@@ -17,7 +17,7 @@ const generate = async () => {
   const getPriority = (path: string) => {
     if (path === '/index') return '1.0'; // Startseite
     if (path.includes('/blog/')) return '0.7'; // Blogbeiträge
-    if (path === '/preise' || path === '/kontakt') return '0.9'; // Wichtige Seiten
+    if (path === '/pricing' || path === '/kontakt') return '0.9'; // Wichtige Seiten
     return '0.8'; // Standard
   };
   

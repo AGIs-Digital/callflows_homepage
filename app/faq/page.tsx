@@ -51,24 +51,12 @@ export default function FAQPage() {
                 value={`item-${index}`}
                 data-faq-id={index}
                 data-track="faq-click"
-                itemScope
-                itemType="https://schema.org/Question"
               >
-                <AccordionTrigger 
-                  className="text-left font-medium py-4"
-                  itemProp="name"
-                >
+                <AccordionTrigger className="text-left font-medium py-4">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent 
-                  className="text-muted-foreground"
-                  itemScope
-                  itemType="https://schema.org/Answer"
-                  itemProp="acceptedAnswer"
-                >
-                  <div itemProp="text">
-                    {faq.answer}
-                  </div>
+                <AccordionContent className="text-muted-foreground">
+                  {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
