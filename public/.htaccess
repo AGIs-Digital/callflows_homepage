@@ -77,9 +77,8 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     # HTTP Strict Transport Security (HSTS)
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 
-    # Verhindern von Clickjacking - aber PageSpeed erlauben
+    # Verhindern von Clickjacking
     Header set X-Frame-Options "SAMEORIGIN"
-    Header setenv X-Frame-Options "ALLOW-FROM https://pagespeed.web.dev"
 </IfModule>
 
 # Verhindern Sie den Zugriff auf versteckte Dateien
@@ -87,13 +86,6 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     Order allow,deny
     Deny from all
 </FilesMatch>
-
-# PageSpeed Insights User-Agent erlauben
-<RequireAll>
-    Require all granted
-    # Google PageSpeed Insights User-Agents
-    Require not user-agent "GTmetrix"
-</RequireAll>
 
 # Optimiere die Leistung durch Komprimierung von Bildern
 <IfModule mod_rewrite.c>
