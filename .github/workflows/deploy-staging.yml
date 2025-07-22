@@ -28,8 +28,8 @@ jobs:
 
       - name: 📦 Install dependencies
         run: |
-          npm ci --silent --no-fund
-          npm audit fix --silent || true
+          npm ci --no-fund --quiet
+          npm audit fix --force || true
 
       - name: 🔧 Create .env file
         run: |
@@ -93,7 +93,7 @@ jobs:
           FTP_USERNAME: ${{ secrets.STAGING_FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.STAGING_FTP_PASSWORD }}
         run: |
-          npm install --silent ftp-deploy
+          npm install --quiet ftp-deploy
           node scripts/deploy.js
 
       - name: 🧹 Clean npm cache
