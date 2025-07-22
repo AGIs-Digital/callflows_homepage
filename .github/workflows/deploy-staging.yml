@@ -68,8 +68,7 @@ jobs:
             cd staging.callflows.de/
             timestamp=$(date +%Y%m%d_%H%M%S)
             mkdir -p backups
-            tar -czf backups/backup-${timestamp}.tar.gz ./out
-            mysqldump -h ${{ secrets.STAGING_DB_HOST }} -u ${{ secrets.STAGING_DB_USER }} -p${{ secrets.STAGING_DB_PASS }} ${{ secrets.STAGING_DB_NAME }} > backups/db-backup-${timestamp}.sql || true
+            tar -czf backups/backup-${timestamp}.tar.gz ./out || true
 
       - name: 🧹 Empty remote directory
         uses: appleboy/ssh-action@v1.0.3

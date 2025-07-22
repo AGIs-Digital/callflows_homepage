@@ -67,8 +67,7 @@ jobs:
             cd callflows.de/
             timestamp=$(date +%Y%m%d_%H%M%S)
             mkdir -p backups
-            tar -czf backups/backup-${timestamp}.tar.gz ./out
-            mysqldump -h ${{ secrets.PRODUCTION_DB_HOST }} -u ${{ secrets.PRODUCTION_DB_USER }} -p${{ secrets.PRODUCTION_DB_PASS }} ${{ secrets.PRODUCTION_DB_NAME }} > backups/db-backup-${timestamp}.sql || true
+            tar -czf backups/backup-${timestamp}.tar.gz ./out || true
 
       - name: 🏗️ Build
         run: npm run build

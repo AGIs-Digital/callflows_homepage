@@ -80,8 +80,16 @@ export function generateProductSchema(): WithContext<Product> {
     description: 'KI-gestützte Voice Agents für automatisierte Kundenkommunikation. Optimieren Sie Ihren Kundenservice, Vertrieb und Support mit intelligenten Sprachassistenten.',
     brand: {
       '@type': 'Brand',
-      name: 'callflows'
+      name: 'callflows',
+      url: 'https://callflows.de'
     },
+    manufacturer: {
+      '@type': 'Organization',
+      name: 'callflows',
+      url: 'https://callflows.de'
+    },
+    url: 'https://callflows.de',
+    image: 'https://callflows.de/images/callflows_brand_no_claim.png',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '0.99',
@@ -120,12 +128,15 @@ export function generateProductSchema(): WithContext<Product> {
     },
     category: 'Software > Künstliche Intelligenz > Sprachassistenten',
     keywords: 'KI Telefonie, Telefon KI, Voice Agent, KI-Voice-Agents, Automatisierte Telefonie',
+    sku: 'CALLFLOWS-VOICE-AGENTS-2025',
+    mpn: 'CF-VA-2025',
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '127',
-      bestRating: '5',
-      worstRating: '1'
+      ratingValue: 4.8,
+      reviewCount: 127,
+      bestRating: 5,
+      worstRating: 1,
+      ratingCount: 127
     },
     review: [
       {
@@ -136,11 +147,12 @@ export function generateProductSchema(): WithContext<Product> {
         },
         reviewRating: {
           '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5'
+          ratingValue: 5,
+          bestRating: 5,
+          worstRating: 1
         },
         reviewBody: 'Die KI-Voice-Agents von callflows haben unseren Kundenservice revolutioniert. 24/7 Verfügbarkeit und die natürliche Sprachverarbeitung überzeugen unsere Kunden täglich.',
-        datePublished: '2024-01-15'
+        datePublished: '2025-01-15'
       },
       {
         '@type': 'Review',
@@ -150,11 +162,12 @@ export function generateProductSchema(): WithContext<Product> {
         },
         reviewRating: {
           '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5'
+          ratingValue: 5,
+          bestRating: 5,
+          worstRating: 1
         },
         reviewBody: 'Seit der Implementierung haben wir 40% mehr qualifizierte Leads. Die Integration war einfach und der Support ausgezeichnet.',
-        datePublished: '2024-02-08'
+        datePublished: '2025-02-08'
       },
       {
         '@type': 'Review',
@@ -164,11 +177,12 @@ export function generateProductSchema(): WithContext<Product> {
         },
         reviewRating: {
           '@type': 'Rating',
-          ratingValue: '4',
-          bestRating: '5'
+          ratingValue: 4,
+          bestRating: 5,
+          worstRating: 1
         },
         reviewBody: 'Sehr gute Lösung für unser Gesundheitszentrum. DSGVO-konform und die Patienten sind mit der automatisierten Terminbuchung sehr zufrieden.',
-        datePublished: '2024-03-22'
+        datePublished: '2025-03-22'
       },
       {
         '@type': 'Review',
@@ -178,11 +192,12 @@ export function generateProductSchema(): WithContext<Product> {
         },
         reviewRating: {
           '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5'
+          ratingValue: 5,
+          bestRating: 5,
+          worstRating: 1
         },
         reviewBody: 'Die Voice Agents verstehen sogar komplexe Anfragen und können eigenständig Lösungen anbieten. ROI war bereits nach 3 Monaten erreicht.',
-        datePublished: '2024-04-10'
+        datePublished: '2025-04-10'
       },
       {
         '@type': 'Review',
@@ -192,11 +207,12 @@ export function generateProductSchema(): WithContext<Product> {
         },
         reviewRating: {
           '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5'
+          ratingValue: 5,
+          bestRating: 5,
+          worstRating: 1
         },
         reviewBody: 'Perfekt für unser E-Commerce Business. Die KI übernimmt Bestellanfragen, Reklamationen und Produktberatung - und das rund um die Uhr.',
-        datePublished: '2024-05-03'
+        datePublished: '2025-05-03'
       }
     ]
   };
@@ -335,7 +351,7 @@ export function generateSoftwareSchema(): WithContext<SoftwareApplication> {
     publisher: {
       '@id': 'https://callflows.de/#organization'
     },
-    softwareVersion: '2024',
+    softwareVersion: '2025',
     releaseNotes: 'Erweiterte KI-Funktionen, verbesserte Spracherkennung, neue Integrationen',
     featureList: [
       'Natürliche Sprachverarbeitung',
