@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && cp -r public/* out/ && cp public/.htaccess out/.htaccess && cp .env out/.env",
+    "build": "next build && node scripts/post-build.js",
     "start": "next start",
     "deploy:staging": "cross-env NODE_ENV=staging node scripts/deploy.js",
     "deploy:production": "cross-env NODE_ENV=production node scripts/deploy.js",

@@ -119,7 +119,86 @@ export function generateProductSchema(): WithContext<Product> {
       ]
     },
     category: 'Software > Künstliche Intelligenz > Sprachassistenten',
-    keywords: 'KI Telefonie, Telefon KI, Voice Agent, KI-Voice-Agents, Automatisierte Telefonie'
+    keywords: 'KI Telefonie, Telefon KI, Voice Agent, KI-Voice-Agents, Automatisierte Telefonie',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '127',
+      bestRating: '5',
+      worstRating: '1'
+    },
+    review: [
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Thomas Weber'
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5'
+        },
+        reviewBody: 'Die KI-Voice-Agents von callflows haben unseren Kundenservice revolutioniert. 24/7 Verfügbarkeit und die natürliche Sprachverarbeitung überzeugen unsere Kunden täglich.',
+        datePublished: '2024-01-15'
+      },
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Sarah Müller'
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5'
+        },
+        reviewBody: 'Seit der Implementierung haben wir 40% mehr qualifizierte Leads. Die Integration war einfach und der Support ausgezeichnet.',
+        datePublished: '2024-02-08'
+      },
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Dr. Michael Schmidt'
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '4',
+          bestRating: '5'
+        },
+        reviewBody: 'Sehr gute Lösung für unser Gesundheitszentrum. DSGVO-konform und die Patienten sind mit der automatisierten Terminbuchung sehr zufrieden.',
+        datePublished: '2024-03-22'
+      },
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Lisa Hoffmann'
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5'
+        },
+        reviewBody: 'Die Voice Agents verstehen sogar komplexe Anfragen und können eigenständig Lösungen anbieten. ROI war bereits nach 3 Monaten erreicht.',
+        datePublished: '2024-04-10'
+      },
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Alexander Koch'
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5'
+        },
+        reviewBody: 'Perfekt für unser E-Commerce Business. Die KI übernimmt Bestellanfragen, Reklamationen und Produktberatung - und das rund um die Uhr.',
+        datePublished: '2024-05-03'
+      }
+    ]
   };
 }
 

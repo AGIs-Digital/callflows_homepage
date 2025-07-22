@@ -10,7 +10,8 @@ import {
   Users, 
   Settings, 
   Home,
-  LogOut
+  LogOut,
+  PenTool
 } from "lucide-react";
 import { useAuthStore } from "@/lib/auth/auth-store";
 
@@ -34,6 +35,12 @@ export function DashboardNav({ className }: DashboardNavProps) {
       href: "/api-setup",
       icon: Settings,
       description: "Google APIs konfigurieren"
+    },
+    {
+      title: "Blog Management",
+      href: "/seo-dashboard/blog-management",
+      icon: PenTool,
+      description: "Blog-Artikel erstellen und verwalten"
     }
   ];
 
