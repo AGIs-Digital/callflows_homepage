@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -134,7 +134,7 @@ export default function BlogManagementPage() {
   }, [editPost.title]);
 
   // Load existing blog posts
-  const loadBlogPosts = async () => {
+  const loadBlogPosts = useCallback(async () => {
     setIsLoading(true);
     try {
       const response = await fetch('/api/blog/list');
@@ -155,11 +155,11 @@ export default function BlogManagementPage() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [toast]);
 
   useEffect(() => {
     loadBlogPosts();
-  }, []);
+  }, [loadBlogPosts]);
 
   // Delete blog post
   const deleteBlogPost = async (slug: string) => {
@@ -656,10 +656,11 @@ export default function BlogManagementPage() {
                             className="flex-1"
                           />
                           {newPost.imageFile && (
-                            <Badge variant="secondary" className="flex items-center gap-1">
-                              <Image className="h-3 w-3" />
-                              {newPost.imageFile.name}
-                            </Badge>
+                                                                                        <Badge variant="secondary" className="flex items-center gap-1">
+                                {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                                <Image className="h-3 w-3" aria-hidden="true" />
+                                {newPost.imageFile.name}
+                              </Badge>
                           )}
                         </div>
                         <p className="text-sm text-muted-foreground">
@@ -929,10 +930,11 @@ export default function BlogManagementPage() {
                     className="flex-1"
                   />
                   {editPost.imageFile && (
-                    <Badge variant="secondary" className="flex items-center gap-1">
-                      <Image className="h-3 w-3" />
-                      {editPost.imageFile.name}
-                    </Badge>
+                                                                <Badge variant="secondary" className="flex items-center gap-1">
+                        {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                        <Image className="h-3 w-3" aria-hidden="true" />
+                        {editPost.imageFile.name}
+                      </Badge>
                   )}
                 </div>
                 <p className="text-sm text-muted-foreground">

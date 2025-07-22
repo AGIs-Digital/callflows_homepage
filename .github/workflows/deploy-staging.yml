@@ -15,7 +15,10 @@ jobs:
 
     steps:
       - name: 🛠️ Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          show-progress: false
 
       - name: 🌐 Set up Node.js
         uses: actions/setup-node@v4
@@ -25,8 +28,8 @@ jobs:
 
       - name: 📦 Install dependencies
         run: |
-          npm install --no-fund
-          npm audit fix --force || true
+          npm ci --silent --no-fund
+          npm audit fix --silent || true
 
       - name: 🔧 Create .env file
         run: |
@@ -90,7 +93,7 @@ jobs:
           FTP_USERNAME: ${{ secrets.STAGING_FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.STAGING_FTP_PASSWORD }}
         run: |
-          npm install ftp-deploy
+          npm install --silent ftp-deploy
           node scripts/deploy.js
 
       - name: 🧹 Clean npm cache
