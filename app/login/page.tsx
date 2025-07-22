@@ -22,6 +22,9 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [showDemo, setShowDemo] = useState(false);
   
+  // Nur in Development-Umgebung Demo-Zugänge anzeigen
+  const isDevelopment = process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_ENVIRONMENT === 'staging';
+  
   const { login, isLoading, isAuthenticated, user } = useAuthStore();
   const { t } = useI18n();
   const router = useRouter();
@@ -151,51 +154,53 @@ export default function LoginPage() {
                 </Button>
               </form>
 
-              {/* Demo-Zugänge */}
-              <div className="border-t pt-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setShowDemo(!showDemo)}
-                  className="w-full mb-2"
-                >
-                  Demo-Zugänge anzeigen
-                </Button>
-                
-                {showDemo && (
-                  <div className="space-y-2">
-                    <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
-                      <p className="text-sm font-medium mb-1">Admin-Zugang:</p>
-                      <p className="text-xs text-muted-foreground mb-2">
-                        Vollzugriff auf SEO-Dashboard und alle Funktionen
-                      </p>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => fillDemo('admin')}
-                        className="w-full"
-                      >
-                        Admin-Daten ausfüllen
-                      </Button>
+              {/* Demo-Zugänge - NUR in Development/Staging */}
+              {isDevelopment && (
+                <div className="border-t pt-4">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setShowDemo(!showDemo)}
+                    className="w-full mb-2"
+                  >
+                    Demo-Zugänge anzeigen
+                  </Button>
+                  
+                  {showDemo && (
+                    <div className="space-y-2">
+                      <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
+                        <p className="text-sm font-medium mb-1">Admin-Zugang:</p>
+                        <p className="text-xs text-muted-foreground mb-2">
+                          Vollzugriff auf SEO-Dashboard und alle Funktionen
+                        </p>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => fillDemo('admin')}
+                          className="w-full"
+                        >
+                          Admin-Daten ausfüllen
+                        </Button>
+                      </div>
+                      
+                      <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+                        <p className="text-sm font-medium mb-1">Kunden-Zugang:</p>
+                        <p className="text-xs text-muted-foreground mb-2">
+                          Zugriff auf Customer-Dashboard (wird später implementiert)
+                        </p>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => fillDemo('customer')}
+                          className="w-full"
+                        >
+                          Kunden-Daten ausfüllen
+                        </Button>
+                      </div>
                     </div>
-                    
-                    <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
-                      <p className="text-sm font-medium mb-1">Kunden-Zugang:</p>
-                      <p className="text-xs text-muted-foreground mb-2">
-                        Zugriff auf Customer-Dashboard (wird später implementiert)
-                      </p>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => fillDemo('customer')}
-                        className="w-full"
-                      >
-                        Kunden-Daten ausfüllen
-                      </Button>
-                    </div>
-                  </div>
-                )}
-              </div>
+                  )}
+                </div>
+              )}
 
               <div className="text-center text-sm text-muted-foreground">
                 <p>Noch kein Account? <a href="/kontakt" className="text-primary hover:underline">Kontaktieren Sie uns</a></p>

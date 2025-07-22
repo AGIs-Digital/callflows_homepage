@@ -52,7 +52,10 @@ export const useAuthStore = create<AuthState>()(
           // Simuliere API-Aufruf
           await new Promise(resolve => setTimeout(resolve, 1000));
           
-          const user = DEMO_USERS.find(u => u.email === email && u.password === password);
+          // Demo-Users nur in Development/Staging-Umgebung verfügbar
+          const isDevelopment = process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_ENVIRONMENT === 'staging';
+          
+          const user = isDevelopment ? DEMO_USERS.find(u => u.email === email && u.password === password) : null;
           
           if (user) {
             const authUser: User = {

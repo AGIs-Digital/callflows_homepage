@@ -293,8 +293,8 @@ GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\\nYOUR_PRIVATE_K
                   <li>Gehe zu <code>http://localhost:3000/login</code></li>
                   <li>Logge dich als Admin ein:
                     <ul className="list-disc list-inside ml-4 mt-1">
-                      <li><strong>E-Mail:</strong> admin@callflows.de</li>
-                      <li><strong>Passwort:</strong> callflows2025</li>
+                      <li><strong>E-Mail:</strong> {process.env.NODE_ENV === 'development' ? 'admin@callflows.de' : '[Demo-Zugang nur in Development verfügbar]'}</li>
+                      <li><strong>Passwort:</strong> {process.env.NODE_ENV === 'development' ? 'callflows2025' : '[Demo-Zugang nur in Development verfügbar]'}</li>
                     </ul>
                   </li>
                   <li>Besuche das SEO-Dashboard</li>
