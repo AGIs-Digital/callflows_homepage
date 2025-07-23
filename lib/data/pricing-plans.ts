@@ -5,7 +5,7 @@ export const monthlyPlans: PricingPlan[] = [
     name: "Entlastung",
     type: "starter",
     subtitle: "Unterstützung im Tagesgeschäft",
-    price: 1.09,
+    price: 0.99,
     minutesIncluded: 1000,
     highlights: [
       "Schnell spürbare Verbesserungen im Arbeitsalltag",
@@ -19,7 +19,7 @@ export const monthlyPlans: PricingPlan[] = [
     name: "Wachstum",
     type: "professional",
     subtitle: "Umsatz & Expansion",
-    price: 0.99,
+    price: 0.89,
     minutesIncluded: 2000,
     highlights: [
       "Prozesse von der Anfrage bis zum Abschluss optimieren",

@@ -17,7 +17,7 @@ jobs:
       - name: 🛠️ Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 2  # Brauchen 2 Commits für Git-Diff
           show-progress: false
 
       - name: 🌐 Set up Node.js
@@ -48,6 +48,8 @@ jobs:
           ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}
           CUSTOMER_USERNAME=${{ secrets.CUSTOMER_USERNAME }}
           CUSTOMER_PASSWORD=${{ secrets.CUSTOMER_PASSWORD }}
+          GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_CSE_ID=${{ secrets.GOOGLE_CSE_ID }}
           EOL
 
       - name: 🚧 Aktiviere Wartungsmodus
@@ -74,30 +76,25 @@ jobs:
             cd staging.callflows.de/
             timestamp=$(date +%Y%m%d_%H%M%S)
             mkdir -p backups
-            tar -czf backups/backup-${timestamp}.tar.gz ./out || true
-
-      - name: 🧹 Empty remote directory
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          port: 22
-          script: |
-            cd staging.callflows.de/
-            rm -rf * .env
+            # Backup aller Dateien außer Backups und Logs
+            tar -czf backups/backup-${timestamp}.tar.gz --exclude='backups' --exclude='logs' --exclude='.maintenance' . || true
+            # Nur die letzten 5 Backups behalten
+            ls -t backups/backup-*.tar.gz | tail -n +6 | xargs rm -f || true
 
       - name: 🏗️ Build
         run: npm run build
 
-      - name: 📤 Deploy to Staging
+      - name: 📤 Deploy to Staging (Smart)
         env:
           FTP_SERVER: ${{ secrets.STAGING_FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.STAGING_FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.STAGING_FTP_PASSWORD }}
           NODE_ENV: staging
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_BEFORE: ${{ github.event.before }}
         run: |
-          node scripts/fast-deploy.js
+          node scripts/ci-fast-deploy.js
 
       - name: 🧹 Clean temporary files
         run: |

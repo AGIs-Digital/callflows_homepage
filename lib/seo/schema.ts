@@ -92,8 +92,8 @@ export function generateProductSchema(): WithContext<Product> {
     image: 'https://callflows.de/images/callflows_brand_no_claim.png',
     offers: {
       '@type': 'AggregateOffer',
-      lowPrice: '0.99',
-      highPrice: '1.09',
+      lowPrice: '0.89',
+      highPrice: '0.99',
       priceCurrency: 'EUR',
       offerCount: 3,
       offers: [
@@ -101,7 +101,7 @@ export function generateProductSchema(): WithContext<Product> {
           '@type': 'Offer',
           name: 'Entlastung',
           description: 'Unterstützung im Tagesgeschäft mit 1.000 KI-Minuten',
-          price: '1.09',
+          price: '0.99',
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock',
           url: 'https://callflows.de/pricing'
@@ -110,7 +110,7 @@ export function generateProductSchema(): WithContext<Product> {
           '@type': 'Offer',
           name: 'Wachstum',
           description: 'Umsatz & Expansion mit 2.000 KI-Minuten',
-          price: '0.99',
+          price: '0.89',
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock',
           url: 'https://callflows.de/pricing'
@@ -294,7 +294,7 @@ export function generateServiceSchema(): WithContext<Service> {
           description: 'Unterstützung im Tagesgeschäft mit 1.000 KI-Minuten',
           priceSpecification: {
             '@type': 'PriceSpecification',
-            price: '1.09',
+            price: '0.99',
             priceCurrency: 'EUR',
             valueAddedTaxIncluded: false
           }
@@ -305,7 +305,7 @@ export function generateServiceSchema(): WithContext<Service> {
           description: 'Umsatz & Expansion mit 2.000 KI-Minuten',
           priceSpecification: {
             '@type': 'PriceSpecification',
-            price: '0.99',
+            price: '0.89',
             priceCurrency: 'EUR',
             valueAddedTaxIncluded: false
           }
@@ -342,7 +342,7 @@ export function generateSoftwareSchema(): WithContext<SoftwareApplication> {
     operatingSystem: 'Cloud-based',
     offers: {
       '@type': 'Offer',
-      price: '0.99',
+      price: '0.89',
       priceCurrency: 'EUR',
       priceValidUntil: '2025-12-31',
       availability: 'https://schema.org/InStock',

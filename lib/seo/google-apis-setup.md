@@ -195,8 +195,8 @@ npm run dev
 ```
 ✅ Google Search Console: Echte Daten
 ✅ Google Analytics 4: Echte Daten
-⚠️ SerpApi: Mock-Daten (nicht konfiguriert)
-⚠️ Perplexity API: Mock-Daten (nicht konfiguriert)
+ℹ️ Keyword-Rankings: Fallback-Daten (kostenpflichtige APIs entfernt)
+ℹ️ LLM-Mentions: Fallback-Daten (kostenpflichtige APIs entfernt)
 ```
 
 ---
@@ -204,14 +204,14 @@ npm run dev
 ## 🚀 Nächste Schritte
 
 ### Nach erfolgreicher Einrichtung:
-1. **Monitoring einrichten:** Tägliche Datenaktualisierung
+1. **Monitoring einrichten:** Tägliche Datenaktualisierung  
 2. **Alerts konfigurieren:** Bei Traffic-Rückgängen
-3. **Premium-APIs erwägen:** SerpApi für präzise Rankings
+3. **Dashboard optimieren:** Fallback-Daten anpassen
 
-### Optional: Premium-APIs
-- **SerpApi:** $50/Monat für echte Keyword-Rankings
-- **Perplexity API:** $20/Monat für LLM-Mentions
-- **ValueSerp:** $10/Monat günstigere Alternative
+### Kostenoptimiertes Setup
+- **Nur kostenlose APIs:** Google Search Console + Analytics
+- **Realistische Fallback-Daten:** Für Keyword-Rankings und LLM-Mentions  
+- **Vollständiges Dashboard:** Ohne zusätzliche Kosten
 
 ---
 

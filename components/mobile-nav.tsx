@@ -90,7 +90,7 @@ export function MobileNav() {
                 )}
               >
                 <BarChart3 className="h-5 w-5" />
-                SEO Dashboard
+                Admin Dashboard
               </Link>
             )}
             

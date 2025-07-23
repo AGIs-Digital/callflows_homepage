@@ -122,13 +122,13 @@ http://localhost:3000/seo-dashboard
 
 ### Nach erfolgreichem Setup:
 1. **Monitoring:** Täglich neue Daten im Dashboard
-2. **Alerts:** Bei ungewöhnlichen Veränderungen
-3. **Premium APIs:** SerpApi für echte Keyword-Rankings
+2. **Alerts:** Bei ungewöhnlichen Veränderungen  
+3. **Optimierung:** Fallback-Daten und Dashboard anpassen
 
-### Optional: Premium APIs (~$80/Monat)
-- **SerpApi:** $50/Monat für präzise Google-Rankings
-- **Perplexity API:** $20/Monat für LLM-Mentions
-- **ValueSerp:** $10/Monat (günstigere Alternative zu SerpApi)
+### Kostenfreie Lösung:
+- **Google Search Console:** Kostenlos für Clicks, Impressions, CTR
+- **Google Analytics:** Kostenlos für Sessions und Traffic-Daten
+- **Fallback-Daten:** Realistische Werte ohne zusätzliche Kosten
 
 ---
 

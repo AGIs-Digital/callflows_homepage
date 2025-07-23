@@ -49,27 +49,7 @@ export function SEODashboardInfo() {
         cost: 'Kostenlos',
         setupUrl: 'https://console.cloud.google.com/'
       },
-      {
-        name: 'SerpApi',
-        status: process.env.SERP_API_KEY ? 'active' : 'inactive',
-        description: 'Präzise Google-Rankings für Keywords',
-        cost: '$50/Monat',
-        setupUrl: 'https://serpapi.com/'
-      },
-      {
-        name: 'ValueSerp',
-        status: process.env.VALUE_SERP_API_KEY ? 'active' : 'inactive',
-        description: 'Google-Rankings (günstigere Alternative)',
-        cost: '$10/Monat',
-        setupUrl: 'https://www.valueserp.com/'
-      },
-      {
-        name: 'Perplexity API',
-        status: process.env.PERPLEXITY_API_KEY ? 'active' : 'inactive',
-        description: 'LLM-Mentions in AI-Suchantworten',
-        cost: '$20/Monat',
-        setupUrl: 'https://www.perplexity.ai/'
-      }
+
     ];
 
     setDataSources(sources);

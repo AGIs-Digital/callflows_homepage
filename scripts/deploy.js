@@ -40,7 +40,7 @@ const config = {
     'public/videos/**'
   ],
   sftp: true,
-  deleteRemote: false,
+  deleteRemote: true, // SAUBERER DEPLOY: Lösche alte Dateien
   backupDir: 'backups',
   forcePasv: true,
   // Performance-Optimierungen

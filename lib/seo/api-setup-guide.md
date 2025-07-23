@@ -9,8 +9,7 @@ Das SEO-Dashboard kann sowohl mit **kostenlosen Mock-Daten** als auch mit **echt
 ### ✅ Bereits implementiert:
 - **Google Search Console API** (kostenlos)
 - **Google Analytics 4 API** (kostenlos)
-- **SerpApi Integration** (kostenpflichtig)
-- **Perplexity API** (kostenpflichtig)
+
 - **Intelligente Fallbacks** (falls APIs nicht verfügbar)
 
 ### 🔄 Fallback-System:
@@ -55,48 +54,7 @@ GA4_PROPERTY_ID=deine-property-id
 
 ## 💰 Kostenpflichtige APIs (optional)
 
-### 3. SerpApi - Keyword Rankings
 
-**Kosten:** 30 Tage kostenlos, dann ~$50/Monat  
-**Daten:** Präzise Google-Rankings für Keywords
-
-**Setup:**
-1. Registriere dich bei [SerpApi](https://serpapi.com/)
-2. Kopiere deinen API-Key
-3. Teste mit kostenlosen Credits
-
-**Environment Variable:**
-```bash
-SERP_API_KEY=dein-serp-api-key
-```
-
-### 4. ValueSerp - Günstigere Alternative
-
-**Kosten:** ~$10/Monat  
-**Daten:** Google-Rankings (günstiger als SerpApi)
-
-**Setup:**
-1. Registriere dich bei [ValueSerp](https://www.valueserp.com/)
-2. Kopiere deinen API-Key
-
-**Environment Variable:**
-```bash
-VALUE_SERP_API_KEY=dein-valueserp-key
-```
-
-### 5. Perplexity API - LLM Mentions
-
-**Kosten:** ~$20/Monat  
-**Daten:** Erwähnungen in AI-Suchantworten
-
-**Setup:**
-1. Registriere dich bei [Perplexity](https://www.perplexity.ai/)
-2. Erstelle einen API-Key
-
-**Environment Variable:**
-```bash
-PERPLEXITY_API_KEY=dein-perplexity-key
-```
 
 ## 🛠️ Implementierung
 
@@ -110,9 +68,7 @@ GOOGLE_SEARCH_CONSOLE_API_KEY=dein-key-hier
 GOOGLE_ANALYTICS_API_KEY=dein-key-hier
 GA4_PROPERTY_ID=deine-property-id
 
-# Kostenpflichtige APIs (optional)
-SERP_API_KEY=dein-serp-key
-PERPLEXITY_API_KEY=dein-perplexity-key
+# Kostenpflichtige APIs (optional - entfernt)
 ```
 
 ### Schritt 2: System neustarten
@@ -133,8 +89,7 @@ npm run dev
 ### Mit APIs (empfohlen):
 - **Search Console:** Echte Clicks, Impressions, CTR
 - **Analytics:** Echte Sessions, Nutzer-Entwicklung
-- **SerpApi:** Präzise Keyword-Rankings
-- **Perplexity:** Echte LLM-Mentions
+
 
 ### Ohne APIs (Fallback):
 - **Realistische Mock-Daten** statt Zufallszahlen
@@ -172,8 +127,7 @@ npm run dev
 3. Dashboard testen
 
 ### Phase 2: Erweiterte Funktionen
-1. **SerpApi** für präzise Rankings
-2. **Perplexity API** für LLM-Mentions
+1. **Alternative Ranking-Services** (falls benötigt)
 3. Monitoring-Alerts einrichten
 
 ### Phase 3: Optimierung
@@ -186,9 +140,7 @@ npm run dev
 ### API-Prioritäten:
 ```typescript
 // Keyword-Rankings
-1. SerpApi (wenn verfügbar)
-2. ValueSerp (günstiger)
-3. Fallback Mock-Daten
+1. Fallback Mock-Daten (kostenpflichtige APIs entfernt)
 
 // Traffic-Daten
 1. Google Analytics 4
@@ -196,15 +148,12 @@ npm run dev
 3. Fallback Mock-Daten
 
 // LLM-Mentions
-1. Perplexity API
-2. OpenAI API
-3. Fallback Mock-Daten
+1. Fallback Mock-Daten (kostenpflichtige APIs entfernt)
 ```
 
 ### Rate Limiting:
-- **SerpApi:** 1 Request/Sekunde
 - **Google APIs:** 100 Requests/100 Sekunden
-- **Perplexity:** 10 Requests/Minute
+- **Fallback-Daten:** Keine Limits
 
 ## 🚀 Nächste Schritte
 

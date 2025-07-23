@@ -55,9 +55,11 @@ const nextConfig = {
   // Tree-shaking für kleinere Bundles
   swcMinify: true,
   
-  // Ausgabe-Optimierung
-  output: 'export',
-  distDir: 'out',
+  // Ausgabe-Optimierung - nur für Static-Builds
+  ...(process.env.STATIC_EXPORT === 'true' && {
+    output: 'export',
+    distDir: 'out',
+  }),
 };
 
 module.exports = nextConfig

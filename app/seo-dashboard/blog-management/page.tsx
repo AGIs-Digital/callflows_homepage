@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -416,7 +416,7 @@ export default function BlogManagementPage() {
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/seo-dashboard">SEO Dashboard</Link>
+                    <Link href="/seo-dashboard">Admin Dashboard</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -430,9 +430,9 @@ export default function BlogManagementPage() {
           <div className="mb-8">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-primary mb-2">Blog Management</h1>
+                <h1 className="text-3xl font-bold text-primary mb-2">Admin Dashboard</h1>
                 <p className="text-muted-foreground">
-                  Erstellen, bearbeiten und verwalten Sie Blog-Artikel
+                  Blog-Artikel erstellen, bearbeiten und verwalten
                 </p>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -986,8 +986,6 @@ export default function BlogManagementPage() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-
-      <SiteFooter />
     </main>
   );
 } 

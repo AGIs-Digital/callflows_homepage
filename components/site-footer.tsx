@@ -53,16 +53,7 @@ export function SiteFooter() {
                   {t('footer.faq')}
                 </Link>
               </li>
-              <li>
-                <Link href="/blog/ki-telefonie-grundlagen" className="text-sm text-muted-foreground hover:text-primary">
-                  KI-Telefonie Grundlagen
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog/voice-agents-vs-chatbots" className="text-sm text-muted-foreground hover:text-primary">
-                  Voice Agents vs. Chatbots
-                </Link>
-              </li>
+
             </ul>
           </div>
           

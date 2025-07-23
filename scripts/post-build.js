@@ -48,6 +48,22 @@ function postBuild() {
       fs.copyFileSync(envSrc, envDest);
     }
     
+    // Create log directory and file for production
+    if (process.env.NODE_ENV === 'production') {
+      console.log('📁 Creating log structure for production...');
+      const logDir = path.join(outDir, 'logs', 'contact-form');
+      const logFile = path.join(logDir, 'contact-form.log');
+      
+      if (!fs.existsSync(logDir)) {
+        fs.mkdirSync(logDir, { recursive: true });
+      }
+      
+      if (!fs.existsSync(logFile)) {
+        fs.writeFileSync(logFile, '# Contact Form Log\n');
+        console.log('✅ Log file created');
+      }
+    }
+    
     console.log('✅ Post-build process completed successfully!');
   } catch (error) {
     console.error('❌ Post-build process failed:', error);

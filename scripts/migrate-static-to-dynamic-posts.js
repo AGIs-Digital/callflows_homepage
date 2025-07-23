@@ -4,26 +4,6 @@ const path = require('path');
 // Importiere die statischen Posts (kopiert aus blog-client.ts)
 const STATIC_POSTS = [
   {
-    slug: "ki-telefonie-grundlagen",
-    title: "KI-Telefonie: Grundlagen und Einsatzmöglichkeiten",
-    description: "Erfahren Sie, wie KI-gestützte Telefonie funktioniert und welche Vorteile sie für Unternehmen bietet.",
-    publishedTime: "2023-01-05T10:00:00Z",
-    author: "Tom Abeln",
-    image: "/images/blog/ki-telefonie-grundlagen.png",
-    status: "published",
-    category: "KI Telefonie"
-  },
-  {
-    slug: "voice-agents-vs-chatbots",
-    title: "Voice Agents vs. Chatbots: Was ist besser für Ihr Unternehmen?",
-    description: "Ein umfassender Vergleich zwischen KI-Voice-Agents und Chatbots für Ihre Geschäftsanforderungen.",
-    publishedTime: "2023-03-15T10:00:00Z",
-    author: "Tom Abeln",
-    image: "/images/blog/voice-agents-vs-chatbots.png",
-    status: "published",
-    category: "Voice Agent"
-  },
-  {
     slug: "kundenservice-ki-customer-experience",
     title: "Kundenservice mit KI: So verbessern Sie die Customer Experience",
     description: "Entdecken Sie, wie KI-gestützte Voice Agents den Kundenservice revolutionieren können.",

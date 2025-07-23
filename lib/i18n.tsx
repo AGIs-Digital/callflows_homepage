@@ -17,10 +17,30 @@ export const SUPPORTED_LOCALES = {
 } as const;
 
 export type Locale = keyof typeof SUPPORTED_LOCALES;
+export type Translations = Record<string, any>;
 
-// Übersetzungs-Typ
-export type Translations = {
-  [key: string]: string | string[] | Translations;
+// Land-zu-Sprache Mapping
+const COUNTRY_TO_LANGUAGE: Record<string, Locale> = {
+  // Englischsprachige Länder
+  'US': 'en', 'GB': 'en', 'CA': 'en', 'AU': 'en', 'NZ': 'en', 'IE': 'en',
+  'ZA': 'en', 'SG': 'en', 'HK': 'en', 'IN': 'en', 'PH': 'en', 'MY': 'en',
+  
+  // Deutschsprachige Länder
+  'DE': 'de', 'AT': 'de', 'CH': 'de', 'LI': 'de', 'LU': 'de',
+  
+  // Französischsprachige Länder
+  'FR': 'fr', 'BE': 'fr', 'MC': 'fr', 'SN': 'fr', 'CI': 'fr', 'MA': 'fr',
+  'TN': 'fr', 'DZ': 'fr', 'MG': 'fr', 'CM': 'fr', 'BF': 'fr', 'ML': 'fr',
+  'NE': 'fr', 'TD': 'fr', 'CF': 'fr', 'CG': 'fr', 'GA': 'fr', 'BJ': 'fr',
+  'TG': 'fr', 'RW': 'fr', 'BI': 'fr', 'DJ': 'fr', 'KM': 'fr', 'VU': 'fr',
+  'NC': 'fr', 'PF': 'fr', 'WF': 'fr', 'PM': 'fr', 'MQ': 'fr', 'GP': 'fr',
+  'GF': 'fr', 'RE': 'fr', 'YT': 'fr',
+  
+  // Spanischsprachige Länder
+  'ES': 'es', 'MX': 'es', 'AR': 'es', 'CO': 'es', 'PE': 'es', 'VE': 'es',
+  'CL': 'es', 'EC': 'es', 'GT': 'es', 'CU': 'es', 'BO': 'es', 'DO': 'es',
+  'HN': 'es', 'PY': 'es', 'SV': 'es', 'NI': 'es', 'CR': 'es', 'PA': 'es',
+  'UY': 'es', 'PR': 'es', 'GQ': 'es',
 };
 
 // Übersetzungs-Map
@@ -48,13 +68,55 @@ const getTranslations = (locale: Locale): Translations => {
   return translations;
 };
 
-// Browser-Sprache erkennen
+// Geolocation API Interface
+interface GeolocationResponse {
+  country_code?: string;
+  country?: string;
+}
+
+// Browser-Sprache erkennen (synchron, als Fallback)
 const detectBrowserLanguage = (): Locale => {
   if (typeof window === 'undefined') return 'de';
   
   const stored = localStorage.getItem('callflows-locale') as Locale;
   if (stored && stored in SUPPORTED_LOCALES) return stored;
   
+  const browserLang = navigator.language.split('-')[0] as Locale;
+  return browserLang in SUPPORTED_LOCALES ? browserLang : 'de';
+};
+
+// Benutzersprache basierend auf Geolocation und Browser erkennen (asynchron)
+const detectUserLanguage = async (): Promise<Locale> => {
+  if (typeof window === 'undefined') return 'de';
+  
+  // Zuerst prüfen ob eine Sprache bereits gespeichert ist
+  const stored = localStorage.getItem('callflows-locale') as Locale;
+  if (stored && stored in SUPPORTED_LOCALES) return stored;
+  
+  try {
+    // Geolocation über IP ermitteln (kostenlose API ohne API-Key)
+    const response = await fetch('https://ipapi.co/json/', {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+      },
+    });
+    
+    if (response.ok) {
+      const data: GeolocationResponse = await response.json();
+      const countryCode = data.country_code;
+      
+      if (countryCode && COUNTRY_TO_LANGUAGE[countryCode]) {
+        const geoLanguage = COUNTRY_TO_LANGUAGE[countryCode];
+        console.log(`Geolocation erkannt: ${countryCode} -> ${geoLanguage}`);
+        return geoLanguage;
+      }
+    }
+  } catch (error) {
+    console.warn('Geolocation-Erkennung fehlgeschlagen, verwende Browser-Sprache:', error);
+  }
+  
+  // Fallback auf Browser-Sprache
   const browserLang = navigator.language.split('-')[0] as Locale;
   return browserLang in SUPPORTED_LOCALES ? browserLang : 'de';
 };
@@ -67,12 +129,27 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   // Übersetzungen laden
   useEffect(() => {
-    const detectedLocale = detectBrowserLanguage();
-    setLocaleState(detectedLocale);
-    
-    const newTranslations = getTranslations(detectedLocale);
-    setTranslations(newTranslations);
-    setIsLoading(false);
+    const loadInitialLanguage = async () => {
+      try {
+        const detectedLocale = await detectUserLanguage();
+        setLocaleState(detectedLocale);
+        
+        const newTranslations = getTranslations(detectedLocale);
+        setTranslations(newTranslations);
+      } catch (error) {
+        console.warn('Fehler beim Laden der Sprache, verwende Standard:', error);
+        // Fallback auf synchrone Browser-Erkennung
+        const fallbackLocale = detectBrowserLanguage();
+        setLocaleState(fallbackLocale);
+        
+        const newTranslations = getTranslations(fallbackLocale);
+        setTranslations(newTranslations);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadInitialLanguage();
   }, []);
 
   // Sprache wechseln

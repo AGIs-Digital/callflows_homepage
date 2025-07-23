@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+
 import { SEODashboard } from "@/components/seo-dashboard";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,9 @@ export default function SEODashboardPage() {
       router.push('/login');
     } else if (user?.role !== 'admin') {
       router.push('/');
+    } else {
+      // Admin-Benutzer automatisch zur Lead Suche weiterleiten
+      router.push('/seo-dashboard/lead-generator');
     }
   }, [isAuthenticated, user, router]);
 
@@ -78,7 +81,7 @@ export default function SEODashboardPage() {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>SEO Dashboard</BreadcrumbPage>
+                  <BreadcrumbPage>Admin Dashboard</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -87,9 +90,9 @@ export default function SEODashboardPage() {
           <div className="mb-8">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-primary mb-2">SEO Dashboard</h1>
+                <h1 className="text-3xl font-bold text-primary mb-2">Admin Dashboard</h1>
                 <p className="text-muted-foreground">
-                  Überwachen Sie Ihre SEO-Performance und LLM-Erwähnungen
+                  Zentrale Verwaltung für Lead-Generierung, Blog-Management und SEO-Tools
                 </p>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -113,7 +116,6 @@ export default function SEODashboardPage() {
           </div>
         </div>
       </div>
-      <SiteFooter />
     </main>
   );
 } 

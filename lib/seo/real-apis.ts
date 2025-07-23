@@ -16,24 +16,7 @@ const API_CONFIG = {
     apiKey: process.env.GOOGLE_ANALYTICS_API_KEY || '',
     propertyId: process.env.GA4_PROPERTY_ID || ''
   },
-  
-  // SerpApi für Keyword-Rankings (kostenpflichtig)
-  SERP_API: {
-    apiKey: process.env.SERP_API_KEY || '',
-    baseUrl: 'https://serpapi.com/search'
-  },
-  
-  // ValueSerp (günstigere Alternative)
-  VALUE_SERP: {
-    apiKey: process.env.VALUE_SERP_API_KEY || '',
-    baseUrl: 'https://api.valueserp.com/search'
-  },
-  
-  // Bright Data (Web Scraping)
-  BRIGHT_DATA: {
-    username: process.env.BRIGHT_DATA_USERNAME || '',
-    password: process.env.BRIGHT_DATA_PASSWORD || ''
-  }
+
 };
 
 /**
@@ -101,59 +84,12 @@ export async function getRealSearchConsoleData(): Promise<{
 }
 
 /**
- * Echte Keyword-Rankings mit SerpApi
+ * Fallback für Keyword-Rankings (SERP APIs entfernt)
  */
 export async function getRealKeywordRankings(keywords: string[]): Promise<KeywordData[]> {
-  try {
-    const { SERP_API } = API_CONFIG;
-    
-    if (!SERP_API.apiKey) {
-      console.warn('SerpApi API Key nicht konfiguriert');
-      return getFallbackKeywordData(keywords);
-    }
-
-    const results: KeywordData[] = [];
-    
-    for (const keyword of keywords) {
-      try {
-        const response = await fetch(
-          `${SERP_API.baseUrl}?engine=google&q=${encodeURIComponent(keyword)}&google_domain=google.de&gl=de&hl=de&api_key=${SERP_API.apiKey}`
-        );
-
-        if (!response.ok) {
-          throw new Error(`SerpApi Error: ${response.status}`);
-        }
-
-        const data = await response.json();
-        
-        // Finde callflows.de in den Ergebnissen
-        const position = data.organic_results?.findIndex((result: any) => 
-          result.link?.includes('callflows.de')
-        ) + 1;
-
-        results.push({
-          keyword,
-          position: position > 0 ? position : null,
-          previousPosition: position > 0 ? position + Math.floor(Math.random() * 5) - 2 : null,
-          searchVolume: getSearchVolume(keyword),
-          difficulty: Math.floor(Math.random() * 100), // Wird später durch echte API ersetzt
-          url: position > 0 ? 'https://callflows.de' : '',
-          lastUpdated: new Date(),
-          trend: position > 0 ? 'up' : 'stable'
-        });
-
-        // Rate Limiting beachten
-        await new Promise(resolve => setTimeout(resolve, 1000));
-      } catch (error) {
-        console.error(`Error fetching ranking for ${keyword}:`, error);
-      }
-    }
-
-    return results;
-  } catch (error) {
-    console.error('Error fetching real keyword rankings:', error);
-    return getFallbackKeywordData(keywords);
-  }
+  // SERP APIs wurden entfernt, verwende Fallback-Daten
+  console.warn('Keyword-Rankings: Verwende Fallback-Daten (SERP APIs entfernt)');
+  return getFallbackKeywordData(keywords);
 }
 
 /**
@@ -173,9 +109,7 @@ export async function getRealLLMMentions(queries: string[]): Promise<LLMMention[
       const claudeMention = await queryLLMService('claude', query);
       if (claudeMention) mentions.push(claudeMention);
       
-      // Perplexity API
-      const perplexityMention = await queryLLMService('perplexity', query);
-      if (perplexityMention) mentions.push(perplexityMention);
+
       
       // Rate Limiting
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -270,38 +204,7 @@ export async function getRealAnalyticsData(): Promise<{
 async function queryLLMService(service: string, query: string): Promise<LLMMention | null> {
   try {
     // Hier würden echte API-Aufrufe zu den LLM-Diensten erfolgen
-    // Da dies komplex und kostenpflichtig ist, verwenden wir Web Scraping oder manuelle Checks
-    
-    // Beispiel für Perplexity API
-    if (service === 'perplexity') {
-      const response = await fetch('https://api.perplexity.ai/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.PERPLEXITY_API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          model: 'llama-3.1-sonar-small-128k-online',
-          messages: [{ role: 'user', content: query }]
-        })
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const content = data.choices?.[0]?.message?.content || '';
-        
-        if (content.toLowerCase().includes('callflows')) {
-          return {
-            source: 'perplexity',
-            query,
-            mention: content,
-            context: `Antwort auf: "${query}"`,
-            sentiment: 'positive', // Sentiment-Analyse würde hier erfolgen
-            timestamp: new Date()
-          };
-        }
-      }
-    }
+    // Da dies komplex und kostenpflichtig ist, verwenden wir manuelle Checks
     
     return null;
   } catch (error) {

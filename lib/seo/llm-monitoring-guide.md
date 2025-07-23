@@ -5,7 +5,7 @@
 **LLM-Monitoring** verfolgt, wie oft und in welchem Kontext Ihre Marke/Website in AI-basierten Suchantworten erwähnt wird:
 - **ChatGPT** (OpenAI)
 - **Claude** (Anthropic)
-- **Perplexity** (Perplexity AI)
+
 - **Gemini** (Google)
 
 ## Warum ist LLM-Monitoring wichtig?
@@ -147,7 +147,7 @@ Ja, alle Datenverarbeitung erfolgt nach DSGVO-Standards mit Servern in Deutschla
 ### Manuelle Tools:
 1. **ChatGPT Plus** - Regelmäßige Queries
 2. **Claude Pro** - Competitive Intelligence
-3. **Perplexity Pro** - Marktpositionierung
+3. **Alternative LLM-Services** - Marktpositionierung
 4. **Gemini Advanced** - Trend-Analyse
 
 ## Erfolgs-Metriken

@@ -13,7 +13,7 @@ export interface KeywordData {
 }
 
 export interface LLMMention {
-  source: 'chatgpt' | 'claude' | 'perplexity' | 'gemini' | 'other';
+  source: 'chatgpt' | 'claude' | 'gemini' | 'other';
   query: string;
   mention: string;
   context: string;
@@ -130,7 +130,7 @@ export class SEOMonitor {
       
       // Fallback zu realistischen Mock-Daten
       const mentions: LLMMention[] = [];
-      const sources: LLMMention['source'][] = ['chatgpt', 'claude', 'perplexity', 'gemini'];
+      const sources: LLMMention['source'][] = ['chatgpt', 'claude', 'gemini'];
       
       queries.forEach(query => {
         if (Math.random() > 0.7) { // 30% Chance auf Mention

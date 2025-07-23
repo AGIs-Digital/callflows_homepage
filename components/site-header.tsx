@@ -74,7 +74,7 @@ export function SiteHeader() {
                   >
                     <Link href="/seo-dashboard">
                       <BarChart3 className="h-4 w-4 mr-2" />
-                      Dashboard
+                      Admin Dashboard
                     </Link>
                   </Button>
                 )}

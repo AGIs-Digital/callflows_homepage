@@ -36,18 +36,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://callflows.de/blog/ki-telefonie-grundlagen</loc>
-    <lastmod>2023-11-15T10:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://callflows.de/blog/voice-agents-vs-chatbots</loc>
-    <lastmod>2023-12-05T10:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://callflows.de/blog/kundenservice-mit-ki</loc>
     <lastmod>2024-01-10T10:00:00+00:00</lastmod>
