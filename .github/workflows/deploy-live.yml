@@ -73,7 +73,10 @@ jobs:
             cd callflows.de/
             timestamp=$(date +%Y%m%d_%H%M%S)
             mkdir -p backups
-            tar -czf backups/backup-${timestamp}.tar.gz ./out || true
+            # Backup aller Dateien außer Backups und Logs
+            tar -czf backups/backup-${timestamp}.tar.gz --exclude='backups' --exclude='logs' --exclude='.maintenance' . || true
+            # Nur die letzten 10 Backups behalten (Production)
+            ls -t backups/backup-*.tar.gz | tail -n +11 | xargs rm -f || true
 
       - name: 🏗️ Build
         run: npm run build
