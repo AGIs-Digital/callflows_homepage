@@ -13,7 +13,7 @@ export function createStore<T>(createState: (set: (partial: Partial<T>) => void)
   const StoreContext = createContext<Store<T> | null>(null);
 
   function Provider({ children }: PropsWithChildren) {
-    const store = useRef<Store<T>>();
+    const store = useRef<Store<T> | undefined>(undefined);
 
     if (!store.current) {
       const listeners = new Set<() => void>();

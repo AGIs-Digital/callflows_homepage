@@ -11,7 +11,8 @@ import {
   Settings, 
   Home,
   LogOut,
-  PenTool
+  PenTool,
+  Search
 } from "lucide-react";
 import { useAuthStore } from "@/lib/auth/auth-store";
 
@@ -25,6 +26,18 @@ export function DashboardNav({ className }: DashboardNavProps) {
 
   const adminNavItems = [
     {
+      title: "Lead Suche",
+      href: "/seo-dashboard/lead-generator",
+      icon: Search,
+      description: "Unternehmensdaten parallel abfragen"
+    },
+    {
+      title: "Blog Management",
+      href: "/seo-dashboard/blog-management",
+      icon: PenTool,
+      description: "Blog-Artikel erstellen und verwalten"
+    },
+    {
       title: "SEO Dashboard",
       href: "/seo-dashboard",
       icon: BarChart3,
@@ -35,12 +48,6 @@ export function DashboardNav({ className }: DashboardNavProps) {
       href: "/api-setup",
       icon: Settings,
       description: "Google APIs konfigurieren"
-    },
-    {
-      title: "Blog Management",
-      href: "/seo-dashboard/blog-management",
-      icon: PenTool,
-      description: "Blog-Artikel erstellen und verwalten"
     }
   ];
 
