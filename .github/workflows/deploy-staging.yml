@@ -99,8 +99,9 @@ jobs:
           FTP_USERNAME: ${{ secrets.STAGING_FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.STAGING_FTP_PASSWORD }}
           NODE_ENV: staging
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
-          node scripts/fast-deploy.js
+          node scripts/ci-fast-deploy.js
 
       - name: 🧹 Clean temporary files
         run: |
