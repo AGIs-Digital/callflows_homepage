@@ -170,7 +170,7 @@ export function ROICalculator() {
                  <Slider
                    value={callsPerDay}
                    onValueChange={setCallsPerDay}
-                   max={200}
+                   max={500}
                    min={0}
                    step={10}
                    className="w-full"
@@ -191,7 +191,7 @@ export function ROICalculator() {
                  <Slider
                    value={avgCallDuration}
                    onValueChange={setAvgCallDuration}
-                   max={12}
+                   max={20}
                    min={0}
                    step={1}
                    className="w-full"
@@ -212,7 +212,7 @@ export function ROICalculator() {
                 <Slider
                   value={automationRate}
                   onValueChange={setAutomationRate}
-                  max={90}
+                  max={100}
                   min={30}
                   step={10}
                   className="w-full"
