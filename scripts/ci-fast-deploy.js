@@ -95,15 +95,17 @@ class CIFastDeploy {
              return existingChangedFiles;
        
        // Prüfe auch auf allgemeine Änderungen, die einen kompletten Deploy erfordern
-      const forceFullDeploy = allChangedFiles.some(file => 
-        file.includes('package.json') ||
-        file.includes('next.config.js') ||
-        file.includes('tailwind.config') ||
-        file.includes('components/ui/') ||
-        file.includes('lib/') ||
-        file.startsWith('app/layout.') ||
-        file.startsWith('app/globals.')
-      );
+             const forceFullDeploy = allChangedFiles.some(file => 
+         file.includes('package.json') ||
+         file.includes('next.config.js') ||
+         file.includes('tailwind.config') ||
+         file.includes('components/ui/') ||
+         file.includes('lib/') ||
+         file.startsWith('app/layout.') ||
+         file.startsWith('app/globals.') ||
+         file.startsWith('scripts/') ||
+         file.startsWith('.github/workflows/')
+       );
       
       if (forceFullDeploy) {
         console.log('🔄 Strukturelle Änderungen erkannt - Vollständiges Deployment wird durchgeführt');
