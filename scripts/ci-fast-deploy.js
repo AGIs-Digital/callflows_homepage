@@ -50,11 +50,11 @@ class CIFastDeploy {
        console.log(`🔍 Build-relevante Änderungen: ${buildRelevantFiles.length}/${allChangedFiles.length}`);
        buildRelevantFiles.forEach(file => console.log(`   📄 ${file}`));
        
-       // Wenn keine Build-relevanten Änderungen, überspringe Deploy
-       if (buildRelevantFiles.length === 0) {
-         console.log('✅ Keine Build-relevanten Änderungen - Deploy übersprungen!');
-         return [];
-       }
+            // Wenn keine Build-relevanten Änderungen, überspringe Deploy
+     if (buildRelevantFiles.length === 0) {
+       console.log('✅ Keine Build-relevanten Änderungen - Deploy übersprungen!');
+       return 'SKIP_DEPLOY'; // Spezieller Wert
+     }
        
        // Vereinfachte Logik: Bei wenigen Änderungen versuche intelligentes Mapping
        if (buildRelevantFiles.length <= 3) {
@@ -156,13 +156,19 @@ class CIFastDeploy {
     console.log('🚀 Starte CI-Fast-Deployment...');
     console.log('📁 Zielordner:', targetFolder);
     
-    // Erkenne geänderte Dateien über Git
+        // Erkenne geänderte Dateien über Git
     console.log('🔍 Analysiere Git-Änderungen...');
     const changedFiles = this.getChangedFiles();
     
+    // Spezialbehandlung: Deploy überspringen
+    if (changedFiles === 'SKIP_DEPLOY') {
+      console.log('🎉 Deployment erfolgreich übersprungen - keine Änderungen nötig!');
+      return;
+    }
+    
     let config;
     
-         if (changedFiles === null || changedFiles.length === 0) {
+    if (changedFiles === null || changedFiles.length === 0) {
        // Vollständiges Deployment
        console.log('📦 Vollständiges Deployment wird durchgeführt');
        config = {
