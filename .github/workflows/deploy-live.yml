@@ -81,22 +81,7 @@ jobs:
       - name: 🏗️ Build
         run: npm run build
 
-      - name: 🧹 Empty remote directory
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          port: 22
-          script: |
-            cd callflows.de/
-            rm -rf * .env
-            mkdir -p logs/contact-form
-            chmod -R 755 logs
-            touch logs/contact-form/contact-form.log
-            chmod 666 logs/contact-form/contact-form.log
-
-      - name: 📤 Deploy to Production
+      - name: 📤 Deploy to Production (Smart)
         env:
           FTP_SERVER: ${{ secrets.PRODUCTION_FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.PRODUCTION_FTP_USERNAME }}
@@ -105,6 +90,7 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_SHA: ${{ github.sha }}
           GITHUB_BEFORE: ${{ github.event.before }}
+
         run: |
           node scripts/ci-fast-deploy.js
       - name: 🧹 Clean temporary files

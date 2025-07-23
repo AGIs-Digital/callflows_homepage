@@ -150,10 +150,10 @@ class CIFastDeploy {
     
     let config;
     
-    if (changedFiles === null || changedFiles.length === 0) {
-      // Vollständiges Deployment
-      console.log('📦 Vollständiges Deployment wird durchgeführt');
-      config = {
+         if (changedFiles === null || changedFiles.length === 0) {
+       // Vollständiges Deployment
+       console.log('📦 Vollständiges Deployment wird durchgeführt');
+       config = {
         user: process.env.FTP_USERNAME,
         password: process.env.FTP_PASSWORD,
         host: process.env.FTP_SERVER,
@@ -173,9 +173,9 @@ class CIFastDeploy {
           'backups/**',
           'README.md'
         ],
-        sftp: true,
-        deleteRemote: false,
-        // CI-optimierte Performance-Einstellungen
+                 sftp: true,
+         deleteRemote: false, // Intelligentes Überschreiben ohne Löschen
+         // CI-optimierte Performance-Einstellungen
         concurrency: 8,
         parallelReads: true,
         sftpConfig: {
@@ -242,6 +242,8 @@ class CIFastDeploy {
       
       const endTime = Date.now();
       const totalTime = endTime - startTime;
+      
+
       
       console.log('━'.repeat(50));
       console.log('⚡ CI-FAST-DEPLOYMENT ABGESCHLOSSEN');

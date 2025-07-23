@@ -79,21 +79,10 @@ jobs:
             # Nur die letzten 5 Backups behalten
             ls -t backups/backup-*.tar.gz | tail -n +6 | xargs rm -f || true
 
-      - name: 🧹 Empty remote directory
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          port: 22
-          script: |
-            cd staging.callflows.de/
-            rm -rf * .env
-
       - name: 🏗️ Build
         run: npm run build
 
-      - name: 📤 Deploy to Staging
+      - name: 📤 Deploy to Staging (Smart)
         env:
           FTP_SERVER: ${{ secrets.STAGING_FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.STAGING_FTP_USERNAME }}
