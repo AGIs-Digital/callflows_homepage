@@ -100,7 +100,7 @@ export function generateProductSchema(): WithContext<Product> {
         {
           '@type': 'Offer',
           name: 'Entlastung',
-          description: 'Unterstützung im Tagesgeschäft mit 1.000 Freiminuten',
+          description: 'Unterstützung im Tagesgeschäft mit 1.000 KI-Minuten',
           price: '1.09',
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock',
@@ -109,7 +109,7 @@ export function generateProductSchema(): WithContext<Product> {
         {
           '@type': 'Offer',
           name: 'Wachstum',
-          description: 'Umsatz & Expansion mit 2.000 Freiminuten',
+          description: 'Umsatz & Expansion mit 2.000 KI-Minuten',
           price: '0.99',
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock',
@@ -291,7 +291,7 @@ export function generateServiceSchema(): WithContext<Service> {
         {
           '@type': 'Offer',
           name: 'Entlastung',
-          description: 'Unterstützung im Tagesgeschäft mit 1.000 Freiminuten',
+          description: 'Unterstützung im Tagesgeschäft mit 1.000 KI-Minuten',
           priceSpecification: {
             '@type': 'PriceSpecification',
             price: '1.09',
@@ -302,7 +302,7 @@ export function generateServiceSchema(): WithContext<Service> {
         {
           '@type': 'Offer',
           name: 'Wachstum', 
-          description: 'Umsatz & Expansion mit 2.000 Freiminuten',
+          description: 'Umsatz & Expansion mit 2.000 KI-Minuten',
           priceSpecification: {
             '@type': 'PriceSpecification',
             price: '0.99',

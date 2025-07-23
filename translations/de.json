@@ -48,7 +48,7 @@
     "monitoringDesc": "während der gesamten Pilotphase",
     "optimizationTitle": "Kontinuierliche Optimierung",
     "optimizationDesc": "Ihrer KI-Voice-Agents",
-    "minutesTitle": "Großzügiges Freiminuten-Paket",
+    "minutesTitle": "Großzügiges KI-Minuten-Paket",
     "minutesDesc": "für den kompletten Pilotmonat",
     "crmTitle": "Individuell angepasstes CRM-System",
     "crmDesc": "speziell für KI-Arbeit und -Management",
@@ -65,7 +65,7 @@
     "priceOnRequest": "Preis auf Anfrage",
     "individualMinutes": "Individuelles Minutenkontingent",
     "perMinute": "/Min.",
-    "freeMinutes": "Freiminuten",
+    "freeMinutes": "KI-Minuten",
     "additionalTitle": "Zusätzliche Minutenpakete nach Bedarf",
     "additionalDesc": "Neben Ihrem monatlichen Kontingent können Sie jederzeit flexible Minutenpakete hinzubuchen.",
     "flexExpandTitle": "Flexible Erweiterung",
@@ -166,7 +166,7 @@
     "question17": "Ist KI-Telefonie DSGVO-konform?",
     "answer17": "Ja, unsere KI-Telefonie-Lösungen sind vollständig DSGVO-konform. Alle Daten werden in Deutschland verarbeitet und gespeichert. Wir implementieren strenge Datenschutzmaßnahmen und stellen sicher, dass alle rechtlichen Anforderungen erfüllt werden. Detaillierte Informationen finden Sie in unserer Datenschutzerklärung.",
     "question18": "Was kostet ein KI Telefonassistent pro Monat?",
-    "answer18": "Die Kosten für einen KI Telefonassistent variieren je nach Nutzungsumfang und Anforderungen. callflows bietet transparente, minutenbasierte Preise ohne versteckte Kosten. Das Entlastungs-Paket beginnt bei 1.000 Freiminuten, das Wachstums-Paket bei 2.000 Freiminuten. Für individuelle Lösungen erstellen wir gerne ein maßgeschneidertes Angebot."
+    "answer18": "Die Kosten für einen KI Telefonassistent variieren je nach Nutzungsumfang und Anforderungen. callflows bietet transparente, minutenbasierte Preise ohne versteckte Kosten. Das Entlastungs-Paket beginnt bei 1.000 KI-Minuten, das Wachstums-Paket bei 2.000 KI-Minuten. Für individuelle Lösungen erstellen wir gerne ein maßgeschneidertes Angebot."
   },
   "contact": {
     "title": "Kontakt",

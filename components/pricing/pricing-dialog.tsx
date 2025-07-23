@@ -55,7 +55,7 @@ export function PricingDialog({ plan, onClose }: PricingDialogProps) {
             <div className="mt-4 p-4 bg-muted rounded-md">
               <p className="font-medium">Ihre Auswahl:</p>
               <p className="text-sm text-muted-foreground">{plan.name}</p>
-              <p className="text-sm text-muted-foreground">{plan.minutesIncluded.toLocaleString('de-DE')} Freiminuten</p>
+              <p className="text-sm text-muted-foreground">{plan.minutesIncluded.toLocaleString('de-DE')} KI-Minuten</p>
               <p className="text-sm font-medium mt-2">
                 {plan.price.toFixed(2).replace('.', ',')} € / min
               </p>
