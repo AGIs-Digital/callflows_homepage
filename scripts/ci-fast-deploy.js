@@ -13,16 +13,23 @@ class CIFastDeploy {
       // Git-basierte Erkennung von geänderten Dateien
       let gitCommand;
       
-      // Prüfe ob es ein Push oder ein PR ist
+      // Prüfe verschiedene GitHub Actions-Szenarien
       if (process.env.GITHUB_EVENT_NAME === 'push') {
-        // Bei Push: Vergleiche mit dem vorherigen Commit
-        gitCommand = 'git diff --name-only HEAD~1 HEAD';
+        // Bei Push: Verwende GitHub-spezifische Environment-Variablen wenn verfügbar
+        if (process.env.GITHUB_SHA && process.env.GITHUB_BEFORE && process.env.GITHUB_BEFORE !== '0000000000000000000000000000000000000000') {
+          gitCommand = `git diff --name-only ${process.env.GITHUB_BEFORE} ${process.env.GITHUB_SHA}`;
+        } else {
+          // Fallback: Versuche HEAD~1
+          gitCommand = 'git diff --name-only HEAD~1 HEAD 2>/dev/null || git show --name-only --format=""';
+        }
       } else {
         // Fallback: Vergleiche mit main/master branch
-        gitCommand = 'git diff --name-only origin/main...HEAD';
+        gitCommand = 'git diff --name-only origin/main...HEAD 2>/dev/null || git show --name-only --format=""';
       }
       
+      console.log(`🐛 Git-Command: ${gitCommand}`);
       const output = execSync(gitCommand, { encoding: 'utf8' }).trim();
+      console.log(`🐛 Git-Output: "${output}"`);
       
       if (!output) {
         console.log('🔍 Keine Dateien geändert');
@@ -105,9 +112,22 @@ class CIFastDeploy {
       
       return changedFiles;
       
-    } catch (error) {
+          } catch (error) {
       console.log('⚠️ Git-Analyse fehlgeschlagen, führe vollständiges Deployment durch');
       console.log('Fehler:', error.message);
+      
+      // Zusätzliche Diagnostik
+      try {
+        const commitCount = execSync('git rev-list --count HEAD', { encoding: 'utf8' }).trim();
+        console.log(`🐛 Anzahl Commits im Repository: ${commitCount}`);
+        
+        if (parseInt(commitCount) === 1) {
+          console.log('💡 Dies ist der erste Commit - Vollständiges Deployment ist korrekt');
+        }
+      } catch (diagnosticError) {
+        console.log('🐛 Diagnostik fehlgeschlagen:', diagnosticError.message);
+      }
+      
       return null; // Signal für vollständiges Deployment
     }
   }

@@ -16,7 +16,7 @@ jobs:
       - name: 🛠️ Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 2  # Brauchen 2 Commits für Git-Diff
           show-progress: false
 
       - name: 🌐 Set up Node.js
@@ -103,6 +103,8 @@ jobs:
           FTP_PASSWORD: ${{ secrets.PRODUCTION_FTP_PASSWORD }}
           NODE_ENV: production
           GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_BEFORE: ${{ github.event.before }}
         run: |
           node scripts/ci-fast-deploy.js
       - name: 🧹 Clean temporary files
