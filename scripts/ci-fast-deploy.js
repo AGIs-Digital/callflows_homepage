@@ -27,72 +27,87 @@ class CIFastDeploy {
         gitCommand = 'git diff --name-only origin/main...HEAD 2>/dev/null || git show --name-only --format=""';
       }
       
-      console.log(`🐛 Git-Command: ${gitCommand}`);
       const output = execSync(gitCommand, { encoding: 'utf8' }).trim();
-      console.log(`🐛 Git-Output: "${output}"`);
       
       if (!output) {
         console.log('🔍 Keine Dateien geändert');
         return [];
       }
       
-             // Intelligente Zuordnung von Quellcode zu Build-Dateien
+                    // Filtere nur Build-relevante Änderungen
        const allChangedFiles = output.split('\n');
-       const affectedFiles = new Set();
-      
-      for (const file of allChangedFiles) {
-        // Sammle alle potenziell betroffenen Build-Dateien
-        if (file.startsWith('app/') && (file.endsWith('.tsx') || file.endsWith('.ts'))) {
-          // App-Router Dateien → entsprechende HTML/JS Dateien
-          const routePath = file.replace('app/', '').replace('/page.tsx', '').replace('/page.ts', '');
-                     if (routePath) {
-             // Spezifische Route
-             affectedFiles.add(`${routePath}.html`);
-             affectedFiles.add(`${routePath}/index.html`);
-           } else {
-             // Root-Route
-             affectedFiles.add('index.html');
-           }
-         } else if (file.startsWith('components/') || file.startsWith('lib/')) {
-           // Komponenten/Lib-Änderungen können viele Seiten betreffen
-           // Füge JS-Chunks hinzu die wahrscheinlich betroffen sind
-           affectedFiles.add('_next/static/chunks/pages/_app-*.js');
-           affectedFiles.add('_next/static/chunks/main-*.js');
-         } else if (file.includes('.css') || file.includes('tailwind')) {
-           // CSS-Änderungen
-           affectedFiles.add('_next/static/css/*.css');
-           affectedFiles.add('globals.css');
-         } else if (file.startsWith('public/')) {
-           // Public-Dateien direkter Bezug
-           const publicFile = file.replace('public/', '');
-           affectedFiles.add(publicFile);
-        }
-      }
-      
-             // Filtere nur existierende Dateien aus dem out/ Verzeichnis
-       const existingChangedFiles = Array.from(affectedFiles).filter(file => {
-         const outPath = path.join('out', file);
-         return fs.existsSync(outPath) && fs.statSync(outPath).isFile();
+       const buildRelevantFiles = allChangedFiles.filter(file => {
+         // Nur Dateien die das Build-Output beeinflussen
+         return file.startsWith('app/') ||
+                file.startsWith('components/') ||
+                file.startsWith('lib/') ||
+                file.startsWith('public/') ||
+                file.includes('.css') ||
+                file.includes('tailwind') ||
+                file.includes('globals.css');
        });
        
-       // Wenn weniger als 5 spezifische Dateien gefunden, nutze intelligente Glob-Patterns
-       if (existingChangedFiles.length === 0 && affectedFiles.size > 0) {
-        // Fallback: Verwende Patterns für häufige Änderungen
-        const patterns = [];
-        if (allChangedFiles.some(f => f.startsWith('components/') || f.startsWith('lib/'))) {
-          patterns.push('_next/static/chunks/**/*.js');
-        }
-        if (allChangedFiles.some(f => f.includes('.css') || f.includes('tailwind'))) {
-          patterns.push('_next/static/css/**/*.css');
-        }
-        if (allChangedFiles.some(f => f.startsWith('app/'))) {
-          patterns.push('*.html');
-          patterns.push('**/index.html');
-        }
-        return patterns.length > 0 ? patterns : existingChangedFiles;
-      }
-      
-             return existingChangedFiles;
+       console.log(`🔍 Build-relevante Änderungen: ${buildRelevantFiles.length}/${allChangedFiles.length}`);
+       buildRelevantFiles.forEach(file => console.log(`   📄 ${file}`));
+       
+       // Wenn keine Build-relevanten Änderungen, überspringe Deploy
+       if (buildRelevantFiles.length === 0) {
+         console.log('✅ Keine Build-relevanten Änderungen - Deploy übersprungen!');
+         return [];
+       }
+       
+       // Vereinfachte Logik: Bei wenigen Änderungen versuche intelligentes Mapping
+       if (buildRelevantFiles.length <= 3) {
+         console.log('🎯 Versuche intelligentes File-Mapping...');
+         
+         const affectedBuildFiles = new Set();
+         
+         for (const file of buildRelevantFiles) {
+           if (file.startsWith('app/') && file.includes('page.')) {
+             // Seiten-Änderungen
+             const routePath = file.replace('app/', '').replace('/page.tsx', '').replace('/page.ts', '').replace('/page.jsx', '').replace('/page.js', '');
+             if (routePath) {
+               affectedBuildFiles.add(`${routePath}/index.html`);
+             } else {
+               affectedBuildFiles.add('index.html');
+             }
+           } else if (file.startsWith('public/')) {
+             // Public-Dateien direkter Copy
+             const publicFile = file.replace('public/', '');
+             affectedBuildFiles.add(publicFile);
+           }
+           // Andere Änderungen führen zu JS/CSS Updates
+           else if (file.startsWith('components/') || file.startsWith('lib/') || file.includes('.css')) {
+             // Diese können viele Dateien betreffen - verwende Patterns
+             affectedBuildFiles.add('_next/static/**/*.js');
+             affectedBuildFiles.add('_next/static/**/*.css');
+             affectedBuildFiles.add('**/*.html');
+           }
+         }
+         
+         // Prüfe ob die gemappten Dateien existieren
+         const existingFiles = [];
+         for (const pattern of affectedBuildFiles) {
+           if (pattern.includes('*')) {
+             // Glob-Pattern - verwende für alle entsprechenden Dateien
+             existingFiles.push(pattern);
+           } else {
+             // Exakte Datei
+             const outPath = path.join('out', pattern);
+             if (fs.existsSync(outPath)) {
+               existingFiles.push(pattern);
+             }
+           }
+         }
+         
+         if (existingFiles.length > 0 && existingFiles.length < 20) {
+           console.log(`🎯 Intelligentes Mapping erfolgreich: ${existingFiles.length} Dateien/Patterns`);
+           return existingFiles;
+         }
+       }
+       
+       console.log('🔄 Mapping zu komplex - verwende vollständiges Deployment');
+       return null; // Vollständiges Deployment
        
        // Prüfe auch auf allgemeine Änderungen, die einen kompletten Deploy erfordern
              const forceFullDeploy = allChangedFiles.some(file => 
@@ -100,11 +115,10 @@ class CIFastDeploy {
          file.includes('next.config.js') ||
          file.includes('tailwind.config') ||
          file.includes('components/ui/') ||
-         file.includes('lib/') ||
+         file.includes('lib/utils') ||
          file.startsWith('app/layout.') ||
-         file.startsWith('app/globals.') ||
-         file.startsWith('scripts/') ||
-         file.startsWith('.github/workflows/')
+         file.startsWith('app/globals.')
+         // Entfernt: scripts/ und .github/workflows/ - diese brauchen kein Rebuild
        );
       
       if (forceFullDeploy) {
@@ -118,17 +132,13 @@ class CIFastDeploy {
       console.log('⚠️ Git-Analyse fehlgeschlagen, führe vollständiges Deployment durch');
       console.log('Fehler:', error.message);
       
-      // Zusätzliche Diagnostik
+      // Vereinfachte Diagnostik
       try {
         const commitCount = execSync('git rev-list --count HEAD', { encoding: 'utf8' }).trim();
-        console.log(`🐛 Anzahl Commits im Repository: ${commitCount}`);
-        
         if (parseInt(commitCount) === 1) {
-          console.log('💡 Dies ist der erste Commit - Vollständiges Deployment ist korrekt');
+          console.log('💡 Erster Commit erkannt - Vollständiges Deployment wird durchgeführt');
         }
-      } catch (diagnosticError) {
-        console.log('🐛 Diagnostik fehlgeschlagen:', diagnosticError.message);
-      }
+      } catch (e) { /* Ignoriere Diagnostik-Fehler */ }
       
       return null; // Signal für vollständiges Deployment
     }
