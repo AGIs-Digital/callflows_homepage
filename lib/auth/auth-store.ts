@@ -18,25 +18,52 @@ interface AuthState {
   checkAuth: () => void;
 }
 
-// Demo-Benutzer für Entwicklung
-const DEMO_USERS = [
-  {
-    id: '1',
-    email: 'admin@callflows.de',
-    password: 'callflows2025',
-    name: 'Admin',
-    role: 'admin' as const,
-    createdAt: new Date('2024-01-01')
-  },
-  {
-    id: '2',
-    email: 'kunde@example.com',
-    password: 'kunde123',
-    name: 'Test Kunde',
-    role: 'customer' as const,
-    createdAt: new Date('2024-01-15')
+// Sichere Benutzer-Credentials aus Umgebungsvariablen
+const getUsers = () => {
+  const isProduction = process.env.NEXT_PUBLIC_ENVIRONMENT === 'production';
+  
+  if (isProduction) {
+    // In Production nur Umgebungsvariablen verwenden
+    return [
+      {
+        id: '1',
+        email: process.env.ADMIN_USERNAME || '',
+        password: process.env.ADMIN_PASSWORD || '',
+        name: 'Administrator',
+        role: 'admin' as const,
+        createdAt: new Date('2024-01-01')
+      },
+      {
+        id: '2',
+        email: process.env.CUSTOMER_USERNAME || '',
+        password: process.env.CUSTOMER_PASSWORD || '',
+        name: 'Kunde',
+        role: 'customer' as const,
+        createdAt: new Date('2024-01-15')
+      }
+    ].filter(user => user.email && user.password); // Nur Users mit gültigen Credentials
+  } else {
+    // In Development/Staging Fallback zu Demo-Credentials
+    return [
+      {
+        id: '1',
+        email: process.env.ADMIN_USERNAME || 'admin@callflows.de',
+        password: process.env.ADMIN_PASSWORD || 'callflowsPasswort25!',
+        name: 'Administrator',
+        role: 'admin' as const,
+        createdAt: new Date('2024-01-01')
+      },
+      {
+        id: '2',
+        email: process.env.CUSTOMER_USERNAME || 'kunde@callflows.de',
+        password: process.env.CUSTOMER_PASSWORD || 'callflowsPasswort25!',
+        name: 'Test Kunde',
+        role: 'customer' as const,
+        createdAt: new Date('2024-01-15')
+      }
+    ];
   }
-];
+};
 
 export const useAuthStore = create<AuthState>()(
   persist(
@@ -52,10 +79,9 @@ export const useAuthStore = create<AuthState>()(
           // Simuliere API-Aufruf
           await new Promise(resolve => setTimeout(resolve, 1000));
           
-          // Demo-Users nur in Development/Staging-Umgebung verfügbar
-          const isDevelopment = process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_ENVIRONMENT === 'staging';
-          
-          const user = isDevelopment ? DEMO_USERS.find(u => u.email === email && u.password === password) : null;
+          // Benutzer aus sicheren Umgebungsvariablen laden
+          const users = getUsers();
+          const user = users.find(u => u.email === email && u.password === password);
           
           if (user) {
             const authUser: User = {

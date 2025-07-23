@@ -44,6 +44,10 @@ jobs:
           FTP_SERVER=${{ secrets.PRODUCTION_FTP_SERVER }}
           FTP_USERNAME=${{ secrets.PRODUCTION_FTP_USERNAME }}
           FTP_PASSWORD=${{ secrets.PRODUCTION_FTP_PASSWORD }}
+          ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}
+          ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}
+          CUSTOMER_USERNAME=${{ secrets.CUSTOMER_USERNAME }}
+          CUSTOMER_PASSWORD=${{ secrets.CUSTOMER_PASSWORD }}
           EOL
 
       - name: 🚧 Aktiviere Wartungsmodus

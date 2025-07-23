@@ -80,11 +80,22 @@ export function PricingCard({ plan }: PricingCardProps) {
             </div>
           ) : (
             <div className="text-center">
-              <div className="text-lg font-semibold text-muted-foreground">
-                {plan.minutesIncluded.toLocaleString('de-DE')} {t('pricing.freeMinutes')}
+              {/* Gesamtpaketpreis prominent darstellen */}
+              <div className="text-3xl font-bold text-primary mb-4">
+                {(plan.price * plan.minutesIncluded).toLocaleString('de-DE')} €
+                <span className="text-lg font-medium text-muted-foreground ml-2">
+                  {t('pricing.monthly')}
+                </span>
               </div>
-              <div className="text-3xl font-bold text-primary">
-                {plan.price.toFixed(2).replace('.', ',')} € {t('pricing.perMinute')}
+              
+              {/* Minutenanzahl und Preis pro Minute kompakt */}
+              <div className="bg-muted/50 rounded-lg p-3">
+                <div className="text-lg font-semibold text-foreground">
+                  {plan.minutesIncluded.toLocaleString('de-DE')} {t('pricing.aiMinutes')}
+                  <span className="text-sm text-muted-foreground ml-2">
+                    ({plan.price.toFixed(2).replace('.', ',')} € {t('pricing.perMinute')})
+                  </span>
+                </div>
               </div>
             </div>
           )}
