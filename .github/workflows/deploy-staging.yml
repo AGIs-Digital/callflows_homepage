@@ -28,8 +28,7 @@ jobs:
 
       - name: 📦 Install dependencies
         run: |
-          npm ci --no-fund --quiet
-          npm audit fix --force || true
+          npm ci --no-fund --no-audit --prefer-offline --progress=false
 
       - name: 🔧 Create .env file
         run: |
@@ -96,14 +95,14 @@ jobs:
           FTP_SERVER: ${{ secrets.STAGING_FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.STAGING_FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.STAGING_FTP_PASSWORD }}
+          NODE_ENV: staging
         run: |
-          npm install --quiet ftp-deploy
-          node scripts/deploy.js
+          node scripts/fast-deploy.js
 
-      - name: 🧹 Clean npm cache
+      - name: 🧹 Clean temporary files
         run: |
-          rm -rf node_modules
-          rm -f package-lock.json
+          rm -rf out
+          rm -f .deploy-checksums.json
 
       - name: 🟢 Deaktiviere Wartungsmodus
         if: always()

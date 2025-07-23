@@ -42,7 +42,8 @@ export function ROICalculator() {
   useEffect(() => {
     // Realistische Vollzeit-Personalkosten pro Mitarbeiter
     const employerCostFactor = 1.45; // +45% Personalnebenkosten (Lohnnebenkosten, Strukturkosten, Sonstige Personalkosten)
-    const monthlyPersonalCostPerEmployee = monthlySalary * employerCostFactor;
+    const currentMonthlySalary = salaryValues[salaryIndex[0]];
+    const monthlyPersonalCostPerEmployee = currentMonthlySalary * employerCostFactor;
     const totalEmployeeCosts = monthlyPersonalCostPerEmployee * employees[0];
     const yearlyPersonalCosts = totalEmployeeCosts * 12;
     

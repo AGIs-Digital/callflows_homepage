@@ -42,7 +42,20 @@ const config = {
   sftp: true,
   deleteRemote: false,
   backupDir: 'backups',
-  forcePasv: true
+  forcePasv: true,
+  // Performance-Optimierungen
+  concurrency: 8, // 8 parallele Uploads (statt 1)
+  parallelReads: true, // Paralleles Lesen der Dateien
+  sftpConfig: {
+    algorithms: {
+      kex: ['diffie-hellman-group-exchange-sha256'],
+      cipher: ['aes128-ctr'], // Schnellere Verschlüsselung
+      hmac: ['hmac-sha2-256']
+    },
+    compress: true, // SFTP-Kompression aktivieren
+    keepaliveInterval: 60000, // Keep-alive für stabile Verbindung
+    keepaliveCountMax: 3
+  }
 };
 
 console.log('🚀 Starte Deployment...');

@@ -12,6 +12,10 @@
     "start": "next start",
     "deploy:staging": "cross-env NODE_ENV=staging node scripts/deploy.js",
     "deploy:production": "cross-env NODE_ENV=production node scripts/deploy.js",
+    "deploy:fast": "cross-env NODE_ENV=production node scripts/fast-deploy.js",
+    "deploy:fast:staging": "cross-env NODE_ENV=staging node scripts/fast-deploy.js",
+    "build:fast": "next build --no-lint && node scripts/post-build.js",
+    "deploy:dev": "npm run build:fast && npm run deploy:fast",
     "lint": "next lint"
   },
   "dependencies": {
