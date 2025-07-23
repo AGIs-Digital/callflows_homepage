@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { PricingFeaturesSection } from "@/components/sections/pricing-features-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { PricingTables } from "@/components/pricing/tables";
+import { ROICalculator } from "@/components/pricing/roi-calculator";
 import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
 import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
 import { useI18n } from "@/lib/i18n";
@@ -35,6 +36,7 @@ export default function PricingPage() {
           </div>
         </div>
         
+        <ROICalculator />
         <PricingFeaturesSection />
         <CTASectionSecondary />
       </div>

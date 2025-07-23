@@ -59,10 +59,10 @@ export default function LoginPage() {
   const fillDemo = (role: 'admin' | 'customer') => {
     if (role === 'admin') {
       setEmail('admin@callflows.de');
-      setPassword('callflows2025');
+      setPassword('callflowsPasswort25!');
     } else {
-      setEmail('kunde@example.com');
-      setPassword('kunde123');
+      setEmail('kunde@callflows.de');
+      setPassword('callflowsPasswort25!');
     }
   };
 
