@@ -76,34 +76,33 @@ class CIFastDeploy {
              const publicFile = file.replace('public/', '');
              affectedBuildFiles.add(publicFile);
            }
-           // Andere Änderungen führen zu JS/CSS Updates
-           else if (file.startsWith('components/') || file.startsWith('lib/') || file.includes('.css')) {
-             // Diese können viele Dateien betreffen - verwende Patterns
-             affectedBuildFiles.add('_next/static/**/*.js');
-             affectedBuildFiles.add('_next/static/**/*.css');
-             affectedBuildFiles.add('**/*.html');
-           }
+                       // Andere Änderungen führen zu JS/CSS Updates
+            else if (file.startsWith('components/') || file.startsWith('lib/') || file.includes('.css')) {
+              // Komponenten-Änderungen → Alle HTML-Seiten neu generieren (zu komplex für Smart-Mapping)
+              console.log('🔄 Komponenten-Änderung erkannt - Vollständiges Deployment nötig');
+              return null; // Vollständiges Deployment
+            }
          }
          
-         // Prüfe ob die gemappten Dateien existieren
-         const existingFiles = [];
-         for (const pattern of affectedBuildFiles) {
-           if (pattern.includes('*')) {
-             // Glob-Pattern - verwende für alle entsprechenden Dateien
-             existingFiles.push(pattern);
-           } else {
-             // Exakte Datei
-             const outPath = path.join('out', pattern);
-             if (fs.existsSync(outPath)) {
-               existingFiles.push(pattern);
-             }
-           }
-         }
+                   // Prüfe ob die gemappten Dateien existieren (nur exakte Dateien)
+          const existingFiles = [];
+          for (const file of affectedBuildFiles) {
+            const outPath = path.join('out', file);
+            if (fs.existsSync(outPath)) {
+              existingFiles.push(file);
+            } else {
+              console.log(`⚠️ Gemappte Datei nicht gefunden: ${file}`);
+            }
+          }
          
-         if (existingFiles.length > 0 && existingFiles.length < 20) {
-           console.log(`🎯 Intelligentes Mapping erfolgreich: ${existingFiles.length} Dateien/Patterns`);
-           return existingFiles;
-         }
+                   if (existingFiles.length > 0 && existingFiles.length <= 5) {
+            console.log(`🎯 Smart-Deploy: ${existingFiles.length} spezifische Dateien`);
+            existingFiles.forEach(file => console.log(`   📄 ${file}`));
+            return existingFiles;
+          } else if (existingFiles.length > 5) {
+            console.log(`🔄 Zu viele betroffene Dateien (${existingFiles.length}) - Vollständiges Deployment sicherer`);
+            return null;
+          }
        }
        
        console.log('🔄 Mapping zu komplex - verwende vollständiges Deployment');
