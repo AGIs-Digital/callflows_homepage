@@ -50,6 +50,7 @@
     "@radix-ui/react-toast": "^1.2.1",
     "@radix-ui/react-toggle-group": "^1.1.2",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@types/node": "^20.19.9",
     "@types/nodemailer": "^6.4.17",
     "@types/react-dom": "18.2.21",
     "autoprefixer": "10.4.18",
