@@ -17,7 +17,7 @@ jobs:
       - name: 🛠️ Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # Brauchen 2 Commits für Git-Diff
+          fetch-depth: 1
           show-progress: false
 
       - name: 🌐 Set up Node.js
@@ -28,7 +28,8 @@ jobs:
 
       - name: 📦 Install dependencies
         run: |
-          npm ci --no-fund --no-audit --prefer-offline --progress=false
+          npm ci --no-fund --quiet
+          npm audit fix --force || true
 
       - name: 🔧 Create .env file
         run: |
@@ -76,30 +77,37 @@ jobs:
             cd staging.callflows.de/
             timestamp=$(date +%Y%m%d_%H%M%S)
             mkdir -p backups
-            # Backup aller Dateien außer Backups und Logs
-            tar -czf backups/backup-${timestamp}.tar.gz --exclude='backups' --exclude='logs' --exclude='.maintenance' . || true
-            # Nur die letzten 5 Backups behalten
-            ls -t backups/backup-*.tar.gz | tail -n +6 | xargs rm -f || true
+            tar -czf backups/backup-${timestamp}.tar.gz ./out || true
+
+      - name: 🧹 Empty remote directory
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            cd staging.callflows.de/
+            rm -rf * .env
 
       - name: 🏗️ Build
         run: npm run build
 
-      - name: 📤 Deploy to Staging (Smart)
+      - name: 📤 Deploy to Staging
         env:
           FTP_SERVER: ${{ secrets.STAGING_FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.STAGING_FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.STAGING_FTP_PASSWORD }}
           NODE_ENV: staging
-          GITHUB_EVENT_NAME: ${{ github.event_name }}
-          GITHUB_SHA: ${{ github.sha }}
-          GITHUB_BEFORE: ${{ github.event.before }}
+          
         run: |
-          node scripts/ci-fast-deploy.js
+          npm install --quiet ftp-deploy
+          node scripts/deploy.js
 
-      - name: 🧹 Clean temporary files
+      - name: 🧹 Clean npm cache
         run: |
-          rm -rf out
-          rm -f .deploy-checksums.json
+          rm -rf node_modules
+          rm -f package-lock.json
 
       - name: 🟢 Deaktiviere Wartungsmodus
         if: always()

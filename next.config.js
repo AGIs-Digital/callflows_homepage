@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Bestehende Konfiguration
+  //output: 'export',
   
   // Performance-Optimierungen für Deploy-Speed
   experimental: {
@@ -55,11 +55,9 @@ const nextConfig = {
   // Tree-shaking für kleinere Bundles
   swcMinify: true,
   
-  // Ausgabe-Optimierung - nur für Static-Builds
-  ...(process.env.STATIC_EXPORT === 'true' && {
-    output: 'export',
-    distDir: 'out',
-  }),
+  // Ausgabe-Optimierung
+  output: 'export',
+  distDir: 'out',
 };
 
 module.exports = nextConfig

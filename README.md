@@ -84,4 +84,4 @@ Die Anwendung unterstützt automatisierte Deployments für Staging und Productio
 
 ---
 
-Eine Marke von [Abeln Goltz GbR](https://callflows.de)
+Eine Marke von [AGIS.digital](https://callflows.de)
