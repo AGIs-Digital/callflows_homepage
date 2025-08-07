@@ -61,7 +61,7 @@ export default function LeadGeneratorPage() {
 
     try {
       // Immer Vercel API verwenden (auch auf localhost für einfacheres Testing)
-      const apiUrl = 'https://callflows-nr11kckbo-timo1002s-projects.vercel.app/api/lead-search';
+      const apiUrl = 'https://api.callflows.de/api/lead-search';
       
       const response = await fetch(apiUrl, {
         method: 'POST',
