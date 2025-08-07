@@ -33,7 +33,7 @@ export default function LoginPage() {
     if (isAuthenticated && user) {
       // Redirect basierend auf Rolle
       if (user.role === 'admin') {
-        router.push('/seo-dashboard');
+        router.push('/admin-dashboard');
       } else if (user.role === 'customer') {
         router.push('/customer-dashboard'); // Wird später implementiert
       }

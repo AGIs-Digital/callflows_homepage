@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { SiteHeader } from "@/components/site-header";
 
-import { SEODashboard } from "@/components/seo-dashboard";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, ArrowLeft } from "lucide-react";
@@ -24,7 +24,7 @@ export default function SEODashboardPage() {
       router.push('/');
     } else {
       // Admin-Benutzer automatisch zur Lead Suche weiterleiten
-      router.push('/seo-dashboard/lead-generator');
+      router.push('/admin-dashboard/lead-generator');
     }
   }, [isAuthenticated, user, router]);
 
@@ -111,7 +111,19 @@ export default function SEODashboardPage() {
             
             {/* Main Content */}
             <div className="lg:col-span-3">
-              <SEODashboard />
+              <Card>
+                <CardHeader>
+                  <CardTitle>Dashboard</CardTitle>
+                  <CardDescription>
+                    Wählen Sie eine Funktion aus der Navigation
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Nutzen Sie die Navigation links, um auf Lead-Generierung und Blog-Management zuzugreifen.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

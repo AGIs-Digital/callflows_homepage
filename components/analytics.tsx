@@ -102,7 +102,7 @@ export function Analytics() {
       <Script id="search-console-verification" strategy="afterInteractive">
         {`
           // Search Console Verification wird via meta tag gemacht
-          console.log('SEO Analytics initialized for callflows.de');
+          console.log('Analytics initialized for callflows.de');
         `}
       </Script>
 

@@ -72,7 +72,7 @@ export function SiteHeader() {
                     asChild
                     className="hidden md:flex"
                   >
-                    <Link href="/seo-dashboard">
+                    <Link href="/admin-dashboard">
                       <BarChart3 className="h-4 w-4 mr-2" />
                       Admin Dashboard
                     </Link>

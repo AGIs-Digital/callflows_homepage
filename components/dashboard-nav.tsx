@@ -27,27 +27,21 @@ export function DashboardNav({ className }: DashboardNavProps) {
   const adminNavItems = [
     {
       title: "Lead Suche",
-      href: "/seo-dashboard/lead-generator",
+      href: "/admin-dashboard/lead-generator",
       icon: Search,
       description: "Unternehmensdaten parallel abfragen"
     },
     {
       title: "Blog Management",
-      href: "/seo-dashboard/blog-management",
+      href: "/admin-dashboard/blog-management",
       icon: PenTool,
       description: "Blog-Artikel erstellen und verwalten"
     },
     {
-      title: "SEO Dashboard",
-      href: "/seo-dashboard",
+      title: "Admin Dashboard",
+      href: "/admin-dashboard",
       icon: BarChart3,
-      description: "SEO-Metriken und LLM-Mentions"
-    },
-    {
-      title: "API Setup",
-      href: "/api-setup",
-      icon: Settings,
-      description: "Google APIs konfigurieren"
+      description: "Dashboard Übersicht"
     }
   ];
 

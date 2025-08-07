@@ -82,11 +82,11 @@ export function MobileNav() {
             {/* Dashboard-Links für eingeloggte Benutzer */}
             {isAuthenticated && user?.role === 'admin' && (
               <Link
-                href="/seo-dashboard"
+                href="/admin-dashboard"
                 onClick={() => setOpen(false)}
                 className={cn(
                   "text-lg font-medium transition-colors hover:text-primary flex items-center gap-2",
-                  pathname === "/seo-dashboard" ? "text-primary" : "text-foreground/60"
+                  pathname === "/admin-dashboard" ? "text-primary" : "text-foreground/60"
                 )}
               >
                 <BarChart3 className="h-5 w-5" />

@@ -416,7 +416,7 @@ export default function BlogManagementPage() {
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/seo-dashboard">Admin Dashboard</Link>
+                    <Link href="/admin-dashboard">Admin Dashboard</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
