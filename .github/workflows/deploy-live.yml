@@ -88,10 +88,6 @@ jobs:
           script: |
             cd callflows.de/
             rm -rf * .env
-            mkdir -p logs/contact-form
-            chmod -R 755 logs
-            touch logs/contact-form/contact-form.log
-            chmod 666 logs/contact-form/contact-form.log
 
       - name: 🏗️ Build
         run: npm run build
