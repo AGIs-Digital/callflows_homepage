@@ -148,21 +148,28 @@ ftpDeploy.on('uploaded', function(data) {
     // Ignore file stat errors
   }
   
-  // Zeige Progress nur alle 10 Dateien oder bei wichtigen Meilensteinen
+  // Dynamischer Fortschrittsbalken
   const progressPercent = Math.round((uploadCount / totalFiles) * 100);
-  const shouldShowProgress = 
-    uploadCount % 10 === 0 || 
-    progressPercent % 25 === 0 || 
-    uploadCount === totalFiles ||
-    progressPercent > lastProgressUpdate + 5;
-    
-  if (shouldShowProgress) {
-    const elapsed = Date.now() - startTime;
-    const speed = uploadedBytes > 0 ? (uploadedBytes / 1024) / (elapsed / 1000) : 0;
-    const speedStr = speed > 0 ? ` - ${formatBytes(speed * 1024)}/s` : '';
-    
-    console.log(`📤 ${uploadCount}/${totalFiles} (${progressPercent}%)${speedStr}`);
-    lastProgressUpdate = progressPercent;
+  const elapsed = Date.now() - startTime;
+  const speed = uploadedBytes > 0 ? (uploadedBytes / 1024) / (elapsed / 1000) : 0;
+  
+  // Fortschrittsbalken erstellen
+  const barLength = 30;
+  const filledLength = Math.round((progressPercent / 100) * barLength);
+  const bar = '█'.repeat(filledLength) + '░'.repeat(barLength - filledLength);
+  
+  // ETA berechnen
+  const eta = speed > 0 && uploadedBytes < totalBytes ? 
+    Math.round(((totalBytes - uploadedBytes) / 1024) / speed) : 0;
+  const etaStr = eta > 0 ? ` - ETA ${eta}s` : '';
+  
+  // Einzeilige Ausgabe mit Carriage Return
+  const speedStr = speed > 0 ? `${formatBytes(speed * 1024)}/s` : '0 B/s';
+  process.stdout.write(`\r📤 [${bar}] ${progressPercent}% (${uploadCount}/${totalFiles}) - ${speedStr}${etaStr}    `);
+  
+  // Bei 100% neue Zeile für saubere Ausgabe
+  if (progressPercent === 100) {
+    console.log('');
   }
 });
 
