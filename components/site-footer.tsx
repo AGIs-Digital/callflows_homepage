@@ -16,7 +16,7 @@ export function SiteFooter() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Image
-                src="/images/callflows_brand_no_claim.png"
+                src="/images/callflows_brand_no_claim.webp"
                 alt="callflows Logo"
                 width={120}
                 height={30}

@@ -66,7 +66,7 @@ export default function BlogPost() {
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/blog/ki-telefonie-branchen.png"
+              src="/images/blog/ki-telefonie-branchen.webp"
               alt="KI-Telefonie in verschiedenen Branchen: Erfolgsgeschichten und Best Practices"
               fill
               className="object-cover"

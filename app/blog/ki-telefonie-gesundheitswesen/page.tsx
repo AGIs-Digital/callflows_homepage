@@ -66,7 +66,7 @@ export default function BlogPost() {
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/blog/ki-telefonie-gesundheitswesen.png"
+              src="/images/blog/ki-telefonie-gesundheitswesen.webp"
               alt="KI-Telefonie im Gesundheitswesen: Anwendungsfälle und Erfolgsgeschichten"
               fill
               className="object-cover"

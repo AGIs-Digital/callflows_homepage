@@ -67,7 +67,7 @@ export default function BlogPostPage() {
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/blog/gpt-4o-revolutioniert-ki-telefonie-neue-moeglichkeiten-fuer-unternehmen.png"
+              src="/images/blog/gpt-4o-revolutioniert-ki-telefonie-neue-moeglichkeiten-fuer-unternehmen.webp"
               alt="GPT-4o revolutioniert KI-Telefonie: Neue Möglichkeiten für Unternehmen"
               fill
               className="object-cover"

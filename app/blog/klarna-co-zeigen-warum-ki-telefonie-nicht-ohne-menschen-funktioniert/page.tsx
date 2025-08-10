@@ -67,7 +67,7 @@ export default function BlogPostPage() {
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/blog/klarna-co-zeigen-warum-ki-telefonie-nicht-ohne-menschen-funktioniert.png"
+              src="/images/blog/klarna-co-zeigen-warum-ki-telefonie-nicht-ohne-menschen-funktioniert.webp"
               alt="Klarna & Co zeigen: Warum KI-Telefonie nicht ohne Menschen funktioniert"
               fill
               className="object-cover"

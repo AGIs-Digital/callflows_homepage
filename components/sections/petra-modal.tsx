@@ -41,7 +41,7 @@ export function PetraModal({ isOpen, onClose }: PetraModalProps) {
               <div className="flex-1">
                 <div className="mb-6">
                   <Image
-                    src="/images/petra-logo.png"
+                    src="/images/petra-logo.webp"
                     alt="Petra Abeln Logo"
                     width={200}
                     height={80}
@@ -63,7 +63,7 @@ export function PetraModal({ isOpen, onClose }: PetraModalProps) {
               <div className="float-right ml-6 mb-4 w-48 flex-shrink-0">
                 <div className="relative overflow-hidden rounded-lg shadow-lg">
                   <Image
-                    src="/images/petra-abeln.jpeg"
+                    src="/images/petra-abeln.webp"
                     alt="Petra Abeln"
                     width={192}
                     height={240}

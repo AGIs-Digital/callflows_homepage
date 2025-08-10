@@ -99,7 +99,7 @@ export function AboutSection() {
             {/* Bild nach dem Text */}
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden mt-6 max-w-md">
               <Image
-                src="/images/team.jpg"
+                src="/images/team.webp"
                 alt="Die callflows Gründer"
                 title="Das Team von callflows - Experten für KI-Telefonie und Voice Agent Entwicklung"
                 fill

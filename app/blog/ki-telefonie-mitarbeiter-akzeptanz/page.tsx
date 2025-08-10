@@ -66,7 +66,7 @@ export default function BlogPost() {
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/blog/ki-telefonie-mitarbeiter-akzeptanz.png"
+              src="/images/blog/ki-telefonie-mitarbeiter-akzeptanz.webp"
               alt="KI-Telefonie und Mitarbeiter: Wie man die Akzeptanz fördert"
               fill
               className="object-cover"

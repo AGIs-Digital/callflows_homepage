@@ -1,42 +1,99 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
+
 const nextConfig = {
-  //output: 'export',
-  
-  // Performance-Optimierungen für Deploy-Speed
-  experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
-  },
-  
   // Komprimierung und Bundle-Optimierung
   compress: true,
   
-  webpack: (config, { dev, isServer }) => {
-    // Nur für Production-Builds
-    if (!dev && !isServer) {
-      // Bundle-Splitting für besseres Caching
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            maxSize: 100000, // 100KB Chunks
-          },
+  // Parallele Builds für bessere Performance
+  experimental: {
+    // Nur bewährte, stabile Features
+    esmExternals: true, // ESM-Module externalisieren
+    serverComponentsExternalPackages: ['sharp'], // Sharp extern halten
+  },
+  
+  webpack: (config, { dev, isServer, webpack }) => {
+    // Performance-Optimierungen für alle Builds
+    
+    // Aggressive Bundle-Aufteilung für kleinere Dateien
+    config.optimization.splitChunks = {
+      chunks: 'all',
+      minSize: 10000,  // Noch kleinere Chunks
+      maxSize: 100000, // Maximale Chunk-Größe reduziert
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      cacheGroups: {
+        // React Framework
+        react: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          name: 'react',
+          chunks: 'all',
+          priority: 20,
+          enforce: true,
+        },
+        // UI Libraries
+        ui: {
+          test: /[\\/]node_modules[\\/](@radix-ui|lucide-react|@hookform)[\\/]/,
+          name: 'ui-components',
+          chunks: 'all',
+          priority: 15,
+          enforce: true,
+        },
+        // Utils und kleine Libraries
+        utils: {
+          test: /[\\/]node_modules[\\/](clsx|class-variance-authority|tailwind-merge)[\\/]/,
+          name: 'utils',
+          chunks: 'all',
+          priority: 10,
+        },
+        // Große Vendor Libraries einzeln
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+          priority: -10,
+          enforce: true,
+          maxSize: 80000, // Große Vendors aufteilen
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+          maxSize: 50000,
+        },
+      },
+    };
+
+    // Build-Performance optimieren
+    if (!dev) {
+      // Minimierung aktivieren
+      config.optimization.minimize = true;
+      config.optimization.usedExports = true;
+      config.optimization.sideEffects = false;
+      config.optimization.innerGraph = true;
+      config.optimization.providedExports = true;
+      config.optimization.concatenateModules = true;
+      
+      // Cache optimieren
+      config.cache = {
+        type: 'filesystem',
+        cacheDirectory: path.resolve(__dirname, '.next/cache/webpack'),
+        buildDependencies: {
+          config: [__filename],
         },
       };
       
-      // Minimierung
-      config.optimization.minimize = true;
+      // Weitere Bundle-Optimierungen
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        // Kleinere Alternativen für große Libraries
+        'react-dom$': 'react-dom/client',
+      };
     }
+
+    // Module-Resolution optimieren
+    config.resolve.symlinks = false;
+    config.resolve.cacheWithContext = false;
     
     return config;
   },
@@ -46,18 +103,28 @@ const nextConfig = {
   
   // Image-Optimierung
   images: {
-    domains: ['staging.callflows.de', 'callflows.de'],
-    unoptimized: true,
-    formats: ['image/webp', 'image/avif'],
-    minimumCacheTTL: 31536000, // 1 Jahr Cache
+    unoptimized: true, // Da wir WebP selbst generieren
+    formats: ['image/webp'],
   },
   
   // Tree-shaking für kleinere Bundles
   swcMinify: true,
   
+  // Bundle-Größe reduzieren
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  
   // Ausgabe-Optimierung
   output: 'export',
   distDir: 'out',
+  trailingSlash: true,
+  
+  // Externe Libraries optimieren
+  transpilePackages: [
+    '@radix-ui/react-icons',
+    'lucide-react'
+  ],
 };
 
 module.exports = nextConfig

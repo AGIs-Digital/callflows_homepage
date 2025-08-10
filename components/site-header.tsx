@@ -36,7 +36,7 @@ export function SiteHeader() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2" title="Zur callflows Startseite - KI-Telefonie & Voice Agents">
           <Image
-            src="/images/callflows_brand_no_claim.png"
+            src="/images/callflows_brand_no_claim.webp"
             alt="callflows Logo"
             title="callflows - KI-gestützte Voice Agents für automatisierte Telefonie"
             width={150}

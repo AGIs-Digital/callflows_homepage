@@ -66,7 +66,7 @@ export default function BlogPost() {
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/blog/kundenservice-ki-customer-experience.png"
+              src="/images/blog/kundenservice-ki-customer-experience.webp"
               alt="Kundenservice mit KI: So verbessern Sie die Customer Experience"
               fill
               className="object-cover"

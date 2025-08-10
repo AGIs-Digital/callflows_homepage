@@ -149,7 +149,7 @@ export function IntegrationChallengesSection() {
                   <Circle ref={div6Ref} className="size-16 bg-primary/10 dark:bg-primary/20 p-2">
                     <div className="rounded-full overflow-hidden w-12 h-12">
                       <Image 
-                        src="/icon.png" 
+                        src="/icon.webp" 
                         alt="callflows" 
                         width={96} 
                         height={96}
@@ -233,7 +233,7 @@ export function IntegrationChallengesSection() {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-green-200">
                     <Image 
-                      src="/icon.png" 
+                      src="/icon.webp" 
                       alt="callflows" 
                       width={24} 
                       height={24}

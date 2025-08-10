@@ -67,7 +67,7 @@ export default function BlogPostPage() {
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/blog/die-zukunft-der-ki-telefonie-trends-und-entwicklungen.png"
+              src="/images/blog/die-zukunft-der-ki-telefonie-trends-und-entwicklungen.webp"
               alt="Die Zukunft der KI-Telefonie: Trends und Entwicklungen"
               fill
               className="object-cover"

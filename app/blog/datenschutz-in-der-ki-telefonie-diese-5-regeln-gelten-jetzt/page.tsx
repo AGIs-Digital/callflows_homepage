@@ -67,7 +67,7 @@ export default function BlogPostPage() {
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/blog/datenschutz-in-der-ki-telefonie-diese-5-regeln-gelten-jetzt.png"
+              src="/images/blog/datenschutz-in-der-ki-telefonie-diese-5-regeln-gelten-jetzt.webp"
               alt="Datenschutz in der KI-Telefonie: Diese 5 Regeln gelten jetzt"
               fill
               className="object-cover"

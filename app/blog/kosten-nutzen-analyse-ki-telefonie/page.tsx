@@ -66,7 +66,7 @@ export default function BlogPost() {
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/blog/kosten-nutzen-analyse-ki-telefonie.png"
+              src="/images/blog/kosten-nutzen-analyse-ki-telefonie.webp"
               alt="Kosten-Nutzen-Analyse: Lohnt sich KI-Telefonie für Ihr Unternehmen?"
               fill
               className="object-cover"

@@ -144,7 +144,7 @@ export default function BlogPostPage() {
           
           <div className="relative aspect-video w-full mb-6 overflow-hidden rounded-lg">
             <Image
-              src="/images/blog/${topic.slug}.png"
+              src="/images/blog/${topic.slug}.webp"
               alt="${topic.title}"
               fill
               className="object-cover"

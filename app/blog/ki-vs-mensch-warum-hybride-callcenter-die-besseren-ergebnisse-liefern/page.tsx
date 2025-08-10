@@ -67,7 +67,7 @@ export default function BlogPostPage() {
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/blog/ki-vs-mensch-warum-hybride-callcenter-die-besseren-ergebnisse-liefern.png"
+              src="/images/blog/ki-vs-mensch-warum-hybride-callcenter-die-besseren-ergebnisse-liefern.webp"
               alt="KI vs. Mensch: Warum hybride Callcenter die besseren Ergebnisse liefern"
               fill
               className="object-cover"
