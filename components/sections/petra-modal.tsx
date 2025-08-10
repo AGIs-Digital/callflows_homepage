@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { X, ExternalLink, Phone, Target, Search, TrendingUp, MessageSquare, Calendar, CheckCircle, Users } from "lucide-react";
+import { X, ExternalLink, Search, TrendingUp, Target, CheckCircle, UserCheck, Calendar, MessageSquare, Phone, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 import Image from "next/image";
@@ -160,74 +160,78 @@ export function PetraModal({ isOpen, onClose }: PetraModalProps) {
                 <div className="mt-8">
                   <h3 className="text-xl font-bold text-primary mb-6">Seminarinhalte auf einen Blick</h3>
                   
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-4">
-                      <div className="bg-card p-4 rounded-lg border">
-                        <h4 className="font-semibold text-foreground mb-3 text-left">KI im Vertriebsprozess gezielt einsetzen</h4>
-                        <ul className="text-sm text-muted-foreground space-y-2">
-                          <li className="flex items-start gap-2">
-                            <TrendingUp className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span>Marktanalyse automatisieren: Wer nutzt Zeitarbeit, wo besteht Bedarf?</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <Target className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span>Qualifizierte Leads statt Streuverlust</span>
-                          </li>
-                        </ul>
+                  <div className="grid md:grid-cols-1 gap-4">
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-4">
+                        <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-lg mb-2">KI im Vertriebsprozess gezielt einsetzen</p>
+                          <div className="flex items-center gap-2">
+                            <Search className="w-5 h-5 text-accent flex-shrink-0" />
+                            <p className="text-muted-foreground m-0">Marktanalyse automatisieren: Wer nutzt Zeitarbeit, wo besteht Bedarf?</p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            {/* Icon korrigiert: UserCheck durch ein passendes Icon aus lucide-react ersetzen */}
+                            <UserCheck className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
+                            <p className="text-muted-foreground m-0">Qualifizierte Leads statt Streuverlust</p>
+                          </div>
+                        </div>
                       </div>
 
-                      <div className="bg-card p-4 rounded-lg border">
-                        <h4 className="font-semibold text-foreground mb-3 text-left">KI-Transkripte richtig lesen und nutzen</h4>
-                        <ul className="text-sm text-muted-foreground space-y-2">
-                          <li className="flex items-start gap-2">
-                            <MessageSquare className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span>Gesprächsinhalte und Reaktionen auswerten</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <Calendar className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span>Passende Maßnahmen ableiten: nachfassen, terminieren, strategische Kontaktkette, abschließen</span>
-                          </li>
-                        </ul>
+                      <div className="flex items-start gap-4">
+                        <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-lg mb-2">KI-Transkripte richtig lesen und nutzen</p>
+                          <div className="flex items-center gap-2">
+                            <MessageSquare className="w-5 h-5 text-accent flex-shrink-0" />
+                            <p className="text-muted-foreground m-0">Gesprächsinhalte und Reaktionen auswerten</p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Calendar className="w-5 h-5 text-accent flex-shrink-0" />
+                            <p className="text-muted-foreground m-0">Passende Maßnahmen ableiten: nachfassen, terminieren, strategische Kontaktkette, abschließen</p>
+                          </div>
+                        </div>
                       </div>
 
-                      <div className="bg-card p-4 rounded-lg border">
-                        <h4 className="font-semibold text-foreground mb-3 text-left">Gezielte Gesprächseinstiege trainieren</h4>
-                        <ul className="text-sm text-muted-foreground space-y-2">
-                          <li className="flex items-start gap-2">
-                            <Phone className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span>Aufhänger nutzen, Bedarfe direkt ansprechen</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div className="bg-card p-4 rounded-lg border">
-                        <h4 className="font-semibold text-foreground mb-3 text-left">Souveräne Gesprächsführung mit Abschlussorientierung</h4>
-                        <ul className="text-sm text-muted-foreground space-y-2">
-                          <li className="flex items-start gap-2">
-                            <Users className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span>Vertrauen aufbauen und Gespräche lenken</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span>Einwände erkennen, entkräften und zum Abschluss führen</span>
-                          </li>
-                        </ul>
+                      <div className="flex items-start gap-4">
+                        <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-lg mb-2">Gezielte Gesprächseinstiege trainieren</p>
+                          <div className="flex items-center gap-2">
+                            <Phone className="w-5 h-5 text-accent flex-shrink-0" />
+                            <p className="text-muted-foreground m-0">Aufhänger nutzen, Bedarfe direkt ansprechen</p>
+                          </div>
+                        </div>
                       </div>
 
-                      <div className="bg-card p-4 rounded-lg border">
-                        <h4 className="font-semibold text-foreground mb-3 text-left">Mitarbeitermotivation stärken</h4>
-                        <ul className="text-sm text-muted-foreground space-y-2">
-                          <li className="flex items-start gap-2">
-                            <TrendingUp className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span>Fokus auf relevante Kontakte steigert Wirksamkeit und Zufriedenheit</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                            <span>Erfolgreiche Gespräche statt frustrierende Kaltakquise</span>
-                          </li>
-                        </ul>
+                      <div className="flex items-start gap-4">
+                        <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-lg mb-2">Souveräne Gesprächsführung mit Abschlussorientierung</p>
+                          <div className="flex items-center gap-2">
+                            <Users className="w-5 h-5 text-accent flex-shrink-0" />
+                            <p className="text-muted-foreground m-0">Vertrauen aufbauen und Gespräche lenken</p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                            <p className="text-muted-foreground m-0">Einwände erkennen, entkräften und zum Abschluss führen</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-lg mb-2">Mitarbeitermotivation stärken</p>
+                            <div className="flex items-center gap-2">
+                            <Users className="w-5 h-5 text-accent flex-shrink-0" />
+                            <p className="text-muted-foreground m-0">Fokus auf relevante Kontakte steigert Wirksamkeit und Zufriedenheit</p>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                            <p className="text-muted-foreground m-0">Erfolgreiche Gespräche statt frustrierende Kaltakquise</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
