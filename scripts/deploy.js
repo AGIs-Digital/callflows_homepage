@@ -148,28 +148,31 @@ ftpDeploy.on('uploaded', function(data) {
     // Ignore file stat errors
   }
   
-  // Dynamischer Fortschrittsbalken
+  // Nur bei wichtigen Meilensteinen ausgeben
   const progressPercent = Math.round((uploadCount / totalFiles) * 100);
-  const elapsed = Date.now() - startTime;
-  const speed = uploadedBytes > 0 ? (uploadedBytes / 1024) / (elapsed / 1000) : 0;
-  
-  // Fortschrittsbalken erstellen
-  const barLength = 30;
-  const filledLength = Math.round((progressPercent / 100) * barLength);
-  const bar = '█'.repeat(filledLength) + '░'.repeat(barLength - filledLength);
-  
-  // ETA berechnen
-  const eta = speed > 0 && uploadedBytes < totalBytes ? 
-    Math.round(((totalBytes - uploadedBytes) / 1024) / speed) : 0;
-  const etaStr = eta > 0 ? ` - ETA ${eta}s` : '';
-  
-  // Einzeilige Ausgabe mit Carriage Return
-  const speedStr = speed > 0 ? `${formatBytes(speed * 1024)}/s` : '0 B/s';
-  process.stdout.write(`\r📤 [${bar}] ${progressPercent}% (${uploadCount}/${totalFiles}) - ${speedStr}${etaStr}    `);
-  
-  // Bei 100% neue Zeile für saubere Ausgabe
-  if (progressPercent === 100) {
-    console.log('');
+  const shouldShowProgress = 
+    progressPercent % 10 === 0 && progressPercent !== lastProgressUpdate || // Alle 10%
+    uploadCount === totalFiles || // Fertig
+    uploadCount === 1; // Start
+    
+  if (shouldShowProgress) {
+    const elapsed = Date.now() - startTime;
+    const speed = uploadedBytes > 0 ? (uploadedBytes / 1024) / (elapsed / 1000) : 0;
+    
+    // Kompakter Fortschrittsbalken nur für wichtige Updates
+    const barLength = 20;
+    const filledLength = Math.round((progressPercent / 100) * barLength);
+    const bar = '█'.repeat(filledLength) + '░'.repeat(barLength - filledLength);
+    
+    // ETA berechnen
+    const eta = speed > 0 && uploadedBytes < totalBytes ? 
+      Math.round(((totalBytes - uploadedBytes) / 1024) / speed) : 0;
+    const etaStr = eta > 0 ? ` - ETA ${formatDuration(eta * 1000)}` : '';
+    
+    const speedStr = speed > 0 ? `${formatBytes(speed * 1024)}/s` : '0 B/s';
+    console.log(`📤 [${bar}] ${progressPercent}% (${uploadCount}/${totalFiles}) - ${speedStr}${etaStr}`);
+    
+    lastProgressUpdate = progressPercent;
   }
 });
 
