@@ -19,7 +19,7 @@ export const metadata = generateMetadata({
     "Kundenservice"
   ],
   images: [{
-    url: "/images/blog/kundenservice-ki-customer-experience.png",
+    url: "/images/blog/kundenservice-ki-customer-experience.webp",
     width: 1200,
     height: 630,
     alt: "Kundenservice mit KI: So verbessern Sie die Customer Experience"

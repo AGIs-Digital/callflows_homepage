@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     path: '/',
     keywords: ['KI Telefonie', 'Telefon KI', 'Voice Agent', 'KI-Voice-Agents', 'Automatisierte Telefonie'],
     images: [{
-      url: '/images/callflows_brand_no_claim.png',
+      url: '/images/callflows_brand_no_claim.webp',
       width: 1200,
       height: 630,
       alt: 'callflows Logo'
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/icon.png', sizes: '192x192', type: 'image/png' }
+      { url: '/icon.webp', sizes: '192x192', type: 'image/webp' }
     ],
-    apple: { url: '/icon.png', sizes: '192x192', type: 'image/png' }
+    apple: { url: '/icon.webp', sizes: '192x192', type: 'image/webp' }
   },
 };
 

@@ -664,7 +664,7 @@ export default function BlogManagementPage() {
                           )}
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          Empfohlene Größe: 1200x630px (JPG, PNG, WebP)
+                          Empfohlene Größe: 1200x630px (JPG, webp, WebP)
                         </p>
                       </div>
 

@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Bild speichern (falls vorhanden)
-    let imagePath = `/images/blog/${slug}.png`; // Default
+    let imagePath = `/images/blog/${slug}.webp`; // Default
     if (imageFile && imageFile.size > 0) {
       imagePath = await saveUploadedImage(imageFile, slug);
     }

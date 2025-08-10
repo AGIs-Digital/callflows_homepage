@@ -43,7 +43,7 @@ Besondere Eigenschaften:
 ```
 
 ### Bilder hinzufügen:
-- **Logo:** callflows_brand_no_claim.png
+- **Logo:** callflows_brand_no_claim.webp
 - **Titelbild:** Dashboard-Screenshot
 - **Teamfotos:** Wenn verfügbar
 - **Bürofotos:** Arbeitsplatz-Impressionen

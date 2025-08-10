@@ -106,7 +106,7 @@ export const metadata = generateMetadata({
     "${topic.keywords[3]}"
   ],
   images: [{
-    url: "/images/blog/${topic.slug}.png",
+    url: "/images/blog/${topic.slug}.webp",
     width: 1200,
     height: 630,
     alt: "${topic.title}"
@@ -164,7 +164,7 @@ export default function BlogPostPage() {
           <p>
             Bitte erstellen Sie ein Bild für diesen Blogbeitrag unter:
             <br />
-            <code>/public/images/blog/${topic.slug}.png</code>
+            <code>/public/images/blog/${topic.slug}.webp</code>
           </p>
           
           <p>

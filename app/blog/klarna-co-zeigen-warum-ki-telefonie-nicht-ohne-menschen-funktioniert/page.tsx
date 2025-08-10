@@ -18,7 +18,7 @@ export const metadata = generateMetadata({
     "KI Kundenservice"
   ],
   images: [{
-    url: "/images/blog/klarna-co-zeigen-warum-ki-telefonie-nicht-ohne-menschen-funktioniert.png",
+    url: "/images/blog/klarna-co-zeigen-warum-ki-telefonie-nicht-ohne-menschen-funktioniert.webp",
     width: 1200,
     height: 630,
     alt: "Klarna & Co zeigen: Warum KI-Telefonie nicht ohne Menschen funktioniert"

@@ -19,7 +19,7 @@ export const metadata = generateMetadata({
     "Kundenservice"
   ],
   images: [{
-    url: "/images/blog/ki-telefonie-gesundheitswesen.png",
+    url: "/images/blog/ki-telefonie-gesundheitswesen.webp",
     width: 1200,
     height: 630,
     alt: "KI-Telefonie im Gesundheitswesen: Anwendungsfälle und Erfolgsgeschichten"

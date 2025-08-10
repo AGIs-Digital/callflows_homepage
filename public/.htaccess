@@ -5,7 +5,7 @@ RewriteEngine On
 RewriteBase /
 
 # Erlaube direkte Zugriffe auf statische Dateien und wichtige Pfade
-RewriteCond %{REQUEST_URI} \.(js|css|svg|jpg|jpeg|png|gif|ico|woff2)$ [OR]
+RewriteCond %{REQUEST_URI} \.(js|css|svg|jpg|jpeg|webp|gif|ico|woff2)$ [OR]
 RewriteCond %{REQUEST_URI} ^/api/ [OR]
 RewriteCond %{REQUEST_URI} ^/blog/?$ [OR]
 RewriteCond %{REQUEST_URI} ^/blog/.+$
@@ -40,7 +40,7 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     ExpiresByType image/jpg "access plus 1 year"
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType text/css "access plus 1 month"
@@ -56,7 +56,7 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     
     # Cache-Control für statische Assets
-    <FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|webp|svg|js|css|woff|woff2)$">
+    <FilesMatch "\.(ico|pdf|jpg|jpeg|webp|gif|webp|svg|js|css|woff|woff2)$">
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
     
@@ -92,7 +92,7 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     RewriteEngine On
     RewriteCond %{HTTP_ACCEPT} image/webp
     RewriteCond %{REQUEST_FILENAME} -f
-    RewriteCond %{REQUEST_FILENAME} \.(jpg|jpeg|png)$
+    RewriteCond %{REQUEST_FILENAME} \.(jpg|jpeg|webp)$
     RewriteCond %{REQUEST_FILENAME}\.webp -f
-    RewriteRule ^(.*)\.(jpg|jpeg|png)$ $1\.$2\.webp [T=image/webp,L]
+    RewriteRule ^(.*)\.(jpg|jpeg|webp)$ $1\.$2\.webp [T=image/webp,L]
 </IfModule> 

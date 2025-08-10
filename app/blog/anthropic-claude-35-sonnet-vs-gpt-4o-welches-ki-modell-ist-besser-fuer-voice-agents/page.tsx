@@ -18,7 +18,7 @@ export const metadata = generateMetadata({
     "KI Kundenservice"
   ],
   images: [{
-    url: "/images/blog/anthropic-claude-35-sonnet-vs-gpt-4o-welches-ki-modell-ist-besser-fuer-voice-agents.png",
+    url: "/images/blog/anthropic-claude-35-sonnet-vs-gpt-4o-welches-ki-modell-ist-besser-fuer-voice-agents.webp",
     width: 1200,
     height: 630,
     alt: "Anthropic Claude 3.5 Sonnet vs. GPT-4o: Welches KI-Modell ist besser für Voice Agents?"

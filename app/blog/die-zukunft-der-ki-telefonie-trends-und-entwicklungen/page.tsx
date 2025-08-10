@@ -18,7 +18,7 @@ export const metadata = generateMetadata({
     "KI Kundenservice"
   ],
   images: [{
-    url: "/images/blog/die-zukunft-der-ki-telefonie-trends-und-entwicklungen.png",
+    url: "/images/blog/die-zukunft-der-ki-telefonie-trends-und-entwicklungen.webp",
     width: 1200,
     height: 630,
     alt: "Die Zukunft der KI-Telefonie: Trends und Entwicklungen"

@@ -19,7 +19,7 @@ export const metadata = generateMetadata({
     "Kundenservice"
   ],
   images: [{
-    url: "/images/blog/kosten-nutzen-analyse-ki-telefonie.png",
+    url: "/images/blog/kosten-nutzen-analyse-ki-telefonie.webp",
     width: 1200,
     height: 630,
     alt: "Kosten-Nutzen-Analyse: Lohnt sich KI-Telefonie für Ihr Unternehmen?"

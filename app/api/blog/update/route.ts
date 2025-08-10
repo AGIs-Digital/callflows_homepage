@@ -46,14 +46,14 @@ export async function PUT(request: NextRequest) {
     }
 
     // Bild-Pfad bestimmen
-    let imagePath = `/images/blog/${slug}.png`; // Default
+    let imagePath = `/images/blog/${slug}.webp`; // Default
     
     // Wenn neues Bild hochgeladen wurde
     if (imageFile && imageFile.size > 0) {
       imagePath = await saveUploadedImage(imageFile, slug);
     } else {
       // Versuche das alte Bild zu verwenden, falls vorhanden
-      const oldImageFormats = ['png', 'jpg', 'jpeg', 'webp', 'gif'];
+      const oldImageFormats = ['webp', 'jpg', 'jpeg', 'webp', 'gif'];
       let foundOldImage = false;
       
       for (const format of oldImageFormats) {
@@ -73,7 +73,7 @@ export async function PUT(request: NextRequest) {
       }
       
       if (!foundOldImage) {
-        imagePath = `/images/blog/${slug}.png`; // Fallback
+        imagePath = `/images/blog/${slug}.webp`; // Fallback
       }
     }
 
@@ -82,7 +82,7 @@ export async function PUT(request: NextRequest) {
 
     // Wenn sich der Slug geändert hat und ein neues Bild vorhanden ist, alte Bilder löschen
     if (originalSlug !== slug && imageFile && imageFile.size > 0) {
-      const oldImageFormats = ['png', 'jpg', 'jpeg', 'webp', 'gif'];
+      const oldImageFormats = ['webp', 'jpg', 'jpeg', 'webp', 'gif'];
       oldImageFormats.forEach(format => {
         const oldImagePath = path.join(process.cwd(), 'public/images/blog', `${originalSlug}.${format}`);
         if (fs.existsSync(oldImagePath)) {

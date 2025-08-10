@@ -7,7 +7,7 @@ const path = require('path');
  * Spart bis zu 80% Speicherplatz bei gleicher Qualität
  */
 
-const imageExtensions = ['.jpg', '.jpeg', '.png', '.tiff', '.tif'];
+const imageExtensions = ['.jpg', '.jpeg', '.webp', '.tiff', '.tif'];
 const outputDir = path.join(__dirname, '../out');
 let processedCount = 0;
 let savedBytes = 0;

@@ -19,7 +19,7 @@ export const metadata = generateMetadata({
     "Kundenservice"
   ],
   images: [{
-    url: "/images/blog/ki-telefonie-branchen.png",
+    url: "/images/blog/ki-telefonie-branchen.webp",
     width: 1200,
     height: 630,
     alt: "KI-Telefonie in verschiedenen Branchen: Erfolgsgeschichten und Best Practices"

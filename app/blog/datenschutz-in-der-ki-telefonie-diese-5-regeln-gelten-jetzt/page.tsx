@@ -18,7 +18,7 @@ export const metadata = generateMetadata({
     "KI Kundenservice"
   ],
   images: [{
-    url: "/images/blog/datenschutz-in-der-ki-telefonie-diese-5-regeln-gelten-jetzt.png",
+    url: "/images/blog/datenschutz-in-der-ki-telefonie-diese-5-regeln-gelten-jetzt.webp",
     width: 1200,
     height: 630,
     alt: "Datenschutz in der KI-Telefonie: Diese 5 Regeln gelten jetzt"

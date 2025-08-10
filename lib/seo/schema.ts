@@ -8,8 +8,8 @@ export function generateOrganizationSchema(): WithContext<Organization> {
     name: 'callflows',
     legalName: 'callflows GmbH',
     url: 'https://callflows.de',
-    logo: 'https://callflows.de/images/callflows_brand_no_claim.png',
-    image: 'https://callflows.de/images/callflows_brand_no_claim.png',
+    logo: 'https://callflows.de/images/callflows_brand_no_claim.webp',
+    image: 'https://callflows.de/images/callflows_brand_no_claim.webp',
     description: 'callflows entwickelt KI-gestützte Voice Agents für automatisierte Kundenkommunikation. Wir ermöglichen Unternehmen effiziente Telefonie durch künstliche Intelligenz.',
     slogan: 'Kommunikation mit KI - Automatisierte Telefonie mit künstlicher Intelligenz',
     foundingDate: '2023',
@@ -89,7 +89,7 @@ export function generateProductSchema(): WithContext<Product> {
       url: 'https://callflows.de'
     },
     url: 'https://callflows.de',
-    image: 'https://callflows.de/images/callflows_brand_no_claim.png',
+    image: 'https://callflows.de/images/callflows_brand_no_claim.webp',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '0.89',
@@ -363,7 +363,7 @@ export function generateSoftwareSchema(): WithContext<SoftwareApplication> {
       'Real-time Analytics',
       'API Schnittstellen'
     ],
-    screenshot: 'https://callflows.de/images/dashboard.png',
+    screenshot: 'https://callflows.de/images/dashboard.webp',
     softwareHelp: {
       '@type': 'CreativeWork',
       name: 'FAQ',
@@ -398,8 +398,8 @@ export function generateLocalBusinessSchema(): WithContext<LocalBusiness> {
     telephone: '+49 511 1665 3388',
     email: 'info@callflows.de',
     url: 'https://callflows.de',
-    logo: 'https://callflows.de/images/callflows_brand_no_claim.png',
-    image: 'https://callflows.de/images/callflows_brand_no_claim.png',
+    logo: 'https://callflows.de/images/callflows_brand_no_claim.webp',
+    image: 'https://callflows.de/images/callflows_brand_no_claim.webp',
     priceRange: '€€',
     currenciesAccepted: 'EUR',
     paymentAccepted: 'Bank transfer, Credit Card',

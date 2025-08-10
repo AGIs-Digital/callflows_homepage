@@ -488,7 +488,7 @@ export async function loadExistingBlogPosts(): Promise<any[]> {
           description: descriptionMatch[1],
           publishedTime: publishedTimeMatch[1],
           author: authorsMatch ? authorsMatch[1] : "Team callflows",
-          image: `/images/blog/${slug}.png`,
+          image: `/images/blog/${slug}.webp`,
           status,
           content: "..." // Vereinfacht
         });

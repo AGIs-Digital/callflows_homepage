@@ -7,7 +7,7 @@ const path = require('path');
  * Für lokale Entwicklung und Konsistenz
  */
 
-const imageExtensions = ['.png', '.jpg', '.jpeg', '.tiff', '.tif'];
+const imageExtensions = ['.webp', '.jpg', '.jpeg', '.tiff', '.tif'];
 const publicDir = path.join(__dirname, '../public');
 let processedCount = 0;
 let savedBytes = 0;

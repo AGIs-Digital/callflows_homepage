@@ -28,7 +28,7 @@ export async function DELETE(request: NextRequest) {
     fs.rmSync(blogDir, { recursive: true, force: true });
 
     // Blog-Bild löschen (falls vorhanden)
-    const imagePath = path.join(process.cwd(), 'public/images/blog', `${slug}.png`);
+    const imagePath = path.join(process.cwd(), 'public/images/blog', `${slug}.webp`);
     if (fs.existsSync(imagePath)) {
       fs.unlinkSync(imagePath);
     }

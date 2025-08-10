@@ -19,7 +19,7 @@ export const metadata = generateMetadata({
     "Kundenservice"
   ],
   images: [{
-    url: "/images/blog/ki-telefonie-mitarbeiter-akzeptanz.png",
+    url: "/images/blog/ki-telefonie-mitarbeiter-akzeptanz.webp",
     width: 1200,
     height: 630,
     alt: "KI-Telefonie und Mitarbeiter: Wie man die Akzeptanz fördert"

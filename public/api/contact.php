@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $to = 'kontakt@callflows.de';
     
     // Logo als Base64 einbetten
-    $logoPath = __DIR__ . '/../../images/callflows_brand_no_claim.png';
+    $logoPath = __DIR__ . '/../../images/callflows_brand_no_claim.webp';
     $logoType = pathinfo($logoPath, PATHINFO_EXTENSION);
     $logoData = file_get_contents($logoPath);
     $logoBase64 = base64_encode($logoData);

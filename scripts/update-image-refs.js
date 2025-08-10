@@ -7,7 +7,7 @@ const path = require('path');
  */
 
 const supportedExtensions = ['.tsx', '.jsx', '.ts', '.js', '.html', '.md', '.mdx'];
-const imageExtensions = ['.png', '.jpg', '.jpeg', '.tiff', '.tif'];
+const imageExtensions = ['.webp', '.jpg', '.jpeg', '.tiff', '.tif'];
 const excludeDirs = ['node_modules', '.git', '.next', 'out', 'backups', 'docs'];
 
 let updatedFiles = 0;
@@ -23,7 +23,7 @@ function updateImageReferences(filePath) {
     const patterns = [
       // src="image.webp" -> src="image.webp"
       {
-        pattern: /src=['"]([^'"]*\.(png|jpg|jpeg|tiff|tif))['"/]/gi,
+        pattern: /src=['"]([^'"]*\.(webp|jpg|jpeg|tiff|tif))['"/]/gi,
         replacement: (match, imagePath, ext) => {
           const webpPath = imagePath.replace(new RegExp(`\\.${ext}$`, 'i'), '.webp');
           fileReplacements++;
@@ -32,7 +32,7 @@ function updateImageReferences(filePath) {
       },
       // url("image.webp") -> url("image.webp") 
       {
-        pattern: /url\(['"]([^'"]*\.(png|jpg|jpeg|tiff|tif))['"][)]/gi,
+        pattern: /url\(['"]([^'"]*\.(webp|jpg|jpeg|tiff|tif))['"][)]/gi,
         replacement: (match, imagePath, ext) => {
           const webpPath = imagePath.replace(new RegExp(`\\.${ext}$`, 'i'), '.webp');
           fileReplacements++;
@@ -41,7 +41,7 @@ function updateImageReferences(filePath) {
       },
       // import image from "./image.webp" -> import image from "./image.webp"
       {
-        pattern: /import\s+\w+\s+from\s+['"]([^'"]*\.(png|jpg|jpeg|tiff|tif))['"];?/gi,
+        pattern: /import\s+\w+\s+from\s+['"]([^'"]*\.(webp|jpg|jpeg|tiff|tif))['"];?/gi,
         replacement: (match, imagePath, ext) => {
           const webpPath = imagePath.replace(new RegExp(`\\.${ext}$`, 'i'), '.webp');
           fileReplacements++;
@@ -50,7 +50,7 @@ function updateImageReferences(filePath) {
       },
       // require("./image.webp") -> require("./image.webp")
       {
-        pattern: /require\(['"]([^'"]*\.(png|jpg|jpeg|tiff|tif))['"][)]/gi,
+        pattern: /require\(['"]([^'"]*\.(webp|jpg|jpeg|tiff|tif))['"][)]/gi,
         replacement: (match, imagePath, ext) => {
           const webpPath = imagePath.replace(new RegExp(`\\.${ext}$`, 'i'), '.webp');
           fileReplacements++;
@@ -59,7 +59,7 @@ function updateImageReferences(filePath) {
       },
       // background-image: url("image.webp") -> background-image: url("image.webp")
       {
-        pattern: /background-image:\s*url\(['"]([^'"]*\.(png|jpg|jpeg|tiff|tif))['"][)]/gi,
+        pattern: /background-image:\s*url\(['"]([^'"]*\.(webp|jpg|jpeg|tiff|tif))['"][)]/gi,
         replacement: (match, imagePath, ext) => {
           const webpPath = imagePath.replace(new RegExp(`\\.${ext}$`, 'i'), '.webp');
           fileReplacements++;
@@ -68,7 +68,7 @@ function updateImageReferences(filePath) {
       },
       // Markdown: ![alt](image.webp) -> ![alt](image.webp)
       {
-        pattern: /!\[([^\]]*)\]\(([^)]*\.(png|jpg|jpeg|tiff|tif))\)/gi,
+        pattern: /!\[([^\]]*)\]\(([^)]*\.(webp|jpg|jpeg|tiff|tif))\)/gi,
         replacement: (match, alt, imagePath, ext) => {
           const webpPath = imagePath.replace(new RegExp(`\\.${ext}$`, 'i'), '.webp');
           fileReplacements++;

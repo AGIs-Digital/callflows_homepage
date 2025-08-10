@@ -48,7 +48,7 @@ export const getAllBlogPosts = cache(async (): Promise<BlogPost[]> => {
         publishedTime: publishedTimeMatch[1],
         modifiedTime: modifiedTimeMatch ? modifiedTimeMatch[1] : publishedTimeMatch[1],
         author: authorsMatch ? authorsMatch[1] : "Team callflows",
-        image: imagesMatch ? imagesMatch[1] : "/images/blog/default.png",
+        image: imagesMatch ? imagesMatch[1] : "/images/blog/default.webp",
         category: categoryMatch ? categoryMatch[1].split(',')[0].trim() : undefined
       });
     }

@@ -18,7 +18,7 @@ export const metadata = generateMetadata({
     "KI Kundenservice"
   ],
   images: [{
-    url: "/images/blog/ki-vs-mensch-warum-hybride-callcenter-die-besseren-ergebnisse-liefern.png",
+    url: "/images/blog/ki-vs-mensch-warum-hybride-callcenter-die-besseren-ergebnisse-liefern.webp",
     width: 1200,
     height: 630,
     alt: "KI vs. Mensch: Warum hybride Callcenter die besseren Ergebnisse liefern"

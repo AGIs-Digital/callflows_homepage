@@ -9,7 +9,7 @@ const STATIC_POSTS = [
     description: "Entdecken Sie, wie KI-gestützte Voice Agents den Kundenservice revolutionieren können.",
     publishedTime: "2024-01-20T10:00:00Z",
     author: "Tom Abeln",
-    image: "/images/blog/kundenservice-ki-customer-experience.png",
+    image: "/images/blog/kundenservice-ki-customer-experience.webp",
     status: "published",
     category: "KI Kundenservice"
   },
@@ -19,7 +19,7 @@ const STATIC_POSTS = [
     description: "Erfahren Sie, wie OpenAIs neuestes Sprachmodell GPT-4o die KI-Telefonie auf ein neues Level hebt.",
     publishedTime: "2024-11-05T10:00:00Z",
     author: "Tom Abeln",
-    image: "/images/blog/gpt4o-ki-telefonie.png",
+    image: "/images/blog/gpt4o-ki-telefonie.webp",
     status: "published",
     category: "GPT-4o Telefonie"
   },
@@ -29,7 +29,7 @@ const STATIC_POSTS = [
     description: "Erfahren Sie, wie Sie KI-gestützte Telefonie datenschutzkonform einsetzen können. Praktische Tipps zur DSGVO-Konformität bei der Nutzung von Voice Agents.",
     publishedTime: "2023-09-05T10:00:00Z",
     author: "Tom Abeln",
-    image: "/images/blog/ki-telefonie-dsgvo.png",
+    image: "/images/blog/ki-telefonie-dsgvo.webp",
     status: "published",
     category: "DSGVO"
   },
@@ -39,7 +39,7 @@ const STATIC_POSTS = [
     description: "Ein praktischer Leitfaden zur erfolgreichen Implementierung von KI-Telefonie in Ihrem Unternehmen. Von der Planung bis zum Go-Live – alle wichtigen Schritte im Überblick.",
     publishedTime: "2023-11-15T10:00:00Z",
     author: "Tom Abeln",
-    image: "/images/blog/ki-telefonie-implementieren.png",
+    image: "/images/blog/ki-telefonie-implementieren.webp",
     status: "published",
     category: "Implementation"
   },
@@ -49,7 +49,7 @@ const STATIC_POSTS = [
     description: "Entdecken Sie, wie KI-gestützte Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.",
     publishedTime: "2024-07-20T10:00:00Z",
     author: "Timo Goltz",
-    image: "/images/blog/ki-telefonie-gesundheitswesen.png",
+    image: "/images/blog/ki-telefonie-gesundheitswesen.webp",
     status: "published",
     category: "Gesundheitswesen"
   },
@@ -59,7 +59,7 @@ const STATIC_POSTS = [
     description: "Erfahren Sie, wie Sie Ihre Mitarbeiter für KI-Telefonie begeistern können. Praktische Tipps und Strategien für eine erfolgreiche Implementierung ohne Widerstände.",
     publishedTime: "2024-03-05T10:00:00Z",
     author: "Timo Goltz",
-    image: "/images/blog/ki-telefonie-mitarbeiter-akzeptanz.png",
+    image: "/images/blog/ki-telefonie-mitarbeiter-akzeptanz.webp",
     status: "published",
     category: "Change Management"
   },
@@ -69,7 +69,7 @@ const STATIC_POSTS = [
     description: "Erfahren Sie, wie Sie die Wirtschaftlichkeit von KI-Telefonie für Ihr Unternehmen berechnen können. Eine detaillierte Kosten-Nutzen-Analyse mit ROI-Berechnungen und Praxisbeispielen.",
     publishedTime: "2024-06-01T10:00:00Z",
     author: "Tom Abeln",
-    image: "/images/blog/kosten-nutzen-analyse-ki-telefonie.png",
+    image: "/images/blog/kosten-nutzen-analyse-ki-telefonie.webp",
     status: "published",
     category: "Business"
   },
@@ -79,7 +79,7 @@ const STATIC_POSTS = [
     description: "Entdecken Sie, wie verschiedene Branchen KI-Telefonie erfolgreich einsetzen. Von E-Commerce bis Gesundheitswesen - reale Beispiele und bewährte Praktiken.",
     publishedTime: "2024-04-15T10:00:00Z",
     author: "Timo Goltz",
-    image: "/images/blog/ki-telefonie-branchen.png",
+    image: "/images/blog/ki-telefonie-branchen.webp",
     status: "published",
     category: "Branchen"
   }
