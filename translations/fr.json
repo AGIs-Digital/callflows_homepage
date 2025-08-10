@@ -36,7 +36,7 @@
     }
   },
   "pricing": {
-    "pageTitle": "Tarification Transparente",
+    "pageTitle": "Prix AI-callflow - Coûts Transparents",
     "intro": "Avec callflows, vous ne payez que le temps de conversation réel de vos agents vocaux IA pendant l'utilisation – sans frais cachés, sans frais de base.",
     "starterTitle": "Ce Que Vous Obtenez Pour Commencer",
     "starterDescription": "Il y a des frais de configuration uniques pour commencer, dont le montant dépend de l'effort individuel requis. Cela comprend :",
@@ -59,7 +59,7 @@
     "flexibleTitle": "Durée Flexible",
     "flexibleDesc": "Paiement mensuel avec 12 mois de durée après le pilote",
     "riskFreeStart": "Voici comment vous commencez sans risque – avec un contrôle total, une structure de prix transparente et des agents vocaux qui s'adaptent parfaitement à votre entreprise.",
-    "monthlyPackages": "Nos Forfaits Mensuels",
+    "monthlyPackages": "Forfaits Mensuels IA callflow",
     "pricesExclVat": "Tous les prix hors TVA",
     "popular": "Populaire",
     "priceOnRequest": "Prix sur demande",

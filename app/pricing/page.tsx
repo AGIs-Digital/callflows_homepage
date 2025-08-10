@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { PricingFeaturesSection } from "@/components/sections/pricing-features-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { PricingTables } from "@/components/pricing/tables";
+import { PricingIntro } from "@/components/pricing/pricing-intro";
 import { ROICalculator } from "@/components/pricing/roi-calculator";
 import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
 import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
@@ -23,21 +24,37 @@ export default function PricingPage() {
       <main className="bg-background">
       <SiteHeader />
       <div className="pt-12">
-        {/* Hero Section mit Farbverlauf */}
-        <div className="pt-24 pb-16 bg-gradient-to-b from-secondary via-accent/5 to-accent/20">
-          <div className="container">
+        {/* Hero Header with Main Title */}
+        <div className="pt-24 pb-16 bg-gradient-to-b from-secondary via-secondary to-accent/5">
+          <div className="container max-w-7xl mx-auto">
             <BreadcrumbSEO 
               items={[
                 { name: "Preise", url: "https://callflows.de/pricing" }
               ]}
             />
-            <h1 className="text-3xl text-center sm:text-4xl md:text-4xl font-bold text-primary dark:text-white mb-4 md:mb-6 px-4">{t('pricing.pageTitle')}</h1>
-            <PricingTables />
+            <div className="text-center mt-12">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary dark:text-white mb-6 leading-tight">
+                {t('pricing.pageTitle')}
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Transparente Preise für KI-gestützte Voice Agents ohne versteckte Kosten
+              </p>
+            </div>
           </div>
         </div>
         
-        <ROICalculator />
+        {/* 1. Preistabellen zuerst */}
+        <PricingTables />
+        
+        {/* 2. Alle Pakete enthalten */}
         <PricingFeaturesSection />
+        
+        {/* 3. ROI Calculator */}
+        <ROICalculator />
+        
+        {/* 4. Intro-Block mit Erklärungen */}
+        <PricingIntro />
+        
         <CTASectionSecondary />
       </div>
 

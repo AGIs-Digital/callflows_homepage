@@ -36,7 +36,7 @@
     }
   },
   "pricing": {
-    "pageTitle": "Transparent Pricing",
+    "pageTitle": "AI-callflow Prices - Transparent Costs",
     "intro": "With callflows, you only pay for the actual conversation time of your AI voice agents during runtime – no hidden costs, no basic fees.",
     "starterTitle": "What You Get to Start",
     "starterDescription": "There is a one-time setup fee for getting started, the amount of which depends on the individual effort required. This includes:",
@@ -59,7 +59,7 @@
     "flexibleTitle": "Flexible Runtime",
     "flexibleDesc": "Monthly payment with 12 months runtime after the pilot",
     "riskFreeStart": "This is how you start risk-free – with full control, transparent pricing structure, and voice agents that perfectly fit your company.",
-    "monthlyPackages": "Our Monthly Packages",
+    "monthlyPackages": "AI callflow Monthly Packages",
     "pricesExclVat": "All prices excluding VAT",
     "popular": "Popular",
     "priceOnRequest": "Price on request",

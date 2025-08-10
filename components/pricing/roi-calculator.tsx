@@ -85,8 +85,8 @@ export function ROICalculator() {
   };
 
   return (
-    <div className="py-16 bg-gradient-to-b from-accent/20 via-tertiary/50 to-accent/20">
-      <div className="container mx-auto px-4">
+    <div className="py-16 bg-gradient-to-b from-accent/20 via-primary/10 to-primary/60">
+      <div className="container max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="bg-primary rounded-full p-2">
