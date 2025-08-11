@@ -1,4 +1,4 @@
-# callflows - KI-gestützte Voice Agents
+# callflows - KI Voice Agents
 
 ## 📝 Dokumentation
 
@@ -40,7 +40,7 @@ Das Projekt verwendet eine moderne Next.js-Architektur mit folgenden Hauptkompon
 - Konsistente Fehlerbehandlung
 - Zentrale Typendefinitionen
 
-Eine moderne Next.js-Webanwendung für KI-gestützte Kommunikationslösungen.
+Eine moderne Next.js-Webanwendung für KI Kommunikationslösungen.
 
 ## 🚀 Features
 

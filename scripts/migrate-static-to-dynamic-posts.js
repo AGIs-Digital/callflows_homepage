@@ -6,7 +6,7 @@ const STATIC_POSTS = [
   {
     slug: "kundenservice-ki-customer-experience",
     title: "Kundenservice mit KI: So verbessern Sie die Customer Experience",
-    description: "Entdecken Sie, wie KI-gestützte Voice Agents den Kundenservice revolutionieren können.",
+    description: "Entdecken Sie, wie KI Voice Agents den Kundenservice revolutionieren können.",
     publishedTime: "2024-01-20T10:00:00Z",
     author: "Tom Abeln",
     image: "/images/blog/kundenservice-ki-customer-experience.webp",
@@ -26,7 +26,7 @@ const STATIC_POSTS = [
   {
     slug: "ki-telefonie-dsgvo",
     title: "KI-Telefonie und DSGVO: So bleiben Sie compliant",
-    description: "Erfahren Sie, wie Sie KI-gestützte Telefonie datenschutzkonform einsetzen können. Praktische Tipps zur DSGVO-Konformität bei der Nutzung von Voice Agents.",
+    description: "Erfahren Sie, wie Sie KI Telefonie datenschutzkonform einsetzen können. Praktische Tipps zur DSGVO-Konformität bei der Nutzung von Voice Agents.",
     publishedTime: "2023-09-05T10:00:00Z",
     author: "Tom Abeln",
     image: "/images/blog/ki-telefonie-dsgvo.webp",
@@ -46,7 +46,7 @@ const STATIC_POSTS = [
   {
     slug: "ki-telefonie-gesundheitswesen",
     title: "KI-Telefonie im Gesundheitswesen: Anwendungsfälle und Erfolgsgeschichten",
-    description: "Entdecken Sie, wie KI-gestützte Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.",
+    description: "Entdecken Sie, wie KI Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.",
     publishedTime: "2024-07-20T10:00:00Z",
     author: "Timo Goltz",
     image: "/images/blog/ki-telefonie-gesundheitswesen.webp",

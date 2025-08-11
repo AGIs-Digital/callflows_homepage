@@ -5,7 +5,7 @@ import { ArrowLeft, Clock, User, Calendar } from "lucide-react";
 
 export const metadata = generateMetadata({
   title: "Kundenservice mit KI: So verbessern Sie die Customer Experience",
-  description: "Entdecken Sie, wie KI-gestützte Voice Agents den Kundenservice revolutionieren können.",
+  description: "Entdecken Sie, wie KI Voice Agents den Kundenservice revolutionieren können.",
   path: "/blog/kundenservice-ki-customer-experience",
   type: "article",
   publishedTime: "2024-01-20T10:00:00Z",
@@ -61,7 +61,7 @@ export default function BlogPost() {
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Entdecken Sie, wie KI-gestützte Voice Agents den Kundenservice revolutionieren können.
+            Entdecken Sie, wie KI Voice Agents den Kundenservice revolutionieren können.
           </p>
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
@@ -79,7 +79,7 @@ export default function BlogPost() {
           <h3 className="text-2xl font-semibold mt-10 mb-5 text-foreground">KI-Telefonie verändert die Geschäftswelt</h3>
 
       <p className="mb-6 leading-relaxed text-lg">
-        Entdecken Sie, wie KI-gestützte Voice Agents den Kundenservice revolutionieren können.
+        Entdecken Sie, wie KI Voice Agents den Kundenservice revolutionieren können.
       </p>
 
       <p className="mb-6 leading-relaxed text-lg">

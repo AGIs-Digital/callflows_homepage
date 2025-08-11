@@ -5,7 +5,7 @@ import { ArrowLeft, Clock, User, Calendar } from "lucide-react";
 
 export const metadata = generateMetadata({
   title: "KI-Telefonie im Gesundheitswesen: Anwendungsfälle und Erfolgsgeschichten",
-  description: "Entdecken Sie, wie KI-gestützte Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.",
+  description: "Entdecken Sie, wie KI Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.",
   path: "/blog/ki-telefonie-gesundheitswesen",
   type: "article",
   publishedTime: "2024-07-20T10:00:00Z",
@@ -61,7 +61,7 @@ export default function BlogPost() {
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Entdecken Sie, wie KI-gestützte Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.
+            Entdecken Sie, wie KI Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.
           </p>
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
@@ -79,7 +79,7 @@ export default function BlogPost() {
           <h3 className="text-2xl font-semibold mt-10 mb-5 text-foreground">KI-Telefonie verändert die Geschäftswelt</h3>
 
       <p className="mb-6 leading-relaxed text-lg">
-        Entdecken Sie, wie KI-gestützte Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.
+        Entdecken Sie, wie KI Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.
       </p>
 
       <p className="mb-6 leading-relaxed text-lg">

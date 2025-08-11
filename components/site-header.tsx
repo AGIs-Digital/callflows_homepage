@@ -38,7 +38,7 @@ export function SiteHeader() {
           <Image
             src="/images/callflows_brand_no_claim.webp"
             alt="callflows Logo"
-            title="callflows - KI-gestützte Voice Agents für automatisierte Telefonie"
+            title="callflows - KI Voice Agents für automatisierte Telefonie"
             width={150}
             height={40}
             className="dark:invert"

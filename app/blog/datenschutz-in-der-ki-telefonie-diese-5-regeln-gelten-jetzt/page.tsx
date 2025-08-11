@@ -79,7 +79,7 @@ export default function BlogPostPage() {
         {/* Content */}
         <div className="prose-content">
           <p className="mb-6 leading-relaxed text-lg">
-        ...Die Nutzung von KI-gestützten Telefonassistenten boomt – doch mit der <strong className="font-semibold text-primary">Automatisierung</strong> wächst auch der datenschutzrechtliche Handlungsbedarf. Wer Sprach-KI im Kundenkontakt einsetzt, bewegt sich schnell im Spannungsfeld zwischen technischer Innovation und regulatorischer Verantwortung. Besonders im Jahr 2025 gilt: Wer <strong className="font-semibold text-primary">KI-Telefonie</strong> einführt, muss die <strong className="font-semibold text-primary">DSGVO</strong> aktiv mitdenken – sonst drohen Abmahnungen, Bußgelder und Reputationsschäden.
+        ...Die Nutzung von KI-Telefonassistenten boomt – doch mit der <strong className="font-semibold text-primary">Automatisierung</strong> wächst auch der datenschutzrechtliche Handlungsbedarf. Wer Sprach-KI im Kundenkontakt einsetzt, bewegt sich schnell im Spannungsfeld zwischen technischer Innovation und regulatorischer Verantwortung. Besonders im Jahr 2025 gilt: Wer <strong className="font-semibold text-primary">KI-Telefonie</strong> einführt, muss die <strong className="font-semibold text-primary">DSGVO</strong> aktiv mitdenken – sonst drohen Abmahnungen, Bußgelder und Reputationsschäden.
       </p>
 
       <p className="mb-6 leading-relaxed text-lg">

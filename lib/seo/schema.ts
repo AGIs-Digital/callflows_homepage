@@ -10,7 +10,7 @@ export function generateOrganizationSchema(): WithContext<Organization> {
     url: 'https://callflows.de',
     logo: 'https://callflows.de/images/callflows_brand_no_claim.webp',
     image: 'https://callflows.de/images/callflows_brand_no_claim.webp',
-    description: 'callflows entwickelt KI-gestützte Voice Agents für automatisierte Kundenkommunikation. Wir ermöglichen Unternehmen effiziente Telefonie durch künstliche Intelligenz.',
+    description: 'callflows entwickelt KI Voice Agents für automatisierte Kundenkommunikation. Wir ermöglichen Unternehmen effiziente Telefonie durch künstliche Intelligenz.',
     slogan: 'Kommunikation mit KI - Automatisierte Telefonie mit künstlicher Intelligenz',
     foundingDate: '2023',
 
@@ -77,7 +77,7 @@ export function generateProductSchema(): WithContext<Product> {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'callflows KI-Voice-Agents',
-    description: 'KI-gestützte Voice Agents für automatisierte Kundenkommunikation. Optimieren Sie Ihren Kundenservice, Vertrieb und Support mit intelligenten Sprachassistenten.',
+    description: 'KI Voice Agents für automatisierte Kundenkommunikation. Optimieren Sie Ihren Kundenservice, Vertrieb und Support mit intelligenten Sprachassistenten.',
     brand: {
       '@type': 'Brand',
       name: 'callflows',
@@ -274,7 +274,7 @@ export function generateServiceSchema(): WithContext<Service> {
     '@type': 'Service',
     '@id': 'https://callflows.de/#service',
     name: 'KI Voice Agents für automatisierte Telefonie',
-    description: 'Professionelle KI-gestützte Voice Agents die Ihre Kundenkommunikation automatisieren. Ideal für Kundenservice, Terminbuchungen, Lead-Qualifizierung und Support.',
+    description: 'Professionelle KI Voice Agents die Ihre Kundenkommunikation automatisieren. Ideal für Kundenservice, Terminbuchungen, Lead-Qualifizierung und Support.',
     provider: {
       '@id': 'https://callflows.de/#organization'
     },
@@ -336,7 +336,7 @@ export function generateSoftwareSchema(): WithContext<SoftwareApplication> {
     '@type': 'SoftwareApplication',
     '@id': 'https://callflows.de/#software',
     name: 'callflows KI Voice Agent Platform',
-    description: 'Cloud-basierte Plattform für KI-gestützte Voice Agents. Automatisieren Sie Ihre Telefonie mit künstlicher Intelligenz.',
+    description: 'Cloud-basierte Plattform für KI Voice Agents. Automatisieren Sie Ihre Telefonie mit künstlicher Intelligenz.',
     applicationCategory: 'BusinessApplication',
     applicationSubCategory: 'Customer Relationship Management, Artificial Intelligence, Voice Technology',
     operatingSystem: 'Cloud-based',
@@ -381,7 +381,7 @@ export function generateLocalBusinessSchema(): WithContext<LocalBusiness> {
     '@type': 'LocalBusiness',
     '@id': 'https://callflows.de/#localbusiness',
     name: 'callflows - KI Voice Agents Hannover',
-    description: 'Spezialist für KI-gestützte Voice Agents in Hannover. Wir automatisieren Ihre Kundenkommunikation mit modernster künstlicher Intelligenz.',
+    description: 'Spezialist für KI Voice Agents in Hannover. Wir automatisieren Ihre Kundenkommunikation mit modernster künstlicher Intelligenz.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Fenskestraße 9A',

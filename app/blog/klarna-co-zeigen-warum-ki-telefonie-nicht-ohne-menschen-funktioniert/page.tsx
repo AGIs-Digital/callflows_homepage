@@ -79,7 +79,7 @@ export default function BlogPostPage() {
         {/* Content */}
         <div className="prose-content">
           <p className="mb-6 leading-relaxed text-lg">
-        ...Immer mehr Unternehmen setzen auf <strong className="font-semibold text-primary">Künstliche Intelligenz</strong> im Kundenservice. Automatisierte Telefonagenten übernehmen die erste Kontaktaufnahme, beantworten Fragen oder wickeln sogar ganze Prozesse ab. Doch ein prominentes Beispiel zeigt: Der Weg zur rein KI-gestützten Kommunikation ist kein Selbstläufer. Klarna, einer der weltweit größten Zahlungsanbieter, liefert aktuell ein Lehrstück darüber, wo <strong className="font-semibold text-primary">KI-Telefonie</strong> an ihre Grenzen stößt – und warum der Mensch in der Kundenkommunikation unverzichtbar bleibt.
+        ...Immer mehr Unternehmen setzen auf <strong className="font-semibold text-primary">Künstliche Intelligenz</strong> im Kundenservice. Automatisierte Telefonagenten übernehmen die erste Kontaktaufnahme, beantworten Fragen oder wickeln sogar ganze Prozesse ab. Doch ein prominentes Beispiel zeigt: Der Weg zur rein KI Kommunikation ist kein Selbstläufer. Klarna, einer der weltweit größten Zahlungsanbieter, liefert aktuell ein Lehrstück darüber, wo <strong className="font-semibold text-primary">KI-Telefonie</strong> an ihre Grenzen stößt – und warum der Mensch in der Kundenkommunikation unverzichtbar bleibt.
       </p>
 
       <p className="mb-6 leading-relaxed text-lg">

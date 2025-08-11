@@ -83,7 +83,7 @@ export default function BlogPostPage() {
       </p>
 
       <p className="mb-6 leading-relaxed text-lg">
-        Reine KI-Callcenter: Effizient, aber unflexibel KI-gestützte Voice Agents übernehmen heute bereits große Teile des Erstkontakts: Sie beantworten FAQs, erfassen Daten, leiten Anfragen weiter oder lösen einfache Probleme autonom. Das spart Zeit und Ressourcen – birgt aber Risiken. Kunden, die sich nicht verstanden fühlen oder in automatisierten Schleifen hängen bleiben, empfinden den Service als unpersönlich und frustrierend.
+        Reine KI-Callcenter: Effizient, aber unflexibel KI Voice Agents übernehmen heute bereits große Teile des Erstkontakts: Sie beantworten FAQs, erfassen Daten, leiten Anfragen weiter oder lösen einfache Probleme autonom. Das spart Zeit und Ressourcen – birgt aber Risiken. Kunden, die sich nicht verstanden fühlen oder in automatisierten Schleifen hängen bleiben, empfinden den Service als unpersönlich und frustrierend.
       </p>
 
       <h3 className="text-2xl font-semibold mt-10 mb-5 text-foreground">Typische Schwächen rein KI-basierter Systeme:</h3>
@@ -95,7 +95,7 @@ export default function BlogPostPage() {
       <h3 className="text-2xl font-semibold mt-10 mb-5 text-foreground">Herausforderungen menschlicher Callcenter:</h3>
 
       <p className="mb-6 leading-relaxed text-lg">
-        Hoher Personalaufwand und Schulungskosten Begrenzte Erreichbarkeit (z. B. nachts oder an Wochenenden) Uneinheitliche Gesprächsqualität je nach Mitarbeitender Langsame Skalierbarkeit bei saisonalem Anstieg Die Lösung: Hybride Callcenter-Modelle Das hybride Modell kombiniert die Stärken beider Seiten: Voice Agents übernehmen die Vorqualifikation, Wiederholungsanfragen und Routinedialoge – Menschen greifen ein, wenn es komplex oder sensibel wird. Der Übergang erfolgt nahtlos und basiert auf klar definierten Übergaberegeln und KI-gestützter Gesprächsanalyse.
+        Hoher Personalaufwand und Schulungskosten Begrenzte Erreichbarkeit (z. B. nachts oder an Wochenenden) Uneinheitliche Gesprächsqualität je nach Mitarbeitender Langsame Skalierbarkeit bei saisonalem Anstieg Die Lösung: Hybride Callcenter-Modelle Das hybride Modell kombiniert die Stärken beider Seiten: Voice Agents übernehmen die Vorqualifikation, Wiederholungsanfragen und Routinedialoge – Menschen greifen ein, wenn es komplex oder sensibel wird. Der Übergang erfolgt nahtlos und basiert auf klar definierten Übergaberegeln und KI Gesprächsanalyse.
       </p>
 
       <h3 className="text-2xl font-semibold mt-10 mb-5 text-foreground">Vorteile hybrider Callcenter:</h3>

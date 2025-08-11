@@ -100,9 +100,6 @@ jobs:
               --max-size=100M \
               . 2>/dev/null || echo "Backup completed with warnings"
 
-      - name: 🏗️ Build
-        run: npm run build
-
       - name: 🧹 Empty remote directory
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -113,6 +110,9 @@ jobs:
           script: |
             cd callflows.de/
             rm -rf * .env
+
+      - name: 🏗️ Build
+        run: npm run build
 
       - name: 📤 Deploy to Production
         env:

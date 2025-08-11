@@ -3,7 +3,6 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PricingFeaturesSection } from "@/components/sections/pricing-features-section";
-import { CTASection } from "@/components/sections/cta-section";
 import { PricingTables } from "@/components/pricing/tables";
 import { PricingIntro } from "@/components/pricing/pricing-intro";
 import { ROICalculator } from "@/components/pricing/roi-calculator";
@@ -19,13 +18,13 @@ export default function PricingPage() {
     <>
       <Head>
         <title>Preise für KI-Telefonie und Voice Agents | callflows</title>
-        <meta name="description" content="Transparente Preise für KI-gestützte Voice Agents. Minutenbasierte Abrechnung ohne versteckte Kosten, flexible Pakete und 1 Monat kostenlose Pilotphase. Jetzt Kosten berechnen!" />
+        <meta name="description" content="Transparente Preise für KI Voice Agents. Minutenbasierte Abrechnung ohne versteckte Kosten, flexible Pakete und 1 Monat kostenlose Pilotphase. Jetzt Kosten berechnen!" />
       </Head>
       <main className="bg-background">
       <SiteHeader />
       <div className="pt-12">
         {/* Hero Header with Main Title */}
-        <div className="pt-24 pb-16 bg-gradient-to-b from-secondary via-secondary to-accent/5">
+        <div className="py-20 bg-gradient-to-b from-secondary to-secondary/40">
           <div className="container max-w-7xl mx-auto">
             <BreadcrumbSEO 
               items={[
@@ -37,7 +36,7 @@ export default function PricingPage() {
                 {t('pricing.pageTitle')}
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Transparente Preise für KI-gestützte Voice Agents ohne versteckte Kosten
+                Transparente Preise für KI Voice Agents ohne versteckte Kosten
               </p>
             </div>
           </div>

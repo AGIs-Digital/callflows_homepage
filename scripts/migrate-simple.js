@@ -6,7 +6,7 @@ const POSTS = [
   {
     slug: "kundenservice-ki-customer-experience",
     title: "Kundenservice mit KI: So verbessern Sie die Customer Experience",
-    description: "Entdecken Sie, wie KI-gestützte Voice Agents den Kundenservice revolutionieren können.",
+    description: "Entdecken Sie, wie KI Voice Agents den Kundenservice revolutionieren können.",
     publishedTime: "2024-01-20T10:00:00Z",
     author: "Tom Abeln",
     image: "/images/blog/kundenservice-ki-customer-experience.webp"
@@ -38,7 +38,7 @@ const POSTS = [
   {
     slug: "ki-telefonie-gesundheitswesen",
     title: "KI-Telefonie im Gesundheitswesen: Anwendungsfälle und Erfolgsgeschichten",
-    description: "Entdecken Sie, wie KI-gestützte Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.",
+    description: "Entdecken Sie, wie KI Voice Agents das Gesundheitswesen revolutionieren. Von der Terminvergabe bis zur Patientenbetreuung - reale Erfolgsgeschichten und Praxisbeispiele.",
     publishedTime: "2024-07-20T10:00:00Z",
     author: "Timo Goltz",
     image: "/images/blog/ki-telefonie-gesundheitswesen.webp"

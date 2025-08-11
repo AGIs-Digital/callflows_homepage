@@ -7,7 +7,7 @@ export function PricingIntro() {
   const { t } = useI18n();
   
   return (
-    <div className="py-16 bg-gradient-to-b from-primary/60 via-tertiary/5 to-accent/20">
+    <div className="py-16 bg-gradient-to-b from-primary/10 via-primary/40 to-primary/60">
       <div className="container max-w-7xl mx-auto">
         <div className="max-w-5xl mx-auto mb-12">
           <div className="bg-card/60 backdrop-blur-sm p-12 rounded-xl border border-border/50 shadow-lg">

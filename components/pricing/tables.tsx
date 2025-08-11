@@ -8,7 +8,7 @@ export function PricingTables() {
   const { t } = useI18n();
   
   return (
-    <div className="py-16 bg-gradient-to-b from-accent/5 via-accent/10 to-accent/20">
+    <div className="py-16 bg-gradient-to-b from-secondary/40 to-accent/50">
       <div className="container max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl text-primary dark:text-white font-bold mb-6">{t('pricing.monthlyPackages')}</h2>

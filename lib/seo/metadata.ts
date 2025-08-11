@@ -49,7 +49,7 @@ export function generateMetadata({
   const allKeywords = [...defaultKeywords, ...keywords];
 
   return {
-    title: `${title} | callflows - KI-gestützte Voice Agents`,
+    title: `${title} | callflows - KI Voice Agents`,
     description,
     metadataBase: new URL(baseUrl),
     alternates: {
@@ -60,7 +60,7 @@ export function generateMetadata({
       title,
       description,
       url,
-      siteName: 'callflows - KI-gestützte Voice Agents für automatisierte Kommunikation',
+      siteName: 'callflows - KI Voice Agents für automatisierte Kommunikation',
       type,
       locale: 'de_DE',
       ...(publishedTime && { publishedTime }),
