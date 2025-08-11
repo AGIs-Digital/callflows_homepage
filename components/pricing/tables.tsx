@@ -9,7 +9,7 @@ export function PricingTables() {
   
   return (
     <div className="py-16 bg-gradient-to-b from-secondary/40 to-accent/50">
-      <div className="container max-w-7xl mx-auto">
+      <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl text-primary dark:text-white font-bold mb-6">{t('pricing.monthlyPackages')}</h2>
           <p className="text-lg text-muted-foreground mb-12">{t('pricing.pricesExclVat')}</p>

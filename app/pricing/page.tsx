@@ -25,7 +25,7 @@ export default function PricingPage() {
       <div className="pt-12">
         {/* Hero Header with Main Title */}
         <div className="py-20 bg-gradient-to-b from-secondary to-secondary/40">
-          <div className="container max-w-7xl mx-auto">
+          <div className="container max-w-6xl mx-auto">
             <BreadcrumbSEO 
               items={[
                 { name: "Preise", url: "https://callflows.de/pricing" }

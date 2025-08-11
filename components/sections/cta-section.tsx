@@ -49,7 +49,7 @@ export function CTASection() {
       id="cta-section"
       className="py-20 bg-gradient-to-b from-background via-accent/5 to-accent/30"
     >
-      <div className="container">
+      <div className="container max-w-6xl">
         <motion.div
           className="max-w-4xl mx-auto text-center"
           variants={containerVariants}

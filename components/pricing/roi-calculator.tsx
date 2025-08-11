@@ -86,7 +86,7 @@ export function ROICalculator() {
 
   return (
     <div className="py-16 bg-gradient-to-b from-secondary/5 via-tertiary/70 to-primary/10">
-      <div className="container max-w-7xl mx-auto">
+      <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="bg-primary rounded-full p-2">
@@ -291,9 +291,6 @@ export function ROICalculator() {
                                  <p className="text-lg font-semibold mb-2">
                    💰 {formatCurrency(calculations.yearlySavings)} {t('pricing.roiCalculator.perYear')}!
                  </p>
-                <p className="text-base text-muted-foreground">
-                  {t('pricing.roiCalculator.freeConsultation')}
-                </p>
               </div>
             </CardContent>
           </Card>

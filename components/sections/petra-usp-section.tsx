@@ -23,7 +23,7 @@ export function PetraUSPSection() {
           <div className="absolute bottom-10 left-1/4 w-32 h-32 bg-primary/60 rounded-full blur-2xl"></div>
         </div>
         
-        <div className="container max-w-4xl relative z-10">
+        <div className="container max-w-6xl relative z-10">
           <div className="text-center space-y-8">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20">

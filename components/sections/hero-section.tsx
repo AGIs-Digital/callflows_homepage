@@ -44,7 +44,7 @@ export function HeroSection() {
 
   return (
     <div className="relative min-h-[calc(100vh-80px)] overflow-hidden">
-      <div className="container relative py-4 md:py-6 lg:py-8">
+      <div className="container max-w-6xl relative py-4 md:py-6 lg:py-8">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Linke Spalte - Text */}
           <div className="relative z-20 space-y-8 md:space-y-10 animate-slideIn">

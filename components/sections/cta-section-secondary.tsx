@@ -8,7 +8,7 @@ export function CTASectionSecondary() {
 
   return (
     <section className="py-20 bg-gradient-to-b from-tertiary/30 via-tertiary/5 to-background">
-      <div className="container mx-auto px-4 text-center">
+      <div className="container max-w-6xl text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-primary dark:text-white">
             {t('pricing.ctaTitle')}

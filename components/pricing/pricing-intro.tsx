@@ -8,21 +8,118 @@ export function PricingIntro() {
   
   return (
     <div className="py-16 bg-gradient-to-b from-primary/10 via-primary/40 to-primary/60">
-      <div className="container max-w-7xl mx-auto">
+      <div className="container max-w-6xl mx-auto">
         <div className="max-w-5xl mx-auto mb-12">
           <div className="bg-card/60 backdrop-blur-sm p-12 rounded-xl border border-border/50 shadow-lg">
-            <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-              {t('pricing.intro')}
-            </p>
+            {/* Einführungstext */}
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-bold text-primary mb-4">
+                {t('pricing.introTitle')}
+              </h3>
+              <p className="text-lg text-muted-foreground">
+                {t('pricing.introSubtitle')}
+              </p>
+            </div>
+
+            {/* Schritt-für-Schritt Anleitung */}
+            <div className="space-y-8 mb-12">
+              {/* Schritt 1 */}
+              <div className="flex items-start gap-4 p-6 bg-card/80 rounded-lg border border-border/50">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  1
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
+                    🎯 {t('pricing.step1Title')}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t('pricing.step1Description')}
+                  </p>
+                </div>
+              </div>
+
+              {/* Schritt 2 */}
+              <div className="flex items-start gap-4 p-6 bg-card/80 rounded-lg border border-border/50">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  2
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
+                    🛠️ {t('pricing.step2Title')}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t('pricing.step2Description')}
+                  </p>
+                </div>
+              </div>
+
+              {/* Schritt 3 */}
+              <div className="flex items-start gap-4 p-6 bg-card/80 rounded-lg border border-border/50">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  3
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
+                    📅 {t('pricing.step3Title')}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t('pricing.step3Description')}
+                  </p>
+                </div>
+              </div>
+
+              {/* Schritt 4 */}
+              <div className="flex items-start gap-4 p-6 bg-card/80 rounded-lg border border-border/50">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  4
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
+                    📊 {t('pricing.step4Title')}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t('pricing.step4Description')}
+                  </p>
+                </div>
+              </div>
+
+              {/* Schritt 5 */}
+              <div className="flex items-start gap-4 p-6 bg-card/80 rounded-lg border border-border/50">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  5
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
+                    💰 {t('pricing.step5Title')}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t('pricing.step5Description')}
+                  </p>
+                </div>
+              </div>
+
+              {/* Erweiterungen */}
+              <div className="flex items-start gap-4 p-6 bg-gradient-to-r from-accent/10 to-primary/10 rounded-lg border border-primary/20">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  +
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-tertiary mb-2 flex items-center gap-2">
+                    🔧 {t('pricing.extensionsTitle')}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t('pricing.extensionsDescription')}
+                  </p>
+                </div>
+              </div>
+            </div>
             
             <div className="bg-card p-10 rounded-lg border mb-12">
               <h4 className="text-xl font-semibold mb-8 flex items-center gap-3">
                 <Star className="h-6 w-6 text-[#FFB703]" />
                 {t('pricing.starterTitle')}
               </h4>
-              <p className="text-lg text-muted-foreground mb-8 text-left leading-relaxed">
-                {t('pricing.starterDescription')}
-              </p>
+
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="flex items-start gap-4">
