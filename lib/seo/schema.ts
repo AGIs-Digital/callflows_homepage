@@ -223,46 +223,11 @@ export function generateFAQSchema(): WithContext<FAQPage> {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'Was ist ein KI-Voice-Agent?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Ein KI-Voice-Agent ist ein intelligenter Sprachassistent, der auf künstlicher Intelligenz basiert und in der Lage ist, Telefongespräche zu führen, Kundenanfragen zu beantworten und Prozesse zu automatisieren.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Wie funktioniert die Telefon KI von callflows?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Die Telefon KI von callflows nutzt fortschrittliche künstliche Intelligenz, um natürliche Gespräche zu führen. Sie versteht Anliegen, kann Termine buchen, Informationen geben und komplexe Aufgaben erledigen - alles über das Telefon.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Für welche Unternehmen eignet sich ein KI-Voice-Agent?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'KI-Voice-Agents eignen sich für Unternehmen jeder Größe, die ihre Kundenkommunikation effizienter gestalten möchten. Besonders geeignet sind sie für Kundenservice, Vertrieb, Marketing und HR-Prozesse.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Was kostet ein KI-Voice-Agent?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Die Kosten für einen KI-Voice-Agent bei callflows basieren auf einem minutenbasierten Abrechnungsmodell. Die Preise variieren je nach Paket und Minutenvolumen.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Kann ein KI-Voice-Agent in bestehende Systeme integriert werden?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Ja, die KI-Voice-Agents von callflows können nahtlos in bestehende CRM-Systeme, Kalendersysteme und andere Geschäftsanwendungen integriert werden, um einen reibungslosen Informationsaustausch zu gewährleisten.'
-        }
-      }
+      { '@type': 'Question', name: 'Was ist ein Callflow?', acceptedAnswer: { '@type': 'Answer', text: 'Ein Callflow ist ein statischer, menügesteuerter Ablauf eines Telefongesprächs – ohne echtes Sprachverständnis.' }},
+      { '@type': 'Question', name: 'Was ist ein KI‑callflow?', acceptedAnswer: { '@type': 'Answer', text: 'Ein KI‑callflow ist ein lernfähiger Gesprächs‑ und Prozessfluss. Er versteht Anliegen, führt Dialoge, validiert Daten und integriert sich in Ihre Systeme (CRM, Kalender, Datenbanken).'}},
+      { '@type': 'Question', name: 'Unterschied KI‑callflow vs. Callflow?', acceptedAnswer: { '@type': 'Answer', text: 'Klassischer Callflow: starr, DT‑MF‑Menüs. KI‑callflow: dynamisch, intent‑basiert, mit Automationen und Integrationen – ein End‑to‑End Conversational Process.'}},
+      { '@type': 'Question', name: 'Wie läuft die Einführung ab?', acceptedAnswer: { '@type': 'Answer', text: 'Prototyp → Pilotmonat mit wöchentlichem Monitoring & Feintuning → Go‑Live mit sekundengenauer Abrechnung.'}},
+      { '@type': 'Question', name: 'Welche Integrationen sind möglich?', acceptedAnswer: { '@type': 'Answer', text: 'CRM/Helpdesk, Kalender, Datenbanken, Webhooks/REST‑APIs – Lesen/Schreiben von Daten, Auslösen von Prozessen.'}}
     ]
   };
 }

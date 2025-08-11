@@ -225,7 +225,7 @@ export function IntegrationChallengesSection() {
         
         {/* Differenzierung / USP */}
         <div className="container max-w-6xl mt-20">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             {/* Comparison Boxes */}
             <div className="grid md:grid-cols-2 gap-6">
               {/* callflows Box */}
@@ -277,7 +277,7 @@ export function IntegrationChallengesSection() {
           </div>
           
           {/* Key Phrase Box - Pricing Card Design with Glimmer Effect */}
-          <div className="mt-12 max-w-4xl mx-auto">
+          <div className="mt-12 max-w-6xl mx-auto">
             <Card className="border-primary shadow-lg relative overflow-hidden bg-gradient-to-r from-primary/5 via-accent/10 to-primary/5">
               {/* Animated Glimmer Overlay */}
               <div className="absolute inset-0 opacity-60">

@@ -22,27 +22,27 @@
     "login": "Anmelden"
   },
   "home": {
-    "title": "callflows - KI Telefonassistent für automatisierte Telefonie",
-    "description": "Revolutionieren Sie Ihren Kundenservice mit KI-Telefonie. Voice Agents für automatisierte Kundenkommunikation, Vertrieb und Support - 24/7 verfügbar.",
+    "title": "callflows - KI‑callflows für automatisierte Telefonie",
+    "description": "Revolutionieren Sie Ihren Kundenservice mit KI‑callflows. Intelligente Gesprächs- und Prozessflüsse für automatisierte Kundenkommunikation, Vertrieb und Support – 24/7 verfügbar.",
     "hero": {
       "headline1": "Überlastet mit Standardanrufen?",
       "headline2": "Zu wenig Zeit für wichtige Aufgaben?",
-      "description": "Während Sie im Anruf-Chaos versinken, gehen die wirklich wichtigen Aufgaben unter – Zeit für eine Revolution mit KI Telefonassistenten!",
-      "solution": "Mit KI-Telefonie",
-      "solutionDescription": "Von Sales über Marketing bis Support – automatisieren Sie mit intelligenten Voice Agents Ihre Prozesse zur Kundenkommunikation. Unser KI-Telefonassistent revolutioniert Ihren Kundenservice.",
+      "description": "Während Sie im Anruf‑Chaos versinken, gehen die wirklich wichtigen Aufgaben unter – Zeit für eine neue Generation: KI‑callflows!",
+      "solution": "Mit KI‑callflows",
+      "solutionDescription": "Von Sales über Marketing bis Support – automatisieren Sie mit KI‑callflows Ihre Kundenprozesse. Unser Ansatz verbindet natürliche Dialoge mit echter Prozesslogik und System‑Integrationen.",
       "cta": "Kostenlose Beratung",
       "widgetUnavailable": "Widget vorübergehend nicht verfügbar",
       "widgetUnavailableDescription": "Keine Sorge - das passiert manchmal bei Live-Demos"
     }
   },
   "pricing": {
-    "pageTitle": "KI-callflow Preise - Transparente Kosten",
-    "introTitle": "So einfach funktioniert der Einstieg in die KI-Telefonie mit callflows",
+    "pageTitle": "KI‑callflow Preise",
+    "introTitle": "So einfach funktioniert der Einstieg mit KI‑callflows",
     "introSubtitle": "Professionelle Voice Agents für Ihr Unternehmen – von der kostenlosen Beratung bis zum erfolgreichen Go-Live. Transparent, unkompliziert und ohne versteckte Kosten.",
     "step1Title": "Kostenloses Erstgespräch",
     "step1Description": "Bedarfsanalyse und Zieldefinition für Ihren maßgeschneiderten KI-Voice-Agent. Wir analysieren Ihre Telefonie-Prozesse und definieren gemeinsam die optimale KI-Lösung für Ihr Unternehmen.",
-    "step2Title": "Individueller KI-Prototyp",
-    "step2Description": "Entwicklung Ihres persönlichen Voice Agents nach Ihren spezifischen Anforderungen. Jeder KI-callflow wird individuell programmiert und auf Ihre Geschäftsprozesse angepasst.",
+    "step2Title": "Individueller KI‑callflow (Prototyp)",
+    "step2Description": "Wir modellieren Ihren KI‑callflow – dynamischer Dialog, Prozesslogik und System‑Integrationen – vollständig an Ihre Use Cases angepasst.",
     "step3Title": "Kostenloser Pilotmonat",
     "step3Description": "Setup-Gebühr basierend auf Komplexität (stundenbasierte Abrechnung) – alle KI-Minuten sind im Pilotmonat kostenlos inklusive. Testen Sie Ihren Voice Agent risikofrei in der Praxis.",
     "step4Title": "Wöchentliche Optimierung",
@@ -50,7 +50,7 @@
     "step5Title": "Transparente Live-Abrechnung",
     "step5Description": "Nach dem Go-Live zahlen Sie nur die sekundengenaue Arbeitszeit Ihrer KI-callflows. Keine Grundgebühren, keine versteckten Kosten – nur faire Minutenpreise.",
     "extensionsTitle": "Erweiterungen nach Bedarf",
-    "extensionsDescription": "Zusätzliche Voice Agents oder Beratungsleistungen werden separat nach Aufwand abgerechnet. Skalieren Sie Ihre KI-Telefonie flexibel nach Ihren Bedürfnissen.",
+    "extensionsDescription": "Zusätzliche KI‑callflows oder Beratungsleistungen werden separat nach Aufwand abgerechnet. Skalieren Sie Ihre Automatisierung flexibel nach Ihren Bedürfnissen.",
     "starterTitle": "Was im Pilotmonat enthalten ist",
     "starterDescription": "Für den Start fällt eine einmalige Einrichtungsgebühr an, deren Höhe sich nach dem individuellen Aufwand richtet. Darin enthalten ist:",
     "onboardingTitle": "Kompletter Onboarding-Prozess",
@@ -70,7 +70,7 @@
     "pilotDurationDesc": "Setup-Gebühr: 50% vor Prototyp, 50% bei Go-Live",
     "riskFreeTitle": "Risikofreies Testen",
     "flexibleTitle": "Flexible Laufzeit",
-    "riskFreeStart": "So starten Sie risikofrei – mit voller Kontrolle, transparenter Preisstruktur und Voice Agents, die perfekt zu Ihrem Unternehmen passen.",
+    "riskFreeStart": "So starten Sie risikofrei – mit voller Kontrolle, transparenter Preisstruktur und KI‑callflows, die perfekt zu Ihrem Unternehmen passen.",
     "flexibleDesc": "Monatliche Zahlung bei 12 Monaten Laufzeit nach dem Pilot",
     "monthlyPackages": "Unsere Monatspakete",
     "pricesExclVat": "Alle Preise ohne MwSt.",
@@ -84,7 +84,7 @@
     "monthly": "mtl.",
     "roiCalculator": {
       "badge": "ROI-Rechner",
-      "title": "Wie viel sparen Sie mit KI-Telefonie?",
+      "title": "Wie viel sparen Sie mit KI‑callflows?",
       "subtitle": "Einfache Berechnung Ihrer Einsparungen",
       "yourSituation": "Ihre Situation",
       "employees": "Mitarbeiter im Kundenservice",
@@ -165,46 +165,76 @@
     "ctaDescription": "Vereinbaren Sie ein unverbindliches Gespräch mit unseren Experten und erfahren Sie, wie callflows Ihr Unternehmen unterstützen kann.",
     "ctaButtonText": "Kostenlose Beratung buchen"
   },
+  "glossary": {
+    "kiCallflow": {
+      "title": "KI‑callflow",
+      "pageTitle": "Was ist ein KI‑callflow? Definition, Unterschiede, Vorteile",
+      "pageDescription": "KI‑callflow: lernfähiger Gesprächs‑ und Prozessfluss. Unterschiede zum klassischen Callflow und zu Voice Agents, Vorteile und Einsatz.",
+      "short": "KI‑callflow: lernfähiger Gesprächs- und Prozessfluss – versteht Anliegen, führt Dialoge, bindet Systeme an.",
+      "l1": "Dynamische Dialoge statt starre Menüs",
+      "l2": "Prozesslogik + System‑Integrationen",
+      "l3": "Mehr als Callflow oder nur Voice Agent",
+      "intro": "Ein KI‑callflow ist ein lernfähiger Gesprächs‑ und Prozessfluss, der Anliegen versteht, Dialoge führt und Systeme anbindet. Er vereint Intent‑Erkennung, Business‑Logik, Automationen und Integrationen.",
+      "diffTitle": "Unterschied zum klassischen Callflow",
+      "diffItems": [
+        "Dynamisch statt statisch: erkennt Absichten, entscheidet kontextabhängig",
+        "Mehrstufige Prozesse inkl. Rückfragen, Validierungen, Übergaben",
+        "Nahtlose System‑Integrationen (CRM/ERP/Helpdesk)"
+      ],
+      "voiceAgentsTitle": "Abgrenzung zu „Voice Agents“",
+      "voiceAgentsText": "Ein Voice Agent ist die Stimme. Der KI‑callflow orchestriert den gesamten Prozess inkl. Logik, Daten und Aktionen.",
+      "terminologyTitle": "Terminologie im Überblick",
+      "terminologyHeaders": ["Begriff", "Fokus"],
+      "terminology": [
+        "Conversation Workflow / Conversation Flow||Gesamtablauf inkl. Nachbearbeitungsschritte, nicht nur der Live‑Call.",
+        "Call Lifecycle||Vollständiger Lebenszyklus eines Anrufs – von Anrufbeginn über Gespräch bis zur Nachbearbeitung.",
+        "Post‑Call Processing (PCP)||Alles, was nach dem Gespräch passiert: Auswertung, Datenbereinigung, Klassifizierung, Trigger.",
+        "Conversational Automation Pipeline||Wenn die Nachbearbeitung stark automatisiert ist und mit anderen Systemen integriert ist.",
+        "Contact Flow mit Backend‑Integration||Bezeichnung im Contact‑Center‑Umfeld, wenn Logik + Datenverarbeitung verbunden sind."
+      ],
+      "noteLabel": "Merke:",
+      "note": "Sobald Analyse, Bereinigung, Datenextraktion und Automationen nach dem Gespräch dazugehören, spricht man eher von Call Lifecycle oder Conversational Automation Pipeline – es ist ein Gesamtprozess vor, während und nach dem Call.",
+      "benefitsTitle": "Vorteile",
+      "benefits": [
+        "24/7 Erreichbarkeit und kürzere Wartezeiten",
+        "Höhere Abschlussquote durch strukturierte Prozessführung",
+        "Transparente, sekundengenaue Abrechnung"
+      ]
+    },
+    "readMore": "Mehr erfahren"
+  },
   "faq": {
-    "pageTitle": "FAQ - KI Telefonassistent & Voice Agents",
-    "pageSubtitle": "Alles über KI-Telefonie, Voice Agents und automatisierte Kundenkommunikation",
-    "description": "Hier finden Sie Antworten auf die häufigsten Fragen zu KI Telefonassistenten, Voice Agents und automatisierter Telefonie. Erfahren Sie, wie KI im Kundenservice funktioniert und welche Vorteile Conversational AI bietet.",
-    "question1": "Was ist ein KI-Voice-Agent?",
-    "answer1": "Ein KI-Voice-Agent ist ein intelligenter Sprachassistent, der auf künstlicher Intelligenz basiert und in der Lage ist, Telefongespräche zu führen, Kundenanfragen zu beantworten und Prozesse zu automatisieren. Im Gegensatz zu herkömmlichen Sprachdialogsystemen können KI-Voice-Agents natürliche Gespräche führen, komplexe Anliegen verstehen und eigenständig Lösungen anbieten.",
-    "question2": "Wie funktioniert die Telefon KI von callflows?",
-    "answer2": "Die Telefon KI von callflows nutzt fortschrittliche künstliche Intelligenz, um natürliche Gespräche zu führen. Sie versteht Anliegen, kann Termine buchen, Informationen geben und komplexe Aufgaben erledigen - alles über das Telefon. Die KI wird speziell auf Ihre Geschäftsprozesse trainiert und kann sich nahtlos in Ihre bestehenden Systeme integrieren. Sie arbeitet rund um die Uhr und kann mehrere Gespräche gleichzeitig führen.",
-    "question3": "Für welche Unternehmen eignet sich ein KI-Voice-Agent?",
-    "answer3": "KI-Voice-Agents eignen sich für Unternehmen jeder Größe, die ihre Kundenkommunikation effizienter gestalten möchten. Besonders geeignet sind sie für Kundenservice, Vertrieb, Marketing und HR-Prozesse. Ob kleines Unternehmen oder großer Konzern - die Lösung skaliert mit Ihren Anforderungen und kann an verschiedene Branchen angepasst werden.",
-    "question4": "Was kostet ein KI-Voice-Agent?",
-    "answer4": "Die Kosten für einen KI-Voice-Agent bei callflows basieren auf einem minutenbasierten Abrechnungsmodell. Die Preise variieren je nach Paket und Minutenvolumen. Es gibt keine versteckten Kosten oder Grundgebühren - Sie zahlen nur für die tatsächliche Nutzung. Für individuelle Anforderungen bieten wir maßgeschneiderte Lösungen an.",
-    "question5": "Kann ein KI-Voice-Agent in bestehende Systeme integriert werden?",
-    "answer5": "Ja, die KI-Voice-Agents von callflows können nahtlos in bestehende CRM-Systeme, Kalendersysteme und andere Geschäftsanwendungen integriert werden, um einen reibungslosen Informationsaustausch zu gewährleisten. Die Integration erfolgt über APIs und Webhooks und wird von unserem Team vollständig betreut.",
-    "question6": "Wie natürlich klingt ein KI-Voice-Agent?",
-    "answer6": "Die KI-Voice-Agents von callflows klingen außerordentlich natürlich und sind von menschlichen Gesprächspartnern kaum zu unterscheiden. Sie verstehen Kontext, können auf Nachfragen reagieren und führen flüssige Gespräche. Die Stimmen werden speziell für Ihre Marke ausgewählt und können in Tonalität und Sprechweise angepasst werden.",
-    "question7": "Wie lange dauert die Einrichtung eines KI-Voice-Agents?",
-    "answer7": "Die Einrichtung eines KI-Voice-Agents dauert in der Regel 2-4 Wochen, abhängig von der Komplexität Ihrer Anforderungen. Der Prozess umfasst die Analyse Ihrer Geschäftsprozesse, die Konfiguration des Agents, die Integration in Ihre Systeme und ausführliche Tests. Unser Team begleitet Sie während des gesamten Prozesses und stellt sicher, dass der Agent optimal auf Ihre Bedürfnisse abgestimmt ist.",
-    "question8": "Welche Sprachen unterstützen die KI-Voice-Agents?",
-    "answer8": "Aktuell unterstützen unsere KI-Voice-Agents Deutsch und Englisch. Weitere Sprachen sind in Planung und können auf Anfrage implementiert werden. Die Agents können auch mehrsprachig eingerichtet werden und erkennen automatisch die Sprache des Anrufers.",
-    "question9": "Wie werden die Daten geschützt?",
-    "answer9": "Der Datenschutz hat bei callflows höchste Priorität. Alle Daten werden gemäß DSGVO verarbeitet und auf Servern innerhalb der EU gespeichert. Wir implementieren modernste Sicherheitsmaßnahmen wie Verschlüsselung, Zugriffskontrollen und regelmäßige Sicherheitsaudits. Detaillierte Informationen finden Sie in unserer Datenschutzerklärung.",
-    "question10": "Was unterscheidet callflows von anderen Anbietern?",
-    "answer10": "callflows unterscheidet sich durch die Kombination aus fortschrittlicher KI-Technologie und persönlicher Betreuung. Wir bieten keine Standardlösung, sondern entwickeln mit Ihnen gemeinsam eine maßgeschneiderte Lösung, die perfekt zu Ihrem Unternehmen passt. Unsere KI-Voice-Agents sind besonders natürlich in der Gesprächsführung und können komplexe Aufgaben eigenständig erledigen. Zudem bieten wir ein transparentes Preismodell ohne versteckte Kosten.",
-    "question11": "Welche technischen Voraussetzungen sind erforderlich?",
-    "answer11": "Für den Einsatz eines KI-Voice-Agents von callflows benötigen Sie lediglich eine Internetverbindung und ein Telefonsystem. Wir unterstützen alle gängigen Telefonieanlagen (VoIP, ISDN, SIP) und können auch cloudbasierte Lösungen bereitstellen. Die Integration erfolgt über standardisierte Schnittstellen, sodass keine speziellen technischen Kenntnisse erforderlich sind.",
-    "question12": "Kann der KI-Voice-Agent auch komplexe Anfragen bearbeiten?",
-    "answer12": "Ja, unsere KI-Voice-Agents sind darauf ausgelegt, auch komplexe und mehrstufige Anfragen zu bearbeiten. Sie können Kontextinformationen speichern, bei Bedarf Rückfragen stellen und sogar Eskalationsprozesse einleiten. Wenn eine Anfrage die Fähigkeiten des Agents übersteigt, wird sie nahtlos an einen menschlichen Mitarbeiter weitergeleitet.",
-    "question13": "Wie wird die Qualität der Gespräche sichergestellt?",
-    "answer13": "Die Qualität wird durch kontinuierliches Machine Learning und regelmäßige Optimierungen gewährleitet. Alle Gespräche werden ausgewertet (natürlich unter Einhaltung des Datenschutzes), um die Performance zu verbessern. Zusätzlich bieten wir detaillierte Analytics und Reporting-Tools, damit Sie die Leistung Ihres KI-Voice-Agents jederzeit überwachen können.",
-    "question14": "Gibt es eine Testphase oder Pilotprojekt?",
-    "answer14": "Ja, wir bieten einen Pilotmonat an in dem das System für Sie erstellt wird. Diese Phase dauert 1 Monat. In dieser Zeit können Sie die Funktionen unseres KI-Voice-Agents unverbindlich testen.",
-    "question15": "Wie funktioniert KI-Telefonie genau?",
-    "answer15": "KI-Telefonie basiert auf modernster Spracherkennungs- und Natural Language Processing-Technologie. Der KI Telefonassistent versteht gesprochene Sprache, analysiert Kontext und Absicht, und generiert natürliche Antworten. Dabei nutzt er Machine Learning, um kontinuierlich dazuzulernen und bessere Gesprächsergebnisse zu erzielen.",
-    "question16": "Welcher KI Voice Agent ist der beste für mein Unternehmen?",
-    "answer16": "Der beste KI Voice Agent hängt von Ihren spezifischen Anforderungen ab. callflows entwickelt maßgeschneiderte Conversational AI-Lösungen, die perfekt auf Ihre Branche, Prozesse und Kundenbedürfnisse abgestimmt sind. Unser Team berät Sie gerne bei der optimalen Konfiguration.",
-    "question17": "Ist KI-Telefonie DSGVO-konform?",
-    "answer17": "Ja, unsere KI-Telefonie-Lösungen sind vollständig DSGVO-konform. Alle Daten werden in Deutschland verarbeitet und gespeichert. Wir implementieren strenge Datenschutzmaßnahmen und stellen sicher, dass alle rechtlichen Anforderungen erfüllt werden. Detaillierte Informationen finden Sie in unserer Datenschutzerklärung.",
-    "question18": "Was kostet ein KI Telefonassistent pro Monat?",
-    "answer18": "Die Kosten für einen KI Telefonassistent variieren je nach Nutzungsumfang und Anforderungen. callflows bietet transparente, minutenbasierte Preise ohne versteckte Kosten. Das Entlastungs-Paket beginnt bei 1.000 KI-Minuten, das Wachstums-Paket bei 2.000 KI-Minuten. Für individuelle Lösungen erstellen wir gerne ein maßgeschneidertes Angebot."
+    "pageTitle": "FAQ - KI‑callflows & Voice Agents",
+    "pageSubtitle": "Alles über KI‑callflows, Voice Agents und automatisierte Kundenkommunikation",
+    "description": "Hier finden Sie Antworten auf häufige Fragen in sinnvoller Reihenfolge – vom klassischen Callflow bis zum KI‑callflow und der praktischen Umsetzung.",
+    "question1": "Was ist ein Callflow?",
+    "answer1": "Ein Callflow ist der feste Ablauf eines Telefongesprächs. Klassisch besteht er aus statischen Menüs (z. B. „Drücken Sie 1…“) und vordefinierten Pfaden – ohne echtes Sprachverständnis.",
+    "question2": "Was ist ein KI‑callflow?",
+    "answer2": "Ein KI‑callflow ist ein lernfähiger Gesprächs‑ und Prozessfluss. Er versteht Anliegen, führt natürliche Dialoge, fragt nach, validiert Daten und verbindet sich mit Ihren Systemen (z. B. CRM, Kalender).",
+    "question3": "Worin unterscheidet sich ein KI‑callflow vom klassischen Callflow?",
+    "answer3": "Klassisch = starr und menügesteuert. KI‑callflow = dynamisch, intent‑basiert und prozessfähig (Automationen, Integrationen, Entscheidungen im Gespräch).",
+    "question4": "Wie funktioniert ein KI‑callflow bei callflows?",
+    "answer4": "Wir modellieren Ihren Prozess als Dialog + Logik. Nach einem Prototyp startet ein Pilotmonat mit wöchentlichem Monitoring & Feintuning. Anschließend läuft der KI‑callflow produktiv – sekundengenau abgerechnet.",
+    "question5": "Für wen eignet sich ein KI‑callflow?",
+    "answer5": "Für Unternehmen jeder Größe, die wiederkehrende Telefonprozesse automatisieren wollen: Kundenservice, Vertrieb, Terminierung, Lead‑Qualifizierung, HR u. v. m.",
+    "question6": "Was kostet ein KI‑callflow?",
+    "answer6": "Im Pilotmonat fällt eine einmalige Setup‑Gebühr an (abhängig von Umfang/Komplexität). Nach Go‑Live zahlen Sie nur die tatsächliche Arbeitszeit – sekundengenau, ohne Grundgebühr.",
+    "question7": "Wie lange dauert die Einrichtung?",
+    "answer7": "Typisch 2–4 Wochen bis zum Prototyp. Danach 1 Monat Pilot mit Optimierung. Zeitbedarf hängt vom gewünschten Umfang und Integrationen ab.",
+    "question8": "Welche Integrationen sind möglich?",
+    "answer8": "CRM, Helpdesk, Kalender, Datenbanken, Webhooks/REST‑APIs – wir binden Systeme an, lesen/schreiben Daten und stoßen Prozesse an.",
+    "question9": "Wie natürlich klingt der KI‑callflow?",
+    "answer9": "Sehr natürlich. Stimmen werden passend zu Ihrer Marke gewählt. Der KI‑callflow versteht Kontext, stellt Rückfragen und führt flüssige Gespräche.",
+    "question10": "Welche Sprachen werden unterstützt?",
+    "answer10": "Aktuell Deutsch und Englisch. Weitere Sprachen auf Anfrage. Mehrsprachige Erkennung ist möglich.",
+    "question11": "Ist das DSGVO‑konform?",
+    "answer11": "Ja. Verarbeitung und Speicherung innerhalb der EU, Verschlüsselung, Zugriffskontrollen, Auditierung. Details siehe Datenschutzerklärung.",
+    "question12": "Kann der KI‑callflow komplexe Fälle bearbeiten?",
+    "answer12": "Ja. Mehrstufige Dialoge, Validierungen, Eskalationen und Übergaben an Mitarbeitende sind vorgesehen.",
+    "question13": "Wie sichern Sie Qualität und Ergebnisse?",
+    "answer13": "Wöchentliches Monitoring, Auswertung echter Gespräche, datenbasiertes Feintuning. Kontinuierliche Verbesserung durch Machine Learning.",
+    "question14": "Gibt es eine Testphase?",
+    "answer14": "Ja – der Pilotmonat. In dieser Zeit sind alle KI‑Minuten kostenlos; danach zahlen Sie nur die tatsächliche Arbeitszeit des KI‑callflows."
   },
   "contact": {
     "title": "Kontakt",
@@ -250,7 +280,7 @@
     "privacy": "Datenschutz",
     "terms": "AGB",
     "imprint": "Impressum",
-    "description": "KI Voice-Agents für automatisierte Kundenkommunikation. Wir revolutionieren, wie Unternehmen telefonieren.",
+    "description": "KI‑callflows für automatisierte Kundenkommunikation. Wir revolutionieren, wie Unternehmen telefonieren.",
     "product": "Produkt",
     "pricing": "Preise",
     "faq": "FAQ",
@@ -309,10 +339,10 @@
     },
     "callflows": {
       "title": "callflows",
-      "description": "KI-basierte Sprachagenten für automatisierte Telefonie.",
+    "description": "KI‑callflow für automatische Prozesse",
       "pros": ["Eigenständig denken und handeln", "Natürliche Gesprächsführung", "Automation von Routineaufgaben", "Nahtlose Systemintegration", "Kostengünstig und unkompliziert", "24/7 Verfügbarkeit", "Kein Vorwissen notwendig"]
     },
-    "conclusion": "Viele Unternehmen wünschen sich mehr Automatisierung, geringere Personalkosten und eine gleichbleibend hohe Servicequalität – rund um die Uhr. Genau hier setzt unser KI-Voice-Agent an: Als innovative Option, die moderne KI-Technologie nutzt, um Telefonprozesse effizient und kostengünstig abzubilden.",
+    "conclusion": "Viele Unternehmen wünschen sich mehr Automatisierung, geringere Personalkosten und eine gleichbleibend hohe Servicequalität – rund um die Uhr. Genau hier setzt unser Konzept an: Als innovative Option, die moderne KI-Technologie nutzt, um Telefonprozesse effizient und kostengünstig abzubilden.",
     "benefit": "Zufriedene Kunden, verbesserte Umsatzchancen"
   },
   "about": {
@@ -336,7 +366,13 @@
       "Regelmäßige Check-ins zur Optimierung",
       "Setup, Support und Telefonnummer inklusive"
     ],
-    "teamDescription": "ist keine Software – sondern ein Team. Mit Hintergrund in Vertrieb, Marketing & Automatisierung. Mit echtem Interesse an Ihrem Erfolg."
+    "teamDescription": "ist keine Software – sondern ein Team. Mit Hintergrund in Vertrieb, Marketing & Automatisierung. Mit echtem Interesse an Ihrem Erfolg.",
+    "whyTitle": "Warum wir callflows gegründet haben",
+    "whyTimo": "„Wir stehen ganz am Anfang einer riesigen Entwicklung – und ich liebe es, mittendrin zu sein. Es begeistert mich, wie KI schon heute echte Gespräche führen kann. Und noch mehr begeistert es mich, was sie morgen leisten wird. Mit callflows machen wir diese Möglichkeiten für Unternehmen erlebbar – und helfen dabei, sie produktiv zu nutzen.“",
+    "whyTom": "„Der Einsatz von KI im Kundenkontakt erfordert nicht nur Technologie, sondern ein tiefes Verständnis für Prozesse, Qualität und Effizienz. Unser Ziel ist es, Lösungen zu schaffen, die skalierbar, wirtschaftlich sinnvoll und dabei zuverlässig in bestehende Abläufe integrierbar sind. Genau das setzen wir mit callflows tagtäglich um.“",
+    "teamQuotesTitle": "Team‑Stimmen",
+    "teamDefaultRole": "Teammitglied",
+    "teamDefaultQuote": "„Ich arbeite mit daran, KI‑callflows produktiv zu machen.“"
   },
   "legal": {
     "impressum": {
@@ -515,8 +551,8 @@
     }
   },
   "features": {
-    "title": "Einsatzbereiche für KI-Voice-Agents",
-    "subtitle": "In allen Bereichen sind Voice Agents der Standard von morgen.",
+    "title": "KI‑callflows im Einsatz",
+    "subtitle": "In allen Bereichen sind KI‑Voice‑Agents der Standard von morgen.",
     "feature1": {
       "title": "Support & Kundenservice",
       "description": "Automatisierte und intelligente Anrufannahme für effizienten Kundenservice rund um die Uhr.",
@@ -548,7 +584,7 @@
   },
   "coreFeatures": {
     "title": "Kernfunktionen",
-    "subtitle": "Entdecken Sie die leistungsstarken Features unserer KI-Voice-Agents",
+    "subtitle": "Entdecken Sie die leistungsstarken Features unserer KI‑callflows",
     "feature1": {
       "title": "Individuelle Gesprächsleitfäden",
       "description": "Gestalten Sie die Gesprächsführung ganz nach Ihren Wünschen"

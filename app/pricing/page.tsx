@@ -48,10 +48,7 @@ export default function PricingPage() {
         {/* 2. Alle Pakete enthalten */}
         <PricingFeaturesSection />
         
-        {/* 3. ROI Calculator */}
-        <ROICalculator />
-        
-        {/* 4. Intro-Block mit Erklärungen */}
+        {/* 3. Intro-Block mit Erklärungen */}
         <PricingIntro />
         
         <CTASectionSecondary />

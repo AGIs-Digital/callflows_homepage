@@ -75,7 +75,7 @@ export function AboutSection() {
   };
   
   return (
-    <section className="py-20 bg-gradient-to-b from-primary/30 via-primary/40 to-primary/60">
+    <section className="py-20 bg-gradient-to-b from-secondary via-secondary/50 to-accent/20">
       <div className="container max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Linke Spalte - Überschrift, Text und Bild */}

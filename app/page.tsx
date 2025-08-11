@@ -5,39 +5,30 @@ import { PricingComparisonSection } from "@/components/sections/pricing-comparis
 import { CoreFeaturesSection } from "@/components/sections/core-features-section";
 import { FeaturesSection } from "@/components/sections/features-section";
 import { SiteFooter } from "@/components/site-footer";
-import { AboutSection } from "@/components/sections/about-section";
 import { CTASection } from "@/components/sections/cta-section";
 import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
 import { IntegrationChallengesSection } from "@/components/sections/integration-challenges-section";
 import { PetraUSPSection } from "@/components/sections/petra-usp-section";
+import { ROICalculator } from "@/components/pricing/roi-calculator";
 
 export default function Home() {
   return (
     <main className="bg-background">
       <SiteHeader />
-
       <HeroSection />
-
       <IntegrationChallengesSection />
-      
       <PetraUSPSection />
-  
       <ProcessSection />
-
       <div id="pricecomparison">
         <PricingComparisonSection />
       </div>
-
       <CTASection />
-
+      <ROICalculator />
       <div id="features">
         <FeaturesSection />
       </div>
       <div id="core-features">
         <CoreFeaturesSection />
-      </div>
-      <div id="about">
-        <AboutSection />
       </div>
       <CTASectionSecondary />
       <SiteFooter />

@@ -64,7 +64,7 @@ export function PetraUSPSection() {
             )}
 
             {/* USP Content */}
-            <div className="max-w-3xl mx-auto space-y-6">
+            <div className="max-w-6xl mx-auto space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('petraUsp.description')}
               </p>

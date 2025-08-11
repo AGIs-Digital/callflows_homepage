@@ -1,13 +1,14 @@
 "use client";
 
 import { CheckCircle, Shield, Clock, Users, Star } from "lucide-react";
+import { GlossaryBadge } from "@/components/ui/glossary-badge";
 import { useI18n } from "@/lib/i18n";
 
 export function PricingIntro() {
   const { t } = useI18n();
   
   return (
-    <div className="py-16 bg-gradient-to-b from-primary/10 via-primary/40 to-primary/60">
+    <div className="py-16 bg-gradient-to-b from-secondary/5 via-primary/80 to-tertiary/30">
       <div className="container max-w-6xl mx-auto">
         <div className="max-w-5xl mx-auto mb-12">
           <div className="bg-card/60 backdrop-blur-sm p-12 rounded-xl border border-border/50 shadow-lg">
@@ -44,8 +45,9 @@ export function PricingIntro() {
                   2
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
+                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-3">
                     🛠️ {t('pricing.step2Title')}
+                    <GlossaryBadge />
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
                     {t('pricing.step2Description')}
@@ -99,7 +101,7 @@ export function PricingIntro() {
               </div>
 
               {/* Erweiterungen */}
-              <div className="flex items-start gap-4 p-6 bg-gradient-to-r from-accent/10 to-primary/10 rounded-lg border border-primary/20">
+              <div className="flex items-start gap-4 p-6 bg-gradient-to-r from-accent/20 to-background rounded-lg border border-primary/20">
                 <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
                   +
                 </div>
@@ -114,7 +116,9 @@ export function PricingIntro() {
               </div>
             </div>
             
-            <div className="bg-card p-10 rounded-lg border mb-12">
+            <div className="relative bg-card p-10 rounded-lg border mb-12 overflow-hidden">
+              {/* Schräger Glitzer-Gradient */}
+              <div className="pointer-events-none absolute -inset-x-20 -top-16 h-40 rotate-6 bg-gradient-to-r from-primary/10 via-white/40 to-accent/10 opacity-70" />
               <h4 className="text-xl font-semibold mb-8 flex items-center gap-3">
                 <Star className="h-6 w-6 text-[#FFB703]" />
                 {t('pricing.starterTitle')}
@@ -198,7 +202,8 @@ export function PricingIntro() {
               </div>
             </div>
 
-            <div className="bg-primary/15 backdrop-blur-sm p-8 rounded-lg border border-primary/30 shadow-md">
+              <div className="relative bg-accent/15 backdrop-blur-sm p-8 rounded-lg border border-primary/30 shadow-md overflow-hidden">
+                <div className="pointer-events-none absolute -inset-x-10 -top-8 h-24 rotate-3 bg-gradient-to-r from-white/20 via-primary/20 to-accent/20" />
               <p className="text-center text-muted-foreground font-medium text-lg leading-relaxed">
                 <strong className="text-primary">{t('pricing.riskFreeStart')}</strong>
               </p>

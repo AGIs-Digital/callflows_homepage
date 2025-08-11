@@ -50,7 +50,7 @@ export function FeaturesSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-accent/30 via-accent/10 to-background">
+    <section className="py-20 bg-gradient-to-b from-primary/10 via-accent/90 to-background">
       <div className="container max-w-6xl">
         <div className="text-center mb-16 section-animate">
           <h2 className="text-4xl font-bold mb-4 text-primary dark:text-white">

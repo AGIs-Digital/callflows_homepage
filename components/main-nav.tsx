@@ -46,11 +46,11 @@ export function MainNav({ className }: MainNavProps) {
         {t('nav.blog')}
       </Link>
       <Link
-        href="/#about"
+        href="/about"
         title="Über callflows und unser Team erfahren"
         className={cn(
           "text-sm font-medium transition-colors hover:text-primary",
-          pathname === "/#about" ? "text-primary" : "text-foreground/60"
+          pathname === "/about" ? "text-primary" : "text-foreground/60"
         )}
       >
         {t('nav.about')}

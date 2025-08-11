@@ -36,13 +36,13 @@
     }
   },
   "pricing": {
-    "pageTitle": "AI-callflow Prices - Transparent Costs",
+    "pageTitle": "AI callflow Prices",
     "introTitle": "Getting started with AI telephony through callflows is simple",
     "introSubtitle": "Professional Voice Agents for your business – from free consultation to successful go-live. Transparent, straightforward, and without hidden costs.",
     "step1Title": "Free Initial Consultation",
     "step1Description": "Needs analysis and goal definition for your customized AI Voice Agent. We analyze your telephony processes and jointly define the optimal AI solution for your business.",
-    "step2Title": "Individual AI Prototype",
-    "step2Description": "Development of your personal Voice Agent according to your specific requirements. Each AI callflow is individually programmed and adapted to your business processes.",
+    "step2Title": "Individual AI callflow (prototype)",
+    "step2Description": "We model your AI callflow — dynamic dialog, process logic and system integrations — fully tailored to your use cases.",
     "step3Title": "Free Pilot Month",
     "step3Description": "Setup fee based on complexity (hourly billing) – all AI minutes are included free in the pilot month. Test your Voice Agent risk-free in practice.",
     "step4Title": "Weekly Optimization",
@@ -164,6 +164,44 @@
     "ctaTitle": "Ready for the future of customer communication?",
     "ctaDescription": "Schedule a non-binding conversation with our experts and learn how callflows can support your business.",
     "ctaButtonText": "Book free consultation"
+  },
+  "glossary": {
+    "kiCallflow": {
+      "title": "AI callflow",
+      "pageTitle": "What is an AI callflow? Definition, differences, benefits",
+      "pageDescription": "AI callflow: a learning conversation and process flow. Differences to classic call flows and voice agents, benefits and use.",
+      "short": "AI callflow: a learning conversation and process flow — understands intents, conducts dialogues, connects systems.",
+      "l1": "Dynamic dialogues vs. static menus",
+      "l2": "Process logic + system integrations",
+      "l3": "Beyond classic call flows or voice agents",
+      "intro": "An AI callflow is a learning conversation and process flow that understands intents, conducts dialogues and connects to your systems. It combines intent recognition, business logic, automations and integrations.",
+      "diffTitle": "Difference to classic call flow",
+      "diffItems": [
+        "Dynamic instead of static: understands intents and decides contextually",
+        "Multi‑step processes incl. follow‑ups, validations, hand‑offs",
+        "Seamless system integrations (CRM/ERP/Helpdesk)"
+      ],
+      "voiceAgentsTitle": "Difference to voice agents",
+      "voiceAgentsText": "A voice agent is the voice. The AI callflow orchestrates the entire process incl. logic, data and actions.",
+      "terminologyTitle": "Terminology overview",
+      "terminologyHeaders": ["Term", "Focus"],
+      "terminology": [
+        "Conversation Workflow / Conversation Flow||Overall flow incl. post‑call steps, not just the live call.",
+        "Call Lifecycle||Full lifecycle from call start through conversation to post‑processing.",
+        "Post‑Call Processing (PCP)||Everything after the call: analytics, cleanup, classification, triggers.",
+        "Conversational Automation Pipeline||When post‑processing is highly automated and integrated with other systems.",
+        "Contact Flow with backend integration||Contact‑center term when logic + data processing are combined."
+      ],
+      "noteLabel": "Note:",
+      "note": "If analytics, cleanup, data extraction and automations after the call are included, we speak of call lifecycle or conversational automation pipeline – it is an end‑to‑end process before, during and after the call.",
+      "benefitsTitle": "Benefits",
+      "benefits": [
+        "24/7 availability and shorter wait times",
+        "Higher close rates through structured process guidance",
+        "Transparent per‑second billing"
+      ]
+    },
+    "readMore": "Read more"
   },
   "faq": {
     "pageTitle": "Frequently Asked Questions (FAQ)",
@@ -302,10 +340,10 @@
     },
     "callflows": {
       "title": "callflows",
-      "description": "AI-based voice agents for automated telephony.",
+      "description": "AI callflow for automated processes",
       "pros": ["Think and act independently", "Natural conversation", "Automation of routine tasks", "Seamless system integration", "Cost-effective and uncomplicated", "24/7 availability", "No prior knowledge required"]
     },
-    "conclusion": "Many companies want more automation, lower personnel costs, and consistently high service quality – around the clock. This is exactly where our AI voice agent comes in: As an innovative option that uses modern AI technology to efficiently and cost-effectively handle phone processes.",
+    "conclusion": "Many companies want more automation, lower personnel costs, and consistently high service quality – around the clock. This is exactly where our concept comes in: An innovative option that uses modern AI technology to efficiently and cost‑effectively handle phone processes.",
     "benefit": "Satisfied customers, improved revenue opportunities"
   },
   "about": {
@@ -329,7 +367,13 @@
       "Regular check-ins for optimization",
       "Setup, support, and phone number included"
     ],
-    "teamDescription": "is not software – but a team. With background in sales, marketing & automation. With genuine interest in your success."
+    "teamDescription": "is not software – but a team. With background in sales, marketing & automation. With genuine interest in your success.",
+    "whyTitle": "Why we founded callflows",
+    "whyTimo": "“We are at the very beginning of a huge development – and I love being right in the middle of it. It excites me how AI can already hold real conversations today. And I’m even more excited about what it will do tomorrow. With callflows, we make these possibilities tangible for companies – and help them use it productively.”",
+    "whyTom": "“Applying AI in customer contact requires not just technology, but a deep understanding of processes, quality and efficiency. Our goal is to build solutions that are scalable, economically sound and reliably integrable into existing operations. That’s exactly what we deliver with callflows every day.”",
+    "teamQuotesTitle": "Team voices",
+    "teamDefaultRole": "Team member",
+    "teamDefaultQuote": "“I help make AI callflows productive.”"
   },
   "legal": {
     "impressum": {
@@ -508,8 +552,8 @@
     }
   },
   "features": {
-    "title": "Use Cases for AI Voice Agents",
-    "subtitle": "In all areas, voice agents are tomorrow's standard.",
+    "title": "AI callflows in action",
+    "subtitle": "In all areas, AI voice agents are tomorrow's standard.",
     "feature1": {
       "title": "Support & Customer Service",
       "description": "Automated and intelligent call handling for efficient customer service around the clock.",
@@ -541,7 +585,7 @@
   },
   "coreFeatures": {
     "title": "Core Functions",
-    "subtitle": "Discover the powerful features of our AI voice agents",
+    "subtitle": "Discover the powerful features of our AI callflows",
     "feature1": {
       "title": "Individual Conversation Guidelines",
       "description": "Design the conversation flow exactly according to your wishes"

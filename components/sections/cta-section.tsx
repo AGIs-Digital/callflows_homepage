@@ -51,7 +51,7 @@ export function CTASection() {
     >
       <div className="container max-w-6xl">
         <motion.div
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-6xl mx-auto text-center"
           variants={containerVariants}
           initial="hidden"
           animate={controls}

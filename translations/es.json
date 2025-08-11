@@ -36,13 +36,13 @@
     }
   },
   "pricing": {
-    "pageTitle": "Precios AI-callflow - Costos Transparentes",
+    "pageTitle": "Precios AI callflow",
     "introTitle": "Comenzar con la telefonía IA a través de callflows es simple",
     "introSubtitle": "Agentes Vocales profesionales para su empresa – desde consulta gratuita hasta go-live exitoso. Transparente, directo y sin costos ocultos.",
     "step1Title": "Consulta inicial gratuita",
     "step1Description": "Análisis de necesidades y definición de objetivos para su Agente Vocal IA personalizado. Analizamos sus procesos telefónicos y definimos juntos la solución IA óptima para su empresa.",
-    "step2Title": "Prototipo IA individual",
-    "step2Description": "Desarrollo de su Agente Vocal personal según sus requisitos específicos. Cada callflow IA se programa individualmente y se adapta a sus procesos empresariales.",
+    "step2Title": "AI callflow individual (prototipo)",
+    "step2Description": "Modelamos su AI callflow — diálogo dinámico, lógica de procesos e integraciones con sistemas — totalmente adaptado a sus casos de uso.",
     "step3Title": "Mes piloto gratuito",
     "step3Description": "Tarifa de configuración basada en complejidad (facturación por horas) – todos los minutos IA están incluidos gratis en el mes piloto. Pruebe su Agente Vocal sin riesgo en la práctica.",
     "step4Title": "Optimización semanal",
@@ -164,6 +164,44 @@
     "ctaTitle": "¿Listo para el futuro de la comunicación con clientes?",
     "ctaDescription": "Programe una conversación sin compromiso con nuestros expertos y aprenda cómo callflows puede apoyar su negocio.",
     "ctaButtonText": "Reservar consulta gratuita"
+  },
+  "glossary": {
+    "kiCallflow": {
+      "title": "AI callflow",
+      "pageTitle": "¿Qué es un AI callflow? Definición, diferencias, beneficios",
+      "pageDescription": "AI callflow: flujo de conversación y procesos que aprende. Diferencias con callflows clásicos y agentes de voz, beneficios y uso.",
+      "short": "AI callflow: flujo de conversación y procesos que aprende — entiende intenciones, conduce diálogos y conecta sistemas.",
+      "l1": "Diálogos dinámicos vs. menús estáticos",
+      "l2": "Lógica de procesos + integraciones de sistemas",
+      "l3": "Más que un callflow clásico o un simple agente de voz",
+      "intro": "Un AI callflow es un flujo de conversación y procesos que aprende, entiende intenciones, conduce diálogos y se conecta a sus sistemas. Combina reconocimiento de intención, lógica de negocio, automatizaciones e integraciones.",
+      "diffTitle": "Diferencia con el callflow clásico",
+      "diffItems": [
+        "Dinámico en lugar de estático: entiende intenciones y decide según el contexto",
+        "Procesos de varios pasos incl. repreguntas, validaciones, traspasos",
+        "Integraciones transparentes de sistemas (CRM/ERP/Helpdesk)"
+      ],
+      "voiceAgentsTitle": "Diferencia con los agentes de voz",
+      "voiceAgentsText": "Un agente de voz es la voz. El AI callflow orquesta todo el proceso incl. lógica, datos y acciones.",
+      "terminologyTitle": "Resumen de la terminología",
+      "terminologyHeaders": ["Término", "Enfoque"],
+      "terminology": [
+        "Conversation Workflow / Conversation Flow||Flujo total incl. pasos de post‑llamada, no solo la llamada en vivo.",
+        "Call Lifecycle||Ciclo de vida completo de la llamada – desde el inicio hasta el post‑proceso.",
+        "Post‑Call Processing (PCP)||Todo lo que sucede después de la llamada: análisis, limpieza de datos, clasificación, disparadores.",
+        "Conversational Automation Pipeline||Cuando el post‑proceso está altamente automatizado e integrado con otros sistemas.",
+        "Contact Flow con integración backend||Término del entorno de contact center cuando se combinan lógica + procesamiento de datos."
+      ],
+      "noteLabel": "Nota:",
+      "note": "Si se incluyen análisis, limpieza, extracción de datos y automatizaciones tras la llamada, se habla de ciclo de vida de llamada o de pipeline de automatización conversacional: es un proceso de extremo a extremo antes, durante y después de la llamada.",
+      "benefitsTitle": "Beneficios",
+      "benefits": [
+        "Disponibilidad 24/7 y menores tiempos de espera",
+        "Mayor tasa de cierre gracias a una guía de procesos estructurada",
+        "Facturación transparente por segundo"
+      ]
+    },
+    "readMore": "Más información"
   },
   "faq": {
     "pageTitle": "Preguntas Frecuentes (FAQ)",
@@ -305,7 +343,7 @@
       "description": "Agentes de voz basados en IA para telefonía automatizada.",
       "pros": ["Pensar y actuar de forma independiente", "Conversación natural", "Automatización de tareas rutinarias", "Integración de sistema sin problemas", "Rentable y sin complicaciones", "Disponibilidad 24/7", "No se requiere conocimiento previo"]
     },
-    "conclusion": "Muchas empresas desean más automatización, menores costos de personal y una calidad de servicio consistentemente alta, las 24 horas. Aquí es exactamente donde entra nuestro agente de voz IA: como una opción innovadora que utiliza tecnología IA moderna para manejar procesos telefónicos de manera eficiente y rentable.",
+    "conclusion": "Muchas empresas desean más automatización, menores costos de personal y una calidad de servicio consistentemente alta, las 24 horas. Aquí es exactamente donde entra nuestro concepto: una opción innovadora que utiliza IA moderna para gestionar procesos telefónicos de manera eficiente y rentable.",
     "benefit": "Clientes satisfechos, oportunidades de ingresos mejoradas"
   },
   "about": {
@@ -329,7 +367,13 @@
       "Check-ins regulares para optimización",
       "Configuración, soporte y número de teléfono incluidos"
     ],
-    "teamDescription": "no es software, sino un equipo. Con experiencia en ventas, marketing y automatización. Con genuino interés en su éxito."
+    "teamDescription": "no es software, sino un equipo. Con experiencia en ventas, marketing y automatización. Con genuino interés en su éxito.",
+    "whyTitle": "Por qué fundamos callflows",
+    "whyTimo": "“Estamos al comienzo de un gran desarrollo, y me encanta estar en el centro. Me entusiasma cómo la IA ya puede mantener conversaciones reales hoy. Y aún más lo que hará mañana. Con callflows hacemos que estas posibilidades sean tangibles para las empresas y las ayudamos a utilizarlas productivamente.”",
+    "whyTom": "“El uso de IA en el contacto con clientes requiere no solo tecnología, sino una comprensión profunda de procesos, calidad y eficiencia. Nuestro objetivo es crear soluciones escalables, económicamente sensatas y confiablemente integrables en los flujos existentes. Eso es exactamente lo que hacemos con callflows cada día.”",
+    "teamQuotesTitle": "Voces del equipo",
+    "teamDefaultRole": "Miembro del equipo",
+    "teamDefaultQuote": "“Ayudo a hacer productivos los AI callflows.”"
   },
   "legal": {
     "impressum": {
@@ -541,7 +585,7 @@
   },
   "coreFeatures": {
     "title": "Funciones Principales",
-    "subtitle": "Descubra las potentes características de nuestros agentes de voz IA",
+    "subtitle": "Descubra las potentes características de nuestros AI callflows",
     "feature1": {
       "title": "Guías de Conversación Individuales",
       "description": "Diseñe el flujo de conversación exactamente según sus deseos"

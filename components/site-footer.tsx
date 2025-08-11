@@ -53,6 +53,11 @@ export function SiteFooter() {
                   {t('footer.faq')}
                 </Link>
               </li>
+              <li>
+                <Link href="/glossar/ki-callflow" className="text-sm text-muted-foreground hover:text-primary">
+                  KI‑callflow Glossar
+                </Link>
+              </li>
 
             </ul>
           </div>
@@ -62,7 +67,7 @@ export function SiteFooter() {
             <h3 className="font-medium mb-4">{t('footer.company')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/#about" className="text-sm text-muted-foreground hover:text-primary">
+                <Link href="/about" className="text-sm text-muted-foreground hover:text-primary">
                   {t('footer.about')}
                 </Link>
               </li>
