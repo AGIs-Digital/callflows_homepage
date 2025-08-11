@@ -22,7 +22,8 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [showDemo, setShowDemo] = useState(false);
   
-  // Nur in Development-Umgebung Demo-Zugänge anzeigen
+  // Umgebungen
+  const isProduction = process.env.NEXT_PUBLIC_ENVIRONMENT === 'production';
   const isDevelopment = process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_ENVIRONMENT === 'staging';
   
   const { login, isLoading, isAuthenticated, user } = useAuthStore();
@@ -65,6 +66,8 @@ export default function LoginPage() {
       setPassword('callflowsPasswort25!');
     }
   };
+
+  // Hinweis: In Produktion erfolgt die Prüfung serverseitig über /api/login.php
 
   return (
     <main className="bg-background">

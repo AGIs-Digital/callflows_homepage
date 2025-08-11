@@ -5,8 +5,6 @@ const ftpDeploy = new FtpDeploy();
 const isProduction = process.env.NODE_ENV === 'production';
 const targetFolder = isProduction ? 'callflows.de' : 'staging.callflows.de';
 
-// Kopiere .env Datei in den Build-Ordner
-require('fs').copyFileSync('.env', __dirname + '/../out/.env');
 
 const config = {
   user: process.env.FTP_USERNAME,
@@ -18,8 +16,7 @@ const config = {
   include: [
     '*',
     '**/*',
-    '.htaccess',
-    '.env'
+    '.htaccess'
   ],
   exclude: [
     '.git/**',

@@ -125,6 +125,48 @@ jobs:
           npm install --quiet ftp-deploy
           node scripts/deploy.js
 
+      - name: 🔒 Protect admin area with Basic Auth
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            set -e
+            cd callflows.de/admin-dashboard/
+            PASS_HASH=$(openssl passwd -apr1 "${{ secrets.ADMIN_PASSWORD }}")
+            cat > .htaccess << 'EOF'
+            AuthType Basic
+            AuthName "Restricted"
+            AuthUserFile REPLACE_WITH_ABSOLUTE
+            Require valid-user
+            EOF
+            # Replace placeholder with absolute path to .htpasswd
+            sed -i "s|REPLACE_WITH_ABSOLUTE|$(pwd)/.htpasswd|g" .htaccess
+            echo "${{ secrets.ADMIN_USERNAME }}:${PASS_HASH}" > .htpasswd
+            chmod 640 .htpasswd
+            echo "Basic Auth enabled for admin-dashboard/"
+
+      - name: 🔐 Inject server env for PHP endpoints
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            set -e
+            cd callflows.de/
+            # Create Apache env vars via .htaccess at site root (only for PHP to read via getenv)
+            # Note: Requires Apache AllowOverride Options
+            printf "\n# Env for PHP endpoints\n" >> .htaccess || true
+            printf "SetEnvIfNoCase Request_URI ".*" ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}\n" >> .htaccess
+            printf "SetEnvIfNoCase Request_URI ".*" ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}\n" >> .htaccess
+            printf "SetEnvIfNoCase Request_URI ".*" CUSTOMER_USERNAME=${{ secrets.CUSTOMER_USERNAME }}\n" >> .htaccess
+            printf "SetEnvIfNoCase Request_URI ".*" CUSTOMER_PASSWORD=${{ secrets.CUSTOMER_PASSWORD }}\n" >> .htaccess
+            echo "Server env for PHP endpoints injected"
+
       - name: 🧹 Clean npm cache
         run: |
           rm -rf node_modules
