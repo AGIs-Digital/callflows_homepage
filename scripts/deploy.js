@@ -42,6 +42,8 @@ const config = {
   sftp: true,
   deleteRemote: false,
   backupDir: 'backups',
+  skipIfOlderModDate: true, // Nur neuere Dateien übertragen
+  preserveTimestamps: true, // Zeitstempel beibehalten
   forcePasv: true,
   // Performance-Optimierungen
   concurrency: 8, // 8 parallele Uploads (statt 1)
