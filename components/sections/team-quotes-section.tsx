@@ -13,27 +13,52 @@ type TeamMember = {
 export function TeamQuotesSection() {
   const { t } = useI18n();
 
-  const defaultRole = t("about.teamDefaultRole");
-  const defaultQuote = t("about.teamDefaultQuote");
-
-  // Manuell gepflegte Teamliste (keine DB notwendig)
+  // Manuell gepflegte Teamliste mit individuellen Rollen und Quotes
   const team: TeamMember[] = [
-    { name: "Marvin Grubbe", role: defaultRole, quote: defaultQuote, imgSrc: "/images/placeholder-avatar-1.webp" },
-    { name: "Jamin Afram", role: defaultRole, quote: defaultQuote, imgSrc: "/images/placeholder-avatar-2.webp" },
-    { name: "Pascal Stary", role: defaultRole, quote: defaultQuote, imgSrc: "/images/placeholder-avatar-3.webp" },
-    { name: "Tom Günther", role: defaultRole, quote: defaultQuote, imgSrc: "/images/placeholder-avatar-4.webp" },
-    { name: "Jan Kastning", role: defaultRole, quote: defaultQuote, imgSrc: "/images/placeholder-avatar-5.webp" },
+    { 
+      name: "Tom Günther", 
+      role: t("about.teamMembers.tom.role"), 
+      quote: t("about.teamMembers.tom.quote"), 
+      imgSrc: "/images/tomguenther.webp" 
+    },
+    { 
+      name: "Jamin Afram", 
+      role: t("about.teamMembers.jamin.role"), 
+      quote: t("about.teamMembers.jamin.quote"), 
+      imgSrc: "/images/jaminafram.webp" 
+    },
+    { 
+      name: "Pascal Stary", 
+      role: t("about.teamMembers.pascal.role"), 
+      quote: t("about.teamMembers.pascal.quote"), 
+      imgSrc: "/images/pascalstary.webp" 
+    },
+    { 
+      name: "Marvin Grubbe", 
+      role: t("about.teamMembers.marvin.role"), 
+      quote: t("about.teamMembers.marvin.quote"), 
+      imgSrc: "/images/marvingrubbe.webp" 
+    },
+    { 
+      name: "Jan Kastning", 
+      role: t("about.teamMembers.jan.role"), 
+      quote: t("about.teamMembers.jan.quote"), 
+      imgSrc: "/images/jankastning.webp" 
+    },
   ];
 
   return (
     <section className="py-20 bg-gradient-to-b from-secondary/30 via-secondary/90 to-primary/10">
       <div className="container max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-10">{t("about.teamQuotesTitle")}</h2>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">{t("about.teamQuotesTitle")}</h2>
+          <p className="text-lg text-muted-foreground">{t("about.teamQuotesSubtitle")}</p>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {team.map((m, idx) => (
             <div key={idx} className="rounded-2xl border bg-card/60 p-6">
-              <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-lg overflow-hidden border bg-muted mx-auto">
+              <div className="relative w-36 h-36 md:w-40 md:h-40 rounded-lg overflow-hidden border bg-muted mx-auto">
                 {m.imgSrc ? (
                   <Image src={m.imgSrc} alt={m.name} fill className="object-cover" />
                 ) : (

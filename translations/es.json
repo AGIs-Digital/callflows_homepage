@@ -369,11 +369,47 @@
     ],
     "teamDescription": "no es software, sino un equipo. Con experiencia en ventas, marketing y automatización. Con genuino interés en su éxito.",
     "whyTitle": "Por qué fundamos callflows",
-    "whyTimo": "“Estamos al comienzo de un gran desarrollo, y me encanta estar en el centro. Me entusiasma cómo la IA ya puede mantener conversaciones reales hoy. Y aún más lo que hará mañana. Con callflows hacemos que estas posibilidades sean tangibles para las empresas y las ayudamos a utilizarlas productivamente.”",
-    "whyTom": "“El uso de IA en el contacto con clientes requiere no solo tecnología, sino una comprensión profunda de procesos, calidad y eficiencia. Nuestro objetivo es crear soluciones escalables, económicamente sensatas y confiablemente integrables en los flujos existentes. Eso es exactamente lo que hacemos con callflows cada día.”",
-    "teamQuotesTitle": "Voces del equipo",
+    "whyTimo": "Estamos al comienzo de un gran desarrollo, y me encanta estar en el centro. Me entusiasma cómo la IA ya puede mantener conversaciones reales hoy. Y aún más lo que hará mañana. Con callflows hacemos que estas posibilidades sean tangibles para las empresas y las ayudamos a utilizarlas productivamente.",
+    "whyTom": "El uso de IA en el contacto con clientes requiere no solo tecnología, sino una comprensión profunda de procesos, calidad y eficiencia. Nuestro objetivo es crear soluciones escalables, económicamente sensatas y confiablemente integrables en los flujos existentes. Eso es exactamente lo que hacemos con callflows cada día.",
+    "teamQuotesTitle": "Su equipo callflows",
+    "teamQuotesSubtitle": "Desde la consultoría hasta la implementación – todo de una sola fuente",
     "teamDefaultRole": "Miembro del equipo",
-    "teamDefaultQuote": "“Ayudo a hacer productivos los AI callflows.”"
+    "teamDefaultQuote": "Ayudo a hacer productivos los AI callflows.",
+    "teamMembers": {
+      "marvin": {
+        "role": "Arquitecto de Software",
+        "quote": "Una arquitectura limpia es la base de callflows IA exitosos. Me aseguro de que todo funcione de forma estable."
+      },
+      "jamin": {
+        "role": "Gerente de Proyecto",
+        "quote": "La satisfacción del cliente me impulsa. Guío personalmente a cada cliente hacia el éxito."
+      },
+      "pascal": {
+        "role": "Gerente de Proyecto",
+        "quote": "Planificación precisa, ejecución confiable. En eso pueden confiar nuestros clientes."
+      },
+      "tom": {
+        "role": "Gerente de Proyecto",
+        "quote": "Cada proyecto necesita la mezcla perfecta de innovación y pensamiento estratégico."
+      },
+      "jan": {
+        "role": "Automatizaciones de IA",
+        "quote": "Convertir procesos complejos de IA en automatizaciones elegantes – esa es mi especialidad."
+      }
+    },
+    "career": {
+      "title": "Únase a nuestro equipo",
+      "subtitle": "¿Comparte nuestra pasión por la tecnología IA y quiere dar forma al futuro de la comunicación con clientes junto a nosotros? ¡Esperamos saber de usted!",
+      "benefit1Title": "Equipo sólido",
+      "benefit1Description": "Trabaje junto a expertos experimentados y aprenda algo nuevo cada día",
+      "benefit2Title": "Viva la innovación",
+      "benefit2Description": "Dé forma activamente al futuro de la telefonía IA y establezca nuevos estándares",
+      "benefit3Title": "Trabajo significativo",
+      "benefit3Description": "Ayude a las empresas a ser más eficientes y resolver problemas reales",
+      "ctaTitle": "¿Listo para el siguiente paso?",
+      "ctaDescription": "Envíenos su solicitud y cuéntenos cómo le gustaría fortalecer nuestro equipo.",
+      "ctaButton": "Aplicar ahora"
+    }
   },
   "legal": {
     "impressum": {

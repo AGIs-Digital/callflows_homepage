@@ -369,11 +369,47 @@
     ],
     "teamDescription": "n'est pas un logiciel – mais une équipe. Avec une expérience en vente, marketing et automatisation. Avec un véritable intérêt pour votre succès.",
     "whyTitle": "Pourquoi nous avons fondé callflows",
-    "whyTimo": "« Nous sommes au tout début d’un immense développement – et j’adore être au cœur de celui‑ci. Je suis fasciné par la capacité de l’IA à mener de vraies conversations dès aujourd’hui – et encore plus par ce qu’elle accomplira demain. Avec callflows, nous rendons ces possibilités concrètes pour les entreprises – et aidons à les exploiter productivement. »",
-    "whyTom": "« L’usage de l’IA dans la relation client exige plus que de la technologie : une compréhension profonde des processus, de la qualité et de l’efficacité. Notre objectif : créer des solutions scalables, économiquement pertinentes et intégrables de manière fiable dans les opérations existantes. C’est exactement ce que nous réalisons chaque jour avec callflows. »",
-    "teamQuotesTitle": "Paroles d’équipe",
-    "teamDefaultRole": "Membre de l’équipe",
-    "teamDefaultQuote": "« Je contribue à rendre les AI callflows productifs. »"
+    "whyTimo": "Nous sommes au tout début d’un immense développement – et j’adore être au cœur de celui‑ci. Je suis fasciné par la capacité de l’IA à mener de vraies conversations dès aujourd’hui – et encore plus par ce qu’elle accomplira demain. Avec callflows, nous rendons ces possibilités concrètes pour les entreprises – et aidons à les exploiter productivement.",
+    "whyTom": "L’usage de l’IA dans la relation client exige plus que de la technologie : une compréhension profonde des processus, de la qualité et de l’efficacité. Notre objectif : créer des solutions scalables, économiquement pertinentes et intégrables de manière fiable dans les opérations existantes. C’est exactement ce que nous réalisons chaque jour avec callflows.",
+    "teamQuotesTitle": "Votre équipe callflows",
+    "teamQuotesSubtitle": "Du conseil à la mise en œuvre – tout en un seul endroit",
+    "teamDefaultRole": "Membre de l'équipe",
+    "teamDefaultQuote": "Je contribue à rendre les AI callflows productifs.",
+    "teamMembers": {
+      "marvin": {
+        "role": "Architecte Logiciel",
+        "quote": "Une architecture propre est le fondement de callflows IA réussis. Je veille à ce que tout fonctionne de manière stable."
+      },
+      "jamin": {
+        "role": "Chef de Projet",
+        "quote": "La satisfaction client me motive. J'accompagne personnellement chaque client vers le succès."
+      },
+      "pascal": {
+        "role": "Chef de Projet",
+        "quote": "Planification précise, exécution fiable. C'est sur cela que nos clients peuvent compter."
+      },
+      "tom": {
+        "role": "Chef de Projet",
+        "quote": "Chaque projet a besoin du mélange parfait d'innovation et de pensée stratégique."
+      },
+      "jan": {
+        "role": "Automations IA",
+        "quote": "Transformer des processus IA complexes en automatisations élégantes – c'est ma spécialité."
+      }
+    },
+    "career": {
+      "title": "Rejoignez notre équipe",
+      "subtitle": "Vous partagez notre passion pour la technologie IA et souhaitez façonner l'avenir de la communication client avec nous ? Nous attendons de vos nouvelles avec impatience !",
+      "benefit1Title": "Équipe solide",
+      "benefit1Description": "Travaillez aux côtés d'experts expérimentés et apprenez quelque chose de nouveau chaque jour",
+      "benefit2Title": "Vivre l'innovation",
+      "benefit2Description": "Façonnez activement l'avenir de la téléphonie IA et établissez de nouvelles normes",
+      "benefit3Title": "Travail utile",
+      "benefit3Description": "Aidez les entreprises à devenir plus efficaces et à résoudre de vrais problèmes",
+      "ctaTitle": "Prêt pour la prochaine étape ?",
+      "ctaDescription": "Envoyez-nous votre candidature et dites-nous comment vous aimeriez renforcer notre équipe.",
+      "ctaButton": "Postuler maintenant"
+    }
   },
   "legal": {
     "impressum": {

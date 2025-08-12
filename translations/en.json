@@ -369,11 +369,47 @@
     ],
     "teamDescription": "is not software – but a team. With background in sales, marketing & automation. With genuine interest in your success.",
     "whyTitle": "Why we founded callflows",
-    "whyTimo": "“We are at the very beginning of a huge development – and I love being right in the middle of it. It excites me how AI can already hold real conversations today. And I’m even more excited about what it will do tomorrow. With callflows, we make these possibilities tangible for companies – and help them use it productively.”",
-    "whyTom": "“Applying AI in customer contact requires not just technology, but a deep understanding of processes, quality and efficiency. Our goal is to build solutions that are scalable, economically sound and reliably integrable into existing operations. That’s exactly what we deliver with callflows every day.”",
-    "teamQuotesTitle": "Team voices",
+    "whyTimo": "We are at the very beginning of a huge development – and I love being right in the middle of it. It excites me how AI can already hold real conversations today. And I’m even more excited about what it will do tomorrow. With callflows, we make these possibilities tangible for companies – and help them use it productively.",
+    "whyTom": "Applying AI in customer contact requires not just technology, but a deep understanding of processes, quality and efficiency. Our goal is to build solutions that are scalable, economically sound and reliably integrable into existing operations. That’s exactly what we deliver with callflows every day.",
+    "teamQuotesTitle": "Your callflows Team",
+    "teamQuotesSubtitle": "From consultation to implementation – everything from one source",
     "teamDefaultRole": "Team member",
-    "teamDefaultQuote": "“I help make AI callflows productive.”"
+    "teamDefaultQuote": "I help make AI callflows productive.",
+    "teamMembers": {
+      "marvin": {
+        "role": "Software Architect",
+        "quote": "Clean architecture is the foundation of successful AI callflows. I ensure everything runs stable."
+      },
+      "jamin": {
+        "role": "Project Manager",
+        "quote": "Customer satisfaction drives me. I personally guide every client to success."
+      },
+      "pascal": {
+        "role": "Project Manager",
+        "quote": "Precise planning, reliable execution. That's what our customers can count on."
+      },
+      "tom": {
+        "role": "Project Manager",
+        "quote": "Every project needs the perfect mix of innovation and strategic thinking."
+      },
+      "jan": {
+        "role": "AI Automations",
+        "quote": "Turning complex AI processes into elegant automations – that's my specialty."
+      }
+    },
+    "career": {
+      "title": "Join Our Team",
+      "subtitle": "Do you share our passion for AI technology and want to shape the future of customer communication with us? We look forward to hearing from you!",
+      "benefit1Title": "Strong Team",
+      "benefit1Description": "Work alongside experienced experts and learn something new every day",
+      "benefit2Title": "Experience Innovation",
+      "benefit2Description": "Actively shape the future of AI telephony and set new standards",
+      "benefit3Title": "Meaningful Work",
+      "benefit3Description": "Help companies become more efficient and solve real problems",
+      "ctaTitle": "Ready for the next step?",
+      "ctaDescription": "Send us your application and tell us how you'd like to strengthen our team.",
+      "ctaButton": "Apply now"
+    }
   },
   "legal": {
     "impressum": {

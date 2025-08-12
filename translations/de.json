@@ -368,11 +368,47 @@
     ],
     "teamDescription": "ist keine Software – sondern ein Team. Mit Hintergrund in Vertrieb, Marketing & Automatisierung. Mit echtem Interesse an Ihrem Erfolg.",
     "whyTitle": "Warum wir callflows gegründet haben",
-    "whyTimo": "„Wir stehen ganz am Anfang einer riesigen Entwicklung – und ich liebe es, mittendrin zu sein. Es begeistert mich, wie KI schon heute echte Gespräche führen kann. Und noch mehr begeistert es mich, was sie morgen leisten wird. Mit callflows machen wir diese Möglichkeiten für Unternehmen erlebbar – und helfen dabei, sie produktiv zu nutzen.“",
-    "whyTom": "„Der Einsatz von KI im Kundenkontakt erfordert nicht nur Technologie, sondern ein tiefes Verständnis für Prozesse, Qualität und Effizienz. Unser Ziel ist es, Lösungen zu schaffen, die skalierbar, wirtschaftlich sinnvoll und dabei zuverlässig in bestehende Abläufe integrierbar sind. Genau das setzen wir mit callflows tagtäglich um.“",
-    "teamQuotesTitle": "Team‑Stimmen",
+    "whyTimo": "Wir stehen ganz am Anfang einer riesigen Entwicklung – und ich liebe es, mittendrin zu sein. Es begeistert mich, wie KI schon heute echte Gespräche führen kann. Und noch mehr begeistert es mich, was sie morgen leisten wird. Mit callflows machen wir diese Möglichkeiten für Unternehmen erlebbar – und helfen dabei, sie produktiv zu nutzen.",
+    "whyTom": "Der Einsatz von KI im Kundenkontakt erfordert nicht nur Technologie, sondern ein tiefes Verständnis für Prozesse, Qualität und Effizienz. Unser Ziel ist es, Lösungen zu schaffen, die skalierbar, wirtschaftlich sinnvoll und dabei zuverlässig in bestehende Abläufe integrierbar sind. Genau das setzen wir mit callflows tagtäglich um.",
+    "teamQuotesTitle": "Ihr callflows Team",
+    "teamQuotesSubtitle": "Von der Beratung bis zur Umsetzung – alles aus einer Hand",
     "teamDefaultRole": "Teammitglied",
-    "teamDefaultQuote": "„Ich arbeite mit daran, KI‑callflows produktiv zu machen.“"
+    "teamDefaultQuote": "Ich arbeite mit daran, KI‑callflows produktiv zu machen.",
+    "teamMembers": {
+      "marvin": {
+        "role": "Software Architekt",
+        "quote": "Saubere Architektur ist das Fundament erfolgreicher KI‑callflows. Ich sorge dafür, dass alles stabil läuft."
+      },
+      "jamin": {
+        "role": "Projekt Manager",
+        "quote": "Kundenzufriedenheit ist mein Antrieb. Ich begleite jeden Kunden persönlich zum Erfolg."
+      },
+      "pascal": {
+        "role": "Projekt Manager",
+        "quote": "Präzise Planung, verlässliche Umsetzung. Darauf können sich unsere Kunden verlassen."
+      },
+      "tom": {
+        "role": "Projekt Manager",
+        "quote": "Jedes Projekt braucht den perfekten Mix aus Innovation und strategischem Denken."
+      },
+      "jan": {
+        "role": "KI Automationen",
+        "quote": "Komplexe KI‑Prozesse in elegante Automatisierungen verwandeln – das ist mein Spezialgebiet."
+      }
+    },
+    "career": {
+      "title": "Werden Sie Teil unseres Teams",
+      "subtitle": "Sie teilen unsere Leidenschaft für KI‑Technologie und möchten gemeinsam mit uns die Zukunft der Kundenkommunikation gestalten? Wir freuen uns auf Sie!",
+      "benefit1Title": "Starkes Team",
+      "benefit1Description": "Arbeiten Sie mit erfahrenen Experten zusammen und lernen Sie täglich dazu",
+      "benefit2Title": "Innovation erleben",
+      "benefit2Description": "Gestalten Sie die Zukunft der KI‑Telefonie aktiv mit und setzen Sie neue Maßstäbe",
+      "benefit3Title": "Sinnvolle Arbeit",
+      "benefit3Description": "Helfen Sie Unternehmen dabei, effizienter zu werden und echte Probleme zu lösen",
+      "ctaTitle": "Bereit für den nächsten Schritt?",
+      "ctaDescription": "Senden Sie uns Ihre Bewerbung und erzählen Sie uns, wie Sie unser Team verstärken möchten.",
+      "ctaButton": "Jetzt bewerben"
+    }
   },
   "legal": {
     "impressum": {
