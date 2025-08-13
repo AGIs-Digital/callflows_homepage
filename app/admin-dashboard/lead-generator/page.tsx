@@ -132,8 +132,19 @@ export default function LeadGeneratorPage() {
       ];
       worksheet['!cols'] = colWidths;
 
-      // Dateiname mit aktuellem Datum
-      const fileName = `leads_${new Date().toISOString().split('T')[0]}.xlsx`;
+      // Dateiname im Format: Jahr_Monat_Tag_Suchbegriff
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      
+      // Suchbegriff bereinigen: Leerzeichen durch Unterstriche ersetzen
+      const cleanSearchTerm = config.query
+        .replace(/\s+/g, '_')
+        .replace(/_+/g, '_')
+        .replace(/^_|_$/g, '');
+      
+      const fileName = `${year}_${month}_${day}_${cleanSearchTerm}.xlsx`;
       
       // Excel-Datei herunterladen
       XLSX.writeFile(workbook, fileName);
