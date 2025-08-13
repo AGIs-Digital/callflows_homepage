@@ -80,7 +80,35 @@ export default function KICallflowPage() {
           </div>
         </section>
 
-        <section className="py-12 bg-gradient-to-b from-secondary/30 via-accent/20 to-accent/50 pb-20">
+        {/* Ende‑zu‑Ende Sektion */}
+        <section className="py-12 bg-gradient-to-b from-secondary/20 via-accent/10 to-primary/10">
+          <div className="container max-w-6xl">
+            <div className="rounded-xl border bg-card p-6 md:p-8">
+              <h2 className="text-2xl font-semibold mb-3">{t('glossary.kiCallflow.e2eTitle')}</h2>
+              <p className="text-muted-foreground mb-6">{t('glossary.kiCallflow.e2eDefinition')}</p>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-lg font-medium mb-2">{t('glossary.kiCallflow.e2eIncludesTitle')}</h3>
+                  <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                    {tArray('glossary.kiCallflow.e2eIncludes').map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium mb-2">{t('glossary.kiCallflow.e2eCriteriaTitle')}</h3>
+                  <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                    {tArray('glossary.kiCallflow.e2eCriteria').map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 bg-gradient-to-b from-primary/10 via-accent/20 to-accent/50 pb-20">
           <div className="container max-w-6xl">
             <div className="rounded-xl border bg-gradient-to-r from-primary/5 via-accent/10 to-primary/5 p-6">
               <h2 className="text-2xl font-semibold mb-3">{t('glossary.kiCallflow.benefitsTitle')}</h2>

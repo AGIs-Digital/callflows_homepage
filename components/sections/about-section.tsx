@@ -101,7 +101,7 @@ export function AboutSection() {
               <Image
                 src="/images/team.webp"
                 alt="Die callflows Gründer"
-                title="Das Team von callflows - Experten für KI-Telefonie und Voice Agent Entwicklung"
+                title="Das Team von callflows – Experten für KI‑callflows"
                 fill
                 className="object-cover"
               />

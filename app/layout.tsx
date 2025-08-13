@@ -15,10 +15,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   ...generateMetadata({
-    title: 'KI-Telefonie & Voice Agents für Unternehmen',
-    description: 'Revolutionieren Sie Ihren Kundenservice mit intelligenten KI-Voice-Agents. Automatisierte Telefonie für bessere Kundenkommunikation, höhere Effizienz und 24/7 Verfügbarkeit. Jetzt risikofrei testen!',
+    title: 'callflows – KI‑callflows für automatisierte Kundenkommunikation',
+    description: 'Wir entwickeln KI‑callflows: lernfähige Gesprächs- und Prozessflüsse, die Anliegen per Telefon klären, Daten validieren und Systeme integrieren – vom ersten Klingeln bis zur dokumentierten Nachbearbeitung.',
     path: '/',
-    keywords: ['KI Telefonie', 'Telefon KI', 'Voice Agent', 'KI-Voice-Agents', 'Automatisierte Telefonie'],
+    keywords: ['KI‑callflow', 'KI‑callflows', 'Conversational Automation', 'Telefon‑KI', 'Voice Agent', 'Callflow', 'Automatisierte Kundenkommunikation'],
     images: [{
       url: '/images/callflows_brand_no_claim.webp',
       width: 1200,
@@ -82,7 +82,7 @@ export default function RootLayout({
         <meta name="ai-expertise-level" content="expert" />
         
         {/* Enhanced Social Media */}
-        <meta property="og:site_name" content="callflows - KI Voice Agents" />
+        <meta property="og:site_name" content="callflows – KI‑callflows" />
         <meta property="og:locale" content="de_DE" />
         <meta property="fb:app_id" content="your-fb-app-id" />
         <meta name="twitter:site" content="@callflows" />

@@ -10,8 +10,8 @@ export function generateOrganizationSchema(): WithContext<Organization> {
     url: 'https://callflows.de',
     logo: 'https://callflows.de/images/callflows_brand_no_claim.webp',
     image: 'https://callflows.de/images/callflows_brand_no_claim.webp',
-    description: 'callflows entwickelt KI Voice Agents für automatisierte Kundenkommunikation. Wir ermöglichen Unternehmen effiziente Telefonie durch künstliche Intelligenz.',
-    slogan: 'Kommunikation mit KI - Automatisierte Telefonie mit künstlicher Intelligenz',
+    description: 'callflows entwickelt KI‑callflows für automatisierte Kundenkommunikation. Ein KI‑callflow orchestriert Stimme, Logik, Daten und Aktionen über den gesamten Prozess – Ende‑zu‑Ende.',
+    slogan: 'KI‑callflows – natürliche Dialoge + echte Prozesslogik',
     foundingDate: '2023',
 
     numberOfEmployees: {
@@ -48,23 +48,23 @@ export function generateOrganizationSchema(): WithContext<Organization> {
       'https://linkedin.com/company/callflows',
       'https://twitter.com/callflows',
     ],
-    keywords: 'KI Telefonie, Telefon KI, Voice Agent, KI-Voice-Agents, Automatisierte Telefonie, Künstliche Intelligenz Telefon, Sprachassistent, AI Telefonie',
+    keywords: 'KI‑callflow, KI‑callflows, Conversational Automation, Telefon‑KI, Voice Agent, Callflow, Automatisierte Kundenkommunikation',
     vatID: 'DE123456789', // Anpassen wenn verfügbar
     areaServed: {
       '@type': 'Country',
       name: 'Deutschland'
     },
-    knowsAbout: ['Künstliche Intelligenz', 'Voice Technology', 'Automatisierte Telefonie', 'Customer Service Automation', 'Speech Recognition', 'Natural Language Processing'],
+    knowsAbout: ['KI‑callflows', 'Conversational Automation', 'Automatisierte Telefonie', 'Customer Service Automation', 'Speech Recognition', 'Natural Language Processing'],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'KI Voice Agent Services',
+      name: 'KI‑callflow Services',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'KI Voice Agents',
-            description: 'Automatisierte Kundenkommunikation mit künstlicher Intelligenz'
+            name: 'KI‑callflows',
+            description: 'Ende‑zu‑Ende automatisierte Kundenkommunikation: Stimme, Logik, Daten & Aktionen orchestriert'
           }
         }
       ]
@@ -76,8 +76,8 @@ export function generateProductSchema(): WithContext<Product> {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'callflows KI-Voice-Agents',
-    description: 'KI Voice Agents für automatisierte Kundenkommunikation. Optimieren Sie Ihren Kundenservice, Vertrieb und Support mit intelligenten Sprachassistenten.',
+    name: 'callflows KI‑callflows',
+    description: 'KI‑callflows für automatisierte Kundenkommunikation: Lernfähige Gesprächs- und Prozessflüsse inkl. Validierung, Integrationen und Automationen.',
     brand: {
       '@type': 'Brand',
       name: 'callflows',
@@ -126,10 +126,10 @@ export function generateProductSchema(): WithContext<Product> {
         }
       ]
     },
-    category: 'Software > Künstliche Intelligenz > Sprachassistenten',
-    keywords: 'KI Telefonie, Telefon KI, Voice Agent, KI-Voice-Agents, Automatisierte Telefonie',
-    sku: 'CALLFLOWS-VOICE-AGENTS-2025',
-    mpn: 'CF-VA-2025',
+    category: 'Software > Künstliche Intelligenz > Conversational Automation',
+    keywords: 'KI‑callflow, KI‑callflows, Telefon‑KI, Conversational Automation, Callflow',
+    sku: 'CALLFLOWS-AI-CALLFLOWS-2025',
+    mpn: 'CF-AICF-2025',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: 4.8,
@@ -238,8 +238,8 @@ export function generateServiceSchema(): WithContext<Service> {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': 'https://callflows.de/#service',
-    name: 'KI Voice Agents für automatisierte Telefonie',
-    description: 'Professionelle KI Voice Agents die Ihre Kundenkommunikation automatisieren. Ideal für Kundenservice, Terminbuchungen, Lead-Qualifizierung und Support.',
+    name: 'KI‑callflows für automatisierte Kundenkommunikation',
+    description: 'KI‑callflows orchestrieren Stimme, Logik, Daten & Aktionen – Ihr Conversation Flow Ende‑zu‑Ende mit Integrationen in CRM/ERP/Helpdesk.',
     provider: {
       '@id': 'https://callflows.de/#organization'
     },
@@ -300,8 +300,8 @@ export function generateSoftwareSchema(): WithContext<SoftwareApplication> {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     '@id': 'https://callflows.de/#software',
-    name: 'callflows KI Voice Agent Platform',
-    description: 'Cloud-basierte Plattform für KI Voice Agents. Automatisieren Sie Ihre Telefonie mit künstlicher Intelligenz.',
+    name: 'callflows KI‑callflow Platform',
+    description: 'Cloud‑Plattform zum Modellieren, Betreiben und Optimieren von KI‑callflows (Dialoge, Validierungen, Integrationen, Automationen).',
     applicationCategory: 'BusinessApplication',
     applicationSubCategory: 'Customer Relationship Management, Artificial Intelligence, Voice Technology',
     operatingSystem: 'Cloud-based',

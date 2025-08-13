@@ -5,8 +5,8 @@ export default function GlossarIndex() {
   return (
     <>
       <Head>
-        <title>Glossar | KI‑Telefonie & KI‑callflows</title>
-        <meta name="description" content="Glossar zu KI‑Telefonie: KI‑callflow, Callflow, Voice Agent, Integrationen, Monitoring." />
+        <title>Glossar | KI‑callflows & Terminologie</title>
+        <meta name="description" content="Glossar zu KI‑callflows: Begriffe, Unterschiede zu klassischen Callflows und Voice Agents, Integrationen und Monitoring." />
       </Head>
       <main className="container max-w-6xl py-16">
         <h1 className="text-3xl font-bold mb-6">Glossar</h1>

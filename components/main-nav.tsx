@@ -17,7 +17,7 @@ export function MainNav({ className }: MainNavProps) {
     <nav className={cn("flex items-center space-x-4 lg:space-x-6", className)}>
       <Link
         href="/"
-        title="Zur callflows Startseite - KI-Telefonie & Voice Agents"
+        title="Zur callflows Startseite – KI‑callflows für Unternehmen"
         className={cn(
           "text-sm font-medium transition-colors hover:text-primary",
           pathname === "/" ? "text-primary" : "text-foreground/60"
@@ -27,7 +27,7 @@ export function MainNav({ className }: MainNavProps) {
       </Link>
       <Link
         href="/pricing"
-        title="Preise und Pakete für KI-Telefonie anzeigen"
+        title="Preise und Pakete für KI‑callflows anzeigen"
         className={cn(
           "text-sm font-medium transition-colors hover:text-primary",
           pathname === "/pricing" ? "text-primary" : "text-foreground/60"
@@ -37,7 +37,7 @@ export function MainNav({ className }: MainNavProps) {
       </Link>
       <Link
         href="/blog"
-        title="Blog über KI-Telefonie und Voice Agents lesen"
+        title="Blog über KI‑callflows und Voice Agents lesen"
         className={cn(
           "text-sm font-medium transition-colors hover:text-primary",
           pathname.startsWith("/blog") ? "text-primary" : "text-foreground/60"

@@ -28,8 +28,8 @@
       "headline1": "Débordé par les appels standards ?",
       "headline2": "Trop peu de temps pour les tâches importantes ?",
       "description": "Pendant que vous vous noyez dans le chaos des appels, les tâches vraiment importantes passent à la trappe – il est temps pour une révolution !",
-      "solution": "Avec la Téléphonie IA",
-      "solutionDescription": "Des ventes au marketing en passant par le support – automatisez vos processus de communication client avec nous.",
+      "solution": "Avec les AI callflows",
+      "solutionDescription": "AI callflows = votre conversation flow : dialogues naturels, logique de processus & intégrations — de bout en bout.",
       "cta": "Consultation Gratuite",
       "widgetUnavailable": "Widget temporairement indisponible",
       "widgetUnavailableDescription": "Ne vous inquiétez pas - cela arrive parfois avec les démos en direct"
@@ -116,7 +116,7 @@
     "communicationTitle": "Communication",
     "communicationItems": [
       "Réservations en temps réel – Planification instantanée de rendez-vous",
-      "Gestion multi-canaux – Jusqu'à 100+ appels simultanés",
+      "Gestion multi‑canaux – Jusqu'à 1 000 appels simultanés par minute",
       "Disponible 24/7 – Pas de temps d'attente ou de pauses",
       "Transfert d'appel intelligent quand nécessaire"
     ],
@@ -191,6 +191,27 @@
         "Post‑Call Processing (PCP)||Tout ce qui se passe après l’appel : analyse, nettoyage, classification, déclencheurs.",
         "Conversational Automation Pipeline||Quand le post‑traitement est fortement automatisé et intégré à d’autres systèmes.",
         "Contact Flow avec intégration backend||Terme de centre de contact quand logique + traitement des données sont combinés."
+      ],
+      "e2eTitle": "Que signifie de bout en bout ?",
+      "e2eDefinition": "De bout en bout signifie que l’AI callflow gère l’ensemble du cycle de conversation et de processus – du premier appel aux actions post‑appel documentées – sans transferts manuels.",
+      "e2eIncludesTitle": "Comprend",
+      "e2eIncludes": [
+        "Prise d’appel, routage, identification",
+        "Reconnaissance d’intentions, capture dialogique de données",
+        "Logique de processus : décisions, règles, escalades",
+        "Intégrations systèmes : CRM/ERP/Helpdesk/Calendrier/Webhooks",
+        "Actions : réservations, tickets, commandes, écritures de données",
+        "Conformité : annonces, consentements, RGPD",
+        "Qualité : transcription, KPI, monitoring/alertes",
+        "Post‑traitement : relances, email/SMS, mises à jour CRM",
+        "Boucle d’apprentissage : évaluation et ajustements"
+      ],
+      "e2eCriteriaTitle": "Critères mesurables",
+      "e2eCriteria": [
+        "≥95% d’achèvements de processus sans reprise manuelle (selon cas d’usage)",
+        "<3% de taux de repli/erreurs de validation",
+        "Documentation complète incl. horodatage",
+        "SLA et parcours d’escalade définis"
       ],
       "noteLabel": "Note :",
       "note": "Si l'analyse, le nettoyage, l'extraction de données et les automatisations après l'appel sont inclus, on parle d'un flux de conversation – c'est un processus de bout en bout avant, pendant et après l'appel.",
@@ -281,7 +302,7 @@
     "privacy": "Politique de Confidentialité",
     "terms": "Conditions d'Utilisation",
     "imprint": "Mentions Légales",
-    "description": "Agents vocaux IA pour la communication client automatisée. Nous révolutionnons la façon dont les entreprises téléphonent.",
+    "description": "Les AI callflows orchestrent voix, logique, données & actions — votre conversation flow de bout en bout.",
     "product": "Produit",
     "pricing": "Tarifs",
     "faq": "FAQ",

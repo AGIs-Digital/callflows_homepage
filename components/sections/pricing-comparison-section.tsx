@@ -21,7 +21,7 @@ const Solution = ({ title, icon, description, pros, cons, isHighlighted = false 
       className={cn(
         "relative rounded-xl border border-border p-6 transition-all",
         isHighlighted 
-          ? "bg-gradient-to-br from-primary/5 to-accent/5 shadow-lg" 
+          ? "bg-card shadow-lg ring-1 ring-primary/20" 
           : "bg-card hover:shadow-md"
       )}
     >
@@ -98,9 +98,17 @@ export function PricingComparisonSection() {
           cons: ["Hohe Kosten pro Gespräch", "Qualitätsschwankungen", "Geringeres Produktwissen", "Komplexe Vertragsgestaltung"]
         },
         callflows: {
-          title: "KI-callflow",
-          description: "KI-basierte Sprachagenten für automatisierte Telefonie.",
-          pros: ["Eigenständig denken und handeln", "Natürliche Gesprächsführung", "Automation von Routineaufgaben", "Nahtlose Systemintegration", "Kostengünstig und unkompliziert", "24/7 Verfügbarkeit", "Kein Vorwissen notwendig"],
+          title: "KI‑callflows",
+          description: "KI‑callflows orchestrieren Stimme, Prozesslogik, Daten und Aktionen – Ende‑zu‑Ende automatisierte Telefonprozesse.",
+          pros: [
+            "Orchestriert Stimme, Logik & Daten",
+            "Natürliche Dialoge, Rückfragen, Validierung",
+            "Automatisiert Routine & triggert Aktionen",
+            "Nahtlose System‑Integrationen (CRM/ERP/Helpdesk)",
+            "Skalierbar und kosteneffizient",
+            "24/7 verfügbar",
+            "Kein Vorwissen notwendig"
+          ],
           cons: []
         }
       },
@@ -124,9 +132,17 @@ export function PricingComparisonSection() {
           cons: ["High costs per call", "Quality fluctuations", "Less product knowledge", "Complex contract design"]
         },
         callflows: {
-          title: "AI-callflow",
-          description: "AI-based voice agents for automated telephony.",
-          pros: ["Think and act independently", "Natural conversation", "Automation of routine tasks", "Seamless system integration", "Cost-effective and uncomplicated", "24/7 availability", "No prior knowledge required"],
+          title: "AI callflows",
+          description: "AI callflows orchestrate voice, process logic, data and actions – end‑to‑end automated phone processes.",
+          pros: [
+            "Orchestrates voice, logic & data",
+            "Natural dialogues, follow‑ups, validation",
+            "Automates routine and triggers actions",
+            "Seamless integrations (CRM/ERP/Helpdesk)",
+            "Scalable and cost‑efficient",
+            "24/7 availability",
+            "No prior expertise required"
+          ],
           cons: []
         }
       },
@@ -150,9 +166,17 @@ export function PricingComparisonSection() {
           cons: ["Coûts élevés par appel", "Fluctuations de qualité", "Moins de connaissance produit", "Conception contractuelle complexe"]
         },
         callflows: {
-          title: "IA-callflow",
-          description: "Agents vocaux basés sur l'IA pour la téléphonie automatisée.",
-          pros: ["Penser et agir de manière autonome", "Conversation naturelle", "Automatisation des tâches routinières", "Intégration système transparente", "Rentable et simple", "Disponibilité 24/7", "Aucune connaissance préalable requise"],
+          title: "AI callflows",
+          description: "Les AI callflows orchestrent la voix, la logique de processus, les données et les actions – processus téléphoniques automatisés de bout en bout.",
+          pros: [
+            "Orchestre voix, logique & données",
+            "Dialogues naturels, relances, validation",
+            "Automatise la routine & déclenche des actions",
+            "Intégrations transparentes (CRM/ERP/Helpdesk)",
+            "Évolutif et rentable",
+            "Disponible 24/7",
+            "Aucune expertise préalable requise"
+          ],
           cons: []
         }
       },
@@ -176,9 +200,17 @@ export function PricingComparisonSection() {
           cons: ["Altos costos por llamada", "Fluctuaciones de calidad", "Menor conocimiento del producto", "Diseño contractual complejo"]
         },
         callflows: {
-          title: "IA-callflow",
-          description: "Agentes de voz basados en IA para telefonía automatizada.",
-          pros: ["Pensar y actuar de forma independiente", "Conversación natural", "Automatización de tareas rutinarias", "Integración de sistema sin problemas", "Rentable y sin complicaciones", "Disponibilidad 24/7", "No se requiere conocimiento previo"],
+          title: "AI callflows",
+          description: "Los AI callflows orquestan voz, lógica de procesos, datos y acciones – procesos telefónicos automatizados de extremo a extremo.",
+          pros: [
+            "Orquesta voz, lógica y datos",
+            "Diálogos naturales, repreguntas, validación",
+            "Automatiza rutina y dispara acciones",
+            "Integraciones transparentes (CRM/ERP/Helpdesk)",
+            "Escalable y eficiente en costos",
+            "Disponible 24/7",
+            "Sin experiencia previa requerida"
+          ],
           cons: []
         }
       }
@@ -188,7 +220,7 @@ export function PricingComparisonSection() {
   };
   
   return (
-    <section className="py-24 bg-gradient-to-b from-secondary/10 via-background to-background">
+    <section className="py-24 bg-gradient-to-b from-secondary/10 via-tertiary/70 to-background">
       <div className="container max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">

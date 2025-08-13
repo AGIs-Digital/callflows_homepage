@@ -28,8 +28,8 @@
       "headline1": "Overwhelmed with standard calls?",
       "headline2": "Too little time for important tasks?",
       "description": "While you're drowning in call chaos, the really important tasks get lost – time for a revolution!",
-      "solution": "With AI Telephony",
-      "solutionDescription": "From sales to marketing to support – automate your customer communication processes with us.",
+      "solution": "With AI callflows",
+      "solutionDescription": "AI callflows = your conversation flow: natural dialogues, process logic & integrations — end‑to‑end.",
       "cta": "Free Consultation",
       "widgetUnavailable": "Widget temporarily unavailable",
       "widgetUnavailableDescription": "Don't worry - this sometimes happens with live demos"
@@ -116,7 +116,7 @@
     "communicationTitle": "Communication",
     "communicationItems": [
       "Real-time bookings – Instant appointment scheduling",
-      "Multi-channel handling – Up to 100+ simultaneous calls",
+      "Multi-channel handling – Up to 1,000 simultaneous calls per minute",
       "24/7 available – No waiting times or breaks",
       "Intelligent call forwarding when needed"
     ],
@@ -191,6 +191,27 @@
         "Post‑Call Processing (PCP)||Everything after the call: analytics, cleanup, classification, triggers.",
         "Conversational Automation Pipeline||When post‑processing is highly automated and integrated with other systems.",
         "Contact Flow with backend integration||Contact‑center term when logic + data processing are combined."
+      ],
+      "e2eTitle": "What does end‑to‑end mean?",
+      "e2eDefinition": "End‑to‑end means the AI callflow handles the entire conversation and process lifecycle – from the first ring to documented post‑call actions – with no manual handoffs.",
+      "e2eIncludesTitle": "Includes",
+      "e2eIncludes": [
+        "Call acceptance, routing, identification",
+        "Intent recognition, dialogic data capture",
+        "Process logic: decisions, rules, escalations",
+        "System integrations: CRM/ERP/Helpdesk/Calendar/Webhooks",
+        "Actions: bookings, tickets, orders, data writes",
+        "Compliance: announcements, consents, GDPR",
+        "Quality: transcript, KPIs, monitoring/alerts",
+        "Post‑call processing: follow‑ups, email/SMS, CRM updates",
+        "Learning loop: evaluation and fine‑tuning"
+      ],
+      "e2eCriteriaTitle": "Measurable criteria",
+      "e2eCriteria": [
+        "≥95% process completions without manual rework (per use case)",
+        "<3% fallback/validation error rate",
+        "Complete documentation incl. timestamps",
+        "Defined SLAs and escalation paths"
       ],
       "noteLabel": "Note:",
       "note": "If analytics, cleanup, data extraction and automations after the call are included, we speak of a conversation flow – it is an end‑to‑end process before, during and after the call.",
@@ -281,7 +302,7 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "imprint": "Legal Notice",
-    "description": "AI-powered voice agents for automated customer communication. We revolutionize how companies make phone calls.",
+    "description": "AI callflows orchestrate voice, logic, data & actions — your end‑to‑end conversation flow.",
     "product": "Product",
     "pricing": "Pricing",
     "faq": "FAQ",

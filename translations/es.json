@@ -28,8 +28,8 @@
       "headline1": "¿Abrumado con llamadas estándar?",
       "headline2": "¿Muy poco tiempo para tareas importantes?",
       "description": "Mientras se ahoga en el caos de las llamadas, las tareas realmente importantes se pierden: ¡es hora de una revolución!",
-      "solution": "Con Telefonía IA",
-      "solutionDescription": "Desde ventas hasta marketing y soporte: automatice sus procesos de comunicación con clientes con nosotros.",
+      "solution": "Con AI callflows",
+      "solutionDescription": "AI callflows = tu conversation flow: diálogos naturales, lógica de procesos e integraciones — de extremo a extremo.",
       "cta": "Consulta Gratuita",
       "widgetUnavailable": "Widget temporalmente no disponible",
       "widgetUnavailableDescription": "No se preocupe - esto a veces sucede con las demos en vivo"
@@ -116,7 +116,7 @@
     "communicationTitle": "Comunicación",
     "communicationItems": [
       "Reservas en tiempo real – Programación instantánea de citas",
-      "Manejo multicanal – Hasta 100+ llamadas simultáneas",
+      "Manejo multicanal – Hasta 1.000 llamadas simultáneas por minuto",
       "Disponible 24/7 – Sin tiempos de espera o pausas",
       "Transferencia inteligente de llamadas cuando sea necesario"
     ],
@@ -191,6 +191,27 @@
         "Post‑Call Processing (PCP)||Todo lo que sucede después de la llamada: análisis, limpieza de datos, clasificación, disparadores.",
         "Conversational Automation Pipeline||Cuando el post‑proceso está altamente automatizado e integrado con otros sistemas.",
         "Contact Flow con integración backend||Término del entorno de contact center cuando se combinan lógica + procesamiento de datos."
+      ],
+      "e2eTitle": "¿Qué significa de extremo a extremo?",
+      "e2eDefinition": "De extremo a extremo significa que el AI callflow gestiona todo el ciclo de conversación y proceso – desde el primer timbrazo hasta las acciones posteriores documentadas – sin traspasos manuales.",
+      "e2eIncludesTitle": "Incluye",
+      "e2eIncludes": [
+        "Aceptación de llamada, enrutamiento, identificación",
+        "Reconocimiento de intención, captura de datos en diálogo",
+        "Lógica de procesos: decisiones, reglas, escalaciones",
+        "Integraciones de sistemas: CRM/ERP/Helpdesk/Calendario/Webhooks",
+        "Acciones: reservas, tickets, pedidos, escrituras de datos",
+        "Cumplimiento: anuncios, consentimientos, RGPD",
+        "Calidad: transcripción, KPI, monitoreo/alertas",
+        "Post‑proceso: seguimientos, email/SMS, actualizaciones de CRM",
+        "Bucle de aprendizaje: evaluación y afinado"
+      ],
+      "e2eCriteriaTitle": "Criterios medibles",
+      "e2eCriteria": [
+        "≥95% de finalización de procesos sin retrabajo manual (según caso)",
+        "<3% de tasa de fallback/errores de validación",
+        "Documentación completa incl. marcas de tiempo",
+        "SLA y rutas de escalación definidas"
       ],
       "noteLabel": "Nota:",
       "note": "Si se incluyen análisis, limpieza, extracción de datos y automatizaciones tras la llamada, se habla de un flujo de conversación: es un proceso de extremo a extremo antes, durante y después de la llamada.",
@@ -281,7 +302,7 @@
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio",
     "imprint": "Aviso Legal",
-    "description": "Agentes de voz IA para comunicación automatizada con clientes. Revolucionamos la forma en que las empresas hacen llamadas telefónicas.",
+    "description": "Los AI callflows orquestan voz, lógica, datos y acciones — tu conversation flow de extremo a extremo.",
     "product": "Producto",
     "pricing": "Precios",
     "faq": "FAQ",

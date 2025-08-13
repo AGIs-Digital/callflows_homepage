@@ -29,7 +29,7 @@
       "headline2": "Zu wenig Zeit für wichtige Aufgaben?",
       "description": "Während Sie im Anruf‑Chaos versinken, gehen die wirklich wichtigen Aufgaben unter – Zeit für eine neue Generation: KI‑callflows!",
       "solution": "Mit KI‑callflows",
-      "solutionDescription": "Von Sales über Marketing bis Support – automatisieren Sie mit KI‑callflows Ihre Kundenprozesse. Unser Ansatz verbindet natürliche Dialoge mit echter Prozesslogik und System‑Integrationen.",
+      "solutionDescription": "KI‑callflows = Ihr Conversation Flow: natürliche Dialoge, Prozesslogik & Integrationen – Ende‑zu‑Ende.",
       "cta": "Kostenlose Beratung",
       "widgetUnavailable": "Widget vorübergehend nicht verfügbar",
       "widgetUnavailableDescription": "Keine Sorge - das passiert manchmal bei Live-Demos"
@@ -116,7 +116,7 @@
     "communicationTitle": "Kommunikation",
     "communicationItems": [
       "Echtzeitbuchungen – Sofortige Terminvereinbarung",
-      "Multichannel-Handling – Bis zu 100+ gleichzeitige Anrufe",
+      "Multichannel-Handling – Bis zu 1.000 gleichzeitige Anrufe pro Minute",
       "24/7 verfügbar – Keine Wartezeiten oder Pausen",
       "Intelligente Anrufweiterleitung bei Bedarf"
     ],
@@ -191,6 +191,27 @@
         "Post‑Call Processing (PCP)||Alles, was nach dem Gespräch passiert: Auswertung, Datenbereinigung, Klassifizierung, Trigger.",
         "Conversational Automation Pipeline||Wenn die Nachbearbeitung stark automatisiert ist und mit anderen Systemen integriert ist.",
         "Contact Flow mit Backend‑Integration||Bezeichnung im Contact‑Center‑Umfeld, wenn Logik + Datenverarbeitung verbunden sind."
+      ],
+      "e2eTitle": "Was bedeutet Ende‑zu‑Ende?",
+      "e2eDefinition": "Ende‑zu‑Ende bedeutet: Der KI‑callflow übernimmt den vollständigen Gesprächs‑ und Prozessfluss – vom ersten Klingeln bis zur dokumentierten Nachbearbeitung – ohne manuelle Zwischenschritte.",
+      "e2eIncludesTitle": "Umfasst",
+      "e2eIncludes": [
+        "Anrufannahme, Routing, Identifikation",
+        "Intent‑Erkennung, dialogische Datenerfassung",
+        "Prozesslogik: Entscheidungen, Regeln, Eskalationen",
+        "System‑Integrationen: CRM/ERP/Helpdesk/Kalender/Webhooks",
+        "Aktionen: Termine, Tickets, Bestellungen, Daten schreiben",
+        "Compliance: Ansagen, Einwilligungen, DSGVO",
+        "Qualität: Transkript, KPIs, Monitoring/Alerts",
+        "Post‑Call Processing: Follow‑ups, E‑Mails/SMS, CRM‑Updates",
+        "Lern‑Loop: Auswertung und Feintuning"
+      ],
+      "e2eCriteriaTitle": "Messbare Kriterien",
+      "e2eCriteria": [
+        "≥95% Prozessabschlüsse ohne manuelle Nacharbeit (Use‑Case‑abhängig)",
+        "<3% Fallback‑/Fehlerquote bei Validierungen",
+        "Lückenlose Dokumentation inkl. Zeitstempel",
+        "Definierte SLAs und Eskalationspfade"
       ],
       "noteLabel": "Merke:",
       "note": "Sobald Analyse, Bereinigung, Datenextraktion und Automationen nach dem Gespräch dazugehören, spricht man von einem Conversation Flow – es ist ein Gesamtprozess vor, während und nach dem Call.",
@@ -280,7 +301,7 @@
     "privacy": "Datenschutz",
     "terms": "AGB",
     "imprint": "Impressum",
-    "description": "KI‑callflows für automatisierte Kundenkommunikation. Wir revolutionieren, wie Unternehmen telefonieren.",
+    "description": "KI‑callflows orchestrieren Stimme, Logik, Daten & Aktionen – Ihr Conversation Flow Ende‑zu‑Ende.",
     "product": "Produkt",
     "pricing": "Preise",
     "faq": "FAQ",

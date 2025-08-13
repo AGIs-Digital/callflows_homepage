@@ -17,8 +17,8 @@ export default function PricingPage() {
   return (
     <>
       <Head>
-        <title>Preise für KI-Telefonie und Voice Agents | callflows</title>
-        <meta name="description" content="Transparente Preise für KI Voice Agents. Minutenbasierte Abrechnung ohne versteckte Kosten, flexible Pakete und 1 Monat kostenlose Pilotphase. Jetzt Kosten berechnen!" />
+        <title>Preise für KI‑callflows | callflows</title>
+        <meta name="description" content="Transparente Preise für KI‑callflows: Prototyp, Pilotmonat inkl. KI‑Minuten, sekundengenaue Abrechnung nach Go‑Live. Erweiterungen nach Bedarf." />
       </Head>
       <main className="bg-background">
       <SiteHeader />
@@ -36,7 +36,7 @@ export default function PricingPage() {
                 {t('pricing.pageTitle')}
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Transparente Preise für KI Voice Agents ohne versteckte Kosten
+                Transparente Preise für KI‑callflows ohne versteckte Kosten
               </p>
             </div>
           </div>
