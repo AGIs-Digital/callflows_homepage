@@ -193,7 +193,7 @@
         "Contact Flow with backend integration||Contact‑center term when logic + data processing are combined."
       ],
       "noteLabel": "Note:",
-      "note": "If analytics, cleanup, data extraction and automations after the call are included, we speak of call lifecycle or conversational automation pipeline – it is an end‑to‑end process before, during and after the call.",
+      "note": "If analytics, cleanup, data extraction and automations after the call are included, we speak of a conversation flow – it is an end‑to‑end process before, during and after the call.",
       "benefitsTitle": "Benefits",
       "benefits": [
         "24/7 availability and shorter wait times",
@@ -339,7 +339,7 @@
       "cons": ["High costs per call", "Quality fluctuations", "Less product knowledge", "Complex contract design"]
     },
     "callflows": {
-      "title": "callflows",
+      "title": "AI-callflow",
       "description": "AI callflow for automated processes",
       "pros": ["Think and act independently", "Natural conversation", "Automation of routine tasks", "Seamless system integration", "Cost-effective and uncomplicated", "24/7 availability", "No prior knowledge required"]
     },

@@ -98,7 +98,7 @@ export function PricingComparisonSection() {
           cons: ["Hohe Kosten pro Gespräch", "Qualitätsschwankungen", "Geringeres Produktwissen", "Komplexe Vertragsgestaltung"]
         },
         callflows: {
-          title: "callflows",
+          title: "KI-callflow",
           description: "KI-basierte Sprachagenten für automatisierte Telefonie.",
           pros: ["Eigenständig denken und handeln", "Natürliche Gesprächsführung", "Automation von Routineaufgaben", "Nahtlose Systemintegration", "Kostengünstig und unkompliziert", "24/7 Verfügbarkeit", "Kein Vorwissen notwendig"],
           cons: []
@@ -124,7 +124,7 @@ export function PricingComparisonSection() {
           cons: ["High costs per call", "Quality fluctuations", "Less product knowledge", "Complex contract design"]
         },
         callflows: {
-          title: "callflows",
+          title: "AI-callflow",
           description: "AI-based voice agents for automated telephony.",
           pros: ["Think and act independently", "Natural conversation", "Automation of routine tasks", "Seamless system integration", "Cost-effective and uncomplicated", "24/7 availability", "No prior knowledge required"],
           cons: []
@@ -150,7 +150,7 @@ export function PricingComparisonSection() {
           cons: ["Coûts élevés par appel", "Fluctuations de qualité", "Moins de connaissance produit", "Conception contractuelle complexe"]
         },
         callflows: {
-          title: "callflows",
+          title: "IA-callflow",
           description: "Agents vocaux basés sur l'IA pour la téléphonie automatisée.",
           pros: ["Penser et agir de manière autonome", "Conversation naturelle", "Automatisation des tâches routinières", "Intégration système transparente", "Rentable et simple", "Disponibilité 24/7", "Aucune connaissance préalable requise"],
           cons: []
@@ -176,7 +176,7 @@ export function PricingComparisonSection() {
           cons: ["Altos costos por llamada", "Fluctuaciones de calidad", "Menor conocimiento del producto", "Diseño contractual complejo"]
         },
         callflows: {
-          title: "callflows",
+          title: "IA-callflow",
           description: "Agentes de voz basados en IA para telefonía automatizada.",
           pros: ["Pensar y actuar de forma independiente", "Conversación natural", "Automatización de tareas rutinarias", "Integración de sistema sin problemas", "Rentable y sin complicaciones", "Disponibilidad 24/7", "No se requiere conocimiento previo"],
           cons: []

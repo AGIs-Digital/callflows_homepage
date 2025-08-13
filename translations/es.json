@@ -193,7 +193,7 @@
         "Contact Flow con integración backend||Término del entorno de contact center cuando se combinan lógica + procesamiento de datos."
       ],
       "noteLabel": "Nota:",
-      "note": "Si se incluyen análisis, limpieza, extracción de datos y automatizaciones tras la llamada, se habla de ciclo de vida de llamada o de pipeline de automatización conversacional: es un proceso de extremo a extremo antes, durante y después de la llamada.",
+      "note": "Si se incluyen análisis, limpieza, extracción de datos y automatizaciones tras la llamada, se habla de un flujo de conversación: es un proceso de extremo a extremo antes, durante y después de la llamada.",
       "benefitsTitle": "Beneficios",
       "benefits": [
         "Disponibilidad 24/7 y menores tiempos de espera",
@@ -339,7 +339,7 @@
       "cons": ["Altos costos por llamada", "Fluctuaciones de calidad", "Menor conocimiento del producto", "Diseño contractual complejo"]
     },
     "callflows": {
-      "title": "callflows",
+      "title": "IA-callflow",
       "description": "Agentes de voz basados en IA para telefonía automatizada.",
       "pros": ["Pensar y actuar de forma independiente", "Conversación natural", "Automatización de tareas rutinarias", "Integración de sistema sin problemas", "Rentable y sin complicaciones", "Disponibilidad 24/7", "No se requiere conocimiento previo"]
     },

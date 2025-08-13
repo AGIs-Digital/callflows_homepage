@@ -193,7 +193,7 @@
         "Contact Flow mit Backend‑Integration||Bezeichnung im Contact‑Center‑Umfeld, wenn Logik + Datenverarbeitung verbunden sind."
       ],
       "noteLabel": "Merke:",
-      "note": "Sobald Analyse, Bereinigung, Datenextraktion und Automationen nach dem Gespräch dazugehören, spricht man eher von Call Lifecycle oder Conversational Automation Pipeline – es ist ein Gesamtprozess vor, während und nach dem Call.",
+      "note": "Sobald Analyse, Bereinigung, Datenextraktion und Automationen nach dem Gespräch dazugehören, spricht man von einem Conversation Flow – es ist ein Gesamtprozess vor, während und nach dem Call.",
       "benefitsTitle": "Vorteile",
       "benefits": [
         "24/7 Erreichbarkeit und kürzere Wartezeiten",
@@ -338,7 +338,7 @@
       "cons": ["Hohe Kosten pro Gespräch", "Qualitätsschwankungen", "Geringeres Produktwissen", "Komplexe Vertragsgestaltung"]
     },
     "callflows": {
-      "title": "callflows",
+      "title": "KI-callflow",
     "description": "KI‑callflow für automatische Prozesse",
       "pros": ["Eigenständig denken und handeln", "Natürliche Gesprächsführung", "Automation von Routineaufgaben", "Nahtlose Systemintegration", "Kostengünstig und unkompliziert", "24/7 Verfügbarkeit", "Kein Vorwissen notwendig"]
     },
