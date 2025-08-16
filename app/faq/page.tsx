@@ -2,18 +2,12 @@
 
 import { LegalLayout } from "@/components/legal/layout";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { generateFAQSchema } from "@/lib/seo/schema";
-import { useI18n } from "@/lib/i18n";
-import Script from "next/script";
-import Head from "next/head";
 
+import { useI18n } from "@/lib/i18n";
 // Metadata wird jetzt dynamisch über i18n generiert
 
 export default function FAQPage() {
   const { t } = useI18n();
-  
-  // Generiere das FAQ Schema mit übersetzten Texten
-  const faqSchema = generateFAQSchema();
   
   // FAQ-Daten aus den Übersetzungen
   const faqItems = Array.from({ length: 14 }, (_, i) => ({
@@ -23,18 +17,6 @@ export default function FAQPage() {
   
   return (
     <>
-      <Head>
-        <title>FAQ - Häufige Fragen zu KI-Telefonie und Voice Agents | callflows</title>
-        <meta name="description" content="Antworten auf häufige Fragen zu KI-Telefonie, Voice Agents und automatisierter Kundenkommunikation. Alles über Kosten, Integration, Datenschutz und technische Anforderungen." />
-      </Head>
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema)
-        }}
-      />
-      
       <LegalLayout
         title={t('faq.pageTitle')}
         subtitle={t('faq.pageSubtitle')}
