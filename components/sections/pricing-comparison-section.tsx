@@ -106,7 +106,6 @@ export function PricingComparisonSection() {
             "Automatisiert Routine & triggert Aktionen",
             "Nahtlose System‑Integrationen (CRM/ERP/Helpdesk)",
             "Skalierbar und kosteneffizient",
-            "24/7 verfügbar",
             "Kein Vorwissen notwendig"
           ],
           cons: []
@@ -140,7 +139,6 @@ export function PricingComparisonSection() {
             "Automates routine and triggers actions",
             "Seamless integrations (CRM/ERP/Helpdesk)",
             "Scalable and cost‑efficient",
-            "24/7 availability",
             "No prior expertise required"
           ],
           cons: []
@@ -174,7 +172,6 @@ export function PricingComparisonSection() {
             "Automatise la routine & déclenche des actions",
             "Intégrations transparentes (CRM/ERP/Helpdesk)",
             "Évolutif et rentable",
-            "Disponible 24/7",
             "Aucune expertise préalable requise"
           ],
           cons: []
@@ -208,7 +205,6 @@ export function PricingComparisonSection() {
             "Automatiza rutina y dispara acciones",
             "Integraciones transparentes (CRM/ERP/Helpdesk)",
             "Escalable y eficiente en costos",
-            "Disponible 24/7",
             "Sin experiencia previa requerida"
           ],
           cons: []
