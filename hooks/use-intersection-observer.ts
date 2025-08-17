@@ -15,11 +15,11 @@ interface UseIntersectionObserverResult {
 
 export function useIntersectionObserver(
   props: UseIntersectionObserverProps = {}
-): [RefObject<HTMLDivElement>, UseIntersectionObserverResult] {
+): [RefObject<HTMLDivElement | null>, UseIntersectionObserverResult] {
   const { threshold = 0, rootMargin = "0px", freezeOnceVisible = false } = props;
   const [entry, setEntry] = useState<IntersectionObserverEntry>();
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const elementRef = useRef<HTMLDivElement>(null);
+  const elementRef = useRef<HTMLDivElement | null>(null);
   const frozen = isIntersecting && freezeOnceVisible;
 
   const updateEntry = ([entry]: IntersectionObserverEntry[]): void => {

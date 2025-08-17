@@ -42,7 +42,7 @@ export function HeroSection() {
   };
   
   // Performance Monitoring
-  const startTime = useRef<number>();
+  const startTime = useRef<number>(0);
   
   // Widget-Loading-Handler
   const handleWidgetLoad = useCallback(() => {

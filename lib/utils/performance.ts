@@ -1,8 +1,4 @@
-declare global {
-  interface Window {
-    gtag?: (...args: any[]) => void;
-  }
-}
+// gtag wird bereits in analytics.ts deklariert
 
 export function measurePerformance(metricName: string, value?: number) {
   if (typeof window === 'undefined') return;
@@ -44,8 +40,10 @@ export function measureWidgetPerformance() {
     // First Input Delay (FID)
     new PerformanceObserver((entryList) => {
       const entries = entryList.getEntries();
-      entries.forEach((entry) => {
-        measurePerformance('widget_fid', entry.processingStart - entry.startTime);
+      entries.forEach((entry: any) => {
+        if (entry.processingStart) {
+          measurePerformance('widget_fid', entry.processingStart - entry.startTime);
+        }
       });
     }).observe({ entryTypes: ['first-input'] });
 
