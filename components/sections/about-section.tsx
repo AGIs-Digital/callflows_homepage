@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check } from "@/lib/icons";
 import { useI18n } from "@/lib/i18n";
 
 export function AboutSection() {

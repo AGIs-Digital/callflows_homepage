@@ -7,7 +7,7 @@ import { WavyBackground } from "@/components/ui/wavy-background";
 import { WidgetSkeleton } from "@/components/ui/widget-skeleton";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Phone, AlertTriangle } from "lucide-react";
+import { ArrowRight, Calendar, Phone, AlertTriangle } from "@/lib/icons";
 import { ZohoEmbed } from "@/components/booking/zoho-embed";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { measurePerformance, measureWidgetPerformance } from "@/lib/utils/performance";

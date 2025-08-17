@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Mic, Phone, Volume2 } from "lucide-react";
+import { Mic, Phone, Volume2 } from "@/lib/icons";
 
 interface WidgetSkeletonProps {
   className?: string;

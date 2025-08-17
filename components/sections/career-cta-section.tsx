@@ -2,7 +2,7 @@
 
 import { useI18n } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Lightbulb, Heart } from "lucide-react";
+import { ArrowRight, Users, Lightbulb, Heart } from "@/lib/icons";
 
 export function CareerCtaSection() {
   const { t } = useI18n();

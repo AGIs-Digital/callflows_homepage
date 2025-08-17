@@ -18,6 +18,7 @@ export {
   AlertCircle,
   Check,
   X,
+  Menu,
   ChevronDown,
   ChevronUp,
   ChevronLeft,
@@ -38,5 +39,11 @@ export {
   Users,
   ExternalLink,
   PenTool,
-  AlertTriangle
+  AlertTriangle,
+  Heart,
+  Clock,
+  Headphones,
+  Bot,
+  Mic,
+  Volume2
 } from 'lucide-react';

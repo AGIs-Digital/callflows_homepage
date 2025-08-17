@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, X, Clock, Users, Phone, Headphones, Bot } from "lucide-react";
+import { Check, X, Clock, Users, Phone, Headphones, Bot } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
 

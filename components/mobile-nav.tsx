@@ -3,13 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, BarChart3, Users } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useI18n } from "@/lib/i18n";
 import { useAuthStore } from "@/lib/auth/auth-store";
-import { BarChart3, Users } from "lucide-react";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);

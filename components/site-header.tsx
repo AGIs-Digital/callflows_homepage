@@ -13,7 +13,7 @@ import { ZohoEmbed } from "@/components/booking/zoho-embed";
 import { useI18n } from "@/lib/i18n";
 import { useAuthStore } from "@/lib/auth/auth-store";
 import { Button } from "@/components/ui/button";
-import { LogOut, User, BarChart3 } from "lucide-react";
+import { LogOut, User, BarChart3 } from "@/lib/icons";
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
