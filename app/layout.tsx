@@ -100,6 +100,10 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
+        {/* Synthflow Widget Performance Optimization */}
+        <link rel="preconnect" href="https://widget.synthflow.ai" />
+        <link rel="dns-prefetch" href="https://widget.synthflow.ai" />
+        
         {/* Security Headers */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="X-Frame-Options" content="DENY" />

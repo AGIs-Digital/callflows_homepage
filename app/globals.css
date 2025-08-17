@@ -436,14 +436,19 @@ footer {
   border: none;
   border-radius: 0.75rem;
   transition: opacity 0.3s ease-in-out;
+  /* Optimiere iframe für Performance */
+  contain: layout style paint;
+  will-change: opacity;
 }
 
 .iframe-widget.loading {
   opacity: 0;
+  pointer-events: none;
 }
 
 .iframe-widget.loaded {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .hero-title-spacing {
