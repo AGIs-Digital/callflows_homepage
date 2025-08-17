@@ -7,6 +7,9 @@ const envSchema = z.object({
   ZOHO_SMTP_PORT: z.string().min(1),
   ZOHO_SMTP_USER: z.string().email(),
   ZOHO_SMTP_PASS: z.string().min(1),
+  // Make.com Webhook Integration
+  MAKE_WEBHOOK_URL: z.string().url().optional(),
+  MAKE_WEBHOOK_SECRET: z.string().optional(),
 });
 
 export const env = envSchema.parse({
@@ -15,4 +18,6 @@ export const env = envSchema.parse({
   ZOHO_SMTP_PORT: process.env.ZOHO_SMTP_PORT,
   ZOHO_SMTP_USER: process.env.ZOHO_SMTP_USER,
   ZOHO_SMTP_PASS: process.env.ZOHO_SMTP_PASS,
+  MAKE_WEBHOOK_URL: process.env.MAKE_WEBHOOK_URL,
+  MAKE_WEBHOOK_SECRET: process.env.MAKE_WEBHOOK_SECRET,
 });

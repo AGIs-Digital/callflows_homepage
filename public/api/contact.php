@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
             .header { background-color: #004AAD; padding: 20px; text-align: center; }
             .header img { max-width: 200px; }
-            .content { background-color: #ffffff; padding: 30px; border-radius: 8px; margin-top: 20px; }
+            .content { background-color: #FFFFF0; padding: 30px; border-radius: 8px; margin-top: 20px; }
             .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
             .field { margin-bottom: 20px; }
             .field-label { font-weight: bold; color: #004AAD; }

@@ -1,31 +1,16 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback } from "react";
-import { cn } from "@/lib/utils";
 import { AnimatedText } from "@/components/ui/animated-text";
 import { WavyBackground } from "@/components/ui/wavy-background";
-import { WidgetSkeleton } from "@/components/ui/widget-skeleton";
+import { CallTestWidget } from "@/components/call-test/call-test-widget";
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Phone, AlertTriangle } from "@/lib/icons";
+import { ArrowRight, Calendar, Phone } from "@/lib/icons";
 import { ZohoEmbed } from "@/components/booking/zoho-embed";
-import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
-import { measurePerformance, measureWidgetPerformance } from "@/lib/utils/performance";
 import { useI18n } from "@/lib/i18n";
 
 export function HeroSection() {
   const { theme } = useTheme();
   const { t, locale } = useI18n();
-  const [showWidget, setShowWidget] = useState(true);
-  const [widgetError, setWidgetError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [shouldLoadWidget, setShouldLoadWidget] = useState(false);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [widgetRef, { isIntersecting }] = useIntersectionObserver({
-    threshold: 0.1,
-    rootMargin: "100px",
-    freezeOnceVisible: true
-  });
   
   // Animierte Wörter basierend auf der Sprache
   const getAnimatedWords = () => {
@@ -40,39 +25,6 @@ export function HeroSection() {
         return ["Einfach.", "Automatisch.", "Erfolgreich."];
     }
   };
-  
-  // Performance Monitoring
-  const startTime = useRef<number>(0);
-  
-  // Widget-Loading-Handler
-  const handleWidgetLoad = useCallback(() => {
-    setIsLoading(false);
-    if (startTime.current) {
-      const loadTime = performance.now() - startTime.current;
-      measurePerformance(`widget_load_time:${loadTime}ms`);
-    }
-  }, []);
-
-  const handleWidgetError = useCallback(() => {
-    setWidgetError(true);
-    setIsLoading(false);
-    measurePerformance('widget_load_error');
-  }, []);
-
-  // Lazy Loading Logic
-  useEffect(() => {
-    if (isIntersecting && !shouldLoadWidget) {
-      // Verzögerung von 500ms für bessere UX
-      const timer = setTimeout(() => {
-        setShouldLoadWidget(true);
-        startTime.current = performance.now();
-        measurePerformance('widget_load_start');
-        measureWidgetPerformance(); // Starte Core Web Vitals Monitoring
-      }, 500);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [isIntersecting, shouldLoadWidget]);
 
   return (
     <div className="relative min-h-[calc(100vh-80px)] overflow-hidden">
@@ -118,69 +70,22 @@ export function HeroSection() {
             </div>
           </div>
           
-          {/* Rechte Spalte - KI-Widget */}
+          {/* Rechte Spalte - Call Test Widget (Performance optimiert) */}
           <div 
-            ref={widgetRef}
-            className="relative z-20 h-[450px] lg:h-[600px] rounded-xl border border-border/50 bg-card/30 flex items-center justify-center overflow-hidden"
+            className="relative z-20 flex items-center justify-center"
             role="region"
-            aria-label="KI Voice Agent Demo"
-            aria-describedby="widget-description"
+            aria-label="KI Voice Agent Live Test"
+            aria-describedby="call-widget-description"
           >
-            <div id="widget-description" className="sr-only">
-              Interaktive Demo unseres KI Voice Agents. Sie können hier direkt mit unserem intelligenten Telefonassistenten sprechen und testen.
+            <div id="call-widget-description" className="sr-only">
+              Live-Test unseres KI Voice Agents. Geben Sie Ihre Telefonnummer ein und unser intelligenter Assistent ruft Sie sofort an.
             </div>
-            {showWidget && !widgetError ? (
-              <>
-                {!shouldLoadWidget ? (
-                  // Zeige Skeleton bis Widget geladen werden soll
-                  <WidgetSkeleton className="w-full h-full" showAnimations={true} />
-                ) : (
-                  <>
-                    {isLoading && (
-                      <div className="absolute inset-0 z-10">
-                        <WidgetSkeleton className="w-full h-full" showAnimations={true} />
-                      </div>
-                    )}
-                    <iframe 
-                      ref={iframeRef}
-                      id="audio_iframe" 
-                      title="KI Voice Agent Demo - Testen Sie unseren intelligenten Telefonassistenten"
-                      src="https://widget.synthflow.ai/widget/v2/526c890d-a2a8-471a-88ef-b9ba987ad08b/1747756443431x376634649512029800" 
-                      allow="microphone; camera; autoplay; clipboard-write; encrypted-media" 
-                      width="100%" 
-                      height="100%" 
-                      className={cn(
-                        "iframe-widget transition-opacity duration-300",
-                        isLoading ? "opacity-0" : "opacity-100"
-                      )}
-                      onLoad={handleWidgetLoad}
-                      onError={handleWidgetError}
-                      loading="lazy"
-                    />
-                  </>
-                )}
-              </>
-            ) : (
-              <div className="text-center p-8 flex flex-col items-center justify-center h-full">
-                <AlertTriangle className="h-12 w-12 text-destructive mb-4" />
-                <h3 className="text-lg font-semibold mb-2">{t('home.hero.widgetUnavailable')}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {t('home.hero.widgetUnavailableDescription')}
-                </p>
-                <Button 
-                  variant="outline" 
-                  onClick={() => {
-                    setWidgetError(false);
-                    setIsLoading(true);
-                    setShouldLoadWidget(true);
-                  }}
-                  className="mt-2"
-                >
-                  Erneut versuchen
-                </Button>
-              </div>
-            )}
+            
+            {/* Neues Performance-optimiertes Call-Test Widget */}
+            <CallTestWidget className="w-full max-w-lg" />
           </div>
+
+
         </div>
       </div>
       

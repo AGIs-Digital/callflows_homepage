@@ -62,7 +62,7 @@ export function PricingIntro() {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
-                    📅 {t('pricing.step3Title')}
+                    📊 {t('pricing.step3Title')}
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
                     {t('pricing.step3Description')}
@@ -77,25 +77,10 @@ export function PricingIntro() {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
-                    📊 {t('pricing.step4Title')}
+                    💰 {t('pricing.step4Title')}
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
                     {t('pricing.step4Description')}
-                  </p>
-                </div>
-              </div>
-
-              {/* Schritt 5 */}
-              <div className="flex items-start gap-4 p-6 bg-card/80 rounded-lg border border-border/50">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
-                  5
-                </div>
-                <div>
-                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
-                    💰 {t('pricing.step5Title')}
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {t('pricing.step5Description')}
                   </p>
                 </div>
               </div>

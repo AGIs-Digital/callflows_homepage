@@ -111,7 +111,7 @@ export function AboutSection() {
           {/* Rechte Spalte - Mission & Features */}
           <div className="space-y-8">
             {/* Unsere Mission zuerst */}
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <div className="bg-warm-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
               <h3 className="text-xl font-semibold text-primary dark:text-primary mb-4">
                 {t('about.mission')}
               </h3>
@@ -126,7 +126,7 @@ export function AboutSection() {
             </div>
             
             {/* Was uns besonders macht danach */}
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+            <div className="bg-warm-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
               <h3 className="text-2xl font-bold text-primary dark:text-primary mb-4">
                 {t('about.special')}
               </h3>

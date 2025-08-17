@@ -48,6 +48,7 @@ jobs:
           cat > .env << EOL
           NEXT_PUBLIC_APP_URL=${{ secrets.PRODUCTION_APP_URL }}
           NEXT_PUBLIC_ENVIRONMENT=production
+          NEXT_PUBLIC_MAKE_WEBHOOK_URL=${{ secrets.MAKE_WEBHOOK_URL }}
           SMTP_HOST=${{ secrets.SMTP_HOST }}
           SMTP_PORT=${{ secrets.SMTP_PORT }}
           SMTP_USER=${{ secrets.SMTP_USER }}

@@ -16,12 +16,14 @@ export function GlossaryBadge({ href = "/glossar/ki-callflow", className }: Glos
   return (
     <HoverCard openDelay={120} closeDelay={100}>
       <HoverCardTrigger asChild>
-        <Badge
-          variant="secondary"
-          className={className + " transition-transform hover:scale-105 cursor-help"}
-        >
-          KI‑callflow
-        </Badge>
+        <Link href={href}>
+          <Badge
+            variant="secondary"
+            className={`${className} transition-transform hover:scale-105 cursor-pointer`}
+          >
+            KI‑callflow
+          </Badge>
+        </Link>
       </HoverCardTrigger>
       <HoverCardContent className="w-80">
         <div className="text-sm text-muted-foreground mb-3 space-y-1">

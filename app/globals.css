@@ -64,11 +64,11 @@
 
 @layer base {
   :root {
-    --background: 0 0% 99.4%;  /* #fdfdfd */
+    --background: 60 100% 97%;  /* #FFFFF0 - warmes Ivory/Cream */
     --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
+    --card: 60 100% 97%;  /* #FFFFF0 - warmes Ivory/Cream */
     --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
+    --popover: 60 100% 97%;  /* #FFFFF0 - warmes Ivory/Cream */
     --popover-foreground: 0 0% 3.9%;
     --primary: 214 100% 34%;
     --primary-foreground: 0 0% 98%;
@@ -196,6 +196,15 @@
 }
 
 @layer components {
+  /* Warmes Ivory/Cream Hintergrund */
+  .bg-warm-white {
+    background-color: #FFFFF0;
+  }
+  
+  .dark .bg-warm-white {
+    background-color: hsl(var(--card));
+  }
+
   .shiny-button {
     @apply relative inline-flex h-12 items-center justify-center rounded-lg 
            bg-gradient-to-r from-primary via-[#0F62D5] to-primary 

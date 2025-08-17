@@ -30,7 +30,7 @@ const Circle = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border dark:border-accent/70 bg-white dark:bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] dark:shadow-[0_0_20px_-12px_rgba(255,255,255,0.1)]",
+        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border dark:border-accent/70 bg-warm-white dark:bg-warm-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] dark:shadow-[0_0_20px_-12px_rgba(255,255,255,0.1)]",
         className,
       )}
     >
@@ -245,7 +245,7 @@ export function IntegrationChallengesSection() {
               {/* callflows Box */}
               <div className="p-6 rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-200/50 hover:border-green-300 cursor-pointer">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-green-200">
+                  <div className="w-8 h-8 rounded-full bg-warm-white flex items-center justify-center border border-green-200">
                     <Image 
                       src="/icon.webp" 
                       alt="callflows" 
@@ -308,7 +308,7 @@ export function IntegrationChallengesSection() {
                 </div>
               </div>
               
-              <CardContent className="p-8 text-center relative z-10 bg-white/10 backdrop-blur-sm">
+              <CardContent className="p-8 text-center relative z-10 bg-warm-white/10 backdrop-blur-sm">
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <CheckCircle className="h-8 w-8 text-green-600 animate-pulse filter drop-shadow-lg" />
                   <h3 className="text-xl font-bold text-primary">{t('integrationChallenges.keyMessage.title')}</h3>

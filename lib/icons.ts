@@ -45,5 +45,7 @@ export {
   Headphones,
   Bot,
   Mic,
-  Volume2
+  Volume2,
+  PlayCircle,
+  Loader2
 } from 'lucide-react';

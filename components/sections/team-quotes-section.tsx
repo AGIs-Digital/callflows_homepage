@@ -43,7 +43,7 @@ export function TeamQuotesSection() {
       name: "Jan Kastning", 
       role: t("about.teamMembers.jan.role"), 
       quote: t("about.teamMembers.jan.quote"), 
-      imgSrc: "/images/jankastning.webp" 
+      imgSrc: undefined // Vorübergehend Silhouette verwenden
     },
   ];
 
@@ -62,7 +62,14 @@ export function TeamQuotesSection() {
                 {m.imgSrc ? (
                   <Image src={m.imgSrc} alt={m.name} fill className="object-cover" />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10" />
+                  <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                    {/* Einfache, elegante Silhouette */}
+                    <div className="w-20 h-20 rounded-full bg-primary/30 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-primary/50 flex items-center justify-center">
+                        <div className="w-6 h-6 rounded-full bg-primary/70"></div>
+                      </div>
+                    </div>
+                  </div>
                 )}
               </div>
               <div className="relative">

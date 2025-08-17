@@ -148,9 +148,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Synthflow Widget Performance Optimization */}
-        <link rel="preconnect" href="https://widget.synthflow.ai" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://widget.synthflow.ai" />
+
         
         {/* Critical CSS Resource Hints */}
         <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />

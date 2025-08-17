@@ -129,15 +129,32 @@ export default function KICallflowPage() {
           </div>
         </section>
 
-        <section className="py-12 bg-gradient-to-b from-primary/10 via-accent/20 to-accent/50 pb-20">
+        <section className="py-16 bg-gradient-to-b from-primary/10 via-accent/20 to-accent/50 pb-24">
           <div className="container max-w-6xl">
-            <div className="rounded-xl border bg-gradient-to-r from-primary/5 via-accent/10 to-primary/5 p-6">
-              <h2 className="text-2xl font-semibold mb-3">{t('glossary.kiCallflow.benefitsTitle')}</h2>
-              <div className="grid md:grid-cols-3 gap-6 text-muted-foreground">
-                {tArray('glossary.kiCallflow.benefits').map((b, i) => (
-                  <div key={i}>{b}</div>
-                ))}
-              </div>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">{t('glossary.kiCallflow.benefitsTitle')}</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                {t('glossary.kiCallflow.benefitsSubtitle')}
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {tArray('glossary.kiCallflow.benefits').map((benefit, i) => (
+                <div key={i} className="group relative">
+                  <div className="h-full p-8 rounded-2xl bg-card/80 border border-border/50 backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/20 hover:-translate-y-1">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span className="text-primary font-bold text-lg">{i + 1}</span>
+                      </div>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-foreground font-semibold text-lg leading-relaxed">
+                        {benefit}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

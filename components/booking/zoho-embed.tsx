@@ -94,7 +94,7 @@ export function ZohoEmbed({
       onClick={closeBooking}
     >
       <div 
-        className="relative w-full max-w-5xl h-[95vh] mx-4 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-200/20"
+        className="relative w-full max-w-5xl h-[95vh] mx-4 bg-warm-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-200/20"
         onClick={(e) => e.stopPropagation()}
         style={{
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1)',
@@ -146,7 +146,7 @@ export function ZohoEmbed({
             className="w-full h-full"
             style={{ 
               borderRadius: '0 0 1rem 1rem',
-              background: 'white'
+              background: '#FFFFF0'
             }}
           />
         </div>

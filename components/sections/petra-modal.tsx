@@ -29,7 +29,7 @@ export function PetraModal({ isOpen, onClose }: PetraModalProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute top-4 right-4 z-10 bg-white/80 hover:bg-white"
+            className="absolute top-4 right-4 z-10 bg-warm-white/80 hover:bg-warm-white"
             onClick={onClose}
           >
             <X className="w-4 h-4" />
