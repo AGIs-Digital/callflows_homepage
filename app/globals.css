@@ -455,6 +455,124 @@ footer {
   line-height: 1.1;
 }
 
+/* ==========================================
+   ACCESSIBILITY IMPROVEMENTS
+   ========================================== */
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .text-foreground {
+    color: #000 !important;
+  }
+  
+  .dark .text-foreground {
+    color: #fff !important;
+  }
+  
+  .border {
+    border-color: #000 !important;
+  }
+  
+  .dark .border {
+    border-color: #fff !important;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-pulse,
+  .animate-bounce,
+  .animate-ping {
+    animation: none !important;
+  }
+}
+
+/* Enhanced Focus Indicators */
+*:focus {
+  outline: 2px solid hsl(var(--ring)) !important;
+  outline-offset: 2px !important;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring)) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring)) !important;
+}
+
+/* Skip-to-Content Styling */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  padding: 8px;
+  text-decoration: none;
+  border: 2px solid hsl(var(--ring));
+  border-radius: 4px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+  top: 6px;
+}
+
+/* Screen Reader Only Content */
+.sr-only-focusable:focus {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+/* Better Button Focus States */
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid hsl(var(--ring)) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring)) !important;
+}
+
+/* Enhanced Link Focus States */
+a:focus-visible {
+  outline: 2px solid hsl(var(--ring)) !important;
+  outline-offset: 2px !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+}
+
+/* Form Input Focus Enhancement */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid hsl(var(--ring)) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring)) !important;
+}
+
+/* Dark Mode Focus Adjustments */
+.dark *:focus-visible {
+  box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring)) !important;
+}
+
 .cookie-banner-z {
   z-index: 200;
 }

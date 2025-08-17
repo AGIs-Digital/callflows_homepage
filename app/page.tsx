@@ -13,25 +13,33 @@ import { ROICalculator } from "@/components/pricing/roi-calculator";
 
 export default function Home() {
   return (
-    <main className="bg-background">
+    <div className="bg-background">
       <SiteHeader />
-      <HeroSection />
-      <IntegrationChallengesSection />
-      <PetraUSPSection />
-      <ProcessSection />
-      <div id="pricecomparison">
-        <PricingComparisonSection />
-      </div>
-      <CTASection />
-      <ROICalculator />
-      <div id="features">
-        <FeaturesSection />
-      </div>
-      <div id="core-features">
-        <CoreFeaturesSection />
-      </div>
-      <CTASectionSecondary />
+      <main 
+        id="main-content" 
+        className="focus:outline-none"
+        role="main"
+        aria-label="Hauptinhalt"
+        tabIndex={-1}
+      >
+        <HeroSection />
+        <IntegrationChallengesSection />
+        <PetraUSPSection />
+        <ProcessSection />
+        <section id="pricecomparison" aria-labelledby="pricing-heading">
+          <PricingComparisonSection />
+        </section>
+        <CTASection />
+        <ROICalculator />
+        <section id="features" aria-labelledby="features-heading">
+          <FeaturesSection />
+        </section>
+        <section id="core-features" aria-labelledby="core-features-heading">
+          <CoreFeaturesSection />
+        </section>
+        <CTASectionSecondary />
+      </main>
       <SiteFooter />
-    </main>
+    </div>
   );
 }

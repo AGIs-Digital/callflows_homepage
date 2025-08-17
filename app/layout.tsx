@@ -4,6 +4,7 @@ import { I18nProvider } from '@/lib/i18n';
 import { CookieBanner } from '@/components/cookie-banner';
 import { Analytics } from '@/components/analytics';
 import { ErrorBoundary } from '@/components/error-boundary';
+import { initializeProductionLogger } from '@/lib/utils/production-logger';
 import { generateMetadata } from '@/lib/seo/metadata';
 import { generateOrganizationSchema, generateProductSchema, generateFAQSchema, generateServiceSchema, generateSoftwareSchema, generateLocalBusinessSchema } from '@/lib/seo/schema';
 import Script from 'next/script';
@@ -65,6 +66,34 @@ export default function RootLayout({
         <Script
           src="/js/error-handler.js"
           strategy="afterInteractive"
+        />
+        <Script
+          id="production-logger"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Production Logger initialisieren (höchste Priorität)
+              if (typeof window !== 'undefined') {
+                const isProduction = '${process.env.NODE_ENV}' === 'production' || 
+                                   '${process.env.NEXT_PUBLIC_ENVIRONMENT}' === 'production';
+                if (isProduction) {
+                  // Console-Logs sofort deaktivieren
+                  const noop = function() {};
+                  console.log = noop;
+                  console.info = noop;
+                  console.debug = noop;
+                  console.trace = noop;
+                  // Warn nur für kritische Fälle behalten
+                  const originalWarn = console.warn;
+                  console.warn = function(...args) {
+                    if (args.some(arg => String(arg).includes('CRITICAL'))) {
+                      originalWarn.apply(console, ['[callflows]', ...args]);
+                    }
+                  };
+                }
+              }
+            `
+          }}
         />
         <link rel="canonical" href="https://callflows.de" />
         <link rel="alternate" hrefLang="de" href="https://callflows.de" />

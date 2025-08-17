@@ -122,7 +122,13 @@ export function HeroSection() {
           <div 
             ref={widgetRef}
             className="relative z-20 h-[450px] lg:h-[600px] rounded-xl border border-border/50 bg-card/30 flex items-center justify-center overflow-hidden"
+            role="region"
+            aria-label="KI Voice Agent Demo"
+            aria-describedby="widget-description"
           >
+            <div id="widget-description" className="sr-only">
+              Interaktive Demo unseres KI Voice Agents. Sie können hier direkt mit unserem intelligenten Telefonassistenten sprechen und testen.
+            </div>
             {showWidget && !widgetError ? (
               <>
                 {!shouldLoadWidget ? (

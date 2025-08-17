@@ -14,12 +14,17 @@ export function MainNav({ className }: MainNavProps) {
   const { t } = useI18n();
 
   return (
-    <nav className={cn("flex items-center space-x-4 lg:space-x-6", className)}>
+    <nav 
+      className={cn("flex items-center space-x-4 lg:space-x-6", className)}
+      aria-label="Hauptnavigation"
+      role="navigation"
+    >
       <Link
         href="/"
         title="Zur callflows Startseite – KI‑callflows für Unternehmen"
+        aria-current={pathname === "/" ? "page" : undefined}
         className={cn(
-          "text-sm font-medium transition-colors hover:text-primary",
+          "text-sm font-medium transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm px-2 py-1",
           pathname === "/" ? "text-primary" : "text-foreground/60"
         )}
       >
@@ -28,8 +33,9 @@ export function MainNav({ className }: MainNavProps) {
       <Link
         href="/pricing"
         title="Preise und Pakete für KI‑callflows anzeigen"
+        aria-current={pathname === "/pricing" ? "page" : undefined}
         className={cn(
-          "text-sm font-medium transition-colors hover:text-primary",
+          "text-sm font-medium transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm px-2 py-1",
           pathname === "/pricing" ? "text-primary" : "text-foreground/60"
         )}
       >
@@ -38,8 +44,9 @@ export function MainNav({ className }: MainNavProps) {
       <Link
         href="/blog"
         title="Blog über KI‑callflows und Voice Agents lesen"
+        aria-current={pathname.startsWith("/blog") ? "page" : undefined}
         className={cn(
-          "text-sm font-medium transition-colors hover:text-primary",
+          "text-sm font-medium transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm px-2 py-1",
           pathname.startsWith("/blog") ? "text-primary" : "text-foreground/60"
         )}
       >
@@ -48,8 +55,9 @@ export function MainNav({ className }: MainNavProps) {
       <Link
         href="/about"
         title="Über callflows und unser Team erfahren"
+        aria-current={pathname === "/about" ? "page" : undefined}
         className={cn(
-          "text-sm font-medium transition-colors hover:text-primary",
+          "text-sm font-medium transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm px-2 py-1",
           pathname === "/about" ? "text-primary" : "text-foreground/60"
         )}
       >
@@ -58,8 +66,9 @@ export function MainNav({ className }: MainNavProps) {
       <Link
         href="/kontakt"
         title="Kontakt zu callflows aufnehmen"
+        aria-current={pathname === "/kontakt" ? "page" : undefined}
         className={cn(
-          "text-sm font-medium transition-colors hover:text-primary",
+          "text-sm font-medium transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm px-2 py-1",
           pathname === "/kontakt" ? "text-primary" : "text-foreground/60"
         )}
       >

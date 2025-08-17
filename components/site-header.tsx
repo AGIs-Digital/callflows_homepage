@@ -8,6 +8,7 @@ import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageSelector } from "@/components/language-selector";
+import { SkipToContent } from "@/components/ui/skip-to-content";
 import { ZohoEmbed } from "@/components/booking/zoho-embed";
 import { useI18n } from "@/lib/i18n";
 import { useAuthStore } from "@/lib/auth/auth-store";
@@ -29,11 +30,13 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className={cn(
-      "fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-200",
-      isScrolled ? "shadow-sm" : ""
-    )}>
-      <div className="container flex h-16 items-center">
+    <>
+      <SkipToContent />
+      <header className={cn(
+        "fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-200",
+        isScrolled ? "shadow-sm" : ""
+      )}>
+        <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2" title="Zur callflows Startseite - KI-Telefonie & Voice Agents">
           <Image
             src="/images/callflows_brand_no_claim.webp"
@@ -46,6 +49,9 @@ export function SiteHeader() {
           />
         </Link>
         <MainNav className="hidden md:flex" />
+        <nav id="main-navigation" className="sr-only">
+          <span>Hauptnavigation</span>
+        </nav>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
             <LanguageSelector />
@@ -120,6 +126,7 @@ export function SiteHeader() {
         </div>
         <MobileNav />
       </div>
-    </header>
+      </header>
+    </>
   );
 }
