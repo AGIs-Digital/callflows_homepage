@@ -120,11 +120,14 @@ const nextConfig = {
   distDir: 'out',
   trailingSlash: true,
   
-  // Externe Libraries optimieren
+  // Externe Libraries optimieren für statischen Export
   transpilePackages: [
     '@radix-ui/react-icons',
     'lucide-react'
   ],
+  
+  // Tree Shaking für bessere Bundle-Größe
+  // Entferne modularizeImports da es Probleme bei statischem Export verursacht
 };
 
 module.exports = nextConfig

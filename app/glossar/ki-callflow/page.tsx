@@ -44,11 +44,13 @@ export default function KICallflowPage() {
           </div>
         </section>
 
-        {/* Terminologie-Tabelle */}
+        {/* Terminologie-Tabelle - Mobile optimiert */}
         <section className="py-12 bg-gradient-to-b from-primary/60 via-secondary/60 to-secondary/30">
           <div className="container max-w-6xl">
             <h2 className="text-2xl font-semibold mb-6">{t('glossary.kiCallflow.terminologyTitle')}</h2>
-            <div className="rounded-xl border bg-card overflow-hidden">
+            
+            {/* Desktop Tabelle */}
+            <div className="hidden md:block rounded-xl border bg-card overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm">
                   <thead className="bg-muted/50">
@@ -62,7 +64,7 @@ export default function KICallflowPage() {
                       const [term, focus] = row.split('||');
                       return (
                         <tr key={idx}>
-                          <td className="px-4 py-3 whitespace-nowrap">{term}</td>
+                          <td className="px-4 py-3 whitespace-nowrap font-medium">{term}</td>
                           <td className="px-4 py-3">{focus}</td>
                         </tr>
                       );
@@ -70,6 +72,25 @@ export default function KICallflowPage() {
                   </tbody>
                 </table>
               </div>
+            </div>
+
+            {/* Mobile Card Layout */}
+            <div className="md:hidden space-y-4">
+              {tArray('glossary.kiCallflow.terminology').map((row, idx) => {
+                const [term, focus] = row.split('||');
+                return (
+                  <div key={idx} className="rounded-lg border bg-card p-4 space-y-2">
+                    <div className="font-semibold text-primary text-sm uppercase tracking-wide">
+                      {t('glossary.kiCallflow.terminologyHeaders.0')}
+                    </div>
+                    <div className="font-medium text-base">{term}</div>
+                    <div className="font-medium text-primary text-sm uppercase tracking-wide mt-3">
+                      {t('glossary.kiCallflow.terminologyHeaders.1')}
+                    </div>
+                    <div className="text-muted-foreground text-sm leading-relaxed">{focus}</div>
+                  </div>
+                );
+              })}
             </div>
 
             <div className="mt-6 rounded-xl border bg-accent/10 p-5">

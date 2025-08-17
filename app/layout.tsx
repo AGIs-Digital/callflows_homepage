@@ -91,6 +91,20 @@ export default function RootLayout({
                     }
                   };
                 }
+                
+                // Resource Hints Performance Boost
+                if ('requestIdleCallback' in window) {
+                  requestIdleCallback(() => {
+                    // Prefetch kritische Routen während Idle-Zeit
+                    const routes = ['/pricing', '/blog', '/kontakt'];
+                    routes.forEach(route => {
+                      const link = document.createElement('link');
+                      link.rel = 'prefetch';
+                      link.href = route;
+                      document.head.appendChild(link);
+                    });
+                  });
+                }
               }
             `
           }}
@@ -124,14 +138,22 @@ export default function RootLayout({
         <meta name="lighthouse-ci" content="index,follow" />
         <meta name="pagespeed" content="nolimit" />
         
-        {/* Performance Hints */}
+        {/* Critical Resource Preloads - SOFORTIGE PageSpeed Verbesserung */}
+        <link rel="preload" href="/fonts/Satoshi-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/images/callflows_brand_no_claim.webp" as="image" />
+        
+        {/* DNS Performance Hints */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Synthflow Widget Performance Optimization */}
-        <link rel="preconnect" href="https://widget.synthflow.ai" />
+        <link rel="preconnect" href="https://widget.synthflow.ai" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://widget.synthflow.ai" />
+        
+        {/* Critical CSS Resource Hints */}
+        <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />
         
         {/* Security Headers */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />

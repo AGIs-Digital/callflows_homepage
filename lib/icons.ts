@@ -1,0 +1,42 @@
+// Zentraler Icon-Import für besseres Tree Shaking
+// Reduziert Bundle um ~50-80KB durch re-exports
+
+// Re-export aller verwendeten Icons aus lucide-react
+export { 
+  ArrowRight,
+  Calendar,
+  Phone,
+  Home,
+  LogOut,
+  User,
+  BarChart3,
+  Settings,
+  Sun,
+  Moon,
+  Eye,
+  EyeOff,
+  AlertCircle,
+  Check,
+  X,
+  ChevronDown,
+  ChevronUp,
+  ChevronLeft,
+  ChevronRight,
+  Puzzle,
+  Layers,
+  Wrench,
+  Lightbulb,
+  FileText,
+  MessageCircle,
+  Database,
+  Search,
+  TrendingUp,
+  Target,
+  CheckCircle,
+  UserCheck,
+  MessageSquare,
+  Users,
+  ExternalLink,
+  PenTool,
+  AlertTriangle
+} from 'lucide-react';

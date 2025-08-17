@@ -1,7 +1,21 @@
 "use client";
 
 import React, { useRef } from "react";
-import { Puzzle, Layers, Wrench, Lightbulb, FileText, MessageCircle, Database, User, Phone, X, Check, CheckCircle } from "lucide-react";
+// Optimierte Icon Imports für kleineren Bundle
+import { 
+  Puzzle, 
+  Layers, 
+  Wrench, 
+  Lightbulb, 
+  FileText, 
+  MessageCircle, 
+  Database, 
+  User, 
+  Phone, 
+  X, 
+  Check, 
+  CheckCircle 
+} from "@/lib/icons";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { cn } from "@/lib/utils";
 import Image from "next/image";

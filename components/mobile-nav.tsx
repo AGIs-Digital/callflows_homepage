@@ -59,11 +59,11 @@ export function MobileNav() {
               {t('nav.blog')}
             </Link>
             <Link
-              href="/#about"
+              href="/about"
               onClick={() => setOpen(false)}
               className={cn(
                 "text-lg font-medium transition-colors hover:text-primary",
-                pathname === "/#about" ? "text-primary" : "text-foreground/60"
+                pathname === "/about" ? "text-primary" : "text-foreground/60"
               )}
             >
               {t('nav.about')}

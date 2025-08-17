@@ -2,11 +2,11 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-// Statische Imports der Übersetzungen
-import deTranslations from '@/translations/de.json';
-import enTranslations from '@/translations/en.json';
-import frTranslations from '@/translations/fr.json';
-import esTranslations from '@/translations/es.json';
+// Dynamic imports für Übersetzungen (reduziert Initial Bundle um ~120KB)
+const loadTranslations = async (locale: string) => {
+  const translations = await import(`@/translations/${locale}.json`);
+  return translations.default;
+};
 
 // Unterstützte Sprachen
 export const SUPPORTED_LOCALES = {
@@ -43,7 +43,12 @@ const COUNTRY_TO_LANGUAGE: Record<string, Locale> = {
   'UY': 'es', 'PR': 'es', 'GQ': 'es',
 };
 
-// Übersetzungs-Map
+// Übersetzungs-Map - TODO: Später auf dynamic loading umstellen
+import deTranslations from '@/translations/de.json';
+import enTranslations from '@/translations/en.json';
+import frTranslations from '@/translations/fr.json';
+import esTranslations from '@/translations/es.json';
+
 const TRANSLATIONS_MAP: Record<Locale, Translations> = {
   de: deTranslations,
   en: enTranslations,

@@ -80,18 +80,18 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Linke Spalte - Überschrift, Text und Bild */}
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold text-primary mb-2 underline decoration-accent dark:text-white">
+            <h2 className="text-4xl font-bold text-primary mb-2 underline decoration-accent dark:text-primary">
               {t('about.title')}
             </h2>
             
             <div className="space-y-4">
-              <p className="text-lg text-black/75 dark:text-muted-foreground">
+              <p className="text-lg text-black/75 dark:text-foreground">
                 {t('about.intro1')}
               </p>
-              <p className="text-lg text-black/75 dark:text-muted-foreground">
+              <p className="text-lg text-black/75 dark:text-foreground">
                 {t('about.intro2')}
               </p>
-              <p className="text-lg text-black/75 dark:text-muted-foreground">
+              <p className="text-lg text-black/75 dark:text-foreground">
                 {t('about.intro3')}
               </p>
             </div>
@@ -112,14 +112,14 @@ export function AboutSection() {
           <div className="space-y-8">
             {/* Unsere Mission zuerst */}
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold text-primary dark:text-white mb-4">
+              <h3 className="text-xl font-semibold text-primary dark:text-primary mb-4">
                 {t('about.mission')}
               </h3>
               <ul className="space-y-3">
                 {getMissionPoints().map((point, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <span className="text-primary mt-1">👉</span>
-                    <span className="text-black/75 dark:text-muted-foreground">{point}</span>
+                    <span className="text-black/75 dark:text-foreground">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -127,10 +127,10 @@ export function AboutSection() {
             
             {/* Was uns besonders macht danach */}
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
-              <h3 className="text-2xl font-bold text-primary dark:text-white mb-4">
+              <h3 className="text-2xl font-bold text-primary dark:text-primary mb-4">
                 {t('about.special')}
               </h3>
-              <p className="text-black/75 dark:text-muted-foreground mb-4">
+              <p className="text-black/75 dark:text-foreground mb-4">
                 {t('about.specialDescription')}
               </p>
               
@@ -138,13 +138,13 @@ export function AboutSection() {
                 {getFeatures().map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <Check size={18} className="text-primary mt-1 flex-shrink-0" />
-                    <span className="text-medium text-black/75 dark:text-muted-foreground">{item}</span>
+                    <span className="text-medium text-black/75 dark:text-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
               
               <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
-                <p className="text-xl text-black/75 dark:text-muted-foreground font-medium">
+                <p className="text-xl text-black/75 dark:text-foreground font-medium">
                 <strong className="text-primary">callflows</strong> {t('about.teamDescription')}
                 </p>
               </div>
