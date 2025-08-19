@@ -77,7 +77,10 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     # HTTP Strict Transport Security (HSTS)
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 
-    # Verhindern von Clickjacking
+    # Content Security Policy für bessere Sicherheit
+    Header set Content-Security-Policy "frame-ancestors 'self'; object-src 'none'; base-uri 'self';"
+    
+    # Fallback für ältere Browser (X-Frame-Options)
     Header set X-Frame-Options "SAMEORIGIN"
 </IfModule>
 

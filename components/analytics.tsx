@@ -102,24 +102,23 @@ export function Analytics() {
       <Script id="search-console-verification" strategy="afterInteractive">
         {`
           // Search Console Verification wird via meta tag gemacht
-          console.log('Analytics initialized for callflows.de');
+          // Analytics initialized for callflows.de - Silent in production
         `}
       </Script>
 
       {/* Structured Data Testing */}
       <Script id="structured-data-validation" strategy="afterInteractive">
         {`
-          // Validierung der strukturierten Daten für Entwicklung
-          if (window.location.hostname === 'localhost') {
-            console.log('Structured data validation active');
-            // Test Schema.org markup
+          // Validierung der strukturierten Daten nur in Development
+          if (window.location.hostname === 'localhost' && process.env.NODE_ENV === 'development') {
+            // Test Schema.org markup - nur in Development Mode
             const scripts = document.querySelectorAll('script[type="application/ld+json"]');
             scripts.forEach((script, index) => {
               try {
-                const data = JSON.parse(script.textContent);
-                console.log('Schema ' + index + ':', data);
+                JSON.parse(script.textContent);
+                // Schema validation ohne console logs
               } catch (e) {
-                console.error('Invalid JSON-LD schema:', e);
+                // Silent error handling in production
               }
             });
           }

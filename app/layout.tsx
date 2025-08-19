@@ -150,8 +150,7 @@ export default function RootLayout({
         
 
         
-        {/* Critical CSS Resource Hints */}
-        <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />
+        {/* Critical CSS Resource Hints - Nur tatsächlich genutzte Ressourcen */}
         
         {/* Security Headers */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />

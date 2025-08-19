@@ -94,14 +94,12 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
       
       if (isDevelopment && MAKE_WEBHOOK_URL.includes('YOUR_WEBHOOK_ID_HERE')) {
         // Development Mock: Simuliere erfolgreichen Webhook Call
-        console.log('🔥 DEVELOPMENT MODE: Mock Webhook Call', finalPayload);
         response = {
           ok: true,
           status: 200,
           json: async () => ({ success: true, callId: `dev_${Date.now()}` })
         };
-        // Kleine Verzögerung für realistisches Verhalten
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        // Kein künstlicher Delay - Widget ist sofort bereit
       } else {
         // Production: Echter Make.com Webhook Call mit Form-Data
         const formData = new FormData();
@@ -123,27 +121,24 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
       if (response.ok || (response.status === 0 && !isDevelopment)) {
         // Status 0 bei no-cors Mode ist normal und bedeutet Request wurde gesendet
         setCallStatus('success');
-        // Reset nach 5 Sekunden
+        // Reset nach 3 Sekunden (schnellere UX)
         setTimeout(() => {
           setCallStatus('idle');
           setPhoneNumber('');
           setCustomerName('');
-        }, 5000);
+        }, 3000);
         
-        // Logging für Development
-        if (isDevelopment) {
-          console.log('✅ Make.com Webhook erfolgreich gesendet:', finalPayload);
-        }
+
       } else {
         throw new Error(`Make.com Webhook Error: ${response.status}`);
       }
     } catch (error) {
-      console.error('❌ Make.com Webhook Fehler:', error);
+      // Error handling ohne console logs für production
       setCallStatus('error');
-      // Reset nach 5 Sekunden
+      // Reset nach 3 Sekunden (schnellere UX)
       setTimeout(() => {
         setCallStatus('idle');
-      }, 5000);
+      }, 3000);
     } finally {
       setIsLoading(false);
     }

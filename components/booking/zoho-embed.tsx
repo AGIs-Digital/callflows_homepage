@@ -32,11 +32,9 @@ export function ZohoEmbed({
     // Automatische Zeitzonenerkennung
     try {
       const detectedTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      console.log('Erkannte Zeitzone:', detectedTimezone);
       setUserTimezone(detectedTimezone);
     } catch (error) {
-      console.log('Zeitzonenerkennung fehlgeschlagen, verwende Fallback:', error);
-      // Fallback bleibt Europe/Berlin
+      // Fallback bleibt Europe/Berlin - Silent error handling
     }
   }, []);
 

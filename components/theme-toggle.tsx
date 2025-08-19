@@ -1,10 +1,26 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Moon, Sun } from "@/lib/icons";
 import { useTheme } from "next-themes";
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Verhindere Hydration Mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Vermeide Hydration Mismatch beim ersten Render
+  if (!mounted) {
+    return (
+      <div className="p-2 w-9 h-9 rounded-lg">
+        <div className="h-5 w-5 animate-pulse bg-gray-300 dark:bg-gray-600 rounded" />
+      </div>
+    );
+  }
 
   return (
     <button
