@@ -11,6 +11,7 @@ export interface PricingPlan {
   cta: string;
   popular: boolean;
   isCustom?: boolean;
+  isPilot?: boolean;
 }
 
 export interface MinutePackage {
@@ -21,6 +22,14 @@ export interface MinutePackage {
   savings: string;
   description: string;
   isCustom?: boolean;
+  isUsageBased?: boolean;
+}
+
+export interface PricingTier {
+  from: number;
+  to: number;
+  pricePerMinute: number;
+  description: string;
 }
 
 export interface PricingFeature {

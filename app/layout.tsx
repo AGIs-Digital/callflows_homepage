@@ -16,15 +16,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   ...generateMetadata({
-    title: 'callflows – KI‑callflows für automatisierte Kundenkommunikation',
-    description: 'Wir entwickeln KI‑callflows: lernfähige Gesprächs- und Prozessflüsse, die Anliegen per Telefon klären, Daten validieren und Systeme integrieren – vom ersten Klingeln bis zur dokumentierten Nachbearbeitung.',
+    title: 'callflows – KI‑Voice‑Agents für Mittelstand & Vertrieb | Transparent & ohne Laufzeit',
+    description: 'Automatisieren Sie Standardanrufe mit KI‑Voice‑Agents. Komplett‑Service, transparente Minuten‑Staffeln, keine Vertragslaufzeit. Live‑Demo starten & Beratung sichern.',
     path: '/',
-    keywords: ['KI‑callflow', 'KI‑callflows', 'Conversational Automation', 'Telefon‑KI', 'Voice Agent', 'Callflow', 'Automatisierte Kundenkommunikation'],
+    keywords: ['KI‑Voice‑Agent', 'KI‑Telefonie', 'automatisierte Anrufe', 'B2B‑Vertrieb', 'Personaldienstleister', 'Mittelstand', 'minutenbasierte Abrechnung', 'ohne Vertragslaufzeit', 'KI‑callflow', 'Voice Agent'],
     images: [{
       url: '/images/callflows_brand_no_claim.webp',
       width: 1200,
       height: 630,
-      alt: 'callflows Logo'
+      alt: 'callflows – KI‑Voice‑Agents für automatisierte Anrufe im B2B‑Vertrieb'
     }]
   }),
   icons: {

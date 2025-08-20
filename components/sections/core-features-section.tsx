@@ -35,7 +35,7 @@ export function CoreFeaturesSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background via-primary/65 to-tertiary/30">
+    <section className="py-20 bg-gradient-to-b from-tertiary/25 via-secondary/20 to-primary/35">
       <div className="container max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-4">

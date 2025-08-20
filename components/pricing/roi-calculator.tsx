@@ -25,6 +25,47 @@ export function ROICalculator() {
   
   // Aktuelles Gehalt basierend auf Index
   const monthlySalary = SALARY_VALUES[salaryIndex[0]];
+
+  // Funktion zur Berechnung der Staffelpreise
+  const calculateTieredCost = (minutes: number): number => {
+    let totalCost = 0;
+    let remainingMinutes = minutes;
+
+    // Staffel 1: 1-1000 Minuten = 0,99€
+    if (remainingMinutes > 0) {
+      const minutesInTier = Math.min(remainingMinutes, 1000);
+      totalCost += minutesInTier * 0.99;
+      remainingMinutes -= minutesInTier;
+    }
+
+    // Staffel 2: 1001-2000 Minuten = 0,94€
+    if (remainingMinutes > 0) {
+      const minutesInTier = Math.min(remainingMinutes, 1000);
+      totalCost += minutesInTier * 0.94;
+      remainingMinutes -= minutesInTier;
+    }
+
+    // Staffel 3: 2001-5000 Minuten = 0,89€
+    if (remainingMinutes > 0) {
+      const minutesInTier = Math.min(remainingMinutes, 3000);
+      totalCost += minutesInTier * 0.89;
+      remainingMinutes -= minutesInTier;
+    }
+
+    // Staffel 4: 5001-10000 Minuten = 0,84€
+    if (remainingMinutes > 0) {
+      const minutesInTier = Math.min(remainingMinutes, 5000);
+      totalCost += minutesInTier * 0.84;
+      remainingMinutes -= minutesInTier;
+    }
+
+    // Staffel 5: ab 10001 Minuten = 0,79€
+    if (remainingMinutes > 0) {
+      totalCost += remainingMinutes * 0.79;
+    }
+
+    return totalCost;
+  };
   
   // Berechnete Werte
   const [calculations, setCalculations] = useState({
@@ -47,9 +88,9 @@ export function ROICalculator() {
     const totalEmployeeCosts = monthlyPersonalCostPerEmployee * employees[0];
     const yearlyPersonalCosts = totalEmployeeCosts * 12;
     
-    // KI-Kosten nur für automatisierte Anrufe
+    // KI-Kosten nur für automatisierte Anrufe - mit Staffelpreisen
     const aiMinutesPerMonth = (callsPerDay[0] * avgCallDuration[0] * 22 * automationRate[0]) / 100;
-    const aiMonthlyCost = aiMinutesPerMonth * 0.99;
+    const aiMonthlyCost = calculateTieredCost(aiMinutesPerMonth);
     
     // Einsparungen: Wenn wir X% der Anrufe automatisieren, brauchen wir weniger Personal
     const savedEmployeeFraction = automationRate[0] / 100;
@@ -85,7 +126,7 @@ export function ROICalculator() {
   };
 
   return (
-    <div className="py-16 bg-gradient-to-b from-accent/30 via-tertiary/70 to-primary/10">
+    <div className="py-16 bg-gradient-to-b from-primary/40 via-accent/75 to-tertiary/25">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4">
@@ -104,9 +145,9 @@ export function ROICalculator() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Eingabe-Parameter */}
-          <Card className="bg-card/60 backdrop-blur-sm border-border/50 shadow-lg">
+        <div className="grid lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
+          {/* Kombinierte Card für bessere Lesbarkeit */}
+          <Card className="bg-card/90 backdrop-blur-md border-border/70 shadow-2xl">
                          <CardHeader className="pb-4">
                <CardTitle className="text-xl flex items-center gap-2">
                  <Zap className="h-5 w-5 text-primary" />
@@ -222,7 +263,7 @@ export function ROICalculator() {
           </Card>
 
           {/* Ergebnisse - Kompakter */}
-          <Card className="bg-gradient-to-br from-primary/5 to-accent/10 border-primary/20 shadow-lg">
+          <Card className="bg-gradient-to-br from-primary/10 to-accent/15 border-primary/30 shadow-xl backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
                          <CardHeader className="pb-3">
                <CardTitle className="text-xl flex items-center gap-2">
                  <TrendingUp className="h-5 w-5 text-primary" />
@@ -286,12 +327,7 @@ export function ROICalculator() {
                 </div>
               </div>
 
-              {/* Call-to-Action - kompakt */}
-              <div className="bg-primary/10 rounded-lg p-4 text-center border border-primary/20">
-                                 <p className="text-lg font-semibold mb-2">
-                   💰 {formatCurrency(calculations.yearlySavings)} {t('pricing.roiCalculator.perYear')}!
-                 </p>
-              </div>
+
             </CardContent>
           </Card>
         </div>

@@ -29,19 +29,29 @@ export function HeroSection() {
   return (
     <div className="relative min-h-[calc(100vh-80px)] overflow-hidden">
       <div className="container max-w-6xl relative py-4 md:py-6 lg:py-8">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-          {/* Linke Spalte - Text */}
+        {/* H1 über die volle Breite */}
+        <div className="text-center mb-8 md:mb-12 pt-8 md:pt-12">
+          <h1 
+            className="font-bold text-foreground leading-[1.1]"
+            style={{
+              fontFamily: '"Satoshi", sans-serif',
+              fontWeight: 700,
+              fontSize: 'clamp(2.5rem, 5vw + 1rem, 4rem)'
+            }}
+          >
+            {t('home.hero.headline1')}
+            <br />
+            {t('home.hero.headline2')}
+          </h1>
+        </div>
+
+        {/* Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+          {/* Linke Spalte - Text Content */}
           <div className="relative z-20 space-y-8 md:space-y-10 animate-slideIn">
-            {/* Problem-Headline */}
-            <div className="space-y-8 pt-8 md:pt-12">
-              <h1 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
-              >
-                {t('home.hero.headline1')}
-                <br />
-                {t('home.hero.headline2')}
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl">
+            {/* Beschreibung */}
+            <div className="space-y-6">
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 {t('home.hero.description')}
               </p>
             </div>
@@ -60,19 +70,19 @@ export function HeroSection() {
               </p>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center sm:justify-start">
+            {/* CTA Button links auf Höhe des Widget-Buttons */}
+            <div className="pt-6 flex justify-center">
               <ZohoEmbed 
                 buttonText={t('home.hero.cta')}
                 size="lg" 
-                className="bg-[#FFB703] hover:bg-tertiary/70 text-white font-semibold px-8 py-4 text-lg gap-2"
+                className="bg-[#FFB703] hover:bg-tertiary/70 text-white font-semibold px-8 py-4 text-lg gap-2 w-full max-w-[280px]"
               />
             </div>
           </div>
           
-          {/* Rechte Spalte - Call Test Widget (Performance optimiert) */}
+          {/* Rechte Spalte - Call Test Widget mit Micro Trust */}
           <div 
-            className="relative z-20 flex items-center justify-center"
+            className="relative z-20 space-y-4"
             role="region"
             aria-label="KI Voice Agent Live Test"
             aria-describedby="call-widget-description"
@@ -81,11 +91,11 @@ export function HeroSection() {
               Live-Test unseres KI Voice Agents. Geben Sie Ihre Telefonnummer ein und unser intelligenter Assistent ruft Sie sofort an.
             </div>
             
-            {/* Neues Performance-optimiertes Call-Test Widget */}
-            <CallTestWidget className="w-full max-w-lg" />
+            {/* Call Test Widget */}
+            <div className="w-full max-w-lg mx-auto lg:mx-0">
+              <CallTestWidget className="w-full call-test-widget" />
+            </div>
           </div>
-
-
         </div>
       </div>
       

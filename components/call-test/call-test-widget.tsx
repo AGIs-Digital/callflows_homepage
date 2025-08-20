@@ -228,8 +228,11 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
               autoComplete="tel"
               inputMode="tel"
             />
+          </div>
+
+          <div className="text-center">
             <p className="text-xs text-muted-foreground">
-              {t('widget.phoneHint')}
+              {t('widget.privacyHint')}
             </p>
           </div>
           
@@ -251,12 +254,6 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
               </>
             )}
           </Button>
-          
-          <div className="text-center">
-            <p className="text-xs text-muted-foreground">
-              {t('widget.privacyHint')}
-            </p>
-          </div>
         </CardContent>
       )}
       

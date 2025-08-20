@@ -9,7 +9,7 @@ import { CTASection } from "@/components/sections/cta-section";
 import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
 import { IntegrationChallengesSection } from "@/components/sections/integration-challenges-section";
 import { PetraUSPSection } from "@/components/sections/petra-usp-section";
-import { ROICalculator } from "@/components/pricing/roi-calculator";
+import { SocialProofROISection } from "@/components/sections/social-proof-roi-section";
 
 export default function Home() {
   return (
@@ -24,19 +24,13 @@ export default function Home() {
       >
         <HeroSection />
         <IntegrationChallengesSection />
-        <PetraUSPSection />
+        <FeaturesSection />
         <ProcessSection />
-        <section id="pricecomparison" aria-labelledby="pricing-heading">
-          <PricingComparisonSection />
-        </section>
+        <PetraUSPSection />
+        <PricingComparisonSection />
         <CTASection />
-        <ROICalculator />
-        <section id="features" aria-labelledby="features-heading">
-          <FeaturesSection />
-        </section>
-        <section id="core-features" aria-labelledby="core-features-heading">
-          <CoreFeaturesSection />
-        </section>
+        <SocialProofROISection />
+        <CoreFeaturesSection />
         <CTASectionSecondary />
       </main>
       <SiteFooter />

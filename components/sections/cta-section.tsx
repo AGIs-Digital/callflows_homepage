@@ -47,7 +47,7 @@ export function CTASection() {
   return (
     <section 
       id="cta-section"
-      className="py-20 bg-gradient-to-b from-background via-accent/5 to-accent/30"
+      className="py-20 bg-gradient-to-b from-secondary/15 via-primary/30 to-primary/40"
     >
       <div className="container max-w-6xl">
         <motion.div
@@ -86,29 +86,6 @@ export function CTASection() {
             </Link>
           </motion.div>
           
-          <motion.div 
-            className="grid md:grid-cols-3 gap-6 text-left"
-            variants={itemVariants}
-          >
-            <div className="p-6 bg-card rounded-lg border">
-              <h3 className="font-semibold mb-2">{t('cta.benefit1.title')}</h3>
-              <p className="text-sm text-muted-foreground">
-                {t('cta.benefit1.description')}
-              </p>
-            </div>
-            <div className="p-6 bg-card rounded-lg border">
-              <h3 className="font-semibold mb-2">{t('cta.benefit2.title')}</h3>
-              <p className="text-sm text-muted-foreground">
-                {t('cta.benefit2.description')}
-              </p>
-            </div>
-            <div className="p-6 bg-card rounded-lg border">
-              <h3 className="font-semibold mb-2">{t('cta.benefit3.title')}</h3>
-              <p className="text-sm text-muted-foreground">
-                {t('cta.benefit3.description')}
-              </p>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

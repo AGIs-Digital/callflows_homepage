@@ -19,10 +19,10 @@ const Solution = ({ title, icon, description, pros, cons, isHighlighted = false 
   return (
     <div 
       className={cn(
-        "relative rounded-xl border border-border p-6 transition-all",
+        "group relative rounded-2xl border border-border/50 p-8 transition-all duration-300 ease-out backdrop-blur-sm",
         isHighlighted 
-          ? "bg-card shadow-lg ring-1 ring-primary/20" 
-          : "bg-card hover:shadow-md"
+          ? "bg-card/80 shadow-xl ring-2 ring-primary/30 hover:shadow-2xl hover:-translate-y-2" 
+          : "bg-card/60 hover:shadow-lg hover:-translate-y-1 hover:border-primary/20"
       )}
     >
       {isHighlighted && (
@@ -30,14 +30,14 @@ const Solution = ({ title, icon, description, pros, cons, isHighlighted = false 
           {t('comparison.modernSolution')}
         </div>
       )}
-      <div className="flex items-center gap-4 mb-4">
+      <div className="flex items-center gap-4 mb-6">
         <div className={cn(
-          "p-3 rounded-full",
-          isHighlighted ? "bg-primary text-white" : "bg-muted"
+          "p-4 rounded-2xl transition-all duration-300 group-hover:scale-110",
+          isHighlighted ? "bg-primary text-white shadow-lg" : "bg-muted/60 group-hover:bg-primary/10"
         )}>
           {icon}
         </div>
-        <h3 className="text-xl font-semibold">{title}</h3>
+        <h3 className="text-xl font-bold">{title}</h3>
       </div>
       
       <p className="text-muted-foreground mb-6">{description}</p>
@@ -216,7 +216,7 @@ export function PricingComparisonSection() {
   };
   
   return (
-    <section className="py-24 bg-gradient-to-b from-secondary/10 via-tertiary/70 to-background">
+    <section className="py-24 bg-gradient-to-b from-tertiary/25 via-tertiary/15 to-secondary/15">
       <div className="container max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">
@@ -226,18 +226,10 @@ export function PricingComparisonSection() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Solution 
-            title={getSolutionData('inhouse').title}
-            icon={<Users className="w-5 h-5" />}
-            description={getSolutionData('inhouse').description}
-            pros={getSolutionData('inhouse').pros}
-            cons={getSolutionData('inhouse').cons}
-          />
-          
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <Solution 
             title={getSolutionData('phone').title}
-            icon={<Phone className="w-5 h-5" />}
+            icon={<Phone className="w-6 h-6" />}
             description={getSolutionData('phone').description}
             pros={getSolutionData('phone').pros}
             cons={getSolutionData('phone').cons}
@@ -245,7 +237,7 @@ export function PricingComparisonSection() {
           
           <Solution 
             title={getSolutionData('callcenter').title}
-            icon={<Headphones className="w-5 h-5" />}
+            icon={<Headphones className="w-6 h-6" />}
             description={getSolutionData('callcenter').description}
             pros={getSolutionData('callcenter').pros}
             cons={getSolutionData('callcenter').cons}
@@ -253,7 +245,7 @@ export function PricingComparisonSection() {
           
           <Solution 
             title={<strong className='text-primary'>{getSolutionData('callflows').title}</strong>}
-            icon={<Bot className="w-5 h-5" />}
+            icon={<Bot className="w-6 h-6" />}
             description={getSolutionData('callflows').description}
             pros={getSolutionData('callflows').pros}
             cons={getSolutionData('callflows').cons}

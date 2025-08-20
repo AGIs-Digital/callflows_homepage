@@ -1,86 +1,87 @@
-import { PricingPlan, MinutePackage } from "@/lib/types/pricing";
+import { PricingPlan, MinutePackage, PricingTier } from "@/lib/types/pricing";
 
+// Neue Preisstruktur: Pilotmonat + Minutenstaffel
+export const pilotPackage = {
+  name: "Pilotmonat KI-callflow",
+  subtitle: "Individueller KI-callflow mit Einrichtung",
+  badge: "Risikofrei starten",
+  setupPrice: 2490,
+  includedMinutes: 1000,
+  highlights: [
+    "Keine Vertragslaufzeit, kein Risiko",
+    "Vollständige Einrichtung und Konfiguration",
+    "1.000 KI-Minuten inklusive",
+    "Individuelle Anpassung an Ihr Unternehmen",
+    "Persönliche Betreuung während der Pilotphase",
+    "Go-Live Unterstützung"
+  ],
+  cta: "Pilotmonat starten",
+  popular: true
+};
+
+// Minutenstaffel für die nutzungsbasierte Abrechnung nach Go-Live
+export const pricingTiers: PricingTier[] = [
+  {
+    from: 1,
+    to: 1000,
+    pricePerMinute: 0.99,
+    description: "Bis 1.000 Minuten"
+  },
+  {
+    from: 1001,
+    to: 2000,
+    pricePerMinute: 0.94,
+    description: "1.001 - 2.000 Minuten"
+  },
+  {
+    from: 2001,
+    to: 5000,
+    pricePerMinute: 0.89,
+    description: "2.001 - 5.000 Minuten"
+  },
+  {
+    from: 5001,
+    to: 10000,
+    pricePerMinute: 0.84,
+    description: "5.001 - 10.000 Minuten"
+  },
+  {
+    from: 10001,
+    to: Infinity,
+    pricePerMinute: 0.79,
+    description: "Ab 10.001 Minuten"
+  }
+];
+
+// Legacy: Behalten für Kompatibilität, falls woanders verwendet
 export const monthlyPlans: PricingPlan[] = [
   {
-    name: "Entlastung",
-    type: "starter",
-    subtitle: "Unterstützung im Tagesgeschäft",
-    price: 0.99,
+    name: "Pilotmonat",
+    type: "pilot",
+    subtitle: "Individueller KI-callflow ohne Risiko",
+    price: 2490,
     minutesIncluded: 1000,
     highlights: [
-      "Schnell spürbare Verbesserungen im Arbeitsalltag",
-      "Häufige Fragen ohne Personaleinsatz beantworten",
-      "Weniger Weiterverbindungen und Wartezeiten"
+      "Keine Vertragslaufzeit, kein Risiko",
+      "Vollständige Einrichtung inklusive",
+      "1.000 KI-Minuten enthalten",
+      "Individuelle Konfiguration",
+      "Persönliche Betreuung"
     ],
-    cta: "Jetzt beraten lassen",
-    popular: false
-  },
-  {
-    name: "Wachstum",
-    type: "professional",
-    subtitle: "Umsatz & Expansion",
-    price: 0.89,
-    minutesIncluded: 2000,
-    highlights: [
-      "Prozesse von der Anfrage bis zum Abschluss optimieren",
-      "Weniger Unterbrechungen in täglichen Arbeitsabläufen",
-      "Wachstum ohne proportionalen Personalaufbau",
-      "Hochwertige Leads für das Vertriebsteam"
-    ],
-    cta: "Jetzt beraten lassen",
-    popular: false
-  },
-  {
-    name: "Enterprise",
-    type: "custom",
-    subtitle: "Maßgeschneiderte Lösungen",
-    price: 0, // Preis auf Anfrage
-    minutesIncluded: 0, // Kontingent auf Anfrage
-    highlights: [
-      "Marktführerschaft durch frühzeitige KI-Adoption",
-      "Neue Kunden auch außerhalb der Geschäftszeiten gewinnen",
-      "Persönliche Beratung und maßgeschneiderte Lösung",
-      "Erkenntnisse aus Gesprächen für Geschäftsentscheidungen",
-      "Unternehmensberatung KI-Transformation"
-    ],
-    cta: "Individuelles Angebot",
+    cta: "Pilotmonat starten",
     popular: true,
-    isCustom: true
+    isPilot: true
   }
 ];
 
 export const minutePackages: MinutePackage[] = [
   {
-    name: "Zusatzminuten 1.000",
-    minutes: 1000,
-    pricePerMinute: 0.90,
-    totalPrice: 900,
-    savings: "ca. 9%",
-    description: "Entspricht einer Sekretärin halbtags"
-  },
-  {
-    name: "Zusatzminuten 5.000",
-    minutes: 5000,
-    pricePerMinute: 0.85,
-    totalPrice: 4250,
-    savings: "ca. 14%",
-    description: "Entspricht einem kleinen Vertriebsteam"
-  },
-  {
-    name: "Zusatzminuten 10.000",
-    minutes: 10000,
-    pricePerMinute: 0.82,
-    totalPrice: 8200,
-    savings: "ca. 17%",
-    description: "Entspricht einem größeren Vertriebsteam"
-  },
-  {
-    name: "Individuelles Paket",
+    name: "Nach Go-Live",
     minutes: 0,
-    pricePerMinute: 0,
+    pricePerMinute: 0.99,
     totalPrice: 0,
-    savings: "Auf Anfrage",
-    description: "Maßgeschneiderte Lösung für Ihr Unternehmen",
-    isCustom: true
+    savings: "Staffelpreise",
+    description: "Reine Nutzungsgebühr ohne Vertragslaufzeit",
+    isUsageBased: true
   }
 ];

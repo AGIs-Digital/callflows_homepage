@@ -14,7 +14,6 @@ export function AboutSection() {
         "Individuelle Prozessmodellierung",
         "Persönliches Prompting & Finetuning",
         "Transparente Minutenabrechnung ohne versteckte Kosten",
-        "Unbegrenzte Anzahl an Agents",
         "Regelmäßige Check-ins zur Optimierung",
         "Setup, Support und Telefonnummer inklusive"
       ],
@@ -22,7 +21,6 @@ export function AboutSection() {
         "Individual process modeling",
         "Personal prompting & fine-tuning",
         "Transparent per-minute billing without hidden costs",
-        "Unlimited number of agents",
         "Regular check-ins for optimization",
         "Setup, support, and phone number included"
       ],
@@ -30,7 +28,6 @@ export function AboutSection() {
         "Modélisation de processus individuelle",
         "Prompting personnel & ajustement fin",
         "Facturation transparente à la minute sans coûts cachés",
-        "Nombre illimité d'agents",
         "Check-ins réguliers pour l'optimisation",
         "Configuration, support et numéro de téléphone inclus"
       ],
@@ -38,7 +35,6 @@ export function AboutSection() {
         "Modelado de procesos individual",
         "Prompting personal y ajuste fino",
         "Facturación transparente por minuto sin costos ocultos",
-        "Número ilimitado de agentes",
         "Check-ins regulares para optimización",
         "Configuración, soporte y número de teléfono incluidos"
       ]
@@ -100,7 +96,7 @@ export function AboutSection() {
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden mt-6 max-w-md">
               <Image
                 src="/images/team.webp"
-                alt="Die callflows Gründer"
+                alt="callflows Gründer - Experten für KI-Voice-Agents im Mittelstand"
                 title="Das Team von callflows – Experten für KI‑callflows"
                 fill
                 className="object-cover"

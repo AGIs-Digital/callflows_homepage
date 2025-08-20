@@ -15,7 +15,7 @@ export default function KICallflowPage() {
       <main className="bg-background">
         <SiteHeader />
         <div className="relative overflow-hidden">
-        <section className="py-20 bg-gradient-to-b from-background via-accent/10 to-primary/5">
+        <section className="py-20 bg-gradient-to-b from-secondary/25 via-secondary/35 to-secondary/40">
           <div className="container max-w-6xl">
             <div className="relative rounded-2xl border bg-card/60 backdrop-blur p-10 md:p-14">
               <div className="absolute -top-24 -right-24 h-64 w-64 rotate-12 bg-gradient-to-br from-primary/20 via-accent/20 to-primary/10 blur-3xl rounded-full" />
@@ -27,7 +27,7 @@ export default function KICallflowPage() {
           </div>
         </section>
 
-        <section className="py-12 bg-gradient-to-b from-primary/5 via-primary/30 to-primary/60">
+        <section className="py-12 bg-gradient-to-b from-secondary/40 via-accent/25 to-accent/35">
           <div className="container max-w-6xl grid md:grid-cols-2 gap-8">
             <div className="rounded-xl border bg-card p-6">
               <h2 className="text-2xl font-semibold mb-4">{t('glossary.kiCallflow.diffTitle')}</h2>
@@ -45,7 +45,7 @@ export default function KICallflowPage() {
         </section>
 
         {/* Terminologie-Tabelle - Mobile optimiert */}
-        <section className="py-12 bg-gradient-to-b from-primary/60 via-secondary/60 to-secondary/30">
+        <section className="py-12 bg-gradient-to-b from-accent/35 via-primary/25 to-primary/30">
           <div className="container max-w-6xl">
             <h2 className="text-2xl font-semibold mb-6">{t('glossary.kiCallflow.terminologyTitle')}</h2>
             
@@ -102,7 +102,7 @@ export default function KICallflowPage() {
         </section>
 
         {/* Ende‑zu‑Ende Sektion */}
-        <section className="py-12 bg-gradient-to-b from-secondary/20 via-accent/10 to-primary/10">
+        <section className="py-12 bg-gradient-to-b from-primary/30 via-tertiary/20 to-tertiary/25">
           <div className="container max-w-6xl">
             <div className="rounded-xl border bg-card p-6 md:p-8">
               <h2 className="text-2xl font-semibold mb-3">{t('glossary.kiCallflow.e2eTitle')}</h2>
@@ -129,7 +129,7 @@ export default function KICallflowPage() {
           </div>
         </section>
 
-        <section className="py-16 bg-gradient-to-b from-primary/10 via-accent/20 to-accent/50 pb-24">
+        <section className="py-16 bg-gradient-to-b from-tertiary/25 via-accent/30 to-accent/45 pb-24">
           <div className="container max-w-6xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">{t('glossary.kiCallflow.benefitsTitle')}</h2>

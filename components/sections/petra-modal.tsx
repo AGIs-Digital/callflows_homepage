@@ -42,7 +42,7 @@ export function PetraModal({ isOpen, onClose }: PetraModalProps) {
                 <div className="mb-6">
                   <Image
                     src="/images/petra-logo.webp"
-                    alt="Petra Abeln Logo"
+                    alt="Petra Abeln - Vertriebscoaching für KI-Lösungen"
                     width={200}
                     height={80}
                     className="h-16 w-auto"
@@ -64,7 +64,7 @@ export function PetraModal({ isOpen, onClose }: PetraModalProps) {
                 <div className="relative overflow-hidden rounded-lg shadow-lg">
                   <Image
                     src="/images/petra-abeln.webp"
-                    alt="Petra Abeln"
+                    alt="Petra Abeln Unternehmensberaterin für Vertrieb für automatisierte Telefonie"
                     width={192}
                     height={240}
                     className="w-full h-auto object-cover"
