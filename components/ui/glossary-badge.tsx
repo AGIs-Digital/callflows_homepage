@@ -10,7 +10,7 @@ type GlossaryBadgeProps = {
   className?: string;
 };
 
-export function GlossaryBadge({ href = "/glossar/ki-callflow", className }: GlossaryBadgeProps) {
+export function GlossaryBadge({ href = "/glossar", className }: GlossaryBadgeProps) {
   const { t } = useI18n();
 
   return (

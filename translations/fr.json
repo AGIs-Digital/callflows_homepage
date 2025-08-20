@@ -407,6 +407,7 @@
     "product": "Produit",
     "pricing": "Tarifs",
     "faq": "FAQ",
+    "glossary": "Glossaire",
     "company": "Entreprise",
     "about": "À propos",
     "blog": "Blog",
@@ -871,6 +872,7 @@
   "pilotPackage": {
     "title": "Votre entrée dans la téléphonie IA",
     "subtitle": "Commencez sans risque avec un callflow IA individuel",
+    "badge": "Notre offre",
     "oneTime": "unique",
     "includedMinutes": "minutes IA incluses",
     "noRisk": "Aucun risque, aucun abonnement",

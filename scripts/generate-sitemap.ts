@@ -9,6 +9,9 @@ const generate = async () => {
     '!app/**/_*.tsx',
     '!app/**/components/**',
     '!app/**/layout.tsx',
+    '!app/admin-dashboard/**', // Admin Dashboard entfernen
+    '!app/customer-dashboard/**', // Customer Dashboard entfernen
+    '!app/login/**', // Login entfernen
   ]);
 
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://callflows.de';

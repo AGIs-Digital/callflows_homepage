@@ -168,6 +168,7 @@
   "pilotPackage": {
     "title": "Ihr Einstieg in die KI-Telefonie",
     "subtitle": "Starten Sie risikofrei mit einem individuellen KI-callflow",
+    "badge": "Unser Angebot",
     "oneTime": "einmalig",
     "includedMinutes": "KI-Minuten inklusive",
     "noRisk": "Kein Risiko, kein Abo",
@@ -554,6 +555,7 @@
     "product": "Produkt",
     "pricing": "Preise",
     "faq": "FAQ",
+    "glossary": "Glossar",
     "company": "Unternehmen",
     "about": "Über uns",
     "blog": "Blog",

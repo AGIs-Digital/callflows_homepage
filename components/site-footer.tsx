@@ -54,8 +54,8 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/glossar/ki-callflow" className="text-sm text-muted-foreground hover:text-primary">
-                  KI‑callflow Glossar
+                <Link href="/glossar" className="text-sm text-muted-foreground hover:text-primary">
+                  {t('footer.glossary')}
                 </Link>
               </li>
 

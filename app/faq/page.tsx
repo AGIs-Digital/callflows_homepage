@@ -148,6 +148,7 @@ export default function FAQPage() {
           <Card className="mt-12 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
             <CardContent className="p-8 text-center">
               <h2 className="text-2xl font-bold text-foreground mb-4">
+
                 {t('faq.cta.title')}
               </h2>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">

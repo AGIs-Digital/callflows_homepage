@@ -2,69 +2,167 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://callflows.de</loc>
-    <lastmod>2024-05-01T12:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://callflows.de/pricing</loc>
-    <lastmod>2024-05-01T12:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://callflows.de/kontakt</loc>
-    <lastmod>2024-05-01T12:00:00+00:00</lastmod>
+    <lastmod>2025-08-20T16:08:56.534Z</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://callflows.de/#about</loc>
-    <lastmod>2024-05-01T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://callflows.de/faq</loc>
-    <lastmod>2024-05-01T12:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://callflows.de/blog</loc>
-    <lastmod>2024-05-01T12:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://callflows.de/blog/kundenservice-mit-ki</loc>
-    <lastmod>2024-01-10T10:00:00+00:00</lastmod>
+    <loc>https://callflows.de/about</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://callflows.de/blog/ki-telefonie-implementierung</loc>
-    <lastmod>2024-02-20T10:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://callflows.de/impressum</loc>
-    <lastmod>2024-05-01T12:00:00+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+
   <url>
     <loc>https://callflows.de/datenschutz</loc>
-    <lastmod>2024-05-01T12:00:00+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://callflows.de/agb</loc>
-    <lastmod>2024-05-01T12:00:00+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-</urlset> 
+
+  <url>
+    <loc>https://callflows.de/blog</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://callflows.de/faq</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://callflows.de/glossar</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://callflows.de/impressum</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://callflows.de/kontakt</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://callflows.de/pricing</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://callflows.de/blog/datenschutz-in-der-ki-telefonie-diese-5-regeln-gelten-jetzt</loc
+    >
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://callflows.de/blog/anthropic-claude-35-sonnet-vs-gpt-4o-welches-ki-modell-ist-besser-fuer-voice-agents</loc
+    >
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://callflows.de/blog/die-zukunft-der-ki-telefonie-trends-und-entwicklungen</loc
+    >
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://callflows.de/blog/gpt-4o-revolutioniert-ki-telefonie-neue-moeglichkeiten-fuer-unternehmen</loc
+    >
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://callflows.de/blog/gpt4o-ki-telefonie</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://callflows.de/blog/ki-telefonie-branchen</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://callflows.de/blog/ki-telefonie-gesundheitswesen</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://callflows.de/blog/ki-telefonie-mitarbeiter-akzeptanz</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://callflows.de/blog/ki-vs-mensch-warum-hybride-callcenter-die-besseren-ergebnisse-liefern</loc
+    >
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://callflows.de/blog/kosten-nutzen-analyse-ki-telefonie</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://callflows.de/blog/kundenservice-ki-customer-experience</loc>
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://callflows.de/blog/klarna-co-zeigen-warum-ki-telefonie-nicht-ohne-menschen-funktioniert</loc
+    >
+    <lastmod>2025-08-20T16:08:56.535Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

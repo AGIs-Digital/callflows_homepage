@@ -407,6 +407,7 @@
     "product": "Product",
     "pricing": "Pricing",
     "faq": "FAQ",
+    "glossary": "Glossary",
     "company": "Company",
     "about": "About Us",
     "blog": "Blog",
@@ -871,6 +872,7 @@
   "pilotPackage": {
     "title": "Your entry into AI telephony",
     "subtitle": "Start risk-free with an individual AI callflow",
+    "badge": "Our offer",
     "oneTime": "one-time",
     "includedMinutes": "AI minutes included",
     "noRisk": "No risk, no subscription",
