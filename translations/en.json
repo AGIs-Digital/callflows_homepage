@@ -56,6 +56,18 @@
     "buttonRetry": "Try again"
   },
   "pricing": {
+    "hero": {
+      "breadcrumb": "Pricing",
+      "title": "Transparent AI callflow pricing",
+      "subtitle": "Pricing without contract terms",
+      "description": "Start risk-free with a pilot month - no contract terms, no hidden costs",
+      "benefits": "✓ No contract term ✓ No risk ✓ Usage-based billing only"
+    },
+    "seo": {
+      "title": "AI Voice Agent Pricing without Contract Terms | Pay-per-Use Telephony | callflows",
+      "description": "Pilot month for €2,490, then billed per minute – without contract commitment. Test AI callflow now and automate sales processes.",
+      "keywords": "AI Voice Agent, automated telephony, pay-per-use, mid-market sales, minute-based billing, no contract terms"
+    },
     "pageTitle": "AI callflow Prices",
     "introTitle": "Getting started with AI telephony through callflows is simple",
     "introSubtitle": "Professional Voice Agents for your business – from free consultation to successful go-live. Transparent, straightforward, and without hidden costs.",
@@ -338,7 +350,13 @@
     "question13": "How is conversation quality ensured?",
     "answer13": "Quality is ensured through continuous machine learning and regular optimizations. All conversations are evaluated (naturally in compliance with data protection) to improve performance. Additionally, we offer detailed analytics and reporting tools so you can monitor your AI voice agent's performance at any time.",
     "question14": "Is there a test phase or pilot project?",
-    "answer14": "Yes, we offer a pilot month in which the system is created for you. This phase lasts 1 month. During this time, you can test the functions of our AI voice agent without obligation."
+    "answer14": "Yes, we offer a pilot month in which the system is created for you. This phase lasts 1 month. During this time, you can test the functions of our AI voice agent without obligation.",
+    "cta": {
+      "title": "More questions about AI callflows?",
+      "description": "Our expert team is happy to provide you with personal consultation.",
+      "contactButton": "Get in touch",
+      "pricingButton": "View pricing"
+    }
   },
   "contact": {
     "title": "Contact",
@@ -738,6 +756,284 @@
     "feature3": {
       "title": "Intelligent Call Forwarding",
       "description": "Transfer to human employees when desired"
+    }
+  },
+  "roiCalculator": {
+    "title": "How much revenue do you generate with AI callflows?",
+    "subtitle": "Calculate your revenue increase through automated calls and qualified leads",
+    "badge": "ROI Calculator",
+    "parameters": {
+      "title": "Your Sales Parameters",
+      "subtitle": "Adjust the values to your situation",
+      "callsPerDay": "Calls per day",
+      "callsPerDayTooltip": {
+        "title": "GDPR Recommendations:",
+        "cold": "Cold calls: Max. 300/day",
+        "warm": "Warm/existing customers: Max. 1,000/day",
+        "note": "Legally compliant volumes for sustainable acquisition"
+      },
+      "callDuration": "Average call duration",
+      "conversionRate": "Lead qualification rate",
+      "conversionTooltip": "Percentage of calls that become qualified leads",
+      "closingRate": "Closing rate",
+      "closingTooltip": "Percentage of qualified leads that become sales",
+      "dealValue": "Average deal value",
+      "dealValuePlaceholder": "2500",
+      "seconds": "Sec.",
+      "minutes": "Min.",
+      "averageCallDuration": "Avg call duration",
+      "callsPerMonth": "calls/month",
+      "minutesPerMonth": "min/month",
+      "euroSymbol": "€",
+      "qualifiedLeadsMonth": "qualified leads/month",
+      "actualDealsMonth": "actual deals/month"
+    },
+    "costs": {
+      "title": "Cost Comparison",
+      "subtitle": "AI vs. human employees",
+      "aiCosts": "AI costs",
+      "humanCosts": "Personnel costs",
+      "savings": "Monthly savings",
+      "totalMinutes": "Total minutes/month",
+      "currentTier": "Current tier",
+      "pricePerMinute": "Price per minute",
+      "perMonth": "/month",
+      "vs": "vs",
+      "employeeCosts": "Employee costs",
+      "employeeCostDetail": "At €3,500 gross salary + 20% payroll costs",
+      "estimatedRevenue": "Estimated monthly revenue",
+      "returnOnInvestment": "Return on Investment",
+      "revenuePerInvestment": "Revenue per €1 AI investment",
+      "currentTierLabel": "Current tier:",
+      "pricePerMinuteLabel": "Price per minute:",
+      "leadPerformanceDetail": "Lead performance in detail",
+      "qualifiedLeadsLabel": "Qualified leads:",
+      "costPerLeadLabel": "Cost per lead:",
+      "conversionRateLabel": "Conversion rate:",
+      "kiCostsMonth": "AI costs/month",
+      "minutesAtPrice": "minutes at"
+    },
+    "revenue": {
+      "title": "Revenue Potential",
+      "subtitle": "Your success with AI callflows",
+      "qualifiedLeads": "Qualified leads/month",
+      "successfulDeals": "Successful deals/month",
+      "monthlyRevenue": "Monthly revenue",
+      "annualRevenue": "Annual revenue",
+      "roi": "ROI after 12 months",
+      "leads": "leads",
+      "deals": "deals",
+      "perYear": "/year",
+      "deals": "deals",
+      "actualDealsMonth": "actual deals/month",
+      "closingRateQualifiedLeads": "Closing rate of qualified leads",
+      "perMonth": "/month"
+    },
+    "tiers": {
+      "tier1": "Tier 1",
+      "tier2": "Tier 2",
+      "tier3": "Tier 3",
+      "tier4": "Tier 4",
+      "tier5": "Tier 5"
+    }
+  },
+  "minuteTiers": {
+    "title": "Minute Tiers after Go-Live",
+    "subtitle": "Transparent billing based on consumption at month end",
+    "badge": "No contract term, no risk",
+    "tableTitle": "Tier prices per minute (all prices excl. VAT)",
+    "minuteRange": "Minute range",
+    "pricePerMinute": "Price per minute",
+    "exampleCosts": "Example monthly costs",
+    "upTo": "up to",
+    "from": "from",
+    "minutes": "minutes",
+    "euro": "€",
+    "note": "For higher consumption, the lowest reached price is applied to all minutes.",
+    "billingHints": "Billing information",
+    "billing": "Billing",
+    "billingDesc": "Monthly based on actual call minutes (transparently shown)",
+    "contract": "Contract term",
+    "contractDesc": "No contract commitment – pure usage fee",
+    "scaling": "Scaling",
+    "scalingDesc": "Tier applies automatically based on consumption",
+    "support": "Support",
+    "supportDesc": "Operation & support included; individual extensions possible anytime",
+    "noBasicFee": "None",
+    "secondAccurate": "Per second",
+    "monthlyBilling": "Monthly",
+    "basicFee": "Basic fee",
+    "billing": "Billing",
+    "invoicing": "Invoicing",
+    "upTo": "Up to",
+    "from": "From"
+  },
+  "pilotPackage": {
+    "title": "Your entry into AI telephony",
+    "subtitle": "Start risk-free with an individual AI callflow",
+    "oneTime": "one-time",
+    "includedMinutes": "AI minutes included",
+    "noRisk": "No risk, no subscription",
+    "features": {
+      "feature1": "Individual AI Voice Agent creation",
+      "feature2": "1 month professional operation",
+      "feature3": "Personal support & optimization",
+      "feature4": "Phone number & technical setup",
+      "feature5": "Data protection compliant implementation",
+      "feature6": "Detailed analysis & reporting"
+    },
+    "benefits": {
+      "title": "What you get:",
+      "benefit1": "Immediate start",
+      "benefit1Desc": "Your AI agent is ready within 5 business days",
+      "benefit2": "Full transparency",
+      "benefit2Desc": "Detailed reports on all conversations and successes",
+      "benefit3": "Risk-free testing",
+      "benefit3Desc": "No long-term commitment, fairly billed"
+    },
+    "pilotMonthIncludes": "Pilot month includes",
+    "afterGoLive": "After Go-Live",
+    "savedValue": "saved",
+    "fullSetupAndConfig": "Complete setup and configuration",
+    "includedMinutesText": "AI minutes included",
+    "individualAdaptation": "Individual adaptation to your company",
+    "noBasicFee": "No basic fee",
+    "tierPricing": "Tier pricing from €0.99/min",
+    "secondAccurateBilling": "Per-second billing",
+    "startPilotMonth": "Start pilot month",
+    "cardTitle": "Pilot month AI-callflow",
+    "cardSubtitle": "Individual AI-callflow with setup",
+    "valueText": "Value:",
+    "pilotFeatures": {
+      "feature1": "Complete setup and configuration",
+      "feature2": "1000 AI minutes included", 
+      "feature3": "Individual adaptation to your company"
+    }
+  },
+  "features": {
+    "badge": "Who is this for?",
+    "title": "AI Voice Agents for SMEs",
+    "subtitle": "AI Voice Agents help SMEs realize automated calls in B2B sales while strengthening personal contact",
+    "cta": "Fits your company? Let's talk!",
+    "targetGroups": {
+      "staffing": {
+        "title": "Staffing Agencies",
+        "description": "with high call and follow-up load",
+        "benefits": [
+          "Automated calls for candidate contact",
+          "AI telephony reduces manual follow-ups",
+          "More time for qualified B2B sales conversations"
+        ]
+      },
+      "mediumSales": {
+        "title": "Mid-sized Sales Organizations",
+        "description": "looking to scale",
+        "benefits": [
+          "Scalable sales processes",
+          "Consistent customer approach",
+          "Growth without staff expansion"
+        ]
+      },
+      "efficientTeams": {
+        "title": "Efficient Teams",
+        "description": "wanting to automate standard calls",
+        "benefits": [
+          "More time for closings",
+          "Automated routine tasks",
+          "Higher conversion rates"
+        ]
+      },
+      "enterprises": {
+        "title": "Enterprises",
+        "description": "seeking transparent, flexible AI telephony",
+        "benefits": [
+          "Transparent cost structure",
+          "Flexibly scalable solution",
+          "Enterprise-grade security"
+        ]
+      }
+    }
+  },
+  "process": {
+    "badge": "How to Start",
+    "title": "Live in 3 Steps",
+    "subtitle": "From initial analysis to productive deployment – we guide you through every step",
+    "cta": {
+      "title": "Ready for the next step?",
+      "description": "Let's analyze together how AI callflows can support your sales",
+      "buttonText": "Book consultation"
+    },
+    "steps": {
+      "step1": {
+        "title": "Kick-off & Process Analysis",
+        "description": "Goals, Use-Cases, Conversation Logic",
+        "details": [
+          "Needs analysis and goal definition",
+          "Use-case identification",
+          "Develop conversation logic",
+          "Clarify technical requirements"
+        ]
+      },
+      "step2": {
+        "title": "Setup & Pilot Month",
+        "description": "Individual callflow, testing & fine-tuning",
+        "details": [
+          "Individual AI callflow setup",
+          "Implement process logic",
+          "Testing phase and fine-tuning",
+          "Set up system integrations"
+        ]
+      },
+      "step3": {
+        "title": "Go-Live & Scaling",
+        "description": "Minute-based billing, expand as needed",
+        "details": [
+          "Productive go-live start",
+          "Minute-based billing",
+          "Performance monitoring",
+          "Scaling as needed"
+        ]
+      }
+    }
+  },
+  "socialProofRoi": {
+    "badge": "Practice: measurable relief, more leads",
+    "title": "Already proven in pilot month",
+    "stats": {
+      "calls": {
+        "value": "1,256",
+        "label": "automated calls"
+      },
+      "leads": {
+        "value": "14%",
+        "label": "qualified leads"
+      },
+      "relief": {
+        "value": "100%",
+        "label": "team relief"
+      }
+    },
+    "testimonial": "\"Already in the pilot month, our first customer automated 1,256 calls, achieved 14% qualified leads and noticeably relieved the team – more focus on closings.\"",
+    "cta": {
+      "title": "Calculate your savings potential",
+      "description": "Use our detailed ROI calculator and find out how much you can save with AI callflows.",
+      "buttonText": "Open ROI Calculator"
+    }
+  },
+  "whyCallflows": {
+    "badge": "Why callflows?",
+    "title": "More than software – a partner",
+    "description": "Many providers leave setup to you. We deliver end-to-end: from dialog design and process logic to integration and operation. Plus an understandable minute model without contract commitment. This keeps AI simple, transparent and calculable."
+  },
+  "contactPage": {
+    "heroSubtitle": "Speak with our AI experts about your individual requirements",
+    "formSubtitle": "Send direct message",
+    "appointmentSubtitle": "Personal consultation",
+    "additionalCta": {
+      "title": "Do you have questions about AI telephony?",
+      "description": "Our expert team is available to answer all your questions and find the best solution for your company together.",
+      "pricesButton": "View prices",
+      "faqButton": "Browse FAQ"
     }
   }
 } 

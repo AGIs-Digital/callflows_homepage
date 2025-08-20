@@ -3,48 +3,36 @@
 import { Search, Cog, Rocket } from "lucide-react";
 import { ZohoEmbed } from "@/components/booking/zoho-embed";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n";
 
 export function ProcessSection() {
+  const { t } = useI18n();
+  
   const steps = [
     {
       number: 1,
       icon: Search,
-      title: "Kick-off & Prozess-Analyse",
-      description: "Ziele, Use-Cases, Gesprächslogik",
-      details: [
-        "Bedarfsanalyse und Zieldefinition",
-        "Use-Case Identifikation",
-        "Gesprächslogik entwickeln",
-        "Technische Voraussetzungen klären"
-      ],
+      title: t('process.steps.step1.title'),
+      description: t('process.steps.step1.description'),
+      details: t('process.steps.step1.details'),
       gradient: "from-primary/20 to-primary/30",
       iconColor: "text-primary"
     },
     {
       number: 2,
       icon: Cog,
-      title: "Einrichtung & Pilotmonat",
-      description: "individueller Callflow, Test & Feinschliff",
-      details: [
-        "Individueller KI-callflow Setup",
-        "Prozesslogik implementieren",
-        "Testphase und Feintuning",
-        "System-Integrationen einrichten"
-      ],
+      title: t('process.steps.step2.title'),
+      description: t('process.steps.step2.description'),
+      details: t('process.steps.step2.details'),
       gradient: "from-accent/20 to-accent/30",
       iconColor: "text-accent"
     },
     {
       number: 3,
       icon: Rocket,
-      title: "Go-Live & Skalierung",
-      description: "Minutenbasiert abrechnen, bei Bedarf ausbauen",
-      details: [
-        "Produktiver Go-Live Start",
-        "Minutenbasierte Abrechnung",
-        "Performance Monitoring",
-        "Skalierung nach Bedarf"
-      ],
+      title: t('process.steps.step3.title'),
+      description: t('process.steps.step3.description'),
+      details: t('process.steps.step3.details'),
       gradient: "from-tertiary/20 to-tertiary/30",
       iconColor: "text-tertiary"
     }
@@ -55,13 +43,13 @@ export function ProcessSection() {
       <div className="container max-w-6xl">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-sm font-medium text-primary">So starten Sie</span>
+            <span className="text-sm font-medium text-primary">{t('process.badge')}</span>
           </div>
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">
-            In 3 Schritten live
+            {t('process.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Von der ersten Analyse bis zum produktiven Einsatz – wir begleiten Sie durch jeden Schritt
+            {t('process.subtitle')}
           </p>
         </div>
 
@@ -99,7 +87,7 @@ export function ProcessSection() {
                 
                 {/* Details */}
                 <div className="space-y-2 text-left">
-                  {step.details.map((detail, i) => (
+                  {Array.isArray(step.details) && step.details.map((detail, i) => (
                     <div key={i} className="flex items-start gap-2 text-sm">
                       <div className={`w-1.5 h-1.5 rounded-full ${step.iconColor.replace('text-', 'bg-')} flex-shrink-0 mt-2`} />
                       <span className="text-muted-foreground">{detail}</span>
@@ -115,13 +103,13 @@ export function ProcessSection() {
         <div className="text-center">
           <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/50 p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-primary mb-4">
-              Bereit für den nächsten Schritt?
+              {t('process.cta.title')}
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Lassen Sie uns gemeinsam analysieren, wie KI-callflows Ihren Vertrieb unterstützen können
+              {t('process.cta.description')}
             </p>
             <ZohoEmbed 
-              buttonText="Beratung buchen"
+              buttonText={t('process.cta.buttonText')}
               size="lg" 
               className="bg-[#FFB703] hover:bg-tertiary/70 text-white font-semibold px-8 py-4 text-lg gap-2"
             />

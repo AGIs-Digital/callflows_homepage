@@ -18,9 +18,9 @@ export default function PricingPage() {
   return (
     <>
       <Head>
-        <title>KI-Voice-Agent Preise ohne Vertragslaufzeit | Pay-per-Use Telefonie | callflows</title>
-        <meta name="description" content="Pilotmonat für 2.490 €, danach pro Minute abgerechnet – ohne Vertragsbindung. Jetzt KI-Callflow testen und Vertriebsprozesse automatisieren." />
-        <meta name="keywords" content="KI-Voice-Agent, automatisierte Telefonie, Pay-per-Use, Vertrieb Mittelstand, minutenbasierte Abrechnung, ohne Vertragslaufzeit" />
+        <title>{t('pricing.seo.title')}</title>
+        <meta name="description" content={t('pricing.seo.description')} />
+        <meta name="keywords" content={t('pricing.seo.keywords')} />
       </Head>
       <main className="bg-background">
       <SiteHeader />
@@ -30,22 +30,22 @@ export default function PricingPage() {
           <div className="container max-w-6xl mx-auto">
             <BreadcrumbSEO 
               items={[
-                { name: "Preise", url: "https://callflows.de/pricing" }
+                { name: t('pricing.hero.breadcrumb'), url: "https://callflows.de/pricing" }
               ]}
             />
             <div className="text-center mt-8">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary dark:text-white mb-4 leading-tight">
-                Transparente KI-callflow Preise
+                {t('pricing.hero.title')}
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-accent mb-6">
-                Preise ohne Vertragslaufzeit
+                {t('pricing.hero.subtitle')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-                Starten Sie risikofrei mit einem Pilotmonat - keine Vertragslaufzeit, keine versteckten Kosten
+                {t('pricing.hero.description')}
               </p>
               <div className="bg-green-100 dark:bg-green-900/20 rounded-lg p-4 inline-block">
                 <p className="text-green-800 dark:text-green-200 font-semibold">
-                  ✓ Keine Vertragslaufzeit ✓ Kein Risiko ✓ Reine Nutzungsgebühr
+                  {t('pricing.hero.benefits')}
                 </p>
               </div>
             </div>

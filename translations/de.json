@@ -55,7 +55,171 @@
     "statusErrorDesc": "Bitte prüfen Sie Ihre Telefonnummer und versuchen Sie es erneut.",
     "buttonRetry": "Nochmal versuchen"
   },
+  "roiCalculator": {
+    "title": "Wie viel Umsatz generieren Sie mit KI‑callflows?",
+    "subtitle": "Berechnen Sie Ihre Umsatzsteigerung durch automatisierte Anrufe und qualifizierte Leads",
+    "badge": "ROI-Calculator",
+    "parameters": {
+      "title": "Ihre Vertriebsparameter",
+      "subtitle": "Passen Sie die Werte an Ihre Situation an",
+      "callsPerDay": "Anrufe pro Tag",
+      "callsPerDayTooltip": {
+        "title": "DSGVO-Empfehlungen:",
+        "cold": "Kaltakquise: Max. 300/Tag",
+        "warm": "Warm/Bestandskunden: Max. 1.000/Tag",
+        "note": "Rechtssichere Volumina für nachhaltige Akquise"
+      },
+      "callDuration": "Durchschnittliche Gesprächsdauer",
+      "conversionRate": "Lead-Qualifizierungsrate",
+      "conversionTooltip": "Anteil der Anrufe, die zu qualifizierten Leads werden",
+      "closingRate": "Abschlussrate",
+      "closingTooltip": "Anteil der qualifizierten Leads, die zu Verkäufen werden",
+      "dealValue": "Durchschnittlicher Deal-Wert",
+      "dealValuePlaceholder": "2500",
+      "seconds": "Sek.",
+      "minutes": "Min.",
+      "averageCallDuration": "Ø Anrufdauer",
+      "callsPerMonth": "Anrufe/Monat",
+      "minutesPerMonth": "Min/Monat",
+      "euroSymbol": "€",
+      "qualifiedLeadsMonth": "qualifizierte Leads/Monat",
+      "actualDealsMonth": "tatsächliche Abschlüsse/Monat"
+    },
+    "costs": {
+      "title": "Kostenvergleich",
+      "subtitle": "KI vs. menschliche Mitarbeiter",
+      "aiCosts": "KI-Kosten",
+      "humanCosts": "Personalkosten",
+      "savings": "Monatliche Ersparnis",
+      "totalMinutes": "Gesamtminuten/Monat",
+      "currentTier": "Aktuelle Staffel",
+      "pricePerMinute": "Preis pro Minute",
+      "perMonth": "/Monat",
+      "vs": "vs",
+      "employeeCosts": "Mitarbeiterkosten",
+      "employeeCostDetail": "Bei 3.500€ Bruttolohn + 20% Lohnnebenkosten",
+      "estimatedRevenue": "Geschätzter Monatsumsatz",
+      "returnOnInvestment": "Return on Investment",
+      "revenuePerInvestment": "Umsatz pro 1€ KI-Investition",
+      "currentTierLabel": "Aktuelle Staffel:",
+      "pricePerMinuteLabel": "Preis pro Minute:",
+      "leadPerformanceDetail": "Lead-Performance im Detail",
+      "qualifiedLeadsLabel": "Qualifizierte Leads:",
+      "costPerLeadLabel": "Kosten pro Lead:",
+      "conversionRateLabel": "Conversion-Rate:",
+      "kiCostsMonth": "KI-Kosten/Monat",
+      "minutesAtPrice": "Minuten à"
+    },
+    "revenue": {
+      "title": "Umsatz-Potential",
+      "subtitle": "Ihre Erfolge mit KI‑callflows",
+      "qualifiedLeads": "Qualifizierte Leads/Monat",
+      "successfulDeals": "Erfolgreiche Abschlüsse/Monat",
+      "monthlyRevenue": "Monatlicher Umsatz",
+      "annualRevenue": "Jährlicher Umsatz",
+      "roi": "ROI nach 12 Monaten",
+      "leads": "Leads",
+      "deals": "Deals",
+      "perYear": "/Jahr",
+      "deals": "Abschlüsse",
+      "actualDealsMonth": "actual deals/month",
+      "closingRateQualifiedLeads": "Abschlussrate qualifizierter Leads",
+      "perMonth": "/Monat"
+    },
+    "tiers": {
+      "tier1": "Staffel 1",
+      "tier2": "Staffel 2", 
+      "tier3": "Staffel 3",
+      "tier4": "Staffel 4",
+      "tier5": "Staffel 5"
+    }
+  },
+  "minuteTiers": {
+    "title": "Minutenstaffel nach Go-Live",
+    "subtitle": "Transparente Abrechnung nach Verbrauch am Monatsende",
+    "badge": "Keine Vertragslaufzeit, kein Risiko",
+    "tableTitle": "Staffelpreise pro Minute (alle Preise zzgl. MwSt.)",
+    "minuteRange": "Minutenbereich",
+    "pricePerMinute": "Preis pro Minute",
+    "exampleCosts": "Beispiel Monatskosten",
+    "upTo": "bis",
+    "from": "ab",
+    "minutes": "Minuten",
+    "euro": "€",
+    "note": "Bei höherem Verbrauch wird der niedrigste erreichte Preis für alle Minuten angewendet.",
+    "billingHints": "Hinweise zur Abrechnung",
+    "billing": "Abrechnung",
+    "billingDesc": "Monatlich nach tatsächlichen Gesprächsminuten (transparent ausgewiesen)",
+    "contract": "Laufzeit",
+    "contractDesc": "Keine Vertragsbindung – reine Nutzungsgebühr",
+    "scaling": "Skalierung", 
+    "scalingDesc": "Staffel greift automatisch je nach Verbrauch",
+    "support": "Support",
+    "supportDesc": "Betrieb & Support inklusive; individuelle Erweiterungen jederzeit möglich",
+    "noBasicFee": "Keine",
+    "secondAccurate": "Sekundengenau",
+    "monthlyBilling": "Monatliche",
+    "basicFee": "Grundgebühr",
+    "billing": "Abrechnung", 
+    "invoicing": "Rechnungsstellung",
+    "upTo": "Bis",
+    "from": "Ab"
+  },
+  "pilotPackage": {
+    "title": "Ihr Einstieg in die KI-Telefonie",
+    "subtitle": "Starten Sie risikofrei mit einem individuellen KI-callflow",
+    "oneTime": "einmalig",
+    "includedMinutes": "KI-Minuten inklusive",
+    "noRisk": "Kein Risiko, kein Abo",
+    "features": {
+      "feature1": "Individuelle KI-Voice-Agent Erstellung",
+      "feature2": "1 Monat professioneller Betrieb",
+      "feature3": "Persönlicher Support & Optimierung",
+      "feature4": "Telefonnummer & technisches Setup",
+      "feature5": "Datenschutzkonforme Umsetzung",
+      "feature6": "Detaillierte Auswertung & Reporting"
+    },
+    "benefits": {
+      "title": "Was Sie erhalten:",
+      "benefit1": "Sofortiger Einstieg",
+      "benefit1Desc": "Ihr KI-Agent ist innerhalb von 5 Werktagen einsatzbereit",
+      "benefit2": "Volle Transparenz", 
+      "benefit2Desc": "Detaillierte Berichte über alle Gespräche und Erfolge",
+      "benefit3": "Risikofrei testen",
+      "benefit3Desc": "Keine langfristige Bindung, fair abgerechnet"
+    },
+    "pilotMonthIncludes": "Pilotmonat enthält",
+    "afterGoLive": "Nach Go-Live",
+    "savedValue": "gespart",
+    "fullSetupAndConfig": "Vollständige Einrichtung und Konfiguration",
+    "includedMinutesText": "KI-Minuten inklusive",
+    "individualAdaptation": "Individuelle Anpassung an Ihr Unternehmen",
+    "noBasicFee": "Keine Grundgebühr",
+    "tierPricing": "Staffelpreise ab 0,99 €/Min",
+    "secondAccurateBilling": "Sekundengenaue Abrechnung",
+    "startPilotMonth": "Pilotmonat starten",
+    "cardTitle": "Pilotmonat KI-callflow",
+    "cardSubtitle": "Individueller KI-callflow mit Einrichtung",
+    "valueText": "Wert:",
+    "pilotFeatures": {
+      "feature1": "Vollständige Einrichtung und Konfiguration", 
+      "feature2": "1000 KI-Minuten inklusive",
+      "feature3": "Individuelle Anpassung an Ihr Unternehmen"
+    }
+  },
   "pricing": {
+    "hero": {
+      "breadcrumb": "Preise",
+      "title": "Transparente KI-callflow Preise",
+      "subtitle": "Preise ohne Vertragslaufzeit",
+      "description": "Starten Sie risikofrei mit einem Pilotmonat - keine Vertragslaufzeit, keine versteckten Kosten",
+      "benefits": "✓ Keine Vertragslaufzeit ✓ Kein Risiko ✓ Reine Nutzungsgebühr"
+    },
+    "seo": {
+      "title": "KI-Voice-Agent Preise ohne Vertragslaufzeit | Pay-per-Use Telefonie | callflows",
+      "description": "Pilotmonat für 2.490 €, danach pro Minute abgerechnet – ohne Vertragsbindung. Jetzt KI-Callflow testen und Vertriebsprozesse automatisieren.",
+      "keywords": "KI-Voice-Agent, automatisierte Telefonie, Pay-per-Use, Vertrieb Mittelstand, minutenbasierte Abrechnung, ohne Vertragslaufzeit"
+    },
     "pageTitle": "KI‑callflow Preise",
     "introTitle": "So einfach funktioniert der Einstieg mit KI‑callflows",
     "introSubtitle": "Professionelle Voice Agents für Ihr Unternehmen – von der kostenlosen Beratung bis zum erfolgreichen Go-Live. Transparent, unkompliziert und ohne versteckte Kosten.",
@@ -334,7 +498,13 @@
     "question11": "Was passiert, wenn die KI einmal nicht weiterkommt?",
     "answer11": "Es kann vorkommen, dass der KI‑Voice‑Agent eine ungewöhnliche Frage nicht beantworten kann oder der Anrufer ausdrücklich mit einem Menschen sprechen möchte. Für diese Fälle definieren wir gemeinsam Eskalationsregeln: Die KI kann das Gespräch an einen zuständigen Mitarbeiter weiterleiten, eine Rückrufbitte aufnehmen oder den Anrufer höflich um Geduld bitten. Durch intelligentes Routing wird gewährleistet, dass Anfragen nie in einer Sackgasse enden.",
     "question12": "Welche Unterstützung bekomme ich während und nach der Einrichtung?",
-    "answer12": "Von der ersten Bedarfsanalyse bis zum laufenden Betrieb begleiten wir Sie persönlich. Im Pilotmonat stehen wir Ihnen bei der Erstellung der Gesprächslogik zur Seite und passen diese anhand erster Ergebnisse an. Auch nach dem Go‑Live überwachen wir die Leistung, stellen Berichte bereit und optimieren Ihren Callflow kontinuierlich. Sie haben einen festen Ansprechpartner, der Ihre Fragen beantwortet und bei technischen oder strategischen Anpassungen unterstützt."
+    "answer12": "Von der ersten Bedarfsanalyse bis zum laufenden Betrieb begleiten wir Sie persönlich. Im Pilotmonat stehen wir Ihnen bei der Erstellung der Gesprächslogik zur Seite und passen diese anhand erster Ergebnisse an. Auch nach dem Go‑Live überwachen wir die Leistung, stellen Berichte bereit und optimieren Ihren Callflow kontinuierlich. Sie haben einen festen Ansprechpartner, der Ihre Fragen beantwortet und bei technischen oder strategischen Anpassungen unterstützt.",
+    "cta": {
+      "title": "Weitere Fragen zu KI-callflows?",
+      "description": "Unser Expertenteam steht Ihnen gerne für eine persönliche Beratung zur Verfügung.",
+      "contactButton": "Kontakt aufnehmen",
+      "pricingButton": "Preise ansehen"
+    }
   },
   "contact": {
     "title": "Kontakt",
@@ -732,6 +902,132 @@
     "feature3": {
       "title": "Intelligente Anrufweiterleitung",
       "description": "Übergabe an menschliche Mitarbeiter, wenn erwünscht"
+    }
+  },
+  "features": {
+    "badge": "Für wen ist das?",
+    "title": "KI‑Voice‑Agents für den Mittelstand",
+    "subtitle": "KI-Voice-Agents unterstützen den Mittelstand dabei, automatisierte Anrufe im B2B-Vertrieb zu realisieren und gleichzeitig den persönlichen Kontakt zu stärken",
+    "cta": "Passt zu Ihrem Unternehmen? Lassen Sie uns sprechen!",
+    "targetGroups": {
+      "staffing": {
+        "title": "Personaldienstleister",
+        "description": "mit hoher Anruf- und Follow-up-Last",
+        "benefits": [
+          "Automatisierte Anrufe für Kandidaten-Kontaktierung",
+          "KI-Telefonie reduziert manuelle Follow-ups",
+          "Mehr Zeit für qualifizierte Gespräche im B2B-Vertrieb"
+        ]
+      },
+      "mediumSales": {
+        "title": "Mittelständische Vertriebsorganisationen",
+        "description": "die skalieren wollen",
+        "benefits": [
+          "Skalierbare Vertriebsprozesse",
+          "Konsistente Kundenansprache",
+          "Wachstum ohne Personalaufbau"
+        ]
+      },
+      "efficientTeams": {
+        "title": "Effiziente Teams",
+        "description": "die Standardanrufe automatisieren möchten",
+        "benefits": [
+          "Mehr Zeit für Abschlüsse",
+          "Automatisierte Routine-Tasks",
+          "Höhere Conversion-Raten"
+        ]
+      },
+      "enterprises": {
+        "title": "Konzerne",
+        "description": "die transparente, flexible KI-Telefonie suchen",
+        "benefits": [
+          "Transparente Kostenstruktur",
+          "Flexibel skalierbare Lösung",
+          "Enterprise-Grade Sicherheit"
+        ]
+      }
+    }
+  },
+  "process": {
+    "badge": "So starten Sie",
+    "title": "In 3 Schritten live",
+    "subtitle": "Von der ersten Analyse bis zum produktiven Einsatz – wir begleiten Sie durch jeden Schritt",
+    "cta": {
+      "title": "Bereit für den nächsten Schritt?",
+      "description": "Lassen Sie uns gemeinsam analysieren, wie KI-callflows Ihren Vertrieb unterstützen können",
+      "buttonText": "Beratung buchen"
+    },
+    "steps": {
+      "step1": {
+        "title": "Kick-off & Prozess-Analyse",
+        "description": "Ziele, Use-Cases, Gesprächslogik",
+        "details": [
+          "Bedarfsanalyse und Zieldefinition",
+          "Use-Case Identifikation",
+          "Gesprächslogik entwickeln",
+          "Technische Voraussetzungen klären"
+        ]
+      },
+      "step2": {
+        "title": "Einrichtung & Pilotmonat",
+        "description": "individueller Callflow, Test & Feinschliff",
+        "details": [
+          "Individueller KI-callflow Setup",
+          "Prozesslogik implementieren",
+          "Testphase und Feintuning",
+          "System-Integrationen einrichten"
+        ]
+      },
+      "step3": {
+        "title": "Go-Live & Skalierung",
+        "description": "Minutenbasiert abrechnen, bei Bedarf ausbauen",
+        "details": [
+          "Produktiver Go-Live Start",
+          "Minutenbasierte Abrechnung",
+          "Performance Monitoring",
+          "Skalierung nach Bedarf"
+        ]
+      }
+    }
+  },
+  "socialProofRoi": {
+    "badge": "Praxis: messbare Entlastung, mehr Leads",
+    "title": "Bereits im Pilotmonat bewiesen",
+    "stats": {
+      "calls": {
+        "value": "1.256",
+        "label": "automatisierte Anrufe"
+      },
+      "leads": {
+        "value": "14%",
+        "label": "qualifizierte Leads"
+      },
+      "relief": {
+        "value": "100%",
+        "label": "Team-Entlastung"
+      }
+    },
+    "testimonial": "Bereits im Pilotmonat automatisierte unser erster Kunde 1.256 Anrufe, erzielte 14% qualifizierte Leads und entlastete das Team spürbar – mehr Fokus auf Abschlüsse.",
+    "cta": {
+      "title": "Berechnen Sie Ihr Einsparpotential",
+      "description": "Nutzen Sie unseren detaillierten ROI-Calculator und erfahren Sie, wie viel Sie mit KI-callflows sparen können.",
+      "buttonText": "ROI-Calculator öffnen"
+    }
+  },
+  "whyCallflows": {
+    "badge": "Warum callflows?",
+    "title": "Mehr als Software – ein Partner",
+    "description": "Viele Anbieter überlassen Ihnen die Einrichtung. Wir liefern End-to-End: von Dialog-Design und Prozesslogik bis zu Integration und Betrieb. Dazu ein verständliches Minuten-Modell ohne Laufzeitbindung. So bleibt KI einfach, transparent und kalkulierbar."
+  },
+  "contactPage": {
+    "heroSubtitle": "Sprechen Sie mit unseren KI-Experten über Ihre individuellen Anforderungen",
+    "formSubtitle": "Direkte Nachricht senden",
+    "appointmentSubtitle": "Persönliche Beratung",
+    "additionalCta": {
+      "title": "Haben Sie Fragen zu KI-Telefonie?",
+      "description": "Unser Expertenteam steht Ihnen zur Verfügung, um alle Ihre Fragen zu beantworten und gemeinsam die beste Lösung für Ihr Unternehmen zu finden.",
+      "pricesButton": "Preise ansehen",
+      "faqButton": "FAQ durchstöbern"
     }
   }
 }

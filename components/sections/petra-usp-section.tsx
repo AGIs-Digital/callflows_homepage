@@ -26,22 +26,19 @@ export function PetraUSPSection() {
           <div className="text-center space-y-8">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
-              <span className="text-sm font-medium text-primary">Warum callflows?</span>
+              <span className="text-sm font-medium text-primary">{t('whyCallflows.badge')}</span>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold text-primary leading-tight">
-                Mehr als Software – ein Partner
+                {t('whyCallflows.title')}
               </h2>
               
               {/* Main Text */}
               <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/50 p-8 max-w-3xl mx-auto">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Viele Anbieter überlassen Ihnen die Einrichtung. Wir liefern <strong className="text-foreground">End-to-End</strong>: 
-                  von Dialog-Design und Prozesslogik bis zu Integration und Betrieb. Dazu ein verständliches 
-                  <strong className="text-primary"> Minuten-Modell ohne Laufzeitbindung</strong>. So bleibt KI einfach, 
-                  transparent und kalkulierbar.
+                  {t('whyCallflows.description')}
                 </p>
               </div>
             </div>

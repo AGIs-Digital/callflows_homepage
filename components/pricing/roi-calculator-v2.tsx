@@ -80,35 +80,35 @@ export function ROICalculatorV2() {
   // Welche Staffel wird erreicht? (Farbschema: von rot/neutral zu grün = besser)
   const getCurrentTier = (minutes: number): { tier: string; price: number; color: string; bgColor: string; borderColor: string } => {
     if (minutes <= 1000) return { 
-      tier: "Staffel 1", 
+      tier: t('roiCalculator.tiers.tier1'), 
       price: 0.99, 
       color: "text-red-600 dark:text-red-400", 
       bgColor: "bg-red-50 dark:bg-red-900/20",
       borderColor: "border-red-200 dark:border-red-800"
     };
     if (minutes <= 2000) return { 
-      tier: "Staffel 2", 
+      tier: t('roiCalculator.tiers.tier2'), 
       price: 0.94, 
       color: "text-orange-600 dark:text-orange-400", 
       bgColor: "bg-orange-50 dark:bg-orange-900/20",
       borderColor: "border-orange-200 dark:border-orange-800"
     };
     if (minutes <= 5000) return { 
-      tier: "Staffel 3", 
+      tier: t('roiCalculator.tiers.tier3'), 
       price: 0.89, 
       color: "text-amber-600 dark:text-amber-400", 
       bgColor: "bg-amber-50 dark:bg-amber-900/20",
       borderColor: "border-amber-200 dark:border-amber-800"
     };
     if (minutes <= 10000) return { 
-      tier: "Staffel 4", 
+      tier: t('roiCalculator.tiers.tier4'), 
       price: 0.84, 
       color: "text-blue-600 dark:text-blue-400", 
       bgColor: "bg-blue-50 dark:bg-blue-900/20",
       borderColor: "border-blue-200 dark:border-blue-800"
     };
     return { 
-      tier: "Staffel 5", 
+      tier: t('roiCalculator.tiers.tier5'), 
       price: 0.79, 
       color: "text-green-600 dark:text-green-400", 
       bgColor: "bg-green-50 dark:bg-green-900/20",
@@ -127,14 +127,14 @@ export function ROICalculatorV2() {
                 <Calculator className="h-5 w-5 text-primary-foreground" />
               </div>
               <Badge variant="secondary" className="px-3 py-1">
-                ROI-Calculator
+                {t('roiCalculator.badge')}
               </Badge>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Wie viel Umsatz generieren Sie mit KI‑callflows?
+              {t('roiCalculator.title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Berechnen Sie Ihre Umsatzsteigerung durch automatisierte Anrufe und qualifizierte Leads
+              {t('roiCalculator.subtitle')}
             </p>
           </div>
 
@@ -148,9 +148,9 @@ export function ROICalculatorV2() {
                   <div className="mb-6">
                                          <h3 className="text-2xl font-bold text-primary mb-2 flex items-center gap-2">
                        <Target className="h-6 w-6 text-primary" />
-                       Ihre Vertriebsparameter
+                       {t('roiCalculator.parameters.title')}
                      </h3>
-                     <p className="text-base text-muted-foreground">Passen Sie die Werte an Ihre Situation an</p>
+                     <p className="text-base text-muted-foreground">{t('roiCalculator.parameters.subtitle')}</p>
                   </div>
 
                                  {/* Anrufe pro Tag */}
@@ -158,7 +158,7 @@ export function ROICalculatorV2() {
                    <div className="flex items-center justify-between">
                      <label className="text-base font-medium flex items-center gap-2">
                        <Phone className="h-4 w-4 text-primary" />
-                       Anrufe pro Tag
+                       {t('roiCalculator.parameters.callsPerDay')}
                        <TooltipProvider>
                          <Tooltip>
                            <TooltipTrigger asChild>
@@ -166,13 +166,13 @@ export function ROICalculatorV2() {
                            </TooltipTrigger>
                            <TooltipContent side="top" className="max-w-sm">
                              <div className="space-y-2 text-base">
-                               <p className="font-medium">DSGVO-Empfehlungen:</p>
+                               <p className="font-medium">{t('roiCalculator.parameters.callsPerDayTooltip.title')}</p>
                                <div className="space-y-1">
-                                 <p><strong>Kaltakquise:</strong> Max. 300/Tag</p>
-                                 <p><strong>Warm/Bestandskunden:</strong> Max. 1.000/Tag</p>
+                                 <p><strong>{t('roiCalculator.parameters.callsPerDayTooltip.cold')}</strong></p>
+                                 <p><strong>{t('roiCalculator.parameters.callsPerDayTooltip.warm')}</strong></p>
                                </div>
                                <p className="text-sm text-muted-foreground">
-                                 Rechtssichere Volumina für nachhaltige Akquise
+                                 {t('roiCalculator.parameters.callsPerDayTooltip.note')}
                                </p>
                              </div>
                            </TooltipContent>
@@ -193,7 +193,7 @@ export function ROICalculatorV2() {
                    />
                    <div className="flex justify-between text-sm text-muted-foreground font-medium">
                      <span>20</span>
-                     <span>{formatNumber(monthlyCallsTotal)} Anrufe/Monat</span>
+                     <span>{formatNumber(monthlyCallsTotal)} {t('roiCalculator.parameters.callsPerMonth')}</span>
                      <span>1.000</span>
                    </div>
                 </div>
@@ -203,7 +203,7 @@ export function ROICalculatorV2() {
                                      <div className="flex items-center justify-between">
                      <label className="text-base font-medium flex items-center gap-2">
                        <Clock className="h-4 w-4 text-primary" />
-                       Ø Anrufdauer
+                       {t('roiCalculator.parameters.averageCallDuration')}
                      </label>
                                          <Badge variant="outline" className="font-bold text-sm px-2 py-1">
                        {callDurationSeconds[0]}s
@@ -219,7 +219,7 @@ export function ROICalculatorV2() {
                   />
                                      <div className="flex justify-between text-sm text-muted-foreground font-medium">
                      <span>30s</span>
-                     <span>{formatNumber(totalMinutesPerMonth)} Min/Monat</span>
+                     <span>{formatNumber(totalMinutesPerMonth)} {t('roiCalculator.parameters.minutesPerMonth')}</span>
                      <span>5min</span>
                    </div>
                 </div>
@@ -229,7 +229,7 @@ export function ROICalculatorV2() {
                                      <div className="flex items-center justify-between">
                      <label className="text-base font-medium flex items-center gap-2">
                        <Percent className="h-4 w-4 text-primary" />
-                       Lead-Qualifizierungsrate
+                       {t('roiCalculator.parameters.conversionRate')}
                      </label>
                                          <Badge variant="outline" className="font-bold text-sm px-2 py-1">
                        {conversionRate[0]}%
@@ -245,7 +245,7 @@ export function ROICalculatorV2() {
                   />
                                      <div className="flex justify-between text-sm text-muted-foreground font-medium">
                      <span>1%</span>
-                     <span>{qualifiedLeads} qualifizierte Leads/Monat</span>
+                     <span>{qualifiedLeads} {t('roiCalculator.parameters.qualifiedLeadsMonth')}</span>
                      <span>50%</span>
                    </div>
                 </div>
@@ -255,7 +255,7 @@ export function ROICalculatorV2() {
                                      <div className="flex items-center justify-between">
                      <label className="text-base font-medium flex items-center gap-2">
                        <Trophy className="h-4 w-4 text-primary" />
-                       Abschlussrate qualifizierter Leads
+                       {t('roiCalculator.revenue.closingRateQualifiedLeads')}
                      </label>
                                          <Badge variant="outline" className="font-bold text-base px-3 py-1">
                        {closingRate[0]}%
@@ -271,7 +271,7 @@ export function ROICalculatorV2() {
                   />
                                      <div className="flex justify-between text-sm text-muted-foreground font-medium">
                      <span>0%</span>
-                     <span>{actualDeals} tatsächliche Abschlüsse/Monat</span>
+                     <span>{actualDeals} {t('roiCalculator.parameters.actualDealsMonth')}</span>
                      <span>100%</span>
                    </div>
                 </div>
@@ -280,7 +280,7 @@ export function ROICalculatorV2() {
                 <div className="space-y-3">
                                      <Label className="text-base font-medium flex items-center gap-2">
                      <Euro className="h-4 w-4 text-primary" />
-                     Durchschnittlicher Dealwert
+                     {t('roiCalculator.parameters.dealValue')}
                    </Label>
                   <div className="relative">
                     <Input
@@ -297,13 +297,13 @@ export function ROICalculatorV2() {
                                  {/* Staffel-Anzeige */}
                  <div className={`${currentTier.bgColor} rounded-lg p-4 border ${currentTier.borderColor}`}>
                    <div className="flex items-center justify-between">
-                     <span className="text-base font-medium text-muted-foreground">Aktuelle Staffel:</span>
+                     <span className="text-base font-medium text-muted-foreground">{t('roiCalculator.costs.currentTierLabel')}</span>
                      <Badge variant="outline" className={`${currentTier.color} border-current font-bold text-sm px-2 py-1`}>
                        {currentTier.tier}
                      </Badge>
                    </div>
                    <div className="flex items-center justify-between mt-2">
-                     <span className="text-base text-muted-foreground">Preis pro Minute:</span>
+                     <span className="text-base text-muted-foreground">{t('roiCalculator.costs.pricePerMinuteLabel')}</span>
                      <span className={`font-bold text-sm ${currentTier.color}`}>
                        {currentTier.price.toFixed(2).replace('.', ',')} €
                      </span>
@@ -316,47 +316,47 @@ export function ROICalculatorV2() {
                 <div className="mb-6">
                                      <h3 className="text-2xl font-bold text-primary mb-2 flex items-center gap-2">
                      <TrendingUp className="h-6 w-6 text-primary" />
-                     Ihre Umsatzsteigerung
+                     {t('roiCalculator.revenue.title')}
                    </h3>
-                   <p className="text-base text-muted-foreground">Monatliche Ergebnisse mit KI-callflows</p>
+                   <p className="text-base text-muted-foreground">{t('roiCalculator.revenue.subtitle')}</p>
                 </div>
 
                                  {/* KI-Kosten */}
                  <div className="bg-accent/10 rounded-lg p-6 border border-accent/20">
                    <div className="flex items-center justify-between mb-2">
-                     <span className="text-base text-accent font-medium">KI-Kosten/Monat</span>
+                     <span className="text-base text-accent font-medium">{t('roiCalculator.costs.kiCostsMonth')}</span>
                      <Calculator className="w-6 h-6 text-accent" />
                    </div>
                    <p className="text-4xl font-bold text-accent mb-1">
                      {formatCurrency(kiCostsMonthly)}
                    </p>
                    <p className="text-sm text-accent/70">
-                     {formatNumber(totalMinutesPerMonth)} Minuten à {currentTier.price.toFixed(2)}€
+                     {formatNumber(totalMinutesPerMonth)} {t('roiCalculator.costs.minutesAtPrice')} {currentTier.price.toFixed(2)}€
                    </p>
                  </div>
 
                                  {/* Generierter Umsatz */}
                  <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-6 border border-green-200 dark:border-green-800">
                    <div className="flex items-center justify-between mb-2">
-                     <span className="text-base text-green-700 dark:text-green-300 font-medium">Geschätzter Monatsumsatz</span>
+                     <span className="text-base text-green-700 dark:text-green-300 font-medium">{t('roiCalculator.costs.estimatedRevenue')}</span>
                      <TrendingUp className="w-6 h-6 text-green-600" />
                    </div>
                    <p className="text-4xl font-bold text-green-600 mb-1">
                      {formatCurrency(monthlyRevenue)}
                    </p>
                    <p className="text-sm text-green-600/70">
-                     {actualDeals} Abschlüsse × {formatCurrency(dealValue)}
+                     {actualDeals} {t('roiCalculator.revenue.deals')} × {formatCurrency(dealValue)}
                    </p>
                  </div>
 
                 {/* ROI Hauptergebnis */}
                 <div className="bg-primary/10 rounded-lg p-6 border border-primary/20 text-center">
-                  <p className="text-base text-primary mb-2 font-medium">Return on Investment</p>
+                  <p className="text-base text-primary mb-2 font-medium">{t('roiCalculator.costs.returnOnInvestment')}</p>
                   <p className="text-5xl font-bold text-primary mb-2">
                     {formatPercent(roi)}%
                   </p>
                   <p className="text-base text-primary/70">
-                    {revenuePerEuro}€ Umsatz pro 1€ KI-Investition
+                    {revenuePerEuro}€ {t('roiCalculator.costs.revenuePerInvestment')}
                   </p>
                 </div>
 
@@ -364,18 +364,18 @@ export function ROICalculatorV2() {
 
                                  {/* Lead-Performance Übersicht */}
                 <div className="bg-accent/10 rounded-lg p-4 border border-accent/20">
-                  <h4 className="text-base font-medium text-accent mb-3">Lead-Performance im Detail</h4>
+                  <h4 className="text-base font-medium text-accent mb-3">{t('roiCalculator.costs.leadPerformanceDetail')}</h4>
                   <div className="space-y-2 text-base">
                     <div className="flex justify-between">
-                      <span className="text-accent/80">Qualifizierte Leads:</span>
-                      <span className="font-medium text-accent">{qualifiedLeads}/Monat</span>
+                      <span className="text-accent/80">{t('roiCalculator.costs.qualifiedLeadsLabel')}</span>
+                      <span className="font-medium text-accent">{qualifiedLeads}{t('roiCalculator.revenue.perMonth')}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-accent/80">Kosten pro Lead:</span>
+                      <span className="text-accent/80">{t('roiCalculator.costs.costPerLeadLabel')}</span>
                       <span className="font-medium text-accent">{formatCurrency(costPerLead)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-accent/80">Conversion-Rate:</span>
+                      <span className="text-accent/80">{t('roiCalculator.costs.conversionRateLabel')}</span>
                       <span className="font-medium text-accent">{closingRate[0]}%</span>
                     </div>
                   </div>

@@ -56,6 +56,18 @@
     "buttonRetry": "Réessayer"
   },
   "pricing": {
+    "hero": {
+      "breadcrumb": "Prix",
+      "title": "Prix transparents AI callflow",
+      "subtitle": "Prix sans durée de contrat",
+      "description": "Commencez sans risque avec un mois pilote - pas de durée de contrat, pas de coûts cachés",
+      "benefits": "✓ Pas de durée de contrat ✓ Aucun risque ✓ Facturation basée sur l'usage uniquement"
+    },
+    "seo": {
+      "title": "Prix Agent Vocal IA sans Durée de Contrat | Téléphonie à l'Usage | callflows",
+      "description": "Mois pilote pour 2.490 €, puis facturé par minute – sans engagement contractuel. Testez AI callflow maintenant et automatisez les processus de vente.",
+      "keywords": "Agent Vocal IA, téléphonie automatisée, paiement à l'usage, vente entreprises moyennes, facturation par minute, sans durée de contrat"
+    },
     "pageTitle": "Prix AI callflow",
     "introTitle": "Commencer avec la téléphonie IA via callflows est simple",
     "introSubtitle": "Agents vocaux professionnels pour votre entreprise – de la consultation gratuite à la mise en service réussie. Transparent, simple et sans coûts cachés.",
@@ -338,7 +350,13 @@
     "question13": "Comment la qualité des conversations est-elle assurée ?",
     "answer13": "La qualité est assurée par l'apprentissage automatique continu et des optimisations régulières. Toutes les conversations sont évaluées (naturellement en conformité avec la protection des données) pour améliorer les performances. De plus, nous offrons des outils d'analyse et de rapport détaillés pour que vous puissiez surveiller les performances de votre agent vocal IA à tout moment.",
     "question14": "Y a-t-il une phase de test ou un projet pilote ?",
-    "answer14": "Oui, nous offrons un mois pilote pendant lequel le système est créé pour vous. Cette phase dure 1 mois. Pendant ce temps, vous pouvez tester les fonctions de notre agent vocal IA sans engagement."
+    "answer14": "Oui, nous offrons un mois pilote pendant lequel le système est créé pour vous. Cette phase dure 1 mois. Pendant ce temps, vous pouvez tester les fonctions de notre agent vocal IA sans engagement.",
+    "cta": {
+      "title": "D'autres questions sur les AI callflows?",
+      "description": "Notre équipe d'experts se fera un plaisir de vous fournir des conseils personnalisés.",
+      "contactButton": "Prendre contact",
+      "pricingButton": "Voir les prix"
+    }
   },
   "contact": {
     "title": "Contact",
@@ -738,6 +756,284 @@
     "feature3": {
       "title": "Transfert d'Appel Intelligent",
       "description": "Transfert vers des employés humains quand souhaité"
+    }
+  },
+  "roiCalculator": {
+    "title": "Combien de revenus générez-vous avec les AI callflows?",
+    "subtitle": "Calculez votre augmentation de revenus grâce aux appels automatisés et aux prospects qualifiés",
+    "badge": "Calculateur ROI",
+    "parameters": {
+      "title": "Vos paramètres de vente",
+      "subtitle": "Ajustez les valeurs à votre situation",
+      "callsPerDay": "Appels par jour",
+      "callsPerDayTooltip": {
+        "title": "Recommandations RGPD:",
+        "cold": "Démarchage à froid: Max. 300/jour",
+        "warm": "Prospects/clients existants: Max. 1 000/jour",
+        "note": "Volumes conformes pour une acquisition durable"
+      },
+      "callDuration": "Durée moyenne des appels",
+      "conversionRate": "Taux de qualification des prospects",
+      "conversionTooltip": "Pourcentage d'appels qui deviennent des prospects qualifiés",
+      "closingRate": "Taux de conclusion",
+      "closingTooltip": "Pourcentage de prospects qualifiés qui deviennent des ventes",
+      "dealValue": "Valeur moyenne de l'affaire",
+      "dealValuePlaceholder": "2500",
+      "seconds": "Sec.",
+      "minutes": "Min.",
+      "averageCallDuration": "Durée moy. appel",
+      "callsPerMonth": "appels/mois",
+      "minutesPerMonth": "min/mois",
+      "euroSymbol": "€",
+      "qualifiedLeadsMonth": "prospects qualifiés/mois",
+      "actualDealsMonth": "affaires réelles/mois"
+    },
+    "costs": {
+      "title": "Comparaison des coûts",
+      "subtitle": "IA vs. employés humains",
+      "aiCosts": "Coûts IA",
+      "humanCosts": "Coûts de personnel",
+      "savings": "Économies mensuelles",
+      "totalMinutes": "Minutes totales/mois",
+      "currentTier": "Niveau actuel",
+      "pricePerMinute": "Prix par minute",
+      "perMonth": "/mois",
+      "vs": "vs",
+      "employeeCosts": "Coûts employés",
+      "employeeCostDetail": "À 3 500€ salaire brut + 20% charges sociales",
+      "estimatedRevenue": "Revenus mensuels estimés",
+      "returnOnInvestment": "Retour sur investissement",
+      "revenuePerInvestment": "Revenus par 1€ d'investissement IA",
+      "currentTierLabel": "Niveau actuel:",
+      "pricePerMinuteLabel": "Prix par minute:",
+      "leadPerformanceDetail": "Performance des prospects en détail",
+      "qualifiedLeadsLabel": "Prospects qualifiés:",
+      "costPerLeadLabel": "Coût par prospect:",
+      "conversionRateLabel": "Taux de conversion:",
+      "kiCostsMonth": "Coûts IA/mois",
+      "minutesAtPrice": "minutes à"
+    },
+    "revenue": {
+      "title": "Potentiel de revenus",
+      "subtitle": "Votre succès avec les AI callflows",
+      "qualifiedLeads": "Prospects qualifiés/mois",
+      "successfulDeals": "Affaires réussies/mois",
+      "monthlyRevenue": "Revenus mensuels",
+      "annualRevenue": "Revenus annuels",
+      "roi": "ROI après 12 mois",
+      "leads": "prospects",
+      "deals": "affaires",
+      "perYear": "/an",
+      "deals": "affaires",
+      "actualDealsMonth": "affaires réelles/mois",
+      "closingRateQualifiedLeads": "Taux de conversion des prospects qualifiés",
+      "perMonth": "/mois"
+    },
+    "tiers": {
+      "tier1": "Niveau 1",
+      "tier2": "Niveau 2",
+      "tier3": "Niveau 3",
+      "tier4": "Niveau 4",
+      "tier5": "Niveau 5"
+    }
+  },
+  "minuteTiers": {
+    "title": "Niveaux de minutes après Go-Live",
+    "subtitle": "Facturation transparente basée sur la consommation en fin de mois",
+    "badge": "Pas de durée de contrat, aucun risque",
+    "tableTitle": "Prix par niveau par minute (tous prix HT)",
+    "minuteRange": "Plage de minutes",
+    "pricePerMinute": "Prix par minute",
+    "exampleCosts": "Exemple coûts mensuels",
+    "upTo": "jusqu'à",
+    "from": "à partir de",
+    "minutes": "minutes",
+    "euro": "€",
+    "note": "Pour une consommation plus élevée, le prix le plus bas atteint s'applique à toutes les minutes.",
+    "billingHints": "Informations de facturation",
+    "billing": "Facturation",
+    "billingDesc": "Mensuelle basée sur les minutes d'appel réelles (affichées de manière transparente)",
+    "contract": "Durée du contrat",
+    "contractDesc": "Aucun engagement contractuel – frais d'usage pur",
+    "scaling": "Évolutivité",
+    "scalingDesc": "Le niveau s'applique automatiquement selon la consommation",
+    "support": "Support",
+    "supportDesc": "Fonctionnement et support inclus; extensions individuelles possibles à tout moment",
+    "noBasicFee": "Aucune",
+    "secondAccurate": "À la seconde",
+    "monthlyBilling": "Mensuelle",
+    "basicFee": "Frais de base",
+    "billing": "Facturation",
+    "invoicing": "Facturation",
+    "upTo": "Jusqu'à",
+    "from": "À partir de"
+  },
+  "pilotPackage": {
+    "title": "Votre entrée dans la téléphonie IA",
+    "subtitle": "Commencez sans risque avec un callflow IA individuel",
+    "oneTime": "unique",
+    "includedMinutes": "minutes IA incluses",
+    "noRisk": "Aucun risque, aucun abonnement",
+    "features": {
+      "feature1": "Création d'agent vocal IA individuel",
+      "feature2": "1 mois d'exploitation professionnelle",
+      "feature3": "Support personnel et optimisation",
+      "feature4": "Numéro de téléphone et configuration technique",
+      "feature5": "Mise en œuvre conforme à la protection des données",
+      "feature6": "Analyse détaillée et reporting"
+    },
+    "benefits": {
+      "title": "Ce que vous obtenez:",
+      "benefit1": "Démarrage immédiat",
+      "benefit1Desc": "Votre agent IA est prêt sous 5 jours ouvrables",
+      "benefit2": "Transparence totale",
+      "benefit2Desc": "Rapports détaillés sur toutes les conversations et succès",
+      "benefit3": "Test sans risque",
+      "benefit3Desc": "Aucun engagement à long terme, facturation équitable"
+    },
+    "pilotMonthIncludes": "Le mois pilote comprend",
+    "afterGoLive": "Après Go-Live",
+    "savedValue": "économisé",
+    "fullSetupAndConfig": "Configuration et mise en place complètes",
+    "includedMinutesText": "minutes IA incluses",
+    "individualAdaptation": "Adaptation individuelle à votre entreprise",
+    "noBasicFee": "Pas de frais de base",
+    "tierPricing": "Prix par niveau à partir de 0,99 €/min",
+    "secondAccurateBilling": "Facturation à la seconde",
+    "startPilotMonth": "Commencer le mois pilote",
+    "cardTitle": "Mois pilote AI-callflow",
+    "cardSubtitle": "AI-callflow individuel avec configuration",
+    "valueText": "Valeur:",
+    "pilotFeatures": {
+      "feature1": "Configuration et mise en place complètes",
+      "feature2": "1000 minutes IA incluses",
+      "feature3": "Adaptation individuelle à votre entreprise"
+    }
+  },
+  "features": {
+    "badge": "Pour qui est-ce?",
+    "title": "Agents vocaux IA pour les PME",
+    "subtitle": "Les agents vocaux IA aident les PME à réaliser des appels automatisés dans la vente B2B tout en renforçant le contact personnel",
+    "cta": "Convient à votre entreprise? Parlons-en!",
+    "targetGroups": {
+      "staffing": {
+        "title": "Agences de recrutement",
+        "description": "avec une charge élevée d'appels et de suivi",
+        "benefits": [
+          "Appels automatisés pour contacter les candidats",
+          "La téléphonie IA réduit les suivis manuels",
+          "Plus de temps pour les conversations B2B qualifiées"
+        ]
+      },
+      "mediumSales": {
+        "title": "Organisations de vente moyennes",
+        "description": "qui veulent évoluer",
+        "benefits": [
+          "Processus de vente évolutifs",
+          "Approche client cohérente",
+          "Croissance sans expansion du personnel"
+        ]
+      },
+      "efficientTeams": {
+        "title": "Équipes efficaces",
+        "description": "souhaitant automatiser les appels standard",
+        "benefits": [
+          "Plus de temps pour les clôtures",
+          "Tâches de routine automatisées",
+          "Taux de conversion plus élevés"
+        ]
+      },
+      "enterprises": {
+        "title": "Grandes entreprises",
+        "description": "recherchant une téléphonie IA transparente et flexible",
+        "benefits": [
+          "Structure de coûts transparente",
+          "Solution flexible évolutive",
+          "Sécurité de niveau entreprise"
+        ]
+      }
+    }
+  },
+  "process": {
+    "badge": "Comment commencer",
+    "title": "En ligne en 3 étapes",
+    "subtitle": "De l'analyse initiale au déploiement productif – nous vous guidons à chaque étape",
+    "cta": {
+      "title": "Prêt pour la prochaine étape?",
+      "description": "Analysons ensemble comment les AI callflows peuvent soutenir vos ventes",
+      "buttonText": "Réserver une consultation"
+    },
+    "steps": {
+      "step1": {
+        "title": "Démarrage & Analyse des processus",
+        "description": "Objectifs, cas d'usage, logique de conversation",
+        "details": [
+          "Analyse des besoins et définition des objectifs",
+          "Identification des cas d'usage",
+          "Développer la logique de conversation",
+          "Clarifier les exigences techniques"
+        ]
+      },
+      "step2": {
+        "title": "Configuration & Mois pilote",
+        "description": "Callflow individuel, test & ajustement",
+        "details": [
+          "Configuration individuelle AI callflow",
+          "Implémenter la logique de processus",
+          "Phase de test et ajustement",
+          "Configurer les intégrations système"
+        ]
+      },
+      "step3": {
+        "title": "Mise en ligne & Mise à l'échelle",
+        "description": "Facturation par minute, étendre selon les besoins",
+        "details": [
+          "Démarrage en production",
+          "Facturation par minute",
+          "Surveillance des performances",
+          "Mise à l'échelle selon les besoins"
+        ]
+      }
+    }
+  },
+  "socialProofRoi": {
+    "badge": "Pratique: soulagement mesurable, plus de prospects",
+    "title": "Déjà prouvé dans le mois pilote",
+    "stats": {
+      "calls": {
+        "value": "1 256",
+        "label": "appels automatisés"
+      },
+      "leads": {
+        "value": "14%",
+        "label": "prospects qualifiés"
+      },
+      "relief": {
+        "value": "100%",
+        "label": "soulagement de l'équipe"
+      }
+    },
+    "testimonial": "\"Déjà dans le mois pilote, notre premier client a automatisé 1 256 appels, a obtenu 14% de prospects qualifiés et a soulagé l'équipe de manière notable – plus de focus sur les clôtures.\"",
+    "cta": {
+      "title": "Calculez votre potentiel d'économies",
+      "description": "Utilisez notre calculateur ROI détaillé et découvrez combien vous pouvez économiser avec les AI callflows.",
+      "buttonText": "Ouvrir le calculateur ROI"
+    }
+  },
+  "whyCallflows": {
+    "badge": "Pourquoi callflows?",
+    "title": "Plus qu'un logiciel – un partenaire",
+    "description": "Beaucoup de fournisseurs vous laissent la configuration. Nous livrons de bout en bout: de la conception de dialogue et logique de processus à l'intégration et l'exploitation. Plus un modèle de minutes compréhensible sans engagement contractuel. Ainsi l'IA reste simple, transparente et calculable."
+  },
+  "contactPage": {
+    "heroSubtitle": "Parlez avec nos experts IA de vos exigences individuelles",
+    "formSubtitle": "Envoyer un message direct",
+    "appointmentSubtitle": "Consultation personnelle",
+    "additionalCta": {
+      "title": "Avez-vous des questions sur la téléphonie IA?",
+      "description": "Notre équipe d'experts est disponible pour répondre à toutes vos questions et trouver ensemble la meilleure solution pour votre entreprise.",
+      "pricesButton": "Voir les prix",
+      "faqButton": "Parcourir la FAQ"
     }
   }
 } 

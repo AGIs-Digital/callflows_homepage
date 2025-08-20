@@ -10,51 +10,35 @@ export function FeaturesSection() {
   const targetGroups = [
     {
       icon: Users,
-      title: "Personaldienstleister",
-      description: "mit hoher Anruf- und Follow-up-Last",
+      title: t('features.targetGroups.staffing.title'),
+      description: t('features.targetGroups.staffing.description'),
       gradient: "from-primary/20 to-primary/30",
       iconColor: "text-primary",
-      benefits: [
-        "Automatisierte Anrufe für Kandidaten-Kontaktierung",
-        "KI-Telefonie reduziert manuelle Follow-ups",
-        "Mehr Zeit für qualifizierte Gespräche im B2B-Vertrieb"
-      ]
+      benefits: t('features.targetGroups.staffing.benefits')
     },
     {
       icon: Building2,
-      title: "Mittelständische Vertriebsorganisationen",
-      description: "die skalieren wollen",
+      title: t('features.targetGroups.mediumSales.title'),
+      description: t('features.targetGroups.mediumSales.description'),
       gradient: "from-tertiary/20 to-tertiary/30",
       iconColor: "text-tertiary",
-      benefits: [
-        "Skalierbare Vertriebsprozesse",
-        "Konsistente Kundenansprache",
-        "Wachstum ohne Personalaufbau"
-      ]
+      benefits: t('features.targetGroups.mediumSales.benefits')
     },
     {
       icon: TrendingUp,
-      title: "Effiziente Teams",
-      description: "die Standardanrufe automatisieren möchten",
+      title: t('features.targetGroups.efficientTeams.title'),
+      description: t('features.targetGroups.efficientTeams.description'),
       gradient: "from-accent/20 to-accent/30",
       iconColor: "text-accent",
-      benefits: [
-        "Mehr Zeit für Abschlüsse",
-        "Automatisierte Routine-Tasks",
-        "Höhere Conversion-Raten"
-      ]
+      benefits: t('features.targetGroups.efficientTeams.benefits')
     },
     {
       icon: Building,
-      title: "Konzerne",
-      description: "die transparente, flexible KI-Telefonie suchen",
+      title: t('features.targetGroups.enterprises.title'),
+      description: t('features.targetGroups.enterprises.description'),
       gradient: "from-secondary/30 to-secondary/40",
       iconColor: "text-primary",
-      benefits: [
-        "Transparente Kostenstruktur",
-        "Flexibel skalierbare Lösung",
-        "Enterprise-Grade Sicherheit"
-      ]
+      benefits: t('features.targetGroups.enterprises.benefits')
     }
   ];
 
@@ -63,13 +47,13 @@ export function FeaturesSection() {
       <div className="container max-w-6xl">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-sm font-medium text-primary">Für wen ist das?</span>
+            <span className="text-sm font-medium text-primary">{t('features.badge')}</span>
           </div>
           <h2 className="text-4xl font-bold mb-6 text-primary dark:text-white">
-            KI‑Voice‑Agents für den Mittelstand
+            {t('features.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            KI-Voice-Agents unterstützen den Mittelstand dabei, automatisierte Anrufe im B2B-Vertrieb zu realisieren und gleichzeitig den persönlichen Kontakt zu stärken
+            {t('features.subtitle')}
           </p>
         </div>
         
@@ -102,7 +86,7 @@ export function FeaturesSection() {
                 </div>
                 
                 <div className="space-y-3">
-                  {group.benefits.map((benefit, i) => (
+                  {Array.isArray(group.benefits) && group.benefits.map((benefit, i) => (
                     <div key={i} className="flex items-start gap-3 group/item">
                       <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-200" />
                       <span className="text-sm text-foreground leading-relaxed">
@@ -121,7 +105,7 @@ export function FeaturesSection() {
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
             <CheckCircle className="w-5 h-5 text-green-600" />
             <span className="text-sm font-medium text-green-800 dark:text-green-200">
-              Passt zu Ihrem Unternehmen? Lassen Sie uns sprechen!
+              {t('features.cta')}
             </span>
           </div>
         </div>

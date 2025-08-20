@@ -16,31 +16,31 @@ export function SocialProofROISection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
             <Award className="w-5 h-5 text-green-600" />
-            <span className="text-sm font-medium text-green-700 dark:text-green-300">Praxis: messbare Entlastung, mehr Leads</span>
+            <span className="text-sm font-medium text-green-700 dark:text-green-300">{t('socialProofRoi.badge')}</span>
           </div>
           
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">
-            Bereits im Pilotmonat bewiesen
+            {t('socialProofRoi.title')}
           </h2>
           
           <div className="bg-card/80 backdrop-blur-sm rounded-2xl border border-border/50 p-8 max-w-4xl mx-auto mb-12">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <div className="text-3xl font-bold text-primary mb-2">1.256</div>
-                <div className="text-sm text-muted-foreground">automatisierte Anrufe</div>
+                <div className="text-3xl font-bold text-primary mb-2">{t('socialProofRoi.stats.calls.value')}</div>
+                <div className="text-sm text-muted-foreground">{t('socialProofRoi.stats.calls.label')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">14%</div>
-                <div className="text-sm text-muted-foreground">qualifizierte Leads</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">{t('socialProofRoi.stats.leads.value')}</div>
+                <div className="text-sm text-muted-foreground">{t('socialProofRoi.stats.leads.label')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-accent mb-2">100%</div>
-                <div className="text-sm text-muted-foreground">Team-Entlastung</div>
+                <div className="text-3xl font-bold text-accent mb-2">{t('socialProofRoi.stats.relief.value')}</div>
+                <div className="text-sm text-muted-foreground">{t('socialProofRoi.stats.relief.label')}</div>
               </div>
             </div>
             <div className="mt-6 pt-6 border-t border-border/50">
               <p className="text-muted-foreground italic">
-                „Bereits im Pilotmonat automatisierte unser erster Kunde 1.256 Anrufe, erzielte 14% qualifizierte Leads und entlastete das Team spürbar – mehr Fokus auf Abschlüsse."
+                {t('socialProofRoi.testimonial')}
               </p>
             </div>
           </div>
@@ -50,10 +50,10 @@ export function SocialProofROISection() {
         <div className="text-center">
           <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/50 p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-primary mb-4">
-              Berechnen Sie Ihr Einsparpotential
+              {t('socialProofRoi.cta.title')}
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Nutzen Sie unseren detaillierten ROI-Calculator und erfahren Sie, wie viel Sie mit KI-callflows sparen können.
+              {t('socialProofRoi.cta.description')}
             </p>
                             <Button 
                   size="lg"
@@ -61,7 +61,7 @@ export function SocialProofROISection() {
                   asChild
                 >
                   <Link href="/pricing#roi-calculator">
-                    ROI-Calculator öffnen
+                    {t('socialProofRoi.cta.buttonText')}
                   </Link>
                 </Button>
           </div>

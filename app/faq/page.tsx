@@ -148,10 +148,10 @@ export default function FAQPage() {
           <Card className="mt-12 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
             <CardContent className="p-8 text-center">
               <h2 className="text-2xl font-bold text-foreground mb-4">
-                Weitere Fragen zu KI-callflows?
+                {t('faq.cta.title')}
               </h2>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Unser Expertenteam steht Ihnen gerne für eine persönliche Beratung zur Verfügung.
+                {t('faq.cta.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
@@ -159,13 +159,13 @@ export default function FAQPage() {
                   className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200"
                 >
                   <MessageSquare className="w-4 h-4 mr-2" />
-                  Kontakt aufnehmen
+                  {t('faq.cta.contactButton')}
                 </a>
                 <a 
                   href="/pricing" 
                   className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary border border-primary/20 rounded-lg font-medium hover:bg-primary/5 transition-colors duration-200"
                 >
-                  Preise ansehen
+                  {t('faq.cta.pricingButton')}
                 </a>
               </div>
             </CardContent>
