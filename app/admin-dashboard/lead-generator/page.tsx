@@ -98,7 +98,7 @@ export default function LeadGeneratorPage() {
     }
   };
 
-  const exportToExcel = () => {
+  const exportToCSV = () => {
     if (editableResults.length === 0) {
       toast({
         title: "Keine Daten",
@@ -108,29 +108,28 @@ export default function LeadGeneratorPage() {
       return;
     }
 
-    // Dynamischer Import von xlsx für Client-Side
-    import('xlsx').then(XLSX => {
-      // Daten in das gewünschte Format umwandeln
-      const exportData = editableResults.map(result => ({
-        'Lead - Titel': 'Neuer Lead',
-        'Kontakt - Name': 'Max Mustermann',
-        'Telefonnummer': result.phone || '',
-        'Organisation - Name': result.companyName
-      }));
+    try {
+      // CSV Header
+      const headers = ['Lead - Titel', 'Kontakt - Name', 'Telefonnummer', 'Organisation - Name'];
+      
+      // Daten in CSV Format umwandeln
+      const csvData = editableResults.map(result => [
+        'Neuer Lead',
+        'Max Mustermann', 
+        result.phone || '',
+        result.companyName || ''
+      ]);
 
-      // Excel Workbook erstellen
-      const worksheet = XLSX.utils.json_to_sheet(exportData);
-      const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, 'Leads');
-
-      // Spaltenbreiten optimieren
-      const colWidths = [
-        { wch: 15 }, // Lead - Titel
-        { wch: 20 }, // Kontakt - Name  
-        { wch: 18 }, // Telefonnummer
-        { wch: 35 }  // Organisation - Name
-      ];
-      worksheet['!cols'] = colWidths;
+      // CSV Content erstellen (mit korrektem CSV-Escaping)
+      const csvContent = [
+        headers.join(','),
+        ...csvData.map(row => row.map(field => 
+          // CSV-Escaping: Felder mit Kommas/Anführungszeichen in Anführungszeichen setzen
+          typeof field === 'string' && (field.includes(',') || field.includes('"') || field.includes('\n'))
+            ? `"${field.replace(/"/g, '""')}"`
+            : field
+        ).join(','))
+      ].join('\n');
 
       // Dateiname im Format: Jahr_Monat_Tag_Suchbegriff
       const now = new Date();
@@ -144,23 +143,35 @@ export default function LeadGeneratorPage() {
         .replace(/_+/g, '_')
         .replace(/^_|_$/g, '');
       
-      const fileName = `${year}_${month}_${day}_${cleanSearchTerm}.xlsx`;
+      const fileName = `${year}_${month}_${day}_${cleanSearchTerm}.csv`;
       
-      // Excel-Datei herunterladen
-      XLSX.writeFile(workbook, fileName);
+      // CSV-Datei herunterladen
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      
+      if (link.download !== undefined) {
+        const url = URL.createObjectURL(blob);
+        link.setAttribute('href', url);
+        link.setAttribute('download', fileName);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      }
 
       toast({
         title: "Export erfolgreich",
-        description: `${editableResults.length} Leads als Excel-Datei exportiert.`,
+        description: `${editableResults.length} Leads als CSV-Datei exportiert.`,
       });
-    }).catch(error => {
-      console.error('Excel export error:', error);
+    } catch (error) {
+      console.error('CSV export error:', error);
       toast({
-        title: "Export-Fehler",
-        description: "Fehler beim Erstellen der Excel-Datei.",
+        title: "Export fehlgeschlagen", 
+        description: "Beim Exportieren der CSV-Datei ist ein Fehler aufgetreten.",
         variant: "destructive"
       });
-    });
+    }
   };
 
   const updatePhone = (index: number, newPhone: string) => {
@@ -341,9 +352,9 @@ export default function LeadGeneratorPage() {
                           {editableResults.length} Leads gefunden • Seite {currentPage} von {totalPages} • Telefonnummern editierbar
                         </CardDescription>
                       </div>
-                      <Button onClick={exportToExcel} variant="outline">
+                      <Button onClick={exportToCSV} variant="outline">
                         <Download className="mr-2 h-4 w-4" />
-                        Als Excel exportieren
+                        Als CSV exportieren
                       </Button>
                     </div>
                   </CardHeader>
