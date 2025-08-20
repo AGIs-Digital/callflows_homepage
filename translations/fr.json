@@ -111,7 +111,6 @@
       "conversionRate": "Taux de conversion attendu",
       "dealValue": "Valeur moyenne de l'affaire",
       "dealValuePlaceholder": "2500",
-      "dealValueDescription": "Valeur moyenne par conclusion réussie",
       "currentTier": "Palier actuel:",
       "pricePerMinute": "Prix par minute:",
       "minutes": "min",
@@ -424,6 +423,7 @@
     "callflowsText": "callflows est une option moderne et innovante.",
     "modernSolution": "Solution IA Moderne",
     "pros": "Avantages",
+    "allBenefitsAndMore": "Tous les avantages et plus encore",
     "cons": "Inconvénients",
     "inhouse": {
       "title": "Personnel interne",

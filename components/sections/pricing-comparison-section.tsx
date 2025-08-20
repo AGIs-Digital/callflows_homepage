@@ -1,8 +1,9 @@
 "use client";
 
-import { Check, X, Clock, Users, Phone, Headphones, Bot } from "@/lib/icons";
+import { Check, X, Clock, Users, Phone, Headphones, Bot, Star } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
+import Image from "next/image";
 
 type SolutionProps = {
   title: React.ReactNode;
@@ -19,20 +20,23 @@ const Solution = ({ title, icon, description, pros, cons, isHighlighted = false 
   return (
     <div 
       className={cn(
-        "group relative rounded-2xl border border-border/50 p-8 transition-all duration-300 ease-out backdrop-blur-sm",
+        "group relative rounded-2xl border transition-all duration-300 ease-out backdrop-blur-sm",
         isHighlighted 
-          ? "bg-card/80 shadow-xl ring-2 ring-primary/30 hover:shadow-2xl hover:-translate-y-2" 
-          : "bg-card/60 hover:shadow-lg hover:-translate-y-1 hover:border-primary/20"
+          ? "bg-gradient-to-br from-card via-card/95 to-primary/5 shadow-2xl ring-2 ring-accent/40 border-accent/30 p-10 hover:shadow-3xl hover:-translate-y-3 hover:ring-accent/60 scale-105" 
+          : "bg-card/60 hover:shadow-lg hover:-translate-y-1 hover:border-primary/20 border-border/50 p-8"
       )}
     >
       {isHighlighted && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-medium px-3 py-1 rounded-full">
-          {t('comparison.modernSolution')}
-        </div>
+        <>
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-accent text-white text-xs font-medium px-4 py-2 rounded-full shadow-lg animate-pulse">
+            ✨ {t('comparison.modernSolution')}
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-2xl pointer-events-none"></div>
+        </>
       )}
       <div className="flex items-center gap-4 mb-6">
         <div className={cn(
-          "p-4 rounded-2xl transition-all duration-300 group-hover:scale-110",
+          "p-3 rounded-2xl transition-all duration-300 group-hover:scale-110",
           isHighlighted ? "bg-primary text-white shadow-lg" : "bg-muted/60 group-hover:bg-primary/10"
         )}>
           {icon}
@@ -44,12 +48,23 @@ const Solution = ({ title, icon, description, pros, cons, isHighlighted = false 
       
       <div className="space-y-4">
         <div>
-          <h4 className="font-medium mb-2">{t('comparison.pros')}</h4>
+          <h4 className="font-medium mb-2">
+            {isHighlighted ? t('comparison.allBenefitsAndMore') : t('comparison.pros')}
+          </h4>
           <ul className="space-y-2">
             {pros.map((pro, index) => (
-              <li key={`pro-${index}`} className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                <span className="text-sm">{pro}</span>
+              <li key={`pro-${index}`} className="flex items-start gap-3">
+                {isHighlighted ? (
+                  <div className="bg-accent/20 rounded-full p-1 shrink-0 mt-0.5">
+                    <Star className="w-4 h-4 text-accent fill-accent drop-shadow-sm" />
+                  </div>
+                ) : (
+                  <Check className="w-5 h-5 shrink-0 mt-0.5 text-green-500" />
+                )}
+                <span className={cn(
+                  "text-sm",
+                  isHighlighted ? "font-medium text-foreground" : ""
+                )}>{pro}</span>
               </li>
             ))}
           </ul>
@@ -104,7 +119,7 @@ export function PricingComparisonSection() {
             "Orchestriert Stimme, Logik & Daten",
             "Natürliche Dialoge, Rückfragen, Validierung",
             "Automatisiert Routine & triggert Aktionen",
-            "Nahtlose System‑Integrationen (CRM/ERP/Helpdesk)",
+            "Keine feste Vertragslaufzeit, Pay-as-you-go",
             "Skalierbar und kosteneffizient",
             "Kein Vorwissen notwendig"
           ],
@@ -137,7 +152,7 @@ export function PricingComparisonSection() {
             "Orchestrates voice, logic & data",
             "Natural dialogues, follow‑ups, validation",
             "Automates routine and triggers actions",
-            "Seamless integrations (CRM/ERP/Helpdesk)",
+            "No fixed contract terms, pay-as-you-go",
             "Scalable and cost‑efficient",
             "No prior expertise required"
           ],
@@ -170,7 +185,7 @@ export function PricingComparisonSection() {
             "Orchestre voix, logique & données",
             "Dialogues naturels, relances, validation",
             "Automatise la routine & déclenche des actions",
-            "Intégrations transparentes (CRM/ERP/Helpdesk)",
+            "Pas de durée contractuelle fixe, paiement à l'usage",
             "Évolutif et rentable",
             "Aucune expertise préalable requise"
           ],
@@ -203,7 +218,7 @@ export function PricingComparisonSection() {
             "Orquesta voz, lógica y datos",
             "Diálogos naturales, repreguntas, validación",
             "Automatiza rutina y dispara acciones",
-            "Integraciones transparentes (CRM/ERP/Helpdesk)",
+            "Sin plazos contractuales fijos, pago por uso",
             "Escalable y eficiente en costos",
             "Sin experiencia previa requerida"
           ],
@@ -226,31 +241,47 @@ export function PricingComparisonSection() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <Solution 
-            title={getSolutionData('phone').title}
-            icon={<Phone className="w-6 h-6" />}
-            description={getSolutionData('phone').description}
-            pros={getSolutionData('phone').pros}
-            cons={getSolutionData('phone').cons}
-          />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Traditionelle Lösungen mit gedämpftem Design */}
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Solution 
+              title={getSolutionData('phone').title}
+              icon={<Phone className="w-6 h-6" />}
+              description={getSolutionData('phone').description}
+              pros={getSolutionData('phone').pros}
+              cons={getSolutionData('phone').cons}
+            />
+            
+            <Solution 
+              title={getSolutionData('callcenter').title}
+              icon={<Headphones className="w-6 h-6" />}
+              description={getSolutionData('callcenter').description}
+              pros={getSolutionData('callcenter').pros}
+              cons={getSolutionData('callcenter').cons}
+            />
+          </div>
           
-          <Solution 
-            title={getSolutionData('callcenter').title}
-            icon={<Headphones className="w-6 h-6" />}
-            description={getSolutionData('callcenter').description}
-            pros={getSolutionData('callcenter').pros}
-            cons={getSolutionData('callcenter').cons}
-          />
-          
-          <Solution 
-            title={<strong className='text-primary'>{getSolutionData('callflows').title}</strong>}
-            icon={<Bot className="w-6 h-6" />}
-            description={getSolutionData('callflows').description}
-            pros={getSolutionData('callflows').pros}
-            cons={getSolutionData('callflows').cons}
-            isHighlighted={true}
-          />
+          {/* KI-Lösung prominenter platziert */}
+          <div className="lg:col-span-1">
+            <Solution 
+              title={<span className='text-accent font-bold text-xl'>{getSolutionData('callflows').title}</span>}
+              icon={
+                <div className="w-10 h-10 rounded-2xl p-1.5 shadow-lg" style={{ backgroundColor: '#fffff0' }}>
+                  <Image 
+                    src="/images/callflows_icon.webp" 
+                    alt="callflows logo" 
+                    width={28} 
+                    height={28}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              }
+              description={getSolutionData('callflows').description}
+              pros={getSolutionData('callflows').pros}
+              cons={getSolutionData('callflows').cons}
+              isHighlighted={true}
+            />
+          </div>
         </div>
         
         <div className="mt-16 text-center">

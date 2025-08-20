@@ -47,5 +47,7 @@ export {
   Mic,
   Volume2,
   PlayCircle,
-  Loader2
+  Loader2,
+  HelpCircle,
+  Star
 } from 'lucide-react';

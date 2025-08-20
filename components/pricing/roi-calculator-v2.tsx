@@ -6,16 +6,18 @@ import { Slider } from "@/components/ui/slider";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { TrendingUp, Phone, Clock, Percent, Euro, Calculator, Target, Users } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { TrendingUp, Phone, Clock, Percent, Euro, Calculator, Target, Users, Trophy, Info } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 export function ROICalculatorV2() {
   const { t } = useI18n();
   
   // Input-Parameter
-  const [callsPerDay, setCallsPerDay] = useState([100]); // Default: 100, Range: 20-1000 in 10er Schritten
+  const [callsPerDay, setCallsPerDay] = useState([60]); // Default: 60, Range: 20-1000 in 10er Schritten
   const [callDurationSeconds, setCallDurationSeconds] = useState([60]); // Default: 60s, Range: 30s-300s in 5s Schritten
-  const [conversionRate, setConversionRate] = useState([14]); // Default: 14%, Range: 1-50%
+  const [conversionRate, setConversionRate] = useState([12]); // Default: 12%, Range: 1-50% (Lead-Qualifizierung)
+  const [closingRate, setClosingRate] = useState([5]); // Default: 5%, Range: 0-100% (Abschlussrate)
   const [dealValue, setDealValue] = useState(2500); // Default: 2500€, Eingabefeld
 
   // Berechnungen
@@ -48,10 +50,12 @@ export function ROICalculatorV2() {
   
   // Conversion-Berechnungen
   const qualifiedLeads = Math.round(monthlyCallsTotal * (conversionRate[0] / 100));
-  const monthlyRevenue = qualifiedLeads * dealValue;
+  const actualDeals = Math.round(qualifiedLeads * (closingRate[0] / 100));
+  const monthlyRevenue = actualDeals * dealValue;
   
-  // ROI-Berechnungen
-  const roi = kiCostsMonthly > 0 ? Math.round((monthlyRevenue / kiCostsMonthly) * 100) - 100 : 0;
+  // ROI-Berechnungen (korrigierte Formel)
+  const profit = monthlyRevenue - kiCostsMonthly;
+  const roi = kiCostsMonthly > 0 ? Math.round((profit / kiCostsMonthly) * 100) : 0;
   const revenuePerEuro = kiCostsMonthly > 0 ? Math.round(monthlyRevenue / kiCostsMonthly) : 0;
   
   // Kosten pro Lead
@@ -69,13 +73,47 @@ export function ROICalculatorV2() {
     return new Intl.NumberFormat('de-DE').format(num);
   };
 
-  // Welche Staffel wird erreicht?
-  const getCurrentTier = (minutes: number): { tier: string; price: number; color: string } => {
-    if (minutes <= 1000) return { tier: "Staffel 1", price: 0.99, color: "text-blue-600" };
-    if (minutes <= 2000) return { tier: "Staffel 2", price: 0.94, color: "text-green-600" };
-    if (minutes <= 5000) return { tier: "Staffel 3", price: 0.89, color: "text-orange-600" };
-    if (minutes <= 10000) return { tier: "Staffel 4", price: 0.84, color: "text-purple-600" };
-    return { tier: "Staffel 5", price: 0.79, color: "text-red-600" };
+  const formatPercent = (percent: number): string => {
+    return new Intl.NumberFormat('de-DE').format(percent);
+  };
+
+  // Welche Staffel wird erreicht? (Farbschema: von rot/neutral zu grün = besser)
+  const getCurrentTier = (minutes: number): { tier: string; price: number; color: string; bgColor: string; borderColor: string } => {
+    if (minutes <= 1000) return { 
+      tier: "Staffel 1", 
+      price: 0.99, 
+      color: "text-red-600 dark:text-red-400", 
+      bgColor: "bg-red-50 dark:bg-red-900/20",
+      borderColor: "border-red-200 dark:border-red-800"
+    };
+    if (minutes <= 2000) return { 
+      tier: "Staffel 2", 
+      price: 0.94, 
+      color: "text-orange-600 dark:text-orange-400", 
+      bgColor: "bg-orange-50 dark:bg-orange-900/20",
+      borderColor: "border-orange-200 dark:border-orange-800"
+    };
+    if (minutes <= 5000) return { 
+      tier: "Staffel 3", 
+      price: 0.89, 
+      color: "text-amber-600 dark:text-amber-400", 
+      bgColor: "bg-amber-50 dark:bg-amber-900/20",
+      borderColor: "border-amber-200 dark:border-amber-800"
+    };
+    if (minutes <= 10000) return { 
+      tier: "Staffel 4", 
+      price: 0.84, 
+      color: "text-blue-600 dark:text-blue-400", 
+      bgColor: "bg-blue-50 dark:bg-blue-900/20",
+      borderColor: "border-blue-200 dark:border-blue-800"
+    };
+    return { 
+      tier: "Staffel 5", 
+      price: 0.79, 
+      color: "text-green-600 dark:text-green-400", 
+      bgColor: "bg-green-50 dark:bg-green-900/20",
+      borderColor: "border-green-200 dark:border-green-800"
+    };
   };
 
   const currentTier = getCurrentTier(totalMinutesPerMonth);
@@ -108,49 +146,68 @@ export function ROICalculatorV2() {
               {/* Eingabe-Parameter */}
                               <div className="space-y-8">
                   <div className="mb-6">
-                    <h3 className="text-xl font-bold text-primary mb-2 flex items-center gap-2">
-                      <Target className="h-5 w-5 text-primary" />
-                      Ihre Vertriebsparameter
-                    </h3>
-                    <p className="text-sm text-muted-foreground">Passen Sie die Werte an Ihre Situation an</p>
+                                         <h3 className="text-2xl font-bold text-primary mb-2 flex items-center gap-2">
+                       <Target className="h-6 w-6 text-primary" />
+                       Ihre Vertriebsparameter
+                     </h3>
+                     <p className="text-base text-muted-foreground">Passen Sie die Werte an Ihre Situation an</p>
                   </div>
 
-                {/* Anrufe pro Tag */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <label className="font-medium flex items-center gap-2">
-                      <Phone className="h-4 w-4 text-primary" />
-                      Anrufe pro Tag
-                    </label>
-                    <Badge variant="outline" className="font-bold">
-                      {callsPerDay[0]}
-                    </Badge>
-                  </div>
-                  <Slider
-                    value={callsPerDay}
-                    onValueChange={setCallsPerDay}
-                    max={1000}
-                    min={20}
-                    step={10}
-                    className="w-full"
-                  />
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>20</span>
-                    <span>{formatNumber(monthlyCallsTotal)} Anrufe/Monat</span>
-                    <span>1.000</span>
-                  </div>
+                                 {/* Anrufe pro Tag */}
+                 <div className="space-y-3">
+                   <div className="flex items-center justify-between">
+                     <label className="text-base font-medium flex items-center gap-2">
+                       <Phone className="h-4 w-4 text-primary" />
+                       Anrufe pro Tag
+                       <TooltipProvider>
+                         <Tooltip>
+                           <TooltipTrigger asChild>
+                             <Info className="h-5 w-5 text-muted-foreground hover:text-primary cursor-help transition-colors" />
+                           </TooltipTrigger>
+                           <TooltipContent side="top" className="max-w-sm">
+                             <div className="space-y-2 text-base">
+                               <p className="font-medium">DSGVO-Empfehlungen:</p>
+                               <div className="space-y-1">
+                                 <p><strong>Kaltakquise:</strong> Max. 300/Tag</p>
+                                 <p><strong>Warm/Bestandskunden:</strong> Max. 1.000/Tag</p>
+                               </div>
+                               <p className="text-sm text-muted-foreground">
+                                 Rechtssichere Volumina für nachhaltige Akquise
+                               </p>
+                             </div>
+                           </TooltipContent>
+                         </Tooltip>
+                       </TooltipProvider>
+                     </label>
+                     <Badge variant="outline" className="font-bold text-sm px-2 py-1">
+                       {callsPerDay[0]}
+                     </Badge>
+                   </div>
+                                     <Slider
+                     value={callsPerDay}
+                     onValueChange={setCallsPerDay}
+                     max={1000}
+                     min={20}
+                     step={10}
+                     className="w-full"
+                   />
+                   <div className="flex justify-between text-sm text-muted-foreground font-medium">
+                     <span>20</span>
+                     <span>{formatNumber(monthlyCallsTotal)} Anrufe/Monat</span>
+                     <span>1.000</span>
+                   </div>
                 </div>
 
                 {/* Anrufdauer */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <label className="font-medium flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-primary" />
-                      Ø Anrufdauer
-                    </label>
-                    <Badge variant="outline" className="font-bold">
-                      {callDurationSeconds[0]}s
-                    </Badge>
+                                     <div className="flex items-center justify-between">
+                     <label className="text-base font-medium flex items-center gap-2">
+                       <Clock className="h-4 w-4 text-primary" />
+                       Ø Anrufdauer
+                     </label>
+                                         <Badge variant="outline" className="font-bold text-sm px-2 py-1">
+                       {callDurationSeconds[0]}s
+                     </Badge>
                   </div>
                   <Slider
                     value={callDurationSeconds}
@@ -160,23 +217,23 @@ export function ROICalculatorV2() {
                     step={5}
                     className="w-full"
                   />
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>30s</span>
-                    <span>{formatNumber(totalMinutesPerMonth)} Min/Monat</span>
-                    <span>5min</span>
-                  </div>
+                                     <div className="flex justify-between text-sm text-muted-foreground font-medium">
+                     <span>30s</span>
+                     <span>{formatNumber(totalMinutesPerMonth)} Min/Monat</span>
+                     <span>5min</span>
+                   </div>
                 </div>
 
                 {/* Conversion Rate */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <label className="font-medium flex items-center gap-2">
-                      <Percent className="h-4 w-4 text-primary" />
-                      Erwartete Conversion Rate
-                    </label>
-                    <Badge variant="outline" className="font-bold">
-                      {conversionRate[0]}%
-                    </Badge>
+                                     <div className="flex items-center justify-between">
+                     <label className="text-base font-medium flex items-center gap-2">
+                       <Percent className="h-4 w-4 text-primary" />
+                       Lead-Qualifizierungsrate
+                     </label>
+                                         <Badge variant="outline" className="font-bold text-sm px-2 py-1">
+                       {conversionRate[0]}%
+                     </Badge>
                   </div>
                   <Slider
                     value={conversionRate}
@@ -186,19 +243,45 @@ export function ROICalculatorV2() {
                     step={1}
                     className="w-full"
                   />
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>1%</span>
-                    <span>{qualifiedLeads} qualifizierte Leads/Monat</span>
-                    <span>50%</span>
+                                     <div className="flex justify-between text-sm text-muted-foreground font-medium">
+                     <span>1%</span>
+                     <span>{qualifiedLeads} qualifizierte Leads/Monat</span>
+                     <span>50%</span>
+                   </div>
+                </div>
+
+                {/* Closing Rate */}
+                <div className="space-y-3">
+                                     <div className="flex items-center justify-between">
+                     <label className="text-base font-medium flex items-center gap-2">
+                       <Trophy className="h-4 w-4 text-primary" />
+                       Abschlussrate qualifizierter Leads
+                     </label>
+                                         <Badge variant="outline" className="font-bold text-base px-3 py-1">
+                       {closingRate[0]}%
+                     </Badge>
                   </div>
+                  <Slider
+                    value={closingRate}
+                    onValueChange={setClosingRate}
+                    max={100}
+                    min={0}
+                    step={1}
+                    className="w-full"
+                  />
+                                     <div className="flex justify-between text-sm text-muted-foreground font-medium">
+                     <span>0%</span>
+                     <span>{actualDeals} tatsächliche Abschlüsse/Monat</span>
+                     <span>100%</span>
+                   </div>
                 </div>
 
                 {/* Dealwert */}
                 <div className="space-y-3">
-                  <Label className="font-medium flex items-center gap-2">
-                    <Euro className="h-4 w-4 text-primary" />
-                    Durchschnittlicher Dealwert
-                  </Label>
+                                     <Label className="text-base font-medium flex items-center gap-2">
+                     <Euro className="h-4 w-4 text-primary" />
+                     Durchschnittlicher Dealwert
+                   </Label>
                   <div className="relative">
                     <Input
                       type="number"
@@ -209,104 +292,96 @@ export function ROICalculatorV2() {
                     />
                     <Euro className="absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   </div>
-                  <p className="text-xs text-muted-foreground">
-                    Durchschnittlicher Wert pro erfolgreichem Abschluss
-                  </p>
                 </div>
 
-                {/* Staffel-Anzeige */}
-                <div className="bg-card/50 rounded-lg p-4 border border-border/50">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Aktuelle Staffel:</span>
-                    <Badge variant="outline" className={`${currentTier.color} font-bold`}>
-                      {currentTier.tier}
-                    </Badge>
-                  </div>
-                  <div className="flex items-center justify-between mt-2">
-                    <span className="text-sm text-muted-foreground">Preis pro Minute:</span>
-                    <span className={`font-bold ${currentTier.color}`}>
-                      {currentTier.price.toFixed(2).replace('.', ',')} €
-                    </span>
-                  </div>
-                </div>
+                                 {/* Staffel-Anzeige */}
+                 <div className={`${currentTier.bgColor} rounded-lg p-4 border ${currentTier.borderColor}`}>
+                   <div className="flex items-center justify-between">
+                     <span className="text-base font-medium text-muted-foreground">Aktuelle Staffel:</span>
+                     <Badge variant="outline" className={`${currentTier.color} border-current font-bold text-sm px-2 py-1`}>
+                       {currentTier.tier}
+                     </Badge>
+                   </div>
+                   <div className="flex items-center justify-between mt-2">
+                     <span className="text-base text-muted-foreground">Preis pro Minute:</span>
+                     <span className={`font-bold text-sm ${currentTier.color}`}>
+                       {currentTier.price.toFixed(2).replace('.', ',')} €
+                     </span>
+                   </div>
+                 </div>
               </div>
 
               {/* Ergebnisse */}
               <div className="space-y-6">
                 <div className="mb-6">
-                  <h3 className="text-xl font-bold text-primary mb-2 flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-primary" />
-                    Ihre Umsatzsteigerung
-                  </h3>
-                  <p className="text-sm text-muted-foreground">Monatliche Ergebnisse mit KI-callflows</p>
+                                     <h3 className="text-2xl font-bold text-primary mb-2 flex items-center gap-2">
+                     <TrendingUp className="h-6 w-6 text-primary" />
+                     Ihre Umsatzsteigerung
+                   </h3>
+                   <p className="text-base text-muted-foreground">Monatliche Ergebnisse mit KI-callflows</p>
                 </div>
 
-                {/* KI-Kosten */}
-                <div className="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-6 border border-orange-200 dark:border-orange-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-orange-700 dark:text-orange-300">KI-Kosten/Monat</span>
-                    <Calculator className="w-5 h-5 text-orange-600" />
-                  </div>
-                  <p className="text-3xl font-bold text-orange-600 mb-1">
-                    {formatCurrency(kiCostsMonthly)}
-                  </p>
-                  <p className="text-xs text-orange-600/70">
-                    {formatNumber(totalMinutesPerMonth)} Minuten à {currentTier.price.toFixed(2)}€
-                  </p>
-                </div>
+                                 {/* KI-Kosten */}
+                 <div className="bg-accent/10 rounded-lg p-6 border border-accent/20">
+                   <div className="flex items-center justify-between mb-2">
+                     <span className="text-base text-accent font-medium">KI-Kosten/Monat</span>
+                     <Calculator className="w-6 h-6 text-accent" />
+                   </div>
+                   <p className="text-4xl font-bold text-accent mb-1">
+                     {formatCurrency(kiCostsMonthly)}
+                   </p>
+                   <p className="text-sm text-accent/70">
+                     {formatNumber(totalMinutesPerMonth)} Minuten à {currentTier.price.toFixed(2)}€
+                   </p>
+                 </div>
 
-                {/* Generierter Umsatz */}
-                <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-6 border border-green-200 dark:border-green-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-green-700 dark:text-green-300">Generierter Umsatz/Monat</span>
-                    <TrendingUp className="w-5 h-5 text-green-600" />
-                  </div>
-                  <p className="text-3xl font-bold text-green-600 mb-1">
-                    {formatCurrency(monthlyRevenue)}
-                  </p>
-                  <p className="text-xs text-green-600/70">
-                    {qualifiedLeads} Leads × {formatCurrency(dealValue)}
-                  </p>
-                </div>
+                                 {/* Generierter Umsatz */}
+                 <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-6 border border-green-200 dark:border-green-800">
+                   <div className="flex items-center justify-between mb-2">
+                     <span className="text-base text-green-700 dark:text-green-300 font-medium">Geschätzter Monatsumsatz</span>
+                     <TrendingUp className="w-6 h-6 text-green-600" />
+                   </div>
+                   <p className="text-4xl font-bold text-green-600 mb-1">
+                     {formatCurrency(monthlyRevenue)}
+                   </p>
+                   <p className="text-sm text-green-600/70">
+                     {actualDeals} Abschlüsse × {formatCurrency(dealValue)}
+                   </p>
+                 </div>
 
                 {/* ROI Hauptergebnis */}
                 <div className="bg-primary/10 rounded-lg p-6 border border-primary/20 text-center">
-                  <p className="text-sm text-primary mb-2">Return on Investment</p>
-                  <p className="text-4xl font-bold text-primary mb-2">
-                    {roi}%
+                  <p className="text-base text-primary mb-2 font-medium">Return on Investment</p>
+                  <p className="text-5xl font-bold text-primary mb-2">
+                    {formatPercent(roi)}%
                   </p>
-                  <p className="text-sm text-primary/70">
+                  <p className="text-base text-primary/70">
                     {revenuePerEuro}€ Umsatz pro 1€ KI-Investition
                   </p>
                 </div>
 
-                {/* Zusätzliche Metriken */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 bg-card/50 rounded-lg border border-border/50">
-                    <p className="text-xl font-bold text-primary">{formatCurrency(costPerLead)}</p>
-                    <p className="text-xs text-muted-foreground">Kosten pro Lead</p>
-                  </div>
-                  <div className="text-center p-4 bg-card/50 rounded-lg border border-border/50">
-                    <p className="text-xl font-bold text-primary">{qualifiedLeads}</p>
-                    <p className="text-xs text-muted-foreground">Deals/Todos</p>
+
+
+                                 {/* Lead-Performance Übersicht */}
+                <div className="bg-accent/10 rounded-lg p-4 border border-accent/20">
+                  <h4 className="text-base font-medium text-accent mb-3">Lead-Performance im Detail</h4>
+                  <div className="space-y-2 text-base">
+                    <div className="flex justify-between">
+                      <span className="text-accent/80">Qualifizierte Leads:</span>
+                      <span className="font-medium text-accent">{qualifiedLeads}/Monat</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-accent/80">Kosten pro Lead:</span>
+                      <span className="font-medium text-accent">{formatCurrency(costPerLead)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-accent/80">Conversion-Rate:</span>
+                      <span className="font-medium text-accent">{closingRate[0]}%</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Jahresübersicht */}
-                <div className="pt-4 border-t border-border/50 space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Jährliche KI-Kosten:</span>
-                    <span className="font-medium">{formatCurrency(kiCostsMonthly * 12)}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Jährlicher Umsatz:</span>
-                    <span className="font-medium text-green-600">{formatCurrency(monthlyRevenue * 12)}</span>
-                  </div>
-                  <div className="flex justify-between font-bold">
-                    <span>Jahres-Gewinn:</span>
-                    <span className="text-green-600">{formatCurrency((monthlyRevenue - kiCostsMonthly) * 12)}</span>
-                  </div>
-                </div>
+
               </div>
             </div>
           </CardContent>
