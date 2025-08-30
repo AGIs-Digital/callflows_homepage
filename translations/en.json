@@ -494,22 +494,30 @@
     "teamDescription": "is not software – but a team. With background in sales, marketing & automation. With genuine interest in your success.",
     "whyTitle": "Why we founded callflows",
     "whyTimo": "We are at the very beginning of a huge development – and I love being right in the middle of it. It excites me how AI can already hold real conversations today. And I’m even more excited about what it will do tomorrow. With callflows, we make these possibilities tangible for companies – and help them use it productively.",
-    "whyTom": "Applying AI in customer contact requires not just technology, but a deep understanding of processes, quality and efficiency. Our goal is to build solutions that are scalable, economically sound and reliably integrable into existing operations. That’s exactly what we deliver with callflows every day.",
+    "whyTom": "Applying AI in customer contact requires not just technology, but a deep understanding of processes, quality and efficiency. Our goal is to build solutions that are scalable, economically sound and reliably integrable into existing operations. That's exactly what we deliver with callflows every day.",
+    "founders": {
+      "timo": {
+        "role": "Co‑Founder & Chief Innovation Officer"
+      },
+      "tom": {
+        "role": "Co‑Founder & Chief Strategy Officer"
+      }
+    },
     "teamQuotesTitle": "Your callflows Team",
     "teamQuotesSubtitle": "From consultation to implementation – everything from one source",
     "teamDefaultRole": "Team member",
     "teamDefaultQuote": "I help make AI callflows productive.",
     "teamMembers": {
       "marvin": {
-        "role": "Software Architect",
+        "role": "Lead IT-Architect",
         "quote": "Clean architecture is the foundation of successful AI callflows. I ensure everything runs stable."
       },
       "jamin": {
-        "role": "Project Manager",
+        "role": "Lead Project Manager",
         "quote": "Customer satisfaction drives me. I personally guide every client to success."
       },
       "pascal": {
-        "role": "Project Manager",
+        "role": "Senior Project Manager",
         "quote": "Precise planning, reliable execution. That's what our customers can count on."
       },
       "tom": {
@@ -517,7 +525,7 @@
         "quote": "Every project needs the perfect mix of innovation and strategic thinking."
       },
       "jan": {
-        "role": "AI Automations",
+        "role": "Lead Automation Engineer",
         "quote": "Turning complex AI processes into elegant automations – that's my specialty."
       }
     },

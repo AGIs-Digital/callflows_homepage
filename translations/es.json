@@ -495,21 +495,29 @@
     "whyTitle": "Por qué fundamos callflows",
     "whyTimo": "Estamos al comienzo de un gran desarrollo, y me encanta estar en el centro. Me entusiasma cómo la IA ya puede mantener conversaciones reales hoy. Y aún más lo que hará mañana. Con callflows hacemos que estas posibilidades sean tangibles para las empresas y las ayudamos a utilizarlas productivamente.",
     "whyTom": "El uso de IA en el contacto con clientes requiere no solo tecnología, sino una comprensión profunda de procesos, calidad y eficiencia. Nuestro objetivo es crear soluciones escalables, económicamente sensatas y confiablemente integrables en los flujos existentes. Eso es exactamente lo que hacemos con callflows cada día.",
+    "founders": {
+      "timo": {
+        "role": "Co‑Fundador & Director de Innovación"
+      },
+      "tom": {
+        "role": "Co‑Fundador & Director de Estrategia"
+      }
+    },
     "teamQuotesTitle": "Su equipo callflows",
     "teamQuotesSubtitle": "Desde la consultoría hasta la implementación – todo de una sola fuente",
     "teamDefaultRole": "Miembro del equipo",
     "teamDefaultQuote": "Ayudo a hacer productivos los AI callflows.",
     "teamMembers": {
       "marvin": {
-        "role": "Arquitecto de Software",
+        "role": "Arquitecto IT Principal",
         "quote": "Una arquitectura limpia es la base de callflows IA exitosos. Me aseguro de que todo funcione de forma estable."
       },
       "jamin": {
-        "role": "Gerente de Proyecto",
+        "role": "Gerente de Proyecto Principal",
         "quote": "La satisfacción del cliente me impulsa. Guío personalmente a cada cliente hacia el éxito."
       },
       "pascal": {
-        "role": "Gerente de Proyecto",
+        "role": "Gerente de Proyecto Senior",
         "quote": "Planificación precisa, ejecución confiable. En eso pueden confiar nuestros clientes."
       },
       "tom": {
@@ -517,7 +525,7 @@
         "quote": "Cada proyecto necesita la mezcla perfecta de innovación y pensamiento estratégico."
       },
       "jan": {
-        "role": "Automatizaciones de IA",
+        "role": "Ingeniero Principal de Automatización",
         "quote": "Convertir procesos complejos de IA en automatizaciones elegantes – esa es mi especialidad."
       }
     },

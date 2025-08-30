@@ -43,7 +43,7 @@ export function TeamQuotesSection() {
       name: "Jan Kastning", 
       role: t("about.teamMembers.jan.role"), 
       quote: t("about.teamMembers.jan.quote"), 
-      imgSrc: undefined // Vorübergehend Silhouette verwenden
+      imgSrc: "/images/jankastning.webp"
     },
   ];
 

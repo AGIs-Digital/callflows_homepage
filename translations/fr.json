@@ -262,13 +262,13 @@
   "glossary": {
     "kiCallflow": {
       "title": "AI callflow",
-      "pageTitle": "Qu’est‑ce qu’un AI callflow ? Définition, différences, avantages",
+      "pageTitle": "Qu'est‑ce qu'un AI callflow ? Définition, différences, avantages",
       "pageDescription": "AI callflow : flux de conversation et de processus apprenant. Différences avec le callflow classique et les agents vocaux, avantages et usages.",
       "short": "AI callflow : flux de conversation et de processus apprenant — comprend les intentions, mène des dialogues, connecte les systèmes.",
       "l1": "Dialogues dynamiques vs. menus statiques",
       "l2": "Logique de processus + intégrations systèmes",
-      "l3": "Au‑delà d’un callflow classique ou d’un simple agent vocal",
-      "intro": "Un AI callflow est un flux de conversation et de processus apprenant qui comprend les intentions, mène des dialogues et se connecte à vos systèmes. Il combine reconnaissance d’intentions, logique métier, automatisations et intégrations.",
+      "l3": "Au‑delà d'un callflow classique ou d'un simple agent vocal",
+      "intro": "Un AI callflow est un flux de conversation et de processus apprenant qui comprend les intentions, mène des dialogues et se connecte à vos systèmes. Il combine reconnaissance d'intentions, logique métier, automatisations et intégrations.",
       "diffTitle": "Différence avec le callflow classique",
       "diffItems": [
         "Dynamique plutôt que statique : comprend les intentions, décide selon le contexte",
@@ -276,36 +276,36 @@
         "Intégrations systèmes transparentes (CRM/ERP/Helpdesk)"
       ],
       "voiceAgentsTitle": "Différence avec les agents vocaux",
-      "voiceAgentsText": "Un agent vocal est la voix. L’AI callflow orchestre tout le processus incl. logique, données et actions.",
+      "voiceAgentsText": "Un agent vocal est la voix. L'AI callflow orchestre tout le processus incl. logique, données et actions.",
       "terminologyTitle": "Aperçu de la terminologie",
       "terminologyHeaders": ["Terme", "Focus"],
       "terminology": [
-        "Conversation Workflow / Conversation Flow||Flux global incluant les étapes post‑appel, pas seulement l’appel en direct.",
-        "Call Lifecycle||Cycle de vie complet de l’appel – du début au post‑traitement.",
-        "Post‑Call Processing (PCP)||Tout ce qui se passe après l’appel : analyse, nettoyage, classification, déclencheurs.",
-        "Conversational Automation Pipeline||Quand le post‑traitement est fortement automatisé et intégré à d’autres systèmes.",
+        "Conversation Workflow / Conversation Flow||Flux global incluant les étapes post‑appel, pas seulement l'appel en direct.",
+        "Call Lifecycle||Cycle de vie complet de l'appel – du début au post‑traitement.",
+        "Post‑Call Processing (PCP)||Tout ce qui se passe après l'appel : analyse, nettoyage, classification, déclencheurs.",
+        "Conversational Automation Pipeline||Quand le post‑traitement est fortement automatisé et intégré à d'autres systèmes.",
         "Contact Flow avec intégration backend||Terme de centre de contact quand logique + traitement des données sont combinés."
       ],
       "e2eTitle": "Que signifie de bout en bout ?",
-      "e2eDefinition": "De bout en bout signifie que l’AI callflow gère l’ensemble du cycle de conversation et de processus – du premier appel aux actions post‑appel documentées – sans transferts manuels.",
+      "e2eDefinition": "De bout en bout signifie que l'AI callflow gère l'ensemble du cycle de conversation et de processus – du premier appel aux actions post‑appel documentées – sans transferts manuels.",
       "e2eIncludesTitle": "Comprend",
       "e2eIncludes": [
-        "Prise d’appel, routage, identification",
-        "Reconnaissance d’intentions, capture dialogique de données",
+        "Prise d'appel, routage, identification",
+        "Reconnaissance d'intentions, capture dialogique de données",
         "Logique de processus : décisions, règles, escalades",
         "Intégrations systèmes : CRM/ERP/Helpdesk/Calendrier/Webhooks",
         "Actions : réservations, tickets, commandes, écritures de données",
         "Conformité : annonces, consentements, RGPD",
         "Qualité : transcription, KPI, monitoring/alertes",
         "Post‑traitement : relances, email/SMS, mises à jour CRM",
-        "Boucle d’apprentissage : évaluation et ajustements"
+        "Boucle d'apprentissage : évaluation et ajustements"
       ],
       "e2eCriteriaTitle": "Critères mesurables",
       "e2eCriteria": [
-        "≥95% d’achèvements de processus sans reprise manuelle (selon cas d’usage)",
+        "≥95% d'achèvements de processus sans reprise manuelle (selon cas d'usage)",
         "<3% de taux de repli/erreurs de validation",
         "Documentation complète incl. horodatage",
-        "SLA et parcours d’escalade définis"
+        "SLA et parcours d'escalade définis"
       ],
       "noteLabel": "Note :",
       "note": "Si l'analyse, le nettoyage, l'extraction de données et les automatisations après l'appel sont inclus, on parle d'un flux de conversation – c'est un processus de bout en bout avant, pendant et après l'appel.",
@@ -493,23 +493,31 @@
     ],
     "teamDescription": "n'est pas un logiciel – mais une équipe. Avec une expérience en vente, marketing et automatisation. Avec un véritable intérêt pour votre succès.",
     "whyTitle": "Pourquoi nous avons fondé callflows",
-    "whyTimo": "Nous sommes au tout début d’un immense développement – et j’adore être au cœur de celui‑ci. Je suis fasciné par la capacité de l’IA à mener de vraies conversations dès aujourd’hui – et encore plus par ce qu’elle accomplira demain. Avec callflows, nous rendons ces possibilités concrètes pour les entreprises – et aidons à les exploiter productivement.",
-    "whyTom": "L’usage de l’IA dans la relation client exige plus que de la technologie : une compréhension profonde des processus, de la qualité et de l’efficacité. Notre objectif : créer des solutions scalables, économiquement pertinentes et intégrables de manière fiable dans les opérations existantes. C’est exactement ce que nous réalisons chaque jour avec callflows.",
+    "whyTimo": "Nous sommes au tout début d'un immense développement – et j'adore être au cœur de celui‑ci. Je suis fasciné par la capacité de l'IA à mener de vraies conversations dès aujourd'hui – et encore plus par ce qu'elle accomplira demain. Avec callflows, nous rendons ces possibilités concrètes pour les entreprises – et aidons à les exploiter productivement.",
+    "whyTom": "L'usage de l'IA dans la relation client exige plus que de la technologie : une compréhension profonde des processus, de la qualité et de l'efficacité. Notre objectif : créer des solutions scalables, économiquement pertinentes et intégrables de manière fiable dans les opérations existantes. C'est exactement ce que nous réalisons chaque jour avec callflows.",
+    "founders": {
+      "timo": {
+        "role": "Co‑Fondateur & Directeur de l'Innovation"
+      },
+      "tom": {
+        "role": "Co‑Fondateur & Directeur de la Stratégie"
+      }
+    },
     "teamQuotesTitle": "Votre équipe callflows",
     "teamQuotesSubtitle": "Du conseil à la mise en œuvre – tout en un seul endroit",
     "teamDefaultRole": "Membre de l'équipe",
     "teamDefaultQuote": "Je contribue à rendre les AI callflows productifs.",
     "teamMembers": {
       "marvin": {
-        "role": "Architecte Logiciel",
+        "role": "Architecte IT Principal",
         "quote": "Une architecture propre est le fondement de callflows IA réussis. Je veille à ce que tout fonctionne de manière stable."
       },
       "jamin": {
-        "role": "Chef de Projet",
+        "role": "Chef de Projet Principal",
         "quote": "La satisfaction client me motive. J'accompagne personnellement chaque client vers le succès."
       },
       "pascal": {
-        "role": "Chef de Projet",
+        "role": "Chef de Projet Senior",
         "quote": "Planification précise, exécution fiable. C'est sur cela que nos clients peuvent compter."
       },
       "tom": {
@@ -517,7 +525,7 @@
         "quote": "Chaque projet a besoin du mélange parfait d'innovation et de pensée stratégique."
       },
       "jan": {
-        "role": "Automations IA",
+        "role": "Ingénieur Principal en Automatisation",
         "quote": "Transformer des processus IA complexes en automatisations élégantes – c'est ma spécialité."
       }
     },

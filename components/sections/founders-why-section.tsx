@@ -6,9 +6,9 @@ import { useI18n } from "@/lib/i18n";
 export function FoundersWhySection() {
   const { t } = useI18n();
 
-  const founders: Array<{ name: string; role: string; imgSrc?: string; quoteKey: string }> = [
-    { name: "Timo Goltz", role: "Co‑Founder", imgSrc: "/images/timogoltz.webp", quoteKey: "about.whyTimo" },
-    { name: "Tom Niclas Abeln", role: "Co‑Founder", imgSrc: "/images/tomniclasabeln.webp", quoteKey: "about.whyTom" },
+  const founders: Array<{ name: string; roleKey: string; imgSrc?: string; quoteKey: string }> = [
+    { name: "Timo Goltz", roleKey: "about.founders.timo.role", imgSrc: "/images/timogoltz.webp", quoteKey: "about.whyTimo" },
+    { name: "Tom Niclas Abeln", roleKey: "about.founders.tom.role", imgSrc: "/images/tomniclasabeln.webp", quoteKey: "about.whyTom" },
   ];
 
   return (
@@ -36,7 +36,7 @@ export function FoundersWhySection() {
                 </blockquote>
                 <div className="absolute -bottom-2 sm:-bottom-4 -right-1 sm:-right-2 text-4xl sm:text-6xl text-primary/30 select-none">"</div>
                 <div className="mt-4 sm:mt-6 text-sm text-foreground font-semibold text-center sm:text-left">
-                  {f.name} · {f.role}
+                  {f.name} · {t(f.roleKey)}
                 </div>
               </div>
             </div>
