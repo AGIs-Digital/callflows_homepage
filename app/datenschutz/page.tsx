@@ -145,22 +145,6 @@ export default function DatenschutzPage() {
             </p>
           </LegalSection>
 
-          <LegalSection title={t('legal.datenschutz.dataUsage.title')}>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              {t('legal.datenschutz.dataUsage.content')}
-            </p>
-            
-            <h3 className="text-lg font-medium mt-4 mb-2">{t('legal.datenschutz.dataUsage.personalData.title')}</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              {t('legal.datenschutz.dataUsage.personalData.content')}
-            </p>
-            <ul className="list-disc pl-6 mt-2 text-gray-600 dark:text-gray-300">
-              {tArray('legal.datenschutz.dataUsage.personalData.list').map((item: string, index: number) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </LegalSection>
-          
           <LegalSection title={t('legal.datenschutz.aiSecurity.title')}>
             <p className="text-gray-600 dark:text-gray-300 mb-2">
               {t('legal.datenschutz.aiSecurity.content')}

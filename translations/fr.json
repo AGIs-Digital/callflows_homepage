@@ -614,17 +614,8 @@
         "title": "11. Contact pour les Demandes de Confidentialité",
         "content": "Pour les demandes de confidentialité ou l'exercice des droits des utilisateurs, contactez-nous à :\\n\\ncallflows Abeln Goltz GbR\\nE-Mail: info@callflows.de\\nAdresse : Fenskestraße 9A, 30165 Hannover"
       },
-      "dataUsage": {
-        "title": "12. Collecte et Utilisation des Données",
-        "content": "Nous collectons différents types d'informations à diverses fins pour fournir et améliorer notre Service.",
-        "personalData": {
-          "title": "2.1 Données Personnelles",
-          "content": "Lors de l'utilisation de notre Service, nous pouvons vous demander de nous fournir certaines données personnelles qui peuvent être utilisées pour vous contacter ou vous identifier (\"Données Personnelles\"). Les données personnelles peuvent inclure, mais sans s'y limiter, les informations suivantes :",
-          "list": ["Adresse e-mail", "Prénom et nom", "Numéro de téléphone", "Nom de l'entreprise", "Adresse", "Cookies et données d'utilisation"]
-        }
-      },
       "aiSecurity": {
-        "title": "13. Sécurité des Données pour les Agents Vocaux IA",
+        "title": "12. Sécurité des Données pour les Agents Vocaux IA",
         "content": "Lors de l'utilisation de nos agents vocaux IA, les données de conversation sont traitées pour fournir le service. Nous accordons la plus haute valeur à la sécurité de ces données :",
         "list": ["Toutes les conversations sont transmises de manière chiffrée et stockées sous forme de transcriptions", "Les données de conversation sont traitées exclusivement sur des serveurs dans l'UE", "Seuls les employés autorisés ont accès aux données de conversation", "Les données de conversation ne sont stockées que le temps nécessaire pour fournir le service", "Les données de conversation peuvent être supprimées à tout moment sur demande"]
       }

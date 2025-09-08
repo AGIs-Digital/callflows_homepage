@@ -723,7 +723,7 @@
       },
       "dataCollection": {
         "title": "2. Welche Daten erfassen wir?",
-        "content": "Wir erfassen und verarbeiten personenbezogene Daten nur im notwendigen Umfang. Dies umfasst:\\n\\n• Direkt vom Kunden bereitgestellte Daten: Name, E-Mail-Adresse, Telefonnummer\\n\\n• Daten aus der Nutzung unseres Dienstes: Gesprächsprotokolle, Transkriptionen (sofern vom Kunden aktiviert)\\n\\n• Daten aus der ersten Kontaktaufnahme: Falls ein potenzieller Kunde Interesse an unseren Diensten hat, kann ein Video-Call zur Besprechung der Anforderungen durchgeführt werden. Dieses Gespräch wird aufgezeichnet und spätestens nach 30 Tagen oder mit Live-Schaltung des Agenten gelöscht. Die Aufzeichnung erfolgt nur mit vorheriger ausdrücklicher Einwilligung des Kunden.\\n\\n• Automatisch erfasste Daten: IP-Adresse, Browserinformationen (für die Website-Optimierung), Cookies"
+        "content": "Wir erfassen und verarbeiten personenbezogene Daten nur im notwendigen Umfang. Dies umfasst:\\n\\n• Direkt vom Kunden bereitgestellte Daten: Name, E-Mail-Adresse, Telefonnummer, Unternehmensdaten\\n\\n• Daten aus der Nutzung unseres Dienstes: Gesprächsprotokolle, Transkriptionen (sofern vom Kunden aktiviert)\\n\\n• Daten aus der Beratung: Kontaktdaten und Gesprächsnotizen aus Beratungsterminen (keine Aufzeichnungen)\\n\\n• Automatisch erfasste Daten: IP-Adresse, Browserinformationen (für die Website-Optimierung), Cookies"
       },
       "purpose": {
         "title": "3. Zweck der Datenverarbeitung",
@@ -731,11 +731,11 @@
       },
       "thirdParties": {
         "title": "4. Weitergabe an Dritte",
-        "content": "Wir geben personenbezogene Daten nicht an unbeteiligte Dritte weiter. Allerdings arbeiten wir mit folgenden Drittanbietern, die für die Erbringung unseres Dienstes erforderlich sind:\\n\\n• Synthflow AI (Plattform für Voice-Agenten, Whitelabel-Lösung)\\n• Stripe (Zahlungsabwicklung)\\n• Hosting-Anbieter (Serverstandort innerhalb der EU)\\n\\nMit diesen Dienstleistern bestehen entsprechende Auftragsverarbeitungsverträge (AVV), um die Einhaltung der DSGVO zu gewährleisten."
+        "content": "Wir geben personenbezogene Daten nicht an unbeteiligte Dritte weiter. Allerdings arbeiten wir mit folgenden Drittanbietern, die für die Erbringung unseres Dienstes erforderlich sind:\\n\\n• Synthflow AI (Whitelabel-Plattform für Voice-Agenten, Conversation-Engine)\\n• ElevenLabs (KI-Stimmenerstellung und Text-to-Speech)\\n• Deepgram (Spracherkennung und Speech-to-Text)\\n• Twilio (Telefonie-Infrastruktur)\\n• Stripe (Zahlungsabwicklung)\\n• Hosting-Anbieter (Serverstandort innerhalb der EU)\\n\\nMit diesen Dienstleistern bestehen entsprechende Auftragsverarbeitungsverträge (AVV), um die Einhaltung der DSGVO zu gewährleisten."
       },
       "retention": {
         "title": "5. Speicherdauer & Löschung von Daten",
-        "content": "• Kundenbezogene Daten werden so lange gespeichert, wie ein aktives Vertragsverhältnis besteht.\\n\\n• Bei einer Kündigung des Abonnements werden alle personenbezogenen Daten gelöscht, sofern keine gesetzliche Aufbewahrungspflicht entgegensteht.\\n\\n• Falls der Kunde einer weiteren Speicherung für zukünftige Angebote zustimmt, können Kontaktdaten weiterhin gespeichert werden.\\n\\n• Aufzeichnungen aus Erstgesprächen werden spätestens nach 30 Tagen gelöscht."
+        "content": "• Kundenbezogene Daten werden so lange gespeichert, wie ein aktives Vertragsverhältnis besteht.\\n\\n• Bei einer Kündigung des Abonnements werden alle personenbezogenen Daten gelöscht, sofern keine gesetzliche Aufbewahrungspflicht entgegensteht.\\n\\n• Falls der Kunde einer weiteren Speicherung für zukünftige Angebote zustimmt, können Kontaktdaten weiterhin gespeichert werden.\\n\\n• Gesprächsnotizen aus Beratungsterminen werden nach Projektabschluss oder spätestens nach 12 Monaten gelöscht."
       },
       "rights": {
         "title": "6. Rechte der Nutzer gemäß DSGVO",
@@ -751,7 +751,7 @@
       },
       "transfer": {
         "title": "9. Internationale Datenübermittlung",
-        "content": "• Alle Daten werden ausschließlich innerhalb der EU gespeichert.\\n• Es findet keine Übermittlung in Drittländer (z. B. USA) statt."
+        "content": "• Alle Daten werden ausschließlich innerhalb der EU/EWR verarbeitet und gespeichert.\\n• Es findet keine Übermittlung in Drittländer außerhalb der EU/EWR (z. B. USA, Schweiz) statt.\\n• Die Verarbeitung in verschiedenen EU-Mitgliedstaaten erfolgt auf Basis der DSGVO."
       },
       "changes": {
         "title": "10. Änderungen der Datenschutzerklärung",
@@ -761,17 +761,8 @@
         "title": "11. Kontakt für Datenschutzanfragen",
         "content": "Für Datenschutzanfragen oder Ausübung der Nutzerrechte kontaktieren Sie uns unter:\\n\\ncallflows Abeln Goltz GbR\\nE-Mail: info@callflows.de\\nAdresse: Fenskestraße 9A, 30165 Hannover"
       },
-      "dataUsage": {
-        "title": "12. Datenerfassung und -verwendung",
-        "content": "Wir erfassen verschiedene Arten von Informationen für verschiedene Zwecke, um unseren Service bereitzustellen und zu verbessern.",
-        "personalData": {
-          "title": "2.1 Personenbezogene Daten",
-          "content": "Während der Nutzung unseres Services können wir Sie bitten, uns bestimmte personenbezogene Daten mitzuteilen, die zur Kontaktaufnahme oder Identifizierung verwendet werden können (\"Personenbezogene Daten\"). Zu den personenbezogenen Daten können unter anderem folgende Informationen gehören:",
-          "list": ["E-Mail-Adresse", "Vor- und Nachname", "Telefonnummer", "Firmenname", "Adresse", "Cookies und Nutzungsdaten"]
-        }
-      },
       "aiSecurity": {
-        "title": "13. Datensicherheit bei KI Voice Agents",
+        "title": "12. Datensicherheit bei KI Voice Agents",
         "content": "Bei der Nutzung unserer KI Voice Agents werden Gesprächsdaten verarbeitet, um den Service bereitzustellen. Wir legen größten Wert auf die Sicherheit dieser Daten:",
         "list": ["Alle Gespräche werden verschlüsselt übertragen und als Transkripte gespeichert", "Gesprächsdaten werden ausschließlich auf Servern innerhalb der EU verarbeitet", "Zugriff auf Gesprächsdaten haben nur autorisierte Mitarbeiter", "Gesprächsdaten werden nur so lange gespeichert, wie es für die Bereitstellung des Services notwendig ist", "Auf Wunsch können Gesprächsdaten jederzeit gelöscht werden"]
       }

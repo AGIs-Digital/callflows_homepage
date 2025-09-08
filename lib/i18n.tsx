@@ -79,7 +79,7 @@ interface GeolocationResponse {
   country?: string;
 }
 
-// Browser-Sprache erkennen (synchron, als Fallback)
+// Browser-Sprache erkennen (synchron, als Fallback) - Server-Safe
 const detectBrowserLanguage = (): Locale => {
   if (typeof window === 'undefined') return 'de';
   
@@ -126,31 +126,37 @@ const detectUserLanguage = async (): Promise<Locale> => {
   return browserLang in SUPPORTED_LOCALES ? browserLang : 'de';
 };
 
-// Provider Component
+// Provider Component mit FOIT-Optimierung
 export function I18nProvider({ children }: { children: ReactNode }) {
+  // Server-safe initialisierung - immer Deutsch als Standard [[memory:6665988]]
   const [locale, setLocaleState] = useState<Locale>('de');
-  const [translations, setTranslations] = useState<Translations>({});
-  const [isLoading, setIsLoading] = useState(true);
+  // Preload deutsche Übersetzungen sofort für FOIT-Vermeidung
+  const [translations, setTranslations] = useState<Translations>(deTranslations);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Übersetzungen laden
   useEffect(() => {
     const loadInitialLanguage = async () => {
       try {
         const detectedLocale = await detectUserLanguage();
-        setLocaleState(detectedLocale);
         
-        const newTranslations = getTranslations(detectedLocale);
-        setTranslations(newTranslations);
+        // Nur wechseln wenn nicht bereits Deutsch
+        if (detectedLocale !== 'de') {
+          setLocaleState(detectedLocale);
+          const newTranslations = getTranslations(detectedLocale);
+          setTranslations(newTranslations);
+        }
       } catch (error) {
         console.warn('Fehler beim Laden der Sprache, verwende Standard:', error);
         // Fallback auf synchrone Browser-Erkennung
         const fallbackLocale = detectBrowserLanguage();
-        setLocaleState(fallbackLocale);
         
-        const newTranslations = getTranslations(fallbackLocale);
-        setTranslations(newTranslations);
-      } finally {
-        setIsLoading(false);
+        // Nur wechseln wenn nicht bereits Deutsch
+        if (fallbackLocale !== 'de') {
+          setLocaleState(fallbackLocale);
+          const newTranslations = getTranslations(fallbackLocale);
+          setTranslations(newTranslations);
+        }
       }
     };
 
@@ -168,12 +174,8 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     setIsLoading(false);
   };
 
-  // Übersetzungsfunktion
+  // Übersetzungsfunktion - zeigt nie mehr Schlüssel bei FOIT
   const t = (key: string): string => {
-    if (isLoading) {
-      return key;
-    }
-
     const keys = key.split('.');
     let value: any = translations;
     
@@ -189,13 +191,26 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     }
     if (Array.isArray(value)) return JSON.stringify(value);
     
+    // Fallback auf deutsche Übersetzung wenn Schlüssel nicht gefunden
+    if (locale !== 'de') {
+      const keys = key.split('.');
+      let germanValue: any = deTranslations;
+      
+      for (const k of keys) {
+        germanValue = germanValue?.[k];
+        if (germanValue === undefined) break;
+      }
+      
+      if (typeof germanValue === 'string') {
+        return germanValue;
+      }
+    }
+    
     return key;
   };
 
-  // Array-Übersetzungsfunktion
+  // Array-Übersetzungsfunktion - ebenfalls FOIT-optimiert
   const tArray = (key: string): string[] => {
-    if (isLoading) return [];
-
     const keys = key.split('.');
     let value: any = translations;
     
@@ -205,6 +220,20 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     }
     
     if (Array.isArray(value)) return value;
+    
+    // Fallback auf deutsche Übersetzung wenn Array nicht gefunden
+    if (locale !== 'de') {
+      const keys = key.split('.');
+      let germanValue: any = deTranslations;
+      
+      for (const k of keys) {
+        germanValue = germanValue?.[k];
+        if (germanValue === undefined) break;
+      }
+      
+      if (Array.isArray(germanValue)) return germanValue;
+    }
+    
     return [];
   };
 

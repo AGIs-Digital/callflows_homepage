@@ -576,7 +576,7 @@
       },
       "dataCollection": {
         "title": "2. What Data Do We Collect?",
-        "content": "We collect and process personal data only to the necessary extent. This includes:\\n\\n• Data provided directly by the customer: Name, email address, phone number\\n\\n• Data from the use of our service: Call logs, transcriptions (if activated by the customer)\\n\\n• Data from initial contact: If a potential customer shows interest in our services, a video call may be conducted to discuss requirements. This conversation is recorded and deleted at the latest after 30 days or when the agent goes live. Recording only takes place with prior explicit consent from the customer.\\n\\n• Automatically collected data: IP address, browser information (for website optimization), cookies"
+        "content": "We collect and process personal data only to the necessary extent. This includes:\\n\\n• Data provided directly by the customer: Name, email address, phone number, company data\\n\\n• Data from the use of our service: Call logs, transcriptions (if activated by the customer)\\n\\n• Data from consultation: Contact data and conversation notes from consultation appointments (no recordings)\\n\\n• Automatically collected data: IP address, browser information (for website optimization), cookies"
       },
       "purpose": {
         "title": "3. Purpose of Data Processing",
@@ -614,17 +614,8 @@
         "title": "11. Contact for Privacy Inquiries",
         "content": "For privacy inquiries or exercising user rights, contact us at:\\n\\ncallflows Abeln Goltz GbR\\nE-Mail: info@callflows.de\\nAddress: Fenskestraße 9A, 30165 Hannover"
       },
-      "dataUsage": {
-        "title": "12. Data Collection and Usage",
-        "content": "We collect various types of information for various purposes to provide and improve our Service.",
-        "personalData": {
-          "title": "2.1 Personal Data",
-          "content": "While using our Service, we may ask you to provide us with certain personal data that can be used to contact or identify you (\"Personal Data\"). Personal data may include, but is not limited to, the following information:",
-          "list": ["Email address", "First and last name", "Phone number", "Company name", "Address", "Cookies and usage data"]
-        }
-      },
       "aiSecurity": {
-        "title": "13. Data Security for AI Voice Agents",
+        "title": "12. Data Security for AI Voice Agents",
         "content": "When using our AI voice agents, conversation data is processed to provide the service. We place the highest value on the security of this data:",
         "list": ["All conversations are transmitted encrypted and stored as transcripts", "Conversation data is processed exclusively on servers within the EU", "Only authorized employees have access to conversation data", "Conversation data is only stored as long as necessary for providing the service", "Conversation data can be deleted at any time upon request"]
       }
