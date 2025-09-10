@@ -15,13 +15,13 @@ const nextConfig = {
   webpack: (config, { dev, isServer, webpack }) => {
     // Performance-Optimierungen für alle Builds
     
-    // Aggressive Bundle-Aufteilung für kleinere Dateien
+    // Mobile-optimierte Bundle-Aufteilung für kleinere Initial Load
     config.optimization.splitChunks = {
       chunks: 'all',
-      minSize: 10000,  // Noch kleinere Chunks
-      maxSize: 100000, // Maximale Chunk-Größe reduziert
-      maxAsyncRequests: 30,
-      maxInitialRequests: 30,
+      minSize: 5000,   // Sehr kleine Chunks für mobile
+      maxSize: 50000,  // Deutlich kleinere Chunks für mobile Performance
+      maxAsyncRequests: 40,
+      maxInitialRequests: 15, // Weniger Initial Requests für mobile
       cacheGroups: {
         // React Framework
         react: {

@@ -21,6 +21,15 @@
     "menu": "Menü öffnen",
     "login": "Anmelden"
   },
+  "autofill": {
+    "consentTitle": "Daten speichern?",
+    "optionalBadge": "Optional",
+    "closeLabel": "Schließen",
+    "consentText": "Möchten Sie Name und Telefonnummer lokal speichern? Dies erleichtert zukünftige Eingaben. Die Daten bleiben nur auf Ihrem Gerät.",
+    "acceptButton": "Ja, speichern",
+    "declineButton": "Nein, danke",
+    "privacyNote": "Jederzeit in den Einstellungen änderbar. Datenschutz wird eingehalten."
+  },
   "home": {
     "title": "callflows - End‑to‑End Telefonautomatisierung für automatisierte Telefonie",
     "description": "Revolutionieren Sie Ihren Kundenservice mit KI‑callflows. Intelligente Gesprächs- und Prozessflüsse für automatisierte Kundenkommunikation, Vertrieb und Support – 24/7 verfügbar.",
@@ -46,11 +55,11 @@
     "privacyHint": "🔒 Wir rufen Sie sofort und kostenfrei an. Ihre Daten werden nicht weitergegeben.",
     "buttonStart": "Live Demo starten",
     "buttonStarting": "Anruf wird gestartet...",
-    "statusCalling": "Anruf wird gestartet...",
-    "statusCallingDesc": "Ihr Telefon sollte gleich klingeln!",
-    "statusSuccess": "Anruf gestartet!",
-    "statusSuccessDesc": "Schauen Sie auf Ihr Telefon - unser KI‑Agent ruft Sie an.",
-    "statusSuccessHint": "💬 Sprechen Sie mit unserem KI‑Agent und testen Sie alle Funktionen!",
+    "statusCalling": "Anruf wird übertragen...",
+    "statusCallingDesc": "Bitte haben Sie einen Moment Geduld - der Anruf kann bis zu 10 Sekunden dauern.",
+    "statusSuccess": "Anruf erfolgreich gestartet!",
+    "statusSuccessDesc": "🔔 Ihr Telefon klingelt in wenigen Sekunden. Bitte halten Sie bereit!",
+    "statusSuccessHint": "💬 Sprechen Sie mit unserem KI‑Agent und testen Sie alle Funktionen! Der Anruf ist komplett kostenfrei.",
     "statusError": "Fehler beim Anruf",
     "statusErrorDesc": "Bitte prüfen Sie Ihre Telefonnummer und versuchen Sie es erneut.",
     "buttonRetry": "Nochmal versuchen"

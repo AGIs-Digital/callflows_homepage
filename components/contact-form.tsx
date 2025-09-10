@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import { useToast } from "@/hooks/use-toast";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
+import { useAutofill } from "@/hooks/use-autofill";
+import { AutofillConsentBanner } from "@/components/ui/autofill-consent-banner";
 
 export interface ContactFormProps {
   defaultSubject?: string;
@@ -28,7 +30,18 @@ export function ContactForm({
   planType
 }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConsentBanner, setShowConsentBanner] = useState(false);
   const { toast } = useToast();
+  
+  // Autofill Hook
+  const {
+    autofillData,
+    hasConsent,
+    isLoading: autofillLoading,
+    saveAutofillData,
+    grantConsent,
+    getAutocompleteProps
+  } = useAutofill({ storageKey: 'ki-callflow-contact-data' });
   
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -40,6 +53,36 @@ export function ContactForm({
       source: source
     }
   });
+
+  // Lade gespeicherte Daten beim Mount
+  useEffect(() => {
+    if (!autofillLoading && hasConsent) {
+      if (autofillData.name) form.setValue('name', autofillData.name);
+      if (autofillData.email) form.setValue('email', autofillData.email);
+      if (autofillData.phone) form.setValue('phone', autofillData.phone);
+    }
+  }, [autofillData, hasConsent, autofillLoading, form]);
+
+  // Zeige Consent Banner nach ersten Eingaben
+  useEffect(() => {
+    const subscription = form.watch((values) => {
+      if (!hasConsent && !autofillLoading && 
+          (values.name && values.name.length > 2 || 
+           values.email && values.email.includes('@') || 
+           values.phone && values.phone.length > 5)) {
+        const timer = setTimeout(() => setShowConsentBanner(true), 2000);
+        return () => clearTimeout(timer);
+      }
+    });
+    return () => subscription.unsubscribe();
+  }, [form, hasConsent, autofillLoading]);
+
+  // Auto-save Handler
+  const handleFieldChange = (field: keyof typeof autofillData, value: string) => {
+    if (hasConsent && value && value.length > 1) {
+      saveAutofillData({ [field]: value });
+    }
+  };
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -61,7 +104,22 @@ export function ContactForm({
         throw new Error(errorData.error || 'Beim Senden ist ein Fehler aufgetreten');
       }
 
-      form.reset();
+      // Speichere erfolgreiche Daten vor Reset
+      if (hasConsent) {
+        saveAutofillData({
+          name: data.name,
+          email: data.email,
+          phone: data.phone || undefined
+        });
+      }
+
+      form.reset({
+        name: hasConsent ? data.name : '',
+        email: hasConsent ? data.email : '',
+        phone: hasConsent ? data.phone : '',
+        message: '',
+        source: source
+      });
       
       toast({
         title: "Nachricht gesendet",
@@ -94,8 +152,11 @@ export function ContactForm({
         </label>
         <Input
           id="name"
-          {...form.register("name")}
+          {...form.register("name", {
+            onChange: (e) => handleFieldChange('name', e.target.value)
+          })}
           className={`w-full ${form.formState.errors.name ? 'border-red-500' : ''}`}
+          {...getAutocompleteProps('name')}
         />
         {form.formState.errors.name && (
           <p className="text-sm text-red-500 mt-1">{form.formState.errors.name.message}</p>
@@ -109,8 +170,11 @@ export function ContactForm({
         <Input
           id="email"
           type="email"
-          {...form.register("email")}
+          {...form.register("email", {
+            onChange: (e) => handleFieldChange('email', e.target.value)
+          })}
           className={`w-full ${form.formState.errors.email ? 'border-red-500' : ''}`}
+          {...getAutocompleteProps('email')}
         />
         {form.formState.errors.email && (
           <p className="text-sm text-red-500 mt-1">{form.formState.errors.email.message}</p>
@@ -124,8 +188,11 @@ export function ContactForm({
         <Input
           id="phone"
           type="tel"
-          {...form.register("phone")}
+          {...form.register("phone", {
+            onChange: (e) => handleFieldChange('phone', e.target.value)
+          })}
           className="w-full"
+          {...getAutocompleteProps('phone')}
         />
       </div>
 
@@ -155,5 +222,25 @@ export function ContactForm({
     </form>
   );
 
-  return formContent;
+  return (
+    <>
+      {formContent}
+      
+      {/* Autofill Consent Banner */}
+      <AutofillConsentBanner
+        isVisible={showConsentBanner}
+        onAccept={() => {
+          grantConsent();
+          const currentValues = form.getValues();
+          saveAutofillData({
+            name: currentValues.name || undefined,
+            email: currentValues.email || undefined,
+            phone: currentValues.phone || undefined
+          });
+          setShowConsentBanner(false);
+        }}
+        onDecline={() => setShowConsentBanner(false)}
+      />
+    </>
+  );
 }

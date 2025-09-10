@@ -21,6 +21,15 @@
     "menu": "Open menu",
     "login": "Login"
   },
+  "autofill": {
+    "consentTitle": "Save data?",
+    "optionalBadge": "Optional",
+    "closeLabel": "Close",
+    "consentText": "Would you like to save your name and phone number locally? This makes future entries easier. The data remains only on your device.",
+    "acceptButton": "Yes, save",
+    "declineButton": "No, thanks",
+    "privacyNote": "Can be changed anytime in settings. Privacy is respected."
+  },
   "home": {
     "title": "callflows - automated customer communication",
     "description": "Optimize customer service, sales, and support with intelligent systems.",
@@ -46,11 +55,11 @@
     "privacyHint": "🔒 Your data is treated confidentially",
     "buttonStart": "Start Live Demo",
     "buttonStarting": "Starting call...",
-    "statusCalling": "Starting call...",
-    "statusCallingDesc": "Your phone should ring shortly!",
-    "statusSuccess": "Call started!",
-    "statusSuccessDesc": "Check your phone - our AI agent is calling you.",
-    "statusSuccessHint": "💬 Talk to our AI agent and test all features!",
+    "statusCalling": "Connecting your call...",
+    "statusCallingDesc": "Please be patient - the call may take up to 10 seconds to connect.",
+    "statusSuccess": "Call successfully initiated!",
+    "statusSuccessDesc": "🔔 Your phone will ring in a few seconds. Please stand by!",
+    "statusSuccessHint": "💬 Talk to our AI agent and test all features! The call is completely free.",
     "statusError": "Call error",
     "statusErrorDesc": "Please check your phone number and try again.",
     "buttonRetry": "Try again"

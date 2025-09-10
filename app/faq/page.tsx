@@ -54,9 +54,9 @@ export default function FAQPage() {
   return (
     <>
       <Head>
-        <title>FAQ KI-Voice-Agents & automatisierte Telefonie | callflows</title>
-        <meta name="description" content="Häufige Fragen zu KI-Voice-Agents, automatisierte Anrufe im B2B-Vertrieb, Pay-per-Use Abrechnung ohne Vertragslaufzeit. Alles über KI-Callflows." />
-        <meta name="keywords" content="KI-Voice-Agent FAQ, automatisierte Telefonie Fragen, KI-Callflow Antworten, Pay-per-Use, ohne Vertragslaufzeit" />
+        <title>KI Telefonie FAQ: Häufige Fragen zu Voice Bots & automatisierten Anrufen | callflows</title>
+        <meta name="description" content="Alle Antworten zu KI Telefonie, Voice Bot Software und automatisierten Anrufen. Was kostet KI Telefonie? Wie funktioniert ein Voice Bot? DSGVO-konforme Lösungen." />
+        <meta name="keywords" content="KI Telefonie FAQ, Voice Bot Fragen, automatisierte Telefonie Antworten, KI Telefonassistent Hilfe, Voice Bot Deutschland" />
       </Head>
       
       <div className="min-h-screen bg-gradient-to-b from-background via-section-light-blue to-section-blue">

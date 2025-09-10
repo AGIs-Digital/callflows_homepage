@@ -9,6 +9,7 @@ import { generateMetadata } from '@/lib/seo/metadata';
 import { generateOrganizationSchema, generateProductSchema, generateFAQSchema, generateServiceSchema, generateSoftwareSchema, generateLocalBusinessSchema } from '@/lib/seo/schema';
 import Script from 'next/script';
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { MobilePerformanceMonitor, MobileResourceHints } from "@/components/mobile-performance-monitor";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -16,10 +17,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   ...generateMetadata({
-    title: 'callflows – KI‑Voice‑Agents für Mittelstand & Vertrieb | Transparent & ohne Laufzeit',
-    description: 'Automatisieren Sie Standardanrufe mit KI‑Voice‑Agents. Komplett‑Service, transparente Minuten‑Staffeln, keine Vertragslaufzeit. Live‑Demo starten & Beratung sichern.',
+    title: 'KI Telefonie & Voice Bot Deutschland | callflows – Automatisierte Anrufe ohne Vertragslaufzeit',
+    description: 'KI Telefonie Software für automatisierte Anrufe & Voice Bots. Telefonassistent mit KI für Mittelstand - Pay-per-Use, ohne Abo. Jetzt kostenlose Demo testen!',
     path: '/',
-    keywords: ['KI‑Voice‑Agent', 'KI‑Telefonie', 'automatisierte Anrufe', 'B2B‑Vertrieb', 'Personaldienstleister', 'Mittelstand', 'minutenbasierte Abrechnung', 'ohne Vertragslaufzeit', 'KI‑callflow', 'Voice Agent'],
+    keywords: ['KI Telefonie', 'Voice Bot', 'KI Telefonassistent', 'automatisierte Telefonie', 'KI für Kundenservice', 'automatische Anrufbearbeitung', 'KI Callcenter Software', 'Voice Agent Deutschland', 'Telefonie Automatisierung', 'KI Anrufe automatisieren', 'Pay per Use Telefonie', 'ohne Vertragslaufzeit', 'KI‑callflow', 'Mittelstand KI Telefonie'],
     images: [{
       url: '/images/callflows_brand_no_claim.webp',
       width: 1200,
@@ -138,10 +139,16 @@ export default function RootLayout({
         <meta name="lighthouse-ci" content="index,follow" />
         <meta name="pagespeed" content="nolimit" />
         
-        {/* Critical Resource Preloads - SOFORTIGE PageSpeed Verbesserung */}
+        {/* Mobile-First Critical Resource Preloads */}
         <link rel="preload" href="/fonts/Satoshi-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/images/callflows_brand_no_claim.webp" as="image" />
+        <link rel="preload" href="/images/callflows_brand_no_claim.webp" as="image" fetchPriority="high" />
+        
+        {/* Mobile Viewport & Performance */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         
         {/* DNS Performance Hints */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -166,6 +173,8 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <ErrorBoundary>
+              <MobilePerformanceMonitor />
+              <MobileResourceHints />
               {children}
               <ScrollToTop />
               <CookieBanner />

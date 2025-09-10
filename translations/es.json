@@ -21,6 +21,15 @@
     "menu": "Abrir menú",
     "login": "Iniciar sesión"
   },
+  "autofill": {
+    "consentTitle": "¿Guardar datos?",
+    "optionalBadge": "Opcional",
+    "closeLabel": "Cerrar",
+    "consentText": "¿Le gustaría guardar su nombre y número de teléfono localmente? Esto facilita futuras entradas. Los datos permanecen solo en su dispositivo.",
+    "acceptButton": "Sí, guardar",
+    "declineButton": "No, gracias",
+    "privacyNote": "Se puede cambiar en cualquier momento en la configuración. Se respeta la privacidad."
+  },
   "home": {
     "title": "callflows - comunicación automatizada con clientes",
     "description": "Optimice el servicio al cliente, ventas y soporte con sistemas inteligentes.",
@@ -46,11 +55,11 @@
     "privacyHint": "🔒 Sus datos son tratados de forma confidencial",
     "buttonStart": "Iniciar demo en vivo",
     "buttonStarting": "Iniciando llamada...",
-    "statusCalling": "Iniciando llamada...",
-    "statusCallingDesc": "¡Su teléfono debería sonar pronto!",
-    "statusSuccess": "¡Llamada iniciada!",
-    "statusSuccessDesc": "Revise su teléfono - nuestro agente IA le está llamando.",
-    "statusSuccessHint": "💬 ¡Hable con nuestro agente IA y pruebe todas las funciones!",
+    "statusCalling": "Conectando su llamada...",
+    "statusCallingDesc": "Por favor, tenga paciencia - la llamada puede tardar hasta 10 segundos en conectarse.",
+    "statusSuccess": "¡Llamada iniciada exitosamente!",
+    "statusSuccessDesc": "🔔 Su teléfono sonará en unos segundos. ¡Mantente preparado!",
+    "statusSuccessHint": "💬 ¡Hable con nuestro agente IA y pruebe todas las funciones! La llamada es completamente gratuita.",
     "statusError": "Error de llamada",
     "statusErrorDesc": "Por favor verifique su número de teléfono e inténtelo nuevamente.",
     "buttonRetry": "Intentar de nuevo"

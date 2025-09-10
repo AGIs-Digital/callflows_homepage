@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, PlayCircle, CheckCircle, AlertCircle, Loader2 } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
+import { useAutofill } from "@/hooks/use-autofill";
+import { AutofillConsentBanner } from "@/components/ui/autofill-consent-banner";
 
 interface CallTestWidgetProps {
   className?: string;
@@ -19,7 +21,37 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
   const [customerName, setCustomerName] = useState("");
   const [callStatus, setCallStatus] = useState<CallStatus>('idle');
   const [isLoading, setIsLoading] = useState(false);
+  const [showConsentBanner, setShowConsentBanner] = useState(false);
   const { t } = useI18n();
+  
+  // Autofill Hook
+  const {
+    autofillData,
+    hasConsent,
+    isLoading: autofillLoading,
+    saveAutofillData,
+    grantConsent,
+    getAutocompleteProps,
+    hasStoredData
+  } = useAutofill({ storageKey: 'ki-callflow-widget-data' });
+
+  // Lade gespeicherte Daten beim Mount
+  useEffect(() => {
+    if (!autofillLoading && hasConsent && autofillData.name) {
+      setCustomerName(autofillData.name);
+    }
+    if (!autofillLoading && hasConsent && autofillData.phone) {
+      setPhoneNumber(autofillData.phone);
+    }
+  }, [autofillData, hasConsent, autofillLoading]);
+
+  // Zeige Consent Banner nach ersten Eingaben (UX-optimiert)
+  useEffect(() => {
+    if (!hasConsent && !autofillLoading && (customerName.length > 2 || phoneNumber.length > 5)) {
+      const timer = setTimeout(() => setShowConsentBanner(true), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [customerName, phoneNumber, hasConsent, autofillLoading]);
 
   // Telefonnummer formatieren (deutsch)
   const formatPhoneNumber = (value: string) => {
@@ -48,6 +80,21 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formatted = formatPhoneNumber(e.target.value);
     setPhoneNumber(formatted);
+    
+    // Auto-save wenn Einverständnis vorhanden
+    if (hasConsent && formatted.length > 5) {
+      saveAutofillData({ phone: formatted });
+    }
+  };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const name = e.target.value;
+    setCustomerName(name);
+    
+    // Auto-save wenn Einverständnis vorhanden
+    if (hasConsent && name.length > 2) {
+      saveAutofillData({ name });
+    }
   };
 
   const isValidPhoneNumber = (phone: string) => {
@@ -121,12 +168,24 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
       if (response.ok || (response.status === 0 && !isDevelopment)) {
         // Status 0 bei no-cors Mode ist normal und bedeutet Request wurde gesendet
         setCallStatus('success');
-        // Reset nach 3 Sekunden (schnellere UX)
+        
+        // Speichere erfolgreiche Daten
+        if (hasConsent) {
+          saveAutofillData({ 
+            name: customerName.trim(), 
+            phone: normalizedNumber 
+          });
+        }
+        
+        // Reset nach 15 Sekunden (genug Zeit für Anruf-Erwartung)
         setTimeout(() => {
           setCallStatus('idle');
-          setPhoneNumber('');
-          setCustomerName('');
-        }, 3000);
+          if (!hasConsent) {
+            // Nur löschen wenn kein Autofill aktiv
+            setPhoneNumber('');
+            setCustomerName('');
+          }
+        }, 15000);
         
 
       } else {
@@ -135,10 +194,10 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
     } catch (error) {
       // Error handling ohne console logs für production
       setCallStatus('error');
-      // Reset nach 3 Sekunden (schnellere UX)
+      // Reset nach 8 Sekunden (mehr Zeit zum Lesen der Fehlermeldung)
       setTimeout(() => {
         setCallStatus('idle');
-      }, 3000);
+      }, 8000);
     } finally {
       setIsLoading(false);
     }
@@ -208,9 +267,9 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
               type="text"
               placeholder={t('widget.namePlaceholder')}
               value={customerName}
-              onChange={(e) => setCustomerName(e.target.value)}
+              onChange={handleNameChange}
               className="text-lg"
-              autoComplete="name"
+              {...getAutocompleteProps('name')}
             />
           </div>
           
@@ -225,7 +284,7 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
               value={phoneNumber}
               onChange={handlePhoneChange}
               className="text-lg"
-              autoComplete="tel"
+              {...getAutocompleteProps('phone')}
               inputMode="tel"
             />
           </div>
@@ -278,6 +337,20 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
           </div>
         </CardContent>
       )}
+      
+      {/* Autofill Consent Banner */}
+      <AutofillConsentBanner
+        isVisible={showConsentBanner}
+        onAccept={() => {
+          grantConsent();
+          saveAutofillData({ 
+            name: customerName.trim(), 
+            phone: phoneNumber 
+          });
+          setShowConsentBanner(false);
+        }}
+        onDecline={() => setShowConsentBanner(false)}
+      />
     </Card>
   );
 }
