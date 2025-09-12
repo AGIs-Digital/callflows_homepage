@@ -22,9 +22,18 @@ export function MobilePerformanceMonitor() {
             
             if (isMobile) {
               // Mobile-optimierte Thresholds
-              if (ttfb > 800) console.warn('Mobile TTFB zu hoch:', ttfb + 'ms');
-              if (fcp > 1800) console.warn('Mobile FCP zu hoch:', fcp + 'ms');
-              if (lcp > 2500) console.warn('Mobile LCP zu hoch:', lcp + 'ms');
+              // Mobile performance metrics - silently tracked
+              if (ttfb > 800 || fcp > 1800 || lcp > 2500) {
+                // Send to analytics in production instead of console
+                if (window.gtag) {
+                  window.gtag('event', 'performance_issue', {
+                    ttfb: ttfb,
+                    fcp: fcp,
+                    lcp: lcp,
+                    device: 'mobile'
+                  });
+                }
+              }
             }
           }
         }
@@ -35,7 +44,7 @@ export function MobilePerformanceMonitor() {
         observer.observe({ entryTypes: ['navigation', 'paint', 'largest-contentful-paint'] });
       } catch (e) {
         // Fallback für ältere Browser
-        console.log('Performance Observer nicht unterstützt');
+        // Performance Observer nicht unterstützt - silent fallback
       }
       
       // Cleanup

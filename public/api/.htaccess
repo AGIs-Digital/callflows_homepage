@@ -1,0 +1,67 @@
+# Security Headers for API endpoints
+<IfModule mod_headers.c>
+    # Prevent MIME sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Clickjacking protection
+    Header always set X-Frame-Options "DENY"
+    
+    # XSS protection
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Referrer policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy for API
+    Header always set Content-Security-Policy "default-src 'none'; frame-ancestors 'none';"
+    
+    # Remove server information
+    Header always unset Server
+    Header always unset X-Powered-By
+</IfModule>
+
+# Rate limiting through mod_evasive (if available)
+<IfModule mod_evasive24.c>
+    DOSHashTableSize    2048
+    DOSPageCount        5
+    DOSSiteCount        50
+    DOSPageInterval     1
+    DOSSiteInterval     1
+    DOSBlockingPeriod   900
+</IfModule>
+
+# Block suspicious requests
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Block common attack patterns
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} proc/self/environ [OR]
+    RewriteCond %{QUERY_STRING} mosConfig_[a-zA-Z_]{1,21}(=|\%3D) [OR]
+    RewriteCond %{QUERY_STRING} base64_(en|de)code\(.*\) [OR]
+    RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC]
+    RewriteRule ^(.*)$ - [F]
+    
+    # Block requests with suspicious user agents
+    RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+    RewriteCond %{HTTP_USER_AGENT} "libwww-perl" [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} "wget" [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} "python" [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} "nikto" [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} "sqlmap" [NC]
+    RewriteRule ^(.*)$ - [F]
+</IfModule>
+
+# File access protection
+<Files "*.json">
+    <RequireAll>
+        Require local
+        Require ip 127.0.0.1
+    </RequireAll>
+</Files>
+
+<Files "*.log">
+    Require all denied
+</Files>

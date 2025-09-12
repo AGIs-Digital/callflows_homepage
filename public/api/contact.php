@@ -16,6 +16,88 @@ function logMessage($type, $message, $data = null) {
     error_log($logEntry);
 }
 
+// Rate Limiting Class
+class RateLimiter {
+    private $cacheFile;
+    private $maxRequests;
+    private $timeWindow;
+    
+    public function __construct($maxRequests = 5, $timeWindow = 900) { // 5 requests per 15 minutes
+        $this->cacheFile = __DIR__ . '/rate_limit_cache.json';
+        $this->maxRequests = $maxRequests;
+        $this->timeWindow = $timeWindow;
+    }
+    
+    public function isAllowed($ip) {
+        $cache = $this->loadCache();
+        $now = time();
+        
+        // Clean expired entries
+        $cache = array_filter($cache, function($data) use ($now) {
+            return ($now - $data['first_request']) < $this->timeWindow;
+        });
+        
+        if (!isset($cache[$ip])) {
+            $cache[$ip] = [
+                'count' => 1,
+                'first_request' => $now,
+                'last_request' => $now
+            ];
+            $this->saveCache($cache);
+            return true;
+        }
+        
+        $cache[$ip]['count']++;
+        $cache[$ip]['last_request'] = $now;
+        $this->saveCache($cache);
+        
+        return $cache[$ip]['count'] <= $this->maxRequests;
+    }
+    
+    private function loadCache() {
+        if (!file_exists($this->cacheFile)) {
+            return [];
+        }
+        $content = file_get_contents($this->cacheFile);
+        return json_decode($content, true) ?: [];
+    }
+    
+    private function saveCache($cache) {
+        file_put_contents($this->cacheFile, json_encode($cache));
+    }
+}
+
+// Spam Detection Class
+class SpamDetector {
+    private $suspiciousPatterns = [
+        '/\b(viagra|cialis|pharmacy|casino|poker|lottery|bitcoin|crypto)\b/i',
+        '/\b(buy now|click here|limited time|act now|free money)\b/i',
+        '/https?:\/\/[^\s]+/i', // URLs in message
+        '/\b\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}\b/', // Credit card patterns
+        '/[A-Z]{10,}/', // Excessive caps
+    ];
+    
+    public function isSpam($text) {
+        foreach ($this->suspiciousPatterns as $pattern) {
+            if (preg_match($pattern, $text)) {
+                return true;
+            }
+        }
+        
+        // Check for excessive repetition
+        $words = str_word_count($text, 1);
+        if (count($words) > 0) {
+            $wordCounts = array_count_values($words);
+            $maxRepetition = max($wordCounts);
+            if ($maxRepetition > 5) { // Same word repeated more than 5 times
+                return true;
+            }
+        }
+        
+        return false;
+    }
+}
+
 // Set CORS headers based on environment
 $allowedOrigins = [
     'https://staging.callflows.de',
@@ -40,14 +122,63 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get client IP for rate limiting
+    $clientIP = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['HTTP_X_REAL_IP'] ?? $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+    if (strpos($clientIP, ',') !== false) {
+        $clientIP = trim(explode(',', $clientIP)[0]);
+    }
+    
+    // Initialize rate limiter and spam detector
+    $rateLimiter = new RateLimiter(5, 900); // 5 requests per 15 minutes
+    $spamDetector = new SpamDetector();
+    
+    // Check rate limit
+    if (!$rateLimiter->isAllowed($clientIP)) {
+        logMessage('WARNING', 'Rate limit exceeded', ['ip' => $clientIP]);
+        http_response_code(429);
+        echo json_encode(['error' => 'Zu viele Anfragen. Bitte warten Sie 15 Minuten bevor Sie erneut senden.']);
+        exit;
+    }
+    
     $data = json_decode(file_get_contents('php://input'), true);
-    logMessage('INFO', 'Form submission received', $data);
+    logMessage('INFO', 'Form submission received', array_merge($data, ['ip' => $clientIP]));
     
     // Validation
     if (!isset($data['name']) || !isset($data['email']) || !isset($data['message'])) {
         logMessage('ERROR', 'Validation failed: Missing required fields', $data);
         http_response_code(400);
         echo json_encode(['error' => 'Fehlende Pflichtfelder']);
+        exit;
+    }
+    
+    // Spam Detection
+    $messageText = $data['name'] . ' ' . $data['email'] . ' ' . $data['message'];
+    if ($spamDetector->isSpam($messageText)) {
+        logMessage('WARNING', 'Spam detected', ['ip' => $clientIP, 'data' => $data]);
+        http_response_code(400);
+        echo json_encode(['error' => 'Ihre Nachricht wurde als Spam erkannt. Bitte verwenden Sie eine andere Formulierung.']);
+        exit;
+    }
+    
+    // Additional validation
+    if (strlen($data['name']) < 2 || strlen($data['name']) > 100) {
+        logMessage('ERROR', 'Invalid name length', $data);
+        http_response_code(400);
+        echo json_encode(['error' => 'Name muss zwischen 2 und 100 Zeichen lang sein']);
+        exit;
+    }
+    
+    if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+        logMessage('ERROR', 'Invalid email format', $data);
+        http_response_code(400);
+        echo json_encode(['error' => 'Ungültige E-Mail-Adresse']);
+        exit;
+    }
+    
+    if (strlen($data['message']) < 10 || strlen($data['message']) > 2000) {
+        logMessage('ERROR', 'Invalid message length', $data);
+        http_response_code(400);
+        echo json_encode(['error' => 'Nachricht muss zwischen 10 und 2000 Zeichen lang sein']);
         exit;
     }
 

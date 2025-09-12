@@ -78,19 +78,39 @@ export default function RootLayout({
                 const isProduction = '${process.env.NODE_ENV}' === 'production' || 
                                    '${process.env.NEXT_PUBLIC_ENVIRONMENT}' === 'production';
                 if (isProduction) {
-                  // Console-Logs sofort deaktivieren
+                  // ALLE Console-Logs für Production deaktivieren
                   const noop = function() {};
+                  const originalConsole = {
+                    log: console.log,
+                    info: console.info,
+                    warn: console.warn,
+                    error: console.error,
+                    debug: console.debug,
+                    trace: console.trace
+                  };
+                  
+                  // Store original console for emergency debugging
+                  window.__originalConsole = originalConsole;
+                  
+                  // Replace all console methods with noop
                   console.log = noop;
                   console.info = noop;
+                  console.warn = noop;
+                  console.error = noop;
                   console.debug = noop;
                   console.trace = noop;
-                  // Warn nur für kritische Fälle behalten
-                  const originalWarn = console.warn;
-                  console.warn = function(...args) {
-                    if (args.some(arg => String(arg).includes('CRITICAL'))) {
-                      originalWarn.apply(console, ['[callflows]', ...args]);
-                    }
-                  };
+                  console.time = noop;
+                  console.timeEnd = noop;
+                  console.group = noop;
+                  console.groupEnd = noop;
+                  console.dir = noop;
+                  console.dirxml = noop;
+                  console.count = noop;
+                  console.countReset = noop;
+                  console.table = noop;
+                  
+                  // Set production flag
+                  window.__PRODUCTION_MODE__ = true;
                 }
                 
                 // Resource Hints Performance Boost

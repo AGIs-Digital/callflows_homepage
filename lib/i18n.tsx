@@ -113,12 +113,12 @@ const detectUserLanguage = async (): Promise<Locale> => {
       
       if (countryCode && COUNTRY_TO_LANGUAGE[countryCode]) {
         const geoLanguage = COUNTRY_TO_LANGUAGE[countryCode];
-        console.log(`Geolocation erkannt: ${countryCode} -> ${geoLanguage}`);
+        // Geolocation erkannt - silent tracking
         return geoLanguage;
       }
     }
   } catch (error) {
-    console.warn('Geolocation-Erkennung fehlgeschlagen, verwende Browser-Sprache:', error);
+    // Geolocation-Erkennung fehlgeschlagen - silent fallback
   }
   
   // Fallback auf Browser-Sprache
@@ -147,7 +147,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
           setTranslations(newTranslations);
         }
       } catch (error) {
-        console.warn('Fehler beim Laden der Sprache, verwende Standard:', error);
+        // Fehler beim Laden der Sprache - silent fallback
         // Fallback auf synchrone Browser-Erkennung
         const fallbackLocale = detectBrowserLanguage();
         

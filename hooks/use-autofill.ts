@@ -49,7 +49,7 @@ export function useAutofill(options: UseAutofillOptions = {}) {
         }
       }
     } catch (error) {
-      console.warn('Fehler beim Laden der Autofill-Daten:', error);
+      // Silently handle autofill loading errors
     } finally {
       setIsLoading(false);
     }
@@ -70,7 +70,7 @@ export function useAutofill(options: UseAutofillOptions = {}) {
       localStorage.setItem(storageKey, JSON.stringify(cleanedData));
       setAutofillData(cleanedData);
     } catch (error) {
-      console.warn('Fehler beim Speichern der Autofill-Daten:', error);
+      // Silently handle autofill saving errors
     }
   }, [autofillData, hasConsent, enableLocalStorage, storageKey]);
 
@@ -82,7 +82,7 @@ export function useAutofill(options: UseAutofillOptions = {}) {
       localStorage.setItem(AUTOFILL_CONSENT_KEY, 'true');
       setHasConsent(true);
     } catch (error) {
-      console.warn('Fehler beim Speichern des Einverständnisses:', error);
+      // Silently handle consent saving errors
     }
   }, [enableLocalStorage]);
 
@@ -96,7 +96,7 @@ export function useAutofill(options: UseAutofillOptions = {}) {
       setHasConsent(false);
       setAutofillData({});
     } catch (error) {
-      console.warn('Fehler beim Löschen der Autofill-Daten:', error);
+      // Silently handle autofill deletion errors
     }
   }, [enableLocalStorage, storageKey]);
 

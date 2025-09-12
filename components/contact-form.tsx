@@ -11,6 +11,9 @@ import { useToast } from "@/hooks/use-toast";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
 import { useAutofill } from "@/hooks/use-autofill";
 import { AutofillConsentBanner } from "@/components/ui/autofill-consent-banner";
+import { SpamProtection, useRateLimit } from "@/components/security/spam-protection";
+import { Shield } from "lucide-react";
+import { safeConsole } from "@/lib/utils/silent-logger";
 
 export interface ContactFormProps {
   defaultSubject?: string;
@@ -31,7 +34,9 @@ export function ContactForm({
 }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConsentBanner, setShowConsentBanner] = useState(false);
+  const [isSpamProtectionValid, setIsSpamProtectionValid] = useState(false);
   const { toast } = useToast();
+  const { isAllowed, getRemainingTime } = useRateLimit(3, 10 * 60 * 1000);
   
   // Autofill Hook
   const {
@@ -85,6 +90,29 @@ export function ContactForm({
   };
 
   const onSubmit = async (data: ContactFormData) => {
+    // Check rate limiting
+    if (!isAllowed()) {
+      const remainingTime = Math.ceil(getRemainingTime() / 1000 / 60);
+      toast({
+        title: "Zu viele Anfragen",
+        description: `Bitte warten Sie ${remainingTime} Minuten bevor Sie erneut senden.`,
+        variant: "destructive",
+        duration: 5000,
+      });
+      return;
+    }
+
+    // Check spam protection
+    if (!isSpamProtectionValid) {
+      toast({
+        title: "Sicherheitsprüfung fehlgeschlagen",
+        description: "Bitte warten Sie einen Moment und versuchen Sie es erneut.",
+        variant: "destructive",
+        duration: 5000,
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
@@ -95,7 +123,10 @@ export function ContactForm({
         },
         body: JSON.stringify({
           ...data,
-          planType
+          planType,
+          source,
+          userAgent: navigator.userAgent,
+          timestamp: Date.now()
         }),
       });
 
@@ -131,7 +162,7 @@ export function ContactForm({
         onSubmitSuccess();
       }
     } catch (error) {
-      console.error('Kontaktformular Fehler:', error);
+      safeConsole.error('Kontaktformular Fehler:', error);
       
       toast({
         title: "Fehler beim Senden",
@@ -215,7 +246,7 @@ export function ContactForm({
       <Button
         type="submit"
         className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-        disabled={isSubmitting || !form.formState.isValid}
+        disabled={isSubmitting || !form.formState.isValid || !isSpamProtectionValid}
       >
         {isSubmitting ? <LoadingSpinner /> : "Nachricht senden"}
       </Button>
@@ -223,24 +254,37 @@ export function ContactForm({
   );
 
   return (
-    <>
-      {formContent}
-      
-      {/* Autofill Consent Banner */}
-      <AutofillConsentBanner
-        isVisible={showConsentBanner}
-        onAccept={() => {
-          grantConsent();
-          const currentValues = form.getValues();
-          saveAutofillData({
-            name: currentValues.name || undefined,
-            email: currentValues.email || undefined,
-            phone: currentValues.phone || undefined
-          });
-          setShowConsentBanner(false);
-        }}
-        onDecline={() => setShowConsentBanner(false)}
-      />
-    </>
+    <SpamProtection 
+      onValidationChange={setIsSpamProtectionValid}
+      formData={form.watch()}
+    >
+      <div className="space-y-4">
+        {/* Security Status Indicator */}
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Shield className={`h-4 w-4 ${isSpamProtectionValid ? 'text-green-500' : 'text-yellow-500'}`} />
+          <span>
+            {isSpamProtectionValid ? 'Sicherheitsprüfung bestanden' : 'Sicherheitsprüfung läuft...'}
+          </span>
+        </div>
+
+        {formContent}
+        
+        {/* Autofill Consent Banner */}
+        <AutofillConsentBanner
+          isVisible={showConsentBanner}
+          onAccept={() => {
+            grantConsent();
+            const currentValues = form.getValues();
+            saveAutofillData({
+              name: currentValues.name || undefined,
+              email: currentValues.email || undefined,
+              phone: currentValues.phone || undefined
+            });
+            setShowConsentBanner(false);
+          }}
+          onDecline={() => setShowConsentBanner(false)}
+        />
+      </div>
+    </SpamProtection>
   );
 }

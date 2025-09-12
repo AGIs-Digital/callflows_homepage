@@ -1,6 +1,15 @@
 User-agent: *
 Allow: /
 
+# Favicon und statische Assets ausschließen
+Disallow: /favicon.ico
+Disallow: /icon.webp
+Disallow: /apple-touch-icon.webp
+
+# API und interne Pfade
+Disallow: /api/
+Disallow: /_next/
+
 # Sitemaps
 Sitemap: https://callflows.de/sitemap.xml
 
