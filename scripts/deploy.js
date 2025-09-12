@@ -34,7 +34,29 @@ const config = {
     'tsconfig.json',
     '.env.local',
     '.env.development',
-    'public/videos/**'
+    'public/videos/**',
+    // Zusätzliche Optimierungen - unnötige Dateien
+    '**/.DS_Store',
+    '**/Thumbs.db',
+    '**/*.log',
+    '**/*.tmp',
+    '**/*.temp',
+    '**/desktop.ini',
+    // Source Maps (nicht für Production nötig)
+    '**/*.js.map',
+    '**/*.css.map',
+    // Entwicklungs-Assets
+    '**/src/**',
+    '**/components/**/*.test.*',
+    '**/lib/**/*.test.*',
+    // Backup und Cache-Dateien
+    '**/*.bak',
+    '**/*.cache',
+    '**/*.old',
+    // Fonts-Duplikate (nur WOFF2 nötig, WOFF entfernen)
+    '**/*.woff', // Nur WOFF2 behalten für moderne Browser
+    '**/*.ttf',
+    '**/*.otf'
   ],
   sftp: true,
   deleteRemote: false,
@@ -42,20 +64,40 @@ const config = {
   skipIfOlderModDate: true, // Nur neuere Dateien übertragen
   preserveTimestamps: true, // Zeitstempel beibehalten
   forcePasv: true,
-  // Performance-Optimierungen
-  concurrency: 8, // 8 parallele Uploads (statt 1)
-  parallelReads: true, // Paralleles Lesen der Dateien
+  // MASSIVE Performance-Optimierungen
+  concurrency: 20, // 20 parallele Uploads (deutlich mehr)
+  parallelReads: true,
   sftpConfig: {
     algorithms: {
-      kex: ['diffie-hellman-group-exchange-sha256'],
-      cipher: ['aes128-ctr'], // Schnellere Verschlüsselung
-      hmac: ['hmac-sha2-256']
+      kex: ['ecdh-sha2-nistp256', 'ecdh-sha2-nistp384'], // Schnellste Kex-Algorithmen
+      cipher: ['aes128-gcm', 'aes256-gcm', 'aes128-ctr'], // GCM ist schneller
+      hmac: ['hmac-sha2-256'],
+      serverHostKey: ['ecdsa-sha2-nistp256', 'rsa-sha2-512']
     },
-    compress: true, // SFTP-Kompression aktivieren
-    keepaliveInterval: 60000, // Keep-alive für stabile Verbindung
-    keepaliveCountMax: 3
-  }
+    compress: 'force', // Erzwinge Kompression
+    keepaliveInterval: 30000, // Kürzere Intervalle
+    keepaliveCountMax: 5,
+    readyTimeout: 60000,
+    // Weitere Performance-Optimierungen
+    highWaterMark: 32 * 1024, // 32KB Buffer für kleine Dateien
+    forceIPv4: true, // IPv4 für Stabilität
+    tryKeyboard: false, // Schnellere Auth
+    debug: false // Kein Debug-Overhead
+  },
+  // Intelligenteres Retry-System
+  continueOnError: false,
+  retries: 3,
+  retryDelay: 1000
 };
+
+// Pre-Deploy Optimierung ausführen
+console.log('🔧 Starte Pre-Deploy Optimierung...');
+try {
+  const { optimizeForDeploy } = require('./pre-deploy-optimize.js');
+  optimizeForDeploy(); // Synchron ausführen
+} catch (e) {
+  console.warn('⚠️ Pre-Deploy Optimierung übersprungen:', e.message);
+}
 
 console.log('🚀 Starte Deployment...');
 console.log('📁 Zielordner:', targetFolder);
