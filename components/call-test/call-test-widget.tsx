@@ -8,7 +8,6 @@ import { Phone, PlayCircle, CheckCircle, AlertCircle, Loader2 } from "@/lib/icon
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
 import { useAutofill } from "@/hooks/use-autofill";
-import { AutofillConsentBanner } from "@/components/ui/autofill-consent-banner";
 
 interface CallTestWidgetProps {
   className?: string;
@@ -21,16 +20,14 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
   const [customerName, setCustomerName] = useState("");
   const [callStatus, setCallStatus] = useState<CallStatus>('idle');
   const [isLoading, setIsLoading] = useState(false);
-  const [showConsentBanner, setShowConsentBanner] = useState(false);
   const { t } = useI18n();
   
-  // Autofill Hook
+  // Autofill Hook - verwendet jetzt Cookie-Consent
   const {
     autofillData,
     hasConsent,
     isLoading: autofillLoading,
     saveAutofillData,
-    grantConsent,
     getAutocompleteProps,
     hasStoredData
   } = useAutofill({ storageKey: 'ki-callflow-widget-data' });
@@ -45,13 +42,18 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
     }
   }, [autofillData, hasConsent, autofillLoading]);
 
-  // Zeige Consent Banner nach ersten Eingaben (UX-optimiert)
+  // Auto-save bei vorhandenem Consent (kein Banner mehr notwendig)
   useEffect(() => {
-    if (!hasConsent && !autofillLoading && (customerName.length > 2 || phoneNumber.length > 5)) {
-      const timer = setTimeout(() => setShowConsentBanner(true), 2000);
+    if (hasConsent && !autofillLoading && (customerName.length > 2 || phoneNumber.length > 5)) {
+      const timer = setTimeout(() => {
+        saveAutofillData({
+          name: customerName,
+          phone: phoneNumber
+        });
+      }, 1000); // Debounce von 1 Sekunde
       return () => clearTimeout(timer);
     }
-  }, [customerName, phoneNumber, hasConsent, autofillLoading]);
+  }, [customerName, phoneNumber, hasConsent, autofillLoading, saveAutofillData]);
 
   // Telefonnummer formatieren (deutsch)
   const formatPhoneNumber = (value: string) => {
@@ -337,20 +339,6 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
           </div>
         </CardContent>
       )}
-      
-      {/* Autofill Consent Banner */}
-      <AutofillConsentBanner
-        isVisible={showConsentBanner}
-        onAccept={() => {
-          grantConsent();
-          saveAutofillData({ 
-            name: customerName.trim(), 
-            phone: phoneNumber 
-          });
-          setShowConsentBanner(false);
-        }}
-        onDecline={() => setShowConsentBanner(false)}
-      />
     </Card>
   );
 }

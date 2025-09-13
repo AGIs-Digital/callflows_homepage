@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useCookieConsent } from './use-cookie-consent';
 
 interface AutofillData {
   name?: string;
@@ -12,7 +13,6 @@ interface UseAutofillOptions {
   onDataLoaded?: (data: AutofillData) => void;
 }
 
-const AUTOFILL_CONSENT_KEY = 'ki-callflow-autofill-consent';
 const DEFAULT_STORAGE_KEY = 'ki-callflow-autofill-data';
 
 export function useAutofill(options: UseAutofillOptions = {}) {
@@ -23,8 +23,11 @@ export function useAutofill(options: UseAutofillOptions = {}) {
   } = options;
 
   const [autofillData, setAutofillData] = useState<AutofillData>({});
-  const [hasConsent, setHasConsent] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState(true);
+  
+  // Verwende Cookie-Consent für Autofill-Berechtigung
+  const { consent } = useCookieConsent();
+  const hasConsent = consent?.essential || false;
 
   // Lade gespeicherte Daten und Einverständnis beim Mount
   useEffect(() => {
@@ -34,26 +37,24 @@ export function useAutofill(options: UseAutofillOptions = {}) {
     }
 
     try {
-      // Prüfe Einverständnis
-      const consent = localStorage.getItem(AUTOFILL_CONSENT_KEY);
-      const hasValidConsent = consent === 'true';
-      setHasConsent(hasValidConsent);
-
-      // Lade Daten nur wenn Einverständnis vorhanden
-      if (hasValidConsent) {
+      // Lade Daten nur wenn Cookie-Einverständnis vorhanden
+      if (hasConsent) {
         const savedData = localStorage.getItem(storageKey);
         if (savedData) {
           const parsedData = JSON.parse(savedData) as AutofillData;
           setAutofillData(parsedData);
           onDataLoaded?.(parsedData);
         }
+      } else {
+        // Lösche gespeicherte Daten wenn kein Consent mehr vorhanden
+        setAutofillData({});
       }
     } catch (error) {
       // Silently handle autofill loading errors
     } finally {
       setIsLoading(false);
     }
-  }, [storageKey, enableLocalStorage, onDataLoaded]);
+  }, [storageKey, enableLocalStorage, onDataLoaded, hasConsent]);
 
   // Speichere Daten
   const saveAutofillData = useCallback((data: Partial<AutofillData>) => {
@@ -74,26 +75,12 @@ export function useAutofill(options: UseAutofillOptions = {}) {
     }
   }, [autofillData, hasConsent, enableLocalStorage, storageKey]);
 
-  // Einverständnis erteilen
-  const grantConsent = useCallback(() => {
+  // Daten löschen (z.B. bei widerrufener Einwilligung)
+  const clearAutofillData = useCallback(() => {
     if (!enableLocalStorage) return;
 
     try {
-      localStorage.setItem(AUTOFILL_CONSENT_KEY, 'true');
-      setHasConsent(true);
-    } catch (error) {
-      // Silently handle consent saving errors
-    }
-  }, [enableLocalStorage]);
-
-  // Einverständnis widerrufen und Daten löschen
-  const revokeConsent = useCallback(() => {
-    if (!enableLocalStorage) return;
-
-    try {
-      localStorage.removeItem(AUTOFILL_CONSENT_KEY);
       localStorage.removeItem(storageKey);
-      setHasConsent(false);
       setAutofillData({});
     } catch (error) {
       // Silently handle autofill deletion errors
@@ -128,8 +115,7 @@ export function useAutofill(options: UseAutofillOptions = {}) {
     
     // Aktionen
     saveAutofillData,
-    grantConsent,
-    revokeConsent,
+    clearAutofillData,
     getAutocompleteProps,
     
     // Utilities

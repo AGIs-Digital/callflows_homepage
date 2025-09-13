@@ -10,7 +10,6 @@ import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import { useToast } from "@/hooks/use-toast";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
 import { useAutofill } from "@/hooks/use-autofill";
-import { AutofillConsentBanner } from "@/components/ui/autofill-consent-banner";
 import { SpamProtection, useRateLimit } from "@/components/security/spam-protection";
 import { Shield } from "lucide-react";
 import { safeConsole } from "@/lib/utils/silent-logger";
@@ -33,18 +32,16 @@ export function ContactForm({
   planType
 }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showConsentBanner, setShowConsentBanner] = useState(false);
   const [isSpamProtectionValid, setIsSpamProtectionValid] = useState(false);
   const { toast } = useToast();
   const { isAllowed, getRemainingTime } = useRateLimit(3, 10 * 60 * 1000);
   
-  // Autofill Hook
+  // Autofill Hook - verwendet jetzt Cookie-Consent
   const {
     autofillData,
     hasConsent,
     isLoading: autofillLoading,
     saveAutofillData,
-    grantConsent,
     getAutocompleteProps
   } = useAutofill({ storageKey: 'ki-callflow-contact-data' });
   
@@ -68,19 +65,25 @@ export function ContactForm({
     }
   }, [autofillData, hasConsent, autofillLoading, form]);
 
-  // Zeige Consent Banner nach ersten Eingaben
+  // Auto-save bei vorhandenem Consent (kein Banner mehr notwendig)
   useEffect(() => {
-    const subscription = form.watch((values) => {
-      if (!hasConsent && !autofillLoading && 
-          (values.name && values.name.length > 2 || 
-           values.email && values.email.includes('@') || 
-           values.phone && values.phone.length > 5)) {
-        const timer = setTimeout(() => setShowConsentBanner(true), 2000);
-        return () => clearTimeout(timer);
-      }
-    });
-    return () => subscription.unsubscribe();
-  }, [form, hasConsent, autofillLoading]);
+    if (hasConsent && !autofillLoading) {
+      const subscription = form.watch((values) => {
+        // Speichere automatisch bei Änderungen wenn Consent vorhanden
+        if (values.name || values.email || values.phone) {
+          const timer = setTimeout(() => {
+            saveAutofillData({
+              name: values.name || '',
+              email: values.email || '',
+              phone: values.phone || ''
+            });
+          }, 1000); // Debounce von 1 Sekunde
+          return () => clearTimeout(timer);
+        }
+      });
+      return () => subscription.unsubscribe();
+    }
+  }, [form, hasConsent, autofillLoading, saveAutofillData]);
 
   // Auto-save Handler
   const handleFieldChange = (field: keyof typeof autofillData, value: string) => {
@@ -268,22 +271,6 @@ export function ContactForm({
         </div>
 
         {formContent}
-        
-        {/* Autofill Consent Banner */}
-        <AutofillConsentBanner
-          isVisible={showConsentBanner}
-          onAccept={() => {
-            grantConsent();
-            const currentValues = form.getValues();
-            saveAutofillData({
-              name: currentValues.name || undefined,
-              email: currentValues.email || undefined,
-              phone: currentValues.phone || undefined
-            });
-            setShowConsentBanner(false);
-          }}
-          onDecline={() => setShowConsentBanner(false)}
-        />
       </div>
     </SpamProtection>
   );
