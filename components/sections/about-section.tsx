@@ -73,6 +73,18 @@ export function AboutSection() {
   return (
     <section className="py-20 bg-gradient-to-b from-secondary via-secondary/50 to-accent/20">
       <div className="container max-w-6xl">
+        {/* Zentriertes Logo mit Claim als Überschrift */}
+        <div className="text-center mb-12">
+          <Image
+            src="/images/callflows_brand_small.png"
+            alt="callflows - KI-callflows für Unternehmen"
+            title="callflows Logo mit Claim"
+            width={300}
+            height={120}
+            className="mx-auto"
+            priority
+          />
+        </div>
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Linke Spalte - Überschrift, Text und Bild */}
           <div className="space-y-6">
