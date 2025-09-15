@@ -14,14 +14,27 @@ export function useCookieConsent() {
   const [consent, setConsent] = useState<CookieConsent | null>(null);
 
   useEffect(() => {
-    const storedConsent = localStorage.getItem(CONSENT_KEY);
-    if (storedConsent) {
-      setConsent(JSON.parse(storedConsent));
+    try {
+      const storedConsent = localStorage.getItem(CONSENT_KEY);
+      if (storedConsent) {
+        setConsent(JSON.parse(storedConsent));
+      }
+    } catch (error) {
+      // localStorage nicht verfügbar (iOS Safari Private Mode)
+      console.warn('localStorage für Cookie Consent nicht verfügbar:', error);
+      // Verwende Session-only defaults
+      setConsent(null);
     }
   }, []);
 
   const saveConsent = (newConsent: CookieConsent) => {
-    localStorage.setItem(CONSENT_KEY, JSON.stringify(newConsent));
+    try {
+      localStorage.setItem(CONSENT_KEY, JSON.stringify(newConsent));
+    } catch (error) {
+      // localStorage write fehlgeschlagen (iOS Safari Private Mode)
+      console.warn('localStorage write für Cookie Consent fehlgeschlagen:', error);
+      // Continue with session-only consent
+    }
     setConsent(newConsent);
   };
 

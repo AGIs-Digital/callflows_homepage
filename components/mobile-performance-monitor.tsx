@@ -41,10 +41,18 @@ export function MobilePerformanceMonitor() {
       
       // Beobachte Navigation und Paint-Events
       try {
-        observer.observe({ entryTypes: ['navigation', 'paint', 'largest-contentful-paint'] });
+        // iOS Safari Kompatibilitäts-Check
+        const supportedTypes = ['navigation', 'paint'];
+        
+        // Prüfe LCP Support (iOS Safari 14.5+)
+        if ('PerformanceObserver' in window && PerformanceObserver.supportedEntryTypes?.includes('largest-contentful-paint')) {
+          supportedTypes.push('largest-contentful-paint');
+        }
+        
+        observer.observe({ entryTypes: supportedTypes });
       } catch (e) {
-        // Fallback für ältere Browser
-        // Performance Observer nicht unterstützt - silent fallback
+        // Fallback für ältere Browser - protokolliere Fehler für Debugging
+        console.warn('PerformanceObserver nicht verfügbar:', e);
       }
       
       // Cleanup
@@ -78,14 +86,27 @@ export function MobileResourceHints() {
         // Prefetch next-page Ressourcen für mobile Navigation
         const nextPageResources = ['/pricing', '/kontakt'];
         
-        requestIdleCallback(() => {
-          nextPageResources.forEach(href => {
-            const link = document.createElement('link');
-            link.rel = 'prefetch';
-            link.href = href;
-            document.head.appendChild(link);
+        // iOS Safari Fallback für requestIdleCallback
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(() => {
+            nextPageResources.forEach(href => {
+              const link = document.createElement('link');
+              link.rel = 'prefetch';
+              link.href = href;
+              document.head.appendChild(link);
+            });
           });
-        });
+        } else {
+          // Fallback für iOS Safari < 15
+          setTimeout(() => {
+            nextPageResources.forEach(href => {
+              const link = document.createElement('link');
+              link.rel = 'prefetch';
+              link.href = href;
+              document.head.appendChild(link);
+            });
+          }, 100);
+        }
       }
     }
   }, []);

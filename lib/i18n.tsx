@@ -95,8 +95,13 @@ const detectUserLanguage = async (): Promise<Locale> => {
   if (typeof window === 'undefined') return 'de';
   
   // Zuerst prüfen ob eine Sprache bereits gespeichert ist
-  const stored = localStorage.getItem('callflows-locale') as Locale;
-  if (stored && stored in SUPPORTED_LOCALES) return stored;
+  try {
+    const stored = localStorage.getItem('callflows-locale') as Locale;
+    if (stored && stored in SUPPORTED_LOCALES) return stored;
+  } catch (error) {
+    // localStorage nicht verfügbar (iOS Safari Private Mode)
+    console.warn('localStorage für i18n nicht verfügbar:', error);
+  }
   
   try {
     // Geolocation über IP ermitteln (kostenlose API ohne API-Key)
@@ -167,7 +172,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const setLocale = (newLocale: Locale) => {
     setIsLoading(true);
     setLocaleState(newLocale);
-    localStorage.setItem('callflows-locale', newLocale);
+    try {
+      localStorage.setItem('callflows-locale', newLocale);
+    } catch (error) {
+      // localStorage write fehlgeschlagen (iOS Safari Private Mode)
+      console.warn('localStorage write für i18n fehlgeschlagen:', error);
+    }
     
     const newTranslations = getTranslations(newLocale);
     setTranslations(newTranslations);

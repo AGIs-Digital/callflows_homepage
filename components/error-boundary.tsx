@@ -24,10 +24,35 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("Uncaught error:", error, errorInfo);
+    // iOS Safari spezifisches Error Logging
+    const userAgent = typeof navigator !== 'undefined' ? navigator.userAgent : 'unknown';
+    const isIOSSafari = /iPad|iPhone|iPod/.test(userAgent) && /Safari/.test(userAgent);
+    
+    const errorDetails = {
+      error: error.message,
+      stack: error.stack,
+      errorInfo,
+      userAgent: userAgent.substring(0, 100), // Limit für Storage
+      isIOSSafari,
+      timestamp: new Date().toISOString()
+    };
+    
+    console.error("Uncaught error:", errorDetails);
+    
     if (process.env.NODE_ENV === 'production') {
-      // In production, you might want to log to an error tracking service
-      // logErrorToService(error, errorInfo);
+      // iOS spezifisches Error Tracking
+      if (isIOSSafari && window.gtag) {
+        window.gtag('event', 'exception', {
+          description: `iOS Safari Error: ${error.message}`,
+          fatal: true,
+          custom_map: errorDetails
+        });
+      }
+    }
+    
+    // Callback für Custom Error Handling
+    if (this.props.onError) {
+      this.props.onError(error, errorInfo);
     }
   }
 

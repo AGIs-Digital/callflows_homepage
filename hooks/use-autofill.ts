@@ -39,11 +39,18 @@ export function useAutofill(options: UseAutofillOptions = {}) {
     try {
       // Lade Daten nur wenn Cookie-Einverständnis vorhanden
       if (hasConsent) {
-        const savedData = localStorage.getItem(storageKey);
-        if (savedData) {
-          const parsedData = JSON.parse(savedData) as AutofillData;
-          setAutofillData(parsedData);
-          onDataLoaded?.(parsedData);
+        // iOS Safari Private Mode Fallback
+        try {
+          const savedData = localStorage.getItem(storageKey);
+          if (savedData) {
+            const parsedData = JSON.parse(savedData) as AutofillData;
+            setAutofillData(parsedData);
+            onDataLoaded?.(parsedData);
+          }
+        } catch (storageError) {
+          // localStorage nicht verfügbar (Private Mode, iOS Safari)
+          console.warn('localStorage nicht verfügbar:', storageError);
+          setAutofillData({});
         }
       } else {
         // Lösche gespeicherte Daten wenn kein Consent mehr vorhanden
@@ -51,6 +58,7 @@ export function useAutofill(options: UseAutofillOptions = {}) {
       }
     } catch (error) {
       // Silently handle autofill loading errors
+      console.warn('Autofill loading error:', error);
     } finally {
       setIsLoading(false);
     }
@@ -68,10 +76,19 @@ export function useAutofill(options: UseAutofillOptions = {}) {
         Object.entries(currentData).filter(([_, value]) => value && value.trim() !== '')
       );
 
-      localStorage.setItem(storageKey, JSON.stringify(cleanedData));
-      setAutofillData(cleanedData);
+      // iOS Safari Private Mode safeguard
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(cleanedData));
+        setAutofillData(cleanedData);
+      } catch (storageError) {
+        // localStorage write failed (Private Mode, iOS Safari)
+        console.warn('localStorage write failed:', storageError);
+        // Update state anyway for session-only storage
+        setAutofillData(cleanedData);
+      }
     } catch (error) {
       // Silently handle autofill saving errors
+      console.warn('Autofill saving error:', error);
     }
   }, [autofillData, hasConsent, enableLocalStorage, storageKey]);
 

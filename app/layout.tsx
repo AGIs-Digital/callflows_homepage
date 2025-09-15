@@ -69,6 +69,10 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Script
+          src="/js/ios-debug.js"
+          strategy="afterInteractive"
+        />
+        <Script
           id="production-logger"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
@@ -113,7 +117,7 @@ export default function RootLayout({
                   window.__PRODUCTION_MODE__ = true;
                 }
                 
-                // Resource Hints Performance Boost
+                // Resource Hints Performance Boost mit iOS Safari Fallback
                 if ('requestIdleCallback' in window) {
                   requestIdleCallback(() => {
                     // Prefetch kritische Routen während Idle-Zeit
@@ -125,6 +129,17 @@ export default function RootLayout({
                       document.head.appendChild(link);
                     });
                   });
+                } else {
+                  // iOS Safari < 15 Fallback
+                  setTimeout(() => {
+                    const routes = ['/pricing', '/blog', '/kontakt'];
+                    routes.forEach(route => {
+                      const link = document.createElement('link');
+                      link.rel = 'prefetch';
+                      link.href = route;
+                      document.head.appendChild(link);
+                    });
+                  }, 200);
                 }
               }
             `
