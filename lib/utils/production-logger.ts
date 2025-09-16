@@ -126,8 +126,8 @@ export function logPerformanceMetric(metric: string, value: number, unit = 'ms')
   
   if (isProduction) {
     // In Production: Nur an Analytics senden, nicht in Console
-    if (window.gtag) {
-      window.gtag('event', 'performance_metric', {
+    if ((window as any).gtag) {
+      (window as any).gtag('event', 'performance_metric', {
         custom_map: { metric, value, unit },
         non_interaction: true
       });
@@ -162,8 +162,8 @@ export function logCriticalError(error: Error | string, context?: string) {
   }
 
   // An Error-Tracking Service senden (falls verfügbar)
-  if (window.gtag) {
-    window.gtag('event', 'exception', {
+  if ((window as any).gtag) {
+    (window as any).gtag('event', 'exception', {
       description: errorMessage,
       fatal: false,
       custom_map: logData

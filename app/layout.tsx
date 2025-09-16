@@ -1,5 +1,7 @@
 import './globals.css';
-import { ThemeProvider } from '@/components/theme-provider';
+import { ModernThemeProvider } from '@/components/theme/modern-theme-provider';
+import { ThemeStyleInjector } from '@/components/theme/theme-style-injector';
+import { ThemeIndicator, ThemeStatus } from '@/components/theme/theme-indicator';
 import { I18nProvider } from '@/lib/i18n';
 import { CookieBanner } from '@/components/cookie-banner';
 import { Analytics } from '@/components/analytics';
@@ -10,6 +12,7 @@ import { generateOrganizationSchema, generateProductSchema, generateFAQSchema, g
 import Script from 'next/script';
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { MobilePerformanceMonitor, MobileResourceHints } from "@/components/mobile-performance-monitor";
+import { MobileLCPOptimizer } from "@/components/mobile-lcp-optimizer";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -174,10 +177,49 @@ export default function RootLayout({
         <meta name="lighthouse-ci" content="index,follow" />
         <meta name="pagespeed" content="nolimit" />
         
-        {/* Mobile-First Critical Resource Preloads */}
-        <link rel="preload" href="/fonts/Satoshi-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        {/* Mobile-First Critical Resource Preloads - High Priority */}
+        <link rel="preload" href="/fonts/Satoshi-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" fetchPriority="high" />
+        <link rel="preload" href="/fonts/Satoshi-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" fetchPriority="high" />
         <link rel="preload" href="/images/callflows_brand_no_claim.webp" as="image" fetchPriority="high" />
+        
+        {/* Critical CSS Inline - Above the fold mobile styles */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Critical Above-the-fold Mobile CSS */
+            @media (max-width: 768px) {
+              .hero-section { padding: 1rem; min-height: 100vh; }
+              h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4rem); line-height: 1.1; margin-bottom: 1rem; font-weight: 700; }
+              .container { max-width: 100%; padding: 0 1rem; }
+              .font-bold { font-weight: 700; }
+              .text-foreground { color: hsl(var(--foreground)); }
+              .text-primary { color: hsl(var(--primary)); }
+              .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+              .bg-background { background-color: hsl(var(--background)); }
+              .grid { display: grid; }
+              .space-y-8 > * + * { margin-top: 2rem; }
+              .space-y-6 > * + * { margin-top: 1.5rem; }
+              .text-center { text-align: center; }
+              .mb-8 { margin-bottom: 2rem; }
+              .pt-8 { padding-top: 2rem; }
+              .relative { position: relative; }
+              .min-h-screen { min-height: 100vh; }
+              .overflow-hidden { overflow: hidden; }
+            }
+            /* Dark mode variables fallback */
+            :root {
+              --background: 0 0% 100%;
+              --foreground: 222.2 84% 4.9%;
+              --primary: 221.2 83.2% 53.3%;
+              --muted-foreground: 215.4 16.3% 46.9%;
+            }
+            [data-theme="dark"] {
+              --background: 222.2 84% 4.9%;
+              --foreground: 210 40% 98%;
+              --primary: 217.2 91.2% 59.8%;
+              --muted-foreground: 215 20.2% 65.1%;
+            }
+          `
+        }} />
         
         {/* Mobile Viewport & Performance */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -201,21 +243,20 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <I18nProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+          <ModernThemeProvider>
+            <ThemeStyleInjector />
             <ErrorBoundary>
+              <MobileLCPOptimizer />
               <MobilePerformanceMonitor />
               <MobileResourceHints />
               {children}
               <ScrollToTop />
               <CookieBanner />
               <Analytics />
+              <ThemeIndicator />
+              <ThemeStatus />
             </ErrorBoundary>
-          </ThemeProvider>
+          </ModernThemeProvider>
         </I18nProvider>
       </body>
     </html>

@@ -480,8 +480,8 @@
     "benefit": "Clientes satisfechos, oportunidades de ingresos mejoradas"
   },
   "about": {
-    "title": "Acerca de callflows",
-    "intro1": "Estamos convencidos: la IA cambiará la forma en que las empresas hablan con sus clientes. Pero no algún día, sino ahora.",
+    "title": "Estamos convencidos:",
+    "intro1": "La IA está cambiando la forma en que las empresas se comunican con sus clientes. Pero no algún día, sino ahora.",
     "intro2": "callflows ayuda a las empresas a dar forma a este cambio, no a ciegas, sino con estructura, experiencia y verdadera asociación. Nuestros agentes de voz IA se encargan de las conversaciones, entienden las preocupaciones, reservan citas, reconocen oportunidades y se integran en los sistemas existentes como si siempre hubieran estado allí.",
     "intro3": "Sabemos: esta tecnología es nueva. Es poderosa, pero no funciona por sí sola. Por eso no dejamos a nuestros clientes solos con solo una \"herramienta IA\".",
     "mission": "Nuestra Misión:",
@@ -536,19 +536,24 @@
       "jan": {
         "role": "Ingeniero Principal de Automatización",
         "quote": "Convertir procesos complejos de IA en automatizaciones elegantes – esa es mi especialidad."
+      },
+      "joinUs": {
+        "name": "¿Tu lugar?",
+        "role": "Buscamos talento",
+        "quote": "¿Quieres formar parte de nuestro equipo? Buscamos personas apasionadas que quieran dar forma al futuro de la comunicación IA junto con nosotros."
       }
     },
     "career": {
-      "title": "Únase a nuestro equipo",
-      "subtitle": "¿Comparte nuestra pasión por la tecnología IA y quiere dar forma al futuro de la comunicación con clientes junto a nosotros? ¡Esperamos saber de usted!",
+      "title": "Únete a nuestro equipo",
+      "subtitle": "¿Compartes nuestra pasión por la tecnología IA y quieres dar forma al futuro de la comunicación con clientes junto a nosotros? ¡Esperamos saber de ti!",
       "benefit1Title": "Equipo sólido",
-      "benefit1Description": "Trabaje junto a expertos experimentados y aprenda algo nuevo cada día",
-      "benefit2Title": "Viva la innovación",
-      "benefit2Description": "Dé forma activamente al futuro de la telefonía IA y establezca nuevos estándares",
+      "benefit1Description": "Trabaja junto a expertos experimentados y aprende algo nuevo cada día",
+      "benefit2Title": "Vive la innovación",
+      "benefit2Description": "Da forma activamente al futuro de la telefonía IA y establece nuevos estándares",
       "benefit3Title": "Trabajo significativo",
-      "benefit3Description": "Ayude a las empresas a ser más eficientes y resolver problemas reales",
+      "benefit3Description": "Ayuda a las empresas a ser más eficientes y resolver problemas reales",
       "ctaTitle": "¿Listo para el siguiente paso?",
-      "ctaDescription": "Envíenos su solicitud y cuéntenos cómo le gustaría fortalecer nuestro equipo.",
+      "ctaDescription": "Envíanos tu solicitud y cuéntanos cómo te gustaría fortalecer nuestro equipo.",
       "ctaButton": "Aplicar ahora"
     }
   },
@@ -874,7 +879,7 @@
     "basicFee": "Tarifa básica",
     "billing": "Facturación",
     "invoicing": "Facturación",
-    "upTo": "Hasta",
+    "upTo": "Con",
     "from": "Desde"
   },
   "pilotPackage": {

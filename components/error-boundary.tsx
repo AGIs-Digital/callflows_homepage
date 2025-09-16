@@ -41,8 +41,8 @@ export class ErrorBoundary extends Component<Props, State> {
     
     if (process.env.NODE_ENV === 'production') {
       // iOS spezifisches Error Tracking
-      if (isIOSSafari && window.gtag) {
-        window.gtag('event', 'exception', {
+      if (isIOSSafari && (window as any).gtag) {
+        (window as any).gtag('event', 'exception', {
           description: `iOS Safari Error: ${error.message}`,
           fatal: true,
           custom_map: errorDetails

@@ -8,8 +8,8 @@ export function measurePerformance(metricName: string, value?: number) {
     const performanceValue = value || entry.startTime;
     
     // Report to analytics
-    if (window.gtag) {
-      window.gtag('event', 'performance_metric', {
+    if ((window as any).gtag) {
+      (window as any).gtag('event', 'performance_metric', {
         metric_name: metricName,
         value: performanceValue,
         page_location: window.location.href

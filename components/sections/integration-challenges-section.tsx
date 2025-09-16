@@ -30,7 +30,7 @@ const Circle = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border dark:border-accent/70 bg-warm-white dark:bg-warm-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] dark:shadow-[0_0_20px_-12px_rgba(255,255,255,0.1)]",
+        "z-10 flex size-12 items-center justify-center rounded-full border-2 border-border dark:border-accent/70 bg-warm-white dark:bg-gray-800 p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)] dark:shadow-[0_0_20px_-12px_rgba(255,255,255,0.1)]",
         className,
       )}
     >
@@ -78,7 +78,7 @@ export function IntegrationChallengesSection() {
               {t('integrationChallenges.title')}
             </h2>
             
-            <p className="text-lg text-black">
+            <p className="text-lg text-foreground dark:text-white">
               {t('integrationChallenges.description')}
             </p>
             
@@ -89,7 +89,7 @@ export function IntegrationChallengesSection() {
                 </div>
                 <div>
                   <h3 className="text-tertiary font-bold">{t('integrationChallenges.challenge1.title')}</h3>
-                  <p className="text-sm text-black">
+                  <p className="text-sm text-foreground dark:text-gray-200">
                     {t('integrationChallenges.challenge1.description')}
                   </p>
                 </div>
@@ -101,7 +101,7 @@ export function IntegrationChallengesSection() {
                 </div>
                 <div>
                   <h3 className="text-tertiary font-bold">{t('integrationChallenges.challenge2.title')}</h3>
-                  <p className="text-sm text-black">
+                  <p className="text-sm text-foreground dark:text-gray-200">
                     {t('integrationChallenges.challenge2.description')}
                   </p>
                 </div>
@@ -113,21 +113,21 @@ export function IntegrationChallengesSection() {
                 </div>
                 <div>
                   <h3 className="text-tertiary font-bold">{t('integrationChallenges.challenge3.title')}</h3>
-                  <p className="text-sm text-black">
+                  <p className="text-sm text-foreground dark:text-gray-200">
                     {t('integrationChallenges.challenge3.description')}
                   </p>
                 </div>
               </div>
             </div>
             
-            <div className="border-t border-black pt-6 mt-8">
+            <div className="border-t border-gray-300 dark:border-gray-600 pt-6 mt-8">
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Lightbulb className="w-6 h-6 text-primary" strokeWidth={1.5} />
+                <div className="p-3 rounded-full bg-primary/10 dark:bg-primary/20">
+                  <Lightbulb className="w-6 h-6 text-primary dark:text-accent" strokeWidth={1.5} />
                 </div>
                 <div>
                   <h2 className="text-3xl text-tertiary font-bold mb-2 underline decoration-accent">{t('integrationChallenges.solutionTitle')}</h2>
-                  <p className="text-lg text-black">
+                  <p className="text-lg text-foreground dark:text-white">
                     {t('integrationChallenges.solutionDescription').replace('callflows', '')}
                   </p>
                 </div>

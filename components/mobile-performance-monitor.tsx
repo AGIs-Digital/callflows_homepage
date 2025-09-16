@@ -25,8 +25,8 @@ export function MobilePerformanceMonitor() {
               // Mobile performance metrics - silently tracked
               if (ttfb > 800 || fcp > 1800 || lcp > 2500) {
                 // Send to analytics in production instead of console
-                if (window.gtag) {
-                  window.gtag('event', 'performance_issue', {
+                if ((window as any).gtag) {
+                  (window as any).gtag('event', 'performance_issue', {
                     ttfb: ttfb,
                     fcp: fcp,
                     lcp: lcp,

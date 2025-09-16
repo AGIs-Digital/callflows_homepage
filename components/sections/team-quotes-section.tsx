@@ -16,10 +16,10 @@ export function TeamQuotesSection() {
   // Manuell gepflegte Teamliste mit individuellen Rollen und Quotes
   const team: TeamMember[] = [
     { 
-      name: "Tom Günther", 
-      role: t("about.teamMembers.tom.role"), 
-      quote: t("about.teamMembers.tom.quote"), 
-      imgSrc: "/images/tomguenther.webp" 
+      name: "Pascal Stary", 
+      role: t("about.teamMembers.pascal.role"), 
+      quote: t("about.teamMembers.pascal.quote"), 
+      imgSrc: "/images/pascalstary.webp" 
     },
     { 
       name: "Jamin Afram", 
@@ -28,10 +28,10 @@ export function TeamQuotesSection() {
       imgSrc: "/images/jaminafram.webp" 
     },
     { 
-      name: "Pascal Stary", 
-      role: t("about.teamMembers.pascal.role"), 
-      quote: t("about.teamMembers.pascal.quote"), 
-      imgSrc: "/images/pascalstary.webp" 
+      name: "Tom Günther", 
+      role: t("about.teamMembers.tom.role"), 
+      quote: t("about.teamMembers.tom.quote"), 
+      imgSrc: "/images/tomguenther.webp" 
     },
     { 
       name: "Marvin Grubbe", 
@@ -44,6 +44,12 @@ export function TeamQuotesSection() {
       role: t("about.teamMembers.jan.role"), 
       quote: t("about.teamMembers.jan.quote"), 
       imgSrc: "/images/jankastning.webp"
+    },
+    { 
+      name: t("about.teamMembers.joinUs.name"), 
+      role: t("about.teamMembers.joinUs.role"), 
+      quote: t("about.teamMembers.joinUs.quote")
+      // Kein imgSrc - verwendet automatisch die geschlechtsneutrale Silhouette
     },
   ];
 

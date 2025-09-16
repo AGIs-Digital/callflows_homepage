@@ -10,7 +10,7 @@ export function SocialProofROISection() {
   const { t } = useI18n();
 
   return (
-    <section className="py-20 bg-gradient-to-b from-primary/40 via-tertiary/20 to-tertiary/25">
+    <section className="py-20 bg-gradient-to-b from-secondary/15 via-secondary/50 to-tertiary/25">
       <div className="container max-w-6xl mx-auto">
         {/* Social Proof Header */}
         <div className="text-center mb-16">

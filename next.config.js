@@ -2,14 +2,17 @@
 const path = require('path');
 
 const nextConfig = {
-  // Komprimierung und Bundle-Optimierung
+  // Mobile-First Performance & LCP Optimierung
   compress: true,
+  poweredByHeader: false, // Reduziert Header-Overhead
   
   // Parallele Builds für bessere Performance
   experimental: {
-    // Nur bewährte, stabile Features
+    // Mobile Performance Features
     esmExternals: true, // ESM-Module externalisieren
     serverComponentsExternalPackages: ['sharp'], // Sharp extern halten
+// optimizeCss: true, // CSS-Optimierung deaktiviert - benötigt critters package
+    scrollRestoration: true, // Bessere Navigation
   },
   
   webpack: (config, { dev, isServer, webpack }) => {

@@ -25,7 +25,7 @@ export const pricingTiers: PricingTier[] = [
     from: 1,
     to: 1000,
     pricePerMinute: 0.99,
-    description: "Bis 1.000 Minuten"
+    description: "Bei 1.000 Minuten"
   },
   {
     from: 1001,

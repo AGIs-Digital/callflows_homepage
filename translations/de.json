@@ -171,7 +171,7 @@
     "basicFee": "Grundgebühr",
     "billing": "Abrechnung", 
     "invoicing": "Rechnungsstellung",
-    "upTo": "Bis",
+    "upTo": "Bei",
     "from": "Ab"
   },
   "pilotPackage": {
@@ -628,8 +628,8 @@
     "benefit": "Zufriedene Kunden, verbesserte Umsatzchancen"
   },
   "about": {
-    "title": "Über callflows",
-    "intro1": "Wir sind davon überzeugt: KI wird die Art verändern, wie Unternehmen mit ihren Kunden sprechen. Aber nicht irgendwann – sondern jetzt.",
+    "title": "Wir sind davon überzeugt:",
+    "intro1": "KI verändert die Art, wie Unternehmen mit ihren Kunden kommunizieren. Aber nicht irgendwann – sondern jetzt.",
     "intro2": "callflows hilft Unternehmen dabei, diesen Wandel zu gestalten – nicht blindlings, sondern mit Struktur, Erfahrung und echter Partnerschaft. Unsere KI-Voice-Agents übernehmen Gespräche, verstehen Anliegen, buchen Termine, erkennen Chancen – und integrieren sich in bestehende Systeme, als wären sie schon immer da gewesen.",
     "intro3": "Wir wissen: Diese Technologie ist neu. Sie ist mächtig – aber sie ist kein Selbstläufer. Deshalb lassen wir unsere Kunden nicht mit einem \"KI-Tool\" allein.",
     "mission": "Unsere Mission:",
@@ -683,19 +683,24 @@
       "jan": {
         "role": "Lead Automation Engineer",
         "quote": "Komplexe KI‑Prozesse in elegante Automatisierungen verwandeln – das ist mein Spezialgebiet."
+      },
+      "joinUs": {
+        "name": "Dein Platz?",
+        "role": "Wir suchen Verstärkung",
+        "quote": "Möchtest du Teil unseres Teams werden? Wir suchen leidenschaftliche Menschen, die gemeinsam mit uns die Zukunft der KI‑Kommunikation gestalten möchten."
       }
     },
     "career": {
-      "title": "Werden Sie Teil unseres Teams",
-      "subtitle": "Sie teilen unsere Leidenschaft für KI‑Technologie und möchten gemeinsam mit uns die Zukunft der Kundenkommunikation gestalten? Wir freuen uns auf Sie!",
+      "title": "Werde Teil unseres Teams",
+      "subtitle": "Du teilst unsere Leidenschaft für KI‑Technologie und möchtest gemeinsam mit uns die Zukunft der Kundenkommunikation gestalten? Wir freuen uns auf dich!",
       "benefit1Title": "Starkes Team",
-      "benefit1Description": "Arbeiten Sie mit erfahrenen Experten zusammen und lernen Sie täglich dazu",
+      "benefit1Description": "Arbeite mit erfahrenen Experten zusammen und lerne täglich dazu",
       "benefit2Title": "Innovation erleben",
-      "benefit2Description": "Gestalten Sie die Zukunft der KI‑Telefonie aktiv mit und setzen Sie neue Maßstäbe",
+      "benefit2Description": "Gestalte die Zukunft der KI‑Telefonie aktiv mit und setze neue Maßstäbe",
       "benefit3Title": "Sinnvolle Arbeit",
-      "benefit3Description": "Helfen Sie Unternehmen dabei, effizienter zu werden und echte Probleme zu lösen",
+      "benefit3Description": "Hilf Unternehmen dabei, effizienter zu werden und echte Probleme zu lösen",
       "ctaTitle": "Bereit für den nächsten Schritt?",
-      "ctaDescription": "Senden Sie uns Ihre Bewerbung und erzählen Sie uns, wie Sie unser Team verstärken möchten.",
+      "ctaDescription": "Sende uns deine Bewerbung und erzähle uns, wie du unser Team verstärken möchtest.",
       "ctaButton": "Jetzt bewerben"
     }
   },

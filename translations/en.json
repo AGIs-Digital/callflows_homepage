@@ -480,8 +480,8 @@
     "benefit": "Satisfied customers, improved revenue opportunities"
   },
   "about": {
-    "title": "About callflows",
-    "intro1": "We are convinced: AI will change the way companies talk to their customers. But not someday – now.",
+    "title": "We are convinced:",
+    "intro1": "AI is changing the way companies communicate with their customers. But not someday – now.",
     "intro2": "callflows helps companies shape this change – not blindly, but with structure, experience, and genuine partnership. Our AI voice agents take over conversations, understand concerns, book appointments, recognize opportunities – and integrate into existing systems as if they had always been there.",
     "intro3": "We know: This technology is new. It is powerful – but it's not self-running. That's why we don't leave our customers alone with just an \"AI tool\".",
     "mission": "Our Mission:",
@@ -536,6 +536,11 @@
       "jan": {
         "role": "Lead Automation Engineer",
         "quote": "Turning complex AI processes into elegant automations – that's my specialty."
+      },
+      "joinUs": {
+        "name": "Your Place?",
+        "role": "We're looking for talent",
+        "quote": "Want to become part of our team? We're looking for passionate people who want to shape the future of AI communication together with us."
       }
     },
     "career": {
@@ -874,7 +879,7 @@
     "basicFee": "Basic fee",
     "billing": "Billing",
     "invoicing": "Invoicing",
-    "upTo": "Up to",
+    "upTo": "At",
     "from": "From"
   },
   "pilotPackage": {

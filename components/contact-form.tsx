@@ -12,7 +12,6 @@ import { contactFormSchema, type ContactFormData } from "@/lib/validations/conta
 import { useAutofill } from "@/hooks/use-autofill";
 import { SpamProtection, useRateLimit } from "@/components/security/spam-protection";
 import { Shield } from "lucide-react";
-import { safeConsole } from "@/lib/utils/silent-logger";
 
 export interface ContactFormProps {
   defaultSubject?: string;
@@ -165,7 +164,7 @@ export function ContactForm({
         onSubmitSuccess();
       }
     } catch (error) {
-      safeConsole.error('Kontaktformular Fehler:', error);
+      console.error('Kontaktformular Fehler:', error);
       
       toast({
         title: "Fehler beim Senden",

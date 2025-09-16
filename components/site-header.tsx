@@ -6,7 +6,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeToggleAdvanced } from "@/components/theme/theme-toggle-advanced";
 import { LanguageSelector } from "@/components/language-selector";
 import { SkipToContent } from "@/components/ui/skip-to-content";
 import { ZohoEmbed } from "@/components/booking/zoho-embed";
@@ -55,7 +55,7 @@ export function SiteHeader() {
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
             <LanguageSelector />
-            <ThemeToggle />
+            <ThemeToggleAdvanced />
             <ZohoEmbed 
               buttonText={t('nav.consultation')}
               className="hidden md:flex"
