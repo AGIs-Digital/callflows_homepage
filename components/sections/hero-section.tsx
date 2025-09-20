@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-import { ZohoEmbed } from "@/components/booking/zoho-embed";
+import { BookingButton } from "@/components/booking/booking-button";
 import { useI18n } from "@/lib/i18n";
 
 // Critical Path: Load immediately, no delay
@@ -100,10 +100,11 @@ export function HeroSection() {
 
             {/* CTA Button links auf Höhe des Widget-Buttons */}
             <div className="pt-6 flex justify-center">
-              <ZohoEmbed 
+              <BookingButton 
                 buttonText={t('home.hero.cta')}
                 size="lg" 
                 className="bg-[#FFB703] hover:bg-tertiary/70 text-white font-semibold px-8 py-4 text-lg gap-2 w-full max-w-[280px]"
+                bookingUrl="https://outlook.office.com/book/callflowsBeratungstermin@callflows.de/?ismsaljsauthenabled"
               />
             </div>
           </div>

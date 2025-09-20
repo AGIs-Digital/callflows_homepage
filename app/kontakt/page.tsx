@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ZohoEmbed } from "@/components/booking/zoho-embed";
+import { BookingButton } from "@/components/booking/booking-button";
 import { useI18n } from "@/lib/i18n";
 import { Mail, Phone, MapPin, MessageSquare, Calendar } from "lucide-react";
 import Head from "next/head";
@@ -124,9 +124,10 @@ export default function KontaktPage() {
                   {t('contact.appointmentDescription')}
                 </p>
                 
-                <ZohoEmbed 
+                <BookingButton 
                   buttonText={t('contact.bookingButton')} 
                   className="w-full bg-[#FFB703] hover:bg-[#FFB703]/90 text-white font-semibold py-3 mb-8 transition-all duration-300 hover:scale-105"
+                  bookingUrl="https://outlook.office.com/book/callflowsBeratungstermin@callflows.de/?ismsaljsauthenabled"
                 />
                 
                 {/* Contact Information */}

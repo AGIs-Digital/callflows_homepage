@@ -1,5 +1,5 @@
 "use client";
-import { ZohoEmbed } from "./zoho-embed";
+import { MicrosoftBookingsEmbed } from "./microsoft-bookings-embed";
 
 interface BookingButtonProps {
   buttonText?: string;
@@ -7,6 +7,7 @@ interface BookingButtonProps {
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
   size?: "default" | "sm" | "lg" | "icon";
   showArrow?: boolean;
+  bookingUrl?: string;
 }
 
 export function BookingButton({ 
@@ -14,15 +15,17 @@ export function BookingButton({
   className = "bg-accent text-gray-900 hover:bg-accent/90 group",
   variant = "default",
   size = "default",
-  showArrow = true
+  showArrow = true,
+  bookingUrl
 }: BookingButtonProps) {
   return (
-    <ZohoEmbed
+    <MicrosoftBookingsEmbed
       buttonText={buttonText}
       className={className}
       variant={variant}
       size={size}
       showArrow={showArrow}
+      bookingUrl={bookingUrl}
     />
   );
 } 

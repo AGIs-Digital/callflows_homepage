@@ -1,7 +1,7 @@
 "use client";
 
 import { Search, Cog, Rocket } from "lucide-react";
-import { ZohoEmbed } from "@/components/booking/zoho-embed";
+import { BookingButton } from "@/components/booking/booking-button";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
 
@@ -108,10 +108,11 @@ export function ProcessSection() {
             <p className="text-muted-foreground mb-6 leading-relaxed">
               {t('process.cta.description')}
             </p>
-            <ZohoEmbed 
+            <BookingButton 
               buttonText={t('process.cta.buttonText')}
               size="lg" 
               className="bg-[#FFB703] hover:bg-tertiary/70 text-white font-semibold px-8 py-4 text-lg gap-2"
+              bookingUrl="https://outlook.office.com/book/callflowsBeratungstermin@callflows.de/?ismsaljsauthenabled"
             />
           </div>
         </div>

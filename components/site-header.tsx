@@ -9,7 +9,7 @@ import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggleAdvanced } from "@/components/theme/theme-toggle-advanced";
 import { LanguageSelector } from "@/components/language-selector";
 import { SkipToContent } from "@/components/ui/skip-to-content";
-import { ZohoEmbed } from "@/components/booking/zoho-embed";
+import { BookingButton } from "@/components/booking/booking-button";
 import { useI18n } from "@/lib/i18n";
 import { useAuthStore } from "@/lib/auth/auth-store";
 import { Button } from "@/components/ui/button";
@@ -56,11 +56,12 @@ export function SiteHeader() {
           <nav className="flex items-center space-x-2">
             <LanguageSelector />
             <ThemeToggleAdvanced />
-            <ZohoEmbed 
+            <BookingButton 
               buttonText={t('nav.consultation')}
               className="hidden md:flex"
               variant="outline"
               size="sm"
+              bookingUrl="https://outlook.office.com/book/callflowsBeratungstermin@callflows.de/?ismsaljsauthenabled"
             />
             
             {/* Auth Button */}

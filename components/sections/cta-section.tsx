@@ -6,7 +6,7 @@ import { ArrowRight, PhoneCall } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "framer-motion";
 import Link from "next/link";
-import { ZohoEmbed } from "@/components/booking/zoho-embed";
+import { BookingButton } from "@/components/booking/booking-button";
 import { useI18n } from "@/lib/i18n";
 
 const containerVariants = {
@@ -71,10 +71,11 @@ export function CTASection() {
             variants={itemVariants}
           >
             
-            <ZohoEmbed 
+            <BookingButton 
               buttonText={t('cta.bookingButton')} 
               size="lg" 
               className="bg-tertiary hover:bg-[#FFB703]/90 text-white font-semibold px-8 py-4 text-lg gap-2"
+              bookingUrl="https://outlook.office.com/book/callflowsBeratungstermin@callflows.de/?ismsaljsauthenabled"
             />
             
             <Link href="/pricing">
