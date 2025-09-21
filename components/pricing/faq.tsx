@@ -16,7 +16,7 @@ export function PricingFAQ() {
           Häufig gestellte Fragen
         </h2>
         <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-          Finden Sie Antworten auf die wichtigsten Fragen zu unseren Paketen
+          Finden Sie Antworten auf die wichtigsten Fragen zu unseren Preisen
         </p>
       </div>
       

@@ -4,6 +4,7 @@ import { AboutSection } from "@/components/sections/about-section";
 import { FoundersWhySection } from "@/components/sections/founders-why-section";
 import { TeamQuotesSection } from "@/components/sections/team-quotes-section";
 import { CareerCtaSection } from "@/components/sections/career-cta-section";
+import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
 
 export default function AboutPage() {
   return (

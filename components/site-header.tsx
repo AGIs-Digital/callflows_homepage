@@ -61,7 +61,7 @@ export function SiteHeader() {
               className="hidden md:flex"
               variant="outline"
               size="sm"
-              bookingUrl="https://outlook.office.com/book/callflowsBeratungstermin@callflows.de/?ismsaljsauthenabled"
+              bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
             />
             
             {/* Auth Button */}

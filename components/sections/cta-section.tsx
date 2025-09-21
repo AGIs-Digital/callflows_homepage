@@ -75,7 +75,7 @@ export function CTASection() {
               buttonText={t('cta.bookingButton')} 
               size="lg" 
               className="bg-tertiary hover:bg-[#FFB703]/90 text-white font-semibold px-8 py-4 text-lg gap-2"
-              bookingUrl="https://outlook.office.com/book/callflowsBeratungstermin@callflows.de/?ismsaljsauthenabled"
+              bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
             />
             
             <Link href="/pricing">

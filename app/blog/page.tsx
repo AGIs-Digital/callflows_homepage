@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { loadExistingBlogPosts } from "@/lib/blog/blog-generator";
 import { generateMetadata } from "@/lib/seo/metadata";
+import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
 
 // Generate metadata for SEO
 export const metadata = generateMetadata({
@@ -57,10 +58,20 @@ export default async function BlogPage() {
   }
   
   return (
-    <div className="container py-16 md:py-24">
-      <div className="flex items-center justify-between mb-12">
-        <h1 className="text-4xl font-bold">Blog</h1>
-      </div>
+    <div className="py-16 md:py-24 bg-gradient-to-b from-primary/20 via-accent/50 to-secondary/65">
+      <div className="container max-w-6xl mx-auto">
+        {/* Breadcrumbs */}
+        <BreadcrumbSEO 
+          items={[
+            { name: "Blog", url: "https://callflows.de/blog" }
+          ]}
+        />
+        
+        <div className="flex items-center justify-center mb-12">
+          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent backdrop-blur-sm bg-white/10 px-8 py-4 rounded-2xl border border-white/20 shadow-lg">
+            Blog
+          </h1>
+        </div>
       
       {allPosts.length === 0 ? (
         <div className="text-center py-12">
@@ -116,6 +127,7 @@ export default async function BlogPage() {
         ))}
         </div>
       )}
+      </div>
     </div>
   );
 } 

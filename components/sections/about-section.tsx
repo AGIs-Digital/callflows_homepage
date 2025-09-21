@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "@/lib/icons";
 import { useI18n } from "@/lib/i18n";
+import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
 
 export function AboutSection() {
   const { t, locale } = useI18n();
@@ -73,6 +74,13 @@ export function AboutSection() {
   return (
     <section className="py-20 bg-gradient-to-b from-secondary via-secondary/50 to-accent/20">
       <div className="container max-w-6xl">
+        {/* Breadcrumbs */}
+        <BreadcrumbSEO 
+          items={[
+            { name: "Über uns", url: "https://callflows.de/about" }
+          ]}
+        />
+        
         {/* Zentriertes Logo mit Claim als Überschrift */}
         <div className="text-center mb-12">
           <Image

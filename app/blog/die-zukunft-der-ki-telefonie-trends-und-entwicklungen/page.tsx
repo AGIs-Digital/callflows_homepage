@@ -208,7 +208,7 @@ export default function BlogPostPage() {
                 href="/kontakt"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
               >
-                Kostenlose Beratung buchen
+                Kostenlosen Termin buchen
               </Link>
               <Link 
                 href="/pricing"

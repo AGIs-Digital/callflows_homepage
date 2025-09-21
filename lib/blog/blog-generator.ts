@@ -120,7 +120,9 @@ export const metadata = generateMetadata({
 
 export default function BlogPostPage() {
   return (
-    <div className="container max-w-4xl py-16 md:py-24">
+    <main className="min-h-screen bg-background">
+      <div className="py-16 md:py-24 bg-gradient-to-b from-primary/20 via-accent/50 to-secondary/65">
+        <div className="container max-w-6xl mx-auto">
       {/* Navigation */}
       <Link 
         href="/blog" 
@@ -193,7 +195,7 @@ export default function BlogPostPage() {
                 href="/kontakt"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
               >
-                Kostenlose Beratung buchen
+                Kostenlosen Termin buchen
               </Link>
               <Link 
                 href="/pricing"
@@ -205,7 +207,9 @@ export default function BlogPostPage() {
           </div>
         </footer>
       </article>
-    </div>
+        </div>
+      </div>
+    </main>
   );
 }`;
 }

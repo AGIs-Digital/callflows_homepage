@@ -5,7 +5,7 @@
     "blog": "Blog",
     "about": "Acerca de",
     "contact": "Contacto",
-    "consultation": "Reservar Consulta"
+    "consultation": "Reservar Cita"
   },
   "common": {
     "loading": "Cargando...",
@@ -111,14 +111,14 @@
     "flexibleTitle": "Pago por uso",
     "flexibleDesc": "Pague solo lo que realmente use – sin duración de contrato",
     "riskFreeStart": "Así es como comienza sin riesgo – con control total, estructura de precios transparente y agentes de voz que se adaptan perfectamente a su empresa.",
-    "monthlyPackages": "Paquetes Mensuales IA callflow",
+    "monthlyPackages": "Precios IA callflow",
     "pricesExclVat": "Todos los precios sin IVA",
     "popular": "Popular",
     "priceOnRequest": "Precio bajo consulta",
     "individualMinutes": "Asignación individual de minutos",
     "perMinute": "/min",
     "freeMinutes": "minutos IA",
-    "totalPackagePrice": "Precio total del paquete",
+    "totalPackagePrice": "Precio total",
     "aiMinutes": "minutos IA",
     "monthly": "mens.",
     "roiCalculator": {
@@ -382,7 +382,7 @@
     "sendButton": "Enviar mensaje",
     "appointmentTitle": "Reservar consulta",
     "appointmentDescription": "Programe una cita para una consulta personal sobre nuestros agentes de voz IA.",
-    "bookingButton": "Reservar cita",
+    "bookingButton": "Reservar Cita",
     "contactDataTitle": "Información de contacto",
     "company": "callflows Abeln Goltz GbR",
     "address": "Fenskestraße 9A",
@@ -709,7 +709,7 @@
   "cta": {
     "title": "¿Listo para el futuro del contacto con clientes?",
     "description": "Programe una conversación sin compromiso con nuestros expertos y aprenda cómo callflows puede apoyar su negocio.",
-    "bookingButton": "Reservar Consulta",
+    "bookingButton": "Reservar Cita",
     "pricingButton": "Ver Precios",
     "benefit1": {
       "title": "Consulta Inicial Gratuita",

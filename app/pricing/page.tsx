@@ -52,7 +52,7 @@ export default function PricingPage() {
           </div>
         </div>
         
-        {/* 1. Pilotmonat-Paket */}
+        {/* 1. Pilotmonat-Angebot */}
         <PilotPackageCard />
         
         {/* 2. Minutenstaffel nach Go-Live */}

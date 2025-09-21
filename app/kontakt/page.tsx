@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { BookingButton } from "@/components/booking/booking-button";
 import { useI18n } from "@/lib/i18n";
 import { Mail, Phone, MapPin, MessageSquare, Calendar } from "lucide-react";
+import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
 import Head from "next/head";
 
 export default function KontaktPage() {
@@ -32,13 +33,15 @@ export default function KontaktPage() {
         {/* Main Content */}
         <main className="flex-1 relative z-10">
           <div className="container max-w-6xl py-12 md:py-20">
+            {/* Breadcrumbs */}
+            <BreadcrumbSEO 
+              items={[
+                { name: "Kontakt", url: "https://callflows.de/kontakt" }
+              ]}
+            />
+            
             {/* Hero Section */}
             <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
-                <MessageSquare className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium text-primary">Kontakt</span>
-              </div>
-              
               <h1 className="text-4xl md:text-5xl font-bold text-primary dark:text-white mb-6">
                 {t('contact.pageTitle')}
               </h1>
@@ -127,7 +130,7 @@ export default function KontaktPage() {
                 <BookingButton 
                   buttonText={t('contact.bookingButton')} 
                   className="w-full bg-[#FFB703] hover:bg-[#FFB703]/90 text-white font-semibold py-3 mb-8 transition-all duration-300 hover:scale-105"
-                  bookingUrl="https://outlook.office.com/book/callflowsBeratungstermin@callflows.de/?ismsaljsauthenabled"
+                  bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
                 />
                 
                 {/* Contact Information */}

@@ -32,7 +32,7 @@ export function MainNav({ className }: MainNavProps) {
       </Link>
       <Link
         href="/pricing"
-        title="Preise und Pakete für KI‑callflows anzeigen"
+        title="Preise für KI‑callflows anzeigen"
         aria-current={pathname === "/pricing" ? "page" : undefined}
         className={cn(
           "text-sm font-medium transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm px-2 py-1",

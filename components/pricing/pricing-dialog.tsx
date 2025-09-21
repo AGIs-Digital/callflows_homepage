@@ -29,7 +29,7 @@ export function PricingDialog({ plan, onClose }: PricingDialogProps) {
     <>
       <DialogHeader>
         <DialogTitle>
-          {isCustomPlan ? "Individuelles Angebot anfordern" : `${plan.name} Paket buchen`}
+          {isCustomPlan ? "Individuelles Angebot anfordern" : `${plan.name} anfragen`}
         </DialogTitle>
       </DialogHeader>
       
@@ -64,7 +64,7 @@ export function PricingDialog({ plan, onClose }: PricingDialogProps) {
           
           <div className="mt-4">
             <ContactForm 
-              defaultSubject={`Anfrage: ${plan.name} Paket`}
+              defaultSubject={`Anfrage: ${plan.name}`}
               onSubmitSuccess={handleFormSuccess}
               planType={plan.type}
             />

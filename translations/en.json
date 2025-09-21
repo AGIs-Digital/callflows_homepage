@@ -5,7 +5,7 @@
     "blog": "Blog",
     "about": "About Us",
     "contact": "Contact",
-    "consultation": "Book Consultation"
+    "consultation": "Book Appointment"
   },
   "common": {
     "loading": "Loading...",
@@ -111,14 +111,14 @@
     "flexibleTitle": "Pay-as-you-go",
     "flexibleDesc": "Pay only for what you actually use – without contract terms",
     "riskFreeStart": "This is how you start risk-free – with full control, transparent pricing structure, and voice agents that perfectly fit your company.",
-    "monthlyPackages": "AI callflow Monthly Packages",
+    "monthlyPackages": "AI callflow Prices",
     "pricesExclVat": "All prices excluding VAT",
     "popular": "Popular",
     "priceOnRequest": "Price on request",
     "individualMinutes": "Individual minute allowance",
     "perMinute": "/min",
     "freeMinutes": "AI minutes",
-    "totalPackagePrice": "Total package price",
+    "totalPackagePrice": "Total price",
     "aiMinutes": "AI minutes",
     "monthly": "monthly",
     "roiCalculator": {
@@ -382,7 +382,7 @@
     "sendButton": "Send Message",
     "appointmentTitle": "Book Consultation",
     "appointmentDescription": "Schedule an appointment for a personal consultation about our AI voice agents.",
-    "bookingButton": "Book Consultation",
+    "bookingButton": "Book Appointment",
     "contactDataTitle": "Contact Information",
     "company": "callflows Abeln Goltz GbR",
     "address": "Fenskestraße 9A",
@@ -709,7 +709,7 @@
   "cta": {
     "title": "Ready for the future of customer contact?",
     "description": "Schedule a non-binding conversation with our experts and learn how callflows can support your business.",
-    "bookingButton": "Book Consultation",
+    "bookingButton": "Book Appointment",
     "pricingButton": "View Pricing",
     "benefit1": {
       "title": "Free Initial Consultation",
@@ -976,7 +976,7 @@
     "cta": {
       "title": "Ready for the next step?",
       "description": "Let's analyze together how AI callflows can support your sales",
-      "buttonText": "Book consultation"
+      "buttonText": "Book Appointment"
     },
     "steps": {
       "step1": {

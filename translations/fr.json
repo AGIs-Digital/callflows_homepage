@@ -111,14 +111,14 @@
     "flexibleTitle": "Paiement à l'usage",
     "flexibleDesc": "Payez seulement ce que vous utilisez réellement – sans durée de contrat",
     "riskFreeStart": "Voici comment vous commencez sans risque – avec un contrôle total, une structure de prix transparente et des agents vocaux qui s'adaptent parfaitement à votre entreprise.",
-    "monthlyPackages": "Forfaits Mensuels IA callflow",
+    "monthlyPackages": "Tarifs IA callflow",
     "pricesExclVat": "Tous les prix hors TVA",
     "popular": "Populaire",
     "priceOnRequest": "Prix sur demande",
     "individualMinutes": "Allocation de minutes individuelle",
     "perMinute": "/min",
     "freeMinutes": "minutes IA",
-    "totalPackagePrice": "Prix total du package",
+    "totalPackagePrice": "Prix total",
     "aiMinutes": "minutes IA",
     "monthly": "mens.",
     "roiCalculator": {
@@ -382,7 +382,7 @@
     "sendButton": "Envoyer le message",
     "appointmentTitle": "Réserver une consultation",
     "appointmentDescription": "Planifiez un rendez-vous pour une consultation personnelle sur nos agents vocaux IA.",
-    "bookingButton": "Réserver un rendez-vous",
+    "bookingButton": "Prendre Rendez-vous",
     "contactDataTitle": "Informations de contact",
     "company": "callflows Abeln Goltz GbR",
     "address": "Fenskestraße 9A",
@@ -976,7 +976,7 @@
     "cta": {
       "title": "Prêt pour la prochaine étape?",
       "description": "Analysons ensemble comment les AI callflows peuvent soutenir vos ventes",
-      "buttonText": "Réserver une consultation"
+      "buttonText": "Prendre Rendez-vous"
     },
     "steps": {
       "step1": {

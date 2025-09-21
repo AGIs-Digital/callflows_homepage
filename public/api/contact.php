@@ -193,7 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $source = isset($data['source']) ? $data['source'] : 'contact';
     $subject = $subjectMap[$source] ?? 'Neue Kontaktanfrage';
 
-    $to = 'kontakt@callflows.de';
+    $to = 'info@callflows.de';
     
     // Logo als Base64 einbetten
     $logoPath = __DIR__ . '/../../images/callflows_brand_no_claim.webp';

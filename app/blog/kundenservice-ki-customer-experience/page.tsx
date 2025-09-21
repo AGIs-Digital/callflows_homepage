@@ -29,7 +29,8 @@ export const metadata = generateMetadata({
 export default function BlogPost() {
   return (
     <main className="min-h-screen bg-background">
-      <div className="container max-w-4xl py-16 md:py-24">
+      <div className="py-16 md:py-24 bg-gradient-to-b from-primary/20 via-accent/50 to-secondary/65">
+        <div className="container max-w-6xl mx-auto">
         <Link 
           href="/blog" 
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
@@ -132,7 +133,7 @@ export default function BlogPost() {
                 href="/kontakt"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
               >
-                Kostenlose Beratung buchen
+                Kostenlosen Termin buchen
               </Link>
               <Link 
                 href="/pricing"
@@ -143,6 +144,7 @@ export default function BlogPost() {
             </div>
           </div>
         </footer>
+        </div>
       </div>
     </main>
   );

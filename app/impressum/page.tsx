@@ -13,8 +13,10 @@ export default function ImpressumPage() {
     <LegalLayout 
       title={t('legal.impressum.title')}
       subtitle={t('legal.impressum.subtitle')}
+      breadcrumbName="Impressum"
+      breadcrumbUrl="https://callflows.de/impressum"
     >
-      <div className="max-w-3xl mx-auto">
+      <div>
         <p className="text-lg text-muted-foreground mb-8">
           {t('legal.impressum.intro')}
         </p>

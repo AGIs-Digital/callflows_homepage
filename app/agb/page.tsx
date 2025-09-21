@@ -11,6 +11,8 @@ export default function AGBPage() {
     <LegalLayout 
       title={t('legal.agb.title')}
       subtitle={t('legal.agb.subtitle')}
+      breadcrumbName="AGB"
+      breadcrumbUrl="https://callflows.de/agb"
     >
       <LegalSection title={t('legal.agb.section1Title')}>
         <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">

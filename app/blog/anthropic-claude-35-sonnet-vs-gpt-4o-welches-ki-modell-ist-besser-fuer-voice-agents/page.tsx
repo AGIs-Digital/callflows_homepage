@@ -18,7 +18,7 @@ export const metadata = generateMetadata({
     "KI Kundenservice"
   ],
   images: [{
-    url: "/images/blog/anthropic-claude-35-sonnet-vs-gpt-4o-welches-ki-modell-ist-besser-fuer-voice-agents.webp",
+    url: "/images/blog/claude-vs-gpt4o.webp",
     width: 1200,
     height: 630,
     alt: "Anthropic Claude 3.5 Sonnet vs. GPT-4o: Welches KI-Modell ist besser für Voice Agents?"
@@ -67,7 +67,7 @@ export default function BlogPostPage() {
           
           <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/blog/anthropic-claude-35-sonnet-vs-gpt-4o-welches-ki-modell-ist-besser-fuer-voice-agents.webp"
+              src="/images/blog/claude-vs-gpt4o.webp"
               alt="Anthropic Claude 3.5 Sonnet vs. GPT-4o: Welches KI-Modell ist besser für Voice Agents?"
               fill
               className="object-cover"
@@ -204,7 +204,7 @@ export default function BlogPostPage() {
                 href="/kontakt"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
               >
-                Kostenlose Beratung buchen
+                Kostenlosen Termin buchen
               </Link>
               <Link 
                 href="/pricing"

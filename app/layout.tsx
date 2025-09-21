@@ -6,7 +6,7 @@ import { I18nProvider } from '@/lib/i18n';
 import { CookieBanner } from '@/components/cookie-banner';
 import { Analytics } from '@/components/analytics';
 import { ErrorBoundary } from '@/components/error-boundary';
-import { initializeProductionLogger } from '@/lib/utils/production-logger';
+import { BookingModalProvider } from '@/components/booking/microsoft-bookings-embed';
 import { generateMetadata } from '@/lib/seo/metadata';
 import { generateOrganizationSchema, generateProductSchema, generateFAQSchema, generateServiceSchema, generateSoftwareSchema, generateLocalBusinessSchema } from '@/lib/seo/schema';
 import Script from 'next/script';
@@ -244,18 +244,20 @@ export default function RootLayout({
       <body className={inter.className}>
         <I18nProvider>
           <ModernThemeProvider>
-            <ThemeStyleInjector />
-            <ErrorBoundary>
-              <MobileLCPOptimizer />
-              <MobilePerformanceMonitor />
-              <MobileResourceHints />
-              {children}
-              <ScrollToTop />
-              <CookieBanner />
-              <Analytics />
-              <ThemeIndicator />
-              <ThemeStatus />
-            </ErrorBoundary>
+            <BookingModalProvider>
+              <ThemeStyleInjector />
+              <ErrorBoundary>
+                <MobileLCPOptimizer />
+                <MobilePerformanceMonitor />
+                <MobileResourceHints />
+                {children}
+                <ScrollToTop />
+                <CookieBanner />
+                <Analytics />
+                <ThemeIndicator />
+                <ThemeStatus />
+              </ErrorBoundary>
+            </BookingModalProvider>
           </ModernThemeProvider>
         </I18nProvider>
       </body>

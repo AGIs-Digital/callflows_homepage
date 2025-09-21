@@ -251,7 +251,7 @@ export function generateServiceSchema(): WithContext<Service> {
     category: 'Software as a Service (SaaS)',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'KI Voice Agent Pakete',
+      name: 'KI Voice Agent Preise',
       itemListElement: [
         {
           '@type': 'Offer',

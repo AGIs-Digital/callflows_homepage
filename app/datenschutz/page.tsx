@@ -17,8 +17,10 @@ export default function DatenschutzPage() {
       <LegalLayout
         title={t('legal.datenschutz.title')}
         subtitle={t('legal.datenschutz.subtitle')}
+        breadcrumbName="Datenschutz"
+        breadcrumbUrl="https://callflows.de/datenschutz"
       >
-        <div className="max-w-3xl mx-auto">
+        <div>
           <p className="text-lg text-muted-foreground mb-8">
             {t('legal.datenschutz.intro')}
           </p>

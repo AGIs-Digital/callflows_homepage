@@ -11,7 +11,7 @@ interface BookingButtonProps {
 }
 
 export function BookingButton({ 
-  buttonText = "Beratungstermin buchen",
+  buttonText = "Termin buchen",
   className = "bg-accent text-gray-900 hover:bg-accent/90 group",
   variant = "default",
   size = "default",

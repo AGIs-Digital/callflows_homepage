@@ -5,7 +5,7 @@
     "blog": "Blog",
     "about": "Über uns",
     "contact": "Kontakt",
-    "consultation": "Beratung buchen"
+    "consultation": "Termin buchen"
   },
   "common": {
     "loading": "Lädt...",
@@ -39,7 +39,7 @@
       "description": "KI‑Voice‑Agents für den Mittelstand: Wir übernehmen Routine‑Telefonate 24/7 – transparent nach Minuten, ohne Vertragslaufzeit und ohne KI‑Know‑how. So gewinnt Ihr Team Zeit für qualifizierte Leads und Abschlüsse.",
       "solution": "Mit KI‑callflows",
       "solutionDescription": "KI‑callflows = Ihr Conversation Flow: natürliche Dialoge, Prozesslogik & Integrationen – Ende‑zu‑Ende.",
-      "cta": "Beratung buchen",
+      "cta": "Termin buchen",
       "widgetUnavailable": "Widget vorübergehend nicht verfügbar",
       "widgetUnavailableDescription": "Keine Sorge - das passiert manchmal bei Live-Demos"
     }
@@ -264,14 +264,14 @@
     "flexibleTitle": "Pay-as-you-go",
     "riskFreeStart": "So starten Sie risikofrei – mit voller Kontrolle, transparenter Preisstruktur und KI‑callflows, die perfekt zu Ihrem Unternehmen passen.",
     "flexibleDesc": "Zahlen Sie nur für das, was Sie wirklich nutzen – ohne Vertragslaufzeit",
-    "monthlyPackages": "Unsere Monatspakete",
+    "monthlyPackages": "Unsere Preise",
     "pricesExclVat": "Alle Preise ohne MwSt.",
     "popular": "Beliebt",
     "priceOnRequest": "Preis auf Anfrage",
     "individualMinutes": "Individuelles Minutenkontingent",
     "perMinute": "/Min.",
     "freeMinutes": "KI-Minuten",
-    "totalPackagePrice": "Gesamtpaketpreis",
+    "totalPackagePrice": "Gesamtpreis",
     "aiMinutes": "KI-Minuten",
     "monthly": "mtl.",
     "roiCalculator": {
@@ -419,7 +419,7 @@
     "individuellCta": "Individuelles Angebot",
     "ctaTitle": "Bereit für die Zukunft der Kundenkommunikation?",
     "ctaDescription": "Vereinbaren Sie ein unverbindliches Gespräch mit unseren Experten und erfahren Sie, wie callflows Ihr Unternehmen unterstützen kann.",
-    "ctaButtonText": "Beratung buchen"
+    "ctaButtonText": "Termin buchen"
   },
   "glossary": {
     "kiCallflow": {
@@ -529,9 +529,9 @@
     "messageLabel": "Nachricht",
     "messagePlaceholder": "Ihre Nachricht...",
     "sendButton": "Nachricht senden",
-    "appointmentTitle": "Beratungstermin buchen",
+    "appointmentTitle": "Termin buchen",
     "appointmentDescription": "Vereinbaren Sie einen Termin für eine persönliche Beratung zu unseren KI-Voice-Agents.",
-    "bookingButton": "Beratung buchen",
+    "bookingButton": "Termin buchen",
     "contactDataTitle": "Kontaktdaten",
     "company": "callflows Abeln Goltz GbR",
     "address": "Fenskestraße 9A",
@@ -797,7 +797,7 @@
       "section5Title": "5. Preise und Zahlungsmodalitäten",
       "section5Content": "Die aktuellen Preise und Tarifoptionen sind auf der Website des Anbieters einsehbar.\n\nSetup-Gebühr & Pilotmonat:\nFür die Einrichtung und den ersten Pilotmonat wird eine Setup-Gebühr fällig, sobald der KI-callflow den ersten Anruf ausführt und das System damit effektiv genutzt wird.\n\nMonatliche Leistungsabrechnung:\nNach dem Pilotmonat erfolgt die Abrechnung monatlich nachträglich basierend auf der tatsächlichen Nutzung (verbrauchte Gesprächsminuten). Die Rechnung wird am Ende eines jeden Kalendermonats gestellt und ist innerhalb von 14 Tagen zur Zahlung fällig.\n\nZahlungsverpflichtung bei Nutzung:\nMit dem ersten Login in das System, der ersten Nutzung der Dienste oder der Ausführung von Anrufen verpflichtet sich der Kunde automatisch zur Zahlung der anfallenden Leistungen. Dies gilt unabhängig davon, ob ein formeller schriftlicher Vertrag vorliegt.\n\nBei Zahlungsverzug hat der Kunde nach Mahnung 7 Tage Zeit, die ausstehende Zahlung nachzuholen.\n\ncallflows behält sich das Recht vor, bei Nichtzahlung den Zugang zum Service zu sperren und den Vertrag zu kündigen.\n\nEs erfolgt grundsätzlich keine Rückerstattung für bereits geleistete Zahlungen oder erbrachte Leistungen.\n\nPreisänderungen werden dem Kunden mindestens 30 Tage im Voraus mitgeteilt.\n\nBei einer Preisänderung hat der Kunde das Recht, den Vertrag außerordentlich zu kündigen.",
       "section6Title": "6. Leistungsabrechnung & Minutenpreise",
-      "section6Content": "Abrechnungsmodell:\ncallflows rechnet ausschließlich nach tatsächlichem Verbrauch ab. Es gibt keine Vorauszahlungen, Abonnements oder Minutenpakete. Die Abrechnung erfolgt monatlich nachträglich basierend auf den tatsächlich verbrauchten Gesprächsminuten.\n\nMinutenpreise:\nAlle Gesprächsminuten werden zu den aktuell gültigen Minutenpreisen abgerechnet, die auf der Website einsehbar sind. Die Preise gelten einheitlich für alle Arten von Anrufen (Inbound/Outbound).\n\nTransparente Abrechnung:\nKunden erhalten am Monatsende eine detaillierte Aufstellung aller durchgeführten Anrufe mit Datum, Uhrzeit, Dauer und den entsprechenden Kosten. Die Rechnung wird per E-Mail zugestellt und ist innerhalb von 14 Tagen zu begleichen.\n\nKeine Mindestvertragslaufzeit:\nEs gibt keine Mindestvertragslaufzeit oder Mindestumsätze. Kunden zahlen ausschließlich für die tatsächlich genutzten Leistungen.\n\nPreisänderungen:\nÄnderungen der Minutenpreise werden mindestens 30 Tage im Voraus per E-Mail und über die Website kommuniziert. Preisänderungen gelten ab dem Folgemonat der Ankündigung.\n\nAbrechnungszeitraum:\nDie Abrechnung erfolgt kalendermonatlich. Anrufe werden minutengenau erfasst und abgerechnet. Angefangene Minuten werden als volle Minuten berechnet.",
+      "section6Content": "Abrechnungsmodell:\ncallflows rechnet ausschließlich nach tatsächlichem Verbrauch ab. Es gibt keine Vorauszahlungen, Abonnements oder feste Pakete. Die Abrechnung erfolgt monatlich nachträglich basierend auf den tatsächlich verbrauchten Gesprächsminuten.\n\nMinutenpreise:\nAlle Gesprächsminuten werden zu den aktuell gültigen Minutenpreisen abgerechnet, die auf der Website einsehbar sind. Die Preise gelten einheitlich für alle Arten von Anrufen (Inbound/Outbound).\n\nTransparente Abrechnung:\nKunden erhalten am Monatsende eine detaillierte Aufstellung aller durchgeführten Anrufe mit Datum, Uhrzeit, Dauer und den entsprechenden Kosten. Die Rechnung wird per E-Mail zugestellt und ist innerhalb von 14 Tagen zu begleichen.\n\nKeine Mindestvertragslaufzeit:\nEs gibt keine Mindestvertragslaufzeit oder Mindestumsätze. Kunden zahlen ausschließlich für die tatsächlich genutzten Leistungen.\n\nPreisänderungen:\nÄnderungen der Minutenpreise werden mindestens 30 Tage im Voraus per E-Mail und über die Website kommuniziert. Preisänderungen gelten ab dem Folgemonat der Ankündigung.\n\nAbrechnungszeitraum:\nDie Abrechnung erfolgt kalendermonatlich. Anrufe werden minutengenau erfasst und abgerechnet. Angefangene Minuten werden als volle Minuten berechnet.",
       "section7Title": "7. Rechnungsstellung & Reklamationen",
       "section7Content": "Monatliche Leistungsabrechnung:\nDie Rechnungsstellung erfolgt monatlich nachträglich am Ende eines jeden Kalendermonats. Die Rechnung enthält eine detaillierte Aufstellung aller durchgeführten Anrufe mit Datum, Uhrzeit, Dauer und den entsprechenden Kosten.\n\nZustellung & Zahlungsfrist:\nRechnungen werden per E-Mail an die hinterlegte Adresse des Kunden zugestellt. Die Zahlung ist innerhalb von 14 Tagen nach Rechnungsstellung fällig.\n\nSetup-Gebühr:\nDie Setup-Gebühr für Einrichtung und Pilotmonat wird separat in Rechnung gestellt, sobald der erste Anruf über das System ausgeführt wird.\n\nRechnungskorrektur:\nSollte die erhaltene Rechnung nicht korrekt sein, kann der Kunde eine Korrektur per E-Mail an info@callflows.de anfordern. Der Anbieter wird die Anfrage prüfen und bei berechtigten Einwänden eine korrigierte Rechnung erstellen.\n\nReklamationsfrist:\nFalls der Kunde ein Problem mit einer Rechnung identifiziert, hat er 14 Tage nach Rechnungsstellung Zeit, diese zu reklamieren. Nach Ablauf dieser Frist gilt die Rechnung als akzeptiert.\n\nReklamationen sind ausschließlich per E-Mail an info@callflows.de einzureichen.",
       "section8Title": "8. Kein Widerrufsrecht",
@@ -856,7 +856,7 @@
   "cta": {
     "title": "Bereit für die Zukunft des Kundenkontakts?",
     "description": "Vereinbaren Sie ein unverbindliches Gespräch mit unseren Experten und erfahren Sie, wie callflows Ihr Unternehmen unterstützen kann.",
-    "bookingButton": "Beratung buchen",
+    "bookingButton": "Termin buchen",
     "pricingButton": "Preise ansehen",
     "benefit1": {
       "title": "Kostenlose Erstberatung",
@@ -970,7 +970,7 @@
     "cta": {
       "title": "Bereit für den nächsten Schritt?",
       "description": "Lassen Sie uns gemeinsam analysieren, wie KI-callflows Ihren Vertrieb unterstützen können",
-      "buttonText": "Beratung buchen"
+      "buttonText": "Termin buchen"
     },
     "steps": {
       "step1": {
