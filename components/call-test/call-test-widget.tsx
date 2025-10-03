@@ -128,14 +128,20 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
 
       // Direkter n8n Webhook Call (statischer Export kompatibel)
       const N8N_WEBHOOK_URL = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL || 
-        'https://callflows.app.n8n.cloud/webhook/homepage-widget'; // Fallback
+        'https://callflows.app.n8n.cloud/webhook/YOUR_WEBHOOK_ID_HERE'; // Fallback für Development
       
       // Development: Verwende Mock Response wenn Webhook nicht verfügbar
       const isDevelopment = process.env.NODE_ENV === 'development';
       
+      // Saubere JSON-Struktur für n8n - KEINE Verschachtelung
+      const finalPayload = {
+        phone: normalizedNumber,
+        name: customerName.trim()
+      };
+
       let response;
       
-      if (isDevelopment && N8N_WEBHOOK_URL.includes('homepage-widget')) {
+      if (isDevelopment && N8N_WEBHOOK_URL.includes('YOUR_WEBHOOK_ID_HERE')) {
         // Development Mock: Simuliere erfolgreichen Webhook Call
         response = {
           ok: true,
@@ -144,17 +150,20 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
         };
         // Kein künstlicher Delay - Widget ist sofort bereit
       } else {
-        // Production: n8n Webhook GET Call mit Query-Parametern
-        const webhookUrl = new URL(N8N_WEBHOOK_URL);
-        webhookUrl.searchParams.append('phone', normalizedNumber);
-        webhookUrl.searchParams.append('name', customerName.trim());
+        // Production: Echter n8n Webhook Call mit Form-Data
+        const formData = new FormData();
+        formData.append('phone', normalizedNumber);
+        formData.append('name', customerName.trim());
         
-        response = await fetch(webhookUrl.toString(), {
-          method: 'GET', // n8n erwartet GET
+        response = await fetch(N8N_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors', // Umgeht CORS-Probleme in Development
           headers: {
             'User-Agent': 'callflows-widget/1.0',
             'X-Webhook-Source': 'callflows-widget'
-          }
+            // KEIN Content-Type Header - FormData setzt das automatisch
+          },
+          body: formData,
         });
       }
 

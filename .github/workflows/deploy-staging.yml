@@ -50,8 +50,6 @@ jobs:
           NEXT_PUBLIC_APP_URL=${{ secrets.STAGING_APP_URL }}
           NEXT_PUBLIC_ENVIRONMENT=staging
           NEXT_PUBLIC_N8N_WEBHOOK_URL=${{ secrets.N8N_WEBHOOK_URL }}
-          N8N_WEBHOOK_URL=${{ secrets.N8N_WEBHOOK_URL }}
-          N8N_WEBHOOK_SECRET=${{ secrets.N8N_WEBHOOK_SECRET }}
           MICROSOFT_SMTP_HOST=${{ secrets.MICROSOFT_SMTP_HOST }}
           MICROSOFT_SMTP_PORT=${{ secrets.MICROSOFT_SMTP_PORT }}
           MICROSOFT_SMTP_USER=${{ secrets.MICROSOFT_SMTP_USER }}

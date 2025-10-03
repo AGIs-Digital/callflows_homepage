@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
       normalizedNumber = '+49' + cleanNumber.slice(1);
     }
 
-    // Webhook Payload für n8n → elevenlabs Integration
+    // Webhook Payload für n8n → ElevenLabs Integration
     const webhookPayload = {
       phoneNumber: normalizedNumber,
       customerName: customerName.trim(),
@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
       callType: 'demo_call',
       userAgent: request.headers.get('user-agent'),
       ip: ip,
-      // Zusätzliche Metadaten für n8n
+      // Zusätzliche Metadaten für Make.com
       leadData: {
         name: customerName.trim(),
         phone: normalizedNumber,
@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
       }
     };
 
-    // n8n Webhook URL für Synthflow Integration
+    // n8n Webhook URL für ElevenLabs Integration
     const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL;
     const N8N_WEBHOOK_SECRET = process.env.N8N_WEBHOOK_SECRET;
     
@@ -94,18 +94,16 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // Production: n8n Webhook Call mit Query-Parametern
-    const webhookUrl = new URL(N8N_WEBHOOK_URL);
-    webhookUrl.searchParams.append('phone', normalizedNumber);
-    webhookUrl.searchParams.append('name', customerName.trim());
-    
-    const webhookResponse = await fetch(webhookUrl.toString(), {
-      method: 'GET', // n8n erwartet GET laut Screenshot
+    // Production: n8n Webhook Call
+    const webhookResponse = await fetch(N8N_WEBHOOK_URL, {
+      method: 'POST',
       headers: {
+        'Content-Type': 'application/json',
         'User-Agent': 'callflows-website/1.0',
         'X-Webhook-Source': 'callflows-widget',
         ...(N8N_WEBHOOK_SECRET && { 'Authorization': `Bearer ${N8N_WEBHOOK_SECRET}` })
-      }
+      },
+      body: JSON.stringify(webhookPayload),
     });
 
     if (!webhookResponse.ok) {
