@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
       normalizedNumber = '+49' + cleanNumber.slice(1);
     }
 
-    // Webhook Payload für Make.com → Synthflow Integration
+    // Webhook Payload für n8n → elevenlabs Integration
     const webhookPayload = {
       phoneNumber: normalizedNumber,
       customerName: customerName.trim(),
@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
       callType: 'demo_call',
       userAgent: request.headers.get('user-agent'),
       ip: ip,
-      // Zusätzliche Metadaten für Make.com
+      // Zusätzliche Metadaten für n8n
       leadData: {
         name: customerName.trim(),
         phone: normalizedNumber,
@@ -75,11 +75,11 @@ export async function POST(request: NextRequest) {
       }
     };
 
-    // Make.com Webhook URL für Synthflow Integration
-    const MAKE_WEBHOOK_URL = process.env.MAKE_WEBHOOK_URL;
-    const MAKE_WEBHOOK_SECRET = process.env.MAKE_WEBHOOK_SECRET;
+    // n8n Webhook URL für Synthflow Integration
+    const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL;
+    const N8N_WEBHOOK_SECRET = process.env.N8N_WEBHOOK_SECRET;
     
-    if (!MAKE_WEBHOOK_URL) {
+    if (!N8N_WEBHOOK_URL) {
       // Development Mode: Simuliere erfolgreichen Anruf
       console.log('🔥 DEMO CALL TRIGGERED (DEV MODE):', webhookPayload);
       
@@ -94,16 +94,18 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // Production: Make.com Webhook Call
-    const webhookResponse = await fetch(MAKE_WEBHOOK_URL, {
-      method: 'POST',
+    // Production: n8n Webhook Call mit Query-Parametern
+    const webhookUrl = new URL(N8N_WEBHOOK_URL);
+    webhookUrl.searchParams.append('phone', normalizedNumber);
+    webhookUrl.searchParams.append('name', customerName.trim());
+    
+    const webhookResponse = await fetch(webhookUrl.toString(), {
+      method: 'GET', // n8n erwartet GET laut Screenshot
       headers: {
-        'Content-Type': 'application/json',
         'User-Agent': 'callflows-website/1.0',
         'X-Webhook-Source': 'callflows-widget',
-        ...(MAKE_WEBHOOK_SECRET && { 'Authorization': `Bearer ${MAKE_WEBHOOK_SECRET}` })
-      },
-      body: JSON.stringify(webhookPayload),
+        ...(N8N_WEBHOOK_SECRET && { 'Authorization': `Bearer ${N8N_WEBHOOK_SECRET}` })
+      }
     });
 
     if (!webhookResponse.ok) {

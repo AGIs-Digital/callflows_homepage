@@ -1,0 +1,103 @@
+## Satzstruktur
+
+## Stimme und Ton
+- Schreibe so, wie Menschen sprechen. Vermeide Firmenjargon und Marketing-Floskeln.
+- Sei selbstbewusst und direkt. Vermeide abschwächende Phrasen wie „Ich denke“, „vielleicht“ oder „könnte“.
+- Verwende Aktiv statt Passiv.
+- Verwende positive Formulierungen – sage, was etwas *ist*, statt was es *nicht ist*.
+- Sage „du“ häufiger als „wir“, wenn du externe Zielgruppen ansprichst.
+- Verwende Verkürzungen wie „ich werd’“, „kann’t“ oder „werd’ nicht“ für einen wärmeren Ton.
+
+## Spezifität und Belege
+- Sei konkret mit Fakten und Daten statt vager Superlative.
+- Untermauere Aussagen mit konkreten Beispielen oder Kennzahlen.
+- Stelle Kunden und Community-Mitglieder über Unternehmensleistungen.
+- Verwende realistische, produktbasierte Beispiele statt `foo/bar/baz` im Code.
+- Mache Inhalte greifbar, visuell und überprüfbar.
+
+## Titelgestaltung
+- Mache im Titel ein Versprechen, damit Leser genau wissen, was sie beim Klicken bekommen.
+- Gehe auf kontroverse Punkte deiner Zielgruppe ein und belege sie mit Daten (weise einsetzen, kein Clickbait).
+- Teile etwas einzigartig Hilfreiches, das Leser in wichtigen Lebensbereichen besser macht.
+- Vermeide vage Titel wie „Meine Gedanken zu XYZ“. Titel sollten Meinungen oder teilbare Fakten sein.
+- Schreibe Platzhalter-Titel zuerst, verfasse den Inhalt, und optimiere Titel am Ende.
+
+## Verbotene Wörter
+- „ein bisschen“ → entfernen
+- „ein wenig“ → entfernen
+- „eigentlich/tatsächlich“ → entfernen
+- „agil“ → entfernen
+- „wohl/angeblich“ → entfernen
+- „Unterstützung“ → „Hilfe“
+- „versuchen“ → „probieren“
+- „kampferprobt“ → entfernen
+- „Best Practices“ → „bewährte Ansätze“
+- „blitzschnell“ → „XX % schneller bauen“
+- „Business-Logik“ → entfernen
+- „kognitive Belastung“ → entfernen
+- „beginnen“ (als „commence“) → „starten“
+- „eintauchen/vertiefen“ → „hineingehen“
+- „disruptiv“ → entfernen
+- „ermöglichen/facilitieren“ → „helfen“ oder „erleichtern“
+- „bahnbrechend“ → spezifischer Nutzen
+- „großartig“ → entfernen oder konkretisieren
+- „implementieren“ → „tun“
+- „Individuum“ → „Mann“ oder „Frau“
+- „initial“ → „erste“
+- „innovativ“ → entfernen
+- „nur“ → entfernen
+- „nutzen/leverage“ → „verwenden“
+- „geschäftskritisch“ → „wichtig“
+- „modern/modernisiert“ → entfernen
+- „zahlreich“ → „viele“
+- „out of the box“ → entfernen
+- „performant“ → „schnell und zuverlässig“
+- „ziemlich/relativ/sehr/wirklich“ → entfernen
+- „bezeichnet als“ → „genannt“
+- „Restbestand“ → „Rest“
+- „robust“ → „stark“
+- „nahtlos“ → „automatisch“
+- „ausreichend“ → „genug“
+- „das“ → oft entfernbar, kontextabhängig
+- „Ding/Sache“ → sei konkret
+- „utilisieren“ → „nutzen“
+- „Webinar“ → „Online-Event“
+
+## Verbotene Phrasen
+- „Ich denke/ich glaube/wir glauben“ → direkt aussagen
+- „es scheint“ → entfernen
+- „sozusagen/irgendwie“ → entfernen
+- „ziemlich genau“ → entfernen
+- „viel/ein wenig“ → konkretisieren
+- „Von Entwicklern für Entwickler“ → entfernen
+- „Wir können es kaum erwarten, zu sehen, was du baust“ → entfernen
+- „Wir sind besessen von …“ → entfernen
+- „Die Zukunft von ___“ → entfernen
+- „Wir sind begeistert“ → „Wir freuen uns“
+- „Heute freuen wir uns, …“ → entfernen
+
+## Vermeide LLM-Muster
+- Ersetze Gedankenstriche (—) durch Semikolons, Kommas oder Satztrennungen.
+- Vermeide Antworten mit „Gute Frage!“, „Stimmt!“ oder „Lass mich dir helfen.“
+- Nutze keine Phrasen wie „Lass uns eintauchen in…“
+- Überspringe Klischee-Einstiege wie „In der heutigen schnelllebigen Welt…“
+- Vermeide „Es ist nicht nur [x], es ist [y].“
+- Keine Selbst-Disclaimer wie „Als KI…“ oder „Ich bin hier, um zu helfen.“
+- Keine Schulaufsatz-Schlussfolgerungen wie „Abschließend,“ „Insgesamt,“ „Zusammenfassend.“
+- Keine nummerierten Listen, wenn Aufzählungspunkte reichen.
+- Nicht mit „Hoffe, das hilft!“ oder ähnlichen Floskeln schließen.
+- Übergangswörter wie „Außerdem,“ „Zusätzlich,“ „Des Weiteren“ sparsam nutzen.
+- Ersetze „Abschließend“ durch klare Aussagen.
+- Vermeide Weichmacher wie „könnte,“ „vielleicht,“ „potenziell“ außer bei echter Unsicherheit.
+- Keine Stapelung solcher Phrasen („könnte möglicherweise“).
+- Keine symmetrisch-aufgezählten Absätze wie „Erstens… Zweitens…“
+- Vermeide Titel-Schreibweise; benutze normale Satzschreibung.
+- Entferne Unicode-Artefakte beim Copy-Paste (z. B. „“ oder geschützte Leerzeichen).
+- Verwende `` statt `‘`.
+- Entferne leere Zitations-Platzhalter wie [1].
+
+## Zeichensetzung und Formatierung
+- Nutze das Oxford-Komma konsequent.
+- Verwende Ausrufezeichen sparsam.
+- Sätze dürfen mit „Aber“ oder „Und“ beginnen – aber nicht zu oft.
+- Verwende Punkte statt Kommas, wenn es die Klarheit verbessert.

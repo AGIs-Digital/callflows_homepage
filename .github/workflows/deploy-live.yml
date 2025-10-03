@@ -48,12 +48,13 @@ jobs:
           cat > .env << EOL
           NEXT_PUBLIC_APP_URL=${{ secrets.PRODUCTION_APP_URL }}
           NEXT_PUBLIC_ENVIRONMENT=production
-          NEXT_PUBLIC_MAKE_WEBHOOK_URL=${{ secrets.MAKE_WEBHOOK_URL }}
-          SMTP_HOST=${{ secrets.SMTP_HOST }}
-          SMTP_PORT=${{ secrets.SMTP_PORT }}
-          SMTP_USER=${{ secrets.SMTP_USER }}
-          SMTP_PASS=${{ secrets.SMTP_PASS }}
-          SMTP_FROM=${{ secrets.SMTP_FROM }}
+          NEXT_PUBLIC_N8N_WEBHOOK_URL=${{ secrets.N8N_WEBHOOK_URL }}
+          N8N_WEBHOOK_URL=${{ secrets.N8N_WEBHOOK_URL }}
+          N8N_WEBHOOK_SECRET=${{ secrets.N8N_WEBHOOK_SECRET }}
+          MICROSOFT_SMTP_HOST=${{ secrets.MICROSOFT_SMTP_HOST }}
+          MICROSOFT_SMTP_PORT=${{ secrets.MICROSOFT_SMTP_PORT }}
+          MICROSOFT_SMTP_USER=${{ secrets.MICROSOFT_SMTP_USER }}
+          MICROSOFT_SMTP_PASS=${{ secrets.MICROSOFT_SMTP_PASS }}
           CONTACT_EMAIL=${{ secrets.CONTACT_EMAIL }}
           FTP_SERVER=${{ secrets.PRODUCTION_FTP_SERVER }}
           FTP_USERNAME=${{ secrets.PRODUCTION_FTP_USERNAME }}

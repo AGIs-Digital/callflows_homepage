@@ -126,22 +126,16 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
         normalizedNumber = '+49' + normalizedNumber.slice(1);
       }
 
-      // Direkter Make.com Webhook Call (statischer Export kompatibel)
-      const MAKE_WEBHOOK_URL = process.env.NEXT_PUBLIC_MAKE_WEBHOOK_URL || 
-        'https://hook.eu1.make.com/YOUR_WEBHOOK_ID_HERE'; // Fallback für Development
+      // Direkter n8n Webhook Call (statischer Export kompatibel)
+      const N8N_WEBHOOK_URL = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL || 
+        'https://callflows.app.n8n.cloud/webhook/homepage-widget'; // Fallback
       
       // Development: Verwende Mock Response wenn Webhook nicht verfügbar
       const isDevelopment = process.env.NODE_ENV === 'development';
       
-      // Saubere JSON-Struktur für Make.com - KEINE Verschachtelung
-      const finalPayload = {
-        phone: normalizedNumber,
-        name: customerName.trim()
-      };
-
       let response;
       
-      if (isDevelopment && MAKE_WEBHOOK_URL.includes('YOUR_WEBHOOK_ID_HERE')) {
+      if (isDevelopment && N8N_WEBHOOK_URL.includes('homepage-widget')) {
         // Development Mock: Simuliere erfolgreichen Webhook Call
         response = {
           ok: true,
@@ -150,20 +144,17 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
         };
         // Kein künstlicher Delay - Widget ist sofort bereit
       } else {
-        // Production: Echter Make.com Webhook Call mit Form-Data
-        const formData = new FormData();
-        formData.append('phone', normalizedNumber);
-        formData.append('name', customerName.trim());
+        // Production: n8n Webhook GET Call mit Query-Parametern
+        const webhookUrl = new URL(N8N_WEBHOOK_URL);
+        webhookUrl.searchParams.append('phone', normalizedNumber);
+        webhookUrl.searchParams.append('name', customerName.trim());
         
-        response = await fetch(MAKE_WEBHOOK_URL, {
-          method: 'POST',
-          mode: 'no-cors', // Umgeht CORS-Probleme in Development
+        response = await fetch(webhookUrl.toString(), {
+          method: 'GET', // n8n erwartet GET
           headers: {
             'User-Agent': 'callflows-widget/1.0',
             'X-Webhook-Source': 'callflows-widget'
-            // KEIN Content-Type Header - FormData setzt das automatisch
-          },
-          body: formData,
+          }
         });
       }
 
@@ -191,7 +182,7 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
         
 
       } else {
-        throw new Error(`Make.com Webhook Error: ${response.status}`);
+        throw new Error(`n8n Webhook Error: ${response.status}`);
       }
     } catch (error) {
       // Error handling ohne console logs für production
