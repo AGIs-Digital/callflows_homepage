@@ -69,9 +69,5 @@ export const STATIC_OPTIMIZATIONS = `
 <link rel="preload" href="/images/callflows_brand_no_claim.webp" as="image">
 
 /* DNS Prefetch für externe Ressourcen */
-<link rel="dns-prefetch" href="//widget.synthflow.ai">
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
-
-/* Preconnect für kritische externe Domains */
-<link rel="preconnect" href="https://widget.synthflow.ai" crossorigin>
 `;

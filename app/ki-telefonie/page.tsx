@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
 import { Check, Phone, Bot, Zap, TrendingUp, Users, Clock, Euro } from "lucide-react";
 import Head from "next/head";
 import Link from "next/link";
@@ -22,8 +23,14 @@ export default function KITelefoniePage() {
         <SiteHeader />
         
         {/* Hero Section */}
-        <section className="pt-24 pb-16">
+        <section className="pt-8 pb-16">
           <div className="container max-w-6xl">
+            {/* Breadcrumbs */}
+            <BreadcrumbSEO 
+              items={[
+                { name: "KI Telefonie", url: "https://callflows.de/ki-telefonie" }
+              ]}
+            />
             <div className="text-center mb-12">
               <Badge variant="outline" className="mb-4">
                 <Bot className="w-4 h-4 mr-2" />

@@ -2,6 +2,7 @@
 import Head from "next/head";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
 import { useI18n } from "@/lib/i18n";
 
 export default function GlossarIndex() {
@@ -15,8 +16,14 @@ export default function GlossarIndex() {
       <main className="bg-background">
         <SiteHeader />
         <div className="relative overflow-hidden">
-        <section className="py-20 bg-gradient-to-b from-secondary/25 via-secondary/35 to-secondary/40">
+        <section className="py-8 pb-20 bg-gradient-to-b from-secondary/25 via-secondary/35 to-secondary/40">
           <div className="container max-w-6xl">
+            {/* Breadcrumbs */}
+            <BreadcrumbSEO 
+              items={[
+                { name: "Glossar", url: "https://callflows.de/glossar" }
+              ]}
+            />
             <div className="relative rounded-2xl border bg-card/60 backdrop-blur p-10 md:p-14">
               <div className="absolute -top-24 -right-24 h-64 w-64 rotate-12 bg-gradient-to-br from-primary/20 via-accent/20 to-primary/10 blur-3xl rounded-full" />
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">{t('glossary.kiCallflow.title')}</h1>
