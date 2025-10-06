@@ -6,11 +6,11 @@ export const pilotPackage = {
   subtitle: "Individueller KI-callflow mit Einrichtung",
   badge: "Risikofrei starten",
   setupPrice: 2490,
-  includedMinutes: 1000,
+  includedMinutes: 500,
   highlights: [
     "Keine Vertragslaufzeit, kein Risiko",
     "Vollständige Einrichtung und Konfiguration",
-    "1.000 KI-Minuten inklusive",
+    "500 KI-Minuten inklusive",
     "Individuelle Anpassung an Ihr Unternehmen",
     "Persönliche Betreuung während der Pilotphase",
     "Go-Live Unterstützung"
@@ -60,11 +60,11 @@ export const monthlyPlans: PricingPlan[] = [
     type: "pilot",
     subtitle: "Individueller KI-callflow ohne Risiko",
     price: 2490,
-    minutesIncluded: 1000,
+    minutesIncluded: 500,
     highlights: [
       "Keine Vertragslaufzeit, kein Risiko",
       "Vollständige Einrichtung inklusive",
-      "1.000 KI-Minuten enthalten",
+      "500 KI-Minuten enthalten",
       "Individuelle Konfiguration",
       "Persönliche Betreuung"
     ],

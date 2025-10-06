@@ -126,49 +126,22 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
         normalizedNumber = '+49' + normalizedNumber.slice(1);
       }
 
-      // Direkter n8n Webhook Call (statischer Export kompatibel)
-      const N8N_WEBHOOK_URL = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL || 
-        'https://callflows.app.n8n.cloud/webhook/YOUR_WEBHOOK_ID_HERE'; // Fallback für Development
-      
-      // Development: Verwende Mock Response wenn Webhook nicht verfügbar
-      const isDevelopment = process.env.NODE_ENV === 'development';
-      
-      // Saubere JSON-Struktur für n8n - KEINE Verschachtelung
-      const finalPayload = {
-        phone: normalizedNumber,
-        name: customerName.trim()
-      };
+      // Call über Next.js API-Route mit Rate-Limiting und Validierung
+      const response = await fetch('/api/call-test', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          phoneNumber: normalizedNumber,
+          customerName: customerName.trim(),
+          timestamp: new Date().toISOString()
+        }),
+      });
 
-      let response;
-      
-      if (isDevelopment && N8N_WEBHOOK_URL.includes('YOUR_WEBHOOK_ID_HERE')) {
-        // Development Mock: Simuliere erfolgreichen Webhook Call
-        response = {
-          ok: true,
-          status: 200,
-          json: async () => ({ success: true, callId: `dev_${Date.now()}` })
-        };
-        // Kein künstlicher Delay - Widget ist sofort bereit
-      } else {
-        // Production: Echter n8n Webhook Call mit Form-Data
-        const formData = new FormData();
-        formData.append('phone', normalizedNumber);
-        formData.append('name', customerName.trim());
-        
-        response = await fetch(N8N_WEBHOOK_URL, {
-          method: 'POST',
-          mode: 'no-cors', // Umgeht CORS-Probleme in Development
-          headers: {
-            'User-Agent': 'callflows-widget/1.0',
-            'X-Webhook-Source': 'callflows-widget'
-            // KEIN Content-Type Header - FormData setzt das automatisch
-          },
-          body: formData,
-        });
-      }
+      const result = await response.json();
 
-      if (response.ok || (response.status === 0 && !isDevelopment)) {
-        // Status 0 bei no-cors Mode ist normal und bedeutet Request wurde gesendet
+      if (response.ok && result.success) {
         setCallStatus('success');
         
         // Speichere erfolgreiche Daten
@@ -188,10 +161,9 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
             setCustomerName('');
           }
         }, 15000);
-        
-
       } else {
-        throw new Error(`n8n Webhook Error: ${response.status}`);
+        // Zeige spezifische Fehlermeldung von der API
+        throw new Error(result.error || 'Anruf konnte nicht gestartet werden');
       }
     } catch (error) {
       // Error handling ohne console logs für production

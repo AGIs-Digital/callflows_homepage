@@ -7,7 +7,7 @@ import { MinuteTiersTable } from "@/components/pricing/minute-tiers-table";
 import { PricingIntro } from "@/components/pricing/pricing-intro";
 import { ROICalculatorV2 } from "@/components/pricing/roi-calculator-v2";
 import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
-import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
+import { PricingHeroWrapper } from "./pricing-hero-wrapper";
 import deTranslations from "@/translations/de.json";
 
 // Server-Side Metadata für SEO
@@ -28,7 +28,7 @@ const pricingSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "KI-callflow Pilotmonat",
-  "description": "Individueller KI-callflow mit Einrichtung und 1.000 inkludierten Minuten. Keine Vertragslaufzeit, kein Risiko.",
+  "description": "Individueller KI-callflow mit Einrichtung und 500 inkludierten Minuten. Keine Vertragslaufzeit, kein Risiko.",
   "brand": {
     "@type": "Brand",
     "name": "callflows"
@@ -40,7 +40,7 @@ const pricingSchema = {
     "priceValidUntil": "2025-12-31",
     "availability": "https://schema.org/InStock",
     "url": "https://callflows.de/pricing",
-    "description": "Einmalige Setup-Gebühr für Pilotmonat mit 1.000 KI-Minuten inklusive"
+    "description": "Einmalige Setup-Gebühr für Pilotmonat mit 500 KI-Minuten inklusive"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -61,32 +61,8 @@ export default function PricingPage() {
       <main className="bg-background">
       <SiteHeader />
       <div>
-        {/* Hero Header with Main Title */}
-        <div className="pt-8 pb-16 bg-gradient-to-b from-secondary via-secondary/55 to-tertiary/35">
-          <div className="container max-w-6xl mx-auto">
-            <BreadcrumbSEO 
-              items={[
-                { name: deTranslations.pricing.hero.breadcrumb, url: "https://callflows.de/pricing" }
-              ]}
-            />
-            <div className="text-center mt-8">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary dark:text-white mb-4 leading-tight">
-                {deTranslations.pricing.hero.title}
-              </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-accent mb-6">
-                {deTranslations.pricing.hero.subtitle}
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-                {deTranslations.pricing.hero.description}
-              </p>
-              <div className="bg-green-100 dark:bg-green-900/20 rounded-lg p-4 inline-block">
-                <p className="text-green-800 dark:text-green-200 font-semibold">
-                  {deTranslations.pricing.hero.benefits}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Hero Header with Main Title - Client-Side for i18n */}
+        <PricingHeroWrapper />
         
         {/* 1. Pilotmonat-Angebot */}
         <PilotPackageCard />

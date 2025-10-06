@@ -122,7 +122,7 @@ export function PilotPackageCard() {
           
           <CardFooter className="pt-2 pb-6">
             <BookingButton 
-              buttonText={pilotPackage.cta}
+              buttonText={t('pilotPackage.startPilotMonth')}
               className="w-full"
               variant="default"
               size="lg"

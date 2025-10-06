@@ -165,7 +165,7 @@
       "highlights": [
         "No contract term, no risk",
         "Complete setup and configuration", 
-        "1,000 AI minutes included",
+        "500 AI minutes included",
         "Individual adaptation to your company",
         "Personal support during pilot phase",
         "Go-live support"
@@ -921,7 +921,7 @@
     "valueText": "Value:",
     "pilotFeatures": {
       "feature1": "Complete setup and configuration",
-      "feature2": "1000 AI minutes included", 
+      "feature2": "500 AI minutes included", 
       "feature3": "Individual adaptation to your company"
     }
   },

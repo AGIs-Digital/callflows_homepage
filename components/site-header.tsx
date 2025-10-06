@@ -119,7 +119,7 @@ export function SiteHeader() {
               >
                 <Link href="/login">
                   <User className="h-4 w-4 mr-2" />
-                  Anmelden
+                  {t('common.login')}
                 </Link>
               </Button>
             )}

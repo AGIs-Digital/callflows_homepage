@@ -31,6 +31,7 @@ export function ContactForm({
   planType
 }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
   const [isSpamProtectionValid, setIsSpamProtectionValid] = useState(false);
   const { toast } = useToast();
   const { isAllowed, getRemainingTime } = useRateLimit(3, 10 * 60 * 1000);
@@ -118,7 +119,7 @@ export function ContactForm({
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('/api/contact.php', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -146,6 +147,14 @@ export function ContactForm({
         });
       }
 
+      // Button-Animation: Grün + Text ändern
+      setIsSubmitSuccess(true);
+      
+      // Reset nach 3 Sekunden
+      setTimeout(() => {
+        setIsSubmitSuccess(false);
+      }, 3000);
+      
       form.reset({
         name: hasConsent ? data.name : '',
         email: hasConsent ? data.email : '',
@@ -247,10 +256,25 @@ export function ContactForm({
 
       <Button
         type="submit"
-        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-        disabled={isSubmitting || !form.formState.isValid || !isSpamProtectionValid}
+        className={`w-full transition-all duration-500 ${
+          isSubmitSuccess 
+            ? 'bg-green-500 hover:bg-green-500 text-white' 
+            : 'bg-primary hover:bg-primary/90 text-primary-foreground'
+        }`}
+        disabled={isSubmitting || !form.formState.isValid || !isSpamProtectionValid || isSubmitSuccess}
       >
-        {isSubmitting ? <LoadingSpinner /> : "Nachricht senden"}
+        {isSubmitting ? (
+          <LoadingSpinner />
+        ) : isSubmitSuccess ? (
+          <span className="flex items-center gap-2">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            Nachricht gesendet
+          </span>
+        ) : (
+          "Nachricht senden"
+        )}
       </Button>
     </form>
   );

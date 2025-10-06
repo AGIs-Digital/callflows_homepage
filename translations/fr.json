@@ -165,7 +165,7 @@
       "highlights": [
         "Aucune durée de contrat, aucun risque",
         "Configuration et réglage complets", 
-        "1 000 minutes IA incluses",
+        "500 minutes IA incluses",
         "Adaptation individuelle à votre entreprise",
         "Support personnel pendant la phase pilote",
         "Support de mise en service"
@@ -921,7 +921,7 @@
     "valueText": "Valeur:",
     "pilotFeatures": {
       "feature1": "Configuration et mise en place complètes",
-      "feature2": "1000 minutes IA incluses",
+      "feature2": "500 minutes IA incluses",
       "feature3": "Adaptation individuelle à votre entreprise"
     }
   },

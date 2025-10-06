@@ -3,8 +3,7 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { ContactForm } from "@/components/contact-form";
 import { BookingButton } from "@/components/booking/booking-button";
 import { useI18n } from "@/lib/i18n";
 import { Mail, Phone, MapPin, MessageSquare, Calendar } from "lucide-react";
@@ -69,46 +68,7 @@ export default function KontaktPage() {
                   {t('contact.formDescription')}
                 </p>
                 
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
-                      {t('contact.nameLabel')}
-                    </label>
-                    <Input 
-                      id="name" 
-                      placeholder={t('contact.namePlaceholder')} 
-                      className="bg-background/50 backdrop-blur-sm border-border/50 focus:border-primary/50 transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
-                      {t('contact.emailLabel')}
-                    </label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder={t('contact.emailPlaceholder')} 
-                      className="bg-background/50 backdrop-blur-sm border-border/50 focus:border-primary/50 transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
-                      {t('contact.messageLabel')}
-                    </label>
-                    <Textarea 
-                      id="message" 
-                      placeholder={t('contact.messagePlaceholder')} 
-                      rows={4}
-                      className="bg-background/50 backdrop-blur-sm border-border/50 focus:border-primary/50 transition-colors resize-none"
-                    />
-                  </div>
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 transition-all duration-300 hover:scale-105"
-                  >
-                    {t('contact.sendButton')}
-                  </Button>
-                </form>
+                <ContactForm source="contact" />
               </div>
               
               {/* Booking Card */}
