@@ -230,10 +230,10 @@ ${data.message}
     const transporter = createMailTransporter();
     
     // Verwende info@callflows.de als Absender (muss mit SMTP-Auth übereinstimmen)
-    const senderEmail = process.env.MICROSOFT_SMTP_USER || 'info@callflows.de';
+    const senderEmail = process.env.MICROSOFT_SMTP_USER || 'kontakt@callflows.de';
     
     const mailOptions = {
-      from: `"callflows.de Kontaktformular" <${senderEmail}>`,
+      from: `"Kontaktformular" <${senderEmail}>`,
       to: recipientEmail,
       replyTo: data.email,
       subject: `${subject} - ${data.name}`,

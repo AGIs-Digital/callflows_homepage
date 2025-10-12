@@ -274,7 +274,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $headers = [
         'MIME-Version: 1.0',
         'Content-Type: text/html; charset=UTF-8',
-        'From: Kontaktformular <noreply@callflows.de>',
+        'From: Kontaktformular <info@callflows.de>',
         'Reply-To: ' . $data['email'],
         'X-Mailer: PHP/' . phpversion()
     ];
