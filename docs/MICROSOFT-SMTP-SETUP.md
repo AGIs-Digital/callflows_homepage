@@ -9,10 +9,12 @@ Folgende Umgebungsvariablen müssen konfiguriert werden:
 ```env
 MICROSOFT_SMTP_HOST=smtp.office365.com
 MICROSOFT_SMTP_PORT=587
-MICROSOFT_SMTP_USER=deine-email@callflows.de
+MICROSOFT_SMTP_USER=info@callflows.de
 MICROSOFT_SMTP_PASS=dein-app-passwort
 CONTACT_EMAIL=info@callflows.de
 ```
+
+**⚠️ WICHTIG:** `MICROSOFT_SMTP_USER` muss ein existierendes Postfach sein (z.B. `info@callflows.de` oder `kontakt@callflows.de`). Die E-Mails werden von dieser Adresse gesendet. Verwende KEINE fiktive Adressen wie `noreply@`!
 
 ## 🔐 Wo finde ich die Microsoft SMTP-Credentials?
 
@@ -140,6 +142,114 @@ CONTACT_EMAIL=info@callflows.de
 **Lösung:**
 1. Verwende eine echte E-Mail-Adresse deiner Domain als `MICROSOFT_SMTP_USER`
 2. Prüfe die Exchange Relay-Einstellungen
+
+---
+
+## 🛡️ E-Mails landen im Junk-Ordner? So behebst du das!
+
+Wenn deine E-Mails im Spam/Junk-Ordner landen, liegt das meist an fehlender E-Mail-Authentifizierung. Hier die wichtigsten Maßnahmen:
+
+### 1. SPF-Record konfigurieren
+
+SPF (Sender Policy Framework) authentifiziert, dass deine Domain berechtigt ist, E-Mails über Microsoft zu senden.
+
+**Wo:** DNS-Einstellungen deines Domain-Providers (z.B. IONOS, Strato, GoDaddy)
+
+**TXT-Record hinzufügen:**
+```
+Name: @
+Typ: TXT
+Wert: v=spf1 include:spf.protection.outlook.com -all
+```
+
+**Prüfen:**
+```bash
+nslookup -type=txt callflows.de
+```
+
+### 2. DKIM aktivieren
+
+DKIM (DomainKeys Identified Mail) signiert deine E-Mails digital.
+
+**Im Microsoft 365 Admin Center:**
+1. Gehe zu [Microsoft 365 Defender](https://security.microsoft.com)
+2. Navigiere zu **"E-Mail & Zusammenarbeit"** → **"Richtlinien & Regeln"** → **"Bedrohungsrichtlinien"**
+3. Wähle **"DKIM"**
+4. Wähle deine Domain (`callflows.de`)
+5. Aktiviere DKIM-Signierung
+6. Kopiere die bereitgestellten DNS-Records (CNAME) und füge sie bei deinem Domain-Provider hinzu
+
+**Beispiel CNAME-Records:**
+```
+Name: selector1._domainkey
+Typ: CNAME
+Wert: selector1-callflows-de._domainkey.callflows.onmicrosoft.com
+
+Name: selector2._domainkey
+Typ: CNAME
+Wert: selector2-callflows-de._domainkey.callflows.onmicrosoft.com
+```
+
+### 3. DMARC-Policy einrichten
+
+DMARC (Domain-based Message Authentication, Reporting & Conformance) gibt Empfängern Anweisungen, wie mit nicht-authentifizierten E-Mails umgegangen werden soll.
+
+**TXT-Record hinzufügen:**
+```
+Name: _dmarc
+Typ: TXT
+Wert: v=DMARC1; p=quarantine; rua=mailto:info@callflows.de; ruf=mailto:info@callflows.de; fo=1
+```
+
+**Erklärung:**
+- `p=quarantine`: Nicht-authentifizierte E-Mails werden als Spam markiert
+- `rua=mailto:info@callflows.de`: Aggregate Reports an diese Adresse
+- `ruf=mailto:info@callflows.de`: Forensische Reports an diese Adresse
+
+### 4. Reverse DNS (PTR) prüfen
+
+Falls du einen eigenen Mail-Server betreibst, stelle sicher, dass der Reverse DNS korrekt konfiguriert ist.
+
+### 5. Absenderadresse muss existieren
+
+**WICHTIG:** Die E-Mail-Adresse in `MICROSOFT_SMTP_USER` muss ein echtes, existierendes Postfach sein!
+
+✅ **Richtig:**
+- `info@callflows.de` (existiert)
+- `kontakt@callflows.de` (existiert)
+
+❌ **Falsch:**
+- `noreply@callflows.de` (existiert nicht → landet im Junk!)
+- `contact@callflows.de` (existiert nicht)
+
+### 6. Warm-up der Domain
+
+Neue Domains haben keine Sender-Reputation. Starte mit wenigen E-Mails und steigere langsam:
+
+- **Woche 1:** Max. 50 E-Mails/Tag
+- **Woche 2:** Max. 100 E-Mails/Tag
+- **Woche 3:** Max. 200 E-Mails/Tag
+- **Ab Woche 4:** Normal-Betrieb
+
+### 7. E-Mail-Content optimieren
+
+Vermeide typische Spam-Trigger:
+- Zu viele Großbuchstaben: ❌ "JETZT KAUFEN!!!"
+- Zu viele Links (max. 2-3 Links pro E-Mail)
+- Spam-Wörter: "kostenlos", "Gewinner", "Klicke hier"
+- Zu viele Bilder, zu wenig Text
+
+### 8. Tools zum Testen
+
+**SPF/DKIM/DMARC prüfen:**
+- [MXToolbox](https://mxtoolbox.com/SuperTool.aspx)
+- [dmarcian](https://dmarcian.com/domain-checker/)
+- [mail-tester.com](https://www.mail-tester.com/)
+
+**Spam-Score testen:**
+1. Sende eine Test-E-Mail an: `test@mail-tester.com`
+2. Öffne [mail-tester.com](https://www.mail-tester.com/) und prüfe den Score
+3. Ziel: **10/10 Punkte**
 
 ---
 

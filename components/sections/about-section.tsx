@@ -12,63 +12,91 @@ export function AboutSection() {
   const getFeatures = () => {
     const features = {
       de: [
-        "Individuelle Prozessmodellierung",
-        "Persönliches Prompting & Finetuning",
-        "Transparente Minutenabrechnung ohne versteckte Kosten",
-        "Regelmäßige Check-ins zur Optimierung",
-        "Setup, Support und Telefonnummer inklusive"
+        {
+          title: "Alles aus einer Hand",
+          description: "Vom ersten Anruf bis zum Abschluss – wir übernehmen alles. Inklusive Datenaufbereitung und konkrete Handlungsanweisungen für Ihr Team."
+        },
+        {
+          title: "Ihr Team wird geschult",
+          description: "Unsere Vertriebsexperten zeigen Ihren Mitarbeitern, wie sie die KI-Informationen optimal für Folgekontakte nutzen."
+        },
+        {
+          title: "Transparent & Fair",
+          description: "Minutenabrechnung, keine Laufzeiten, ständige Verbesserungen – ohne dass Sie danach fragen müssen."
+        }
       ],
       en: [
-        "Individual process modeling",
-        "Personal prompting & fine-tuning",
-        "Transparent per-minute billing without hidden costs",
-        "Regular check-ins for optimization",
-        "Setup, support, and phone number included"
+        {
+          title: "Everything from one source",
+          description: "From the first call to closing – we handle everything. Including data processing and concrete action instructions for your team."
+        },
+        {
+          title: "Your team gets trained",
+          description: "Our sales experts show your employees how to optimally use AI information for follow-up contacts."
+        },
+        {
+          title: "Transparent & Fair",
+          description: "Per-minute billing, no contract terms, continuous improvements – without you having to ask."
+        }
       ],
       fr: [
-        "Modélisation de processus individuelle",
-        "Prompting personnel & ajustement fin",
-        "Facturation transparente à la minute sans coûts cachés",
-        "Check-ins réguliers pour l'optimisation",
-        "Configuration, support et numéro de téléphone inclus"
+        {
+          title: "Tout en un",
+          description: "Du premier appel à la conclusion – nous nous occupons de tout. Y compris le traitement des données et des instructions d'action concrètes pour votre équipe."
+        },
+        {
+          title: "Votre équipe est formée",
+          description: "Nos experts en vente montrent à vos employés comment utiliser de manière optimale les informations IA pour les contacts de suivi."
+        },
+        {
+          title: "Transparent & Équitable",
+          description: "Facturation à la minute, pas de durées contractuelles, améliorations continues – sans que vous ayez à demander."
+        }
       ],
       es: [
-        "Modelado de procesos individual",
-        "Prompting personal y ajuste fino",
-        "Facturación transparente por minuto sin costos ocultos",
-        "Check-ins regulares para optimización",
-        "Configuración, soporte y número de teléfono incluidos"
+        {
+          title: "Todo de una fuente",
+          description: "Desde la primera llamada hasta el cierre – manejamos todo. Incluyendo procesamiento de datos e instrucciones de acción concretas para su equipo."
+        },
+        {
+          title: "Su equipo se capacita",
+          description: "Nuestros expertos en ventas muestran a sus empleados cómo usar óptimamente la información de IA para contactos de seguimiento."
+        },
+        {
+          title: "Transparente y Justo",
+          description: "Facturación por minuto, sin términos contractuales, mejoras continuas – sin que tenga que preguntar."
+        }
       ]
     };
     
     return features[locale] || features.de;
   };
 
-  const getMissionPoints = () => {
-    const missions = {
-      de: [
-        "KI greifbar machen.",
-        "Kundenkontakt automatisieren – ohne Qualität zu verlieren.",
-        "Unternehmen dabei helfen, schneller, schlanker und gleichzeitig menschlicher zu kommunizieren."
-      ],
-      en: [
-        "Make AI tangible.",
-        "Automate customer contact – without losing quality.",
-        "Help companies communicate faster, leaner, and more humanely at the same time."
-      ],
-      fr: [
-        "Rendre l'IA tangible.",
-        "Automatiser le contact client – sans perdre en qualité.",
-        "Aider les entreprises à communiquer plus rapidement, plus efficacement et plus humainement à la fois."
-      ],
-      es: [
-        "Hacer la IA tangible.",
-        "Automatizar el contacto con el cliente sin perder calidad.",
-        "Ayudar a las empresas a comunicarse más rápido, más eficientemente y más humanamente al mismo tiempo."
-      ]
+  const getMissionContent = () => {
+    const content = {
+      de: {
+        headline: "Neue Vertriebsstandards setzen.",
+        how: "Wir übernehmen Routine-Anrufe – automatisiert und rund um die Uhr. Ihr Team konzentriert sich auf das Wesentliche.",
+        benefit: "Entlastete Mitarbeiter, mehr qualifizierte Leads und messbar höhere Abschlussquoten."
+      },
+      en: {
+        headline: "Setting new sales standards.",
+        how: "We handle routine calls – automated and around the clock. Your team focuses on what matters.",
+        benefit: "Relieved employees, more qualified leads, and measurably higher conversion rates."
+      },
+      fr: {
+        headline: "Établir de nouveaux standards de vente.",
+        how: "Nous prenons en charge les appels de routine – automatisés et disponibles 24/7. Votre équipe se concentre sur l'essentiel.",
+        benefit: "Employés soulagés, plus de leads qualifiés et taux de conversion mesurables plus élevés."
+      },
+      es: {
+        headline: "Establecer nuevos estándares de ventas.",
+        how: "Nos encargamos de las llamadas de rutina – automatizadas y disponibles las 24 horas. Su equipo se concentra en lo esencial.",
+        benefit: "Empleados aliviados, más leads cualificados y tasas de conversión mediblemente más altas."
+      }
     };
     
-    return missions[locale] || missions.de;
+    return content[locale] || content.de;
   };
   
   return (
@@ -77,16 +105,16 @@ export function AboutSection() {
         {/* Breadcrumbs */}
         <BreadcrumbSEO 
           items={[
-            { name: "Über uns", url: "https://callflows.de/about" }
+            { name: t('nav.about'), url: "https://callflows.de/about" }
           ]}
         />
         
         {/* Zentriertes Logo mit Claim als Überschrift */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <Image
             src="/images/callflows_brand_small.png"
-            alt="callflows - KI-callflows für Unternehmen"
-            title="callflows Logo mit Claim"
+            alt={t('about.logoAlt')}
+            title={t('about.logoTitle')}
             width={300}
             height={120}
             className="mx-auto"
@@ -116,54 +144,79 @@ export function AboutSection() {
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden mt-6 max-w-md">
               <Image
                 src="/images/team.webp"
-                alt="callflows Gründer - Experten für KI-Voice-Agents im Mittelstand"
-                title="Das Team von callflows – Experten für KI‑callflows"
+                alt={t('about.teamImageAlt')}
+                title={t('about.teamImageTitle')}
                 fill
                 className="object-cover"
               />
+            </div>
+            
+            {/* Team-Beschreibung als Box unter das Bild */}
+            <div className="bg-warm-white dark:bg-gray-800 p-6 rounded-xl shadow-sm text-center mt-6 max-w-md">
+              <p className="text-lg text-black/75 dark:text-foreground font-medium">
+                <strong className="text-primary">callflows</strong> {t('about.teamDescription')}
+              </p>
             </div>
           </div>
 
           {/* Rechte Spalte - Mission & Features */}
           <div className="space-y-8">
             {/* Unsere Mission zuerst */}
-            <div className="bg-warm-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
-              <h3 className="text-2xl font-bold text-primary dark:text-primary mb-4">
-                {t('about.mission')}
-              </h3>
-              <ul className="space-y-3">
-                {getMissionPoints().map((point, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <span className="text-primary mt-1">👉</span>
-                    <span className="text-black/75 dark:text-foreground">{point}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="bg-warm-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-l-4 border-primary">
+              <div className="mb-6">
+                <span className="text-lg font-bold text-accent dark:text-accent uppercase tracking-wider">
+                  {t('about.mission')}
+                </span>
+                <h3 className="text-2xl font-bold text-primary dark:text-primary mt-2 mb-6">
+                  {getMissionContent().headline}
+                </h3>
+              </div>
+              
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-bold text-primary dark:text-primary mb-2">
+                    {t('about.how')}
+                  </h4>
+                  <p className="text-black/80 dark:text-foreground leading-relaxed">
+                    {getMissionContent().how}
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-bold text-primary dark:text-primary mb-2">
+                    {t('about.benefit')}
+                  </h4>
+                  <p className="text-black/80 dark:text-foreground leading-relaxed">
+                    {getMissionContent().benefit}
+                  </p>
+                </div>
+              </div>
             </div>
             
             {/* Was uns besonders macht danach */}
-            <div className="bg-warm-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
-              <h3 className="text-2xl font-bold text-primary dark:text-primary mb-4">
+            <div className="bg-warm-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-bold text-primary dark:text-primary mb-6">
                 {t('about.special')}
               </h3>
-              <p className="text-black/75 dark:text-foreground mb-4">
-                {t('about.specialDescription')}
-              </p>
               
-              <ul className="space-y-3 mt-4">
-                {getFeatures().map((item, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <Check size={18} className="text-primary mt-1 flex-shrink-0" />
-                    <span className="text-medium text-black/75 dark:text-foreground">{item}</span>
-                  </li>
+              <div className="space-y-5">
+                {getFeatures().map((feature, index) => (
+                  <div key={index} className="flex items-start gap-4 p-4 bg-white dark:bg-gray-700 rounded-lg border border-gray-100 dark:border-gray-600">
+                    <div className="flex-shrink-0 w-7 h-7 bg-primary rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">{index + 1}</span>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-primary dark:text-primary mb-2">
+                        {feature.title}
+                      </h4>
+                      <p className="text-black/75 dark:text-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
                 ))}
-              </ul>
-              
-              <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
-                <p className="text-xl text-black/75 dark:text-foreground font-medium">
-                <strong className="text-primary">callflows</strong> {t('about.teamDescription')}
-                </p>
               </div>
+              
             </div>
           </div>
         </div>

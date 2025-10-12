@@ -29,6 +29,9 @@ const pricingSchema = {
   "@type": "Product",
   "name": "KI-callflow Pilotmonat",
   "description": "Individueller KI-callflow mit Einrichtung und 500 inkludierten Minuten. Keine Vertragslaufzeit, kein Risiko.",
+  "image": [
+    "https://callflows.de/images/callflows_brand_small.webp"
+  ],
   "brand": {
     "@type": "Brand",
     "name": "callflows"
@@ -46,7 +49,8 @@ const pricingSchema = {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
     "reviewCount": "12"
-  }
+  },
+  "category": "Software > Künstliche Intelligenz > Conversational Automation"
 };
 
 export default function PricingPage() {

@@ -125,13 +125,26 @@ export async function POST(request: NextRequest) {
     // HTML E-Mail Template
     const htmlContent = `
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>${subject}</title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:AllowPNG/>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
 </head>
-<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4;">
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f4f4; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
     <table role="presentation" style="width: 100%; border-collapse: collapse;">
         <tr>
             <td style="padding: 20px 0; text-align: center; background-color: #004AAD;">
@@ -216,8 +229,11 @@ ${data.message}
     // E-Mail senden
     const transporter = createMailTransporter();
     
+    // Verwende info@callflows.de als Absender (muss mit SMTP-Auth übereinstimmen)
+    const senderEmail = process.env.MICROSOFT_SMTP_USER || 'info@callflows.de';
+    
     const mailOptions = {
-      from: `"callflows Kontaktformular" <${process.env.MICROSOFT_SMTP_USER || 'noreply@callflows.de'}>`,
+      from: `"callflows.de Kontaktformular" <${senderEmail}>`,
       to: recipientEmail,
       replyTo: data.email,
       subject: `${subject} - ${data.name}`,
@@ -236,7 +252,14 @@ ${data.message}
 ---
 Gesendet über callflows.de am ${new Date().toLocaleString('de-DE')}
 IP: ${ip}
-      `.trim()
+      `.trim(),
+      // Explizite Headers für HTML-E-Mails + Outlook-Kompatibilität
+      headers: {
+        'X-Mailer': 'callflows.de Contact Form',
+        'X-Priority': '3',
+        'X-MSMail-Priority': 'Normal',
+        'Importance': 'normal'
+      }
     };
 
     try {
