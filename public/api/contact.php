@@ -182,16 +182,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Dynamic subject based on source
-    $subjectMap = [
-        'starter' => 'Anfrage Starter',
-        'business' => 'Anfrage Business',
-        'enterprise' => 'Anfrage Enterprise',
-        'contact' => 'Anfrage Kontakt'
-    ];
-    
-    $source = isset($data['source']) ? $data['source'] : 'contact';
-    $subject = $subjectMap[$source] ?? 'Neue Kontaktanfrage';
+    // Subject für alle Anfragen einheitlich
+    $subject = 'Neue Kontaktanfrage von callflows.de';
 
     $to = 'info@callflows.de';
     
@@ -209,7 +201,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <head>
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>{$subject}</title>
         <style>
             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -232,12 +223,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </head>
     <body>
         <div class='container'>
-            <div class='header'>
-                <img src='{$logoSrc}' alt='callflows Logo' style='max-width: 200px;'>
-            </div>
             <div class='content'>
-                <h2 style='color: #004AAD; margin-bottom: 30px;'>{$subject}</h2>
-                
                 <div class='field'>
                     <div class='field-label'>Name:</div>
                     <div>{$data['name']}</div>
@@ -259,8 +245,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class='field-label'>Nachricht:</div>
                     <div style='white-space: pre-line; line-height: 1.5;'>{$data['message']}</div>
                 </div>
-                
-                <div class='source-tag'>{$subject}</div>
             </div>
             <div class='footer'>
                 <p>Diese E-Mail wurde über das Kontaktformular auf callflows.de gesendet.</p>
@@ -274,7 +258,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $headers = [
         'MIME-Version: 1.0',
         'Content-Type: text/html; charset=UTF-8',
-        'From: Kontaktformular <noreply@callflows.de>',
+        'From: Kontaktformular <info@callflows.de>',
         'Reply-To: ' . $data['email'],
         'X-Mailer: PHP/' . phpversion()
     ];

@@ -53,16 +53,20 @@
     "phonePlaceholder": "+34 XXX XXX XXX",
     "phoneHint": "Le llamamos inmediatamente - gratis.",
     "privacyHint": "🔒 Sus datos son tratados de forma confidencial",
-    "buttonStart": "Iniciar demo en vivo",
+    "buttonStart": "Recibir llamada ahora",
     "buttonStarting": "Iniciando llamada...",
     "statusCalling": "Conectando su llamada...",
     "statusCallingDesc": "Por favor, tenga paciencia - la llamada puede tardar hasta 10 segundos en conectarse.",
     "statusSuccess": "¡Llamada iniciada exitosamente!",
-    "statusSuccessDesc": "🔔 Su teléfono sonará en unos segundos. ¡Mantente preparado!",
-    "statusSuccessHint": "💬 ¡Hable con nuestro agente IA y pruebe todas las funciones! La llamada es completamente gratuita.",
+    "statusSuccessDesc": "Su teléfono sonará en breve – manténgase preparado.",
+    "statusSuccessHint": "Hable con Carla, nuestra colega digital! La llamada es gratuita.",
     "statusError": "Error de llamada",
     "statusErrorDesc": "Por favor verifique su número de teléfono e inténtelo nuevamente.",
-    "buttonRetry": "Intentar de nuevo"
+    "buttonRetry": "Intentar de nuevo",
+    "nameError": "El nombre debe tener al menos 2 caracteres",
+    "phoneError": "Por favor ingrese un número de teléfono válido",
+    "phoneValid": "Detectado",
+    "rateLimitExceeded": "Demasiadas solicitudes. Por favor espere unos minutos."
   },
   "pricing": {
     "hero": {

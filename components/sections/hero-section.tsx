@@ -17,7 +17,7 @@ const WavyBackground = dynamic(() => import("@/components/ui/wavy-background").t
   loading: () => null
 });
 
-const CallTestWidget = dynamic(() => import("@/components/call-test/call-test-widget").then(mod => ({ default: mod.CallTestWidget })), {
+const WidgetCall = dynamic(() => import("@/components/widget-call/widget-call").then(mod => ({ default: mod.WidgetCall })), {
   ssr: false,
   loading: () => (
     <div className="w-full max-w-md mx-auto lg:mx-0 border border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg p-6 animate-pulse">
@@ -136,7 +136,7 @@ export function HeroSection() {
                   </div>
                 </div>
               }>
-                <CallTestWidget className="w-full call-test-widget" />
+                <WidgetCall className="w-full widget-call" />
               </Suspense>
             </div>
           </div>

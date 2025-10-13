@@ -125,6 +125,23 @@ jobs:
           npm install --quiet ftp-deploy
           node scripts/deploy.js
 
+      - name: 🔧 Deploy Environment Variables
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            cd callflows.de/
+            # Erstelle .env für Client-Side Environment Variables
+            cat > .env << EOL
+            NEXT_PUBLIC_APP_URL=${{ secrets.PRODUCTION_APP_URL }}
+            NEXT_PUBLIC_ENVIRONMENT=production
+            NEXT_PUBLIC_N8N_WEBHOOK_URL=${{ secrets.N8N_WEBHOOK_URL }}
+            EOL
+            echo "Environment variables deployed to production"
+
       - name: 🔒 Protect admin area with Basic Auth
         uses: appleboy/ssh-action@v1.0.3
         with:

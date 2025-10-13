@@ -8,21 +8,24 @@ import { Phone, PlayCircle, CheckCircle, AlertCircle, Loader2 } from "@/lib/icon
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
 import { useAutofill } from "@/hooks/use-autofill";
+import { useWidgetCall } from "./use-widget-call";
+import { WidgetCallProps, CallStatus, StatusContent } from "./widget-call.types";
 
-interface CallTestWidgetProps {
-  className?: string;
-}
-
-type CallStatus = 'idle' | 'calling' | 'success' | 'error';
-
-export function CallTestWidget({ className }: CallTestWidgetProps) {
+export function WidgetCall({ className }: WidgetCallProps) {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [customerName, setCustomerName] = useState("");
-  const [callStatus, setCallStatus] = useState<CallStatus>('idle');
-  const [isLoading, setIsLoading] = useState(false);
   const { t } = useI18n();
   
-  // Autofill Hook - verwendet jetzt Cookie-Consent
+  const {
+    callStatus,
+    isLoading,
+    startCall,
+    validatePhoneNumber,
+    validateName,
+    checkRateLimit
+  } = useWidgetCall();
+  
+  // Autofill Hook - verwendet Cookie-Consent
   const {
     autofillData,
     hasConsent,
@@ -30,7 +33,7 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
     saveAutofillData,
     getAutocompleteProps,
     hasStoredData
-  } = useAutofill({ storageKey: 'ki-callflow-widget-data' });
+  } = useAutofill({ storageKey: 'widget-call-data' });
 
   // Lade gespeicherte Daten beim Mount
   useEffect(() => {
@@ -42,7 +45,7 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
     }
   }, [autofillData, hasConsent, autofillLoading]);
 
-  // Auto-save bei vorhandenem Consent (kein Banner mehr notwendig)
+  // Auto-save bei vorhandenem Consent
   useEffect(() => {
     if (hasConsent && !autofillLoading && (customerName.length > 2 || phoneNumber.length > 5)) {
       const timer = setTimeout(() => {
@@ -55,25 +58,21 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
     }
   }, [customerName, phoneNumber, hasConsent, autofillLoading, saveAutofillData]);
 
-  // Telefonnummer formatieren (deutsch)
+  // Telefonnummer formatieren (international)
   const formatPhoneNumber = (value: string) => {
-    // Nur Zahlen und + erlauben
-    const cleaned = value.replace(/[^\d+]/g, '');
+    // Nur Zahlen, + und Leerzeichen erlauben
+    const cleaned = value.replace(/[^\d+\s]/g, '');
     
-    // Deutsche Formatierung: +49 XXX XXXXXXXX (bis zu 11 Ziffern nach +49)
-    if (cleaned.startsWith('+49')) {
-      const numbers = cleaned.slice(3);
-      if (numbers.length <= 3) return `+49 ${numbers}`;
-      if (numbers.length <= 11) return `+49 ${numbers.slice(0, 3)} ${numbers.slice(3)}`;
-      return `+49 ${numbers.slice(0, 3)} ${numbers.slice(3, 11)}`;
-    }
-    
-    // Wenn mit 0 anfängt, zu +49 konvertieren (bis zu 11 Ziffern nach 0)
-    if (cleaned.startsWith('0')) {
-      const numbers = cleaned.slice(1);
-      if (numbers.length <= 3) return `+49 ${numbers}`;
-      if (numbers.length <= 11) return `+49 ${numbers.slice(0, 3)} ${numbers.slice(3)}`;
-      return `+49 ${numbers.slice(0, 3)} ${numbers.slice(3, 11)}`;
+    // Einfache Formatierung: Gruppiere Ziffern nach +XX
+    if (cleaned.startsWith('+')) {
+      const parts = cleaned.split(' ');
+      if (parts.length === 1) {
+        // Erste Gruppe: +XX XXX
+        if (cleaned.length > 3) {
+          return cleaned.slice(0, 3) + ' ' + cleaned.slice(3);
+        }
+      }
+      return cleaned;
     }
     
     return cleaned;
@@ -99,85 +98,41 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
     }
   };
 
-  const isValidPhoneNumber = (phone: string) => {
-    // Validierung für deutsche Nummern
-    const cleanNumber = phone.replace(/\s/g, '');
-    return /^\+49\d{10,11}$/.test(cleanNumber) || /^0\d{9,10}$/.test(cleanNumber);
-  };
-
-  const isValidName = (name: string) => {
-    // Name muss mindestens 2 Zeichen haben und darf nur Buchstaben, Leerzeichen und Bindestriche enthalten
-    return name.trim().length >= 2 && /^[a-zA-ZäöüÄÖÜß\s\-]+$/.test(name.trim());
-  };
-
   const handleStartCall = async () => {
-    if (!isValidPhoneNumber(phoneNumber) || !isValidName(customerName)) {
-      setCallStatus('error');
+    const phoneValidation = validatePhoneNumber(phoneNumber);
+    const nameValidation = validateName(customerName);
+    
+    if (!phoneValidation.isValid || !nameValidation) {
       return;
     }
 
-    setIsLoading(true);
-    setCallStatus('calling');
+    // Rate Limit prüfen
+    if (!checkRateLimit()) {
+      alert(t('widget.rateLimitExceeded') || 'Zu viele Anfragen. Bitte warten Sie einige Minuten.');
+      return;
+    }
 
     try {
-      // Nummer normalisieren (zu +49 Format)
-      let normalizedNumber = phoneNumber.replace(/\s/g, '');
-      if (normalizedNumber.startsWith('0')) {
-        normalizedNumber = '+49' + normalizedNumber.slice(1);
-      }
-
-      // Call über Next.js API-Route mit Rate-Limiting und Validierung
-      const response = await fetch('/api/call-test', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          phoneNumber: normalizedNumber,
-          customerName: customerName.trim(),
-          timestamp: new Date().toISOString()
-        }),
+      await startCall({
+        customer_name: customerName,
+        customer_phonenumber: phoneNumber
       });
-
-      const result = await response.json();
-
-      if (response.ok && result.success) {
-        setCallStatus('success');
-        
-        // Speichere erfolgreiche Daten
-        if (hasConsent) {
-          saveAutofillData({ 
-            name: customerName.trim(), 
-            phone: normalizedNumber 
-          });
-        }
-        
-        // Reset nach 15 Sekunden (genug Zeit für Anruf-Erwartung)
-        setTimeout(() => {
-          setCallStatus('idle');
-          if (!hasConsent) {
-            // Nur löschen wenn kein Autofill aktiv
-            setPhoneNumber('');
-            setCustomerName('');
-          }
-        }, 15000);
-      } else {
-        // Zeige spezifische Fehlermeldung von der API
-        throw new Error(result.error || 'Anruf konnte nicht gestartet werden');
+      
+      // Speichere erfolgreiche Daten
+      if (hasConsent) {
+        saveAutofillData({ 
+          name: customerName.trim(), 
+          phone: phoneValidation.normalized 
+        });
       }
+      
     } catch (error) {
-      // Error handling ohne console logs für production
-      setCallStatus('error');
-      // Reset nach 8 Sekunden (mehr Zeit zum Lesen der Fehlermeldung)
-      setTimeout(() => {
-        setCallStatus('idle');
-      }, 8000);
-    } finally {
-      setIsLoading(false);
+      // Error wird bereits im Hook behandelt
+      console.error('Call failed:', error);
     }
   };
 
-  const getStatusContent = () => {
+  const getStatusContent = (): StatusContent => {
     switch (callStatus) {
       case 'calling':
         return {
@@ -211,6 +166,9 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
   };
 
   const statusContent = getStatusContent();
+  const phoneValidation = validatePhoneNumber(phoneNumber);
+  const nameValidation = validateName(customerName);
+  const isFormValid = phoneValidation.isValid && nameValidation && !isLoading;
 
   return (
     <Card className={cn(
@@ -232,6 +190,20 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
       
       {callStatus === 'idle' && (
         <CardContent className="space-y-4">
+          {/* Honeypot-Feld (unsichtbar für Menschen) */}
+          <input
+            type="text"
+            name="website"
+            style={{ 
+              position: 'absolute', 
+              left: '-9999px', 
+              opacity: 0, 
+              pointerEvents: 'none' 
+            }}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+          
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium">
               {t('widget.nameLabel')}
@@ -245,6 +217,11 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
               className="text-lg"
               {...getAutocompleteProps('name')}
             />
+            {customerName && !nameValidation && (
+              <p className="text-xs text-red-500">
+                {t('widget.nameError') || 'Name muss mindestens 2 Zeichen haben'}
+              </p>
+            )}
           </div>
           
           <div className="space-y-2">
@@ -261,6 +238,16 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
               {...getAutocompleteProps('phone')}
               inputMode="tel"
             />
+            {phoneNumber && !phoneValidation.isValid && (
+              <p className="text-xs text-red-500">
+                {t('widget.phoneError') || 'Bitte geben Sie eine gültige Telefonnummer ein'}
+              </p>
+            )}
+            {phoneValidation.isValid && phoneValidation.countryCode && (
+              <p className="text-xs text-green-600">
+                {t('widget.phoneValid')}: {phoneValidation.countryCode}
+              </p>
+            )}
           </div>
 
           <div className="text-center">
@@ -271,7 +258,7 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
           
           <Button
             onClick={handleStartCall}
-            disabled={!isValidPhoneNumber(phoneNumber) || !isValidName(customerName) || isLoading}
+            disabled={!isFormValid}
             className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg font-semibold"
             size="lg"
           >
@@ -300,7 +287,7 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
             )}
             {callStatus === 'error' && (
               <Button
-                onClick={() => setCallStatus('idle')}
+                onClick={() => window.location.reload()}
                 variant="outline"
                 size="sm"
                 className="mt-3"

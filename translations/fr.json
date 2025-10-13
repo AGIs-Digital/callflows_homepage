@@ -53,16 +53,20 @@
     "phonePlaceholder": "+33 X XX XX XX XX",
     "phoneHint": "Nous vous appelons immédiatement - gratuitement.",
     "privacyHint": "🔒 Vos données sont traitées de manière confidentielle",
-    "buttonStart": "Démarrer la démo en direct",
+    "buttonStart": "Recevoir un appel maintenant",
     "buttonStarting": "Démarrage de l'appel...",
     "statusCalling": "Connexion de votre appel...",
     "statusCallingDesc": "Veuillez patienter - l'appel peut prendre jusqu'à 10 secondes pour se connecter.",
     "statusSuccess": "Appel lancé avec succès !",
-    "statusSuccessDesc": "🔔 Votre téléphone sonnera dans quelques secondes. Tenez-vous prêt !",
-    "statusSuccessHint": "💬 Parlez avec notre agent IA et testez toutes les fonctionnalités ! L'appel est entièrement gratuit.",
+    "statusSuccessDesc": "Votre téléphone va sonner dans un instant – tenez-vous prêt.",
+    "statusSuccessHint": "Parlez avec Carla, notre collègue numérique ! L'appel est gratuit.",
     "statusError": "Erreur d'appel",
     "statusErrorDesc": "Veuillez vérifier votre numéro de téléphone et réessayer.",
-    "buttonRetry": "Réessayer"
+    "buttonRetry": "Réessayer",
+    "nameError": "Le nom doit contenir au moins 2 caractères",
+    "phoneError": "Veuillez saisir un numéro de téléphone valide",
+    "phoneValid": "Détecté",
+    "rateLimitExceeded": "Trop de demandes. Veuillez attendre quelques minutes."
   },
   "pricing": {
     "hero": {

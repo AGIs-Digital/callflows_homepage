@@ -53,16 +53,20 @@
     "phonePlaceholder": "+49 XXX XXXXXXX",
     "phoneHint": "We'll call you immediately - free of charge.",
     "privacyHint": "🔒 Your data is treated confidentially",
-    "buttonStart": "Start Live Demo",
+    "buttonStart": "Get a call now",
     "buttonStarting": "Starting call...",
     "statusCalling": "Connecting your call...",
     "statusCallingDesc": "Please be patient - the call may take up to 10 seconds to connect.",
     "statusSuccess": "Call successfully initiated!",
-    "statusSuccessDesc": "🔔 Your phone will ring in a few seconds. Please stand by!",
-    "statusSuccessHint": "💬 Talk to our AI agent and test all features! The call is completely free.",
+    "statusSuccessDesc": "Your phone will ring shortly – please stand by.",
+    "statusSuccessHint": "Talk to Carla, our digital colleague! The call is free.",
     "statusError": "Call error",
     "statusErrorDesc": "Please check your phone number and try again.",
-    "buttonRetry": "Try again"
+    "buttonRetry": "Try again",
+    "nameError": "Name must be at least 2 characters",
+    "phoneError": "Please enter a valid phone number",
+    "phoneValid": "Detected",
+    "rateLimitExceeded": "Too many requests. Please wait a few minutes."
   },
   "pricing": {
     "hero": {
