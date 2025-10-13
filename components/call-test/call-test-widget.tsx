@@ -55,27 +55,35 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
     }
   }, [customerName, phoneNumber, hasConsent, autofillLoading, saveAutofillData]);
 
-  // Telefonnummer formatieren (deutsch)
+  // Telefonnummer formatieren (international)
   const formatPhoneNumber = (value: string) => {
     // Nur Zahlen und + erlauben
     const cleaned = value.replace(/[^\d+]/g, '');
     
-    // Deutsche Formatierung: +49 XXX XXXXXXXX (bis zu 11 Ziffern nach +49)
+    // Maximal 15 Ziffern (E.164 Standard für internationale Nummern)
+    const maxDigits = 15;
+    const digitsOnly = cleaned.replace(/\+/g, '');
+    if (digitsOnly.length > maxDigits) {
+      // Kürze auf maximal 15 Ziffern
+      const trimmed = '+' + digitsOnly.slice(0, maxDigits);
+      return trimmed;
+    }
+    
+    // Deutsche Nummern mit 0 zu +49 konvertieren
+    if (cleaned.startsWith('0') && !cleaned.startsWith('00')) {
+      const numbers = cleaned.slice(1);
+      if (numbers.length <= 3) return `+49 ${numbers}`;
+      return `+49 ${numbers.slice(0, 3)} ${numbers.slice(3)}`;
+    }
+    
+    // Deutsche Formatierung: +49 XXX XXXXXXXX
     if (cleaned.startsWith('+49')) {
       const numbers = cleaned.slice(3);
       if (numbers.length <= 3) return `+49 ${numbers}`;
-      if (numbers.length <= 11) return `+49 ${numbers.slice(0, 3)} ${numbers.slice(3)}`;
-      return `+49 ${numbers.slice(0, 3)} ${numbers.slice(3, 11)}`;
+      return `+49 ${numbers.slice(0, 3)} ${numbers.slice(3)}`;
     }
     
-    // Wenn mit 0 anfängt, zu +49 konvertieren (bis zu 11 Ziffern nach 0)
-    if (cleaned.startsWith('0')) {
-      const numbers = cleaned.slice(1);
-      if (numbers.length <= 3) return `+49 ${numbers}`;
-      if (numbers.length <= 11) return `+49 ${numbers.slice(0, 3)} ${numbers.slice(3)}`;
-      return `+49 ${numbers.slice(0, 3)} ${numbers.slice(3, 11)}`;
-    }
-    
+    // Internationale Nummern: einfach zurückgeben
     return cleaned;
   };
 
@@ -100,9 +108,22 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
   };
 
   const isValidPhoneNumber = (phone: string) => {
-    // Validierung für deutsche Nummern
+    // Validierung für internationale Telefonnummern (E.164 Standard)
     const cleanNumber = phone.replace(/\s/g, '');
-    return /^\+49\d{10,11}$/.test(cleanNumber) || /^0\d{9,10}$/.test(cleanNumber);
+    
+    // Internationale Nummer: + gefolgt von 7-15 Ziffern
+    // Beispiele: +1234567890, +44123456789, +4915209971998
+    if (/^\+\d{7,15}$/.test(cleanNumber)) {
+      return true;
+    }
+    
+    // Deutsche Nummer ohne +: 0 gefolgt von 5-12 Ziffern (wird zu +49 konvertiert)
+    // Beispiele: 04771841, 015209971998
+    if (/^0\d{5,12}$/.test(cleanNumber)) {
+      return true;
+    }
+    
+    return false;
   };
 
   const isValidName = (name: string) => {
@@ -126,16 +147,15 @@ export function CallTestWidget({ className }: CallTestWidgetProps) {
         normalizedNumber = '+49' + normalizedNumber.slice(1);
       }
 
-      // Call über Next.js API-Route mit Rate-Limiting und Validierung
-      const response = await fetch('/api/call-test', {
+      // Call über PHP-Bridge mit Rate-Limiting und Validierung
+      const response = await fetch('/api/call-test.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           phoneNumber: normalizedNumber,
-          customerName: customerName.trim(),
-          timestamp: new Date().toISOString()
+          customerName: customerName.trim()
         }),
       });
 

@@ -4,6 +4,9 @@ RewriteEngine On
 # Basis-URL setzen
 RewriteBase /
 
+# n8n Webhook-URL für Call-Test Widget
+SetEnv N8N_WEBHOOK_URL "https://callflows.app.n8n.cloud/webhook/homepage-widget"
+
 # Erlaube direkte Zugriffe auf statische Dateien und wichtige Pfade
 RewriteCond %{REQUEST_URI} \.(js|css|svg|jpg|jpeg|webp|gif|ico|woff2)$ [OR]
 RewriteCond %{REQUEST_URI} ^/api/ [OR]

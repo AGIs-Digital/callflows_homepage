@@ -182,16 +182,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Dynamic subject based on source
-    $subjectMap = [
-        'starter' => 'Anfrage Starter',
-        'business' => 'Anfrage Business',
-        'enterprise' => 'Anfrage Enterprise',
-        'contact' => 'Anfrage Kontakt'
-    ];
-    
-    $source = isset($data['source']) ? $data['source'] : 'contact';
-    $subject = $subjectMap[$source] ?? 'Neue Kontaktanfrage';
+    // Subject für alle Anfragen einheitlich
+    $subject = 'Neue Kontaktanfrage von callflows.de';
 
     $to = 'info@callflows.de';
     
