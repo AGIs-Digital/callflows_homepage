@@ -71,12 +71,12 @@ export function CTASection() {
             variants={itemVariants}
           >
             
-            <BookingButton 
-              buttonText={t('cta.bookingButton')} 
-              size="lg" 
-              className="bg-tertiary hover:bg-[#FFB703]/90 text-white font-semibold px-8 py-4 text-lg gap-2"
-              bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
-            />
+        <BookingButton
+          buttonText={t('cta.bookingButton')}
+          size="lg"
+          className="bg-accent hover:bg-accent/90 text-gray-900 font-semibold px-8 py-4 text-lg gap-2"
+          bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
+        />
             
             <Link href="/pricing">
               <Button size="lg" variant="outline" className="gap-2">

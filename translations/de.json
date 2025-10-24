@@ -65,7 +65,6 @@
     "buttonRetry": "Nochmal versuchen",
     "nameError": "Name muss mindestens 2 Zeichen haben",
     "phoneError": "Bitte geben Sie eine gültige Telefonnummer ein",
-    "phoneValid": "Erkannt",
     "rateLimitExceeded": "Zu viele Anfragen. Bitte warten Sie einige Minuten."
   },
   "roiCalculator": {
@@ -134,7 +133,7 @@
       "leads": "Leads",
       "deals": "Deals",
       "perYear": "/Jahr",
-      "deals": "Abschlüsse",
+      "dealsClosed": "Abschlüsse",
       "actualDealsMonth": "actual deals/month",
       "closingRateQualifiedLeads": "Abschlussrate qualifizierter Leads",
       "perMonth": "/Monat"
@@ -173,10 +172,10 @@
     "secondAccurate": "Sekundengenau",
     "monthlyBilling": "Monatliche",
     "basicFee": "Grundgebühr",
-    "billing": "Abrechnung", 
+    "billingMethod": "Abrechnung", 
     "invoicing": "Rechnungsstellung",
-    "upTo": "Bei",
-    "from": "Ab"
+    "upToAmount": "Bei",
+    "fromAmount": "Ab"
   },
   "pilotPackage": {
     "title": "Ihr Einstieg in die KI-Telefonie",
@@ -493,20 +492,20 @@
     "answer1": "Ein KI‑Callflow ist ein digitaler Telefonassistent, der eingehende Anrufe automatisch entgegennimmt, versteht und führt. Anders als bei herkömmlichen Telefonanlagen mit starren Menüs können KI‑Voice‑Agents natürliche Gespräche führen, die Bedürfnisse der Anrufer erkennen und Aufgaben wie Terminvereinbarung, Lead‑Qualifizierung oder Support eigenständig erledigen. Möglich wird das durch eine Kombination aus Spracherkennung, natürlicher Sprachverarbeitung und lernenden Algorithmen. Der KI‑Callflow greift auf Ihre bestehenden Kalender‑ oder CRM‑Systeme zu, prüft Verfügbarkeiten oder ruft Kundendaten ab – so entstehen flüssige Gespräche, die sich anfühlen wie mit einem menschlichen Mitarbeiter.",
     "question2": "Welche Vorteile bieten KI‑Voice‑Agents gegenüber klassischen Telefonanlagen?",
     "answer2": "KI‑Telefonagenten sind rund um die Uhr erreichbar und können mehrere Anrufe gleichzeitig bearbeiten. Dadurch gehen keine Telefonate verloren, auch nicht während Stoßzeiten oder außerhalb der Geschäftszeiten. Unternehmen sparen Personalkosten für Empfangs‑ oder Call‑Center‑Mitarbeiter und reduzieren gleichzeitig Wartezeiten. Da jeder Anrufer sofort bedient wird, verbessert sich die Kundenerfahrung und potenzielle Kunden werden nicht frustriert. Gleichzeitig qualifiziert die KI Leads vor und sammelt relevante Daten, damit sich Ihr Vertriebsteam auf die vielversprechendsten Kontakte konzentrieren kann.",
-    "question3": "Für welche Unternehmen ist KI‑callflows geeignet?",
+    "question3": "Für welche Unternehmen sind KI‑callflows geeignet?",
     "answer3": "Unser Service ist besonders attraktiv für mittelständische Unternehmen, Personaldienstleister und Vertriebsteams mit hohem Anrufaufkommen. Überall dort, wo Standardanrufe wertvolle Kapazitäten blockieren – etwa bei Terminvereinbarungen, Vorqualifizierung von Bewerbern, Kaltakquise oder einfachen Support‑Anfragen – kann ein KI‑Callflow sinnvoll eingesetzt werden. Auch Konzerne profitieren von der skalierbaren, transparenten Telefon‑Automatisierung, wenn sie ihre internen Ressourcen schonen möchten.",
     "question4": "Muss ich technisches Know‑how oder KI‑Expertise haben?",
-    "answer4": "Nein. KI‑callflows ist ein schlüsselfertiger Komplett‑Service. Wir konzipieren die Gesprächslogik gemeinsam mit Ihnen, richten Ihren individuellen Callflow ein und übernehmen den laufenden Betrieb. Sie benötigen keine eigenen IT‑Ressourcen und müssen sich nicht mit Trainingsdaten oder komplexen KI‑Modellen befassen. Unser Team kümmert sich darum, dass der KI‑Voice‑Agent zuverlässig funktioniert und kontinuierlich dazu lernt.",
+    "answer4": "Nein. callflows ist ein schlüsselfertiger Komplett‑Service. Wir konzipieren die Gesprächslogik gemeinsam mit Ihnen, richten Ihren individuellen Callflow ein und übernehmen den laufenden Betrieb. Sie benötigen keine eigenen IT‑Ressourcen und müssen sich nicht mit Trainingsdaten oder komplexen KI‑Modellen befassen. Unser Team kümmert sich darum, dass der KI‑Voice‑Agent zuverlässig funktioniert und kontinuierlich dazu lernt.",
     "question5": "Wie schnell kann ich starten und was passiert im Pilotmonat?",
-    "answer5": "Der Einstieg erfolgt in drei Schritten: Kick‑off & Analyse – wir besprechen Ihre Prozesse, Ziele und Use Cases. Einrichtung & Pilotmonat – für einmalig 2.490 € entwickeln wir Ihren individuellen Callflow, testen ihn mit 1.000 inkludierten Minuten und optimieren die Dialoge. Go‑Live & Skalierung – nach dem Pilotmonat entscheiden Sie über das Gesprächsvolumen; die Abrechnung erfolgt transparent nach Minuten. Typischerweise dauert der Pilotmonat vier Wochen, in denen wir gemeinsam Erfahrungswerte sammeln und die KI passgenau auf Ihren Vertrieb ausrichten.",
+    "answer5": "Der Einstieg erfolgt in drei Schritten: Kick‑off & Analyse – wir besprechen Ihre Prozesse, Ziele und Use Cases. Einrichtung & Pilotmonat – für einmalig 2.490 € entwickeln wir Ihren individuellen Callflow, testen ihn mit 500 inkludierten Minuten und optimieren die Dialoge. Go‑Live & Skalierung – nach dem Pilotmonat entscheiden Sie über das Gesprächsvolumen; die Abrechnung erfolgt transparent nach Minuten. Typischerweise dauert der Pilotmonat vier Wochen, in denen wir gemeinsam Erfahrungswerte sammeln und die KI passgenau auf Ihren Vertrieb ausrichten.",
     "question6": "Wie funktioniert die Abrechnung und welche Kosten fallen an?",
     "answer6": "Sie zahlen nur das, was Sie auch nutzen – es gibt keine Vertragslaufzeit. Nach dem Pilotmonat rechnen wir minutengenau am Monatsende ab. Die Staffel: 0,99 € pro Minute bis 1.000 Minuten, 0,94 €/min von 1.001 bis 2.000 Minuten, 0,89 €/min von 2.001 bis 5.000 Minuten, 0,84 €/min von 5.001 bis 10.000 Minuten, 0,79 €/min ab 10.001 Minuten. Weitere Volumen erhalten Sie auf Anfrage. Es gibt keine versteckten Gebühren, keine Grundgebühr und keine automatische Vertragsverlängerung – Sie können jederzeit pausieren oder stoppen.",
     "question7": "Gibt es eine Mindestvertragslaufzeit oder Risiken?",
-    "answer7": "Nein. Unser Modell ist bewusst risikolos gestaltet: keine Laufzeiten, keine Kündigungsfristen, reine Nutzungsgebühr. Nach dem Pilotmonat können Sie frei entscheiden, ob und in welchem Umfang Sie KI‑callflows weiter nutzen möchten. Dadurch behalten Sie die volle Kostenkontrolle.",
+    "answer7": "Nein. Unser Modell ist bewusst risikolos gestaltet: keine Laufzeiten, keine Kündigungsfristen, reine Nutzungsgebühr. Nach dem Pilotmonat können Sie frei entscheiden, ob und in welchem Umfang Sie callflows weiter nutzen möchten. Dadurch behalten Sie die volle Kostenkontrolle.",
     "question8": "Wie ist es um Datenschutz und DSGVO‑Konformität bestellt?",
     "answer8": "Datenschutz hat oberste Priorität. Unsere KI‑Infrastruktur ist vollständig DSGVO‑konform und in Deutschland gehostet. Alle Gesprächsdaten werden verschlüsselt übertragen und gespeichert. Auf Wunsch können Aufzeichnungen und Transkripte für Trainings‑ oder Dokumentationszwecke aktiviert oder deaktiviert werden. Persönliche Daten werden ausschließlich zur Erfüllung des vereinbarten Zwecks verwendet und nicht für allgemeine Modelltrainings genutzt. Wir halten uns an gesetzliche Aufbewahrungsfristen und schulen unser Team regelmäßig im Datenschutz.",
     "question9": "Lässt sich der KI‑Callflow an unsere Systeme und Prozesse anpassen?",
-    "answer9": "Ja. Ein entscheidender Vorteil von KI‑callflows ist die hohe Integrationsfähigkeit und Anpassbarkeit. Die KI kann Kalender‑ oder CRM‑Systeme anzapfen, um Termine zu buchen oder Kundendaten zu aktualisieren. Sie können Begrüßungen, Dialog‑Flows und Entscheidungsregeln nach Ihren Bedürfnissen gestalten. Je besser wir Ihre Abläufe kennen, desto nahtloser fügt sich der Callflow in Ihre Vertriebs‑ oder Recruiting‑Prozesse ein.",
+    "answer9": "Ja. Ein entscheidender Vorteil von callflows ist die hohe Integrationsfähigkeit und Anpassbarkeit. Die KI kann Kalender‑ oder CRM‑Systeme anzapfen, um Termine zu buchen oder Kundendaten zu aktualisieren. Sie können Begrüßungen, Dialog‑Flows und Entscheidungsregeln nach Ihren Bedürfnissen gestalten. Je besser wir Ihre Abläufe kennen, desto nahtloser fügt sich der Callflow in Ihre Vertriebs‑ oder Recruiting‑Prozesse ein.",
     "question10": "Welche Sprachen und Stimmen werden unterstützt?",
     "answer10": "Unser System nutzt hochqualitative Sprachsynthese, die viele Stimmen in unterschiedlichen Stilen unterstützt. Die Gespräche klingen natürlich und passen sich Ihrem Markenauftritt an. Wir starten mit Deutsch und Englisch; auf Wunsch können weitere Sprachen integriert werden. Für jede Sprache stehen mehrere Stimmen (männlich/weiblich) zur Auswahl, die sich in Tonlage und Ausdruck unterscheiden.",
     "question11": "Was passiert, wenn die KI einmal nicht weiterkommt?",
@@ -514,7 +513,7 @@
     "question12": "Welche Unterstützung bekomme ich während und nach der Einrichtung?",
     "answer12": "Von der ersten Bedarfsanalyse bis zum laufenden Betrieb begleiten wir Sie persönlich. Im Pilotmonat stehen wir Ihnen bei der Erstellung der Gesprächslogik zur Seite und passen diese anhand erster Ergebnisse an. Auch nach dem Go‑Live überwachen wir die Leistung, stellen Berichte bereit und optimieren Ihren Callflow kontinuierlich. Sie haben einen festen Ansprechpartner, der Ihre Fragen beantwortet und bei technischen oder strategischen Anpassungen unterstützt.",
     "cta": {
-      "title": "Weitere Fragen zu KI-callflows?",
+      "title": "Weitere Fragen zu callflows?",
       "description": "Unser Expertenteam steht Ihnen gerne für eine persönliche Beratung zur Verfügung.",
       "contactButton": "Kontakt aufnehmen",
       "pricingButton": "Preise ansehen"
@@ -564,7 +563,7 @@
     "privacy": "Datenschutz",
     "terms": "AGB",
     "imprint": "Impressum",
-    "description": "KI‑callflows orchestrieren Stimme, Logik, Daten & Aktionen – Ihr Conversation Flow Ende‑zu‑Ende.",
+    "description": "callflows orchestriert Stimmen, KI-Logiken, Automationen & Aktionen - conversational flow Ende-zu-Ende.",
     "product": "Produkt",
     "pricing": "Preise",
     "faq": "FAQ",
@@ -719,7 +718,7 @@
       "title": "Impressum",
       "subtitle": "Rechtliche Informationen und Kontaktdaten",
       "intro": "Hier finden Sie alle rechtlich relevanten Informationen zu callflows, Ihrem Anbieter für KI Voice Agents und automatisierte Kundenkommunikation.",
-      "tmgTitle": "Angaben gemäß § 5 TMG",
+      "tmgTitle": "Angaben gemäß § 5 DDG",
       "contactTitle": "Kontakt",
       "vatTitle": "Umsatzsteuer-Identifikationsnummer",
       "vatText": "Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:",
@@ -730,7 +729,7 @@
       "disputeText2": "Unsere E-Mail-Adresse finden Sie oben im Impressum.",
       "disputeText3": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
       "liabilityTitle": "Haftung für Inhalte",
-      "liabilityText1": "Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+      "liabilityText1": "Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
       "liabilityText2": "Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen."
     },
     "datenschutz": {
@@ -797,9 +796,9 @@
       "translationNote": "Die vollständige Übersetzung aller Abschnitte der Allgemeinen Geschäftsbedingungen ist verfügbar.",
       "noteLabel": "Hinweis:",
       "section1Title": "1. Begriffsdefinitionen",
-      "section1Content": "Im Sinne dieser AGB gelten folgende Definitionen:\n\n\"Anbieter\" bezeichnet die Abeln Goltz GbR, handelnd unter der Marke callflows, mit Sitz in Fenskestraße 9A, 30165 Hannover.\n\n\"Kunde\" bezeichnet ausschließlich Unternehmer im Sinne des § 14 BGB, also natürliche oder juristische Personen, die den Dienst zu gewerblichen oder beruflichen Zwecken nutzen. Verbraucher im Sinne des § 13 BGB sind von der Nutzung ausgeschlossen.\n\n\"Dienste\" bezeichnet alle durch callflows angebotenen und bereitgestellten Leistungen im Bereich der KI Telefonautomation.\n\n\"Vertrag\" bezeichnet die Vereinbarung zwischen dem Anbieter und dem Kunden zur Nutzung der Dienste von callflows.\n\n\"Drittanbieter\" bezeichnet externe Dienstleister, deren Technologien oder Plattformen in die Dienste von callflows integriert sind.\n\n\"Nutzerinhalte\" bezeichnet alle vom Kunden über die Dienste von callflows erstellten, übermittelten oder gespeicherten Daten, einschließlich Gesprächsprotokolle und Transkriptionen.",
+      "section1Content": "Im Sinne dieser AGB gelten folgende Definitionen:\n\n\"Anbieter\" bezeichnet AGIS.digital, handelnd unter der Marke callflows, mit Sitz in Fenskestraße 9A, 30165 Hannover.\n\n\"Kunde\" bezeichnet ausschließlich Unternehmer im Sinne des § 14 BGB, also natürliche oder juristische Personen, die den Dienst zu gewerblichen oder beruflichen Zwecken nutzen. Verbraucher im Sinne des § 13 BGB sind von der Nutzung ausgeschlossen.\n\n\"Dienste\" bezeichnet alle durch callflows angebotenen und bereitgestellten Leistungen im Bereich der KI Telefonautomation.\n\n\"Vertrag\" bezeichnet die Vereinbarung zwischen dem Anbieter und dem Kunden zur Nutzung der Dienste von callflows.\n\n\"Drittanbieter\" bezeichnet externe Dienstleister, deren Technologien oder Plattformen in die Dienste von callflows integriert sind.\n\n\"Nutzerinhalte\" bezeichnet alle vom Kunden über die Dienste von callflows erstellten, übermittelten oder gespeicherten Daten, einschließlich Gesprächsprotokolle und Transkriptionen.",
       "section2Title": "2. Geltungsbereich & Vertragsschluss",
-      "section2Content": "Diese AGB regeln die Nutzung der durch callflows bereitgestellten Dienstleistungen. callflows ist eine Marke der Abeln Goltz GbR, Fenskestraße 9A, 30165 Hannover. Sie gelten für alle Verträge zwischen der Abeln Goltz GbR (\"Anbieter\") und den Nutzern (\"Kunden\").\n\nVertragsschluss durch Nutzung:\nEin Vertragsverhältnis kommt bereits durch die erste Nutzung des Systems zustande, unabhängig davon, ob ein separater schriftlicher Vertrag geschlossen wurde. Als erste Nutzung gelten insbesondere:\n• Das erste Login in das callflows-System\n• Die erste Nutzung der Dienste durch den Kunden oder seine Mitarbeiter\n• Die Ausführung des ersten Anrufs über das KI-callflow-System\n\nMit der ersten Nutzung erkennt der Kunde automatisch diese AGB an und verpflichtet sich zur Zahlung aller anfallenden Leistungen gemäß den gültigen Preisen.\n\nGeltung für alle Nutzer:\nDiese Verpflichtung gilt auch für alle Mitarbeiter, Bevollmächtigten oder sonstigen Personen, die im Namen oder Auftrag des Kunden das System nutzen.",
+      "section2Content": "Diese AGB regeln die Nutzung der durch callflows bereitgestellten Dienstleistungen. callflows ist eine Marke von AGIS.digital, Fenskestraße 9A, 30165 Hannover. Sie gelten für alle Verträge zwischen AGIS.digital (\"Anbieter\") und den Nutzern (\"Kunden\").\n\nVertragsschluss durch Nutzung:\nEin Vertragsverhältnis kommt bereits durch die erste Nutzung des Systems zustande, unabhängig davon, ob ein separater schriftlicher Vertrag geschlossen wurde. Als erste Nutzung gelten insbesondere:\n• Das erste Login in das callflows-System\n• Die erste Nutzung der Dienste durch den Kunden oder seine Mitarbeiter\n• Die Ausführung des ersten Anrufs über das KI-callflow-System\n\nMit der ersten Nutzung erkennt der Kunde automatisch diese AGB an und verpflichtet sich zur Zahlung aller anfallenden Leistungen gemäß den gültigen Preisen.\n\nGeltung für alle Nutzer:\nDiese Verpflichtung gilt auch für alle Mitarbeiter, Bevollmächtigten oder sonstigen Personen, die im Namen oder Auftrag des Kunden das System nutzen.",
       "section3Title": "3. Leistungsbeschreibung",
       "section3Content": "callflows bietet eine cloudbasierte KI-Telefonagentenlösung an, die Unternehmen bei der Automatisierung von Kommunikationsprozessen unterstützt. Der Kunde erhält Zugang zu innovativen KI-Sprachassistenten für die automatisierte Telefonie. Die genauen Leistungsmerkmale ergeben sich aus den jeweiligen Servicebeschreibungen auf der Website.",
       "section4Title": "4. Nutzung und Beendigung",
@@ -881,7 +880,7 @@
       "description": "Transparente Preisgestaltung basierend auf Ihren Anforderungen"
     }
   },
-  "features": {
+  "featuresShowcase": {
     "title": "KI‑callflows im Einsatz",
     "subtitle": "In allen Bereichen sind KI‑Voice‑Agents der Standard von morgen.",
     "feature1": {
@@ -929,7 +928,7 @@
       "description": "Übergabe an menschliche Mitarbeiter, wenn erwünscht"
     }
   },
-  "features": {
+  "featuresTarget": {
     "badge": "Für wen ist das?",
     "title": "KI‑Voice‑Agents für den Mittelstand",
     "subtitle": "KI-Voice-Agents unterstützen den Mittelstand dabei, automatisierte Anrufe im B2B-Vertrieb zu realisieren und gleichzeitig den persönlichen Kontakt zu stärken",
@@ -973,7 +972,7 @@
       }
     }
   },
-  "process": {
+  "processSteps": {
     "badge": "So starten Sie",
     "title": "In 3 Schritten live",
     "subtitle": "Von der ersten Analyse bis zum produktiven Einsatz – wir begleiten Sie durch jeden Schritt",
@@ -1016,26 +1015,27 @@
     }
   },
   "socialProofRoi": {
-    "badge": "Praxis: messbare Entlastung, mehr Leads",
-    "title": "Bereits im Pilotmonat bewiesen",
+    "badge": "Praxis: messbare Aufgaben, mehr warme Leads",
+    "title": "Was ein KI-callflow in 30 Tagen leisten kann",
+    "subtitle": "Daten aus dem Echtbetrieb",
     "stats": {
       "calls": {
-        "value": "1.256",
-        "label": "automatisierte Anrufe"
+        "value": "2.965",
+        "label": "Kontaktierte Leads"
       },
       "leads": {
-        "value": "14%",
-        "label": "qualifizierte Leads"
+        "value": "69%",
+        "label": "Erreichungsquote"
       },
       "relief": {
-        "value": "100%",
-        "label": "Team-Entlastung"
+        "value": "514",
+        "label": "Entstandene To-Do's"
       }
     },
-    "testimonial": "Bereits im Pilotmonat automatisierte unser erster Kunde 1.256 Anrufe, erzielte 14% qualifizierte Leads und entlastete das Team spürbar – mehr Fokus auf Abschlüsse.",
+    "testimonial": "Ein mittelständisches Unternehmen hat seinen Mitarbeitern fast 3.000 Anrufe und 64 Stunden Telefonie erspart. Dabei sind 514 konkrete Aufgaben entstanden. Entlastung fürs Team - mehr Fokus auf Abschlüsse.",
     "cta": {
       "title": "Berechnen Sie Ihr Einsparpotential",
-      "description": "Nutzen Sie unseren detaillierten ROI-Calculator und erfahren Sie, wie viel Sie mit KI-callflows sparen können.",
+      "description": "Nutzen Sie unseren detaillierten ROI-Calculator und erfahren Sie, wie viel Sie mit callflows sparen können.",
       "buttonText": "ROI-Calculator öffnen"
     }
   },

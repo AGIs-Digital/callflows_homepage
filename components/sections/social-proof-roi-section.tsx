@@ -19,9 +19,12 @@ export function SocialProofROISection() {
             <span className="text-sm font-medium text-green-700 dark:text-green-300">{t('socialProofRoi.badge')}</span>
           </div>
           
-          <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">
+          <h2 className="text-4xl font-bold text-primary dark:text-white mb-2">
             {t('socialProofRoi.title')}
           </h2>
+          <p className="text-lg text-muted-foreground mb-6">
+            {t('socialProofRoi.subtitle')}
+          </p>
           
           <div className="bg-card/80 backdrop-blur-sm rounded-2xl border border-border/50 p-8 max-w-4xl mx-auto mb-12">
             <div className="grid md:grid-cols-3 gap-8 text-center">

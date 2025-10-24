@@ -15,6 +15,7 @@
     "fix-permissions": "node scripts/fix-permissions.js",
     "optimize-images": "node scripts/optimize-images.js",
     "build:performance": "node scripts/build-performance.js",
+    "check:sitemap": "node scripts/sitemap-performance-check.js",
     "lint": "next lint"
   },
   "dependencies": {

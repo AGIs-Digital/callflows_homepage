@@ -8,6 +8,11 @@ import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
 import { HelpCircle, MessageSquare, Phone } from "@/lib/icons";
 import { useI18n } from "@/lib/i18n";
 
+// Formatierung für callflows als Markenname
+const formatCallflows = (text: string) => {
+  return text.replace(/\b(callflows)\b/gi, '<span class="font-bold text-primary">$1</span>');
+};
+
 // Funktion zum Formatieren von FAQ-Antworten für bessere Lesbarkeit
 function formatAnswer(answer: string) {
   if (!answer) return '';
@@ -21,9 +26,8 @@ function formatAnswer(answer: string) {
       const [title, ...content] = part.split(':');
       return (
         <div key={index} className="mb-4">
-          <h4 className="font-semibold text-primary mb-2 text-base">{title.trim()}:</h4>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {content.join(':').trim()}
+          <h4 className="font-semibold text-primary mb-2 text-base" dangerouslySetInnerHTML={{ __html: formatCallflows(title.trim()) }}></h4>
+          <p className="text-sm leading-relaxed text-muted-foreground" dangerouslySetInnerHTML={{ __html: formatCallflows(content.join(':').trim()) }}>
           </p>
         </div>
       );
@@ -31,8 +35,7 @@ function formatAnswer(answer: string) {
     
     // Normale Absätze
     return (
-      <p key={index} className="mb-3 text-sm leading-relaxed text-muted-foreground">
-        {part.trim()}
+      <p key={index} className="mb-3 text-sm leading-relaxed text-muted-foreground" dangerouslySetInnerHTML={{ __html: formatCallflows(part.trim()) }}>
       </p>
     );
   });
@@ -123,7 +126,7 @@ export function FAQClientWrapper() {
                       <Badge variant="outline" className="mt-1 bg-primary/10 text-primary border-primary/20 text-xs font-medium shrink-0">
                         {String(index + 1).padStart(2, '0')}
                       </Badge>
-                      <span className="text-left leading-tight">{faq.question}</span>
+                      <span className="text-left leading-tight" dangerouslySetInnerHTML={{ __html: formatCallflows(faq.question) }}></span>
                     </span>
                   </AccordionTrigger>
                   <AccordionContent 
