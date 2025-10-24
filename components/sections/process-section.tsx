@@ -108,12 +108,12 @@ export function ProcessSection() {
             <p className="text-muted-foreground mb-6 leading-relaxed">
               {t('process.cta.description')}
             </p>
-            <BookingButton 
-              buttonText={t('process.cta.buttonText')}
-              size="lg" 
-              className="bg-[#FFB703] hover:bg-tertiary/70 text-white font-semibold px-8 py-4 text-lg gap-2"
-              bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
-            />
+        <BookingButton
+          buttonText={t('process.cta.buttonText')}
+          size="lg"
+          className="bg-accent hover:bg-accent/90 text-gray-900 font-semibold px-8 py-4 text-lg gap-2"
+          bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
+        />
           </div>
         </div>
       </div>

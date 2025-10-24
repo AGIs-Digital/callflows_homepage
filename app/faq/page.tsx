@@ -46,6 +46,17 @@ export default function FAQPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       
+      {/* Versteckte FAQ-Texte für SEO/Crawler */}
+      <div className="sr-only">
+        <h1>FAQ - Häufige Fragen zu KI-Voice-Agents und automatisierter Telefonie</h1>
+        {faqItems.map((faq, index) => (
+          <div key={index}>
+            <h2>{faq.question}</h2>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+      
       <SiteHeader />
       <FAQClientWrapper />
       <SiteFooter />

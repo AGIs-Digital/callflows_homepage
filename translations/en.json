@@ -65,7 +65,6 @@
     "buttonRetry": "Try again",
     "nameError": "Name must be at least 2 characters",
     "phoneError": "Please enter a valid phone number",
-    "phoneValid": "Detected",
     "rateLimitExceeded": "Too many requests. Please wait a few minutes."
   },
   "pricing": {
@@ -340,7 +339,7 @@
     "answer1": "An AI voice agent is an intelligent voice assistant based on artificial intelligence that is capable of conducting phone conversations, answering customer inquiries, and automating processes. Unlike traditional voice dialog systems, AI voice agents can conduct natural conversations, understand complex concerns, and independently offer solutions.",
     "question2": "How does callflows' phone AI work?",
     "answer2": "callflows' phone AI uses advanced artificial intelligence to conduct natural conversations. It understands concerns, can book appointments, provide information, and handle complex tasks - all over the phone. The AI is specifically trained on your business processes and can seamlessly integrate into your existing systems. It works around the clock and can handle multiple conversations simultaneously.",
-    "question3": "Which companies are AI voice agents suitable for?",
+    "question3": "Which companies are callflows suitable for?",
     "answer3": "AI voice agents are suitable for companies of all sizes looking to make their customer communication more efficient. They are particularly suitable for customer service, sales, marketing, and HR processes. Whether small business or large corporation - the solution scales with your requirements and can be adapted to various industries.",
     "question4": "What does an AI voice agent cost?",
     "answer4": "The costs for an AI voice agent at callflows are based on a minute-based billing model. Prices vary depending on the package and minute volume. There are no hidden costs or basic fees - you only pay for actual usage. For individual requirements, we offer customized solutions.",
@@ -416,7 +415,7 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "imprint": "Legal Notice",
-    "description": "AI callflows orchestrate voice, logic, data & actions — your end‑to‑end conversation flow.",
+    "description": "callflows orchestrates voices, AI logics, automations & actions - conversational flow end-to-end.",
     "product": "Product",
     "pricing": "Pricing",
     "faq": "FAQ",
@@ -572,7 +571,7 @@
       "title": "Legal Notice",
       "subtitle": "Legal information and contact details",
       "intro": "Here you will find all legally relevant information about callflows, your provider for AI-powered voice agents and automated customer communication.",
-      "tmgTitle": "Information according to § 5 TMG",
+      "tmgTitle": "Information according to § 5 DDG",
       "contactTitle": "Contact",
       "vatTitle": "VAT Identification Number",
       "vatText": "VAT identification number according to §27 a of the VAT law:",
@@ -583,7 +582,7 @@
       "disputeText2": "You can find our email address above in the legal notice.",
       "disputeText3": "We are not willing or obliged to participate in dispute resolution procedures before a consumer arbitration board.",
       "liabilityTitle": "Liability for Content",
-      "liabilityText1": "As a service provider, we are responsible for our own content on these pages in accordance with § 7 para. 1 TMG under general law. According to §§ 8 to 10 TMG, however, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
+      "liabilityText1": "As a service provider, we are responsible for our own content on these pages in accordance with § 7 para. 1 DDG under general law. According to §§ 8 to 10 DDG, however, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
       "liabilityText2": "Obligations to remove or block the use of information according to general laws remain unaffected. However, liability in this regard is only possible from the time of knowledge of a specific infringement. Upon becoming aware of corresponding infringements, we will remove this content immediately."
     },
     "datenschutz": {
@@ -650,9 +649,9 @@
       "translationNote": "The complete translation of all Terms and Conditions sections is available.",
       "noteLabel": "Note:",
       "section1Title": "1. Term Definitions",
-      "section1Content": "For the purposes of these Terms and Conditions, the following definitions apply:\n\n\"Provider\" refers to Abeln Goltz GbR, operating under the brand callflows, located at Fenskestraße 9A, 30165 Hannover.\n\n\"Customer\" refers exclusively to entrepreneurs within the meaning of § 14 BGB, i.e., natural or legal persons who use the service for commercial or professional purposes. Consumers within the meaning of § 13 BGB are excluded from use.\n\n\"Services\" refers to all services offered and provided by callflows in the field of AI-supported telephone automation.\n\n\"Contract\" refers to the agreement between the Provider and the Customer for the use of callflows services.\n\n\"Third-party providers\" refers to external service providers whose technologies or platforms are integrated into callflows services.\n\n\"User content\" refers to all data created, transmitted, or stored by the Customer via callflows services, including call logs and transcriptions.",
+      "section1Content": "For the purposes of these Terms and Conditions, the following definitions apply:\n\n\"Provider\" refers to AGIS.digital, operating under the brand callflows, located at Fenskestraße 9A, 30165 Hannover.\n\n\"Customer\" refers exclusively to entrepreneurs within the meaning of § 14 BGB, i.e., natural or legal persons who use the service for commercial or professional purposes. Consumers within the meaning of § 13 BGB are excluded from use.\n\n\"Services\" refers to all services offered and provided by callflows in the field of AI-supported telephone automation.\n\n\"Contract\" refers to the agreement between the Provider and the Customer for the use of callflows services.\n\n\"Third-party providers\" refers to external service providers whose technologies or platforms are integrated into callflows services.\n\n\"User content\" refers to all data created, transmitted, or stored by the Customer via callflows services, including call logs and transcriptions.",
       "section2Title": "2. Scope of Application",
-      "section2Content": "These Terms and Conditions govern the use of services provided by callflows. callflows is a brand of Abeln Goltz GbR, Fenskestraße 9A, 30165 Hannover. They apply to all contracts between Abeln Goltz GbR (\"Provider\") and users (\"Customers\"). By using the offered services, the Customer acknowledges these Terms and Conditions.",
+      "section2Content": "These Terms and Conditions govern the use of services provided by callflows. callflows is a brand of AGIS.digital, Fenskestraße 9A, 30165 Hannover. They apply to all contracts between AGIS.digital (\"Provider\") and users (\"Customers\"). By using the offered services, the Customer acknowledges these Terms and Conditions.",
       "section3Title": "3. Service Description",
       "section3Content": "callflows offers a cloud-based AI telephone agent solution that supports companies in automating communication processes. The Customer receives access to innovative AI voice assistants for automated telephony. The exact service features are derived from the respective service descriptions on the website.",
       "section4Title": "4. Usage and Termination",
@@ -734,7 +733,7 @@
       "description": "Transparent pricing based on your requirements"
     }
   },
-  "features": {
+  "featuresShowcase": {
     "title": "AI callflows in action",
     "subtitle": "In all areas, AI voice agents are tomorrow's standard.",
     "feature1": {
@@ -848,7 +847,7 @@
       "leads": "leads",
       "deals": "deals",
       "perYear": "/year",
-      "deals": "deals",
+      "dealsClosed": "deals",
       "actualDealsMonth": "actual deals/month",
       "closingRateQualifiedLeads": "Closing rate of qualified leads",
       "perMonth": "/month"
@@ -887,10 +886,10 @@
     "secondAccurate": "Per second",
     "monthlyBilling": "Monthly",
     "basicFee": "Basic fee",
-    "billing": "Billing",
+    "billingMethod": "Billing",
     "invoicing": "Invoicing",
-    "upTo": "At",
-    "from": "From"
+    "upToAmount": "At",
+    "fromAmount": "From"
   },
   "pilotPackage": {
     "title": "Your entry into AI telephony",
@@ -935,7 +934,7 @@
       "feature3": "Individual adaptation to your company"
     }
   },
-  "features": {
+  "featuresTarget": {
     "badge": "Who is this for?",
     "title": "AI Voice Agents for SMEs",
     "subtitle": "AI Voice Agents help SMEs realize automated calls in B2B sales while strengthening personal contact",
@@ -979,7 +978,7 @@
       }
     }
   },
-  "process": {
+  "processSteps": {
     "badge": "How to Start",
     "title": "Live in 3 Steps",
     "subtitle": "From initial analysis to productive deployment – we guide you through every step",
@@ -1022,26 +1021,27 @@
     }
   },
   "socialProofRoi": {
-    "badge": "Practice: measurable relief, more leads",
-    "title": "Already proven in pilot month",
+    "badge": "Practice: measurable tasks, more warm leads",
+    "title": "What a callflow can achieve in 30 days",
+    "subtitle": "Data from real operations",
     "stats": {
       "calls": {
-        "value": "1,256",
-        "label": "automated calls"
+        "value": "2,965",
+        "label": "Contacted Leads"
       },
       "leads": {
-        "value": "14%",
-        "label": "qualified leads"
+        "value": "69%",
+        "label": "Reach Rate"
       },
       "relief": {
-        "value": "100%",
-        "label": "team relief"
+        "value": "514",
+        "label": "Generated To-Do's"
       }
     },
-    "testimonial": "\"Already in the pilot month, our first customer automated 1,256 calls, achieved 14% qualified leads and noticeably relieved the team – more focus on closings.\"",
+    "testimonial": "A medium-sized company saved its employees almost 3,000 calls and 64 hours of telephony. This resulted in 514 concrete tasks. Relief for the team - more focus on closings.",
     "cta": {
       "title": "Calculate your savings potential",
-      "description": "Use our detailed ROI calculator and find out how much you can save with AI callflows.",
+      "description": "Use our detailed ROI calculator and find out how much you can save with callflows.",
       "buttonText": "Open ROI Calculator"
     }
   },

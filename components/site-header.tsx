@@ -56,13 +56,12 @@ export function SiteHeader() {
           <nav className="flex items-center space-x-2">
             <LanguageSelector />
             <ThemeToggleAdvanced />
-            <BookingButton 
-              buttonText={t('nav.consultation')}
-              className="hidden md:flex"
-              variant="outline"
-              size="sm"
-              bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
-            />
+        <BookingButton
+          buttonText={t('nav.consultation')}
+          className="hidden md:flex bg-accent text-gray-900 hover:bg-accent/90"
+          size="sm"
+          bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
+        />
             
             {/* Auth Button */}
             {isAuthenticated ? (

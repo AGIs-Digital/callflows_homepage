@@ -60,21 +60,40 @@ export function WidgetCall({ className }: WidgetCallProps) {
 
   // Telefonnummer formatieren (international)
   const formatPhoneNumber = (value: string) => {
-    // Nur Zahlen, + und Leerzeichen erlauben
-    const cleaned = value.replace(/[^\d+\s]/g, '');
+    // Entferne alle Zeichen außer Zahlen und +
+    const cleaned = value.replace(/[^\d+]/g, '');
     
-    // Einfache Formatierung: Gruppiere Ziffern nach +XX
+    // Wenn mit + beginnt, formatiere international
     if (cleaned.startsWith('+')) {
-      const parts = cleaned.split(' ');
-      if (parts.length === 1) {
-        // Erste Gruppe: +XX XXX
-        if (cleaned.length > 3) {
-          return cleaned.slice(0, 3) + ' ' + cleaned.slice(3);
-        }
+      // Entferne zusätzliche + Zeichen
+      const singlePlus = '+' + cleaned.slice(1).replace(/\+/g, '');
+      
+      // Einfache Gruppierung für bessere Lesbarkeit
+      if (singlePlus.length <= 3) {
+        return singlePlus;
+      } else if (singlePlus.length <= 6) {
+        return singlePlus.slice(0, 3) + ' ' + singlePlus.slice(3);
+      } else if (singlePlus.length <= 9) {
+        return singlePlus.slice(0, 3) + ' ' + singlePlus.slice(3, 6) + ' ' + singlePlus.slice(6);
+      } else {
+        return singlePlus.slice(0, 3) + ' ' + singlePlus.slice(3, 6) + ' ' + singlePlus.slice(6, 9) + ' ' + singlePlus.slice(9);
       }
-      return cleaned;
     }
     
+    // Wenn mit 0 beginnt (deutsche Nummer), formatiere lokal
+    if (cleaned.startsWith('0')) {
+      if (cleaned.length <= 3) {
+        return cleaned;
+      } else if (cleaned.length <= 6) {
+        return cleaned.slice(0, 3) + ' ' + cleaned.slice(3);
+      } else if (cleaned.length <= 9) {
+        return cleaned.slice(0, 3) + ' ' + cleaned.slice(3, 6) + ' ' + cleaned.slice(6);
+      } else {
+        return cleaned.slice(0, 3) + ' ' + cleaned.slice(3, 6) + ' ' + cleaned.slice(6, 9) + ' ' + cleaned.slice(9);
+      }
+    }
+    
+    // Für andere Fälle: nur Zahlen
     return cleaned;
   };
 
@@ -241,11 +260,6 @@ export function WidgetCall({ className }: WidgetCallProps) {
             {phoneNumber && !phoneValidation.isValid && (
               <p className="text-xs text-red-500">
                 {t('widget.phoneError') || 'Bitte geben Sie eine gültige Telefonnummer ein'}
-              </p>
-            )}
-            {phoneValidation.isValid && phoneValidation.countryCode && (
-              <p className="text-xs text-green-600">
-                {t('widget.phoneValid')}: {phoneValidation.countryCode}
               </p>
             )}
           </div>

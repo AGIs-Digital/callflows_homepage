@@ -65,7 +65,6 @@
     "buttonRetry": "Intentar de nuevo",
     "nameError": "El nombre debe tener al menos 2 caracteres",
     "phoneError": "Por favor ingrese un número de teléfono válido",
-    "phoneValid": "Detectado",
     "rateLimitExceeded": "Demasiadas solicitudes. Por favor espere unos minutos."
   },
   "pricing": {
@@ -340,7 +339,7 @@
     "answer1": "Un agente de voz IA es un asistente de voz inteligente basado en inteligencia artificial que es capaz de realizar conversaciones telefónicas, responder consultas de clientes y automatizar procesos. A diferencia de los sistemas tradicionales de diálogo por voz, los agentes de voz IA pueden mantener conversaciones naturales, entender preocupaciones complejas y ofrecer soluciones de forma independiente.",
     "question2": "¿Cómo funciona la IA telefónica de callflows?",
     "answer2": "La IA telefónica de callflows utiliza inteligencia artificial avanzada para mantener conversaciones naturales. Entiende preocupaciones, puede reservar citas, proporcionar información y manejar tareas complejas, todo por teléfono. La IA está específicamente entrenada en sus procesos comerciales y puede integrarse perfectamente en sus sistemas existentes. Funciona las 24 horas y puede manejar múltiples conversaciones simultáneamente.",
-    "question3": "¿Para qué empresas son adecuados los agentes de voz IA?",
+    "question3": "¿Para qué empresas es adecuado callflows?",
     "answer3": "Los agentes de voz IA son adecuados para empresas de todos los tamaños que buscan hacer su comunicación con clientes más eficiente. Son particularmente adecuados para servicio al cliente, ventas, marketing y procesos de RRHH. Ya sea pequeña empresa o gran corporación - la solución se escala con sus requisitos y puede adaptarse a varias industrias.",
     "question4": "¿Cuánto cuesta un agente de voz IA?",
     "answer4": "Los costos de un agente de voz IA en callflows se basan en un modelo de facturación por minutos. Los precios varían según el paquete y el volumen de minutos. No hay costos ocultos ni tarifas básicas - solo paga por el uso real. Para requisitos individuales, ofrecemos soluciones personalizadas.",
@@ -416,7 +415,7 @@
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio",
     "imprint": "Aviso Legal",
-    "description": "Los AI callflows orquestan voz, lógica, datos y acciones — tu conversation flow de extremo a extremo.",
+    "description": "callflows orquesta voces, lógicas IA, automatizaciones & acciones - conversation flow de extremo a extremo.",
     "product": "Producto",
     "pricing": "Precios",
     "faq": "FAQ",
@@ -572,7 +571,7 @@
       "title": "Aviso Legal",
       "subtitle": "Información legal y datos de contacto",
       "intro": "Aquí encontrará toda la información legalmente relevante sobre callflows, su proveedor de agentes de voz IA y comunicación automatizada con clientes.",
-      "tmgTitle": "Información según § 5 TMG",
+      "tmgTitle": "Información según § 5 DDG",
       "contactTitle": "Contacto",
       "vatTitle": "Número de Identificación de IVA",
       "vatText": "Número de identificación de IVA según §27 a de la ley del IVA:",
@@ -583,7 +582,7 @@
       "disputeText2": "Puede encontrar nuestra dirección de correo electrónico arriba en el aviso legal.",
       "disputeText3": "No estamos dispuestos u obligados a participar en procedimientos de resolución de disputas ante una junta de arbitraje de consumidores.",
       "liabilityTitle": "Responsabilidad por el contenido",
-      "liabilityText1": "Como proveedor de servicios, somos responsables de nuestro propio contenido en estas páginas de acuerdo con § 7 párr. 1 TMG bajo la ley general. Según los §§ 8 a 10 TMG, sin embargo, nosotros como proveedor de servicios no estamos obligados a monitorear información de terceros transmitida o almacenada o investigar circunstancias que indiquen actividad ilegal.",
+      "liabilityText1": "Como proveedor de servicios, somos responsables de nuestro propio contenido en estas páginas de acuerdo con § 7 párr. 1 DDG bajo la ley general. Según los §§ 8 a 10 DDG, sin embargo, nosotros como proveedor de servicios no estamos obligados a monitorear información de terceros transmitida o almacenada o investigar circunstancias que indiquen actividad ilegal.",
       "liabilityText2": "Las obligaciones de eliminar o bloquear el uso de información según las leyes generales permanecen inalteradas. Sin embargo, la responsabilidad a este respecto solo es posible desde el momento del conocimiento de una infracción específica. Al tomar conocimiento de infracciones correspondientes, eliminaremos este contenido inmediatamente."
     },
     "datenschutz": {
@@ -650,9 +649,9 @@
       "translationNote": "La traducción completa de todas las secciones de Términos y Condiciones está disponible.",
       "noteLabel": "Nota:",
       "section1Title": "1. Definiciones de Términos",
-      "section1Content": "Para efectos de estos Términos y Condiciones, se aplican las siguientes definiciones:\n\n\"Proveedor\" se refiere a Abeln Goltz GbR, operando bajo la marca callflows, ubicada en Fenskestraße 9A, 30165 Hannover.\n\n\"Cliente\" se refiere exclusivamente a empresarios en el sentido del § 14 BGB, es decir, personas físicas o jurídicas que utilizan el servicio con fines comerciales o profesionales. Los consumidores en el sentido del § 13 BGB están excluidos del uso.\n\n\"Servicios\" se refiere a todos los servicios ofrecidos y proporcionados por callflows en el campo de la automatización telefónica asistida por IA.\n\n\"Contrato\" se refiere al acuerdo entre el Proveedor y el Cliente para el uso de los servicios de callflows.\n\n\"Proveedores terceros\" se refiere a proveedores de servicios externos cuyas tecnologías o plataformas están integradas en los servicios de callflows.\n\n\"Contenido del usuario\" se refiere a todos los datos creados, transmitidos o almacenados por el Cliente a través de los servicios de callflows, incluidos los registros de llamadas y las transcripciones.",
+      "section1Content": "Para efectos de estos Términos y Condiciones, se aplican las siguientes definiciones:\n\n\"Proveedor\" se refiere a AGIS.digital, operando bajo la marca callflows, ubicada en Fenskestraße 9A, 30165 Hannover.\n\n\"Cliente\" se refiere exclusivamente a empresarios en el sentido del § 14 BGB, es decir, personas físicas o jurídicas que utilizan el servicio con fines comerciales o profesionales. Los consumidores en el sentido del § 13 BGB están excluidos del uso.\n\n\"Servicios\" se refiere a todos los servicios ofrecidos y proporcionados por callflows en el campo de la automatización telefónica asistida por IA.\n\n\"Contrato\" se refiere al acuerdo entre el Proveedor y el Cliente para el uso de los servicios de callflows.\n\n\"Proveedores terceros\" se refiere a proveedores de servicios externos cuyas tecnologías o plataformas están integradas en los servicios de callflows.\n\n\"Contenido del usuario\" se refiere a todos los datos creados, transmitidos o almacenados por el Cliente a través de los servicios de callflows, incluidos los registros de llamadas y las transcripciones.",
       "section2Title": "2. Ámbito de Aplicación",
-      "section2Content": "Estos Términos y Condiciones rigen el uso de los servicios proporcionados por callflows. callflows es una marca de Abeln Goltz GbR, Fenskestraße 9A, 30165 Hannover. Se aplican a todos los contratos entre Abeln Goltz GbR (\"Proveedor\") y los usuarios (\"Clientes\"). Al utilizar los servicios ofrecidos, el Cliente reconoce estos Términos y Condiciones.",
+      "section2Content": "Estos Términos y Condiciones rigen el uso de los servicios proporcionados por callflows. callflows es una marca de AGIS.digital, Fenskestraße 9A, 30165 Hannover. Se aplican a todos los contratos entre AGIS.digital (\"Proveedor\") y los usuarios (\"Clientes\"). Al utilizar los servicios ofrecidos, el Cliente reconoce estos Términos y Condiciones.",
       "section3Title": "3. Descripción del Servicio",
       "section3Content": "callflows ofrece una solución de agentes telefónicos IA basada en la nube que ayuda a las empresas a automatizar los procesos de comunicación. Los servicios se basan en una integración de marca blanca de un proveedor tercero. El Cliente recibe acceso a varios paquetes de servicios con cuotas de uso definidas. Las características exactas del servicio se derivan de las descripciones tarifarias respectivas.",
       "section4Title": "4. Duración del Contrato y Terminación",
@@ -734,7 +733,7 @@
       "description": "Precios transparentes basados en sus requisitos"
     }
   },
-  "features": {
+  "featuresShowcase": {
     "title": "Casos de Uso para Agentes de Voz IA",
     "subtitle": "En todas las áreas, los agentes de voz son el estándar del mañana.",
     "feature1": {
@@ -848,7 +847,7 @@
       "leads": "prospectos",
       "deals": "negocios",
       "perYear": "/año",
-      "deals": "negocios",
+      "dealsClosed": "negocios",
       "actualDealsMonth": "negocios reales/mes",
       "closingRateQualifiedLeads": "Tasa de cierre de prospectos calificados",
       "perMonth": "/mes"
@@ -887,10 +886,10 @@
     "secondAccurate": "Por segundo",
     "monthlyBilling": "Mensual",
     "basicFee": "Tarifa básica",
-    "billing": "Facturación",
+    "billingMethod": "Facturación",
     "invoicing": "Facturación",
-    "upTo": "Con",
-    "from": "Desde"
+    "upToAmount": "Con",
+    "fromAmount": "Desde"
   },
   "pilotPackage": {
     "title": "Su entrada en la telefonía IA",
@@ -935,7 +934,7 @@
       "feature3": "Adaptación individual a su empresa"
     }
   },
-  "features": {
+  "featuresTarget": {
     "badge": "¿Para quién es esto?",
     "title": "Agentes de voz IA para PYMES",
     "subtitle": "Los agentes de voz IA ayudan a las PYMES a realizar llamadas automatizadas en ventas B2B mientras fortalecen el contacto personal",
@@ -979,7 +978,7 @@
       }
     }
   },
-  "process": {
+  "processSteps": {
     "badge": "Cómo empezar",
     "title": "En vivo en 3 pasos",
     "subtitle": "Desde el análisis inicial hasta la implementación productiva – te guiamos en cada paso",
@@ -1022,26 +1021,27 @@
     }
   },
   "socialProofRoi": {
-    "badge": "Práctica: alivio medible, más prospectos",
-    "title": "Ya probado en el mes piloto",
+    "badge": "Práctica: tareas medibles, más prospectos calientes",
+    "title": "Lo que un callflow puede lograr en 30 días",
+    "subtitle": "Datos de operaciones reales",
     "stats": {
       "calls": {
-        "value": "1.256",
-        "label": "llamadas automatizadas"
+        "value": "2.965",
+        "label": "Prospectos Contactados"
       },
       "leads": {
-        "value": "14%",
-        "label": "prospectos calificados"
+        "value": "69%",
+        "label": "Tasa de Contacto"
       },
       "relief": {
-        "value": "100%",
-        "label": "alivio del equipo"
+        "value": "514",
+        "label": "Tareas Generadas"
       }
     },
-    "testimonial": "\"Ya en el mes piloto, nuestro primer cliente automatizó 1.256 llamadas, logró 14% de prospectos calificados y alivió notablemente al equipo – más enfoque en cierres.\"",
+    "testimonial": "Una empresa mediana ahorró a sus empleados casi 3.000 llamadas y 64 horas de telefonía. Esto resultó en 514 tareas concretas. Alivio para el equipo - más enfoque en cierres.",
     "cta": {
       "title": "Calcule su potencial de ahorro",
-      "description": "Use nuestro calculador ROI detallado y descubra cuánto puede ahorrar con AI callflows.",
+      "description": "Use nuestro calculador ROI detallado y descubra cuánto puede ahorrar con callflows.",
       "buttonText": "Abrir calculador ROI"
     }
   },
