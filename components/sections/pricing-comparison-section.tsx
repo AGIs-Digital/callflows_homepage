@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, X, Clock, Users, Phone, Headphones, Bot, Star } from "@/lib/icons";
+import { Check, X, Clock, Users, Phone, Headphones, Bot, Star, AlertTriangle } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
 import Image from "next/image";
@@ -47,9 +47,29 @@ const Solution = ({ title, icon, description, pros, cons, isHighlighted = false 
       <p className="text-muted-foreground mb-6">{description}</p>
       
       <div className="space-y-4">
+        {cons.length > 0 && (
+          <div>
+            <h4 className="font-medium mb-2">
+              {isHighlighted ? t('comparison.challenges') : t('comparison.cons')}
+            </h4>
+            <ul className="space-y-2">
+              {cons.map((con, index) => (
+                <li key={`con-${index}`} className="flex items-start gap-2">
+                  {isHighlighted ? (
+                    <AlertTriangle className="w-5 h-5 text-yellow-500 shrink-0 mt-0.5" />
+                  ) : (
+                    <X className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                  )}
+                  <span className="text-sm">{con}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        
         <div>
           <h4 className="font-medium mb-2">
-            {isHighlighted ? t('comparison.allBenefitsAndMore') : t('comparison.pros')}
+            {isHighlighted ? t('comparison.weTakeCare') : t('comparison.pros')}
           </h4>
           <ul className="space-y-2">
             {pros.map((pro, index) => (
@@ -69,20 +89,6 @@ const Solution = ({ title, icon, description, pros, cons, isHighlighted = false 
             ))}
           </ul>
         </div>
-        
-        {cons.length > 0 && (
-          <div>
-            <h4 className="font-medium mb-2">{t('comparison.cons')}</h4>
-            <ul className="space-y-2">
-              {cons.map((con, index) => (
-                <li key={`con-${index}`} className="flex items-start gap-2">
-                  <X className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-                  <span className="text-sm">{con}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
     </div>
   );
@@ -113,17 +119,18 @@ export function PricingComparisonSection() {
           cons: ["Hohe Kosten pro Gespräch", "Qualitätsschwankungen", "Geringeres Produktwissen", "Komplexe Vertragsgestaltung"]
         },
         callflows: {
-          title: "KI‑callflows",
-          description: "KI‑callflows orchestrieren Stimme, Prozesslogik, Daten und Aktionen – Ende‑zu‑Ende automatisierte Telefonprozesse.",
+          title: "KI‑Voice‑Agents",
+          description: "Vereinen alle Vorteile ohne das die persönliche Note verloren geht.",
           pros: [
-            "Orchestriert Stimme, Logik & Daten",
-            "Natürliche Dialoge, Rückfragen, Validierung",
-            "Automatisiert Routine & triggert Aktionen",
-            "Keine feste Vertragslaufzeit, Pay-as-you-go",
-            "Skalierbar und kosteneffizient",
-            "Kein Vorwissen notwendig"
+            "Orchestration aller Komponenten",
+            "Fachexpertise - KI und Automation",
+            "Pay-as-you-go ohne Vertragslaufzeit",
+            "Umsetzung von Prozesslogik",
+            "Individuelle Schnittstellen"
           ],
-          cons: []
+          cons: [
+            "Kosten und technische Strukturen erfordern tiefes Verständnis"
+          ]
         }
       },
       en: {
@@ -146,17 +153,18 @@ export function PricingComparisonSection() {
           cons: ["High costs per call", "Quality fluctuations", "Less product knowledge", "Complex contract design"]
         },
         callflows: {
-          title: "AI callflows",
-          description: "AI callflows orchestrate voice, process logic, data and actions – end‑to‑end automated phone processes.",
+          title: "AI Voice Agents",
+          description: "Combine all advantages without losing the personal touch.",
           pros: [
-            "Orchestrates voice, logic & data",
-            "Natural dialogues, follow‑ups, validation",
-            "Automates routine and triggers actions",
-            "No fixed contract terms, pay-as-you-go",
-            "Scalable and cost‑efficient",
-            "No prior expertise required"
+            "Orchestration of all components",
+            "Expertise - AI and automation",
+            "Pay-as-you-go without contract terms",
+            "Implementation of process logic",
+            "Individual interfaces"
           ],
-          cons: []
+          cons: [
+            "Costs and technical structures require deep understanding"
+          ]
         }
       },
       fr: {
@@ -179,17 +187,18 @@ export function PricingComparisonSection() {
           cons: ["Coûts élevés par appel", "Fluctuations de qualité", "Moins de connaissance produit", "Conception contractuelle complexe"]
         },
         callflows: {
-          title: "AI callflows",
-          description: "Les AI callflows orchestrent la voix, la logique de processus, les données et les actions – processus téléphoniques automatisés de bout en bout.",
+          title: "Agents Vocaux IA",
+          description: "Combinent tous les avantages sans perdre le contact personnel.",
           pros: [
-            "Orchestre voix, logique & données",
-            "Dialogues naturels, relances, validation",
-            "Automatise la routine & déclenche des actions",
-            "Pas de durée contractuelle fixe, paiement à l'usage",
-            "Évolutif et rentable",
-            "Aucune expertise préalable requise"
+            "Orchestration de tous les composants",
+            "Expertise - IA et automatisation",
+            "Paiement à l'usage sans durée contractuelle",
+            "Implémentation de la logique de processus",
+            "Interfaces individuelles"
           ],
-          cons: []
+          cons: [
+            "Les coûts et structures techniques nécessitent une compréhension approfondie"
+          ]
         }
       },
       es: {
@@ -212,17 +221,18 @@ export function PricingComparisonSection() {
           cons: ["Altos costos por llamada", "Fluctuaciones de calidad", "Menor conocimiento del producto", "Diseño contractual complejo"]
         },
         callflows: {
-          title: "AI callflows",
-          description: "Los AI callflows orquestan voz, lógica de procesos, datos y acciones – procesos telefónicos automatizados de extremo a extremo.",
+          title: "Agentes de Voz IA",
+          description: "Combinan todas las ventajas sin perder el toque personal.",
           pros: [
-            "Orquesta voz, lógica y datos",
-            "Diálogos naturales, repreguntas, validación",
-            "Automatiza rutina y dispara acciones",
-            "Sin plazos contractuales fijos, pago por uso",
-            "Escalable y eficiente en costos",
-            "Sin experiencia previa requerida"
+            "Orquestación de todos los componentes",
+            "Experticia - IA y automatización",
+            "Pago por uso sin plazos contractuales",
+            "Implementación de lógica de procesos",
+            "Interfaces individuales"
           ],
-          cons: []
+          cons: [
+            "Los costos y estructuras técnicas requieren comprensión profunda"
+          ]
         }
       }
     };

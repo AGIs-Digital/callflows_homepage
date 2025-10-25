@@ -7,7 +7,7 @@ export function PricingHeroWrapper() {
   const { t } = useI18n();
 
   return (
-    <div className="pt-8 pb-16 bg-gradient-to-b from-secondary via-secondary/55 to-tertiary/35">
+    <section className="py-20 bg-gradient-to-b from-secondary via-secondary/55 to-tertiary/35">
       <div className="container max-w-6xl mx-auto">
         <BreadcrumbSEO 
           items={[
@@ -31,7 +31,7 @@ export function PricingHeroWrapper() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

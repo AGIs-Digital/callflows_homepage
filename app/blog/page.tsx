@@ -58,17 +58,16 @@ export default async function BlogPage() {
   }
   
   return (
-    <div className="py-16 md:py-24 bg-gradient-to-b from-primary/20 via-accent/50 to-secondary/65">
+    <section className="py-20 bg-gradient-to-b from-secondary via-secondary/50 to-accent/20">
       <div className="container max-w-6xl mx-auto">
-        {/* Breadcrumbs */}
         <BreadcrumbSEO 
           items={[
             { name: "Blog", url: "https://callflows.de/blog" }
           ]}
         />
         
-        <div className="flex items-center justify-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent backdrop-blur-sm bg-white/10 px-8 py-4 rounded-2xl border border-white/20 shadow-lg">
+        <div className="flex items-center justify-center mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold text-primary dark:text-white backdrop-blur-sm bg-white/10 px-8 py-4 rounded-2xl border border-white/20 shadow-lg">
             Blog
           </h1>
         </div>
@@ -128,6 +127,6 @@ export default async function BlogPage() {
         </div>
       )}
       </div>
-    </div>
+    </section>
   );
 } 

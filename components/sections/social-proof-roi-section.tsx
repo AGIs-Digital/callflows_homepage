@@ -60,7 +60,7 @@ export function SocialProofROISection() {
             </p>
                             <Button 
                   size="lg"
-                  className="bg-[#FFB703] hover:bg-[#FFB703]/90 text-white font-semibold px-8 py-4 text-lg gap-2"
+                  className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 text-lg gap-2"
                   asChild
                 >
                   <Link href="/pricing#roi-calculator">

@@ -37,7 +37,7 @@ export const getAllBlogPosts = cache(async (): Promise<BlogPost[]> => {
     const publishedTimeMatch = fileContent.match(/publishedTime: ["'](.+?)["']/);
     const modifiedTimeMatch = fileContent.match(/modifiedTime: ["'](.+?)["']/);
     const authorsMatch = fileContent.match(/authors: \[\s*["'](.+?)["']/);
-    const imagesMatch = fileContent.match(/url: ["'](.+?)["']/);
+    const imagesMatch = fileContent.match(/images: \[\{[\s\S]*?url: ["'](.+?)["']/);
     const categoryMatch = fileContent.match(/keywords: \[\s*["'](.+?)["']/); // Verwende das erste Keyword als Kategorie
     
     if (titleMatch && descriptionMatch && publishedTimeMatch) {

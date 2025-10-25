@@ -18,7 +18,7 @@ export const metadata = generateMetadata({
     "KI Kundenservice"
   ],
   images: [{
-    url: "/images/blog/gpt-4o-revolutioniert-ki-telefonie-neue-moeglichkeiten-fuer-unternehmen.webp",
+    url: "/images/blog/gpt4o-ki-telefonie.webp",
     width: 1200,
     height: 630,
     alt: "GPT-4o revolutioniert KI-Telefonie: Neue Möglichkeiten für Unternehmen"

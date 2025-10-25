@@ -10,35 +10,35 @@ export function FeaturesSection() {
   const targetGroups = [
     {
       icon: Users,
-      title: t('features.targetGroups.staffing.title'),
-      description: t('features.targetGroups.staffing.description'),
+      title: t('featuresTarget.targetGroups.staffing.title'),
+      description: t('featuresTarget.targetGroups.staffing.description'),
       gradient: "from-primary/20 to-primary/30",
       iconColor: "text-primary",
-      benefits: t('features.targetGroups.staffing.benefits')
+      benefits: t('featuresTarget.targetGroups.staffing.benefits')
     },
     {
       icon: Building2,
-      title: t('features.targetGroups.mediumSales.title'),
-      description: t('features.targetGroups.mediumSales.description'),
+      title: t('featuresTarget.targetGroups.mediumSales.title'),
+      description: t('featuresTarget.targetGroups.mediumSales.description'),
       gradient: "from-tertiary/20 to-tertiary/30",
       iconColor: "text-tertiary",
-      benefits: t('features.targetGroups.mediumSales.benefits')
+      benefits: t('featuresTarget.targetGroups.mediumSales.benefits')
     },
     {
       icon: TrendingUp,
-      title: t('features.targetGroups.efficientTeams.title'),
-      description: t('features.targetGroups.efficientTeams.description'),
+      title: t('featuresTarget.targetGroups.efficientTeams.title'),
+      description: t('featuresTarget.targetGroups.efficientTeams.description'),
       gradient: "from-accent/20 to-accent/30",
       iconColor: "text-accent",
-      benefits: t('features.targetGroups.efficientTeams.benefits')
+      benefits: t('featuresTarget.targetGroups.efficientTeams.benefits')
     },
     {
       icon: Building,
-      title: t('features.targetGroups.enterprises.title'),
-      description: t('features.targetGroups.enterprises.description'),
+      title: t('featuresTarget.targetGroups.enterprises.title'),
+      description: t('featuresTarget.targetGroups.enterprises.description'),
       gradient: "from-secondary/30 to-secondary/40",
       iconColor: "text-primary",
-      benefits: t('features.targetGroups.enterprises.benefits')
+      benefits: t('featuresTarget.targetGroups.enterprises.benefits')
     }
   ];
 
@@ -47,13 +47,13 @@ export function FeaturesSection() {
       <div className="container max-w-6xl">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-sm font-medium text-primary">{t('features.badge')}</span>
+            <span className="text-sm font-medium text-primary">{t('featuresTarget.badge')}</span>
           </div>
           <h2 className="text-4xl font-bold mb-6 text-primary dark:text-white">
-            {t('features.title')}
+            {t('featuresTarget.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {t('features.subtitle')}
+            {t('featuresTarget.subtitle')}
           </p>
         </div>
         
@@ -105,7 +105,7 @@ export function FeaturesSection() {
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
             <CheckCircle className="w-5 h-5 text-green-600" />
             <span className="text-sm font-medium text-green-800 dark:text-green-200">
-              {t('features.cta')}
+              {t('featuresTarget.cta')}
             </span>
           </div>
         </div>

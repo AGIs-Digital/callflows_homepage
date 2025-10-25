@@ -474,6 +474,7 @@ export async function loadExistingBlogPosts(): Promise<any[]> {
       const descriptionMatch = fileContent.match(/description: ["'](.+?)["']/);
       const publishedTimeMatch = fileContent.match(/publishedTime: ["'](.+?)["']/);
       const authorsMatch = fileContent.match(/authors: \[\s*["'](.+?)["']/);
+      const imagesMatch = fileContent.match(/images: \[\{[\s\S]*?url: ["'](.+?)["']/);
       
       if (titleMatch && descriptionMatch && publishedTimeMatch) {
         const publishDate = new Date(publishedTimeMatch[1]);
@@ -492,7 +493,7 @@ export async function loadExistingBlogPosts(): Promise<any[]> {
           description: descriptionMatch[1],
           publishedTime: publishedTimeMatch[1],
           author: authorsMatch ? authorsMatch[1] : "Team callflows",
-          image: `/images/blog/${slug}.webp`,
+          image: imagesMatch ? imagesMatch[1] : `/images/blog/${slug}.webp`,
           status,
           content: "..." // Vereinfacht
         });

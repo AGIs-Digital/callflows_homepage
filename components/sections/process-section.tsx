@@ -12,27 +12,27 @@ export function ProcessSection() {
     {
       number: 1,
       icon: Search,
-      title: t('process.steps.step1.title'),
-      description: t('process.steps.step1.description'),
-      details: t('process.steps.step1.details'),
+      title: t('processSteps.steps.step1.title'),
+      description: t('processSteps.steps.step1.description'),
+      details: t('processSteps.steps.step1.details'),
       gradient: "from-primary/20 to-primary/30",
       iconColor: "text-primary"
     },
     {
       number: 2,
       icon: Cog,
-      title: t('process.steps.step2.title'),
-      description: t('process.steps.step2.description'),
-      details: t('process.steps.step2.details'),
+      title: t('processSteps.steps.step2.title'),
+      description: t('processSteps.steps.step2.description'),
+      details: t('processSteps.steps.step2.details'),
       gradient: "from-accent/20 to-accent/30",
       iconColor: "text-accent"
     },
     {
       number: 3,
       icon: Rocket,
-      title: t('process.steps.step3.title'),
-      description: t('process.steps.step3.description'),
-      details: t('process.steps.step3.details'),
+      title: t('processSteps.steps.step3.title'),
+      description: t('processSteps.steps.step3.description'),
+      details: t('processSteps.steps.step3.details'),
       gradient: "from-tertiary/20 to-tertiary/30",
       iconColor: "text-tertiary"
     }
@@ -43,13 +43,13 @@ export function ProcessSection() {
       <div className="container max-w-6xl">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-sm font-medium text-primary">{t('process.badge')}</span>
+            <span className="text-sm font-medium text-primary">{t('processSteps.badge')}</span>
           </div>
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">
-            {t('process.title')}
+            {t('processSteps.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {t('process.subtitle')}
+            {t('processSteps.subtitle')}
           </p>
         </div>
 
@@ -103,17 +103,17 @@ export function ProcessSection() {
         <div className="text-center">
           <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/50 p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-primary mb-4">
-              {t('process.cta.title')}
+              {t('processSteps.cta.title')}
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              {t('process.cta.description')}
+              {t('processSteps.cta.description')}
             </p>
-        <BookingButton
-          buttonText={t('process.cta.buttonText')}
-          size="lg"
-          className="bg-accent hover:bg-accent/90 text-gray-900 font-semibold px-8 py-4 text-lg gap-2"
-          bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
-        />
+            <BookingButton 
+              buttonText={t('processSteps.cta.buttonText')}
+              size="lg" 
+              className="bg-accent hover:bg-accent/90 text-gray-900 font-semibold px-8 py-4 text-lg gap-2"
+              bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
+            />
           </div>
         </div>
       </div>

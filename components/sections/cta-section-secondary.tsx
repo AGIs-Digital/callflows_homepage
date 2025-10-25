@@ -18,8 +18,7 @@ export function CTASectionSecondary() {
           </p>
           <BookingButton 
             buttonText={t('pricing.ctaButtonText')}
-            className="px-8 py-4"
-            variant="default"
+            className="bg-accent hover:bg-accent/90 text-gray-900 font-semibold px-8 py-4 text-lg gap-2"
             size="lg"
             showArrow={true}
           />
