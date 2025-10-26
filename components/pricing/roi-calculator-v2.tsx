@@ -13,6 +13,10 @@ import { useI18n } from "@/lib/i18n";
 export function ROICalculatorV2() {
   const { t } = useI18n();
   
+  const highlightCallflows = (text: string) => {
+    return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
+  };
+  
   // Input-Parameter
   const [callsPerDay, setCallsPerDay] = useState([60]); // Default: 60, Range: 20-1000 in 10er Schritten
   const [callDurationSeconds, setCallDurationSeconds] = useState([60]); // Default: 60s, Range: 30s-300s in 5s Schritten
@@ -130,12 +134,14 @@ export function ROICalculatorV2() {
                 {t('roiCalculator.badge')}
               </Badge>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {t('roiCalculator.title')}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('roiCalculator.subtitle')}
-            </p>
+            <h2 
+              className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+              dangerouslySetInnerHTML={{ __html: highlightCallflows(t('roiCalculator.title')) }}
+            />
+            <p 
+              className="text-lg text-muted-foreground max-w-2xl mx-auto"
+              dangerouslySetInnerHTML={{ __html: highlightCallflows(t('roiCalculator.subtitle')) }}
+            />
           </div>
 
         {/* Einheitliche Card */}

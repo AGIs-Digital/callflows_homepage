@@ -7,6 +7,10 @@ import { useI18n } from "@/lib/i18n";
 export function PricingIntro() {
   const { t } = useI18n();
   
+  const highlightCallflows = (text: string) => {
+    return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
+  };
+  
   return (
     <div className="py-16 bg-gradient-to-b from-tertiary/20 via-primary/30 to-primary/35">
       <div className="container max-w-6xl mx-auto">
@@ -14,12 +18,14 @@ export function PricingIntro() {
           <div className="bg-card/60 backdrop-blur-sm p-12 rounded-xl border border-border/70 shadow-lg">
             {/* Einführungstext */}
             <div className="text-center mb-12">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                {t('pricing.introTitle')}
-              </h3>
-              <p className="text-lg text-muted-foreground">
-                {t('pricing.introSubtitle')}
-              </p>
+              <h3 
+                className="text-2xl font-bold text-foreground mb-4"
+                dangerouslySetInnerHTML={{ __html: highlightCallflows(t('pricing.introTitle')) }}
+              />
+              <p 
+                className="text-lg text-muted-foreground"
+                dangerouslySetInnerHTML={{ __html: highlightCallflows(t('pricing.introSubtitle')) }}
+              />
             </div>
 
             {/* Schritt-für-Schritt Anleitung */}
@@ -30,12 +36,13 @@ export function PricingIntro() {
                   1
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
+                  <h4 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
                     🎯 {t('pricing.step1Title')}
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {t('pricing.step1Description')}
-                  </p>
+                  <p 
+                    className="text-muted-foreground leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: highlightCallflows(t('pricing.step1Description')) }}
+                  />
                 </div>
               </div>
 
@@ -45,13 +52,14 @@ export function PricingIntro() {
                   2
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-3">
+                  <h4 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-3">
                     🛠️ {t('pricing.step2Title')}
                     <GlossaryBadge />
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {t('pricing.step2Description')}
-                  </p>
+                  <p 
+                    className="text-muted-foreground leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: highlightCallflows(t('pricing.step2Description')) }}
+                  />
                 </div>
               </div>
 
@@ -61,12 +69,13 @@ export function PricingIntro() {
                   3
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
+                  <h4 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
                     📊 {t('pricing.step3Title')}
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {t('pricing.step3Description')}
-                  </p>
+                  <p 
+                    className="text-muted-foreground leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: highlightCallflows(t('pricing.step3Description')) }}
+                  />
                 </div>
               </div>
 
@@ -76,12 +85,13 @@ export function PricingIntro() {
                   4
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2">
+                  <h4 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
                     💰 {t('pricing.step4Title')}
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {t('pricing.step4Description')}
-                  </p>
+                  <p 
+                    className="text-muted-foreground leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: highlightCallflows(t('pricing.step4Description')) }}
+                  />
                 </div>
               </div>
 
@@ -91,12 +101,13 @@ export function PricingIntro() {
                   +
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-tertiary mb-2 flex items-center gap-2">
+                  <h4 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
                     🔧 {t('pricing.extensionsTitle')}
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {t('pricing.extensionsDescription')}
-                  </p>
+                  <p 
+                    className="text-muted-foreground leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: highlightCallflows(t('pricing.extensionsDescription')) }}
+                  />
                 </div>
               </div>
             </div>

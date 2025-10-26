@@ -115,7 +115,7 @@ export function PetraModal({ isOpen, onClose }: PetraModalProps) {
                       <ul className="space-y-3 text-sm text-muted-foreground">
                         <li className="flex items-center gap-3">
                           <Search className="w-4 h-4 text-accent flex-shrink-0" />
-                          <span>Wer nutzt Zeitarbeit?</span>
+                          <span>Wer nutzt Ihre Dienstleistung?</span>
                         </li>
                         <li className="flex items-center gap-3">
                           <Target className="w-4 h-4 text-accent flex-shrink-0" />
@@ -168,7 +168,7 @@ export function PetraModal({ isOpen, onClose }: PetraModalProps) {
                           <p className="font-semibold text-lg mb-2">KI im Vertriebsprozess gezielt einsetzen</p>
                           <div className="flex items-center gap-2">
                             <Search className="w-5 h-5 text-accent flex-shrink-0" />
-                            <p className="text-muted-foreground m-0">Marktanalyse automatisieren: Wer nutzt Zeitarbeit, wo besteht Bedarf?</p>
+                            <p className="text-muted-foreground m-0">Marktanalyse automatisieren: Wer nutzt Ihre Dienstleistung, wo besteht Bedarf?</p>
                           </div>
                           <div className="flex items-center gap-2">
                             {/* Icon korrigiert: UserCheck durch ein passendes Icon aus lucide-react ersetzen */}

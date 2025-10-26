@@ -208,29 +208,29 @@
     "pilotMonthIncludes": "Pilotmonat enthält",
     "afterGoLive": "Nach Go-Live",
     "savedValue": "gespart",
-    "fullSetupAndConfig": "Vollständige Einrichtung und Konfiguration",
-    "includedMinutesText": "KI-Minuten inklusive",
-    "individualAdaptation": "Individuelle Anpassung an Ihr Unternehmen",
-    "noBasicFee": "Keine Grundgebühr",
-    "tierPricing": "Staffelpreise ab 0,99 €/Min",
-    "secondAccurateBilling": "Sekundengenaue Abrechnung",
+    "fullSetupAndConfig": "Individueller Prototyp",
+    "includedMinutesText": "Einrichtung und Konfiguration",
+    "individualAdaptation": "Anpassungen des callflows",
+    "noBasicFee": "Monitoring & Auswertung",
+    "tierPricing": "Laufender Support",
+    "secondAccurateBilling": "Kostenlose Updates",
     "startPilotMonth": "Pilotmonat starten",
     "cardTitle": "Pilotmonat KI-callflow",
     "cardSubtitle": "Individueller KI-callflow mit Einrichtung",
     "valueText": "Wert:",
     "pilotFeatures": {
-      "feature1": "Vollständige Einrichtung und Konfiguration", 
-      "feature2": "500 KI-Minuten inklusive",
-      "feature3": "Individuelle Anpassung an Ihr Unternehmen"
+      "feature1": "Individueller Prototyp", 
+      "feature2": "Einrichtung und Konfiguration",
+      "feature3": "Anpassungen des callflows"
     }
   },
   "pricing": {
     "hero": {
       "breadcrumb": "Preise",
-      "title": "Transparente KI-callflow Preise",
-      "subtitle": "Preise ohne Vertragslaufzeit",
-      "description": "Starten Sie risikofrei mit einem Pilotmonat - keine Vertragslaufzeit, keine versteckten Kosten",
-      "benefits": "✓ Keine Vertragslaufzeit ✓ Kein Risiko ✓ Reine Nutzungsgebühr"
+      "title": "Kalkulierbares Investment",
+      "subtitle": "Transparente und einfache Kostenstruktur",
+      "description": "Risikofreier Pilotmonat - keine Vertragslaufzeit, keine versteckten Kosten",
+      "benefits": "✓ Setup inklusive     ✓ Persönliche Betreuung     ✓ Sekundengenaue Abrechnung"
     },
     "seo": {
       "title": "KI-Voice-Agent Preise ohne Vertragslaufzeit | Pay-per-Use Telefonie | callflows",
@@ -324,9 +324,9 @@
       "saved": "gespart",
       "highlights": [
         "Keine Vertragslaufzeit, kein Risiko",
-        "Vollständige Einrichtung und Konfiguration", 
-        "500 KI-Minuten inklusive",
-        "Individuelle Anpassung an Ihr Unternehmen",
+        "Individueller Prototyp", 
+        "Einrichtung und Konfiguration",
+        "Anpassungen des callflows",
         "Persönliche Betreuung während der Pilotphase",
         "Go-Live Unterstützung"
       ],

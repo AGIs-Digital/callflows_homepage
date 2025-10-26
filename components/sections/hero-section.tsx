@@ -38,6 +38,10 @@ const WidgetCall = dynamic(() => import("@/components/widget-call/widget-call").
 export function HeroSection() {
   const { t, locale } = useI18n();
   
+  const highlightCallflows = (text: string) => {
+    return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
+  };
+  
   // Animierte Wörter basierend auf der Sprache
   const getAnimatedWords = () => {
     switch (locale) {
@@ -85,7 +89,7 @@ export function HeroSection() {
             {/* Lösung mit Animated Text */}
             <div className="space-y-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-foreground">
-                {t('home.hero.solution')}{" "}
+                <span dangerouslySetInnerHTML={{ __html: highlightCallflows(t('home.hero.solution')) }} />{" "}
                 <Suspense fallback={<span className="text-primary">Automatisch.</span>}>
                   <AnimatedText
                     words={getAnimatedWords()}
@@ -93,9 +97,10 @@ export function HeroSection() {
                   />
                 </Suspense>
               </h2>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-[600px]">
-                {t('home.hero.solutionDescription')}
-              </p>
+              <p 
+                className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-[600px]"
+                dangerouslySetInnerHTML={{ __html: highlightCallflows(t('home.hero.solutionDescription')) }}
+              />
             </div>
 
             {/* CTA Button links auf Höhe des Widget-Buttons */}

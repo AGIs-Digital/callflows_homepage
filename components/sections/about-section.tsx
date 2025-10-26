@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "@/lib/icons";
@@ -8,6 +9,10 @@ import { BreadcrumbSEO } from "@/components/ui/breadcrumb-seo";
 
 export function AboutSection() {
   const { t, locale } = useI18n();
+  
+  const highlightCallflows = (text: string) => {
+    return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
+  };
   
   const getFeatures = () => {
     const features = {
@@ -132,9 +137,10 @@ export function AboutSection() {
               <p className="text-lg text-black/75 dark:text-foreground">
                 {t('about.intro1')}
               </p>
-              <p className="text-lg text-black/75 dark:text-foreground">
-                {t('about.intro2')}
-              </p>
+              <p 
+                className="text-lg text-black/75 dark:text-foreground"
+                dangerouslySetInnerHTML={{ __html: highlightCallflows(t('about.intro2')) }}
+              />
               <p className="text-lg text-black/75 dark:text-foreground">
                 {t('about.intro3')}
               </p>

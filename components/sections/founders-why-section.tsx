@@ -5,6 +5,10 @@ import { useI18n } from "@/lib/i18n";
 
 export function FoundersWhySection() {
   const { t } = useI18n();
+  
+  const highlightCallflows = (text: string) => {
+    return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
+  };
 
   const founders: Array<{ name: string; roleKey: string; imgSrc?: string; quoteKey: string }> = [
     { name: "Timo Goltz", roleKey: "about.founders.timo.role", imgSrc: "/images/timogoltz.webp", quoteKey: "about.whyTimo" },
@@ -14,7 +18,10 @@ export function FoundersWhySection() {
   return (
     <section className="py-20 bg-gradient-to-b from-accent/20 via-primary/20 to-secondary/30">
       <div className="container max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10">{t("about.whyTitle")}</h2>
+        <h2 
+          className="text-3xl md:text-4xl font-bold text-foreground mb-10"
+          dangerouslySetInnerHTML={{ __html: highlightCallflows(t("about.whyTitle")) }}
+        />
 
         <div className="space-y-8">
           {founders.map((f, idx) => (
@@ -31,9 +38,10 @@ export function FoundersWhySection() {
               {/* Quote - Mobile optimiert */}
               <div className="relative flex-1 w-full">
                 <div className="absolute -top-2 sm:-top-4 -left-1 sm:-left-2 text-4xl sm:text-6xl text-primary/30 select-none">"</div>
-                <blockquote className="text-base sm:text-lg text-muted-foreground leading-relaxed pr-4 sm:pr-6 pt-4 sm:pt-0 text-center sm:text-left">
-                  {t(f.quoteKey)}
-                </blockquote>
+                <blockquote 
+                  className="text-base sm:text-lg text-muted-foreground leading-relaxed pr-4 sm:pr-6 pt-4 sm:pt-0 text-center sm:text-left"
+                  dangerouslySetInnerHTML={{ __html: highlightCallflows(t(f.quoteKey)) }}
+                />
                 <div className="absolute -bottom-2 sm:-bottom-4 -right-1 sm:-right-2 text-4xl sm:text-6xl text-primary/30 select-none">"</div>
                 <div className="mt-4 sm:mt-6 text-sm text-foreground font-semibold text-center sm:text-left">
                   {f.name} · {t(f.roleKey)}

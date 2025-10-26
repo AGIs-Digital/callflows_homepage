@@ -15,6 +15,10 @@ import { useI18n } from "@/lib/i18n";
 
 export function CoreFeaturesSection() {
   const { t } = useI18n();
+  
+  const highlightCallflows = (text: string) => {
+    return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
+  };
 
   const features = [
     {
@@ -38,12 +42,14 @@ export function CoreFeaturesSection() {
     <section className="py-20 bg-gradient-to-b from-[#fffff0] to-primary/35">
       <div className="container max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            {t('coreFeatures.title')}
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t('coreFeatures.subtitle')}
-          </p>
+          <h2 
+            className="text-4xl font-bold text-foreground mb-4"
+            dangerouslySetInnerHTML={{ __html: highlightCallflows(t('coreFeatures.title')) }}
+          />
+          <p 
+            className="text-xl text-muted-foreground max-w-2xl mx-auto"
+            dangerouslySetInnerHTML={{ __html: highlightCallflows(t('coreFeatures.subtitle')) }}
+          />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

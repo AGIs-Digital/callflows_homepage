@@ -5,17 +5,23 @@ import { useI18n } from "@/lib/i18n";
 
 export function CTASectionSecondary() {
   const { t } = useI18n();
+  
+  const highlightCallflows = (text: string) => {
+    return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
+  };
 
   return (
     <section className="py-20 bg-gradient-to-b from-primary/35 via-accent/30 to-accent/40">
       <div className="container max-w-6xl text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6 text-foreground">
-            {t('pricing.ctaTitle')}
-          </h2>
-          <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
-            {t('pricing.ctaDescription')}
-          </p>
+          <h2 
+            className="text-4xl font-bold mb-6 text-foreground"
+            dangerouslySetInnerHTML={{ __html: highlightCallflows(t('pricing.ctaTitle')) }}
+          />
+          <p 
+            className="text-xl text-muted-foreground mb-10 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: highlightCallflows(t('pricing.ctaDescription')) }}
+          />
           <BookingButton 
             buttonText={t('pricing.ctaButtonText')}
             className="bg-accent hover:bg-accent/90 text-gray-900 font-semibold px-8 py-4 text-lg gap-2"

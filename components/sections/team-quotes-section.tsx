@@ -12,9 +12,14 @@ type TeamMember = {
 
 export function TeamQuotesSection() {
   const { t } = useI18n();
+  
+  const highlightCallflows = (text: string) => {
+    return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
+  };
 
   // Manuell gepflegte Teamliste mit individuellen Rollen und Quotes
   const team: TeamMember[] = [
+
     { 
       name: "Pascal Stary", 
       role: t("about.teamMembers.pascal.role"), 
@@ -57,7 +62,10 @@ export function TeamQuotesSection() {
     <section className="py-20 bg-gradient-to-b from-secondary/30 via-secondary/90 to-primary/10">
       <div className="container max-w-6xl">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">{t("about.teamQuotesTitle")}</h2>
+          <h2 
+            className="text-3xl md:text-4xl font-bold text-foreground mb-3"
+            dangerouslySetInnerHTML={{ __html: highlightCallflows(t("about.teamQuotesTitle")) }}
+          />
           <p className="text-lg text-muted-foreground">{t("about.teamQuotesSubtitle")}</p>
         </div>
 
@@ -79,9 +87,12 @@ export function TeamQuotesSection() {
                 )}
               </div>
               <div className="relative">
-                <div className="absolute -top-2 -left-2 text-4xl text-primary/30 select-none">“</div>
-                <blockquote className="mt-4 text-sm text-muted-foreground leading-relaxed px-2">{m.quote}</blockquote>
-                <div className="absolute -bottom-2 -right-2 text-4xl text-primary/30 select-none">”</div>
+                <div className="absolute -top-2 -left-2 text-4xl text-primary/30 select-none">"</div>
+                <blockquote 
+                  className="mt-4 text-sm text-muted-foreground leading-relaxed px-2"
+                  dangerouslySetInnerHTML={{ __html: highlightCallflows(m.quote || '') }}
+                />
+                <div className="absolute -bottom-2 -right-2 text-4xl text-primary/30 select-none">"</div>
               </div>
               <div className="mt-3 text-sm font-semibold text-foreground">{m.name}</div>
               <div className="text-xs text-muted-foreground">{m.role}</div>

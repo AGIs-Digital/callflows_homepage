@@ -59,6 +59,11 @@ const OpenAILogo = () => (
 
 export function IntegrationChallengesSection() {
   const { t, tArray } = useI18n();
+  
+  const highlightCallflows = (text: string) => {
+    return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
+  };
+  
   const containerRef = useRef<HTMLDivElement>(null);
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
@@ -126,10 +131,14 @@ export function IntegrationChallengesSection() {
                   <Lightbulb className="w-6 h-6 text-primary dark:text-accent" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h2 className="text-3xl text-foreground font-bold mb-2 underline decoration-accent">{t('integrationChallenges.solutionTitle')}</h2>
-                  <p className="text-lg text-foreground dark:text-white">
-                    {t('integrationChallenges.solutionDescription').replace('callflows', '')}
-                  </p>
+                  <h2 
+                    className="text-3xl text-foreground font-bold mb-2 underline decoration-accent"
+                    dangerouslySetInnerHTML={{ __html: highlightCallflows(t('integrationChallenges.solutionTitle')) }}
+                  />
+                  <p 
+                    className="text-lg text-foreground dark:text-white"
+                    dangerouslySetInnerHTML={{ __html: highlightCallflows(t('integrationChallenges.solutionDescription')) }}
+                  />
                 </div>
               </div>
             </div>

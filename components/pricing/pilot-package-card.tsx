@@ -9,11 +9,15 @@ import { useI18n } from "@/lib/i18n";
 
 export function PilotPackageCard() {
   const { t } = useI18n();
+  
+  const highlightCallflows = (text: string) => {
+    return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
+  };
 
   return (
     <div className="h-full flex flex-col">
       <div className="text-center mb-8">
-        <h2 className="text-2xl xl:text-3xl font-bold text-primary dark:text-white mb-4">
+        <h2 className="text-2xl xl:text-3xl font-bold text-foreground dark:text-white mb-4">
           {t('pilotPackage.title')}
         </h2>
         <p className="text-base xl:text-lg text-muted-foreground">
@@ -88,9 +92,10 @@ export function PilotPackageCard() {
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-s text-muted-foreground leading-relaxed">
-                      {t('pilotPackage.pilotFeatures.feature3')}
-                    </span>
+                    <span 
+                      className="text-s text-muted-foreground leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: highlightCallflows(t('pilotPackage.pilotFeatures.feature3')) }}
+                    />
                   </div>
                 </div>
               </div>

@@ -5,12 +5,19 @@ import { useI18n } from "@/lib/i18n";
 
 export function PricingFeatures() {
   const { t, tArray } = useI18n();
+  
+  const highlightCallflows = (text: string) => {
+    return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
+  };
 
   return (
     <div className="py-0">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h3 className="text-4xl font-bold mb-4 text-foreground dark:text-white">{t('pricing.featuresTitle')}</h3>
+          <h3 
+            className="text-4xl font-bold mb-4 text-foreground dark:text-white"
+            dangerouslySetInnerHTML={{ __html: highlightCallflows(t('pricing.featuresTitle')) }}
+          />
         </div>
         
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">

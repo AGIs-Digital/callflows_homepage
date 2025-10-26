@@ -10,7 +10,7 @@ export function PricingBillingHints() {
     <div className="mt-12 max-w-4xl mx-auto">
       <Card className="bg-card/60 backdrop-blur-sm border border-border/50">
         <CardHeader className="pb-4">
-          <CardTitle className="text-lg text-center text-primary">
+          <CardTitle className="text-lg text-center text-foreground">
             {t('minuteTiers.billingHints')}
           </CardTitle>
         </CardHeader>
