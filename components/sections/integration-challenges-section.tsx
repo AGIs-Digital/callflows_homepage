@@ -74,7 +74,7 @@ export function IntegrationChallengesSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Linke Spalte - Text und Herausforderungen */}
           <div className="space-y-8">
-            <h2 className="text-4xl font-bold text-primary">
+            <h2 className="text-4xl font-bold text-foreground">
               {t('integrationChallenges.title')}
             </h2>
             
@@ -88,7 +88,7 @@ export function IntegrationChallengesSection() {
                   <Layers className="w-5 h-5 text-red-600 " />
                 </div>
                 <div>
-                  <h3 className="text-tertiary font-bold">{t('integrationChallenges.challenge1.title')}</h3>
+                  <h3 className="text-foreground font-bold">{t('integrationChallenges.challenge1.title')}</h3>
                   <p className="text-sm text-foreground dark:text-gray-200">
                     {t('integrationChallenges.challenge1.description')}
                   </p>
@@ -100,7 +100,7 @@ export function IntegrationChallengesSection() {
                   <Wrench className="w-5 h-5 text-amber-600 " />
                 </div>
                 <div>
-                  <h3 className="text-tertiary font-bold">{t('integrationChallenges.challenge2.title')}</h3>
+                  <h3 className="text-foreground font-bold">{t('integrationChallenges.challenge2.title')}</h3>
                   <p className="text-sm text-foreground dark:text-gray-200">
                     {t('integrationChallenges.challenge2.description')}
                   </p>
@@ -112,7 +112,7 @@ export function IntegrationChallengesSection() {
                   <Puzzle className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-tertiary font-bold">{t('integrationChallenges.challenge3.title')}</h3>
+                  <h3 className="text-foreground font-bold">{t('integrationChallenges.challenge3.title')}</h3>
                   <p className="text-sm text-foreground dark:text-gray-200">
                     {t('integrationChallenges.challenge3.description')}
                   </p>
@@ -126,7 +126,7 @@ export function IntegrationChallengesSection() {
                   <Lightbulb className="w-6 h-6 text-primary dark:text-accent" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h2 className="text-3xl text-tertiary font-bold mb-2 underline decoration-accent">{t('integrationChallenges.solutionTitle')}</h2>
+                  <h2 className="text-3xl text-foreground font-bold mb-2 underline decoration-accent">{t('integrationChallenges.solutionTitle')}</h2>
                   <p className="text-lg text-foreground dark:text-white">
                     {t('integrationChallenges.solutionDescription').replace('callflows', '')}
                   </p>

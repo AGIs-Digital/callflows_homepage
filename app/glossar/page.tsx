@@ -16,7 +16,7 @@ export default function GlossarIndex() {
       <main className="bg-background">
         <SiteHeader />
         <div className="relative overflow-hidden">
-        <section className="py-8 pb-20 bg-gradient-to-b from-secondary/25 via-secondary/35 to-secondary/40">
+        <section className="pt-20 pb-20 bg-gradient-to-b from-secondary/25 via-secondary/35 to-secondary/40">
           <div className="container max-w-6xl">
             {/* Breadcrumbs */}
             <BreadcrumbSEO 
@@ -100,8 +100,8 @@ export default function GlossarIndex() {
               })}
             </div>
 
-            <div className="mt-6 rounded-xl border bg-accent/10 p-5">
-              <p className="text-sm text-muted-foreground">
+            <div className="mt-6 rounded-xl border bg-accent/20 p-5">
+              <p className="text-s text-muted-foreground">
                 <strong className="text-foreground">{t('glossary.kiCallflow.noteLabel')}</strong> {t('glossary.kiCallflow.note')}
               </p>
             </div>
@@ -139,7 +139,7 @@ export default function GlossarIndex() {
         <section className="py-16 bg-gradient-to-b from-tertiary/25 via-accent/30 to-accent/45 pb-24">
           <div className="container max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">{t('glossary.kiCallflow.benefitsTitle')}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t('glossary.kiCallflow.benefitsTitle')}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 {t('glossary.kiCallflow.benefitsSubtitle')}
               </p>

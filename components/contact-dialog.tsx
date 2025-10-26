@@ -38,7 +38,7 @@ export function ContactDialog() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-primary dark:text-white">
+          <DialogTitle className="text-2xl font-bold text-foreground">
             Kontakt aufnehmen
           </DialogTitle>
         </DialogHeader>

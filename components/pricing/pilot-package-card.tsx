@@ -11,24 +11,23 @@ export function PilotPackageCard() {
   const { t } = useI18n();
 
   return (
-    <div className="py-12 bg-gradient-to-b from-tertiary/35 via-secondary/20 to-secondary/25">
-      <div className="container max-w-3xl mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-primary dark:text-white mb-4">
-            {t('pilotPackage.title')}
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            {t('pilotPackage.subtitle')}
-          </p>
-        </div>
+    <div className="h-full flex flex-col">
+      <div className="text-center mb-8">
+        <h2 className="text-2xl xl:text-3xl font-bold text-foreground mb-4">
+          {t('pilotPackage.title')}
+        </h2>
+        <p className="text-base xl:text-lg text-muted-foreground">
+          {t('pilotPackage.subtitle')}
+        </p>
+      </div>
 
-        <Card className="relative border-primary shadow-xl">
+      <Card className="relative border-primary shadow-xl flex-1">
           <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1">
             {t('pilotPackage.badge')}
           </Badge>
           
           <CardHeader className="text-center pt-8 pb-6">
-            <h3 className="text-3xl font-bold text-primary dark:text-white mb-2">
+            <h3 className="text-3xl font-bold text-foreground mb-2">
               {t('pilotPackage.cardTitle')}
             </h3>
             <p className="text-lg text-muted-foreground mb-6">
@@ -77,19 +76,19 @@ export function PilotPackageCard() {
                 <div className="space-y-2">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">
+                    <span className="text-s text-muted-foreground leading-relaxed">
                       {t('pilotPackage.pilotFeatures.feature1')}
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">
+                    <span className="text-s text-muted-foreground leading-relaxed">
                       {t('pilotPackage.pilotFeatures.feature2')}
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">
+                    <span className="text-s text-muted-foreground leading-relaxed">
                       {t('pilotPackage.pilotFeatures.feature3')}
                     </span>
                   </div>
@@ -105,15 +104,15 @@ export function PilotPackageCard() {
                 <div className="space-y-2">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{t('pilotPackage.noBasicFee')}</span>
+                    <span className="text-s text-muted-foreground">{t('pilotPackage.noBasicFee')}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{t('pilotPackage.tierPricing')}</span>
+                    <span className="text-s text-muted-foreground">{t('pilotPackage.tierPricing')}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{t('pilotPackage.secondAccurateBilling')}</span>
+                    <span className="text-s text-muted-foreground">{t('pilotPackage.secondAccurateBilling')}</span>
                   </div>
                 </div>
               </div>
@@ -129,8 +128,7 @@ export function PilotPackageCard() {
               showArrow={true}
             />
           </CardFooter>
-        </Card>
-      </div>
+      </Card>
     </div>
   );
 }

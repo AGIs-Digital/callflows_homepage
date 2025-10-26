@@ -61,7 +61,7 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <div className="min-h-screen flex items-center justify-center bg-background">
           <div className="text-center p-8 rounded-lg border bg-card shadow-lg">
-            <h2 className="text-2xl font-bold mb-4 text-primary">Etwas ist schiefgelaufen</h2>
+            <h2 className="text-2xl font-bold mb-4 text-foreground">Etwas ist schiefgelaufen</h2>
             <p className="text-muted-foreground mb-6">
               Ein unerwarteter Fehler ist aufgetreten. Bitte laden Sie die Seite neu.
             </p>

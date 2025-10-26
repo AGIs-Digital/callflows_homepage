@@ -32,21 +32,21 @@
   },
   "home": {
     "title": "callflows - End‑to‑End Telefonautomatisierung für automatisierte Telefonie",
-    "description": "Revolutionieren Sie Ihren Kundenservice mit KI‑callflows. Intelligente Gesprächs- und Prozessflüsse für automatisierte Kundenkommunikation, Vertrieb und Support – 24/7 verfügbar.",
+    "description": "Revolutionieren Sie Ihren Kundenservice mit callflows. Intelligente Gesprächs- und Prozessflüsse für automatisierte Kundenkommunikation, Vertrieb und Support – 24/7 verfügbar.",
     "hero": {
-      "headline1": "Automatisierte Telefonie mit KI:",
-      "headline2": "Mehr Zeit für Vertrieb.",
-      "description": "KI‑Voice‑Agents für den Mittelstand: Wir übernehmen Routine‑Telefonate 24/7 – transparent nach Minuten, ohne Vertragslaufzeit und ohne KI‑Know‑how. So gewinnt Ihr Team Zeit für qualifizierte Leads und Abschlüsse.",
-      "solution": "Mit KI‑callflows",
-      "solutionDescription": "KI‑callflows = Ihr Conversation Flow: natürliche Dialoge, Prozesslogik & Integrationen – Ende‑zu‑Ende.",
+      "headline1": "Telefonie mit KI automatisieren:",
+      "headline2": "Fokus auf Umsatz",
+      "description": "KI‑Voice‑Agents für den Mittelstand: Routine‑Telefonate 24/7 – ohne Vertragslaufzeit, Pay-as-you-go sekundengenau. Team entlasten, Zeit gewinnen. Für das was wichtig ist.",
+      "solution": "Mit callflows",
+      "solutionDescription": "Ihr Conversation Flow: natürliche Dialoge, Prozesslogik, Automation & Integrationen – Ende‑zu‑Ende, made in germany.",
       "cta": "Termin buchen",
       "widgetUnavailable": "Widget vorübergehend nicht verfügbar",
       "widgetUnavailableDescription": "Keine Sorge - das passiert manchmal bei Live-Demos"
     }
   },
   "widget": {
-    "title": "KI‑callflow Live testen",
-    "description": "Geben Sie Ihre Telefonnummer ein und erleben Sie unseren KI‑callflow",
+    "title": "callflows Live testen",
+    "description": "Telefonnummer und Namen eingeben und mit unserer Markenbotschafterin Carla sprechen.",
     "nameLabel": "Ihr Name",
     "namePlaceholder": "Max Mustermann",
     "phoneLabel": "Telefonnummer",
@@ -68,7 +68,7 @@
     "rateLimitExceeded": "Zu viele Anfragen. Bitte warten Sie einige Minuten."
   },
   "roiCalculator": {
-    "title": "Wie viel Umsatz generieren Sie mit KI‑callflows?",
+    "title": "Wie viel Umsatz generieren Sie mit callflows?",
     "subtitle": "Berechnen Sie Ihre Umsatzsteigerung durch automatisierte Anrufe und qualifizierte Leads",
     "badge": "ROI-Calculator",
     "parameters": {
@@ -124,7 +124,7 @@
     },
     "revenue": {
       "title": "Umsatz-Potential",
-      "subtitle": "Ihre Erfolge mit KI‑callflows",
+      "subtitle": "Ihre Erfolge mit callflows",
       "qualifiedLeads": "Qualifizierte Leads/Monat",
       "successfulDeals": "Erfolgreiche Abschlüsse/Monat",
       "monthlyRevenue": "Monatlicher Umsatz",
@@ -151,6 +151,7 @@
     "subtitle": "Transparente Abrechnung nach Verbrauch am Monatsende",
     "badge": "Keine Vertragslaufzeit, kein Risiko",
     "tableTitle": "Staffelpreise pro Minute (alle Preise zzgl. MwSt.)",
+    "tableTitleShort": "Staffelpreise pro Minute",
     "minuteRange": "Minutenbereich",
     "pricePerMinute": "Preis pro Minute",
     "exampleCosts": "Beispiel Monatskosten",
@@ -168,6 +169,9 @@
     "scalingDesc": "Staffel greift automatisch je nach Verbrauch",
     "support": "Support",
     "supportDesc": "Betrieb & Support inklusive; individuelle Erweiterungen jederzeit möglich",
+    "enterpriseTitle": "Sie benötigen deutlich mehr?",
+    "enterpriseDescription": "Bei größeren Volumina bieten wir Ihnen maßgeschneiderte Enterprise-Konditionen mit individuellen Preismodellen. Sprechen Sie uns gerne in Ihrem Beratungstermin darauf an.",
+    "taxNotice": "Alle Preise zzgl. MwSt.",
     "noBasicFee": "Keine",
     "secondAccurate": "Sekundengenau",
     "monthlyBilling": "Monatliche",
@@ -234,7 +238,7 @@
       "keywords": "KI-Voice-Agent, automatisierte Telefonie, Pay-per-Use, Vertrieb Mittelstand, minutenbasierte Abrechnung, ohne Vertragslaufzeit"
     },
     "pageTitle": "KI‑callflow Preise",
-    "introTitle": "So einfach funktioniert der Einstieg mit KI‑callflows",
+    "introTitle": "So einfach funktioniert der Einstieg mit callflows",
     "introSubtitle": "Professionelle Voice Agents für Ihr Unternehmen – von der kostenlosen Beratung bis zum erfolgreichen Go-Live. Transparent, unkompliziert und ohne versteckte Kosten.",
     "step1Title": "Kostenloses Erstgespräch",
     "step1Description": "Bedarfsanalyse und Zieldefinition für Ihren maßgeschneiderten KI-Voice-Agent. Wir analysieren Ihre Telefonie-Prozesse und definieren gemeinsam die optimale KI-Lösung für Ihr Unternehmen.",
@@ -243,7 +247,7 @@
     "step3Title": "Wöchentliche Optimierung",
     "step3Description": "Regelmäßige Meetings für Performance-Monitoring und kontinuierliches Feintuning Ihres KI-Voice-Agents. Maximale Effizienz durch datenbasierte Optimierung.",
     "step4Title": "Transparente Live-Abrechnung",
-    "step4Description": "Nach dem Go-Live zahlen Sie nur die sekundengenaue Arbeitszeit Ihrer KI-callflows. Keine Grundgebühren, keine versteckten Kosten – nur faire Minutenpreise.",
+    "step4Description": "Nach dem Go-Live zahlen Sie nur die sekundengenaue Arbeitszeit Ihrer callflows. Keine Grundgebühren, keine versteckten Kosten – nur faire Minutenpreise.",
     "extensionsTitle": "Erweiterungen nach Bedarf",
     "extensionsDescription": "Zusätzliche KI‑callflows oder Beratungsleistungen werden separat nach Aufwand abgerechnet. Skalieren Sie Ihre Automatisierung flexibel nach Ihren Bedürfnissen.",
     "starterTitle": "Was im Pilotmonat enthalten ist",
@@ -265,7 +269,7 @@
     "pilotDurationDesc": "Setup-Gebühr: 50% vor Prototyp, 50% bei Go-Live",
     "riskFreeTitle": "Risikofreies Testen",
     "flexibleTitle": "Pay-as-you-go",
-    "riskFreeStart": "So starten Sie risikofrei – mit voller Kontrolle, transparenter Preisstruktur und KI‑callflows, die perfekt zu Ihrem Unternehmen passen.",
+    "riskFreeStart": "So starten Sie risikofrei – mit voller Kontrolle, transparenter Preisstruktur und callflows, die perfekt zu Ihrem Unternehmen passen.",
     "flexibleDesc": "Zahlen Sie nur für das, was Sie wirklich nutzen – ohne Vertragslaufzeit",
     "monthlyPackages": "Unsere Preise",
     "pricesExclVat": "Alle Preise ohne MwSt.",
@@ -279,7 +283,7 @@
     "monthly": "mtl.",
     "roiCalculator": {
       "badge": "ROI-Rechner",
-      "title": "Wie viel Umsatz generieren Sie mit KI‑callflows?",
+      "title": "Wie viel Umsatz generieren Sie mit callflows?",
       "subtitle": "Berechnen Sie Ihre Umsatzsteigerung durch automatisierte Anrufe und qualifizierte Leads",
       "yourParameters": "Ihre Vertriebsparameter",
       "parametersDescription": "Passen Sie die Werte an Ihre Situation an",
@@ -293,7 +297,7 @@
       "minutes": "Min.",
       "seconds": "s",
       "yourRevenue": "Ihre Umsatzsteigerung",
-      "revenueDescription": "Monatliche Ergebnisse mit KI-callflows",
+      "revenueDescription": "Monatliche Ergebnisse mit callflows",
       "kiCostsMonthly": "KI-Kosten/Monat",
       "generatedRevenue": "Generierter Umsatz/Monat",
       "roi": "Return on Investment",
@@ -360,7 +364,7 @@
       "teamRelief": "Team-Entlastung",
       "testimonial": "„Bereits im Pilotmonat automatisierte unser erster Kunde 1.256 Anrufe, erzielte 14% qualifizierte Leads und entlastete das Team spürbar – mehr Fokus auf Abschlüsse.“",
       "calculatorTitle": "Berechnen Sie Ihr Einsparpotential",
-      "calculatorDescription": "Nutzen Sie unseren detaillierten ROI-Calculator und erfahren Sie, wie viel Sie mit KI-callflows sparen können.",
+      "calculatorDescription": "Nutzen Sie unseren detaillierten ROI-Calculator und erfahren Sie, wie viel Sie mit callflows sparen können.",
       "calculatorButton": "ROI-Calculator öffnen"
     },
     "additionalTitle": "Nutzungsbasierte Abrechnung",
@@ -475,7 +479,7 @@
       "noteLabel": "Merke:",
       "note": "Sobald Analyse, Bereinigung, Datenextraktion und Automationen nach dem Gespräch dazugehören, spricht man von einem Conversation Flow – es ist ein Gesamtprozess vor, während und nach dem Call.",
       "benefitsTitle": "Vorteile",
-      "benefitsSubtitle": "Entdecken Sie die entscheidenden Vorteile von KI‑callflows für Ihr Unternehmen",
+      "benefitsSubtitle": "Entdecken Sie die entscheidenden Vorteile von callflows für Ihr Unternehmen",
       "benefits": [
         "Höhere Abschlussquote durch strukturierte Prozessführung",
         "Proaktive Entwicklung passend zu Ihrer Strategie",
@@ -486,13 +490,13 @@
   },
   "faq": {
     "pageTitle": "FAQ - KI‑Voice‑Agents & automatisierte Telefonie",
-    "pageSubtitle": "Alles über KI‑Callflows, Voice Agents und automatisierte Anrufe im B2B‑Vertrieb",
+    "pageSubtitle": "Alles über KI‑callflows, Voice Agents und automatisierte Anrufe im B2B‑Vertrieb",
     "description": "Hier finden Sie Antworten auf häufige Fragen rund um KI‑Voice‑Agents, automatisierte Telefonie und Pay‑per‑Use Abrechnung ohne Vertragslaufzeit.",
     "question1": "Was ist ein KI‑Callflow und wie funktioniert er?",
     "answer1": "Ein KI‑Callflow ist ein digitaler Telefonassistent, der eingehende Anrufe automatisch entgegennimmt, versteht und führt. Anders als bei herkömmlichen Telefonanlagen mit starren Menüs können KI‑Voice‑Agents natürliche Gespräche führen, die Bedürfnisse der Anrufer erkennen und Aufgaben wie Terminvereinbarung, Lead‑Qualifizierung oder Support eigenständig erledigen. Möglich wird das durch eine Kombination aus Spracherkennung, natürlicher Sprachverarbeitung und lernenden Algorithmen. Der KI‑Callflow greift auf Ihre bestehenden Kalender‑ oder CRM‑Systeme zu, prüft Verfügbarkeiten oder ruft Kundendaten ab – so entstehen flüssige Gespräche, die sich anfühlen wie mit einem menschlichen Mitarbeiter.",
     "question2": "Welche Vorteile bieten KI‑Voice‑Agents gegenüber klassischen Telefonanlagen?",
     "answer2": "KI‑Telefonagenten sind rund um die Uhr erreichbar und können mehrere Anrufe gleichzeitig bearbeiten. Dadurch gehen keine Telefonate verloren, auch nicht während Stoßzeiten oder außerhalb der Geschäftszeiten. Unternehmen sparen Personalkosten für Empfangs‑ oder Call‑Center‑Mitarbeiter und reduzieren gleichzeitig Wartezeiten. Da jeder Anrufer sofort bedient wird, verbessert sich die Kundenerfahrung und potenzielle Kunden werden nicht frustriert. Gleichzeitig qualifiziert die KI Leads vor und sammelt relevante Daten, damit sich Ihr Vertriebsteam auf die vielversprechendsten Kontakte konzentrieren kann.",
-    "question3": "Für welche Unternehmen sind KI‑callflows geeignet?",
+    "question3": "Für welche Unternehmen sind callflows geeignet?",
     "answer3": "Unser Service ist besonders attraktiv für mittelständische Unternehmen, Personaldienstleister und Vertriebsteams mit hohem Anrufaufkommen. Überall dort, wo Standardanrufe wertvolle Kapazitäten blockieren – etwa bei Terminvereinbarungen, Vorqualifizierung von Bewerbern, Kaltakquise oder einfachen Support‑Anfragen – kann ein KI‑Callflow sinnvoll eingesetzt werden. Auch Konzerne profitieren von der skalierbaren, transparenten Telefon‑Automatisierung, wenn sie ihre internen Ressourcen schonen möchten.",
     "question4": "Muss ich technisches Know‑how oder KI‑Expertise haben?",
     "answer4": "Nein. callflows ist ein schlüsselfertiger Komplett‑Service. Wir konzipieren die Gesprächslogik gemeinsam mit Ihnen, richten Ihren individuellen Callflow ein und übernehmen den laufenden Betrieb. Sie benötigen keine eigenen IT‑Ressourcen und müssen sich nicht mit Trainingsdaten oder komplexen KI‑Modellen befassen. Unser Team kümmert sich darum, dass der KI‑Voice‑Agent zuverlässig funktioniert und kontinuierlich dazu lernt.",
@@ -505,7 +509,7 @@
     "question8": "Wie ist es um Datenschutz und DSGVO‑Konformität bestellt?",
     "answer8": "Datenschutz hat oberste Priorität. Unsere KI‑Infrastruktur ist vollständig DSGVO‑konform und in Deutschland gehostet. Alle Gesprächsdaten werden verschlüsselt übertragen und gespeichert. Auf Wunsch können Aufzeichnungen und Transkripte für Trainings‑ oder Dokumentationszwecke aktiviert oder deaktiviert werden. Persönliche Daten werden ausschließlich zur Erfüllung des vereinbarten Zwecks verwendet und nicht für allgemeine Modelltrainings genutzt. Wir halten uns an gesetzliche Aufbewahrungsfristen und schulen unser Team regelmäßig im Datenschutz.",
     "question9": "Lässt sich der KI‑Callflow an unsere Systeme und Prozesse anpassen?",
-    "answer9": "Ja. Ein entscheidender Vorteil von callflows ist die hohe Integrationsfähigkeit und Anpassbarkeit. Die KI kann Kalender‑ oder CRM‑Systeme anzapfen, um Termine zu buchen oder Kundendaten zu aktualisieren. Sie können Begrüßungen, Dialog‑Flows und Entscheidungsregeln nach Ihren Bedürfnissen gestalten. Je besser wir Ihre Abläufe kennen, desto nahtloser fügt sich der Callflow in Ihre Vertriebs‑ oder Recruiting‑Prozesse ein.",
+    "answer9": "Ja. Ein entscheidender Vorteil von callflows ist die hohe Integrationsfähigkeit und Anpassbarkeit. Die KI kann Kalender‑ oder CRM‑Systeme anzapfen, um Termine zu buchen oder Kundendaten zu aktualisieren. Sie können Begrüßungen, Dialog‑Flows und Entscheidungsregeln nach Ihren Bedürfnissen gestalten. Je besser wir Ihre Abläufe kennen, desto nahtloser fügt sich der callflow in Ihre Vertriebs‑ oder Recruiting‑Prozesse ein.",
     "question10": "Welche Sprachen und Stimmen werden unterstützt?",
     "answer10": "Unser System nutzt hochqualitative Sprachsynthese, die viele Stimmen in unterschiedlichen Stilen unterstützt. Die Gespräche klingen natürlich und passen sich Ihrem Markenauftritt an. Wir starten mit Deutsch und Englisch; auf Wunsch können weitere Sprachen integriert werden. Für jede Sprache stehen mehrere Stimmen (männlich/weiblich) zur Auswahl, die sich in Tonlage und Ausdruck unterscheiden.",
     "question11": "Was passiert, wenn die KI einmal nicht weiterkommt?",
@@ -654,10 +658,10 @@
     "teamDescription": "ist keine Software – sondern ein Team. Mit Hintergrund in Vertrieb, Marketing & Automatisierung. Mit echtem Interesse an Ihrem Erfolg.",
     "how": "Wie?",
     "benefit": "Benefit?",
-    "logoAlt": "callflows - KI-callflows für Unternehmen",
+    "logoAlt": "callflows - callflows für Unternehmen",
     "logoTitle": "callflows Logo mit Claim",
     "teamImageAlt": "callflows Gründer - Experten für KI-Voice-Agents im Mittelstand",
-    "teamImageTitle": "Das Team von callflows – Experten für KI‑callflows",
+    "teamImageTitle": "Das Team von callflows – Experten für callflows",
     "whyTitle": "Warum wir callflows gegründet haben",
     "whyTimo": "Wir stehen ganz am Anfang einer riesigen Entwicklung – und ich liebe es, mittendrin zu sein. Es begeistert mich, wie KI schon heute echte Gespräche führen kann. Und noch mehr begeistert es mich, was sie morgen leisten wird. Mit callflows machen wir diese Möglichkeiten für Unternehmen erlebbar – und helfen dabei, sie produktiv zu nutzen.",
     "whyTom": "Der Einsatz von KI im Kundenkontakt erfordert nicht nur Technologie, sondern ein tiefes Verständnis für Prozesse, Qualität und Effizienz. Unser Ziel ist es, Lösungen zu schaffen, die skalierbar, wirtschaftlich sinnvoll und dabei zuverlässig in bestehende Abläufe integrierbar sind. Genau das setzen wir mit callflows tagtäglich um.",
@@ -843,8 +847,8 @@
       "title": "Hoher Ressourcenaufwand",
       "description": "Dedizierte Vollzeitkräfte für Entwicklung, Wartung und Optimierung nötig"
     },
-    "solutionTitle": "Die Lösung: callflows übernimmt",
-    "solutionDescription": "Unsere KI‑Voice‑Agents führen natürliche Dialoge, qualifizieren Leads, vereinbaren Termine und dokumentieren Ergebnisse – 24/7. Sie müssen nichts konfigurieren: Wir liefern einen schlüsselfertigen Komplett‑Service, der ohne KI‑Expertise funktioniert und sich an Ihre Prozesse anpasst.",
+    "solutionTitle": "Ihre Lösung: callflows",
+    "solutionDescription": "Unsere KI‑Voice‑Agents führen natürliche Dialoge, qualifizieren Leads, vereinbaren Termine, dokumentieren Ergebnisse und erzeugen konkrete ToDo's – 24/7. Sie müssen nichts konfigurieren: Wir liefern einen schlüsselfertigen Komplett‑Service, angepasst an Ihre Prozesse. Die KI‑Expertise bringen wir mit!",
     "comparison": {
       "callflows": [
         "Komplette Expertise & Setup-Übernahme",
@@ -930,45 +934,63 @@
     }
   },
   "featuresTarget": {
-    "badge": "Für wen ist das?",
-    "title": "KI‑Voice‑Agents für den Mittelstand",
-    "subtitle": "KI-Voice-Agents unterstützen den Mittelstand dabei, automatisierte Anrufe im B2B-Vertrieb zu realisieren und gleichzeitig den persönlichen Kontakt zu stärken",
-    "cta": "Passt zu Ihrem Unternehmen? Lassen Sie uns sprechen!",
+    "badge": "AI-Voice-Agents im Einsatz",
+    "title": "Automatisierte Telefonie für jede Branche",
+    "subtitle": "KI-Voice-Agents übernehmen Routine-Anrufe – inbound wie outbound. Von Lead-Qualifizierung über Support bis Mitarbeiter-Onboarding: Entlasten Sie Ihr Team und fokussieren Sie auf das Wesentliche.",
+    "cta": "Klingt spannend? Lassen Sie uns sprechen, was für Sie passt! 🚀",
     "targetGroups": {
+      "sales": {
+        "title": "B2B-Vertrieb & Lead-Qualifizierung",
+        "description": "Automatisierte Erstkontakte & Follow-ups. Mehr qualifizierte Leads bei geringerem Zeitaufwand für Ihr Vertriebsteam.",
+        "benefits": [
+          "Lead-Scoring & Qualifizierung",
+          "Follow-up-Kampagnen ohne manuelle Arbeit",
+          "Mehr Zeit für Abschlussgespräche"
+        ]
+      },
       "staffing": {
-        "title": "Personaldienstleister",
-        "description": "mit hoher Anruf- und Follow-up-Last",
+        "title": "Recruiting & Personaldienstleister",
+        "description": "Kandidaten-Kontaktierung auf Autopilot. Schnellere Besetzung offener Stellen durch kontinuierliche Kandidaten-Ansprache.",
         "benefits": [
-          "Automatisierte Anrufe für Kandidaten-Kontaktierung",
-          "KI-Telefonie reduziert manuelle Follow-ups",
-          "Mehr Zeit für qualifizierte Gespräche im B2B-Vertrieb"
+          "Automatisierte Kandidaten-Ansprache",
+          "Screening-Calls rund um die Uhr",
+          "Reduzierung manueller Follow-ups"
         ]
       },
-      "mediumSales": {
-        "title": "Mittelständische Vertriebsorganisationen",
-        "description": "die skalieren wollen",
+      "support": {
+        "title": "Inbound-Support & FAQ-Handling",
+        "description": "Erste Fragen automatisiert beantworten. Ihre Kunden erhalten sofort Hilfe, Ihr Team hat mehr Zeit für komplexe Fälle.",
         "benefits": [
-          "Skalierbare Vertriebsprozesse",
+          "24/7 Erreichbarkeit für Standardfragen",
+          "Entlastung Ihrer Support-Mitarbeiter",
+          "Schnelle Lösungen für wiederkehrende Anfragen"
+        ]
+      },
+      "appointments": {
+        "title": "Terminvereinbarung & Reminder",
+        "description": "Termine buchen & an sie erinnern. Reduzieren Sie No-Shows und optimieren Sie Ihre Kapazitätsplanung.",
+        "benefits": [
+          "Automatische Terminkoordination",
+          "Reminder-Anrufe vor wichtigen Terminen",
+          "Reduktion von No-Shows"
+        ]
+      },
+      "internal": {
+        "title": "Mitarbeiter-Onboarding & IT-Helpline",
+        "description": "Interne Prozesse automatisieren. Neue Mitarbeiter werden schneller produktiv, IT-Teams haben mehr Kapazität.",
+        "benefits": [
+          "Onboarding-Calls für neue Mitarbeiter",
+          "IT-Helpdesk für Standardfragen",
+          "Entlastung interner Teams"
+        ]
+      },
+      "outbound": {
+        "title": "Outbound-Kampagnen & Follow-ups",
+        "description": "Skalierbare Anruf-Kampagnen. Erreichen Sie mehr Kontakte in kürzerer Zeit ohne zusätzliches Personal.",
+        "benefits": [
+          "Massenhafte Kontaktierung ohne Personalaufbau",
           "Konsistente Kundenansprache",
-          "Wachstum ohne Personalaufbau"
-        ]
-      },
-      "efficientTeams": {
-        "title": "Effiziente Teams",
-        "description": "die Standardanrufe automatisieren möchten",
-        "benefits": [
-          "Mehr Zeit für Abschlüsse",
-          "Automatisierte Routine-Tasks",
-          "Höhere Conversion-Raten"
-        ]
-      },
-      "enterprises": {
-        "title": "Konzerne",
-        "description": "die transparente, flexible KI-Telefonie suchen",
-        "benefits": [
-          "Transparente Kostenstruktur",
-          "Flexibel skalierbare Lösung",
-          "Enterprise-Grade Sicherheit"
+          "Automatische Wiedervorlagen"
         ]
       }
     }
@@ -979,7 +1001,7 @@
     "subtitle": "Von der ersten Analyse bis zum produktiven Einsatz – wir begleiten Sie durch jeden Schritt",
     "cta": {
       "title": "Bereit für den nächsten Schritt?",
-      "description": "Lassen Sie uns gemeinsam analysieren, wie KI-callflows Ihren Vertrieb unterstützen können",
+      "description": "Lassen Sie uns gemeinsam analysieren, wie callflows Sie unterstützen kann.",
       "buttonText": "Termin buchen"
     },
     "steps": {
@@ -1040,10 +1062,10 @@
       "buttonText": "ROI-Calculator öffnen"
     }
   },
-  "whyCallflows": {
+  "whycallflows": {
     "badge": "Warum callflows?",
     "title": "Mehr als Software – ein Partner",
-    "description": "Viele Anbieter überlassen Ihnen die Einrichtung. Wir liefern End-to-End: von Dialog-Design und Prozesslogik bis zu Integration und Betrieb. Dazu ein verständliches Minuten-Modell ohne Laufzeitbindung. So bleibt KI einfach, transparent und kalkulierbar."
+    "description": "Viele Anbieter lassen Sie mit der Bedienung einer Software oder Whitelabel Lösung allein. Wir liefern End-to-End: von Dialog-Design und Prozesslogik bis zu Integration und Betrieb. Dazu ein verständliches pay-as-you-go Modell ohne Laufzeitbindung. So wird KI einfach, transparent und kalkulierbar."
   },
   "contactPage": {
     "heroSubtitle": "Sprechen Sie mit unseren KI-Experten über Ihre individuellen Anforderungen",

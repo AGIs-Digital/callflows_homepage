@@ -131,7 +131,7 @@ export default function KontaktPage() {
             {/* Additional CTA Section */}
             <div className="text-center">
               <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/50 p-8 max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold text-primary mb-4">
+                <h3 className="text-2xl font-bold text-foreground mb-4">
                   {t('contactPage.additionalCta.title')}
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">

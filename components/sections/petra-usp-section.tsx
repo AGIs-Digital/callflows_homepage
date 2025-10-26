@@ -26,19 +26,19 @@ export function PetraUSPSection() {
           <div className="text-center space-y-8">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
-              <span className="text-sm font-medium text-primary">{t('whyCallflows.badge')}</span>
+              <span className="text-xl font-medium text-primary">{t('whycallflows.badge')}</span>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary leading-tight">
-                {t('whyCallflows.title')}
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+                {t('whycallflows.title')}
               </h2>
               
               {/* Main Text */}
-              <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/50 p-8 max-w-3xl mx-auto">
+              <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/70 p-8 max-w-3xl mx-auto">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  {t('whyCallflows.description')}
+                  {t('whycallflows.description')}
                 </p>
               </div>
             </div>
@@ -63,7 +63,7 @@ export function PetraUSPSection() {
           <div className="text-center space-y-8">
             {/* Main Headline */}
             <div className="space-y-4">
-              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent/90 to-accent bg-clip-text text-transparent leading-tight">
+              <h2 className="text-5xl md:text-6xl font-bold leading-tight rounded-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 {t('petraUsp.title')}
               </h2>
               <p className="text-2xl md:text-3xl font-semibold text-foreground">
@@ -95,7 +95,7 @@ export function PetraUSPSection() {
 
             {/* USP Content */}
             <div className="max-w-6xl mx-auto space-y-6">
-              <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/50 p-6">
+              <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/70 p-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   {t('petraUsp.description')}
                 </p>
@@ -103,7 +103,7 @@ export function PetraUSPSection() {
               
               {/* Enhanced Key Benefits */}
               <div className="grid md:grid-cols-3 gap-6 mt-12">
-                <div className="group flex flex-col items-center text-center p-8 rounded-2xl bg-card/60 border border-border/50 backdrop-blur-sm hover:bg-card/80 hover:border-primary/30 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                <div className="group flex flex-col items-center text-center p-8 rounded-2xl bg-card/60 border border-border/70 backdrop-blur-sm hover:bg-card/80 hover:border-primary/30 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <Users className="w-8 h-8 text-primary" />
                   </div>
@@ -111,7 +111,7 @@ export function PetraUSPSection() {
                   <p className="text-sm text-muted-foreground leading-relaxed">{t('petraUsp.benefit1Description')}</p>
                 </div>
                 
-                <div className="group flex flex-col items-center text-center p-8 rounded-2xl bg-card/60 border border-border/50 backdrop-blur-sm hover:bg-card/80 hover:border-accent/30 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                <div className="group flex flex-col items-center text-center p-8 rounded-2xl bg-card/60 border border-border/70 backdrop-blur-sm hover:bg-card/80 hover:border-accent/30 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                   <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <Star className="w-8 h-8 text-accent" />
                   </div>
@@ -119,7 +119,7 @@ export function PetraUSPSection() {
                   <p className="text-sm text-muted-foreground leading-relaxed">{t('petraUsp.benefit2Description')}</p>
                 </div>
                 
-                <div className="group flex flex-col items-center text-center p-8 rounded-2xl bg-card/60 border border-border/50 backdrop-blur-sm hover:bg-card/80 hover:border-primary/30 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                <div className="group flex flex-col items-center text-center p-8 rounded-2xl bg-card/60 border border-border/70 backdrop-blur-sm hover:bg-card/80 hover:border-primary/30 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <Award className="w-8 h-8 text-primary" />
                   </div>
@@ -131,7 +131,7 @@ export function PetraUSPSection() {
 
             {/* Enhanced CTA Button */}
             <div className="mt-12">
-              <div className="bg-card/40 backdrop-blur-sm rounded-2xl border border-border/50 p-6 max-w-lg mx-auto">
+              <div className="bg-card/40 backdrop-blur-sm rounded-2xl border border-border/70 p-6 max-w-lg mx-auto">
                 <Button
                   onClick={() => setIsModalOpen(true)}
                   size="lg"

@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { PricingFeaturesSection } from "@/components/sections/pricing-features-section";
 import { PilotPackageCard } from "@/components/pricing/pilot-package-card";
 import { MinuteTiersTable } from "@/components/pricing/minute-tiers-table";
+import { PricingBillingHints } from "@/components/pricing/pricing-billing-hints";
 import { PricingIntro } from "@/components/pricing/pricing-intro";
 import { ROICalculatorV2 } from "@/components/pricing/roi-calculator-v2";
 import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
@@ -68,11 +69,21 @@ export default function PricingPage() {
         {/* Hero Header with Main Title - Client-Side for i18n */}
         <PricingHeroWrapper />
         
-        {/* 1. Pilotmonat-Angebot */}
-        <PilotPackageCard />
-        
-        {/* 2. Minutenstaffel nach Go-Live */}
-        <MinuteTiersTable />
+        {/* 1. Pilotmonat & 2. Minutenstaffel - Side by Side auf XL Screens */}
+        <div className="py-12 bg-gradient-to-b from-tertiary/35 via-secondary/20 to-accent/40">
+          <div className="container max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-start">
+              {/* 1. Pilotmonat-Angebot */}
+              <PilotPackageCard />
+              
+              {/* 2. Minutenstaffel nach Go-Live */}
+              <MinuteTiersTable />
+            </div>
+            
+            {/* Hinweise zur Abrechnung - zentriert unter beiden Containern */}
+            <PricingBillingHints />
+          </div>
+        </div>
         
         {/* 3. Alle Features enthalten */}
         <PricingFeaturesSection />

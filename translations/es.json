@@ -34,19 +34,19 @@
     "title": "callflows - comunicación automatizada con clientes",
     "description": "Optimice el servicio al cliente, ventas y soporte con sistemas inteligentes.",
     "hero": {
-      "headline1": "¿Abrumado con llamadas estándar?",
-      "headline2": "¿Muy poco tiempo para tareas importantes?",
-      "description": "Mientras se ahoga en el caos de las llamadas, las tareas realmente importantes se pierden: ¡es hora de una revolución!",
-      "solution": "Con AI callflows",
-      "solutionDescription": "AI callflows = tu conversation flow: diálogos naturales, lógica de procesos e integraciones — de extremo a extremo.",
+      "headline1": "Automatizar telefonía con IA:",
+      "headline2": "Enfoque en ingresos",
+      "description": "Agentes de voz IA para PYMEs: Llamadas de rutina 24/7 – sin plazo contractual, pago por uso por segundo. Alivie su equipo, gane tiempo. Para lo que importa.",
+      "solution": "Con callflows",
+      "solutionDescription": "Su conversation flow: diálogos naturales, lógica de procesos, automatización e integraciones – de extremo a extremo, made in germany.",
       "cta": "Reservar Consulta",
       "widgetUnavailable": "Widget temporalmente no disponible",
       "widgetUnavailableDescription": "No se preocupe - esto a veces sucede con las demos en vivo"
     }
   },
   "widget": {
-    "title": "Probar AI callflow en vivo",
-    "description": "Ingrese su número de teléfono y experimente nuestro AI callflow",
+    "title": "Probar callflows en vivo",
+    "description": "Ingrese su número de teléfono y nombre para hablar con nuestra embajadora de marca Carla.",
     "nameLabel": "Su nombre",
     "namePlaceholder": "Juan Pérez",
     "phoneLabel": "Número de teléfono",
@@ -218,7 +218,7 @@
     "noExpiryDesc": "Los paquetes de minutos comprados no expiran y sirven como reserva. Solo se usan cuando su asignación mensual se agota.",
     "activeMonitoringTitle": "Monitoreo Activo",
     "activeMonitoringDesc": "Monitoreamos su uso y recomendamos proactivamente paquetes adecuados para que siempre tenga la solución óptima para sus necesidades.",
-    "featuresTitle": "Todos los Callflows Incluyen",
+    "featuresTitle": "Todos los callflows Incluyen",
     "communicationTitle": "Comunicación",
     "communicationItems": [
       "Reservas en tiempo real – Programación instantánea de citas",
@@ -696,8 +696,8 @@
       "title": "Altos Requisitos de Recursos",
       "description": "Personal dedicado a tiempo completo necesario para desarrollo, mantenimiento y optimización"
     },
-    "solutionTitle": "Nuestra Solución",
-    "solutionDescription": "callflows se encarga de toda la complejidad por usted. Integramos todos los componentes necesarios en una solución llave en mano – sin que necesite experiencia en IA o personal adicional a tiempo completo.",
+    "solutionTitle": "Su Solución: callflows",
+    "solutionDescription": "Nuestros agentes de voz IA conducen diálogos naturales, califican leads, programan citas, documentan resultados y generan tareas concretas – 24/7. No necesita configurar nada: Entregamos un servicio completo llave en mano, adaptado a sus procesos. ¡Nosotros aportamos la experiencia en IA!",
     "comparison": {
       "callflows": [
         "Experiencia completa & toma de control de configuración",
@@ -866,6 +866,7 @@
     "subtitle": "Facturación transparente basada en consumo al final del mes",
     "badge": "Sin duración de contrato, sin riesgo",
     "tableTitle": "Precios por nivel por minuto (todos los precios sin IVA)",
+    "tableTitleShort": "Precios escalonados por minuto",
     "minuteRange": "Rango de minutos",
     "pricePerMinute": "Precio por minuto",
     "exampleCosts": "Ejemplo costos mensuales",
@@ -883,6 +884,9 @@
     "scalingDesc": "El nivel se aplica automáticamente según el consumo",
     "support": "Soporte",
     "supportDesc": "Operación y soporte incluidos; extensiones individuales posibles en cualquier momento",
+    "enterpriseTitle": "¿Necesita significativamente más?",
+    "enterpriseDescription": "Para volúmenes más grandes, ofrecemos condiciones empresariales personalizadas con modelos de precios individuales. No dude en comentarlo durante su consulta.",
+    "taxNotice": "Todos los precios excl. IVA.",
     "noBasicFee": "Ninguna",
     "secondAccurate": "Por segundo",
     "monthlyBilling": "Mensual",
@@ -936,46 +940,40 @@
     }
   },
   "featuresTarget": {
-    "badge": "¿Para quién es esto?",
-    "title": "Agentes de voz IA para PYMES",
-    "subtitle": "Los agentes de voz IA ayudan a las PYMES a realizar llamadas automatizadas en ventas B2B mientras fortalecen el contacto personal",
-    "cta": "¿Se adapta a su empresa? ¡Hablemos!",
+    "badge": "Agentes de voz IA en acción",
+    "title": "Telefonía automatizada para cada industria",
+    "subtitle": "Los agentes de voz IA manejan llamadas de rutina – entrantes y salientes. Desde calificación de leads hasta soporte y onboarding: Libere a su equipo y enfóquese en lo esencial.",
+    "cta": "¿Suena emocionante? ¡Hablemos sobre qué funciona para usted! 🚀",
     "targetGroups": {
+      "sales": {
+        "title": "Ventas B2B y calificación de leads",
+        "description": "Primeros contactos y seguimientos automatizados. Más leads calificados con menos esfuerzo para su equipo de ventas.",
+        "benefits": ["Scoring y calificación de leads", "Campañas de seguimiento sin trabajo manual", "Más tiempo para conversaciones de cierre"]
+      },
       "staffing": {
-        "title": "Agencias de personal",
-        "description": "con alta carga de llamadas y seguimiento",
-        "benefits": [
-          "Llamadas automatizadas para contactar candidatos",
-          "La telefonía IA reduce los seguimientos manuales",
-          "Más tiempo para conversaciones B2B calificadas"
-        ]
+        "title": "Reclutamiento y agencias de personal",
+        "description": "Contacto con candidatos en piloto automático. Llenado más rápido de posiciones abiertas mediante contacto continuo con candidatos.",
+        "benefits": ["Acercamiento automatizado de candidatos", "Llamadas de selección 24/7", "Reducción de seguimientos manuales"]
       },
-      "mediumSales": {
-        "title": "Organizaciones de ventas medianas",
-        "description": "que quieren escalar",
-        "benefits": [
-          "Procesos de venta escalables",
-          "Enfoque de cliente consistente",
-          "Crecimiento sin expansión de personal"
-        ]
+      "support": {
+        "title": "Soporte entrante y manejo de FAQ",
+        "description": "Responder preguntas iniciales automáticamente. Sus clientes obtienen ayuda instantánea, su equipo tiene más tiempo para casos complejos.",
+        "benefits": ["Disponibilidad 24/7 para preguntas estándar", "Alivio para su personal de soporte", "Soluciones rápidas para consultas recurrentes"]
       },
-      "efficientTeams": {
-        "title": "Equipos eficientes",
-        "description": "que quieren automatizar llamadas estándar",
-        "benefits": [
-          "Más tiempo para cierres",
-          "Tareas rutinarias automatizadas",
-          "Tasas de conversión más altas"
-        ]
+      "appointments": {
+        "title": "Programación de citas y recordatorios",
+        "description": "Reservar citas y recordar sobre ellas. Reduzca ausencias y optimice su planificación de capacidad.",
+        "benefits": ["Coordinación automática de citas", "Llamadas de recordatorio antes de citas importantes", "Reducción de ausencias"]
       },
-      "enterprises": {
-        "title": "Grandes empresas",
-        "description": "que buscan telefonía IA transparente y flexible",
-        "benefits": [
-          "Estructura de costos transparente",
-          "Solución flexible escalable",
-          "Seguridad de nivel empresarial"
-        ]
+      "internal": {
+        "title": "Onboarding de empleados y línea de ayuda IT",
+        "description": "Automatizar procesos internos. Los nuevos empleados se vuelven productivos más rápido, los equipos IT tienen más capacidad.",
+        "benefits": ["Llamadas de onboarding para nuevos empleados", "Mesa de ayuda IT para preguntas estándar", "Alivio para equipos internos"]
+      },
+      "outbound": {
+        "title": "Campañas salientes y seguimientos",
+        "description": "Campañas de llamadas escalables. Alcance más contactos en menos tiempo sin personal adicional.",
+        "benefits": ["Contacto masivo sin expansión de personal", "Enfoque consistente al cliente", "Seguimientos automáticos"]
       }
     }
   },
@@ -985,7 +983,7 @@
     "subtitle": "Desde el análisis inicial hasta la implementación productiva – te guiamos en cada paso",
     "cta": {
       "title": "¿Listo para el siguiente paso?",
-      "description": "Analicemos juntos cómo los AI callflows pueden apoyar tus ventas",
+      "description": "Analicemos juntos cómo callflows puede apoyarle.",
       "buttonText": "Reservar consulta"
     },
     "steps": {
@@ -1046,10 +1044,10 @@
       "buttonText": "Abrir calculador ROI"
     }
   },
-  "whyCallflows": {
+  "whycallflows": {
     "badge": "¿Por qué callflows?",
     "title": "Más que software – un socio",
-    "description": "Muchos proveedores te dejan la configuración. Nosotros entregamos de extremo a extremo: desde diseño de diálogo y lógica de proceso hasta integración y operación. Además un modelo de minutos comprensible sin compromiso contractual. Así la IA permanece simple, transparente y calculable."
+    "description": "Muchos proveedores le dejan solo con el manejo de un software o solución whitelabel. Nosotros entregamos de extremo a extremo: desde diseño de diálogo y lógica de proceso hasta integración y operación. Además un modelo pay-as-you-go comprensible sin compromiso contractual. Así la IA se vuelve simple, transparente y calculable."
   },
   "contactPage": {
     "heroSubtitle": "Hable con nuestros expertos en IA sobre sus requisitos individuales",

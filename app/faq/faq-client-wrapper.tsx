@@ -9,7 +9,7 @@ import { HelpCircle, MessageSquare, Phone } from "@/lib/icons";
 import { useI18n } from "@/lib/i18n";
 
 // Formatierung für callflows als Markenname
-const formatCallflows = (text: string) => {
+const formatcallflows = (text: string) => {
   return text.replace(/\b(callflows)\b/gi, '<span class="font-bold text-primary">$1</span>');
 };
 
@@ -26,8 +26,8 @@ function formatAnswer(answer: string) {
       const [title, ...content] = part.split(':');
       return (
         <div key={index} className="mb-4">
-          <h4 className="font-semibold text-primary mb-2 text-base" dangerouslySetInnerHTML={{ __html: formatCallflows(title.trim()) }}></h4>
-          <p className="text-sm leading-relaxed text-muted-foreground" dangerouslySetInnerHTML={{ __html: formatCallflows(content.join(':').trim()) }}>
+          <h4 className="font-semibold text-primary mb-2 text-base" dangerouslySetInnerHTML={{ __html: formatcallflows(title.trim()) }}></h4>
+          <p className="text-sm leading-relaxed text-muted-foreground" dangerouslySetInnerHTML={{ __html: formatcallflows(content.join(':').trim()) }}>
           </p>
         </div>
       );
@@ -35,7 +35,7 @@ function formatAnswer(answer: string) {
     
     // Normale Absätze
     return (
-      <p key={index} className="mb-3 text-sm leading-relaxed text-muted-foreground" dangerouslySetInnerHTML={{ __html: formatCallflows(part.trim()) }}>
+      <p key={index} className="mb-3 text-sm leading-relaxed text-muted-foreground" dangerouslySetInnerHTML={{ __html: formatcallflows(part.trim()) }}>
       </p>
     );
   });
@@ -53,8 +53,8 @@ export function FAQClientWrapper() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fffff0] via-[#fffff0] to-primary/50">
       {/* Hero Section mit modernem Design */}
-      <div className="relative pt-8 pb-16 overflow-hidden bg-[#fffff0]">
-        <div className="container max-w-4xl relative z-10">
+      <div className="relative pt-20 pb-16 overflow-hidden bg-[#fffff0]">
+        <div className="container max-w-6xl relative z-10">
           {/* Breadcrumbs */}
           <BreadcrumbSEO 
             items={[
@@ -103,7 +103,7 @@ export function FAQClientWrapper() {
       </div>
 
       {/* FAQ Content */}
-      <main className="container max-w-4xl pb-16 relative z-10 pt-8">
+      <main className="container max-w-6xl pb-16 relative z-10 pt-8">
         <Card className="bg-[#ffffff]/95 backdrop-blur-sm border-primary/15 shadow-xl">
           <CardContent className="p-8">
             <Accordion type="single" collapsible className="w-full space-y-4">
@@ -123,10 +123,10 @@ export function FAQClientWrapper() {
                     itemProp="name"
                   >
                     <span className="flex items-start gap-3">
-                      <Badge variant="outline" className="mt-1 bg-primary/10 text-primary border-primary/20 text-xs font-medium shrink-0">
+                      <Badge variant="outline" className="mt-1 bg-primary/10 text-primary border-primary/20 text-xl font-medium shrink-0">
                         {String(index + 1).padStart(2, '0')}
                       </Badge>
-                      <span className="text-left leading-tight" dangerouslySetInnerHTML={{ __html: formatCallflows(faq.question) }}></span>
+                      <span className="text-left leading-tight" dangerouslySetInnerHTML={{ __html: formatcallflows(faq.question) }}></span>
                     </span>
                   </AccordionTrigger>
                   <AccordionContent 

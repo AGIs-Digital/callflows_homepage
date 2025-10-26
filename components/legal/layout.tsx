@@ -14,7 +14,7 @@ export function LegalLayout({ title, subtitle, breadcrumbName, breadcrumbUrl, ch
   return (
     <div className="bg-background">
       <SiteHeader />
-      <main className="py-16 bg-gradient-to-b from-primary/20 via-accent/50 to-secondary/65">
+      <main className="pt-20 pb-16 bg-gradient-to-b from-primary/20 via-accent/50 to-secondary/65">
         <div className="container max-w-6xl mx-auto">
           {/* Breadcrumbs */}
           {breadcrumbName && breadcrumbUrl && (

@@ -4,6 +4,8 @@ import { Check, X, Clock, Users, Phone, Headphones, Bot, Star, AlertTriangle } f
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 type SolutionProps = {
   title: React.ReactNode;
@@ -23,7 +25,7 @@ const Solution = ({ title, icon, description, pros, cons, isHighlighted = false 
         "group relative rounded-2xl border transition-all duration-300 ease-out backdrop-blur-sm",
         isHighlighted 
           ? "bg-gradient-to-br from-card via-card/95 to-primary/5 shadow-2xl ring-2 ring-accent/40 border-accent/30 p-10 hover:shadow-3xl hover:-translate-y-3 hover:ring-accent/60 scale-105" 
-          : "bg-card/60 hover:shadow-lg hover:-translate-y-1 hover:border-primary/20 border-border/50 p-8"
+          : "bg-card/60 hover:shadow-lg hover:-translate-y-1 hover:border-primary/20 border-border/70 p-8"
       )}
     >
       {isHighlighted && (
@@ -241,10 +243,10 @@ export function PricingComparisonSection() {
   };
   
   return (
-    <section className="py-24 bg-gradient-to-b from-tertiary/25 via-tertiary/15 to-secondary/15">
+    <section className="py-24 bg-gradient-to-b from-[#fffff0] via-primary/55 to-[#fffff0]">
       <div className="container max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">
+          <h2 className="text-4xl font-bold text-foreground mb-6">
             {t('comparison.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {t('comparison.description')} <strong className="text-primary"> {t('comparison.callflowsText')}</strong>
@@ -295,13 +297,34 @@ export function PricingComparisonSection() {
         </div>
         
         <div className="mt-16 text-center">
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-foreground max-w-3xl mx-auto mb-8">
             {t('comparison.conclusion')}
           </p>
           
           <div className="inline-flex items-center justify-center gap-2 bg-primary/10 text-primary font-medium px-4 py-2 rounded-full">
             <Clock className="w-5 h-5" />
-            <span>{t('comparison.benefit')}</span>
+            <span className="text-xl">{t('comparison.benefit')}</span>
+          </div>
+        </div>
+
+        {/* ROI Calculator CTA */}
+        <div className="mt-16 text-center">
+          <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/70 p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              {t('socialProofRoi.cta.title')}
+            </h3>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              {t('socialProofRoi.cta.description')}
+            </p>
+            <Button 
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 text-lg gap-2"
+              asChild
+            >
+              <Link href="/pricing#roi-calculator">
+                {t('socialProofRoi.cta.buttonText')}
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

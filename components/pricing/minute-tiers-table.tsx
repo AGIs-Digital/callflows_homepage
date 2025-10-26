@@ -1,10 +1,8 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { pricingTiers } from "@/lib/data/pricing-plans";
 import { useI18n } from "@/lib/i18n";
-import { CheckCircle } from "lucide-react";
 
 export function MinuteTiersTable() {
   const { t } = useI18n();
@@ -21,25 +19,20 @@ export function MinuteTiersTable() {
   };
 
   return (
-    <div className="py-16 bg-gradient-to-b from-secondary/25 via-accent/30 to-accent/40">
-      <div className="container max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary dark:text-white mb-4">
-            {t('minuteTiers.title')}
-          </h2>
-          <p className="text-lg text-muted-foreground mb-6">
-            {t('minuteTiers.subtitle')}
-          </p>
-          <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 text-lg px-4 py-2">
-            <CheckCircle className="w-4 h-4 mr-2" />
-            {t('minuteTiers.badge')}
-          </Badge>
-        </div>
+    <div className="h-full flex flex-col">
+      <div className="text-center mb-8">
+        <h2 className="text-2xl xl:text-3xl font-bold text-foreground mb-4">
+          {t('minuteTiers.title')}
+        </h2>
+        <p className="text-base xl:text-lg text-muted-foreground">
+          {t('minuteTiers.subtitle')}
+        </p>
+      </div>
 
-        <Card className="overflow-hidden">
+      <Card className="overflow-hidden flex-1">
           <CardHeader className="bg-primary/5 border-b">
             <CardTitle className="text-xl text-center">
-              {t('minuteTiers.tableTitle')}
+              {t('minuteTiers.tableTitleShort')}
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
@@ -62,7 +55,7 @@ export function MinuteTiersTable() {
                     >
                       <td className="p-4">
                         <div className="font-medium">{getLocalizedDescription(tier)}</div>
-                        <div className="text-sm text-muted-foreground">
+                        <div className="text-s text-muted-foreground">
                           {tier.from.toLocaleString()} - {
                             tier.to === Infinity 
                               ? '∞' 
@@ -93,95 +86,40 @@ export function MinuteTiersTable() {
                             </>
                           )}
                         </div>
-                        <div className="text-sm text-muted-foreground">
+                        <div className="text-s text-muted-foreground">
                           {tier.to === Infinity ? (
-                            `${t('minuteTiers.upTo')} 15.000 ${t('minuteTiers.minutes')}`
+                            `${t('minuteTiers.upToAmount')} 15.000 ${t('minuteTiers.minutes')}`
                           ) : (
-                            `${t('minuteTiers.upTo')} ${tier.to.toLocaleString('de-DE')} ${t('minuteTiers.minutes')}`
+                            `${t('minuteTiers.upToAmount')} ${tier.to.toLocaleString('de-DE')} ${t('minuteTiers.minutes')}`
                           )}
                         </div>
                       </td>
                     </tr>
                   ))}
+                  {/* Enterprise Row */}
+                  <tr className="bg-primary/10 border-t-2 border-primary/20">
+                    <td className="py-4 px-4" colSpan={3}>
+                      <div className="text-center">
+                        <span className="font-semibold text-primary text-sm">
+                          {t('minuteTiers.enterpriseTitle')}
+                        </span>
+                        <span className="text-sm text-muted-foreground ml-2">
+                          {t('minuteTiers.enterpriseDescription')}
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  {/* Tax Notice Row */}
+                  <tr className="bg-muted/30">
+                    <td className="py-2 px-4 text-center text-sm text-muted-foreground" colSpan={3}>
+                      {t('minuteTiers.taxNotice')}
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
           </CardContent>
         </Card>
-
-        {/* Micro-FAQ */}
-        <div className="mt-12">
-          <Card className="bg-card/60 backdrop-blur-sm border border-border/50">
-            <CardHeader className="pb-4">
-              <CardTitle className="text-lg text-center text-primary">
-                {t('minuteTiers.billingHints')}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2"></div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">{t('minuteTiers.billing')}</h4>
-                      <p className="text-sm text-muted-foreground">
-                        {t('minuteTiers.billingDesc')}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2"></div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">{t('minuteTiers.contract')}</h4>
-                      <p className="text-sm text-muted-foreground">
-                        {t('minuteTiers.contractDesc')}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2"></div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">{t('minuteTiers.scaling')}</h4>
-                      <p className="text-sm text-muted-foreground">
-                        {t('minuteTiers.scalingDesc')}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2"></div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">{t('minuteTiers.support')}</h4>
-                      <p className="text-sm text-muted-foreground">
-                        {t('minuteTiers.supportDesc')}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="text-center p-6">
-            <div className="text-2xl font-bold text-primary mb-2">{t('minuteTiers.noBasicFee')}</div>
-                                        <div className="text-muted-foreground">{t('minuteTiers.basicFee')}</div>
-          </Card>
-          <Card className="text-center p-6">
-            <div className="text-2xl font-bold text-primary mb-2">{t('minuteTiers.secondAccurate')}</div>
-            <div className="text-muted-foreground">{t('minuteTiers.billing')}</div>
-          </Card>
-          <Card className="text-center p-6">
-            <div className="text-2xl font-bold text-primary mb-2">{t('minuteTiers.monthlyBilling')}</div>
-            <div className="text-muted-foreground">{t('minuteTiers.invoicing')}</div>
-          </Card>
-        </div>
-      </div>
     </div>
   );
 }

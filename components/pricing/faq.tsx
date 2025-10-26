@@ -12,7 +12,7 @@ export function PricingFAQ() {
   return (
     <>
       <div className="text-center mb-8 md:mb-16 px-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-primary dark:text-white">
+        <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-foreground">
           Häufig gestellte Fragen
         </h2>
         <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
@@ -27,7 +27,7 @@ export function PricingFAQ() {
               <AccordionTrigger className="text-left text-sm md:text-base font-medium py-4 md:py-5">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-sm text-muted-foreground">
+              <AccordionContent className="text-base text-muted-foreground">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

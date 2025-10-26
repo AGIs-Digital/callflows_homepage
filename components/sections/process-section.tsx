@@ -43,9 +43,9 @@ export function ProcessSection() {
       <div className="container max-w-6xl">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-sm font-medium text-primary">{t('processSteps.badge')}</span>
+            <span className="text-xl font-medium text-primary">{t('processSteps.badge')}</span>
           </div>
-          <h2 className="text-4xl font-bold text-primary dark:text-white mb-6">
+          <h2 className="text-4xl font-bold text-foreground mb-6">
             {t('processSteps.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -61,7 +61,7 @@ export function ProcessSection() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`relative p-8 rounded-2xl border border-border/50 bg-gradient-to-br ${step.gradient} backdrop-blur-sm
+              className={`relative p-8 rounded-2xl border border-border/70 bg-gradient-to-br ${step.gradient} backdrop-blur-sm
                          transition-all duration-300 ease-out 
                          hover:-translate-y-2 hover:shadow-xl 
                          hover:border-primary/30 group`}
@@ -81,7 +81,7 @@ export function ProcessSection() {
                 <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                <p className="text-muted-foreground text-s leading-relaxed mb-6">
                   {step.description}
                 </p>
                 
@@ -101,8 +101,8 @@ export function ProcessSection() {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/50 p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-primary mb-4">
+          <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/70 p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
               {t('processSteps.cta.title')}
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">

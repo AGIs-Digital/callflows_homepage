@@ -155,28 +155,28 @@ export function WidgetCall({ className }: WidgetCallProps) {
     switch (callStatus) {
       case 'calling':
         return {
-          icon: <Loader2 className="h-6 w-6 animate-spin text-blue-500" />,
+          icon: <Loader2 className="h-6 w-6 lg:h-8 lg:w-8 animate-spin text-blue-500" />,
           title: t('widget.statusCalling'),
           description: t('widget.statusCallingDesc'),
           className: "border-blue-200 bg-blue-50 dark:bg-blue-950"
         };
       case 'success':
         return {
-          icon: <CheckCircle className="h-6 w-6 text-green-500" />,
+          icon: <CheckCircle className="h-6 w-6 lg:h-8 lg:w-8 text-green-500" />,
           title: t('widget.statusSuccess'),
           description: t('widget.statusSuccessDesc'),
           className: "border-green-200 bg-green-50 dark:bg-green-950"
         };
       case 'error':
         return {
-          icon: <AlertCircle className="h-6 w-6 text-red-500" />,
+          icon: <AlertCircle className="h-6 w-6 lg:h-8 lg:w-8 text-red-500" />,
           title: t('widget.statusError'),
           description: t('widget.statusErrorDesc'),
           className: "border-red-200 bg-red-50 dark:bg-red-950"
         };
       default:
         return {
-          icon: <Phone className="h-6 w-6 text-primary" />,
+          icon: <Phone className="h-6 w-6 lg:h-8 lg:w-8 text-primary" />,
           title: t('widget.title'),
           description: t('widget.description'),
           className: "border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5"
@@ -196,14 +196,22 @@ export function WidgetCall({ className }: WidgetCallProps) {
       className
     )}>
       <CardHeader className="text-center pb-4">
-        <div className="flex justify-center mb-3">
+        <CardTitle className="text-xl lg:text-2xl xl:text-3xl font-bold flex items-center justify-center gap-2 lg:gap-3">
           {statusContent.icon}
-        </div>
-        <CardTitle className="text-xl font-bold">
-          {statusContent.title}
+          <span>
+            {statusContent.title.split(/(callflows)/gi).map((part, i) => 
+              part.toLowerCase() === 'callflows' ? (
+                <span key={i} className="text-primary">{part}</span>
+              ) : part
+            )}
+          </span>
         </CardTitle>
-        <CardDescription className="text-sm">
-          {statusContent.description}
+        <CardDescription className="text-sm lg:text-base xl:text-lg mt-2">
+          {statusContent.description.split(/(Carla)/gi).map((part, i) => 
+            part.toLowerCase() === 'carla' ? (
+              <span key={i} className="text-primary font-semibold">Carla</span>
+            ) : part
+          )}
         </CardDescription>
       </CardHeader>
       
@@ -224,7 +232,7 @@ export function WidgetCall({ className }: WidgetCallProps) {
           />
           
           <div className="space-y-2">
-            <label htmlFor="name" className="text-sm font-medium">
+            <label htmlFor="name" className="text-sm lg:text-base font-medium">
               {t('widget.nameLabel')}
             </label>
             <Input
@@ -233,7 +241,7 @@ export function WidgetCall({ className }: WidgetCallProps) {
               placeholder={t('widget.namePlaceholder')}
               value={customerName}
               onChange={handleNameChange}
-              className="text-lg"
+              className="text-lg lg:text-xl"
               {...getAutocompleteProps('name')}
             />
             {customerName && !nameValidation && (
@@ -244,7 +252,7 @@ export function WidgetCall({ className }: WidgetCallProps) {
           </div>
           
           <div className="space-y-2">
-            <label htmlFor="phone" className="text-sm font-medium">
+            <label htmlFor="phone" className="text-sm lg:text-base font-medium">
               {t('widget.phoneLabel')}
             </label>
             <Input
@@ -253,7 +261,7 @@ export function WidgetCall({ className }: WidgetCallProps) {
               placeholder={t('widget.phonePlaceholder')}
               value={phoneNumber}
               onChange={handlePhoneChange}
-              className="text-lg"
+              className="text-lg lg:text-xl"
               {...getAutocompleteProps('phone')}
               inputMode="tel"
             />
@@ -265,7 +273,7 @@ export function WidgetCall({ className }: WidgetCallProps) {
           </div>
 
           <div className="text-center">
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs lg:text-sm text-muted-foreground">
               {t('widget.privacyHint')}
             </p>
           </div>
@@ -273,17 +281,17 @@ export function WidgetCall({ className }: WidgetCallProps) {
           <Button
             onClick={handleStartCall}
             disabled={!isFormValid}
-            className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg font-semibold"
+            className="w-full bg-primary hover:bg-primary/90 text-white py-6 lg:py-7 text-lg lg:text-xl font-semibold"
             size="lg"
           >
             {isLoading ? (
               <>
-                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                <Loader2 className="mr-2 h-5 w-5 lg:h-6 lg:w-6 animate-spin" />
                 {t('widget.buttonStarting')}
               </>
             ) : (
               <>
-                <PlayCircle className="mr-2 h-5 w-5" />
+                <PlayCircle className="mr-2 h-5 w-5 lg:h-6 lg:w-6" />
                 {t('widget.buttonStart')}
               </>
             )}
