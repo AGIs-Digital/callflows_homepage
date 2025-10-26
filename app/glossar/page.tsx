@@ -16,7 +16,7 @@ export default function GlossarIndex() {
       <main className="bg-background">
         <SiteHeader />
         <div className="relative overflow-hidden">
-        <section className="py-8 pb-20 bg-gradient-to-b from-secondary/25 via-secondary/35 to-secondary/40">
+        <section className="pt-20 pb-20 bg-gradient-to-b from-secondary/25 via-secondary/35 to-secondary/40">
           <div className="container max-w-6xl">
             {/* Breadcrumbs */}
             <BreadcrumbSEO 

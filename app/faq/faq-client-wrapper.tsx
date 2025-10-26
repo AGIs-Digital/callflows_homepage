@@ -53,8 +53,8 @@ export function FAQClientWrapper() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fffff0] via-[#fffff0] to-primary/50">
       {/* Hero Section mit modernem Design */}
-      <div className="relative pt-8 pb-16 overflow-hidden bg-[#fffff0]">
-        <div className="container max-w-4xl relative z-10">
+      <div className="relative pt-20 pb-16 overflow-hidden bg-[#fffff0]">
+        <div className="container max-w-6xl relative z-10">
           {/* Breadcrumbs */}
           <BreadcrumbSEO 
             items={[
@@ -103,7 +103,7 @@ export function FAQClientWrapper() {
       </div>
 
       {/* FAQ Content */}
-      <main className="container max-w-4xl pb-16 relative z-10 pt-8">
+      <main className="container max-w-6xl pb-16 relative z-10 pt-8">
         <Card className="bg-[#ffffff]/95 backdrop-blur-sm border-primary/15 shadow-xl">
           <CardContent className="p-8">
             <Accordion type="single" collapsible className="w-full space-y-4">

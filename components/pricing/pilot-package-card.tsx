@@ -11,18 +11,17 @@ export function PilotPackageCard() {
   const { t } = useI18n();
 
   return (
-    <div className="py-12 bg-gradient-to-b from-tertiary/35 via-secondary/20 to-secondary/25">
-      <div className="container max-w-3xl mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-primary dark:text-white mb-4">
-            {t('pilotPackage.title')}
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            {t('pilotPackage.subtitle')}
-          </p>
-        </div>
+    <div className="h-full flex flex-col">
+      <div className="text-center mb-8">
+        <h2 className="text-2xl xl:text-3xl font-bold text-primary dark:text-white mb-4">
+          {t('pilotPackage.title')}
+        </h2>
+        <p className="text-base xl:text-lg text-muted-foreground">
+          {t('pilotPackage.subtitle')}
+        </p>
+      </div>
 
-        <Card className="relative border-primary shadow-xl">
+      <Card className="relative border-primary shadow-xl flex-1">
           <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1">
             {t('pilotPackage.badge')}
           </Badge>
@@ -129,8 +128,7 @@ export function PilotPackageCard() {
               showArrow={true}
             />
           </CardFooter>
-        </Card>
-      </div>
+      </Card>
     </div>
   );
 }
