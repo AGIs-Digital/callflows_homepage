@@ -130,7 +130,7 @@ export function ROICalculatorV2() {
                 {t('roiCalculator.badge')}
               </Badge>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {t('roiCalculator.title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -146,7 +146,7 @@ export function ROICalculatorV2() {
               {/* Eingabe-Parameter */}
                               <div className="space-y-8">
                   <div className="mb-6">
-                                         <h3 className="text-2xl font-bold text-primary mb-2 flex items-center gap-2">
+                                         <h3 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
                        <Target className="h-6 w-6 text-primary" />
                        {t('roiCalculator.parameters.title')}
                      </h3>
@@ -179,7 +179,7 @@ export function ROICalculatorV2() {
                          </Tooltip>
                        </TooltipProvider>
                      </label>
-                     <Badge variant="outline" className="font-bold text-sm px-2 py-1">
+                     <Badge variant="outline" className="font-bold text-xl px-2 py-1">
                        {callsPerDay[0]}
                      </Badge>
                    </div>
@@ -205,7 +205,7 @@ export function ROICalculatorV2() {
                        <Clock className="h-4 w-4 text-primary" />
                        {t('roiCalculator.parameters.averageCallDuration')}
                      </label>
-                                         <Badge variant="outline" className="font-bold text-sm px-2 py-1">
+                                         <Badge variant="outline" className="font-bold text-xl px-2 py-1">
                        {callDurationSeconds[0]}s
                      </Badge>
                   </div>
@@ -231,7 +231,7 @@ export function ROICalculatorV2() {
                        <Percent className="h-4 w-4 text-primary" />
                        {t('roiCalculator.parameters.conversionRate')}
                      </label>
-                                         <Badge variant="outline" className="font-bold text-sm px-2 py-1">
+                                         <Badge variant="outline" className="font-bold text-xl px-2 py-1">
                        {conversionRate[0]}%
                      </Badge>
                   </div>
@@ -298,7 +298,7 @@ export function ROICalculatorV2() {
                  <div className={`${currentTier.bgColor} rounded-lg p-4 border ${currentTier.borderColor}`}>
                    <div className="flex items-center justify-between">
                      <span className="text-base font-medium text-muted-foreground">{t('roiCalculator.costs.currentTierLabel')}</span>
-                     <Badge variant="outline" className={`${currentTier.color} border-current font-bold text-sm px-2 py-1`}>
+                     <Badge variant="outline" className={`${currentTier.color} border-current font-bold text-xl px-2 py-1`}>
                        {currentTier.tier}
                      </Badge>
                    </div>
@@ -314,7 +314,7 @@ export function ROICalculatorV2() {
               {/* Ergebnisse */}
               <div className="space-y-6">
                 <div className="mb-6">
-                                     <h3 className="text-2xl font-bold text-primary mb-2 flex items-center gap-2">
+                                     <h3 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
                      <TrendingUp className="h-6 w-6 text-primary" />
                      {t('roiCalculator.revenue.title')}
                    </h3>

@@ -137,7 +137,7 @@ export function ROICalculator() {
               {t('pricing.roiCalculator.badge')}
             </Badge>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {t('pricing.roiCalculator.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -273,7 +273,7 @@ export function ROICalculator() {
             <CardContent className="space-y-4">
               {/* Aktuelle vs KI Kosten - kompakt */}
               <div className="grid grid-cols-2 gap-3">
-                <div className="bg-card/60 rounded-lg p-4 border border-border/50">
+                <div className="bg-card/60 rounded-lg p-4 border border-border/70">
                   <p className="text-sm text-muted-foreground mb-1">{t('pricing.roiCalculator.personalMonthly')}</p>
                   <p className="text-xl font-bold text-red-600">
                     {formatCurrency(calculations.monthlyPersonalCosts)}
@@ -282,7 +282,7 @@ export function ROICalculator() {
                      +45% {t('pricing.roiCalculator.employerCosts')}
                    </p>
                 </div>
-                <div className="bg-card/60 rounded-lg p-4 border border-border/50">
+                <div className="bg-card/60 rounded-lg p-4 border border-border/70">
                   <p className="text-sm text-muted-foreground mb-1">{t('pricing.roiCalculator.aiMonthly')}</p>
                   <p className="text-xl font-bold text-primary">
                     {formatCurrency(calculations.aiMonthlyCost)}
@@ -313,13 +313,13 @@ export function ROICalculator() {
 
               {/* ROI und Amortisation - kompakt */}
               <div className="grid grid-cols-2 gap-3">
-                <div className="bg-card/60 rounded-lg p-4 border border-border/50 text-center">
+                <div className="bg-card/60 rounded-lg p-4 border border-border/70 text-center">
                   <p className="text-sm text-muted-foreground mb-2">{t('pricing.roiCalculator.roi')}</p>
                   <p className="text-xl font-bold text-primary">
                     {calculations.roi.toFixed(0)}%
                   </p>
                 </div>
-                <div className="bg-card/60 rounded-lg p-4 border border-border/50 text-center">
+                <div className="bg-card/60 rounded-lg p-4 border border-border/70 text-center">
                   <p className="text-sm text-muted-foreground mb-2">{t('pricing.roiCalculator.costReduction')}</p>
                   <p className="text-xl font-bold text-primary">
                     {calculations.monthlyPersonalCosts > 0 ? `${Math.round((calculations.monthlySavings / calculations.monthlyPersonalCosts) * 100)}%` : '0%'}

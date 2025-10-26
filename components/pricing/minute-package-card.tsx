@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { BookingButton } from "@/components/booking/booking-button";
 
 interface MinutePackageCardProps {
@@ -22,7 +21,7 @@ export function MinutePackageCard({ package: pkg }: MinutePackageCardProps) {
     <div className="bg-card rounded-xl border border-border p-6 shadow-sm">
       <div className="mb-5">
         <h3 className="text-lg font-bold">{pkg.name}</h3>
-        <p className="text-sm text-muted-foreground">{pkg.description}</p>
+        <p className="text-s text-muted-foreground">{pkg.description}</p>
       </div>
 
       {isCustomPackage ? (
@@ -30,7 +29,7 @@ export function MinutePackageCard({ package: pkg }: MinutePackageCardProps) {
           <div className="flex items-baseline mb-2">
             <span className="text-2xl font-bold">Preis auf Anfrage</span>
           </div>
-          <p className="text-sm text-muted-foreground">Individuelles Minutenkontingent</p>
+          <p className="text-s text-muted-foreground">Individuelles Minutenkontingent</p>
         </div>
       ) : (
         <div className="mb-6">
@@ -38,9 +37,9 @@ export function MinutePackageCard({ package: pkg }: MinutePackageCardProps) {
             <span className="text-2xl font-bold">{pkg.totalPrice.toLocaleString('de-DE')} €</span>
           </div>
           <div className="space-y-1">
-            <p className="text-sm text-muted-foreground">{pkg.minutes.toLocaleString('de-DE')} Minuten</p>
-            <p className="text-sm text-muted-foreground">{pkg.pricePerMinute.toFixed(2).replace('.', ',')} € pro Minute</p>
-            <p className="text-sm text-green-600">Ersparnis: {pkg.savings}</p>
+            <p className="text-s text-muted-foreground">{pkg.minutes.toLocaleString('de-DE')} Minuten</p>
+            <p className="text-s text-muted-foreground">{pkg.pricePerMinute.toFixed(2).replace('.', ',')} € pro Minute</p>
+            <p className="text-s text-green-600">Ersparnis: {pkg.savings}</p>
           </div>
         </div>
       )}

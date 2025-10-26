@@ -27,7 +27,7 @@ export function PilotPackageCard() {
           </Badge>
           
           <CardHeader className="text-center pt-8 pb-6">
-            <h3 className="text-3xl font-bold text-primary dark:text-white mb-2">
+            <h3 className="text-3xl font-bold text-foreground mb-2">
               {t('pilotPackage.cardTitle')}
             </h3>
             <p className="text-lg text-muted-foreground mb-6">
@@ -76,19 +76,19 @@ export function PilotPackageCard() {
                 <div className="space-y-2">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">
+                    <span className="text-s text-muted-foreground leading-relaxed">
                       {t('pilotPackage.pilotFeatures.feature1')}
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">
+                    <span className="text-s text-muted-foreground leading-relaxed">
                       {t('pilotPackage.pilotFeatures.feature2')}
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground leading-relaxed">
+                    <span className="text-s text-muted-foreground leading-relaxed">
                       {t('pilotPackage.pilotFeatures.feature3')}
                     </span>
                   </div>
@@ -104,15 +104,15 @@ export function PilotPackageCard() {
                 <div className="space-y-2">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{t('pilotPackage.noBasicFee')}</span>
+                    <span className="text-s text-muted-foreground">{t('pilotPackage.noBasicFee')}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{t('pilotPackage.tierPricing')}</span>
+                    <span className="text-s text-muted-foreground">{t('pilotPackage.tierPricing')}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{t('pilotPackage.secondAccurateBilling')}</span>
+                    <span className="text-s text-muted-foreground">{t('pilotPackage.secondAccurateBilling')}</span>
                   </div>
                 </div>
               </div>

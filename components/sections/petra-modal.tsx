@@ -50,7 +50,7 @@ export function PetraModal({ isOpen, onClose }: PetraModalProps) {
                 </div>
                 
                 <DialogHeader>
-                  <DialogTitle className="text-3xl font-bold text-primary mb-4">
+                  <DialogTitle className="text-3xl font-bold text-foreground mb-4">
                     {t('petraUsp.modalTitle')}
                   </DialogTitle>
                 </DialogHeader>

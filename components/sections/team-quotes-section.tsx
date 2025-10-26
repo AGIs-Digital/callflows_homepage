@@ -57,7 +57,7 @@ export function TeamQuotesSection() {
     <section className="py-20 bg-gradient-to-b from-secondary/30 via-secondary/90 to-primary/10">
       <div className="container max-w-6xl">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">{t("about.teamQuotesTitle")}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">{t("about.teamQuotesTitle")}</h2>
           <p className="text-lg text-muted-foreground">{t("about.teamQuotesSubtitle")}</p>
         </div>
 

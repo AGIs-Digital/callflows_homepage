@@ -21,7 +21,7 @@ export function MinuteTiersTable() {
   return (
     <div className="h-full flex flex-col">
       <div className="text-center mb-8">
-        <h2 className="text-2xl xl:text-3xl font-bold text-primary dark:text-white mb-4">
+        <h2 className="text-2xl xl:text-3xl font-bold text-foreground mb-4">
           {t('minuteTiers.title')}
         </h2>
         <p className="text-base xl:text-lg text-muted-foreground">
@@ -55,7 +55,7 @@ export function MinuteTiersTable() {
                     >
                       <td className="p-4">
                         <div className="font-medium">{getLocalizedDescription(tier)}</div>
-                        <div className="text-sm text-muted-foreground">
+                        <div className="text-s text-muted-foreground">
                           {tier.from.toLocaleString()} - {
                             tier.to === Infinity 
                               ? '∞' 
@@ -86,7 +86,7 @@ export function MinuteTiersTable() {
                             </>
                           )}
                         </div>
-                        <div className="text-sm text-muted-foreground">
+                        <div className="text-s text-muted-foreground">
                           {tier.to === Infinity ? (
                             `${t('minuteTiers.upToAmount')} 15.000 ${t('minuteTiers.minutes')}`
                           ) : (

@@ -34,19 +34,19 @@
     "title": "callflows - automated customer communication",
     "description": "Optimize customer service, sales, and support with intelligent systems.",
     "hero": {
-      "headline1": "Overwhelmed with standard calls?",
-      "headline2": "Too little time for important tasks?",
-      "description": "While you're drowning in call chaos, the really important tasks get lost – time for a revolution!",
-      "solution": "With AI callflows",
-      "solutionDescription": "AI callflows = your conversation flow: natural dialogues, process logic & integrations — end‑to‑end.",
+      "headline1": "Automate telephony with AI:",
+      "headline2": "Focus on revenue",
+      "description": "AI voice agents for SMEs: Routine calls 24/7 – no contract term, pay-as-you-go per second. Relieve your team, gain time. For what matters.",
+      "solution": "With callflows",
+      "solutionDescription": "Your conversation flow: natural dialogues, process logic, automation & integrations – end-to-end, made in germany.",
       "cta": "Book Consultation",
       "widgetUnavailable": "Widget temporarily unavailable",
       "widgetUnavailableDescription": "Don't worry - this sometimes happens with live demos"
     }
   },
   "widget": {
-    "title": "Test AI callflow Live",
-    "description": "Enter your phone number and experience our AI callflow",
+    "title": "Test callflows Live",
+    "description": "Enter your phone number and name to speak with our brand ambassador Carla.",
     "nameLabel": "Your Name",
     "namePlaceholder": "John Doe",
     "phoneLabel": "Phone Number",
@@ -218,7 +218,7 @@
     "noExpiryDesc": "You pay exclusively for used minutes. No monthly fixed costs, no hidden fees.",
     "activeMonitoringTitle": "Transparent Billing",
     "activeMonitoringDesc": "Second-accurate billing at the end of the month. You always maintain control over your costs.",
-    "featuresTitle": "All Callflows Include",
+    "featuresTitle": "All callflows Include",
     "communicationTitle": "Communication",
     "communicationItems": [
       "Real-time bookings – Instant appointment scheduling",
@@ -696,8 +696,8 @@
       "title": "High Resource Requirements",
       "description": "Dedicated full-time staff needed for development, maintenance and optimization"
     },
-    "solutionTitle": "Our Solution",
-    "solutionDescription": "callflows takes over all the complexity for you. We integrate all necessary components into a turnkey solution – without you needing AI expertise or additional full-time staff.",
+    "solutionTitle": "Your Solution: callflows",
+    "solutionDescription": "Our AI voice agents conduct natural dialogues, qualify leads, schedule appointments, document results and generate concrete to-dos – 24/7. You don't need to configure anything: We deliver a turnkey complete service, adapted to your processes. We bring the AI expertise!",
     "comparison": {
       "callflows": [
         "Complete expertise & setup takeover",
@@ -940,45 +940,63 @@
     }
   },
   "featuresTarget": {
-    "badge": "Who is this for?",
-    "title": "AI Voice Agents for SMEs",
-    "subtitle": "AI Voice Agents help SMEs realize automated calls in B2B sales while strengthening personal contact",
-    "cta": "Fits your company? Let's talk!",
+    "badge": "AI Voice Agents in Action",
+    "title": "Automated Telephony for Every Industry",
+    "subtitle": "AI Voice Agents handle routine calls – inbound and outbound. From lead qualification to support to employee onboarding: Free up your team and focus on what matters.",
+    "cta": "Sounds exciting? Let's talk about what fits for you! 🚀",
     "targetGroups": {
+      "sales": {
+        "title": "B2B Sales & Lead Qualification",
+        "description": "Automated first contacts & follow-ups. More qualified leads with less effort for your sales team.",
+        "benefits": [
+          "Lead scoring & qualification",
+          "Follow-up campaigns without manual work",
+          "More time for closing conversations"
+        ]
+      },
       "staffing": {
-        "title": "Staffing Agencies",
-        "description": "with high call and follow-up load",
+        "title": "Recruiting & Staffing Agencies",
+        "description": "Candidate contact on autopilot. Faster filling of open positions through continuous candidate outreach.",
         "benefits": [
-          "Automated calls for candidate contact",
-          "AI telephony reduces manual follow-ups",
-          "More time for qualified B2B sales conversations"
+          "Automated candidate approach",
+          "Screening calls 24/7",
+          "Reduction of manual follow-ups"
         ]
       },
-      "mediumSales": {
-        "title": "Mid-sized Sales Organizations",
-        "description": "looking to scale",
+      "support": {
+        "title": "Inbound Support & FAQ Handling",
+        "description": "Answer initial questions automatically. Your customers get instant help, your team has more time for complex cases.",
         "benefits": [
-          "Scalable sales processes",
+          "24/7 availability for standard questions",
+          "Relief for your support staff",
+          "Quick solutions for recurring inquiries"
+        ]
+      },
+      "appointments": {
+        "title": "Appointment Scheduling & Reminders",
+        "description": "Book appointments & remind about them. Reduce no-shows and optimize your capacity planning.",
+        "benefits": [
+          "Automatic appointment coordination",
+          "Reminder calls before important appointments",
+          "Reduction of no-shows"
+        ]
+      },
+      "internal": {
+        "title": "Employee Onboarding & IT Helpline",
+        "description": "Automate internal processes. New employees become productive faster, IT teams have more capacity.",
+        "benefits": [
+          "Onboarding calls for new employees",
+          "IT helpdesk for standard questions",
+          "Relief for internal teams"
+        ]
+      },
+      "outbound": {
+        "title": "Outbound Campaigns & Follow-ups",
+        "description": "Scalable call campaigns. Reach more contacts in less time without additional staff.",
+        "benefits": [
+          "Mass contact without staff expansion",
           "Consistent customer approach",
-          "Growth without staff expansion"
-        ]
-      },
-      "efficientTeams": {
-        "title": "Efficient Teams",
-        "description": "wanting to automate standard calls",
-        "benefits": [
-          "More time for closings",
-          "Automated routine tasks",
-          "Higher conversion rates"
-        ]
-      },
-      "enterprises": {
-        "title": "Enterprises",
-        "description": "seeking transparent, flexible AI telephony",
-        "benefits": [
-          "Transparent cost structure",
-          "Flexibly scalable solution",
-          "Enterprise-grade security"
+          "Automatic follow-ups"
         ]
       }
     }
@@ -989,7 +1007,7 @@
     "subtitle": "From initial analysis to productive deployment – we guide you through every step",
     "cta": {
       "title": "Ready for the next step?",
-      "description": "Let's analyze together how AI callflows can support your sales",
+      "description": "Let's analyze together how callflows can support you.",
       "buttonText": "Book Appointment"
     },
     "steps": {
@@ -1050,10 +1068,10 @@
       "buttonText": "Open ROI Calculator"
     }
   },
-  "whyCallflows": {
+  "whycallflows": {
     "badge": "Why callflows?",
     "title": "More than software – a partner",
-    "description": "Many providers leave setup to you. We deliver end-to-end: from dialog design and process logic to integration and operation. Plus an understandable minute model without contract commitment. This keeps AI simple, transparent and calculable."
+    "description": "Many providers leave you alone with operating a software or whitelabel solution. We deliver end-to-end: from dialog design and process logic to integration and operation. Plus an understandable pay-as-you-go model without contract commitment. This makes AI simple, transparent and calculable."
   },
   "contactPage": {
     "heroSubtitle": "Speak with our AI experts about your individual requirements",

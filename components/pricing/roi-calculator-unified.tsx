@@ -134,7 +134,7 @@ export function ROICalculatorUnified() {
               {t('pricing.roiCalculator.badge')}
             </Badge>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {t('pricing.roiCalculator.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -311,18 +311,18 @@ export function ROICalculatorUnified() {
 
                 {/* KPIs */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 bg-card/50 rounded-lg border border-border/50">
+                  <div className="text-center p-4 bg-card/50 rounded-lg border border-border/70">
                     <p className="text-2xl font-bold text-primary">{calculations.roi}%</p>
                     <p className="text-sm text-muted-foreground">ROI</p>
                   </div>
-                  <div className="text-center p-4 bg-card/50 rounded-lg border border-border/50">
+                  <div className="text-center p-4 bg-card/50 rounded-lg border border-border/70">
                     <p className="text-2xl font-bold text-primary">{calculations.costReduction}%</p>
                     <p className="text-sm text-muted-foreground">Kostenreduktion</p>
                   </div>
                 </div>
 
                 {/* Zusätzliche Metriken */}
-                <div className="pt-4 border-t border-border/50 space-y-2 text-sm text-muted-foreground">
+                <div className="pt-4 border-t border-border/70 space-y-2 text-sm text-muted-foreground">
                   <div className="flex justify-between">
                     <span>Automatisierte Anrufe/Monat:</span>
                     <span className="font-medium">{calculations.automatedCalls.toLocaleString('de-DE')}</span>

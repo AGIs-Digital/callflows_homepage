@@ -14,7 +14,7 @@ export function FoundersWhySection() {
   return (
     <section className="py-20 bg-gradient-to-b from-accent/20 via-primary/20 to-secondary/30">
       <div className="container max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-10">{t("about.whyTitle")}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10">{t("about.whyTitle")}</h2>
 
         <div className="space-y-8">
           {founders.map((f, idx) => (

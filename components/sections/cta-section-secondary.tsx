@@ -10,7 +10,7 @@ export function CTASectionSecondary() {
     <section className="py-20 bg-gradient-to-b from-primary/35 via-accent/30 to-accent/40">
       <div className="container max-w-6xl text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6 text-primary dark:text-white">
+          <h2 className="text-4xl font-bold mb-6 text-foreground">
             {t('pricing.ctaTitle')}
           </h2>
           <p className="text-xl text-muted-foreground mb-10 leading-relaxed">

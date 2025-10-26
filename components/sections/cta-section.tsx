@@ -46,7 +46,7 @@ export function CTASection() {
 
   return (
     <section 
-      className="py-20 bg-gradient-to-b from-tertiary/25 via-primary/90 to-tertiary/25"
+      className="py-20 bg-gradient-to-b from-tertiary/25 to-[#fffff0]"
     >
       <div className="container max-w-6xl">
         <motion.div
@@ -58,10 +58,10 @@ export function CTASection() {
         >
           <motion.div variants={itemVariants}>
             <PhoneCall size={48} className="mx-auto text-accent mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
               {t('cta.title')}
             </h2>
-            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
               {t('cta.description')}
             </p>
           </motion.div>

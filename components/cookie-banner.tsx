@@ -74,7 +74,7 @@ export function CookieBanner() {
                   <h3 className="font-semibold text-sm">
                     Cookie-Einstellungen
                   </h3>
-                  <Badge variant="secondary" className="text-xs">
+                  <Badge variant="secondary" className="text-xl">
                     <Info className="h-3 w-3 mr-1" />
                     Datenschutz
                   </Badge>

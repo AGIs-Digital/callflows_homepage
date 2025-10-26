@@ -66,6 +66,10 @@ export default function Home() {
         </Suspense>
         
         <Suspense fallback={<div className="h-40 bg-gradient-to-r from-primary/10 to-secondary/10 animate-pulse"></div>}>
+          <SocialProofROISection />
+        </Suspense>
+        
+        <Suspense fallback={<div className="h-40 bg-gradient-to-r from-secondary/10 to-primary/10 animate-pulse"></div>}>
           <FeaturesSection />
         </Suspense>
         
@@ -85,10 +89,6 @@ export default function Home() {
         {/* Low Priority - loads when user scrolls */}
         <Suspense fallback={<div className="h-56 bg-gradient-to-r from-accent/10 to-secondary/10 animate-pulse"></div>}>
           <PricingComparisonSection />
-        </Suspense>
-        
-        <Suspense fallback={<div className="h-40 bg-gradient-to-r from-primary/10 to-secondary/10 animate-pulse"></div>}>
-          <SocialProofROISection />
         </Suspense>
         
         <Suspense fallback={<div className="h-48 bg-gradient-to-r from-secondary/10 to-accent/10 animate-pulse"></div>}>

@@ -124,7 +124,7 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Linke Spalte - Überschrift, Text und Bild */}
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold text-primary mb-2 underline decoration-accent dark:text-primary">
+            <h2 className="text-4xl font-bold text-foreground mb-2 underline decoration-accent">
               {t('about.title')}
             </h2>
             
@@ -167,7 +167,7 @@ export function AboutSection() {
                 <span className="text-lg font-bold text-accent dark:text-accent uppercase tracking-wider">
                   {t('about.mission')}
                 </span>
-                <h3 className="text-2xl font-bold text-primary dark:text-primary mt-2 mb-6">
+                <h3 className="text-2xl font-bold text-foreground mt-2 mb-6">
                   {getMissionContent().headline}
                 </h3>
               </div>
@@ -195,7 +195,7 @@ export function AboutSection() {
             
             {/* Was uns besonders macht danach */}
             <div className="bg-warm-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold text-primary dark:text-primary mb-6">
+              <h3 className="text-2xl font-bold text-foreground mb-6">
                 {t('about.special')}
               </h3>
               
