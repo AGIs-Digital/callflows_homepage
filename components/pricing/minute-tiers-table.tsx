@@ -111,7 +111,7 @@ export function MinuteTiersTable() {
                   </tr>
                   {/* Tax Notice Row */}
                   <tr className="bg-muted/30">
-                    <td className="py-2 px-4 text-center text-sm text-muted-foreground" colSpan={3}>
+                    <td className="py-2 px-4 text-center text-xs text-muted-foreground" colSpan={3}>
                       {t('minuteTiers.taxNotice')}
                     </td>
                   </tr>

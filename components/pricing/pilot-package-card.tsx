@@ -13,7 +13,7 @@ export function PilotPackageCard() {
   return (
     <div className="h-full flex flex-col">
       <div className="text-center mb-8">
-        <h2 className="text-2xl xl:text-3xl font-bold text-foreground mb-4">
+        <h2 className="text-2xl xl:text-3xl font-bold text-primary dark:text-white mb-4">
           {t('pilotPackage.title')}
         </h2>
         <p className="text-base xl:text-lg text-muted-foreground">
