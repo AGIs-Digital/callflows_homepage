@@ -7,6 +7,17 @@ import { useI18n } from "@/lib/i18n";
 
 export default function GlossarIndex() {
   const { t, tArray } = useI18n();
+  
+  // Hilfsfunktion: Hebt "callflows" im Text hervor
+  const highlightCallflows = (text: string) => {
+    const parts = text.split(/(callflows|Callflows|KI‑callflow|KI-callflow|AI callflow)/g);
+    return parts.map((part, i) => {
+      if (part.toLowerCase().includes('callflow')) {
+        return <span key={i} className="text-primary font-semibold">{part}</span>;
+      }
+      return part;
+    });
+  };
   return (
     <>
       <Head>
@@ -16,50 +27,138 @@ export default function GlossarIndex() {
       <main className="bg-background">
         <SiteHeader />
         <div className="relative overflow-hidden">
-        <section className="pt-20 pb-20 bg-gradient-to-b from-secondary/25 via-secondary/35 to-secondary/40">
+        {/* Breadcrumbs */}
+        <section className="pt-20 pb-6 bg-gradient-to-b from-secondary/25 via-secondary/35 to-secondary/40">
           <div className="container max-w-6xl">
-            {/* Breadcrumbs */}
             <BreadcrumbSEO 
               items={[
                 { name: "Glossar", url: "https://callflows.de/glossar" }
               ]}
             />
-            <div className="relative rounded-2xl border bg-card/60 backdrop-blur p-10 md:p-14">
-              <div className="absolute -top-24 -right-24 h-64 w-64 rotate-12 bg-gradient-to-br from-primary/20 via-accent/20 to-primary/10 blur-3xl rounded-full" />
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">{t('glossary.kiCallflow.title')}</h1>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-                {t('glossary.kiCallflow.intro')}
+          </div>
+        </section>
+
+        {/* KI-Voice-Agent Section */}
+        <section className="py-12 bg-gradient-to-b from-secondary/40 via-accent/25 to-accent/35">
+          <div className="container max-w-6xl">
+            <div className="rounded-xl border bg-card p-8">
+              <div className="mb-2 text-base md:text-lg font-semibold text-primary uppercase tracking-wide">
+                {t('glossary.kiVoiceAgent.tagline')}
+              </div>
+              <h2 className="text-3xl font-bold mb-4">{t('glossary.kiVoiceAgent.title')}</h2>
+              <p className="text-base md:text-lg text-muted-foreground mb-6 leading-relaxed">
+                {highlightCallflows(t('glossary.kiVoiceAgent.intro'))}
               </p>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="md:col-span-1 rounded-lg bg-primary/5 p-5">
+                  <h3 className="text-lg font-semibold mb-3 text-green-600 dark:text-green-400">{t('glossary.kiVoiceAgent.canTitle')}</h3>
+                  <ul className="space-y-2 text-base md:text-lg">
+                    {tArray('glossary.kiVoiceAgent.canItems').map((item, i) => (
+                      <li key={i} className="flex items-start">
+                        <span className="text-green-600 dark:text-green-400 mr-2">✓</span>
+                        <span className="text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="md:col-span-1 rounded-lg bg-muted/30 p-5">
+                  <h3 className="text-lg font-semibold mb-3 text-orange-600 dark:text-orange-400">{t('glossary.kiVoiceAgent.cannotTitle')}</h3>
+                  <ul className="space-y-2 text-base md:text-lg">
+                    {tArray('glossary.kiVoiceAgent.cannotItems').map((item, i) => (
+                      <li key={i} className="flex items-start">
+                        <span className="text-orange-600 dark:text-orange-400 mr-2">✗</span>
+                        <span className="text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="md:col-span-1 rounded-lg bg-accent/30 p-5 flex items-center justify-center">
+                  <p className="text-center text-base md:text-lg font-medium text-foreground">
+                    {highlightCallflows(t('glossary.kiVoiceAgent.needsCallflow'))}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="py-12 bg-gradient-to-b from-secondary/40 via-accent/25 to-accent/35">
-          <div className="container max-w-6xl grid md:grid-cols-2 gap-8">
-            <div className="rounded-xl border bg-card p-6">
-              <h2 className="text-2xl font-semibold mb-4">{t('glossary.kiCallflow.diffTitle')}</h2>
-              <ul className="space-y-2 text-muted-foreground">
-                {tArray('glossary.kiCallflow.diffItems').map((item, i) => (
-                  <li key={i}>• {item}</li>
+        {/* KI-Callflow Section mit Vergleichstabelle */}
+        <section className="py-12 bg-gradient-to-b from-accent/35 via-primary/20 to-primary/25">
+          <div className="container max-w-6xl">
+            <div className="rounded-xl border bg-card p-8">
+              <div className="mb-2 text-base md:text-lg font-semibold text-primary uppercase tracking-wide">
+                {t('glossary.kiCallflow.tagline')}
+              </div>
+              <h2 className="text-3xl font-bold mb-6">{t('glossary.kiCallflow.diffTitle')}</h2>
+              
+              {/* Vergleichstabelle */}
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-base md:text-lg border-collapse">
+                  <thead>
+                    <tr className="bg-muted/50">
+                      <th className="px-4 py-3 font-semibold border">{t('glossary.kiCallflow.comparisonHeaders.0')}</th>
+                      <th className="px-4 py-3 font-semibold border text-center">{t('glossary.kiCallflow.comparisonHeaders.1')}</th>
+                      <th className="px-4 py-3 font-semibold border text-center">{t('glossary.kiCallflow.comparisonHeaders.2')}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tArray('glossary.kiCallflow.comparisonRows').map((row, idx) => {
+                      const [label, voiceAgent, callflow] = row.split('||');
+                      return (
+                        <tr key={idx}>
+                          <td className="px-4 py-3 border font-medium bg-muted/20">{label}</td>
+                          <td className="px-4 py-3 border text-center">{highlightCallflows(voiceAgent)}</td>
+                          <td className="px-4 py-3 border text-center bg-primary/5">{highlightCallflows(callflow)}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-6 rounded-lg bg-accent/20 p-5">
+                <p className="text-base md:text-lg">
+                  <strong className="text-foreground">{t('glossary.kiCallflow.synergyTitle')}</strong> {highlightCallflows(t('glossary.kiCallflow.synergyText'))}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Klassischer Callflow */}
+        <section className="py-12 bg-gradient-to-b from-primary/25 via-secondary/20 to-[#fffff0]">
+          <div className="container max-w-6xl">
+            <div className="rounded-xl border bg-card p-8">
+              <div className="mb-2 text-base md:text-lg font-semibold text-muted-foreground uppercase tracking-wide">
+                {t('glossary.classicCallflow.tagline')}
+              </div>
+              <h2 className="text-3xl font-bold mb-4">{t('glossary.classicCallflow.title')}</h2>
+              <p className="text-base md:text-lg text-muted-foreground mb-6 leading-relaxed">
+                {highlightCallflows(t('glossary.classicCallflow.intro'))}
+              </p>
+              
+              <h3 className="text-lg font-semibold mb-3">{t('glossary.classicCallflow.diffTitle')}</h3>
+              <ul className="space-y-2">
+                {tArray('glossary.classicCallflow.diffItems').map((item, i) => (
+                  <li key={i} className="text-base md:text-lg text-muted-foreground">{item}</li>
                 ))}
               </ul>
-            </div>
-            <div className="rounded-xl border bg-card p-6">
-              <h2 className="text-2xl font-semibold mb-4">{t('glossary.kiCallflow.voiceAgentsTitle')}</h2>
-              <p className="text-muted-foreground">{t('glossary.kiCallflow.voiceAgentsText')}</p>
             </div>
           </div>
         </section>
 
         {/* Terminologie-Tabelle - Mobile optimiert */}
-        <section className="py-12 bg-gradient-to-b from-accent/35 via-primary/25 to-primary/30">
+        <section className="py-12 bg-gradient-to-b from-[#fffff0] to-primary/30">
           <div className="container max-w-6xl">
             <h2 className="text-2xl font-semibold mb-6">{t('glossary.kiCallflow.terminologyTitle')}</h2>
             
             {/* Desktop Tabelle */}
             <div className="hidden md:block rounded-xl border bg-card overflow-hidden">
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-sm">
+                <table className="w-full text-left text-base md:text-lg">
                   <thead className="bg-muted/50">
                     <tr>
                       <th className="px-4 py-3 font-semibold">{t('glossary.kiCallflow.terminologyHeaders.0')}</th>
@@ -67,15 +166,15 @@ export default function GlossarIndex() {
                     </tr>
                   </thead>
                   <tbody className="divide-y">
-                    {tArray('glossary.kiCallflow.terminology').map((row, idx) => {
-                      const [term, focus] = row.split('||');
-                      return (
-                        <tr key={idx}>
-                          <td className="px-4 py-3 whitespace-nowrap font-medium">{term}</td>
-                          <td className="px-4 py-3">{focus}</td>
-                        </tr>
-                      );
-                    })}
+            {tArray('glossary.kiCallflow.terminology').map((row, idx) => {
+              const [term, focus] = row.split('||');
+              return (
+                <tr key={idx}>
+                  <td className="px-4 py-3 whitespace-nowrap font-medium">{highlightCallflows(term)}</td>
+                  <td className="px-4 py-3">{highlightCallflows(focus)}</td>
+                </tr>
+              );
+            })}
                   </tbody>
                 </table>
               </div>
@@ -83,27 +182,21 @@ export default function GlossarIndex() {
 
             {/* Mobile Card Layout */}
             <div className="md:hidden space-y-4">
-              {tArray('glossary.kiCallflow.terminology').map((row, idx) => {
-                const [term, focus] = row.split('||');
-                return (
-                  <div key={idx} className="rounded-lg border bg-card p-4 space-y-2">
-                    <div className="font-semibold text-primary text-sm uppercase tracking-wide">
-                      {t('glossary.kiCallflow.terminologyHeaders.0')}
-                    </div>
-                    <div className="font-medium text-base">{term}</div>
-                    <div className="font-medium text-primary text-sm uppercase tracking-wide mt-3">
-                      {t('glossary.kiCallflow.terminologyHeaders.1')}
-                    </div>
-                    <div className="text-muted-foreground text-sm leading-relaxed">{focus}</div>
+            {tArray('glossary.kiCallflow.terminology').map((row, idx) => {
+              const [term, focus] = row.split('||');
+              return (
+                <div key={idx} className="rounded-lg border bg-card p-4 space-y-2">
+                  <div className="font-semibold text-primary text-base uppercase tracking-wide">
+                    {t('glossary.kiCallflow.terminologyHeaders.0')}
                   </div>
-                );
-              })}
-            </div>
-
-            <div className="mt-6 rounded-xl border bg-accent/20 p-5">
-              <p className="text-s text-muted-foreground">
-                <strong className="text-foreground">{t('glossary.kiCallflow.noteLabel')}</strong> {t('glossary.kiCallflow.note')}
-              </p>
+                  <div className="font-medium text-lg">{highlightCallflows(term)}</div>
+                  <div className="font-medium text-primary text-base uppercase tracking-wide mt-3">
+                    {t('glossary.kiCallflow.terminologyHeaders.1')}
+                  </div>
+                  <div className="text-muted-foreground text-base leading-relaxed">{highlightCallflows(focus)}</div>
+                </div>
+              );
+            })}
             </div>
           </div>
         </section>
@@ -113,24 +206,14 @@ export default function GlossarIndex() {
           <div className="container max-w-6xl">
             <div className="rounded-xl border bg-card p-6 md:p-8">
               <h2 className="text-2xl font-semibold mb-3">{t('glossary.kiCallflow.e2eTitle')}</h2>
-              <p className="text-muted-foreground mb-6">{t('glossary.kiCallflow.e2eDefinition')}</p>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-lg font-medium mb-2">{t('glossary.kiCallflow.e2eIncludesTitle')}</h3>
-                  <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-                    {tArray('glossary.kiCallflow.e2eIncludes').map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium mb-2">{t('glossary.kiCallflow.e2eCriteriaTitle')}</h3>
-                  <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-                    {tArray('glossary.kiCallflow.e2eCriteria').map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
+              <p className="text-base md:text-lg text-muted-foreground mb-6">{highlightCallflows(t('glossary.kiCallflow.e2eDefinition'))}</p>
+              <div>
+                <h3 className="text-lg font-medium mb-3">{t('glossary.kiCallflow.e2eIncludesTitle')}</h3>
+                <ul className="grid md:grid-cols-2 gap-x-8 gap-y-2 list-disc pl-5 text-base md:text-lg text-muted-foreground">
+                  {tArray('glossary.kiCallflow.e2eIncludes').map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
@@ -141,7 +224,7 @@ export default function GlossarIndex() {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t('glossary.kiCallflow.benefitsTitle')}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                {t('glossary.kiCallflow.benefitsSubtitle')}
+                {highlightCallflows(t('glossary.kiCallflow.benefitsSubtitle'))}
               </p>
             </div>
             
@@ -156,7 +239,7 @@ export default function GlossarIndex() {
                     </div>
                     <div className="text-center">
                       <p className="text-foreground font-semibold text-lg leading-relaxed">
-                        {benefit}
+                        {highlightCallflows(benefit)}
                       </p>
                     </div>
                   </div>

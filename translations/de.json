@@ -429,23 +429,41 @@
     "ctaButtonText": "Termin buchen"
   },
   "glossary": {
-    "kiCallflow": {
-      "title": "KI‑callflow",
-      "pageTitle": "Was ist ein KI‑callflow? Definition, Unterschiede, Vorteile",
-      "pageDescription": "KI‑callflow: lernfähiger Gesprächs‑ und Prozessfluss. Unterschiede zum klassischen Callflow und zu Voice Agents, Vorteile und Einsatz.",
-      "short": "KI‑callflow: lernfähiger Gesprächs- und Prozessfluss – versteht Anliegen, führt Dialoge, bindet Systeme an.",
-      "l1": "Dynamische Dialoge statt starre Menüs",
-      "l2": "Prozesslogik + System‑Integrationen",
-      "l3": "Mehr als Callflow oder nur Voice Agent",
-      "intro": "Ein KI‑callflow ist ein lernfähiger Gesprächs‑ und Prozessfluss, der Anliegen versteht, Dialoge führt und Systeme anbindet. Er vereint Intent‑Erkennung, Business‑Logik, Automationen und Integrationen.",
-      "diffTitle": "Unterschied zum klassischen Callflow",
-      "diffItems": [
-        "Dynamisch statt statisch: erkennt Absichten, entscheidet kontextabhängig",
-        "Mehrstufige Prozesse inkl. Rückfragen, Validierungen, Übergaben",
-        "Nahtlose System‑Integrationen (CRM/ERP/Helpdesk)"
+    "kiVoiceAgent": {
+      "title": "KI-Voice-Agent",
+      "tagline": "Was der Anrufer erlebt",
+      "intro": "Ein KI-Voice-Agent ist die konversationelle KI an der 'Frontline'. Er versteht natürliche Sprache (STT), erkennt Anliegen (NLU), führt kontextbezogene Dialoge (LLM) und antwortet in natürlicher Sprache (TTS). Der Anrufer erlebt ein Gespräch, keine Menü-Navigation.",
+      "canTitle": "Kann:",
+      "canItems": [
+        "Freie Spracheingabe verstehen ('Ich möchte meinen Termin verschieben')",
+        "Kontext über mehrere Turns behalten",
+        "Rückfragen stellen und präzisieren",
+        "Empathisch und natürlich kommunizieren"
       ],
-      "voiceAgentsTitle": "Abgrenzung zu „Voice Agents“",
-      "voiceAgentsText": "Ein Voice Agent ist die Stimme. Der KI‑callflow orchestriert den gesamten Prozess inkl. Logik, Daten und Aktionen.",
+      "cannotTitle": "Kann nicht (allein):",
+      "cannotItems": [
+        "Komplexe Multi-System-Prozesse orchestrieren",
+        "Business-Regeln und Validierungen durchsetzen",
+        "Post-Call-Automatisierungen starten"
+      ],
+      "needsCallflow": "→ Dafür braucht es einen KI-Callflow."
+    },
+    "kiCallflow": {
+      "title": "KI-Callflow",
+      "pageTitle": "Was ist ein KI‑callflow? Definition, Unterschiede, Vorteile",
+      "pageDescription": "KI‑callflow: End-to-End-Prozess-Orchestrierung für automatisierte Telefonie. Unterschiede zum Voice Agent und klassischen Callflow.",
+      "tagline": "Was im Hintergrund orchestriert wird",
+      "intro": "Ein KI-Callflow ist die End-to-End-Prozess-Orchestrierung hinter dem Gespräch. Er steuert Business-Logik, bindet Drittsysteme an (CRM, ERP, Helpdesk), führt Validierungen durch, triggert Aktionen und managt Post-Call-Processing – vom ersten Klingeln bis zur finalen Dokumentation.",
+      "diffTitle": "Abgrenzung zum KI-Voice-Agent",
+      "comparisonHeaders": ["", "KI-Voice-Agent", "KI-Callflow"],
+      "comparisonRows": [
+        "Fokus||Konversation||Prozess-Orchestrierung",
+        "Aufgabe||Verstehen & Antworten||Entscheiden & Handeln",
+        "Komponenten||STT, NLU, LLM, TTS||Business-Logik, Integrationen, Workflows",
+        "Beispiel||'Verstehe: Kunde will Termin ändern'||'Prüfe Verfügbarkeit im Kalender, buche um, sende Bestätigung'"
+      ],
+      "synergyTitle": "Zusammenspiel:",
+      "synergyText": "Der KI-Voice-Agent ist die konversationelle Schicht des KI-Callflows. Der Agent sammelt Informationen im Gespräch, der Callflow verarbeitet sie und führt Aktionen aus.",
       "terminologyTitle": "Terminologie im Überblick",
       "terminologyHeaders": ["Begriff", "Fokus"],
       "terminology": [
@@ -469,15 +487,6 @@
         "Post‑Call Processing: Follow‑ups, E‑Mails/SMS, CRM‑Updates",
         "Lern‑Loop: Auswertung und Feintuning"
       ],
-      "e2eCriteriaTitle": "Messbare Kriterien",
-      "e2eCriteria": [
-        "≥95% Prozessabschlüsse ohne manuelle Nacharbeit (Use‑Case‑abhängig)",
-        "<3% Fallback‑/Fehlerquote bei Validierungen",
-        "Lückenlose Dokumentation inkl. Zeitstempel",
-        "Definierte SLAs und Eskalationspfade"
-      ],
-      "noteLabel": "Merke:",
-      "note": "Sobald Analyse, Bereinigung, Datenextraktion und Automationen nach dem Gespräch dazugehören, spricht man von einem Conversation Flow – es ist ein Gesamtprozess vor, während und nach dem Call.",
       "benefitsTitle": "Vorteile",
       "benefitsSubtitle": "Entdecken Sie die entscheidenden Vorteile von callflows für Ihr Unternehmen",
       "benefits": [
@@ -485,6 +494,26 @@
         "Proaktive Entwicklung passend zu Ihrer Strategie",
         "Flexible Gestaltung der KI auf jeden Ihre use-cases"
       ]
+    },
+    "classicCallflow": {
+      "title": "Klassischer Callflow",
+      "tagline": "Das alte System zum Vergleich",
+      "intro": "Ein klassischer Callflow ist ein starres IVR-Menü (Interactive Voice Response). Der Anrufer navigiert per Tastendruck oder einfachen Kommandos durch vordefinierte Optionen. Kein Kontextverständnis, keine Systemanbindung, kein Dialog – nur Routing.",
+      "diffTitle": "Unterschied zum KI-Callflow:",
+      "diffItems": [
+        "❌ Statisch statt dynamisch",
+        "❌ Keine Intent-Erkennung",
+        "❌ Keine Lernfähigkeit",
+        "❌ Keine System-Integrationen",
+        "❌ Manuelle Nachbearbeitung"
+      ]
+    },
+    "conversationalFlow": {
+      "title": "Conversational Flow",
+      "tagline": "Der Oberbegriff für Omnichannel",
+      "intro": "Ein Conversational Flow ist der kanalübergreifende Gesprächs- und Prozessfluss – egal ob per Telefon, Chat, WhatsApp oder Messenger. Er umfasst Konversation, Logik und Aktionen über alle Touchpoints hinweg.",
+      "whenTitle": "Wann relevant:",
+      "whenText": "Wenn dein Use Case über Telefonie hinausgeht und du Omnichannel-Experiences bauen willst, bei denen ein Anliegen nahtlos zwischen Kanälen wechseln kann."
     },
     "readMore": "Mehr erfahren"
   },

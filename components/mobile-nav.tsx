@@ -48,16 +48,6 @@ export function MobileNav() {
               {t('nav.pricing')}
             </Link>
             <Link
-              href="/blog"
-              onClick={() => setOpen(false)}
-              className={cn(
-                "text-lg font-medium transition-colors hover:text-primary",
-                pathname.startsWith("/blog") ? "text-primary" : "text-foreground/60"
-              )}
-            >
-              {t('nav.blog')}
-            </Link>
-            <Link
               href="/about"
               onClick={() => setOpen(false)}
               className={cn(
@@ -76,6 +66,22 @@ export function MobileNav() {
               )}
             >
               {t('nav.contact')}
+            </Link>
+            
+            {/* Abstand zwischen Kontakt und Blog */}
+            <div className="pt-2">
+              <div className="border-t border-muted-foreground/20" />
+            </div>
+            
+            <Link
+              href="/blog"
+              onClick={() => setOpen(false)}
+              className={cn(
+                "text-lg font-medium transition-colors hover:text-primary",
+                pathname.startsWith("/blog") ? "text-primary" : "text-foreground/60"
+              )}
+            >
+              {t('nav.blog')}
             </Link>
             
             {/* Dashboard-Links für eingeloggte Benutzer */}

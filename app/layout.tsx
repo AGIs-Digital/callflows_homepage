@@ -123,8 +123,9 @@ export default function RootLayout({
                 // Resource Hints Performance Boost mit iOS Safari Fallback
                 if ('requestIdleCallback' in window) {
                   requestIdleCallback(() => {
-                    // Prefetch kritische Routen während Idle-Zeit
-                    const routes = ['/pricing', '/blog', '/kontakt'];
+                    // Prefetch nur kritische Routen während Idle-Zeit
+                    // /blog wird NICHT gepreloaded für bessere Homepage-Performance
+                    const routes = ['/pricing', '/kontakt'];
                     routes.forEach(route => {
                       const link = document.createElement('link');
                       link.rel = 'prefetch';
@@ -135,7 +136,9 @@ export default function RootLayout({
                 } else {
                   // iOS Safari < 15 Fallback
                   setTimeout(() => {
-                    const routes = ['/pricing', '/blog', '/kontakt'];
+                    // Prefetch nur kritische Routen während Idle-Zeit
+                    // /blog wird NICHT gepreloaded für bessere Homepage-Performance
+                    const routes = ['/pricing', '/kontakt'];
                     routes.forEach(route => {
                       const link = document.createElement('link');
                       link.rel = 'prefetch';

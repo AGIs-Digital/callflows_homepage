@@ -272,23 +272,41 @@
     "ctaButtonText": "Réserver une consultation gratuite"
   },
   "glossary": {
-    "kiCallflow": {
-      "title": "AI callflow",
-      "pageTitle": "Qu'est‑ce qu'un AI callflow ? Définition, différences, avantages",
-      "pageDescription": "AI callflow : flux de conversation et de processus apprenant. Différences avec le callflow classique et les agents vocaux, avantages et usages.",
-      "short": "AI callflow : flux de conversation et de processus apprenant — comprend les intentions, mène des dialogues, connecte les systèmes.",
-      "l1": "Dialogues dynamiques vs. menus statiques",
-      "l2": "Logique de processus + intégrations systèmes",
-      "l3": "Au‑delà d'un callflow classique ou d'un simple agent vocal",
-      "intro": "Un AI callflow est un flux de conversation et de processus apprenant qui comprend les intentions, mène des dialogues et se connecte à vos systèmes. Il combine reconnaissance d'intentions, logique métier, automatisations et intégrations.",
-      "diffTitle": "Différence avec le callflow classique",
-      "diffItems": [
-        "Dynamique plutôt que statique : comprend les intentions, décide selon le contexte",
-        "Processus multi‑étapes incluant relances, validations, transferts",
-        "Intégrations systèmes transparentes (CRM/ERP/Helpdesk)"
+    "kiVoiceAgent": {
+      "title": "Agent Vocal IA",
+      "tagline": "Ce que l'appelant expérimente",
+      "intro": "Un Agent Vocal IA est l'IA conversationnelle en première ligne. Il comprend le langage naturel (STT), reconnaît les intentions (NLU), mène des dialogues contextuels (LLM) et répond en langage naturel (TTS). L'appelant vit une conversation, pas une navigation dans des menus.",
+      "canTitle": "Peut :",
+      "canItems": [
+        "Comprendre l'entrée vocale libre (« Je veux reporter mon rendez-vous »)",
+        "Maintenir le contexte sur plusieurs tours",
+        "Poser des questions de clarification et préciser",
+        "Communiquer avec empathie et naturellement"
       ],
-      "voiceAgentsTitle": "Différence avec les agents vocaux",
-      "voiceAgentsText": "Un agent vocal est la voix. L'AI callflow orchestre tout le processus incl. logique, données et actions.",
+      "cannotTitle": "Ne peut pas (seul) :",
+      "cannotItems": [
+        "Orchestrer des processus complexes multi-systèmes",
+        "Appliquer des règles métier et validations",
+        "Déclencher des automatisations post-appel"
+      ],
+      "needsCallflow": "→ C'est à ça que sert un AI callflow."
+    },
+    "kiCallflow": {
+      "title": "AI Callflow",
+      "pageTitle": "Qu'est‑ce qu'un AI callflow ? Définition, différences, avantages",
+      "pageDescription": "AI callflow : orchestration de processus de bout en bout pour la téléphonie automatisée. Différences avec les agents vocaux et callflows classiques.",
+      "tagline": "Ce qui est orchestré en arrière-plan",
+      "intro": "Un AI callflow est l'orchestration de processus de bout en bout derrière la conversation. Il contrôle la logique métier, connecte les systèmes tiers (CRM, ERP, Helpdesk), effectue des validations, déclenche des actions et gère le post-traitement – du premier appel à la documentation finale.",
+      "diffTitle": "Distinction avec l'Agent Vocal IA",
+      "comparisonHeaders": ["", "Agent Vocal IA", "AI Callflow"],
+      "comparisonRows": [
+        "Focus||Conversation||Orchestration de Processus",
+        "Tâche||Comprendre et Répondre||Décider et Agir",
+        "Composants||STT, NLU, LLM, TTS||Logique Métier, Intégrations, Workflows",
+        "Exemple||'Je comprends : Client veut reporter'||'Vérifier disponibilité calendrier, reporter, envoyer confirmation'"
+      ],
+      "synergyTitle": "Synergie :",
+      "synergyText": "L'Agent Vocal IA est la couche conversationnelle de l'AI callflow. L'agent collecte les informations dans la conversation, le callflow les traite et exécute les actions.",
       "terminologyTitle": "Aperçu de la terminologie",
       "terminologyHeaders": ["Terme", "Focus"],
       "terminology": [
@@ -312,15 +330,6 @@
         "Post‑traitement : relances, email/SMS, mises à jour CRM",
         "Boucle d'apprentissage : évaluation et ajustements"
       ],
-      "e2eCriteriaTitle": "Critères mesurables",
-      "e2eCriteria": [
-        "≥95% d'achèvements de processus sans reprise manuelle (selon cas d'usage)",
-        "<3% de taux de repli/erreurs de validation",
-        "Documentation complète incl. horodatage",
-        "SLA et parcours d'escalade définis"
-      ],
-      "noteLabel": "Note :",
-      "note": "Si l'analyse, le nettoyage, l'extraction de données et les automatisations après l'appel sont inclus, on parle d'un flux de conversation – c'est un processus de bout en bout avant, pendant et après l'appel.",
       "benefitsTitle": "Avantages",
       "benefitsSubtitle": "Découvrez les avantages décisifs des AI callflows pour votre entreprise",
       "benefits": [
@@ -328,6 +337,26 @@
         "Développement proactif adapté à votre stratégie",
         "Conception IA flexible pour tous vos cas d'usage"
       ]
+    },
+    "classicCallflow": {
+      "title": "Callflow Classique",
+      "tagline": "L'ancien système pour comparaison",
+      "intro": "Un callflow classique est un menu IVR rigide (Réponse Vocale Interactive). L'appelant navigue dans des options prédéfinies en utilisant des touches ou des commandes simples. Pas de compréhension contextuelle, pas d'intégration système, pas de dialogue – juste du routage.",
+      "diffTitle": "Différence avec l'AI callflow :",
+      "diffItems": [
+        "❌ Statique au lieu de dynamique",
+        "❌ Pas de reconnaissance d'intentions",
+        "❌ Pas de capacité d'apprentissage",
+        "❌ Pas d'intégrations systèmes",
+        "❌ Post-traitement manuel"
+      ]
+    },
+    "conversationalFlow": {
+      "title": "Flux Conversationnel",
+      "tagline": "Le terme générique pour l'omnicanal",
+      "intro": "Un flux conversationnel est le flux de conversation et de processus multi-canal – que ce soit par téléphone, chat, WhatsApp ou messenger. Il englobe conversation, logique et actions sur tous les points de contact.",
+      "whenTitle": "Quand pertinent :",
+      "whenText": "Lorsque votre cas d'usage va au-delà de la téléphonie et que vous voulez construire des expériences omnicanal où une demande peut basculer sans problème entre les canaux."
     },
     "readMore": "En savoir plus"
   },

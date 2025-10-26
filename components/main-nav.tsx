@@ -42,17 +42,6 @@ export function MainNav({ className }: MainNavProps) {
         {t('nav.pricing')}
       </Link>
       <Link
-        href="/blog"
-        title="Blog über KI‑callflows und Voice Agents lesen"
-        aria-current={pathname.startsWith("/blog") ? "page" : undefined}
-        className={cn(
-          "text-sm font-medium transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm px-2 py-1",
-          pathname.startsWith("/blog") ? "text-primary" : "text-foreground/60"
-        )}
-      >
-        {t('nav.blog')}
-      </Link>
-      <Link
         href="/about"
         title="Über callflows und unser Team erfahren"
         aria-current={pathname === "/about" ? "page" : undefined}
@@ -73,6 +62,21 @@ export function MainNav({ className }: MainNavProps) {
         )}
       >
         {t('nav.contact')}
+      </Link>
+      
+      {/* Abstand zwischen Kontakt und Blog */}
+      <span className="mx-2 text-muted-foreground/30">•</span>
+      
+      <Link
+        href="/blog"
+        title="Blog über KI‑callflows und Voice Agents lesen"
+        aria-current={pathname.startsWith("/blog") ? "page" : undefined}
+        className={cn(
+          "text-sm font-medium transition-colors hover:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm px-2 py-1",
+          pathname.startsWith("/blog") ? "text-primary" : "text-foreground/60"
+        )}
+      >
+        {t('nav.blog')}
       </Link>
     </nav>
   );

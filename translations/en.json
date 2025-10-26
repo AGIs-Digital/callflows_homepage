@@ -272,23 +272,41 @@
     "ctaButtonText": "Book Consultation"
   },
   "glossary": {
-    "kiCallflow": {
-      "title": "AI callflow",
-      "pageTitle": "What is an AI callflow? Definition, differences, benefits",
-      "pageDescription": "AI callflow: a learning conversation and process flow. Differences to classic call flows and voice agents, benefits and use.",
-      "short": "AI callflow: a learning conversation and process flow — understands intents, conducts dialogues, connects systems.",
-      "l1": "Dynamic dialogues vs. static menus",
-      "l2": "Process logic + system integrations",
-      "l3": "Beyond classic call flows or voice agents",
-      "intro": "An AI callflow is a learning conversation and process flow that understands intents, conducts dialogues and connects to your systems. It combines intent recognition, business logic, automations and integrations.",
-      "diffTitle": "Difference to classic call flow",
-      "diffItems": [
-        "Dynamic instead of static: understands intents and decides contextually",
-        "Multi‑step processes incl. follow‑ups, validations, hand‑offs",
-        "Seamless system integrations (CRM/ERP/Helpdesk)"
+    "kiVoiceAgent": {
+      "title": "AI Voice Agent",
+      "tagline": "What the caller experiences",
+      "intro": "An AI Voice Agent is the conversational AI on the frontline. It understands natural language (STT), recognizes intents (NLU), conducts context-based dialogues (LLM), and responds in natural language (TTS). The caller experiences a conversation, not menu navigation.",
+      "canTitle": "Can:",
+      "canItems": [
+        "Understand free speech input ('I want to reschedule my appointment')",
+        "Maintain context across multiple turns",
+        "Ask clarifying questions and refine",
+        "Communicate empathetically and naturally"
       ],
-      "voiceAgentsTitle": "Difference to voice agents",
-      "voiceAgentsText": "A voice agent is the voice. The AI callflow orchestrates the entire process incl. logic, data and actions.",
+      "cannotTitle": "Cannot (alone):",
+      "cannotItems": [
+        "Orchestrate complex multi-system processes",
+        "Enforce business rules and validations",
+        "Trigger post-call automations"
+      ],
+      "needsCallflow": "→ That's what an AI callflow is for."
+    },
+    "kiCallflow": {
+      "title": "AI Callflow",
+      "pageTitle": "What is an AI callflow? Definition, differences, benefits",
+      "pageDescription": "AI callflow: end-to-end process orchestration for automated telephony. Differences to voice agents and classic callflows.",
+      "tagline": "What's orchestrated in the background",
+      "intro": "An AI callflow is the end-to-end process orchestration behind the conversation. It controls business logic, connects third-party systems (CRM, ERP, Helpdesk), performs validations, triggers actions, and manages post-call processing – from first ring to final documentation.",
+      "diffTitle": "Distinction from AI Voice Agent",
+      "comparisonHeaders": ["", "AI Voice Agent", "AI Callflow"],
+      "comparisonRows": [
+        "Focus||Conversation||Process Orchestration",
+        "Task||Understand & Respond||Decide & Act",
+        "Components||STT, NLU, LLM, TTS||Business Logic, Integrations, Workflows",
+        "Example||'Understand: Customer wants to reschedule'||'Check calendar availability, reschedule, send confirmation'"
+      ],
+      "synergyTitle": "Synergy:",
+      "synergyText": "The AI Voice Agent is the conversational layer of the AI callflow. The agent gathers information in the conversation, the callflow processes it and executes actions.",
       "terminologyTitle": "Terminology overview",
       "terminologyHeaders": ["Term", "Focus"],
       "terminology": [
@@ -312,15 +330,6 @@
         "Post‑call processing: follow‑ups, email/SMS, CRM updates",
         "Learning loop: evaluation and fine‑tuning"
       ],
-      "e2eCriteriaTitle": "Measurable criteria",
-      "e2eCriteria": [
-        "≥95% process completions without manual rework (per use case)",
-        "<3% fallback/validation error rate",
-        "Complete documentation incl. timestamps",
-        "Defined SLAs and escalation paths"
-      ],
-      "noteLabel": "Note:",
-      "note": "If analytics, cleanup, data extraction and automations after the call are included, we speak of a conversation flow – it is an end‑to‑end process before, during and after the call.",
       "benefitsTitle": "Benefits",
       "benefitsSubtitle": "Discover the decisive advantages of AI callflows for your business",
       "benefits": [
@@ -328,6 +337,26 @@
         "Proactive development tailored to your strategy",
         "Flexible AI design for all your use cases"
       ]
+    },
+    "classicCallflow": {
+      "title": "Classic Callflow",
+      "tagline": "The old system for comparison",
+      "intro": "A classic callflow is a rigid IVR menu (Interactive Voice Response). The caller navigates through predefined options using keypresses or simple commands. No context understanding, no system integration, no dialogue – just routing.",
+      "diffTitle": "Difference to AI callflow:",
+      "diffItems": [
+        "❌ Static instead of dynamic",
+        "❌ No intent recognition",
+        "❌ No learning capability",
+        "❌ No system integrations",
+        "❌ Manual post-processing"
+      ]
+    },
+    "conversationalFlow": {
+      "title": "Conversational Flow",
+      "tagline": "The umbrella term for omnichannel",
+      "intro": "A conversational flow is the cross-channel conversation and process flow – whether by phone, chat, WhatsApp, or messenger. It encompasses conversation, logic, and actions across all touchpoints.",
+      "whenTitle": "When relevant:",
+      "whenText": "When your use case goes beyond telephony and you want to build omnichannel experiences where an inquiry can seamlessly switch between channels."
     },
     "readMore": "Read more"
   },

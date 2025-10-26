@@ -272,23 +272,41 @@
     "ctaButtonText": "Reservar consulta gratuita"
   },
   "glossary": {
-    "kiCallflow": {
-      "title": "AI callflow",
-      "pageTitle": "¿Qué es un AI callflow? Definición, diferencias, beneficios",
-      "pageDescription": "AI callflow: flujo de conversación y procesos que aprende. Diferencias con callflows clásicos y agentes de voz, beneficios y uso.",
-      "short": "AI callflow: flujo de conversación y procesos que aprende — entiende intenciones, conduce diálogos y conecta sistemas.",
-      "l1": "Diálogos dinámicos vs. menús estáticos",
-      "l2": "Lógica de procesos + integraciones de sistemas",
-      "l3": "Más que un callflow clásico o un simple agente de voz",
-      "intro": "Un AI callflow es un flujo de conversación y procesos que aprende, entiende intenciones, conduce diálogos y se conecta a sus sistemas. Combina reconocimiento de intención, lógica de negocio, automatizaciones e integraciones.",
-      "diffTitle": "Diferencia con el callflow clásico",
-      "diffItems": [
-        "Dinámico en lugar de estático: entiende intenciones y decide según el contexto",
-        "Procesos de varios pasos incl. repreguntas, validaciones, traspasos",
-        "Integraciones transparentes de sistemas (CRM/ERP/Helpdesk)"
+    "kiVoiceAgent": {
+      "title": "Agente de Voz IA",
+      "tagline": "Lo que el llamante experimenta",
+      "intro": "Un Agente de Voz IA es la IA conversacional en primera línea. Entiende el lenguaje natural (STT), reconoce intenciones (NLU), mantiene diálogos contextuales (LLM) y responde en lenguaje natural (TTS). El llamante experimenta una conversación, no navegación por menús.",
+      "canTitle": "Puede:",
+      "canItems": [
+        "Entender entrada de voz libre ('Quiero reprogramar mi cita')",
+        "Mantener contexto a través de múltiples turnos",
+        "Hacer preguntas aclaratorias y precisar",
+        "Comunicarse de forma empática y natural"
       ],
-      "voiceAgentsTitle": "Diferencia con los agentes de voz",
-      "voiceAgentsText": "Un agente de voz es la voz. El AI callflow orquesta todo el proceso incl. lógica, datos y acciones.",
+      "cannotTitle": "No puede (solo):",
+      "cannotItems": [
+        "Orquestar procesos complejos multi-sistema",
+        "Hacer cumplir reglas de negocio y validaciones",
+        "Iniciar automatizaciones post-llamada"
+      ],
+      "needsCallflow": "→ Para eso está el AI callflow."
+    },
+    "kiCallflow": {
+      "title": "AI Callflow",
+      "pageTitle": "¿Qué es un AI callflow? Definición, diferencias, beneficios",
+      "pageDescription": "AI callflow: orquestación de procesos de extremo a extremo para telefonía automatizada. Diferencias con agentes de voz y callflows clásicos.",
+      "tagline": "Lo que se orquesta en segundo plano",
+      "intro": "Un AI callflow es la orquestación de procesos de extremo a extremo detrás de la conversación. Controla la lógica de negocio, conecta sistemas externos (CRM, ERP, Helpdesk), realiza validaciones, dispara acciones y gestiona el procesamiento post-llamada – desde el primer timbre hasta la documentación final.",
+      "diffTitle": "Distinción del Agente de Voz IA",
+      "comparisonHeaders": ["", "Agente de Voz IA", "AI Callflow"],
+      "comparisonRows": [
+        "Enfoque||Conversación||Orquestación de Procesos",
+        "Tarea||Entender y Responder||Decidir y Actuar",
+        "Componentes||STT, NLU, LLM, TTS||Lógica de Negocio, Integraciones, Flujos de Trabajo",
+        "Ejemplo||'Entiendo: Cliente quiere reprogramar'||'Verificar disponibilidad en calendario, reprogramar, enviar confirmación'"
+      ],
+      "synergyTitle": "Sinergia:",
+      "synergyText": "El Agente de Voz IA es la capa conversacional del AI callflow. El agente recopila información en la conversación, el callflow la procesa y ejecuta acciones.",
       "terminologyTitle": "Resumen de la terminología",
       "terminologyHeaders": ["Término", "Enfoque"],
       "terminology": [
@@ -312,15 +330,6 @@
         "Post‑proceso: seguimientos, email/SMS, actualizaciones de CRM",
         "Bucle de aprendizaje: evaluación y afinado"
       ],
-      "e2eCriteriaTitle": "Criterios medibles",
-      "e2eCriteria": [
-        "≥95% de finalización de procesos sin retrabajo manual (según caso)",
-        "<3% de tasa de fallback/errores de validación",
-        "Documentación completa incl. marcas de tiempo",
-        "SLA y rutas de escalación definidas"
-      ],
-      "noteLabel": "Nota:",
-      "note": "Si se incluyen análisis, limpieza, extracción de datos y automatizaciones tras la llamada, se habla de un flujo de conversación: es un proceso de extremo a extremo antes, durante y después de la llamada.",
       "benefitsTitle": "Beneficios",
       "benefitsSubtitle": "Descubra las ventajas decisivas de los AI callflows para su empresa",
       "benefits": [
@@ -328,6 +337,26 @@
         "Desarrollo proactivo adaptado a su estrategia",
         "Diseño flexible de IA para todos sus casos de uso"
       ]
+    },
+    "classicCallflow": {
+      "title": "Callflow Clásico",
+      "tagline": "El sistema antiguo para comparación",
+      "intro": "Un callflow clásico es un menú IVR rígido (Respuesta de Voz Interactiva). El llamante navega por opciones predefinidas usando teclas o comandos simples. Sin comprensión de contexto, sin integración de sistemas, sin diálogo – solo enrutamiento.",
+      "diffTitle": "Diferencia con el AI callflow:",
+      "diffItems": [
+        "❌ Estático en lugar de dinámico",
+        "❌ Sin reconocimiento de intenciones",
+        "❌ Sin capacidad de aprendizaje",
+        "❌ Sin integraciones de sistemas",
+        "❌ Post-procesamiento manual"
+      ]
+    },
+    "conversationalFlow": {
+      "title": "Flujo Conversacional",
+      "tagline": "El término paraguas para omnicanal",
+      "intro": "Un flujo conversacional es el flujo de conversación y proceso entre canales – ya sea por teléfono, chat, WhatsApp o messenger. Abarca conversación, lógica y acciones en todos los puntos de contacto.",
+      "whenTitle": "Cuándo relevante:",
+      "whenText": "Cuando tu caso de uso va más allá de la telefonía y quieres construir experiencias omnicanal donde una consulta puede cambiar sin problemas entre canales."
     },
     "readMore": "Más información"
   },
