@@ -504,8 +504,7 @@
         "❌ Statisch statt dynamisch",
         "❌ Keine Intent-Erkennung",
         "❌ Keine Lernfähigkeit",
-        "❌ Keine System-Integrationen",
-        "❌ Manuelle Nachbearbeitung"
+        "❌ Keine System-Integrationen"
       ]
     },
     "conversationalFlow": {

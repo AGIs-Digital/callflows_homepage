@@ -29,7 +29,9 @@ export function generateMetadata({
   keywords = [],
 }: GenerateMetadataProps): Metadata {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://callflows.de';
-  const url = `${baseUrl}${path}`;
+  // Ensure path doesn't have trailing slash (except for root)
+  const cleanPath = path !== '/' && path.endsWith('/') ? path.slice(0, -1) : path;
+  const url = `${baseUrl}${cleanPath}`;
   
   // Standardkeywords für alle Seiten
   const defaultKeywords = [

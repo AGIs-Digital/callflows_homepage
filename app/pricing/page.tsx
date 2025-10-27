@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PricingFeaturesSection } from "@/components/sections/pricing-features-section";
@@ -9,20 +8,30 @@ import { PricingIntro } from "@/components/pricing/pricing-intro";
 import { ROICalculatorV2 } from "@/components/pricing/roi-calculator-v2";
 import { CTASectionSecondary } from "@/components/sections/cta-section-secondary";
 import { PricingHeroWrapper } from "./pricing-hero-wrapper";
-import deTranslations from "@/translations/de.json";
+import { generateMetadata as genMeta } from "@/lib/seo/metadata";
 
 // Server-Side Metadata für SEO
-export const metadata: Metadata = {
-  title: deTranslations.pricing.seo.title,
-  description: deTranslations.pricing.seo.description,
-  keywords: [deTranslations.pricing.seo.keywords],
-  openGraph: {
-    title: deTranslations.pricing.seo.title,
-    description: deTranslations.pricing.seo.description,
-    url: "https://callflows.de/pricing",
-    type: "website",
-  },
-};
+export const metadata = genMeta({
+  title: 'KI Telefonie Preise - Transparent & Fair | callflows',
+  description: 'Faire Preise für KI Telefonie: Pay-per-Use ohne Vertragslaufzeit. Pilotmonat ab 2.490€ inkl. Setup & 500 Minuten. Minutenpreise ab 0,45€. Jetzt kostenlos beraten lassen!',
+  path: '/pricing',
+  keywords: [
+    'KI Telefonie Preise',
+    'Voice Agent Kosten',
+    'KI Telefonie Tarife',
+    'Pay per Use Telefonie',
+    'ohne Vertragslaufzeit',
+    'Automatisierte Telefonie Kosten',
+    'KI Callcenter Preise',
+    'Voice Agent Pricing'
+  ],
+  images: [{
+    url: '/images/callflows_brand_small.webp',
+    width: 1200,
+    height: 630,
+    alt: 'callflows Preise - KI Telefonie Tarife'
+  }]
+});
 
 // JSON-LD Schema für Pricing/Product (SEO & RAG-optimiert)
 const pricingSchema = {

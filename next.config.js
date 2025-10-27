@@ -101,9 +101,6 @@ const nextConfig = {
     return config;
   },
   
-  // Statische Optimierung
-  trailingSlash: true,
-  
   // Image-Optimierung
   images: {
     unoptimized: true, // Da wir WebP selbst generieren
@@ -121,7 +118,6 @@ const nextConfig = {
   // Ausgabe-Optimierung
   output: 'export',
   distDir: 'out',
-  trailingSlash: true,
   
   // Externe Libraries optimieren für statischen Export
   transpilePackages: [

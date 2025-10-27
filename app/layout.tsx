@@ -151,9 +151,6 @@ export default function RootLayout({
             `
           }}
         />
-        <link rel="canonical" href="https://callflows.de" />
-        <link rel="alternate" hrefLang="de" href="https://callflows.de" />
-        <link rel="alternate" hrefLang="x-default" href="https://callflows.de" />
         <meta httpEquiv="Permissions-Policy" content="microphone=*, camera=*" />
         
         {/* Google Search Console Verification */}

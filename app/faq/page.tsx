@@ -1,21 +1,22 @@
-import { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { FAQClientWrapper } from "./faq-client-wrapper";
+import { generateMetadata as genMeta } from "@/lib/seo/metadata";
 import deTranslations from "@/translations/de.json";
 
 // Server-Side Metadata für SEO
-export const metadata: Metadata = {
-  title: "KI Telefonie FAQ: Häufige Fragen zu Voice Bots & automatisierten Anrufen | callflows",
-  description: "Alle Antworten zu KI Telefonie, Voice Bot Software und automatisierten Anrufen. Was kostet KI Telefonie? Wie funktioniert ein Voice Bot? DSGVO-konforme Lösungen.",
-  keywords: ["KI Telefonie FAQ", "Voice Bot Fragen", "automatisierte Telefonie Antworten", "KI Telefonassistent Hilfe", "Voice Bot Deutschland"],
-  openGraph: {
-    title: "KI Telefonie FAQ: Häufige Fragen zu Voice Bots & automatisierten Anrufen | callflows",
-    description: "Alle Antworten zu KI Telefonie, Voice Bot Software und automatisierten Anrufen. Was kostet KI Telefonie? Wie funktioniert ein Voice Bot?",
-    url: "https://callflows.de/faq",
-    type: "website",
-  },
-};
+export const metadata = genMeta({
+  title: 'KI Telefonie FAQ: Häufige Fragen zu Voice Bots & automatisierten Anrufen',
+  description: 'Alle Antworten zu KI Telefonie, Voice Bot Software und automatisierten Anrufen. Was kostet KI Telefonie? Wie funktioniert ein Voice Bot? DSGVO-konforme Lösungen.',
+  path: '/faq',
+  keywords: [
+    'KI Telefonie FAQ',
+    'Voice Bot Fragen',
+    'automatisierte Telefonie Antworten',
+    'KI Telefonassistent Hilfe',
+    'Voice Bot Deutschland'
+  ]
+});
 
 // FAQ-Daten direkt aus Übersetzungen laden (Server-Side für JSON-LD)
 const faqItems = Array.from({ length: 12 }, (_, i) => ({
