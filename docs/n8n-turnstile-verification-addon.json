@@ -1,0 +1,311 @@
+{
+  "name": "Turnstile Verification Addon",
+  "description": "Add these nodes to your existing spam-protection workflow to verify Cloudflare Turnstile tokens",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has-turnstile-token",
+              "leftValue": "={{ $json.metadata?.turnstileToken }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-turnstile-enabled",
+      "name": "Turnstile Token Present?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [450, 600],
+      "notes": "Check if widget sent Turnstile token"
+    },
+    {
+      "parameters": {
+        "url": "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        "authentication": "none",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "secret",
+              "value": "={{ $env.TURNSTILE_SECRET_KEY }}"
+            },
+            {
+              "name": "response",
+              "value": "={{ $('Extract IP & Metadata').item.json.metadata.turnstileToken }}"
+            },
+            {
+              "name": "remoteip",
+              "value": "={{ $('Extract IP & Metadata').item.json.ip }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "turnstile-verify",
+      "name": "Cloudflare: Verify Turnstile",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [650, 600],
+      "notes": "Verify token with Cloudflare API"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "success-check",
+              "leftValue": "={{ $json.success }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            },
+            {
+              "id": "hostname-check",
+              "leftValue": "={{ $json.hostname }}",
+              "rightValue": "callflows.de",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-turnstile-valid",
+      "name": "Turnstile Valid?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [850, 600],
+      "notes": "Check if token is valid AND from correct domain"
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ \"blocked:\" + $('Extract IP & Metadata').item.json.ip }}",
+        "value": "turnstile_failed",
+        "ttl": 3600,
+        "options": {}
+      },
+      "id": "redis-block-turnstile-fail",
+      "name": "Redis: Block IP (1h)",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [1050, 700],
+      "credentials": {
+        "redis": {
+          "id": "YOUR_REDIS_CREDENTIAL_ID",
+          "name": "Redis Local/Upstash"
+        }
+      },
+      "notes": "Block IP for 1 hour after Turnstile failure"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "fileId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Turnstile Failures",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "timestamp",
+              "displayName": "Timestamp",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "ip",
+              "displayName": "IP",
+              "type": "string",
+              "required": true
+            },
+            {
+              "id": "error_code",
+              "displayName": "Error Code",
+              "type": "string",
+              "required": false
+            },
+            {
+              "id": "customer_name",
+              "displayName": "Customer Name",
+              "type": "string",
+              "required": false
+            },
+            {
+              "id": "user_agent",
+              "displayName": "User Agent",
+              "type": "string",
+              "required": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "log-turnstile-failure",
+      "name": "Log Turnstile Failure",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [1050, 500],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_GOOGLE_OAUTH_ID",
+          "name": "Google Sheets OAuth2"
+        }
+      },
+      "notes": "Log failed Turnstile verifications for analysis"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \n  \"error\": \"Bot verification failed\",\n  \"code\": \"TURNSTILE_FAILED\",\n  \"error_codes\": $('Cloudflare: Verify Turnstile').item.json['error-codes'],\n  \"retryAfter\": 3600\n} }}",
+        "options": {
+          "responseCode": 403,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Retry-After",
+                "value": "3600"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-turnstile-failed",
+      "name": "Respond: Turnstile Failed",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1250, 600],
+      "notes": "Return 403 with detailed error message"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "turnstile-log",
+              "name": "turnstile_log",
+              "value": "={{ {\n  \"timestamp\": new Date().toISOString(),\n  \"ip\": $('Extract IP & Metadata').item.json.ip,\n  \"error_code\": $('Cloudflare: Verify Turnstile').item.json['error-codes']?.[0] || 'unknown',\n  \"customer_name\": $('Extract IP & Metadata').item.json.customer_name,\n  \"user_agent\": $('Extract IP & Metadata').item.json.userAgent\n} }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "prepare-turnstile-log",
+      "name": "Prepare Turnstile Log",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [1050, 600],
+      "notes": "Format data for logging"
+    }
+  ],
+  "connections": {
+    "Turnstile Token Present?": {
+      "main": [
+        [
+          {
+            "node": "Cloudflare: Verify Turnstile",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Cloudflare: Verify Turnstile": {
+      "main": [
+        [
+          {
+            "node": "Turnstile Valid?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Turnstile Valid?": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Prepare Turnstile Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Turnstile Log": {
+      "main": [
+        [
+          {
+            "node": "Log Turnstile Failure",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Redis: Block IP (1h)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis: Block IP (1h)": {
+      "main": [
+        [
+          {
+            "node": "Respond: Turnstile Failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-28T12:00:00.000Z",
+  "versionId": "1",
+  "notes": "## How to integrate:\n\n1. Import this workflow\n2. Copy all nodes\n3. In your main spam-protection workflow:\n   - Connect 'Extract IP & Metadata' → 'Turnstile Token Present?'\n   - If TRUE → Verify Turnstile → Continue only if valid\n   - If FALSE (no token) → Skip verification, continue with normal flow\n4. Replace placeholders:\n   - YOUR_REDIS_CREDENTIAL_ID\n   - YOUR_GOOGLE_OAUTH_ID\n   - YOUR_GOOGLE_SHEET_ID\n5. Set environment variable in n8n:\n   - TURNSTILE_SECRET_KEY=0x4AAAAAAA..."
+}
+

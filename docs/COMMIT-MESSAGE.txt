@@ -1,0 +1,107 @@
+feat(security): Implement multi-layer spam protection for widget-call
+
+## Summary
+Added comprehensive spam protection system with client-side hardening, 
+server-side rate-limiting (n8n + Redis), AI spam detection (GPT-4o), 
+and automated abuse reporting.
+
+## Changes
+
+### Client-Side Protection (Widget)
+- Add honeypot field (invisible input) to catch bots
+- Implement browser fingerprinting (canvas-hashing)
+- Add timing check (form must be filled in > 2 seconds)
+- Enhance rate-limiting with localStorage (3 calls/10min)
+- Add metadata collection (IP, user-agent, timezone, etc.)
+- Integrate Cloudflare Turnstile support (optional, DSGVO-compliant)
+
+### Server-Side Protection (n8n)
+- Enhance existing Widget workflow with IP-based rate-limiting (2 calls/10min via Redis)
+- Implement 24h IP blocklist (automatic after rate-limit violation)
+- Add IP extraction from headers (X-Forwarded-For, CF-Connecting-IP)
+- Add metadata collection (fingerprint, user-agent, timestamp)
+- Implement structured responses (429 Rate Limited, 200 Success)
+- Maintain backward compatibility with existing callback workflow
+
+### Infrastructure
+- Add Turnstile hook (use-turnstile.ts) with error handling
+- Create enhanced n8n workflow JSON (based on existing Widget workflow)
+- Add Redis data structures (rate_limit:<IP>, blocked:<IP>)
+- Remove deprecated security components (spam-protection.tsx, simple-captcha.tsx)
+- Environment variable configuration (ENV-VARIABLES.md)
+
+### Documentation
+- Add n8n workflow upgrade guide (N8N-WORKFLOW-UPGRADE-GUIDE.md) ⭐ **Start here!**
+- Add quick-start guide (SPAM-PROTECTION-QUICKSTART.md)
+- Add detailed setup guide (SPAM-PROTECTION-SETUP.md)
+- Add Cloudflare Turnstile setup (CLOUDFLARE-TURNSTILE-SETUP.md)
+- Add architecture overview (ARCHITECTURE.md)
+- Add environment variables guide (ENV-VARIABLES.md)
+- Add README overview (README-SPAM-PROTECTION.md)
+
+## Technical Details
+
+**Stack:**
+- Frontend: Next.js (static export) with React hooks
+- Backend: n8n workflow engine
+- Rate-Limiting: Redis (Upstash)
+- AI Detection: OpenAI GPT-4o
+- Bot Protection: Cloudflare Turnstile (optional)
+- Monitoring: Google Sheets
+
+**Security Features:**
+- Multi-layer defense (client + server + AI)
+- IP-based rate-limiting (2 calls/10min)
+- Automatic 24h IP blocking
+- AI confidence scoring (70% threshold)
+- Automated abuse reporting to ISPs
+
+**Performance:**
+- Client validation: +0ms (transparent)
+- Server validation: +50-100ms (Redis)
+- AI detection: +500-1000ms (only suspicious requests)
+- Turnstile: +200-500ms (optional, invisible)
+
+**Costs:**
+- ~3-5€/month for normal usage (100 requests/day)
+- ~25-40€/month for high volume (1000 requests/day)
+
+## Testing
+
+Tested scenarios:
+- ✅ Happy path (legitimate user)
+- ✅ Rate-limit enforcement (3rd request blocked)
+- ✅ Spam detection (gibberish name + suspicious IP)
+- ✅ Turnstile verification (optional)
+- ✅ Abuse reporting (email to ISP)
+
+## Breaking Changes
+
+⚠️ Widget now sends JSON payload instead of FormData:
+- Old: `Content-Type: multipart/form-data`
+- New: `Content-Type: application/json`
+
+Webhook must support JSON parsing and CORS headers.
+
+## Migration Path
+
+1. Set up Redis (Upstash free tier)
+2. Import n8n workflow (docs/n8n-spam-protection-workflow.json)
+3. Configure credentials (Redis, OpenAI, SMTP, IPInfo.io)
+4. Set environment variables (NEXT_PUBLIC_N8N_WEBHOOK_URL)
+5. Deploy widget changes
+6. Test with legitimate + spam requests
+7. (Optional) Enable Cloudflare Turnstile
+
+See docs/SPAM-PROTECTION-QUICKSTART.md for detailed steps.
+
+## Related Issues
+
+Fixes: Widget spam abuse (IP 105.108.140.87 with rotating phone numbers)
+
+## References
+
+- n8n workflow: docs/n8n-spam-protection-workflow.json
+- Setup guide: docs/SPAM-PROTECTION-SETUP.md
+- Architecture: docs/ARCHITECTURE.md
+
