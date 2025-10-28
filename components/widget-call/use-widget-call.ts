@@ -273,8 +273,8 @@ export function useWidgetCall(options: UseWidgetCallOptions = {}) {
         body: JSON.stringify(payload),
       });
 
-      if (response.ok || response.status === 0) {
-        // Status 0 bei no-cors Mode ist normal und bedeutet Request wurde gesendet
+      if (response.ok) {
+        // Erfolgreiche Antwort (Status 200-299)
         // Rate Limit aktualisieren
         updateRateLimit();
         
