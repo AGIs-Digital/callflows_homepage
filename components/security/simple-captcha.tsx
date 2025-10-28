@@ -144,3 +144,4 @@ export function AdvancedCaptcha({ onValidationChange }: { onValidationChange: (i
     </div>
   );
 }
+

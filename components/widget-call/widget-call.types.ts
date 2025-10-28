@@ -7,6 +7,16 @@ export type CallStatus = 'idle' | 'calling' | 'success' | 'error';
 export interface CallData {
   customer_name: string;
   customer_phonenumber: string;
+  metadata?: {
+    fingerprint?: string;
+    timestamp?: string;
+    userAgent?: string;
+    language?: string;
+    timezone?: string;
+    referrer?: string;
+    screenResolution?: string;
+    turnstileToken?: string;
+  };
 }
 
 export interface RateLimitData {

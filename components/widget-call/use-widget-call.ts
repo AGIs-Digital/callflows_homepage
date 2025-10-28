@@ -1,13 +1,55 @@
 import { useState, useCallback } from 'react';
 import { CallData, CallStatus, RateLimitData, PhoneValidationResult } from './widget-call.types';
+import { useTurnstile } from '@/hooks/use-turnstile';
 
 const RATE_LIMIT_KEY = 'widget_call_rate_limit';
 const RATE_LIMIT_MAX_CALLS = 3;
 const RATE_LIMIT_WINDOW = 10 * 60 * 1000; // 10 Minuten
+const WIDGET_OPEN_KEY = 'widget_open_timestamp';
 
-export function useWidgetCall() {
+// Simple Browser-Fingerprinting
+const getBrowserFingerprint = (): string => {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return 'unknown';
+  
+  ctx.textBaseline = 'top';
+  ctx.font = '14px Arial';
+  ctx.fillText('🔒', 2, 2);
+  
+  const dataUrl = canvas.toDataURL();
+  let hash = 0;
+  for (let i = 0; i < dataUrl.length; i++) {
+    hash = ((hash << 5) - hash) + dataUrl.charCodeAt(i);
+    hash = hash & hash;
+  }
+  
+  const fingerprint = `${hash}-${navigator.userAgent.length}-${screen.width}x${screen.height}-${new Date().getTimezoneOffset()}`;
+  return fingerprint;
+};
+
+interface UseWidgetCallOptions {
+  enableTurnstile?: boolean;
+  turnstileSiteKey?: string;
+}
+
+export function useWidgetCall(options: UseWidgetCallOptions = {}) {
   const [callStatus, setCallStatus] = useState<CallStatus>('idle');
   const [isLoading, setIsLoading] = useState(false);
+  const [formOpenTime] = useState<number>(() => {
+    // Speichere Zeitpunkt, wann Widget geöffnet wurde
+    const timestamp = Date.now();
+    sessionStorage.setItem(WIDGET_OPEN_KEY, timestamp.toString());
+    return timestamp;
+  });
+
+  // Turnstile (optional)
+  const turnstile = useTurnstile({
+    siteKey: options.turnstileSiteKey || process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '',
+    action: 'widget-call',
+    theme: 'auto',
+    size: 'normal'
+  });
 
   // Rate Limiting Logic
   const checkRateLimit = useCallback((): boolean => {
@@ -126,6 +168,16 @@ export function useWidgetCall() {
       throw new Error('RATE_LIMIT_EXCEEDED');
     }
 
+    // Zeitstempel-Check: Formular darf nicht in < 2 Sekunden ausgefüllt werden
+    const formOpenTimestamp = sessionStorage.getItem(WIDGET_OPEN_KEY);
+    if (formOpenTimestamp) {
+      const timeSinceOpen = Date.now() - parseInt(formOpenTimestamp, 10);
+      if (timeSinceOpen < 2000) {
+        console.warn('⚠️ Bot detected: Form filled too quickly');
+        throw new Error('BOT_DETECTED_SPEED');
+      }
+    }
+
     // Validierung
     const phoneValidation = validatePhoneNumber(data.customer_phonenumber);
     if (!phoneValidation.isValid) {
@@ -140,10 +192,38 @@ export function useWidgetCall() {
     setCallStatus('calling');
 
     try {
+      // Turnstile-Challenge (falls aktiviert)
+      let turnstileToken: string | null = null;
+      if (options.enableTurnstile && turnstile.isReady) {
+        try {
+          turnstileToken = await turnstile.execute();
+          if (!turnstileToken) {
+            throw new Error('TURNSTILE_FAILED');
+          }
+        } catch (error) {
+          console.error('Turnstile error:', error);
+          throw new Error('TURNSTILE_FAILED');
+        }
+      }
+
+      // Browser-Fingerprint generieren
+      const fingerprint = getBrowserFingerprint();
+      
       // Payload für n8n Webhook
       const payload = {
         customer_name: data.customer_name.trim(),
-        customer_phonenumber: phoneValidation.normalized
+        customer_phonenumber: phoneValidation.normalized,
+        // Metadaten für n8n Spam-Protection
+        metadata: {
+          fingerprint,
+          timestamp: new Date().toISOString(),
+          userAgent: navigator.userAgent,
+          language: navigator.language,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          referrer: document.referrer || 'direct',
+          screenResolution: `${screen.width}x${screen.height}`,
+          turnstileToken: turnstileToken || undefined
+        }
       };
 
       const webhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
@@ -179,24 +259,22 @@ export function useWidgetCall() {
         throw new Error('BOT_DETECTED');
       }
 
-      // FormData verwenden (wie das alte Widget)
-      const formData = new FormData();
-      formData.append('phone', payload.customer_phonenumber);
-      formData.append('name', payload.customer_name);
-
+      // JSON-Payload statt FormData (bessere Metadaten-Übertragung)
       const response = await fetch(webhookUrl, {
         method: 'POST',
-        mode: 'no-cors', // Umgeht CORS-Probleme
+        mode: 'cors', // CORS aktivieren für bessere Header-Übertragung
         headers: {
+          'Content-Type': 'application/json',
           'User-Agent': 'callflows-widget/2.0',
-          'X-Webhook-Source': 'widget-call'
-          // KEIN Content-Type Header - FormData setzt das automatisch
+          'X-Webhook-Source': 'widget-call',
+          'X-Request-Timestamp': payload.metadata.timestamp,
+          'X-Fingerprint': payload.metadata.fingerprint
         },
-        body: formData,
+        body: JSON.stringify(payload),
       });
 
-      if (response.ok || response.status === 0) {
-        // Status 0 bei no-cors Mode ist normal und bedeutet Request wurde gesendet
+      if (response.ok) {
+        // Erfolgreiche Antwort (Status 200-299)
         // Rate Limit aktualisieren
         updateRateLimit();
         
@@ -231,6 +309,7 @@ export function useWidgetCall() {
     startCall,
     validatePhoneNumber,
     validateName,
-    checkRateLimit
+    checkRateLimit,
+    turnstile: options.enableTurnstile ? turnstile : undefined
   };
 }

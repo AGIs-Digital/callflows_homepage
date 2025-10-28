@@ -1,0 +1,397 @@
+{
+  "name": "Widget (Enhanced with Spam Protection)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "homepage-widget",
+        "options": {}
+      },
+      "id": "7c6857c2-7fe8-4aab-aaf6-71d76e89877a",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [-464, 656],
+      "webhookId": "callflows-demo-start"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ip-extraction",
+              "name": "ip",
+              "value": "={{ $headers['x-forwarded-for']?.split(',')[0].trim() || $headers['cf-connecting-ip'] || $headers['x-real-ip'] || 'unknown' }}",
+              "type": "string"
+            },
+            {
+              "id": "phone",
+              "name": "phone",
+              "value": "={{ $json.body.phone }}",
+              "type": "string"
+            },
+            {
+              "id": "name",
+              "name": "name",
+              "value": "={{ $json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "fingerprint",
+              "name": "fingerprint",
+              "value": "={{ $json.body.metadata?.fingerprint || 'none' }}",
+              "type": "string"
+            },
+            {
+              "id": "user-agent",
+              "name": "userAgent",
+              "value": "={{ $headers['user-agent'] || 'unknown' }}",
+              "type": "string"
+            },
+            {
+              "id": "timestamp",
+              "name": "timestamp",
+              "value": "={{ $now() }}",
+              "type": "number"
+            },
+            {
+              "id": "cf-ray",
+              "name": "cfRay",
+              "value": "={{ $headers['cf-ray'] || 'none' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "extract-metadata",
+      "name": "Extract IP & Metadata",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [-256, 656]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "key": "={{ 'rate_limit:' + $json.ip }}",
+        "options": {}
+      },
+      "id": "redis-check-rate",
+      "name": "Redis: Check Rate Limit",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [-48, 656],
+      "credentials": {
+        "redis": {
+          "id": "YOUR_REDIS_CREDENTIAL_ID",
+          "name": "Upstash Redis"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "rate-limit-check",
+              "leftValue": "={{ $json.value ? parseInt($json.value) : 0 }}",
+              "rightValue": 2,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-rate-limit",
+      "name": "Rate Limit Exceeded?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [160, 656]
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ 'blocked:' + $('Extract IP & Metadata').item.json.ip }}",
+        "value": "blocked",
+        "ttl": 86400,
+        "options": {}
+      },
+      "id": "redis-block-ip",
+      "name": "Redis: Block IP (24h)",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [368, 560],
+      "credentials": {
+        "redis": {
+          "id": "YOUR_REDIS_CREDENTIAL_ID",
+          "name": "Upstash Redis"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { error: 'Rate limit exceeded. IP blocked for 24 hours.', retryAfter: 86400 } }}",
+        "options": {
+          "responseCode": 429,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Retry-After",
+                "value": "86400"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-rate-limited",
+      "name": "Respond: 429 Rate Limited",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [576, 560]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "key": "={{ 'rate_limit:' + $('Extract IP & Metadata').item.json.ip }}",
+        "options": {}
+      },
+      "id": "redis-check-exists",
+      "name": "Redis: Check if Key Exists",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [368, 752],
+      "credentials": {
+        "redis": {
+          "id": "YOUR_REDIS_CREDENTIAL_ID",
+          "name": "Upstash Redis"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "key-exists-check",
+              "leftValue": "={{ $json.value }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-key-exists",
+      "name": "Key Exists?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [576, 752]
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ 'rate_limit:' + $('Extract IP & Metadata').item.json.ip }}",
+        "value": "1",
+        "ttl": 600,
+        "options": {}
+      },
+      "id": "redis-set-initial",
+      "name": "Redis: Set Counter=1 (TTL 10min)",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [784, 656],
+      "credentials": {
+        "redis": {
+          "id": "YOUR_REDIS_CREDENTIAL_ID",
+          "name": "Upstash Redis"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "incr",
+        "key": "={{ 'rate_limit:' + $('Extract IP & Metadata').item.json.ip }}",
+        "options": {}
+      },
+      "id": "redis-increment",
+      "name": "Redis: Increment Counter",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [784, 848],
+      "credentials": {
+        "redis": {
+          "id": "YOUR_REDIS_CREDENTIAL_ID",
+          "name": "Upstash Redis"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/convai/twilio/outbound-call",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "elevenLabsApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"agent_id\": \"agent_4401k6d3axzkepws8xgvz6bqqgkn\",\n  \"agent_phone_number_id\": \"phnum_1901k6mqqk7yepxrq6yew3cjk7x4\",\n  \"to_number\": \"{{ $('Extract IP & Metadata').item.json.phone }}\",\n  \"conversation_initiation_client_data\": {\n    \"dynamic_variables\": {\n      \"name\": \"{{ $('Extract IP & Metadata').item.json.name }}\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [784, 752],
+      "id": "elevenlabs-call",
+      "name": "HTTP Request - 11labs call",
+      "credentials": {
+        "elevenLabsApi": {
+          "id": "2osNf6BfrJvOJMmM",
+          "name": "ElevenLabs timo"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: true, message: 'Call initiated', callId: $json.id || 'unknown' } }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "respond-success",
+      "name": "Respond: 200 Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [992, 752]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "elevenlabs-callback",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [-464, 880],
+      "id": "webhook-callback",
+      "name": "Webhook (Callback)",
+      "webhookId": "37508d59-9ff7-442f-8d1a-03fd3c790a2e"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Whitelist: was du behalten willst\nconst keepKeys = [\"body\", \"params\", \"query\"];\n\n// 1. Ursprüngliche Daten holen\nconst input = $json;\n\n// 2. Output auf relevante Keys reduzieren\nlet result = {};\nfor (const key of keepKeys) {\n  if (input[key]) result[key] = input[key];\n}\n\n// 3. Wenn du NUR den body willst:\nconst onlyBody = false;\n\nif (onlyBody) {\n  result = input.body || {};\n}\n\n// 4. Rückgabe an n8n\nreturn [{ json: result }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-256, 880],
+      "id": "code-cleanup-callback",
+      "name": "Code: Cleanup Callback"
+    },
+    {
+      "parameters": {
+        "toRecipients": "info@callflows.de",
+        "subject": "Widget Anfrage",
+        "bodyContent": "=<b>Neue Widget-Anfrage:</b><br>\n<blockquote>\n{{ $json.body.data.analysis.data_collection_results.zusammenfassung_widget.value }}\n</blockquote>\n<br><b>Name: {{ $json.body.data.conversation_initiation_client_data.dynamic_variables.name }}</b>\n<br><b>Telefonnummer: </b>{{ $json.body.data.conversation_initiation_client_data.dynamic_variables.system__called_number }}\n<br><b>Gesprächszeit: </b>{{ $json.body.data.metadata.call_duration_secs }} Sekunden<br>",
+        "additionalFields": {
+          "bodyContentType": "html"
+        }
+      },
+      "type": "n8n-nodes-base.microsoftOutlook",
+      "typeVersion": 2,
+      "position": [-48, 880],
+      "id": "send-email",
+      "name": "Send Email",
+      "webhookId": "41a00b7e-1bc1-4a79-b02e-7fcef3aa99e6",
+      "credentials": {
+        "microsoftOutlookOAuth2Api": {
+          "id": "9oi6BjN7FTCnbxpb",
+          "name": "MSOutlook info@callflows"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook Trigger": {
+      "main": [[{ "node": "Extract IP & Metadata", "type": "main", "index": 0 }]]
+    },
+    "Extract IP & Metadata": {
+      "main": [[{ "node": "Redis: Check Rate Limit", "type": "main", "index": 0 }]]
+    },
+    "Redis: Check Rate Limit": {
+      "main": [[{ "node": "Rate Limit Exceeded?", "type": "main", "index": 0 }]]
+    },
+    "Rate Limit Exceeded?": {
+      "main": [
+        [{ "node": "Redis: Block IP (24h)", "type": "main", "index": 0 }],
+        [{ "node": "Redis: Check if Key Exists", "type": "main", "index": 0 }]
+      ]
+    },
+    "Redis: Block IP (24h)": {
+      "main": [[{ "node": "Respond: 429 Rate Limited", "type": "main", "index": 0 }]]
+    },
+    "Redis: Check if Key Exists": {
+      "main": [[{ "node": "Key Exists?", "type": "main", "index": 0 }]]
+    },
+    "Key Exists?": {
+      "main": [
+        [{ "node": "Redis: Set Counter=1 (TTL 10min)", "type": "main", "index": 0 }],
+        [{ "node": "Redis: Increment Counter", "type": "main", "index": 0 }]
+      ]
+    },
+    "Redis: Set Counter=1 (TTL 10min)": {
+      "main": [[{ "node": "HTTP Request - 11labs call", "type": "main", "index": 0 }]]
+    },
+    "Redis: Increment Counter": {
+      "main": [[{ "node": "HTTP Request - 11labs call", "type": "main", "index": 0 }]]
+    },
+    "HTTP Request - 11labs call": {
+      "main": [[{ "node": "Respond: 200 Success", "type": "main", "index": 0 }]]
+    },
+    "Webhook (Callback)": {
+      "main": [[{ "node": "Code: Cleanup Callback", "type": "main", "index": 0 }]]
+    },
+    "Code: Cleanup Callback": {
+      "main": [[{ "node": "Send Email", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "0tmqPGy4Lk8w3wxx",
+    "timeSavedPerExecution": 2
+  },
+  "versionId": "enhanced-spam-protection-v1",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "16ea928eef029a9f2dea1a270b152314696cd82fb16ba3355b1a21b947fd9bb6"
+  },
+  "id": "0tmqPGy4Lk8w3wxx",
+  "tags": [
+    {
+      "createdAt": "2025-10-03T10:20:00.185Z",
+      "updatedAt": "2025-10-03T10:20:00.185Z",
+      "id": "DHSFXV7WTlme29b6",
+      "name": "production"
+    }
+  ]
+}
+

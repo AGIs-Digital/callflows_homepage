@@ -140,3 +140,4 @@ export function useRateLimit(maxRequests: number = 3, timeWindow: number = 10 * 
   
   return { isAllowed, getRemainingTime, attempts: attempts.length };
 }
+
