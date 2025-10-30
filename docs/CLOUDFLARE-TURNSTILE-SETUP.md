@@ -289,26 +289,6 @@ In n8n-Workflow:
 
 ---
 
-## Migration von reCAPTCHA zu Turnstile
-
-Falls du bereits reCAPTCHA nutzt:
-
-1. **Parallel-Betrieb**: Beide Systeme gleichzeitig testen
-2. **A/B-Test**: 50% Turnstile, 50% reCAPTCHA
-3. **Success-Rate vergleichen**
-4. **Vollständiger Umstieg** nach 1-2 Wochen
-
-```typescript
-const isTestGroup = Math.random() < 0.5;
-
-const { startCall } = useWidgetCall({
-  enableTurnstile: isTestGroup,
-  enableRecaptcha: !isTestGroup
-});
-```
-
----
-
 ## FAQ
 
 ### Warum sehe ich manchmal eine Challenge?
@@ -330,22 +310,8 @@ Turnstile ist DSGVO-konform, aber du solltest in deiner Datenschutzerklärung er
 
 > Zum Schutz vor Spam und Missbrauch nutzen wir Cloudflare Turnstile. Dabei werden keine personenbezogenen Daten an Dritte übermittelt. Weitere Infos: https://www.cloudflare.com/products/turnstile/
 
----
-
-## Next Steps
-
-1. ✅ **Turnstile in Cloudflare aktivieren**
-2. ✅ **Site Key + Secret Key kopieren**
-3. ✅ **Environment-Variablen setzen**
-4. ⏳ **n8n-Workflow erweitern** (Token-Verification)
-5. ⏳ **Production testen** (callflows.de)
-6. ⏳ **Success-Rate überwachen** (Cloudflare Dashboard)
-
----
-
 ## Support
 
 - Cloudflare Turnstile Docs: https://developers.cloudflare.com/turnstile/
 - n8n-Integration Beispiele: https://community.n8n.io/
 - **Timo**: Falls Token-Verification in n8n nicht funktioniert → Execution-Logs teilen.
-

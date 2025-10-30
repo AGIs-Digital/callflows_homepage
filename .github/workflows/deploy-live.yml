@@ -49,6 +49,8 @@ jobs:
           NEXT_PUBLIC_APP_URL=${{ secrets.PRODUCTION_APP_URL }}
           NEXT_PUBLIC_ENVIRONMENT=production
           NEXT_PUBLIC_N8N_WEBHOOK_URL=${{ secrets.N8N_WEBHOOK_URL }}
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY=${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+          TURNSTILE_SECRET_KEY=${{ secrets.TURNSTILE_SECRET_KEY }}
           MICROSOFT_SMTP_HOST=${{ secrets.MICROSOFT_SMTP_HOST }}
           MICROSOFT_SMTP_PORT=${{ secrets.MICROSOFT_SMTP_PORT }}
           MICROSOFT_SMTP_USER=${{ secrets.MICROSOFT_SMTP_USER }}
@@ -139,6 +141,7 @@ jobs:
             NEXT_PUBLIC_APP_URL=${{ secrets.PRODUCTION_APP_URL }}
             NEXT_PUBLIC_ENVIRONMENT=production
             NEXT_PUBLIC_N8N_WEBHOOK_URL=${{ secrets.N8N_WEBHOOK_URL }}
+            NEXT_PUBLIC_TURNSTILE_SITE_KEY=${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
             EOL
             echo "Environment variables deployed to production"
 

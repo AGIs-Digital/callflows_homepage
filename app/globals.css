@@ -8,7 +8,7 @@
        url('/fonts/Satoshi-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: optional; /* Optimiert für LCP: Font wird nur geladen wenn verfügbar, sonst Fallback */
 }
 
 @font-face {
@@ -17,7 +17,7 @@
        url('/fonts/Satoshi-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -26,7 +26,7 @@
        url('/fonts/Satoshi-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: optional; /* Kritisch für h1 LCP: Font wird nur geladen wenn schnell verfügbar */
 }
 
 /* Animation Keyframes */

@@ -102,6 +102,12 @@ export function DatenschutzContent() {
           </p>
         </LegalSection>
 
+        <LegalSection title={t('legal.datenschutz.turnstile.title')}>
+          <p className="text-gray-600 dark:text-gray-300">
+            {t('legal.datenschutz.turnstile.content')}
+          </p>
+        </LegalSection>
+
         <LegalSection title={t('legal.datenschutz.security.title')}>
           <p className="text-gray-600 dark:text-gray-300">
             {t('legal.datenschutz.security.content').split('\\n').map((line, index) => (

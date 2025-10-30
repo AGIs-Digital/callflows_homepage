@@ -651,6 +651,10 @@
         "title": "7. Cookies & Tracking Technologies",
         "content": "• Our website uses cookies to improve the user experience.\\n\\n• When first visiting the website, a cookie banner appears asking the user whether they consent to or decline the use of cookies.\\n\\n• No personal cookies are stored or evaluated unless the user gives consent.\\n\\n• If analysis tools (e.g. Google Analytics, Facebook Pixel) are used, this only happens with consent."
       },
+      "turnstile": {
+        "title": "7a. Cloudflare Turnstile",
+        "content": "To protect against spam and abuse, we use Cloudflare Turnstile. No personal data is transmitted to third parties. More information: https://www.cloudflare.com/products/turnstile/"
+      },
       "security": {
         "title": "8. Data Security",
         "content": "We implement technical and organizational measures (TOMs) to protect personal data:\\n\\n• SSL encryption for secure data transmission\\n• Firewall and access controls\\n• Password protection and two-factor authentication (2FA)\\n• Restricted access rights for employees\\n• Storage on secure servers within the EU"

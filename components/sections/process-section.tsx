@@ -112,7 +112,7 @@ export function ProcessSection() {
               buttonText={t('processSteps.cta.buttonText')}
               size="lg" 
               className="bg-accent hover:bg-accent/90 text-gray-900 font-semibold px-8 py-4 text-lg gap-2"
-              bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
+              bookingUrl="https://outlook.office.com/book/info1@callflows.de/?ismsaljsauthenabled"
             />
           </div>
         </div>

@@ -60,7 +60,7 @@ export function SiteHeader() {
           buttonText={t('nav.consultation')}
           className="hidden md:flex bg-accent text-gray-900 hover:bg-accent/90"
           size="sm"
-          bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
+          bookingUrl="https://outlook.office.com/book/info1@callflows.de/?ismsaljsauthenabled"
         />
             
             {/* Auth Button */}

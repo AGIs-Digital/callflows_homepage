@@ -301,7 +301,7 @@ export function useWidgetCall(options: UseWidgetCallOptions = {}) {
     } finally {
       setIsLoading(false);
     }
-  }, [checkRateLimit, validatePhoneNumber, validateName, updateRateLimit]);
+  }, [checkRateLimit, validatePhoneNumber, validateName, updateRateLimit, options.enableTurnstile, turnstile]);
 
   return {
     callStatus,

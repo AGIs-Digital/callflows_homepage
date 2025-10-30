@@ -651,6 +651,10 @@
         "title": "7. Cookies y Tecnologías de Seguimiento",
         "content": "• Nuestro sitio web usa cookies para mejorar la experiencia del usuario.\\n\\n• Al visitar el sitio web por primera vez, aparece un banner de cookies preguntando al usuario si consiente o rechaza el uso de cookies.\\n\\n• No se almacenan o evalúan cookies personales a menos que el usuario dé su consentimiento.\\n\\n• Si se usan herramientas de análisis (ej. Google Analytics, Facebook Pixel), esto solo sucede con consentimiento."
       },
+      "turnstile": {
+        "title": "7a. Cloudflare Turnstile",
+        "content": "Para proteger contra spam y abuso, utilizamos Cloudflare Turnstile. No se transmiten datos personales a terceros. Más información: https://www.cloudflare.com/products/turnstile/"
+      },
       "security": {
         "title": "8. Seguridad de Datos",
         "content": "Implementamos medidas técnicas y organizacionales (MTO) para proteger los datos personales:\\n\\n• Cifrado SSL para transmisión segura de datos\\n• Controles de firewall y acceso\\n• Protección con contraseña y autenticación de dos factores (2FA)\\n• Derechos de acceso restringidos para empleados\\n• Almacenamiento en servidores seguros dentro de la UE"

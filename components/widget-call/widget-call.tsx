@@ -23,7 +23,10 @@ export function WidgetCall({ className }: WidgetCallProps) {
     validatePhoneNumber,
     validateName,
     checkRateLimit
-  } = useWidgetCall();
+  } = useWidgetCall({
+    enableTurnstile: true,
+    turnstileSiteKey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+  });
   
   // Autofill Hook - verwendet Cookie-Consent
   const {
@@ -118,10 +121,18 @@ export function WidgetCall({ className }: WidgetCallProps) {
   };
 
   const handleStartCall = async () => {
-    const phoneValidation = validatePhoneNumber(phoneNumber);
+    // Entferne Formatierung vor Validierung (Leerzeichen, etc.)
+    const cleanedPhone = phoneNumber.replace(/[\s\-\(\)]/g, '');
+    const phoneValidation = validatePhoneNumber(cleanedPhone);
     const nameValidation = validateName(customerName);
     
     if (!phoneValidation.isValid || !nameValidation) {
+      console.error('Validation failed:', {
+        phone: phoneNumber,
+        cleanedPhone,
+        phoneValid: phoneValidation.isValid,
+        nameValid: nameValidation
+      });
       return;
     }
 
@@ -134,7 +145,7 @@ export function WidgetCall({ className }: WidgetCallProps) {
     try {
       await startCall({
         customer_name: customerName,
-        customer_phonenumber: phoneNumber
+        customer_phonenumber: phoneValidation.normalized // Verwende normalisierte Nummer
       });
       
       // Speichere erfolgreiche Daten
@@ -185,9 +196,24 @@ export function WidgetCall({ className }: WidgetCallProps) {
   };
 
   const statusContent = getStatusContent();
-  const phoneValidation = validatePhoneNumber(phoneNumber);
+  // Entferne Formatierung für Validierung (Leerzeichen, etc.)
+  const cleanedPhoneForValidation = phoneNumber.replace(/[\s\-\(\)]/g, '');
+  const phoneValidation = validatePhoneNumber(cleanedPhoneForValidation);
   const nameValidation = validateName(customerName);
   const isFormValid = phoneValidation.isValid && nameValidation && !isLoading;
+  
+  // Debug: Log validation result in development
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development' && phoneNumber) {
+      console.log('📞 Phone validation:', {
+        input: phoneNumber,
+        cleaned: cleanedPhoneForValidation,
+        isValid: phoneValidation.isValid,
+        normalized: phoneValidation.normalized,
+        countryCode: phoneValidation.countryCode
+      });
+    }
+  }, [phoneNumber, cleanedPhoneForValidation, phoneValidation]);
 
   return (
     <Card className={cn(

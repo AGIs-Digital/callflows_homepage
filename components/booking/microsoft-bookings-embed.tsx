@@ -73,7 +73,7 @@ export function MicrosoftBookingsEmbed({
   variant = "default",
   size = "default",
   showArrow = false,
-  bookingUrl = "https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
+  bookingUrl = "https://outlook.office.com/book/info1@callflows.de/?ismsaljsauthenabled"
 }: MicrosoftBookingsEmbedProps) {
   const { openModal } = useContext(BookingModalContext);
 

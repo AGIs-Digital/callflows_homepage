@@ -71,7 +71,7 @@ export function ContactPageContent() {
             <BookingButton 
               buttonText={t('contact.bookingButton')} 
               className="w-full bg-[#FFB703] hover:bg-[#FFB703]/90 text-white font-semibold py-3 mb-8 transition-all duration-300 hover:scale-105"
-              bookingUrl="https://outlook.office.com/book/booking@callflows.de/?ismsaljsauthenabled"
+              bookingUrl="https://outlook.office.com/book/info1@callflows.de/?ismsaljsauthenabled"
             />
             
             {/* Contact Information */}

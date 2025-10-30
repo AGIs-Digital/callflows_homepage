@@ -89,6 +89,13 @@ export function useTurnstile(options: TurnstileOptions): UseTurnstileReturn {
 
     try {
       return new Promise((resolve, reject) => {
+        if (!window.turnstile) {
+          setError('Turnstile script not loaded');
+          setIsLoading(false);
+          reject(new Error('Turnstile script not loaded'));
+          return;
+        }
+
         const container = document.createElement('div');
         container.style.display = 'none';
         document.body.appendChild(container);
