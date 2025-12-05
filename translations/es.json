@@ -49,8 +49,8 @@
     "description": "Ingrese su número de teléfono y nombre para hablar con nuestra embajadora de marca Carla.",
     "nameLabel": "Su nombre",
     "namePlaceholder": "Juan Pérez",
-    "phoneLabel": "Número de teléfono",
-    "phonePlaceholder": "+34 XXX XXX XXX",
+    "phoneLabel": "Número de teléfono (solo Alemania)",
+    "phonePlaceholder": "+49 XXX XXXXXXX",
     "phoneHint": "Le llamamos inmediatamente - gratis.",
     "privacyHint": "🔒 Sus datos son tratados de forma confidencial",
     "buttonStart": "Recibir llamada ahora",
@@ -64,7 +64,7 @@
     "statusErrorDesc": "Por favor verifique su número de teléfono e inténtelo nuevamente.",
     "buttonRetry": "Intentar de nuevo",
     "nameError": "El nombre debe tener al menos 2 caracteres",
-    "phoneError": "Por favor ingrese un número de teléfono válido",
+    "phoneError": "Por favor ingrese un número de teléfono alemán válido (+49)",
     "rateLimitExceeded": "Demasiadas solicitudes. Por favor espere unos minutos."
   },
   "pricing": {

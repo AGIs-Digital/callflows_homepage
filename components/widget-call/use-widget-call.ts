@@ -100,53 +100,29 @@ export function useWidgetCall(options: UseWidgetCallOptions = {}) {
     }
   }, []);
 
-  // Internationale Telefonnummer-Validierung
+  // Deutsche Telefonnummer-Validierung (nur Deutschland erlaubt)
   const validatePhoneNumber = useCallback((phone: string): PhoneValidationResult => {
     // Entferne alle Leerzeichen, Bindestriche, Klammern
     const cleaned = phone.replace(/[\s\-\(\)]/g, '');
     
-    // Internationale Regex für verschiedene Länder
-    const patterns = [
-      // Deutschland: +49 oder 0
-      { pattern: /^(\+49|0)(\d{10,11})$/, countryCode: '+49' },
-      // Österreich: +43
-      { pattern: /^(\+43)(\d{10,11})$/, countryCode: '+43' },
-      // Schweiz: +41
-      { pattern: /^(\+41)(\d{9,10})$/, countryCode: '+41' },
-      // USA/Kanada: +1
-      { pattern: /^(\+1)(\d{10})$/, countryCode: '+1' },
-      // UK: +44
-      { pattern: /^(\+44)(\d{10,11})$/, countryCode: '+44' },
-      // Frankreich: +33
-      { pattern: /^(\+33)(\d{9})$/, countryCode: '+33' },
-      // Italien: +39
-      { pattern: /^(\+39)(\d{9,10})$/, countryCode: '+39' },
-      // Spanien: +34
-      { pattern: /^(\+34)(\d{9})$/, countryCode: '+34' },
-      // Niederlande: +31
-      { pattern: /^(\+31)(\d{9})$/, countryCode: '+31' },
-      // Belgien: +32
-      { pattern: /^(\+32)(\d{9})$/, countryCode: '+32' },
-      // Generische internationale Nummer (7-15 Ziffern nach +)
-      { pattern: /^(\+\d{1,3})(\d{7,14})$/, countryCode: 'international' }
-    ];
-
-    for (const { pattern, countryCode } of patterns) {
-      const match = cleaned.match(pattern);
-      if (match) {
-        let normalized = cleaned;
-        
-        // Deutsche Nummern normalisieren (0 -> +49)
-        if (countryCode === '+49' && cleaned.startsWith('0')) {
-          normalized = '+49' + cleaned.slice(1);
-        }
-        
-        return {
-          isValid: true,
-          normalized,
-          countryCode
-        };
+    // Nur deutsche Telefonnummern erlauben
+    // Format: +49 gefolgt von 10-11 Ziffern ODER 0 gefolgt von 10-11 Ziffern
+    const germanPattern = /^(\+49|0)(\d{10,11})$/;
+    const match = cleaned.match(germanPattern);
+    
+    if (match) {
+      let normalized = cleaned;
+      
+      // Normalisiere deutsche Nummern: 0 -> +49
+      if (cleaned.startsWith('0')) {
+        normalized = '+49' + cleaned.slice(1);
       }
+      
+      return {
+        isValid: true,
+        normalized,
+        countryCode: '+49'
+      };
     }
 
     return {

@@ -64,7 +64,7 @@
     "statusErrorDesc": "Bitte prüfen Sie Ihre Telefonnummer und versuchen Sie es erneut.",
     "buttonRetry": "Nochmal versuchen",
     "nameError": "Name muss mindestens 2 Zeichen haben",
-    "phoneError": "Bitte geben Sie eine gültige Telefonnummer ein",
+    "phoneError": "Bitte geben Sie eine gültige deutsche Telefonnummer ein (+49 oder 0)",
     "rateLimitExceeded": "Zu viele Anfragen. Bitte warten Sie einige Minuten."
   },
   "roiCalculator": {

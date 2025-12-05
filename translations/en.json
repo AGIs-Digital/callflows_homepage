@@ -49,7 +49,7 @@
     "description": "Enter your phone number and name to speak with our brand ambassador Carla.",
     "nameLabel": "Your Name",
     "namePlaceholder": "John Doe",
-    "phoneLabel": "Phone Number",
+    "phoneLabel": "Phone Number (Germany only)",
     "phonePlaceholder": "+49 XXX XXXXXXX",
     "phoneHint": "We'll call you immediately - free of charge.",
     "privacyHint": "🔒 Your data is treated confidentially",
@@ -64,7 +64,7 @@
     "statusErrorDesc": "Please check your phone number and try again.",
     "buttonRetry": "Try again",
     "nameError": "Name must be at least 2 characters",
-    "phoneError": "Please enter a valid phone number",
+    "phoneError": "Please enter a valid German phone number (+49 or 0)",
     "rateLimitExceeded": "Too many requests. Please wait a few minutes."
   },
   "pricing": {

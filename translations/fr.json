@@ -49,8 +49,8 @@
     "description": "Entrez votre numéro de téléphone et nom pour parler avec notre ambassadrice de marque Carla.",
     "nameLabel": "Votre nom",
     "namePlaceholder": "Jean Dupont",
-    "phoneLabel": "Numéro de téléphone",
-    "phonePlaceholder": "+33 X XX XX XX XX",
+    "phoneLabel": "Numéro de téléphone (Allemagne uniquement)",
+    "phonePlaceholder": "+49 XXX XXXXXXX",
     "phoneHint": "Nous vous appelons immédiatement - gratuitement.",
     "privacyHint": "🔒 Vos données sont traitées de manière confidentielle",
     "buttonStart": "Recevoir un appel maintenant",
@@ -64,7 +64,7 @@
     "statusErrorDesc": "Veuillez vérifier votre numéro de téléphone et réessayer.",
     "buttonRetry": "Réessayer",
     "nameError": "Le nom doit contenir au moins 2 caractères",
-    "phoneError": "Veuillez saisir un numéro de téléphone valide",
+    "phoneError": "Veuillez saisir un numéro de téléphone allemand valide (+49 ou 0)",
     "rateLimitExceeded": "Trop de demandes. Veuillez attendre quelques minutes."
   },
   "pricing": {

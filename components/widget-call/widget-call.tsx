@@ -61,43 +61,63 @@ export function WidgetCall({ className }: WidgetCallProps) {
     }
   }, [customerName, phoneNumber, hasConsent, autofillLoading, saveAutofillData]);
 
-  // Telefonnummer formatieren (international)
+  // Telefonnummer formatieren (nur deutsche Nummern)
   const formatPhoneNumber = (value: string) => {
     // Entferne alle Zeichen außer Zahlen und +
-    const cleaned = value.replace(/[^\d+]/g, '');
+    let cleaned = value.replace(/[^\d+]/g, '');
     
-    // Wenn mit + beginnt, formatiere international
-    if (cleaned.startsWith('+')) {
-      // Entferne zusätzliche + Zeichen
-      const singlePlus = '+' + cleaned.slice(1).replace(/\+/g, '');
-      
-      // Einfache Gruppierung für bessere Lesbarkeit
-      if (singlePlus.length <= 3) {
-        return singlePlus;
-      } else if (singlePlus.length <= 6) {
-        return singlePlus.slice(0, 3) + ' ' + singlePlus.slice(3);
-      } else if (singlePlus.length <= 9) {
-        return singlePlus.slice(0, 3) + ' ' + singlePlus.slice(3, 6) + ' ' + singlePlus.slice(6);
+    // Blockiere alle Länder-Codes außer +49
+    if (cleaned.includes('+')) {
+      // Wenn + vorhanden ist, prüfe ob es +49 ist
+      if (cleaned.startsWith('+49')) {
+        // Erlaube nur +49, entferne alle anderen + Zeichen
+        cleaned = '+49' + cleaned.slice(3).replace(/\+/g, '');
       } else {
-        return singlePlus.slice(0, 3) + ' ' + singlePlus.slice(3, 6) + ' ' + singlePlus.slice(6, 9) + ' ' + singlePlus.slice(9);
+        // Alle anderen Länder-Codes blockieren: entferne + und alles danach bis zur nächsten Zahl
+        // Wenn jemand +1, +33, +44 etc. eingibt, entferne den gesamten Teil mit +
+        const plusIndex = cleaned.indexOf('+');
+        if (plusIndex !== -1) {
+          // Entferne alles ab dem + wenn es nicht +49 ist
+          cleaned = cleaned.slice(0, plusIndex) + cleaned.slice(plusIndex + 1).replace(/\+/g, '');
+        }
       }
     }
     
-    // Wenn mit 0 beginnt (deutsche Nummer), formatiere lokal
+    // Wenn mit +49 beginnt, formatiere deutsche Nummer
+    if (cleaned.startsWith('+49')) {
+      const digits = cleaned.slice(3);
+      // Maximal 11 Ziffern nach +49 erlauben
+      const limitedDigits = digits.slice(0, 11);
+      if (limitedDigits.length === 0) {
+        return '+49';
+      } else if (limitedDigits.length <= 3) {
+        return '+49 ' + limitedDigits;
+      } else if (limitedDigits.length <= 6) {
+        return '+49 ' + limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3);
+      } else if (limitedDigits.length <= 9) {
+        return '+49 ' + limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3, 6) + ' ' + limitedDigits.slice(6);
+      } else {
+        return '+49 ' + limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3, 6) + ' ' + limitedDigits.slice(6, 9) + ' ' + limitedDigits.slice(9);
+      }
+    }
+    
+    // Wenn mit 0 beginnt (deutsche Nummer ohne Ländercode), formatiere lokal
     if (cleaned.startsWith('0')) {
-      if (cleaned.length <= 3) {
-        return cleaned;
-      } else if (cleaned.length <= 6) {
-        return cleaned.slice(0, 3) + ' ' + cleaned.slice(3);
-      } else if (cleaned.length <= 9) {
-        return cleaned.slice(0, 3) + ' ' + cleaned.slice(3, 6) + ' ' + cleaned.slice(6);
+      // Maximal 11 Ziffern nach 0 erlauben
+      const limitedDigits = cleaned.slice(0, 12); // 0 + max 11 Ziffern
+      if (limitedDigits.length <= 3) {
+        return limitedDigits;
+      } else if (limitedDigits.length <= 6) {
+        return limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3);
+      } else if (limitedDigits.length <= 9) {
+        return limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3, 6) + ' ' + limitedDigits.slice(6);
       } else {
-        return cleaned.slice(0, 3) + ' ' + cleaned.slice(3, 6) + ' ' + cleaned.slice(6, 9) + ' ' + cleaned.slice(9);
+        return limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3, 6) + ' ' + limitedDigits.slice(6, 9) + ' ' + limitedDigits.slice(9);
       }
     }
     
-    // Für andere Fälle: nur Zahlen
-    return cleaned;
+    // Für andere Fälle: nur Zahlen (kein + erlaubt wenn nicht +49)
+    return cleaned.replace(/\+/g, '');
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
