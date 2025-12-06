@@ -4,12 +4,24 @@ RewriteEngine On
 # Basis-URL setzen
 RewriteBase /
 
+# WICHTIG: Google-Bots und andere Search-Engine-Crawler explizit erlauben
+# Diese Regel muss VOR allen anderen Regeln stehen
+RewriteCond %{HTTP_USER_AGENT} (googlebot|Googlebot|Google-InspectionTool|bingbot|Bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot|facebookexternalhit|Twitterbot|LinkedInBot|Applebot|ia_archiver|AhrefsBot|SemrushBot|DotBot|MJ12bot|Pingdom|StatusCake|UptimeRobot) [NC]
+RewriteRule ^ - [L]
+
 # Erlaube direkte Zugriffe auf statische Dateien und wichtige Pfade
 RewriteCond %{REQUEST_URI} \.(js|css|svg|jpg|jpeg|webp|gif|ico|woff2)$ [OR]
 RewriteCond %{REQUEST_URI} ^/api/ [OR]
 RewriteCond %{REQUEST_URI} ^/blog/?$ [OR]
 RewriteCond %{REQUEST_URI} ^/blog/.+$
 RewriteRule ^ - [L]
+
+# Explizite interne Weiterleitung für /blog zu blog.html (für Google-Bots wichtig)
+# Diese Regel wird nur ausgeführt, wenn blog.html existiert und /blog aufgerufen wird
+RewriteCond %{REQUEST_URI} ^/blog/?$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/blog.html -f
+RewriteRule ^blog/?$ /blog.html [L]
 
 # Alle anderen Anfragen an _next/static durchlassen
 RewriteCond %{REQUEST_URI} ^/_next/static/
@@ -53,6 +65,9 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
 
 # Setze Sicherheitsheader
 <IfModule mod_headers.c>
+    # Google-Bots und Search-Engine-Crawler explizit erlauben (keine Blockierung)
+    SetEnvIf User-Agent "(googlebot|Googlebot|Google-InspectionTool|bingbot|Bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot|facebookexternalhit|Twitterbot|LinkedInBot|Applebot|ia_archiver|AhrefsBot|SemrushBot|DotBot|MJ12bot|Pingdom|StatusCake|UptimeRobot)" searchbot
+    
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     
     # Cache-Control für statische Assets
@@ -89,6 +104,23 @@ RewriteRule ^(.*)$ /index.html [QSA,L]
     Order allow,deny
     Deny from all
 </FilesMatch>
+
+# WICHTIG: mod_evasive für Google-Bots deaktivieren (falls aktiviert)
+# Diese Regel verhindert, dass mod_evasive Google-Bots blockiert
+<IfModule mod_evasive24.c>
+    # Google-Bots und Search-Engine-Crawler von Rate-Limiting ausschließen
+    DOSWhitelist 66.249.*
+    DOSWhitelist 66.102.*
+    DOSWhitelist 64.233.*
+    DOSWhitelist 72.14.*
+    DOSWhitelist 74.125.*
+    DOSWhitelist 173.194.*
+    DOSWhitelist 207.126.*
+    DOSWhitelist 209.85.*
+    DOSWhitelist 216.239.*
+    DOSWhitelist 157.240.*
+    DOSWhitelist 31.13.*
+</IfModule>
 
 # Optimiere die Leistung durch Komprimierung von Bildern
 <IfModule mod_rewrite.c>
