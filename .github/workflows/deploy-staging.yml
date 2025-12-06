@@ -125,7 +125,7 @@ jobs:
           NODE_ENV: staging
           
         run: |
-          npm install --quiet ftp-deploy
+          npm install --quiet --legacy-peer-deps ftp-deploy
           node scripts/deploy.js
 
       - name: 🔧 Deploy Environment Variables
