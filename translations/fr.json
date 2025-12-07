@@ -21,6 +21,34 @@
     "menu": "Ouvrir le menu",
     "login": "Connexion"
   },
+  "login": {
+    "breadcrumbHome": "Accueil",
+    "breadcrumbLogin": "Connexion",
+    "title": "Bienvenue !",
+    "welcomeMessages": [
+      "Bon retour ! Ravi de vous revoir. ✨",
+      "Bonjour ! Nous sommes ravis de vous voir. 👋",
+      "Bienvenue ! Nous sommes heureux de vous accueillir. 💙",
+      "Salut ! Ravi de vous voir passer. 😊",
+      "Bienvenue ! Commençons ensemble. 🚀",
+      "Bonjour et bienvenue ! 🌟",
+      "Ravi de vous revoir ! 💫",
+      "Bienvenue ! Prêt pour votre prochaine aventure ? 🎯",
+      "Bonjour ! Ravi de vous avoir ici. 💝",
+      "Bienvenue ! Nous vous attendions. 🌈",
+      "Salut ! Prêt pour quelque chose de génial ? 🎉",
+      "Bienvenue ! Votre équipe est ravie de vous voir. 🤗"
+    ],
+    "description": "Entrez simplement votre adresse e-mail et nous vous emmènerons à votre portail.",
+    "emailLabel": "Votre adresse e-mail",
+    "emailPlaceholder": "votre@email.fr",
+    "emailErrorEmpty": "Veuillez entrer votre adresse e-mail",
+    "emailErrorInvalid": "Veuillez entrer une adresse e-mail valide",
+    "buttonSubmit": "Continuer vers le portail",
+    "buttonConnecting": "Connexion...",
+    "noAccount": "Pas encore de compte ?",
+    "contactUs": "Contactez-nous"
+  },
   "autofill": {
     "consentTitle": "Sauvegarder les données ?",
     "optionalBadge": "Optionnel",
@@ -34,12 +62,18 @@
     "title": "callflows - communication client automatisée",
     "description": "Optimisez le service client, les ventes et le support avec des systèmes intelligents.",
     "hero": {
-      "headline1": "Automatiser la téléphonie avec l'IA :",
-      "headline2": "Focus sur le chiffre d'affaires",
-      "description": "Agents vocaux IA pour PME : Appels de routine 24/7 – sans engagement contractuel, paiement à l'usage par seconde. Soulagez votre équipe, gagnez du temps. Pour ce qui compte.",
+      "headline1": "Plus de conversations qualifiées. Moins d'inactivité.",
+      "headline2": "Prêt à l'emploi.",
+      "description": "Solution clé en main Voice AI pour Outbound & Inbound : Nous construisons et exploitons vos Agents Vocaux – en ligne en 14 jours, conforme RGPD et avec soulagement immédiat d'équipe.",
+      "microproof": [
+        "Conforme RGPD",
+        "AI-Act ready",
+        "Hébergement UE",
+        "Surveillé 24/7 dans le callflows Control Center"
+      ],
       "solution": "Avec callflows",
       "solutionDescription": "Votre conversation flow : dialogues naturels, logique de processus, automatisation & intégrations – de bout en bout, made in germany.",
-      "cta": "Réserver Consultation",
+      "cta": "Démo & Plan en 30 Minutes",
       "widgetUnavailable": "Widget temporairement indisponible",
       "widgetUnavailableDescription": "Ne vous inquiétez pas - cela arrive parfois avec les démos en direct"
     }
@@ -483,7 +517,7 @@
     "callflowsText": "callflows est une option moderne et innovante.",
     "modernSolution": "Solution IA Moderne",
     "pros": "Avantages",
-    "weTakeCare": "Nous nous occupons de tout",
+    "weTakeCare": "Solution clé en main",
     "challenges": "Défis",
     "cons": "Inconvénients",
     "inhouse": {

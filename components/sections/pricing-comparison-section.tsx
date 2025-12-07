@@ -124,11 +124,11 @@ export function PricingComparisonSection() {
           title: "KI‑Voice‑Agents",
           description: "Vereinen alle Vorteile ohne das die persönliche Note verloren geht.",
           pros: [
-            "Orchestration aller Komponenten",
-            "Fachexpertise - KI und Automation",
-            "Pay-as-you-go ohne Vertragslaufzeit",
-            "Umsetzung von Prozesslogik",
-            "Individuelle Schnittstellen"
+            "DSGVO Konzept",
+            "Prompt Engineering",
+            "KI Agents + Voice",
+            "API-Integrationen",
+            "Messbare Ergebnisse"
           ],
           cons: [
             "Kosten und technische Strukturen erfordern tiefes Verständnis"
@@ -158,11 +158,11 @@ export function PricingComparisonSection() {
           title: "AI Voice Agents",
           description: "Combine all advantages without losing the personal touch.",
           pros: [
-            "Orchestration of all components",
-            "Expertise - AI and automation",
-            "Pay-as-you-go without contract terms",
-            "Implementation of process logic",
-            "Individual interfaces"
+            "GDPR Concept",
+            "Prompt Engineering",
+            "AI Agents + Voice",
+            "API Integrations",
+            "Measurable Results"
           ],
           cons: [
             "Costs and technical structures require deep understanding"
@@ -192,11 +192,11 @@ export function PricingComparisonSection() {
           title: "Agents Vocaux IA",
           description: "Combinent tous les avantages sans perdre le contact personnel.",
           pros: [
-            "Orchestration de tous les composants",
-            "Expertise - IA et automatisation",
-            "Paiement à l'usage sans durée contractuelle",
-            "Implémentation de la logique de processus",
-            "Interfaces individuelles"
+            "Concept RGPD",
+            "Prompt Engineering",
+            "Agents IA + Voix",
+            "Intégrations API",
+            "Résultats mesurables"
           ],
           cons: [
             "Les coûts et structures techniques nécessitent une compréhension approfondie"
@@ -226,11 +226,11 @@ export function PricingComparisonSection() {
           title: "Agentes de Voz IA",
           description: "Combinan todas las ventajas sin perder el toque personal.",
           pros: [
-            "Orquestación de todos los componentes",
-            "Experticia - IA y automatización",
-            "Pago por uso sin plazos contractuales",
-            "Implementación de lógica de procesos",
-            "Interfaces individuales"
+            "Concepto RGPD",
+            "Prompt Engineering",
+            "Agentes IA + Voz",
+            "Integraciones API",
+            "Resultados medibles"
           ],
           cons: [
             "Los costos y estructuras técnicas requieren comprensión profunda"

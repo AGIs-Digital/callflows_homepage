@@ -105,6 +105,19 @@ export function useWidgetCall(options: UseWidgetCallOptions = {}) {
     // Entferne alle Leerzeichen, Bindestriche, Klammern
     const cleaned = phone.replace(/[\s\-\(\)]/g, '');
     
+    // Debug-Logging in Development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('🔍 Phone Validation:', {
+        input: phone,
+        cleaned,
+        length: cleaned.length,
+        startsWithPlus49: cleaned.startsWith('+49'),
+        startsWithZero: cleaned.startsWith('0'),
+        digitsAfterPlus49: cleaned.startsWith('+49') ? cleaned.slice(3) : null,
+        digitsAfterPlus49Length: cleaned.startsWith('+49') ? cleaned.slice(3).length : null
+      });
+    }
+    
     // Nur deutsche Telefonnummern erlauben
     // Format: +49 gefolgt von 10-11 Ziffern ODER 0 gefolgt von 10-11 Ziffern
     const germanPattern = /^(\+49|0)(\d{10,11})$/;
@@ -118,11 +131,19 @@ export function useWidgetCall(options: UseWidgetCallOptions = {}) {
         normalized = '+49' + cleaned.slice(1);
       }
       
+      if (process.env.NODE_ENV === 'development') {
+        console.log('✅ Phone valid:', { cleaned, normalized, match });
+      }
+      
       return {
         isValid: true,
         normalized,
         countryCode: '+49'
       };
+    }
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log('❌ Phone invalid:', { cleaned, pattern: germanPattern.toString() });
     }
 
     return {
@@ -265,7 +286,22 @@ export function useWidgetCall(options: UseWidgetCallOptions = {}) {
       }
 
     } catch (error) {
-      console.error('Widget Call Error:', error);
+      console.error('❌ Widget Call Error:', error);
+      
+      // Detailliertes Error-Logging
+      if (error instanceof Error) {
+        console.error('Error details:', {
+          message: error.message,
+          name: error.name,
+          stack: error.stack,
+          payload: {
+            customer_name: data.customer_name,
+            customer_phonenumber: data.customer_phonenumber,
+            phoneValidation: validatePhoneNumber(data.customer_phonenumber)
+          }
+        });
+      }
+      
       setCallStatus('error');
       
       // Auto-Reset nach 8 Sekunden

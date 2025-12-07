@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -61,62 +61,74 @@ export function WidgetCall({ className }: WidgetCallProps) {
     }
   }, [customerName, phoneNumber, hasConsent, autofillLoading, saveAutofillData]);
 
-  // Telefonnummer formatieren (nur deutsche Nummern)
+  // Telefonnummer formatieren (nur deutsche Nummern, keine Leerzeichen)
   const formatPhoneNumber = (value: string) => {
     // Entferne alle Zeichen außer Zahlen und +
     let cleaned = value.replace(/[^\d+]/g, '');
     
-    // Blockiere alle Länder-Codes außer +49
+    // Wenn mit 0 beginnt UND noch kein + vorhanden ist, konvertiere zu +49
+    if (cleaned.startsWith('0') && !cleaned.includes('+')) {
+      // Entferne die führende 0 und füge +49 hinzu
+      cleaned = '+49' + cleaned.slice(1);
+    }
+    
+    // Wenn + vorhanden ist
     if (cleaned.includes('+')) {
-      // Wenn + vorhanden ist, prüfe ob es +49 ist
+      // Wenn bereits +49 vorhanden ist, erlaube nur +49
       if (cleaned.startsWith('+49')) {
         // Erlaube nur +49, entferne alle anderen + Zeichen
         cleaned = '+49' + cleaned.slice(3).replace(/\+/g, '');
-      } else {
-        // Alle anderen Länder-Codes blockieren: entferne + und alles danach bis zur nächsten Zahl
-        // Wenn jemand +1, +33, +44 etc. eingibt, entferne den gesamten Teil mit +
+      } 
+      // Wenn +4 eingegeben wird (auf dem Weg zu +49), erlaube es
+      else if (cleaned.startsWith('+4')) {
+        // Erlaube +4 (kann zu +49 werden)
+        cleaned = '+4' + cleaned.slice(2).replace(/\+/g, '');
+      }
+      // Wenn nur + eingegeben wird, erlaube es
+      else if (cleaned === '+') {
+        return '+';
+      }
+      // Wenn + mit anderen Zahlen beginnt (außer +4), blockiere es
+      else {
         const plusIndex = cleaned.indexOf('+');
-        if (plusIndex !== -1) {
-          // Entferne alles ab dem + wenn es nicht +49 ist
+        // Wenn + nicht am Anfang steht oder andere Länder-Codes, entferne alles ab +
+        if (plusIndex !== 0 || !cleaned.startsWith('+4')) {
           cleaned = cleaned.slice(0, plusIndex) + cleaned.slice(plusIndex + 1).replace(/\+/g, '');
         }
       }
     }
     
-    // Wenn mit +49 beginnt, formatiere deutsche Nummer
+    // Wenn mit +49 beginnt, begrenze auf max 11 Ziffern nach +49
     if (cleaned.startsWith('+49')) {
       const digits = cleaned.slice(3);
-      // Maximal 11 Ziffern nach +49 erlauben
       const limitedDigits = digits.slice(0, 11);
-      if (limitedDigits.length === 0) {
-        return '+49';
-      } else if (limitedDigits.length <= 3) {
-        return '+49 ' + limitedDigits;
-      } else if (limitedDigits.length <= 6) {
-        return '+49 ' + limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3);
-      } else if (limitedDigits.length <= 9) {
-        return '+49 ' + limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3, 6) + ' ' + limitedDigits.slice(6);
-      } else {
-        return '+49 ' + limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3, 6) + ' ' + limitedDigits.slice(6, 9) + ' ' + limitedDigits.slice(9);
-      }
+      return '+49' + limitedDigits;
     }
     
-    // Wenn mit 0 beginnt (deutsche Nummer ohne Ländercode), formatiere lokal
+    // Wenn mit +4 beginnt (aber noch nicht +49), erlaube weitere Eingabe
+    if (cleaned.startsWith('+4')) {
+      const digits = cleaned.slice(2);
+      // Wenn 9 folgt, wird es zu +49
+      if (digits.startsWith('9')) {
+        const remainingDigits = digits.slice(1).slice(0, 11);
+        return '+49' + remainingDigits;
+      }
+      // Sonst erlaube weitere Eingabe (max 1 weitere Ziffer für +49)
+      return '+4' + digits.slice(0, 1);
+    }
+    
+    // Wenn nur + vorhanden ist
+    if (cleaned === '+') {
+      return '+';
+    }
+    
+    // Wenn noch eine 0 vorhanden ist (sollte nicht passieren nach Konvertierung, aber als Fallback)
     if (cleaned.startsWith('0')) {
-      // Maximal 11 Ziffern nach 0 erlauben
       const limitedDigits = cleaned.slice(0, 12); // 0 + max 11 Ziffern
-      if (limitedDigits.length <= 3) {
-        return limitedDigits;
-      } else if (limitedDigits.length <= 6) {
-        return limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3);
-      } else if (limitedDigits.length <= 9) {
-        return limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3, 6) + ' ' + limitedDigits.slice(6);
-      } else {
-        return limitedDigits.slice(0, 3) + ' ' + limitedDigits.slice(3, 6) + ' ' + limitedDigits.slice(6, 9) + ' ' + limitedDigits.slice(9);
-      }
+      return limitedDigits;
     }
     
-    // Für andere Fälle: nur Zahlen (kein + erlaubt wenn nicht +49)
+    // Für andere Fälle: nur Zahlen
     return cleaned.replace(/\+/g, '');
   };
 
@@ -141,17 +153,34 @@ export function WidgetCall({ className }: WidgetCallProps) {
   };
 
   const handleStartCall = async () => {
-    // Entferne Formatierung vor Validierung (Leerzeichen, etc.)
-    const cleanedPhone = phoneNumber.replace(/[\s\-\(\)]/g, '');
-    const phoneValidation = validatePhoneNumber(cleanedPhone);
-    const nameValidation = validateName(customerName);
+    // Verwende die bereits memoized Validierung
+    const phoneValidation = phoneValidationMemo;
+    const nameValidationResult = nameValidation;
     
-    if (!phoneValidation.isValid || !nameValidation) {
-      console.error('Validation failed:', {
+    // Debug-Logging für Validierung
+    if (process.env.NODE_ENV === 'development') {
+      const cleanedPhone = phoneNumber.replace(/[\s\-\(\)]/g, '');
+      console.log('📞 Validation Check:', {
+        originalPhone: phoneNumber,
+        cleanedPhone,
+        phoneLength: cleanedPhone.length,
+        phoneAfterPlus49: cleanedPhone.startsWith('+49') ? cleanedPhone.slice(3) : null,
+        digitsAfterPlus49: cleanedPhone.startsWith('+49') ? cleanedPhone.slice(3).length : null,
+        phoneValid: phoneValidation.isValid,
+        normalized: phoneValidation.normalized,
+        nameValid: nameValidationResult,
+        name: customerName
+      });
+    }
+    
+    if (!phoneValidation.isValid || !nameValidationResult) {
+      const cleanedPhone = phoneNumber.replace(/[\s\-\(\)]/g, '');
+      console.error('❌ Validation failed:', {
         phone: phoneNumber,
         cleanedPhone,
         phoneValid: phoneValidation.isValid,
-        nameValid: nameValidation
+        nameValid: nameValidationResult,
+        phoneValidationResult: phoneValidation
       });
       return;
     }
@@ -178,7 +207,13 @@ export function WidgetCall({ className }: WidgetCallProps) {
       
     } catch (error) {
       // Error wird bereits im Hook behandelt
-      console.error('Call failed:', error);
+      console.error('❌ Call failed:', error);
+      if (error instanceof Error) {
+        console.error('Error details:', {
+          message: error.message,
+          stack: error.stack
+        });
+      }
     }
   };
 
@@ -216,24 +251,31 @@ export function WidgetCall({ className }: WidgetCallProps) {
   };
 
   const statusContent = getStatusContent();
-  // Entferne Formatierung für Validierung (Leerzeichen, etc.)
-  const cleanedPhoneForValidation = phoneNumber.replace(/[\s\-\(\)]/g, '');
-  const phoneValidation = validatePhoneNumber(cleanedPhoneForValidation);
-  const nameValidation = validateName(customerName);
-  const isFormValid = phoneValidation.isValid && nameValidation && !isLoading;
   
-  // Debug: Log validation result in development
+  // Memoize validation to prevent unnecessary re-renders and infinite loops
+  const phoneValidationMemo = useMemo(() => {
+    if (!phoneNumber || phoneNumber.length === 0) {
+      return { isValid: false, normalized: '', countryCode: undefined };
+    }
+    const cleaned = phoneNumber.replace(/[\s\-\(\)]/g, '');
+    return validatePhoneNumber(cleaned);
+  }, [phoneNumber, validatePhoneNumber]);
+  
+  const nameValidation = useMemo(() => validateName(customerName), [customerName, validateName]);
+  const isFormValid = phoneValidationMemo.isValid && nameValidation && !isLoading;
+
+  // Debug: Log validation result in development (nur bei tatsächlichen Änderungen)
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development' && phoneNumber) {
+    if (process.env.NODE_ENV === 'development' && phoneNumber && phoneNumber.length > 0) {
       console.log('📞 Phone validation:', {
         input: phoneNumber,
-        cleaned: cleanedPhoneForValidation,
-        isValid: phoneValidation.isValid,
-        normalized: phoneValidation.normalized,
-        countryCode: phoneValidation.countryCode
+        cleaned: phoneNumber.replace(/[\s\-\(\)]/g, ''),
+        isValid: phoneValidationMemo.isValid,
+        normalized: phoneValidationMemo.normalized,
+        countryCode: phoneValidationMemo.countryCode
       });
     }
-  }, [phoneNumber, cleanedPhoneForValidation, phoneValidation]);
+  }, [phoneNumber, phoneValidationMemo.isValid, phoneValidationMemo.normalized]); // Nur Primitives als Dependencies
 
   return (
     <Card className={cn(
@@ -311,7 +353,7 @@ export function WidgetCall({ className }: WidgetCallProps) {
               {...getAutocompleteProps('phone')}
               inputMode="tel"
             />
-            {phoneNumber && !phoneValidation.isValid && (
+            {phoneNumber && !phoneValidationMemo.isValid && (
               <p className="text-xs text-red-500">
                 {t('widget.phoneError') || 'Bitte geben Sie eine gültige Telefonnummer ein'}
               </p>

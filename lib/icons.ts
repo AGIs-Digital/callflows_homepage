@@ -49,5 +49,9 @@ export {
   PlayCircle,
   Loader2,
   HelpCircle,
-  Star
+  Star,
+  Shield,
+  Lock,
+  Server,
+  Activity
 } from 'lucide-react';

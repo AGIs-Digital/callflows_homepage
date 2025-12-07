@@ -21,6 +21,34 @@
     "menu": "Open menu",
     "login": "Login"
   },
+  "login": {
+    "breadcrumbHome": "Home",
+    "breadcrumbLogin": "Login",
+    "title": "Welcome!",
+    "welcomeMessages": [
+      "Welcome back! Great to have you here. ✨",
+      "Hello! We're so happy to see you. 👋",
+      "Welcome! We're excited to have you. 💙",
+      "Hey! Nice to see you drop by. 😊",
+      "Welcome! Let's get started together. 🚀",
+      "Hello and welcome! 🌟",
+      "Nice to see you again! 💫",
+      "Welcome! Ready for your next adventure? 🎯",
+      "Hello! Great to have you here. 💝",
+      "Welcome! We've been expecting you. 🌈",
+      "Hey! Ready for something great? 🎉",
+      "Welcome! Your team is excited to see you. 🤗"
+    ],
+    "description": "Simply enter your email address and we'll take you to your portal.",
+    "emailLabel": "Your Email Address",
+    "emailPlaceholder": "your@email.com",
+    "emailErrorEmpty": "Please enter your email address",
+    "emailErrorInvalid": "Please enter a valid email address",
+    "buttonSubmit": "Continue to Portal",
+    "buttonConnecting": "Connecting...",
+    "noAccount": "No account yet?",
+    "contactUs": "Contact us"
+  },
   "autofill": {
     "consentTitle": "Save data?",
     "optionalBadge": "Optional",
@@ -34,12 +62,18 @@
     "title": "callflows - automated customer communication",
     "description": "Optimize customer service, sales, and support with intelligent systems.",
     "hero": {
-      "headline1": "Automate telephony with AI:",
-      "headline2": "Focus on revenue",
-      "description": "AI voice agents for SMEs: Routine calls 24/7 – no contract term, pay-as-you-go per second. Relieve your team, gain time. For what matters.",
+      "headline1": "More qualified conversations. Less idle time.",
+      "headline2": "Ready to go.",
+      "description": "Done-for-You Voice AI for Outbound & Inbound: We build and operate your Voice Agents – live in 14 days, GDPR-compliant and with immediate team relief.",
+      "microproof": [
+        "GDPR-compliant",
+        "AI-Act ready",
+        "EU-Hosting",
+        "24/7 monitored in callflows Control Center"
+      ],
       "solution": "With callflows",
       "solutionDescription": "Your conversation flow: natural dialogues, process logic, automation & integrations – end-to-end, made in germany.",
-      "cta": "Book Consultation",
+      "cta": "Demo & Plan in 30 Minutes",
       "widgetUnavailable": "Widget temporarily unavailable",
       "widgetUnavailableDescription": "Don't worry - this sometimes happens with live demos"
     }
@@ -483,7 +517,7 @@
     "callflowsText": "callflows is a modern, innovative option.",
     "modernSolution": "Modern AI Solution",
     "pros": "Advantages",
-    "weTakeCare": "We take care of everything",
+    "weTakeCare": "Done-for-you Solution",
     "challenges": "Challenges",
     "cons": "Disadvantages",
     "inhouse": {

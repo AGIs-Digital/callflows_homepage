@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import { BookingButton } from "@/components/booking/booking-button";
 import { useI18n } from "@/lib/i18n";
+import { Shield, CheckCircle, Server, Activity } from "@/lib/icons";
 
 // Critical Path: Load immediately, no delay
 // Non-Critical: Load after initial render
@@ -36,7 +37,7 @@ const WidgetCall = dynamic(() => import("@/components/widget-call/widget-call").
 });
 
 export function HeroSection() {
-  const { t, locale } = useI18n();
+  const { t, tArray, locale } = useI18n();
   
   const highlightCallflows = (text: string) => {
     return text.replace(/callflows/gi, '<strong class="text-primary">callflows</strong>');
@@ -79,28 +80,27 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {/* Linke Spalte - Text Content */}
           <div className="relative z-20 space-y-8 md:space-y-10 animate-slideIn">
-            {/* Beschreibung */}
+            {/* Subline */}
             <div className="space-y-6">
               <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 {t('home.hero.description')}
               </p>
-            </div>
-
-            {/* Lösung mit Animated Text */}
-            <div className="space-y-6">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-foreground">
-                <span dangerouslySetInnerHTML={{ __html: highlightCallflows(t('home.hero.solution')) }} />{" "}
-                <Suspense fallback={<span className="text-primary">Automatisch.</span>}>
-                  <AnimatedText
-                    words={getAnimatedWords()}
-                    className="text-primary inline-block"
-                  />
-                </Suspense>
-              </h2>
-              <p 
-                className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-[600px]"
-                dangerouslySetInnerHTML={{ __html: highlightCallflows(t('home.hero.solutionDescription')) }}
-              />
+              
+              {/* Microproof */}
+              <div className="flex flex-col gap-3 pt-2">
+                {tArray('home.hero.microproof').map((item, index) => {
+                  const icons = [Shield, CheckCircle, Server, Activity];
+                  const Icon = icons[index] || CheckCircle;
+                  return (
+                    <div key={index} className="flex items-center gap-3 text-sm sm:text-base text-muted-foreground">
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
+                        <Icon className="w-3.5 h-3.5 text-primary" />
+                      </div>
+                      <span>{item}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
             {/* CTA Button links auf Höhe des Widget-Buttons */}

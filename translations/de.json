@@ -21,6 +21,35 @@
     "menu": "Menü öffnen",
     "login": "Anmelden"
   },
+  "login": {
+    "breadcrumbHome": "Startseite",
+    "breadcrumbLogin": "Anmelden",
+    "title": "Willkommen!",
+    "welcomeMessages": [
+      "Willkommen zurück! Schön, dass du da bist. ✨",
+      "Hallo! Freut uns riesig, dich zu sehen. 👋",
+      "Herzlich willkommen! Wir freuen uns auf dich. 💙",
+      "Hey! Schön, dass du vorbeischaust. 😊",
+      "Willkommen! Lass uns gemeinsam starten. 🚀",
+      "Hallo und herzlich willkommen! 🌟",
+      "Schön, dich wiederzusehen! 💫",
+      "Willkommen! Bereit für dein nächstes Abenteuer? 🎯",
+      "Hallo! Schön, dass du hier bist. 💝",
+      "Willkommen! Wir haben dich erwartet. 🌈",
+      "Hey! Bereit für etwas Großartiges? 🎉",
+      "Herzlich willkommen! Dein Team freut sich auf dich. 🤗"
+    ],
+    "description": "Gib einfach deine E-Mail-Adresse ein und wir bringen dich zu deinem Portal.",
+    "emailLabel": "Deine E-Mail-Adresse",
+    "emailPlaceholder": "deine@email.de",
+    "emailErrorEmpty": "Bitte gib deine E-Mail-Adresse ein",
+    "emailErrorInvalid": "Bitte gib eine gültige E-Mail-Adresse ein",
+    "buttonSubmit": "Weiter zum Portal",
+    "buttonConnecting": "Verbinde dich...",
+    "noAccount": "Noch kein Account?",
+    "contactUs": "Kontaktiere uns",
+    "rateLimitExceeded": "Zu viele Anfragen. Bitte warten Sie {{minutes}} Minuten bevor Sie es erneut versuchen."
+  },
   "autofill": {
     "consentTitle": "Daten speichern?",
     "optionalBadge": "Optional",
@@ -34,12 +63,18 @@
     "title": "callflows - End‑to‑End Telefonautomatisierung für automatisierte Telefonie",
     "description": "Revolutionieren Sie Ihren Kundenservice mit callflows. Intelligente Gesprächs- und Prozessflüsse für automatisierte Kundenkommunikation, Vertrieb und Support – 24/7 verfügbar.",
     "hero": {
-      "headline1": "Telefonie mit KI automatisieren:",
-      "headline2": "Fokus auf Umsatz",
-      "description": "KI‑Voice‑Agents für den Mittelstand: Routine‑Telefonate 24/7 – ohne Vertragslaufzeit, Pay-as-you-go sekundengenau. Team entlasten, Zeit gewinnen. Für das was wichtig ist.",
+      "headline1": "Mehr qualifizierte Gespräche. Weniger Leerlauf.",
+      "headline2": "Fix & fertig eingerichtet.",
+      "description": "Done-for-You Voice AI für Outbound & Inbound: Wir bauen und betreiben Ihre Voice-Agents – in 14 Tagen live, DSGVO-sicher und mit sofort entlasteten Teams.",
+      "microproof": [
+        "DSGVO-konform",
+        "AI-Act ready",
+        "EU-Hosting",
+        "24/7 überwacht im callflows Control Center"
+      ],
       "solution": "Mit callflows",
       "solutionDescription": "Ihr Conversation Flow: natürliche Dialoge, Prozesslogik, Automation & Integrationen – Ende‑zu‑Ende, made in germany.",
-      "cta": "Termin buchen",
+      "cta": "Demo & Plan in 30 Minuten",
       "widgetUnavailable": "Widget vorübergehend nicht verfügbar",
       "widgetUnavailableDescription": "Keine Sorge - das passiert manchmal bei Live-Demos"
     }
@@ -634,7 +669,7 @@
     "callflowsText": "KI-Voice-Agents sind eine moderne, innovative Option.",
     "modernSolution": "Moderne KI Lösung",
     "pros": "Vorteile",
-    "weTakeCare": "Wir übernehmen alles",
+    "weTakeCare": "Done-for-you Lösung",
     "challenges": "Herausforderungen",
     "cons": "Nachteile",
     "inhouse": {
