@@ -44,7 +44,7 @@
 - [x] **Widget mit n8n verbinden**
   ```bash
   # .env.local
-  NEXT_PUBLIC_N8N_WEBHOOK_URL=https://YOUR-N8N.app.n8n.cloud/webhook/widget-call
+  NEXT_PUBLIC_N8N_WEBHOOK_URL=https://callflows.app.n8n.cloud/webhook/d1f7c7cf-ee9e-4ec2-8baf-c5f8f6740437
   ```
 
 - [ ] **Test-Requests senden**
