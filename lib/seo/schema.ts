@@ -21,10 +21,10 @@ export function generateOrganizationSchema(): WithContext<Organization> {
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Fenskestraße 9A',
-      addressLocality: 'Hannover',
+      streetAddress: 'Am Roten Steine 1',
+      addressLocality: 'Hagenburg',
       addressRegion: 'Niedersachsen',
-      postalCode: '30165',
+      postalCode: '31558',
       addressCountry: 'DE',
     },
     contactPoint: [
@@ -345,20 +345,20 @@ export function generateLocalBusinessSchema(): WithContext<LocalBusiness> {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': 'https://callflows.de/#localbusiness',
-    name: 'callflows - KI Voice Agents Hannover',
-    description: 'Spezialist für KI Voice Agents in Hannover. Wir automatisieren Ihre Kundenkommunikation mit modernster künstlicher Intelligenz.',
+    name: 'callflows - KI Voice Agents',
+    description: 'Spezialist für KI Voice Agents. Wir automatisieren Ihre Kundenkommunikation mit modernster künstlicher Intelligenz.',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Fenskestraße 9A',
-      addressLocality: 'Hannover',
+      streetAddress: 'Am Roten Steine 1',
+      addressLocality: 'Hagenburg',
       addressRegion: 'Niedersachsen',
-      postalCode: '30165',
+      postalCode: '31558',
       addressCountry: 'DE'
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 52.3759,
-      longitude: 9.7320
+      latitude: 52.4333,
+      longitude: 9.3167
     },
     telephone: '+49 511 1665 3388',
     email: 'info@callflows.de',
@@ -372,7 +372,7 @@ export function generateLocalBusinessSchema(): WithContext<LocalBusiness> {
     areaServed: [
       {
         '@type': 'City',
-        name: 'Hannover'
+        name: 'Hagenburg'
       },
       {
         '@type': 'State', 

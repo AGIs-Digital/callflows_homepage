@@ -603,9 +603,9 @@
     "appointmentDescription": "Vereinbaren Sie einen Termin für eine persönliche Beratung zu unseren KI-Voice-Agents.",
     "bookingButton": "Termin buchen",
     "contactDataTitle": "Kontaktdaten",
-    "company": "callflows Abeln Goltz GbR",
-    "address": "Fenskestraße 9A",
-    "city": "30165 Hannover, Deutschland",
+    "company": "callflows GmbH",
+    "address": "Am Roten Steine 1",
+    "city": "31558 Hagenburg, Deutschland",
     "email": "info@callflows.de",
     "phone": "+49 511 1665 3388"
   },
@@ -641,7 +641,7 @@
     "contact": "Kontakt",
     "legal": "Rechtliches",
     "copyright": "Alle Rechte vorbehalten",
-    "address": "Fenskestraße 9A, 30165 Hannover, Deutschland"
+    "address": "Am Roten Steine 1, 31558 Hagenburg, Deutschland"
   },
   "process": {
     "title": "So einfach geht's",
@@ -791,7 +791,7 @@
       "vatTitle": "Umsatzsteuer-Identifikationsnummer",
       "vatText": "Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:",
       "responsibleTitle": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
-      "responsibleText": "Tom Abeln, Timo Goltz\nFenskestraße 9A\n30165 Hannover\nDeutschland",
+      "responsibleText": "Tom Abeln, Timo Goltz, Florian Lenz\nAm Roten Steine 1\n31558 Hagenburg\nDeutschland",
       "disputeTitle": "Streitschlichtung",
       "disputeText1": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
       "disputeText2": "Unsere E-Mail-Adresse finden Sie oben im Impressum.",
@@ -806,11 +806,11 @@
       "intro": "Der Schutz Ihrer persönlichen Daten hat für callflows höchste Priorität. Hier erfahren Sie, wie wir mit Ihren Daten umgehen und welche Rechte Sie haben.",
       "introduction": {
         "title": "Einleitung",
-        "content": "Die Abeln Goltz GbR (\"callflows\", \"wir\", \"uns\" oder \"unser\") betreibt die Website https://callflows.de (im Folgenden \"Dienst\" oder \"Service\"). Diese Datenschutzerklärung informiert Sie über unsere Richtlinien hinsichtlich der Erfassung, Nutzung und Offenlegung personenbezogener Daten, wenn Sie unseren Service nutzen. Wir verarbeiten Ihre Daten ausschließlich im Einklang mit den Bestimmungen der Datenschutz-Grundverordnung (DSGVO) der EU sowie geltenden deutschen Datenschutzgesetzen. Durch die Nutzung des Dienstes stimmen Sie der Erfassung und Nutzung Ihrer Daten gemäß dieser Datenschutzerklärung zu."
+        "content": "Die callflows GmbH (\"callflows\", \"wir\", \"uns\" oder \"unser\") betreibt die Website https://callflows.de (im Folgenden \"Dienst\" oder \"Service\"). Diese Datenschutzerklärung informiert Sie über unsere Richtlinien hinsichtlich der Erfassung, Nutzung und Offenlegung personenbezogener Daten, wenn Sie unseren Service nutzen. Wir verarbeiten Ihre Daten ausschließlich im Einklang mit den Bestimmungen der Datenschutz-Grundverordnung (DSGVO) der EU sowie geltenden deutschen Datenschutzgesetzen. Durch die Nutzung des Dienstes stimmen Sie der Erfassung und Nutzung Ihrer Daten gemäß dieser Datenschutzerklärung zu."
       },
       "responsible": {
         "title": "1. Verantwortlicher für die Datenverarbeitung",
-        "content": "Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:\\n\\ncallflows Abeln Goltz GbR\\nFenskestraße 9A\\n30165 Hannover\\nE-Mail: info@callflows.de"
+        "content": "Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:\\n\\ncallflows GmbH\\nAm Roten Steine 1\\n31558 Hagenburg\\nE-Mail: info@callflows.de"
       },
       "dataCollection": {
         "title": "2. Welche Daten erfassen wir?",
@@ -854,7 +854,7 @@
       },
       "contact": {
         "title": "11. Kontakt für Datenschutzanfragen",
-        "content": "Für Datenschutzanfragen oder Ausübung der Nutzerrechte kontaktieren Sie uns unter:\\n\\ncallflows Abeln Goltz GbR\\nE-Mail: info@callflows.de\\nAdresse: Fenskestraße 9A, 30165 Hannover"
+        "content": "Für Datenschutzanfragen oder Ausübung der Nutzerrechte kontaktieren Sie uns unter:\\n\\ncallflows GmbH\\nE-Mail: info@callflows.de\\nAdresse: Am Roten Steine 1, 31558 Hagenburg"
       },
       "aiSecurity": {
         "title": "12. Datensicherheit bei KI Voice Agents",
@@ -868,9 +868,9 @@
       "translationNote": "Die vollständige Übersetzung aller Abschnitte der Allgemeinen Geschäftsbedingungen ist verfügbar.",
       "noteLabel": "Hinweis:",
       "section1Title": "1. Begriffsdefinitionen",
-      "section1Content": "Im Sinne dieser AGB gelten folgende Definitionen:\n\n\"Anbieter\" bezeichnet AGIS.digital, handelnd unter der Marke callflows, mit Sitz in Fenskestraße 9A, 30165 Hannover.\n\n\"Kunde\" bezeichnet ausschließlich Unternehmer im Sinne des § 14 BGB, also natürliche oder juristische Personen, die den Dienst zu gewerblichen oder beruflichen Zwecken nutzen. Verbraucher im Sinne des § 13 BGB sind von der Nutzung ausgeschlossen.\n\n\"Dienste\" bezeichnet alle durch callflows angebotenen und bereitgestellten Leistungen im Bereich der KI Telefonautomation.\n\n\"Vertrag\" bezeichnet die Vereinbarung zwischen dem Anbieter und dem Kunden zur Nutzung der Dienste von callflows.\n\n\"Drittanbieter\" bezeichnet externe Dienstleister, deren Technologien oder Plattformen in die Dienste von callflows integriert sind.\n\n\"Nutzerinhalte\" bezeichnet alle vom Kunden über die Dienste von callflows erstellten, übermittelten oder gespeicherten Daten, einschließlich Gesprächsprotokolle und Transkriptionen.",
+      "section1Content": "Im Sinne dieser AGB gelten folgende Definitionen:\n\n\"Anbieter\" bezeichnet callflows GmbH, handelnd unter der Marke callflows, mit Sitz in Am Roten Steine 1, 31558 Hagenburg.\n\n\"Kunde\" bezeichnet ausschließlich Unternehmer im Sinne des § 14 BGB, also natürliche oder juristische Personen, die den Dienst zu gewerblichen oder beruflichen Zwecken nutzen. Verbraucher im Sinne des § 13 BGB sind von der Nutzung ausgeschlossen.\n\n\"Dienste\" bezeichnet alle durch callflows angebotenen und bereitgestellten Leistungen im Bereich der KI Telefonautomation.\n\n\"Vertrag\" bezeichnet die Vereinbarung zwischen dem Anbieter und dem Kunden zur Nutzung der Dienste von callflows.\n\n\"Drittanbieter\" bezeichnet externe Dienstleister, deren Technologien oder Plattformen in die Dienste von callflows integriert sind.\n\n\"Nutzerinhalte\" bezeichnet alle vom Kunden über die Dienste von callflows erstellten, übermittelten oder gespeicherten Daten, einschließlich Gesprächsprotokolle und Transkriptionen.",
       "section2Title": "2. Geltungsbereich & Vertragsschluss",
-      "section2Content": "Diese AGB regeln die Nutzung der durch callflows bereitgestellten Dienstleistungen. callflows ist eine Marke von AGIS.digital, Fenskestraße 9A, 30165 Hannover. Sie gelten für alle Verträge zwischen AGIS.digital (\"Anbieter\") und den Nutzern (\"Kunden\").\n\nVertragsschluss durch Nutzung:\nEin Vertragsverhältnis kommt bereits durch die erste Nutzung des Systems zustande, unabhängig davon, ob ein separater schriftlicher Vertrag geschlossen wurde. Als erste Nutzung gelten insbesondere:\n• Das erste Login in das callflows-System\n• Die erste Nutzung der Dienste durch den Kunden oder seine Mitarbeiter\n• Die Ausführung des ersten Anrufs über das KI-callflow-System\n\nMit der ersten Nutzung erkennt der Kunde automatisch diese AGB an und verpflichtet sich zur Zahlung aller anfallenden Leistungen gemäß den gültigen Preisen.\n\nGeltung für alle Nutzer:\nDiese Verpflichtung gilt auch für alle Mitarbeiter, Bevollmächtigten oder sonstigen Personen, die im Namen oder Auftrag des Kunden das System nutzen.",
+      "section2Content": "Diese AGB regeln die Nutzung der durch callflows bereitgestellten Dienstleistungen. callflows ist eine Marke der callflows GmbH, Am Roten Steine 1, 31558 Hagenburg. Sie gelten für alle Verträge zwischen callflows GmbH (\"Anbieter\") und den Nutzern (\"Kunden\").\n\nVertragsschluss durch Nutzung:\nEin Vertragsverhältnis kommt bereits durch die erste Nutzung des Systems zustande, unabhängig davon, ob ein separater schriftlicher Vertrag geschlossen wurde. Als erste Nutzung gelten insbesondere:\n• Das erste Login in das callflows-System\n• Die erste Nutzung der Dienste durch den Kunden oder seine Mitarbeiter\n• Die Ausführung des ersten Anrufs über das KI-callflow-System\n\nMit der ersten Nutzung erkennt der Kunde automatisch diese AGB an und verpflichtet sich zur Zahlung aller anfallenden Leistungen gemäß den gültigen Preisen.\n\nGeltung für alle Nutzer:\nDiese Verpflichtung gilt auch für alle Mitarbeiter, Bevollmächtigten oder sonstigen Personen, die im Namen oder Auftrag des Kunden das System nutzen.",
       "section3Title": "3. Leistungsbeschreibung",
       "section3Content": "callflows bietet eine cloudbasierte KI-Telefonagentenlösung an, die Unternehmen bei der Automatisierung von Kommunikationsprozessen unterstützt. Der Kunde erhält Zugang zu innovativen KI-Sprachassistenten für die automatisierte Telefonie. Die genauen Leistungsmerkmale ergeben sich aus den jeweiligen Servicebeschreibungen auf der Website.",
       "section4Title": "4. Nutzung und Beendigung",
@@ -896,7 +896,7 @@
       "section14Title": "14. Änderungen der AGB",
       "section14Content": "callflows behält sich das Recht vor, diese AGB jederzeit anzupassen. Änderungen werden dem Kunden mindestens 14 Tage im Voraus mitgeteilt.",
       "section15Title": "15. Gerichtsstand & anwendbares Recht",
-      "section15Content": "Es gilt das Recht der Bundesrepublik Deutschland. Gerichtsstand ist Hannover."
+      "section15Content": "Es gilt das Recht der Bundesrepublik Deutschland. Gerichtsstand ist Hagenburg."
     }
   },
   "integrationChallenges": {

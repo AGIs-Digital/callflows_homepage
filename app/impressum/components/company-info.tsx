@@ -4,9 +4,9 @@ export function CompanyInfo() {
       <div>
         <h3 className="font-medium mb-2">Unternehmen</h3>
         <p className="text-gray-600 dark:text-gray-300">
-          <strong className="text-primary">callflows</strong> ist eine Marke von AGIS.digital<br />
-          Fenskestraße 9A<br />
-          30165 Hannover<br />
+          <strong className="text-primary">callflows GmbH</strong><br />
+          Am Roten Steine 1<br />
+          31558 Hagenburg<br />
           Deutschland
         </p>
       </div>

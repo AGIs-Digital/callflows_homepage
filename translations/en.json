@@ -450,9 +450,9 @@
     "appointmentDescription": "Schedule an appointment for a personal consultation about our AI voice agents.",
     "bookingButton": "Book Appointment",
     "contactDataTitle": "Contact Information",
-    "company": "callflows Abeln Goltz GbR",
-    "address": "Fenskestraße 9A",
-    "city": "30165 Hannover, Germany",
+    "company": "callflows GmbH",
+    "address": "Am Roten Steine 1",
+    "city": "31558 Hagenburg, Germany",
     "email": "info@callflows.de",
     "phone": "+49 511 1665 3388"
   },
@@ -489,7 +489,7 @@
     "contact": "Contact",
     "legal": "Legal",
     "copyright": "All rights reserved",
-    "address": "Fenskestraße 9A, 30165 Hannover, Germany"
+    "address": "Am Roten Steine 1, 31558 Hagenburg, Germany"
   },
   "process": {
     "title": "How It Works",
@@ -640,7 +640,7 @@
       "vatTitle": "VAT Identification Number",
       "vatText": "VAT identification number according to §27 a of the VAT law:",
       "responsibleTitle": "Responsible for content according to § 55 Abs. 2 RStV",
-      "responsibleText": "Tom Abeln, Timo Goltz\\nFenskestraße 9A\\n30165 Hannover\\nGermany",
+      "responsibleText": "Tom Abeln, Timo Goltz, Florian Lenz\\nAm Roten Steine 1\\n31558 Hagenburg\\nGermany",
       "disputeTitle": "Dispute Resolution",
       "disputeText1": "The European Commission provides a platform for online dispute resolution (ODR):",
       "disputeText2": "You can find our email address above in the legal notice.",
@@ -655,11 +655,11 @@
       "intro": "The protection of your personal data has the highest priority for callflows. Here you will learn how we handle your data and what rights you have.",
       "introduction": {
         "title": "Introduction",
-        "content": "Abeln Goltz GbR (\"callflows\", \"we\", \"us\" or \"our\") operates the website https://callflows.de (hereinafter \"Service\"). This privacy policy informs you about our policies regarding the collection, use and disclosure of personal data when you use our Service. We process your data exclusively in accordance with the provisions of the EU General Data Protection Regulation (GDPR) as well as applicable German data protection laws. By using the Service, you agree to the collection and use of your data in accordance with this privacy policy."
+        "content": "callflows GmbH (\"callflows\", \"we\", \"us\" or \"our\") operates the website https://callflows.de (hereinafter \"Service\"). This privacy policy informs you about our policies regarding the collection, use and disclosure of personal data when you use our Service. We process your data exclusively in accordance with the provisions of the EU General Data Protection Regulation (GDPR) as well as applicable German data protection laws. By using the Service, you agree to the collection and use of your data in accordance with this privacy policy."
       },
       "responsible": {
         "title": "1. Responsible for Data Processing",
-        "content": "Responsible within the meaning of the General Data Protection Regulation (GDPR) is:\\n\\ncallflows Abeln Goltz GbR\\nFenskestraße 9A\\n30165 Hannover\\nE-Mail: info@callflows.de"
+        "content": "Responsible within the meaning of the General Data Protection Regulation (GDPR) is:\\n\\ncallflows GmbH\\nAm Roten Steine 1\\n31558 Hagenburg\\nE-Mail: info@callflows.de"
       },
       "dataCollection": {
         "title": "2. What Data Do We Collect?",
@@ -703,7 +703,7 @@
       },
       "contact": {
         "title": "11. Contact for Privacy Inquiries",
-        "content": "For privacy inquiries or exercising user rights, contact us at:\\n\\ncallflows Abeln Goltz GbR\\nE-Mail: info@callflows.de\\nAddress: Fenskestraße 9A, 30165 Hannover"
+        "content": "For privacy inquiries or exercising user rights, contact us at:\\n\\ncallflows GmbH\\nE-Mail: info@callflows.de\\nAddress: Am Roten Steine 1, 31558 Hagenburg"
       },
       "aiSecurity": {
         "title": "12. Data Security for AI Voice Agents",
@@ -717,9 +717,9 @@
       "translationNote": "The complete translation of all Terms and Conditions sections is available.",
       "noteLabel": "Note:",
       "section1Title": "1. Term Definitions",
-      "section1Content": "For the purposes of these Terms and Conditions, the following definitions apply:\n\n\"Provider\" refers to AGIS.digital, operating under the brand callflows, located at Fenskestraße 9A, 30165 Hannover.\n\n\"Customer\" refers exclusively to entrepreneurs within the meaning of § 14 BGB, i.e., natural or legal persons who use the service for commercial or professional purposes. Consumers within the meaning of § 13 BGB are excluded from use.\n\n\"Services\" refers to all services offered and provided by callflows in the field of AI-supported telephone automation.\n\n\"Contract\" refers to the agreement between the Provider and the Customer for the use of callflows services.\n\n\"Third-party providers\" refers to external service providers whose technologies or platforms are integrated into callflows services.\n\n\"User content\" refers to all data created, transmitted, or stored by the Customer via callflows services, including call logs and transcriptions.",
+      "section1Content": "For the purposes of these Terms and Conditions, the following definitions apply:\n\n\"Provider\" refers to callflows GmbH, operating under the brand callflows, located at Am Roten Steine 1, 31558 Hagenburg.\n\n\"Customer\" refers exclusively to entrepreneurs within the meaning of § 14 BGB, i.e., natural or legal persons who use the service for commercial or professional purposes. Consumers within the meaning of § 13 BGB are excluded from use.\n\n\"Services\" refers to all services offered and provided by callflows in the field of AI-supported telephone automation.\n\n\"Contract\" refers to the agreement between the Provider and the Customer for the use of callflows services.\n\n\"Third-party providers\" refers to external service providers whose technologies or platforms are integrated into callflows services.\n\n\"User content\" refers to all data created, transmitted, or stored by the Customer via callflows services, including call logs and transcriptions.",
       "section2Title": "2. Scope of Application",
-      "section2Content": "These Terms and Conditions govern the use of services provided by callflows. callflows is a brand of AGIS.digital, Fenskestraße 9A, 30165 Hannover. They apply to all contracts between AGIS.digital (\"Provider\") and users (\"Customers\"). By using the offered services, the Customer acknowledges these Terms and Conditions.",
+      "section2Content": "These Terms and Conditions govern the use of services provided by callflows. callflows is a brand of callflows GmbH, Am Roten Steine 1, 31558 Hagenburg. They apply to all contracts between callflows GmbH (\"Provider\") and users (\"Customers\"). By using the offered services, the Customer acknowledges these Terms and Conditions.",
       "section3Title": "3. Service Description",
       "section3Content": "callflows offers a cloud-based AI telephone agent solution that supports companies in automating communication processes. The Customer receives access to innovative AI voice assistants for automated telephony. The exact service features are derived from the respective service descriptions on the website.",
       "section4Title": "4. Usage and Termination",
@@ -745,7 +745,7 @@
       "section14Title": "14. Changes to Terms",
       "section14Content": "callflows reserves the right to modify these terms at any time. Changes will be communicated to customers at least 14 days in advance.",
       "section15Title": "15. Jurisdiction & Applicable Law",
-      "section15Content": "The law of the Federal Republic of Germany applies. Place of jurisdiction is Hannover."
+      "section15Content": "The law of the Federal Republic of Germany applies. Place of jurisdiction is Hagenburg."
     }
   },
   "integrationChallenges": {

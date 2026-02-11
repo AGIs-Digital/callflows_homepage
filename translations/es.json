@@ -450,9 +450,9 @@
     "appointmentDescription": "Programe una cita para una consulta personal sobre nuestros agentes de voz IA.",
     "bookingButton": "Reservar Cita",
     "contactDataTitle": "Información de contacto",
-    "company": "callflows Abeln Goltz GbR",
-    "address": "Fenskestraße 9A",
-    "city": "30165 Hannover, Alemania",
+    "company": "callflows GmbH",
+    "address": "Am Roten Steine 1",
+    "city": "31558 Hagenburg, Alemania",
     "email": "info@callflows.de",
     "phone": "+49 511 1665 3388"
   },
@@ -489,7 +489,7 @@
     "contact": "Contacto",
     "legal": "Legal",
     "copyright": "Todos los derechos reservados",
-    "address": "Fenskestraße 9A, 30165 Hannover, Alemania"
+    "address": "Am Roten Steine 1, 31558 Hagenburg, Alemania"
   },
   "process": {
     "title": "Cómo funciona",
@@ -640,7 +640,7 @@
       "vatTitle": "Número de Identificación de IVA",
       "vatText": "Número de identificación de IVA según §27 a de la ley del IVA:",
       "responsibleTitle": "Responsable del contenido según § 55 Abs. 2 RStV",
-      "responsibleText": "Tom Abeln, Timo Goltz\\nFenskestraße 9A\\n30165 Hannover\\nAlemania",
+      "responsibleText": "Tom Abeln, Timo Goltz, Florian Lenz\\nAm Roten Steine 1\\n31558 Hagenburg\\nAlemania",
       "disputeTitle": "Resolución de disputas",
       "disputeText1": "La Comisión Europea proporciona una plataforma para la resolución de disputas en línea (RSD):",
       "disputeText2": "Puede encontrar nuestra dirección de correo electrónico arriba en el aviso legal.",
@@ -655,11 +655,11 @@
       "intro": "La protección de sus datos personales tiene la más alta prioridad para callflows. Aquí aprenderá cómo manejamos sus datos y qué derechos tiene.",
       "introduction": {
         "title": "Introducción",
-        "content": "Abeln Goltz GbR (\"callflows\", \"nosotros\", \"nuestro\" o \"nuestros\") opera el sitio web https://callflows.de (en adelante \"Servicio\"). Esta política de privacidad le informa sobre nuestras políticas con respecto a la recopilación, uso y divulgación de datos personales cuando utiliza nuestro Servicio. Procesamos sus datos exclusivamente de acuerdo con las disposiciones del Reglamento General de Protección de Datos (RGPD) de la UE, así como las leyes alemanas aplicables de protección de datos. Al utilizar el Servicio, acepta la recopilación y uso de sus datos de acuerdo con esta política de privacidad."
+        "content": "callflows GmbH (\"callflows\", \"nosotros\", \"nuestro\" o \"nuestros\") opera el sitio web https://callflows.de (en adelante \"Servicio\"). Esta política de privacidad le informa sobre nuestras políticas con respecto a la recopilación, uso y divulgación de datos personales cuando utiliza nuestro Servicio. Procesamos sus datos exclusivamente de acuerdo con las disposiciones del Reglamento General de Protección de Datos (RGPD) de la UE, así como las leyes alemanas aplicables de protección de datos. Al utilizar el Servicio, acepta la recopilación y uso de sus datos de acuerdo con esta política de privacidad."
       },
       "responsible": {
         "title": "1. Responsable del Procesamiento de Datos",
-        "content": "Responsable en el sentido del Reglamento General de Protección de Datos (RGPD) es:\\n\\ncallflows Abeln Goltz GbR\\nFenskestraße 9A\\n30165 Hannover\\nE-Mail: info@callflows.de"
+        "content": "Responsable en el sentido del Reglamento General de Protección de Datos (RGPD) es:\\n\\ncallflows GmbH\\nAm Roten Steine 1\\n31558 Hagenburg\\nE-Mail: info@callflows.de"
       },
       "dataCollection": {
         "title": "2. ¿Qué Datos Recopilamos?",
@@ -703,7 +703,7 @@
       },
       "contact": {
         "title": "11. Contacto para Consultas de Privacidad",
-        "content": "Para consultas de privacidad o ejercer derechos de usuario, contáctenos en:\\n\\ncallflows Abeln Goltz GbR\\nE-Mail: info@callflows.de\\nDirección: Fenskestraße 9A, 30165 Hannover"
+        "content": "Para consultas de privacidad o ejercer derechos de usuario, contáctenos en:\\n\\ncallflows GmbH\\nE-Mail: info@callflows.de\\nDirección: Am Roten Steine 1, 31558 Hagenburg"
       },
       "aiSecurity": {
         "title": "12. Seguridad de Datos para Agentes de Voz IA",
@@ -717,9 +717,9 @@
       "translationNote": "La traducción completa de todas las secciones de Términos y Condiciones está disponible.",
       "noteLabel": "Nota:",
       "section1Title": "1. Definiciones de Términos",
-      "section1Content": "Para efectos de estos Términos y Condiciones, se aplican las siguientes definiciones:\n\n\"Proveedor\" se refiere a AGIS.digital, operando bajo la marca callflows, ubicada en Fenskestraße 9A, 30165 Hannover.\n\n\"Cliente\" se refiere exclusivamente a empresarios en el sentido del § 14 BGB, es decir, personas físicas o jurídicas que utilizan el servicio con fines comerciales o profesionales. Los consumidores en el sentido del § 13 BGB están excluidos del uso.\n\n\"Servicios\" se refiere a todos los servicios ofrecidos y proporcionados por callflows en el campo de la automatización telefónica asistida por IA.\n\n\"Contrato\" se refiere al acuerdo entre el Proveedor y el Cliente para el uso de los servicios de callflows.\n\n\"Proveedores terceros\" se refiere a proveedores de servicios externos cuyas tecnologías o plataformas están integradas en los servicios de callflows.\n\n\"Contenido del usuario\" se refiere a todos los datos creados, transmitidos o almacenados por el Cliente a través de los servicios de callflows, incluidos los registros de llamadas y las transcripciones.",
+      "section1Content": "Para efectos de estos Términos y Condiciones, se aplican las siguientes definiciones:\n\n\"Proveedor\" se refiere a callflows GmbH, operando bajo la marca callflows, ubicada en Am Roten Steine 1, 31558 Hagenburg.\n\n\"Cliente\" se refiere exclusivamente a empresarios en el sentido del § 14 BGB, es decir, personas físicas o jurídicas que utilizan el servicio con fines comerciales o profesionales. Los consumidores en el sentido del § 13 BGB están excluidos del uso.\n\n\"Servicios\" se refiere a todos los servicios ofrecidos y proporcionados por callflows en el campo de la automatización telefónica asistida por IA.\n\n\"Contrato\" se refiere al acuerdo entre el Proveedor y el Cliente para el uso de los servicios de callflows.\n\n\"Proveedores terceros\" se refiere a proveedores de servicios externos cuyas tecnologías o plataformas están integradas en los servicios de callflows.\n\n\"Contenido del usuario\" se refiere a todos los datos creados, transmitidos o almacenados por el Cliente a través de los servicios de callflows, incluidos los registros de llamadas y las transcripciones.",
       "section2Title": "2. Ámbito de Aplicación",
-      "section2Content": "Estos Términos y Condiciones rigen el uso de los servicios proporcionados por callflows. callflows es una marca de AGIS.digital, Fenskestraße 9A, 30165 Hannover. Se aplican a todos los contratos entre AGIS.digital (\"Proveedor\") y los usuarios (\"Clientes\"). Al utilizar los servicios ofrecidos, el Cliente reconoce estos Términos y Condiciones.",
+      "section2Content": "Estos Términos y Condiciones rigen el uso de los servicios proporcionados por callflows. callflows es una marca de callflows GmbH, Am Roten Steine 1, 31558 Hagenburg. Se aplican a todos los contratos entre callflows GmbH (\"Proveedor\") y los usuarios (\"Clientes\"). Al utilizar los servicios ofrecidos, el Cliente reconoce estos Términos y Condiciones.",
       "section3Title": "3. Descripción del Servicio",
       "section3Content": "callflows ofrece una solución de agentes telefónicos IA basada en la nube que ayuda a las empresas a automatizar los procesos de comunicación. Los servicios se basan en una integración de marca blanca de un proveedor tercero. El Cliente recibe acceso a varios paquetes de servicios con cuotas de uso definidas. Las características exactas del servicio se derivan de las descripciones tarifarias respectivas.",
       "section4Title": "4. Duración del Contrato y Terminación",
@@ -745,7 +745,7 @@
       "section14Title": "14. Cambios en los Términos",
       "section14Content": "callflows se reserva el derecho de modificar estos términos en cualquier momento. Los cambios serán comunicados a los clientes al menos 14 días con anticipación.",
       "section15Title": "15. Jurisdicción & Ley Aplicable",
-      "section15Content": "Se aplica la ley de la República Federal de Alemania. El lugar de jurisdicción es Hannover."
+      "section15Content": "Se aplica la ley de la República Federal de Alemania. El lugar de jurisdicción es Hagenburg."
     }
   },
   "integrationChallenges": {
