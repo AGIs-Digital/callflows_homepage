@@ -591,11 +591,11 @@
     "teamDefaultQuote": "Ayudo a hacer productivos los AI callflows.",
     "teamMembers": {
       "marvin": {
-        "role": "Arquitecto IT Principal",
+        "role": "Gerente de Proyecto",
         "quote": "Una arquitectura limpia es la base de callflows IA exitosos. Me aseguro de que todo funcione de forma estable."
       },
       "jamin": {
-        "role": "Gerente de Proyecto Principal",
+        "role": "Gerente de Proyecto",
         "quote": "La satisfacción del cliente me impulsa. Guío personalmente a cada cliente hacia el éxito."
       },
       "pascal": {
@@ -607,7 +607,7 @@
         "quote": "Cada proyecto necesita la mezcla perfecta de innovación y pensamiento estratégico."
       },
       "jan": {
-        "role": "Ingeniero Principal de Automatización",
+        "role": "Gerente de Proyecto",
         "quote": "Convertir procesos complejos de IA en automatizaciones elegantes – esa es mi especialidad."
       },
       "joinUs": {

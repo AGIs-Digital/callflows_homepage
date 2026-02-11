@@ -742,11 +742,11 @@
     "teamDefaultQuote": "Ich arbeite mit daran, KI‑callflows produktiv zu machen.",
     "teamMembers": {
       "marvin": {
-        "role": "Lead IT-Architekt",
+        "role": "Project Manager",
         "quote": "Saubere Architektur ist das Fundament erfolgreicher KI‑callflows. Ich sorge dafür, dass alles stabil läuft."
       },
       "jamin": {
-        "role": "Lead Project Manager",
+        "role": "Project Manager",
         "quote": "Kundenzufriedenheit ist mein Antrieb. Ich begleite jeden Kunden persönlich zum Erfolg."
       },
       "pascal": {
@@ -758,7 +758,7 @@
         "quote": "Jedes Projekt braucht den perfekten Mix aus Innovation und strategischem Denken."
       },
       "jan": {
-        "role": "Lead Automation Engineer",
+        "role": "Project Manager",
         "quote": "Komplexe KI‑Prozesse in elegante Automatisierungen verwandeln – das ist mein Spezialgebiet."
       },
       "joinUs": {

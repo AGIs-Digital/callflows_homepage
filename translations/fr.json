@@ -591,11 +591,11 @@
     "teamDefaultQuote": "Je contribue à rendre les AI callflows productifs.",
     "teamMembers": {
       "marvin": {
-        "role": "Architecte IT Principal",
+        "role": "Chef de Projet",
         "quote": "Une architecture propre est le fondement de callflows IA réussis. Je veille à ce que tout fonctionne de manière stable."
       },
       "jamin": {
-        "role": "Chef de Projet Principal",
+        "role": "Chef de Projet",
         "quote": "La satisfaction client me motive. J'accompagne personnellement chaque client vers le succès."
       },
       "pascal": {
@@ -607,7 +607,7 @@
         "quote": "Chaque projet a besoin du mélange parfait d'innovation et de pensée stratégique."
       },
       "jan": {
-        "role": "Ingénieur Principal en Automatisation",
+        "role": "Chef de Projet",
         "quote": "Transformer des processus IA complexes en automatisations élégantes – c'est ma spécialité."
       },
       "joinUs": {

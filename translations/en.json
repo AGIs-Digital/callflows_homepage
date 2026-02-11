@@ -591,11 +591,11 @@
     "teamDefaultQuote": "I help make AI callflows productive.",
     "teamMembers": {
       "marvin": {
-        "role": "Lead IT-Architect",
+        "role": "Project Manager",
         "quote": "Clean architecture is the foundation of successful AI callflows. I ensure everything runs stable."
       },
       "jamin": {
-        "role": "Lead Project Manager",
+        "role": "Project Manager",
         "quote": "Customer satisfaction drives me. I personally guide every client to success."
       },
       "pascal": {
@@ -607,7 +607,7 @@
         "quote": "Every project needs the perfect mix of innovation and strategic thinking."
       },
       "jan": {
-        "role": "Lead Automation Engineer",
+        "role": "Project Manager",
         "quote": "Turning complex AI processes into elegant automations – that's my specialty."
       },
       "joinUs": {

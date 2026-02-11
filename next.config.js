@@ -10,10 +10,12 @@ const nextConfig = {
   experimental: {
     // Mobile Performance Features
     esmExternals: true, // ESM-Module externalisieren
-    serverComponentsExternalPackages: ['sharp'], // Sharp extern halten
 // optimizeCss: true, // CSS-Optimierung deaktiviert - benötigt critters package
     scrollRestoration: true, // Bessere Navigation
   },
+  
+  // Server-externe Packages (aus experimental verschoben in Next.js 16)
+  serverExternalPackages: ['sharp'], // Sharp extern halten
   
   webpack: (config, { dev, isServer, webpack }) => {
     // Performance-Optimierungen für alle Builds
@@ -107,9 +109,6 @@ const nextConfig = {
     formats: ['image/webp'],
   },
   
-  // Tree-shaking für kleinere Bundles
-  swcMinify: true,
-  
   // Bundle-Größe reduzieren
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -118,6 +117,7 @@ const nextConfig = {
   // Ausgabe-Optimierung
   output: 'export',
   distDir: 'out',
+  outputFileTracingRoot: path.join(__dirname),
   
   // Externe Libraries optimieren für statischen Export
   transpilePackages: [
@@ -127,6 +127,10 @@ const nextConfig = {
   
   // Tree Shaking für bessere Bundle-Größe
   // Entferne modularizeImports da es Probleme bei statischem Export verursacht
+  
+  // Turbopack-Konfiguration (leer, da wir Webpack verwenden)
+  // Webpack wird explizit über --webpack Flag verwendet
+  turbopack: {},
 };
 
 module.exports = nextConfig

@@ -27,10 +27,10 @@ export function TeamQuotesSection() {
       imgSrc: "/images/pascalstary.webp" 
     },
     { 
-      name: "Jamin Afram", 
-      role: t("about.teamMembers.jamin.role"), 
-      quote: t("about.teamMembers.jamin.quote"), 
-      imgSrc: "/images/jaminafram.webp" 
+      name: "Marvin Grubbe", 
+      role: t("about.teamMembers.marvin.role"), 
+      quote: t("about.teamMembers.marvin.quote"), 
+      imgSrc: "/images/marvingrubbe.webp" 
     },
     { 
       name: "Tom Günther", 
@@ -39,16 +39,16 @@ export function TeamQuotesSection() {
       imgSrc: "/images/tomguenther.webp" 
     },
     { 
-      name: "Marvin Grubbe", 
-      role: t("about.teamMembers.marvin.role"), 
-      quote: t("about.teamMembers.marvin.quote"), 
-      imgSrc: "/images/marvingrubbe.webp" 
-    },
-    { 
       name: "Jan Kastning", 
       role: t("about.teamMembers.jan.role"), 
       quote: t("about.teamMembers.jan.quote"), 
       imgSrc: "/images/jankastning.webp"
+    },
+    { 
+      name: "Jamin Afram", 
+      role: t("about.teamMembers.jamin.role"), 
+      quote: t("about.teamMembers.jamin.quote"), 
+      imgSrc: "/images/jaminafram.webp" 
     },
     { 
       name: t("about.teamMembers.joinUs.name"), 
