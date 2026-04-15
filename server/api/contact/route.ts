@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { rateLimit } from '@/lib/rate-limit';
 import nodemailer from 'nodemailer';
 
+export const dynamic = 'force-dynamic';
+
 // Type definitions
 interface ContactFormData {
   name: string;
@@ -86,22 +88,17 @@ function createMailTransporter() {
 }
 
 // Helper: IP-Adresse aus Request extrahieren
-function getClientIP(request: NextRequest): string {
-  // Prüfe verschiedene Header (Proxy/Load Balancer/Cloudflare)
+function getClientIp(request: NextRequest): string {
+  // x-forwarded-for kann mehrere IPs enthalten (durch Proxies), erste ist Client-IP
   const forwardedFor = request.headers.get('x-forwarded-for');
   if (forwardedFor) {
-    // x-forwarded-for kann mehrere IPs enthalten (Client, Proxy1, Proxy2)
     return forwardedFor.split(',')[0].trim();
   }
   
-  const realIP = request.headers.get('x-real-ip');
-  if (realIP) {
-    return realIP;
-  }
-  
-  const cfConnectingIP = request.headers.get('cf-connecting-ip'); // Cloudflare
-  if (cfConnectingIP) {
-    return cfConnectingIP;
+  // Fallback: x-real-ip
+  const realIp = request.headers.get('x-real-ip');
+  if (realIp) {
+    return realIp;
   }
   
   return 'unknown';
@@ -110,7 +107,7 @@ function getClientIP(request: NextRequest): string {
 export async function POST(request: NextRequest) {
   try {
     // Rate Limiting prüfen
-    const ip = getClientIP(request);
+    const ip = getClientIp(request);
     
     try {
       await limiter.check(3, ip);
